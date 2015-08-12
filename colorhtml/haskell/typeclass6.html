@@ -1,0 +1,11 @@
+<div class="highlight"><pre><span class="n">data</span> <span class="n">Person</span> <span class="o">=</span> <span class="n">Person</span> <span class="n">String</span> <span class="n">Integer</span> <span class="n">String</span> <span class="n">deriving</span> <span class="n">Show</span>
+        
+<span class="nl">getAge:</span><span class="o">:</span><span class="n">Person</span><span class="o">-&gt;</span><span class="n">Integer</span>
+<span class="nf">getAge</span><span class="o">(</span><span class="n">Person</span> <span class="n">_</span> <span class="n">n</span> <span class="n">_</span><span class="o">)</span> <span class="o">=</span> <span class="n">n</span>
+
+<span class="nl">getName:</span><span class="o">:</span><span class="n">Person</span><span class="o">-&gt;</span><span class="n">String</span>
+<span class="nf">getName</span><span class="o">(</span><span class="n">Person</span> <span class="n">name</span> <span class="n">_</span> <span class="n">_</span><span class="o">)</span> <span class="o">=</span> <span class="n">name</span>
+
+<span class="nl">getInfo:</span><span class="o">:</span><span class="n">Person</span><span class="o">-&gt;</span><span class="n">String</span>
+<span class="n">getInfo</span> <span class="n">p</span><span class="err">@</span><span class="o">(</span><span class="n">Person</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span><span class="o">)</span> <span class="o">=</span> <span class="s">&quot;(&quot;</span> <span class="o">++</span> <span class="n">show</span><span class="o">(</span><span class="n">p</span><span class="o">)</span> <span class="o">++</span> <span class="s">&quot;)&quot;</span>
+</pre></div>

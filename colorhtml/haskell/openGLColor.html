@@ -1,0 +1,40 @@
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">Graphics.UI.GLUT</span>
+
+<span class="nl">main:</span><span class="o">:</span><span class="n">IO</span><span class="o">()</span>
+<span class="n">main</span> <span class="o">=</span> <span class="k">do</span>
+    <span class="o">(</span><span class="n">_progName</span><span class="o">,</span> <span class="n">_args</span><span class="o">)</span> <span class="o">&lt;-</span> <span class="n">getArgsAndInitialize</span>
+    <span class="n">_window</span> <span class="o">&lt;-</span> <span class="n">createWindow</span> <span class="s">&quot;OpenGL Vertex and Color in Haskell&quot;</span>
+    <span class="n">displayCallback</span> <span class="n">$</span><span class="o">=</span> <span class="n">display</span>
+    <span class="n">mainLoop</span>
+
+<span class="nl">display:</span><span class="o">:</span><span class="n">DisplayCallback</span>
+<span class="n">display</span> <span class="o">=</span> <span class="k">do</span>
+    <span class="n">let</span> <span class="n">color3f</span> <span class="n">r</span> <span class="n">g</span> <span class="n">b</span> <span class="o">=</span> <span class="n">color</span> <span class="n">$</span> <span class="n">Color3</span> <span class="n">r</span> <span class="nf">g</span> <span class="o">(</span><span class="n">b</span><span class="o">::</span><span class="n">GLfloat</span><span class="o">)</span>
+        <span class="n">vertex3f</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span> <span class="o">=</span> <span class="n">vertex</span> <span class="n">$</span> <span class="n">Vertex3</span> <span class="n">x</span> <span class="nf">y</span> <span class="o">(</span><span class="n">z</span><span class="o">::</span><span class="n">GLfloat</span><span class="o">)</span>
+    <span class="n">clear</span> <span class="o">[</span><span class="n">ColorBuffer</span><span class="o">]</span>
+    <span class="n">renderPrimitive</span> <span class="n">Quads</span> <span class="n">$</span>  <span class="k">do</span>
+        <span class="n">color3f</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+        <span class="n">vertex3f</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+        <span class="n">vertex3f</span> <span class="mi">0</span> <span class="mf">0.2</span> <span class="mi">0</span>
+        <span class="n">vertex3f</span> <span class="mf">0.2</span> <span class="mf">0.2</span> <span class="mi">0</span> 
+        <span class="n">vertex3f</span> <span class="mf">0.2</span> <span class="mi">0</span> <span class="mi">0</span> 
+
+        <span class="n">color3f</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mf">0.5</span> 
+        <span class="n">vertex3f</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+        <span class="n">vertex3f</span> <span class="mi">0</span> <span class="o">(-</span><span class="mf">0.2</span><span class="o">)</span> <span class="mi">0</span>
+        <span class="n">vertex3f</span> <span class="mf">0.2</span> <span class="o">(-</span><span class="mf">0.2</span><span class="o">)</span> <span class="mi">0</span> 
+        <span class="n">vertex3f</span> <span class="mf">0.2</span> <span class="mi">0</span> <span class="mi">0</span>
+
+        <span class="n">color3f</span> <span class="mi">0</span> <span class="mf">0.5</span>  <span class="mi">1</span>
+        <span class="n">vertex3f</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+        <span class="n">vertex3f</span> <span class="mi">0</span> <span class="o">(-</span><span class="mf">0.2</span><span class="o">)</span> <span class="mi">0</span> 
+        <span class="n">vertex3f</span> <span class="o">(-</span><span class="mf">0.2</span><span class="o">)</span> <span class="o">(-</span><span class="mf">0.2</span><span class="o">)</span> <span class="mi">0</span> 
+        <span class="n">vertex3f</span> <span class="o">(-</span><span class="mf">0.2</span><span class="o">)</span> <span class="mi">0</span> <span class="mi">0</span> 
+
+        <span class="n">color3f</span> <span class="mf">0.3</span> <span class="mf">0.3</span> <span class="mf">0.3</span> 
+        <span class="n">vertex3f</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> 
+        <span class="n">vertex3f</span> <span class="mi">0</span> <span class="mf">0.2</span> <span class="mi">0</span>
+        <span class="n">vertex3f</span> <span class="o">(-</span><span class="mf">0.2</span><span class="o">)</span> <span class="mf">0.2</span> <span class="mi">0</span> 
+        <span class="n">vertex3f</span> <span class="o">(-</span><span class="mf">0.2</span><span class="o">)</span> <span class="mi">0</span> <span class="mi">0</span> 
+    <span class="n">flush</span>
+</pre></div>

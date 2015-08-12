@@ -1,0 +1,11 @@
+<div class="highlight"><pre><span class="o">--</span><span class="n">Check</span> <span class="n">whether</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">is</span> <span class="n">a</span> <span class="n">prime</span> <span class="n">or</span> <span class="n">not</span>
+<span class="o">--</span><span class="n">Least</span> <span class="n">Divisor</span> 
+<span class="nl">leastDivisor:</span><span class="o">:</span><span class="n">Integer</span><span class="o">-&gt;</span><span class="n">Integer</span><span class="o">-&gt;</span><span class="n">Integer</span>
+<span class="n">leastDivisor</span> <span class="n">x</span> <span class="n">y</span> <span class="o">|</span> <span class="n">mod</span> <span class="n">y</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">=</span> <span class="n">x</span> 
+                 <span class="o">|</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+                 <span class="o">|</span> <span class="n">otherwise</span> <span class="o">=</span> <span class="n">leastDivisor</span> <span class="o">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="o">)</span> <span class="n">y</span>  
+
+<span class="o">--</span><span class="n">Check</span> <span class="n">prime</span> <span class="n">number</span>
+<span class="nl">isPrime:</span><span class="o">:</span><span class="n">Integer</span><span class="o">-&gt;</span><span class="n">Bool</span>
+<span class="n">isPrime</span> <span class="n">y</span> <span class="o">=</span> <span class="n">leastDivisor</span> <span class="mi">2</span> <span class="n">y</span> <span class="o">==</span> <span class="n">y</span>
+</pre></div>

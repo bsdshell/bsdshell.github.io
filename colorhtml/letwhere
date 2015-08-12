@@ -1,0 +1,17 @@
+<div class="highlight"><pre><span class="o">--</span><span class="n">where</span> <span class="n">cause</span> <span class="n">and</span> <span class="n">let</span> <span class="n">binding</span> <span class="n">in</span> <span class="n">Haskell</span>
+<span class="o">--</span>
+<span class="o">--</span><span class="n">let</span> <span class="n">binding</span> <span class="n">in</span> <span class="n">Haskell</span>
+<span class="o">--</span> <span class="n">ax</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">bx</span> <span class="o">+</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="o">--</span> <span class="n">Find</span> <span class="n">the</span> <span class="n">root</span> <span class="n">of</span> <span class="n">the</span> <span class="n">quadratic</span> <span class="n">equation</span>
+
+<span class="n">roots</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="o">=</span>
+        <span class="n">let</span> <span class="n">discriminant</span><span class="o">=</span> <span class="n">sqrt</span><span class="o">(</span><span class="n">b</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="o">)</span>
+        <span class="n">in</span> <span class="o">(</span> <span class="o">(-</span><span class="n">b</span> <span class="o">+</span> <span class="n">discriminant</span><span class="o">)/(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">),</span> <span class="o">(-</span><span class="n">b</span> <span class="o">-</span> <span class="n">discriminant</span><span class="o">)/(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">))</span>
+
+<span class="n">longest</span> <span class="o">[]</span>     <span class="o">=</span> <span class="o">[]</span>
+<span class="n">longest</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="o">)</span> <span class="o">=</span> <span class="k">if</span> <span class="n">length</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">length</span> <span class="o">(</span><span class="n">longest</span> <span class="n">xs</span><span class="o">)</span> <span class="n">then</span> <span class="n">x</span> <span class="nf">else</span> <span class="o">(</span><span class="n">longest</span> <span class="n">xs</span><span class="o">)</span>
+
+<span class="n">newlongest</span> <span class="o">[]</span>     <span class="o">=</span> <span class="o">[]</span>
+<span class="n">newlongest</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="o">)</span> <span class="o">=</span> <span class="k">if</span> <span class="n">length</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">length</span> <span class="n">max</span> <span class="n">then</span> <span class="n">x</span> <span class="k">else</span> <span class="n">max</span> 
+    <span class="n">where</span> <span class="n">max</span> <span class="o">=</span> <span class="n">newlongest</span> <span class="n">xs</span>
+</pre></div>

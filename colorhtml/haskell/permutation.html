@@ -1,0 +1,4 @@
+<div class="highlight"><pre><span class="nl">myperm:</span><span class="o">:</span> <span class="n">Eq</span> <span class="n">a</span> <span class="o">=&gt;[</span><span class="n">a</span><span class="o">]-&gt;[[</span><span class="n">a</span><span class="o">]]</span>
+<span class="n">myperm</span> <span class="o">[]</span> <span class="o">=</span> <span class="o">[[]]</span>
+<span class="n">myperm</span> <span class="n">xs</span> <span class="o">=</span> <span class="o">[</span> <span class="n">x</span><span class="o">:</span><span class="n">ys</span> <span class="o">|</span> <span class="n">x</span> <span class="o">&lt;-</span> <span class="n">xs</span> <span class="o">,</span> <span class="n">ys</span> <span class="o">&lt;-</span> <span class="n">myperm</span><span class="o">(</span><span class="n">delete</span> <span class="n">x</span> <span class="n">xs</span><span class="o">)]</span>
+</pre></div>

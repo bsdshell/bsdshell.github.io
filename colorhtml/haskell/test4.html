@@ -1,0 +1,152 @@
+<div class="highlight"><pre><span class="nl">fac:</span><span class="o">:</span><span class="n">Int</span><span class="o">-&gt;</span><span class="n">Int</span>
+<span class="n">fac</span> <span class="mi">0</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">fac</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fac</span><span class="o">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">)</span>
+
+<span class="nl">mysum:</span><span class="o">:</span><span class="n">Int</span><span class="o">-&gt;</span><span class="n">Int</span>
+<span class="n">mysum</span> <span class="mi">0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">mysum</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="n">mysum</span><span class="o">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">)</span>
+
+<span class="n">f</span> <span class="mi">0</span> <span class="o">=</span> <span class="s">&quot;cat&quot;</span>
+<span class="n">f</span> <span class="mi">1</span> <span class="o">=</span> <span class="s">&quot;dog&quot;</span>
+<span class="n">f</span> <span class="mi">2</span> <span class="o">=</span> <span class="s">&quot;cow&quot;</span>
+
+<span class="n">add</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">mul</span> <span class="n">a</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>  <span class="o">*</span> <span class="n">b</span> 
+
+<span class="nl">sumlist:</span><span class="o">:[</span><span class="n">Int</span><span class="o">]-&gt;</span><span class="n">Int</span>
+<span class="n">sumlist</span> <span class="o">[]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">sumlist</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="o">)</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">sumlist</span><span class="o">(</span><span class="n">xs</span><span class="o">)</span> 
+
+<span class="nl">productlist:</span><span class="o">:[</span><span class="n">Integer</span><span class="o">]-&gt;</span><span class="n">Integer</span>
+<span class="n">productlist</span> <span class="o">[]</span> <span class="o">=</span> <span class="mi">1</span> 
+<span class="n">productlist</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="o">)</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">productlist</span><span class="o">(</span><span class="n">xs</span><span class="o">)</span> 
+
+<span class="nl">rev:</span><span class="o">:[</span><span class="n">Char</span><span class="o">]-&gt;[</span><span class="n">Char</span><span class="o">]</span>
+<span class="n">rev</span> <span class="o">[]</span> <span class="o">=</span> <span class="o">[]</span> 
+<span class="n">rev</span> <span class="n">list</span> <span class="o">=</span> <span class="n">last</span><span class="o">(</span><span class="n">list</span><span class="o">):</span><span class="n">rev</span><span class="o">(</span><span class="n">init</span><span class="o">(</span><span class="n">list</span><span class="o">))</span>
+
+<span class="nl">sumEveryTwo:</span><span class="o">:[</span><span class="n">Integer</span><span class="o">]-&gt;[</span><span class="n">Integer</span><span class="o">]</span>
+<span class="n">sumEveryTwo</span> <span class="o">[]</span> <span class="o">=</span> <span class="o">[]</span>
+<span class="n">sumEveryTwo</span> <span class="o">(</span><span class="n">x</span><span class="o">:[])</span> <span class="o">=</span> <span class="o">[</span><span class="n">x</span><span class="o">]</span>
+<span class="nf">sumEveryTwo</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">y</span><span class="o">:</span><span class="n">xs</span><span class="o">)</span> <span class="o">=</span> <span class="o">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">):</span><span class="n">sumEveryTwo</span><span class="o">(</span><span class="n">xs</span><span class="o">)</span>
+
+<span class="nl">addVector:</span><span class="o">:(</span><span class="n">Num</span> <span class="n">a</span><span class="o">)=&gt;(</span><span class="n">a</span><span class="o">,</span> <span class="n">a</span><span class="o">)-&gt;(</span><span class="n">a</span><span class="o">,</span> <span class="n">a</span><span class="o">)-&gt;(</span><span class="n">a</span><span class="o">,</span> <span class="n">a</span><span class="o">)</span>
+<span class="n">addVector</span> <span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span> <span class="o">(</span><span class="n">c</span><span class="o">,</span> <span class="n">d</span><span class="o">)</span> <span class="o">=</span> <span class="o">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">c</span><span class="o">,</span> <span class="n">b</span> <span class="o">+</span> <span class="n">d</span><span class="o">)</span>
+<span class="o">--</span><span class="n">addVector</span> <span class="n">a</span> <span class="n">b</span> <span class="o">=</span> <span class="o">(</span><span class="n">fst</span> <span class="n">a</span> <span class="o">+</span> <span class="n">fst</span> <span class="n">b</span><span class="o">,</span> <span class="n">snd</span> <span class="n">a</span> <span class="o">+</span> <span class="n">snd</span> <span class="n">b</span><span class="o">)</span>
+
+<span class="nl">addVector2:</span><span class="o">:(</span><span class="n">Int</span><span class="o">,</span> <span class="n">Int</span><span class="o">)-&gt;(</span><span class="n">Int</span><span class="o">,</span> <span class="n">Int</span><span class="o">)</span>
+<span class="n">addVector2</span> <span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span> <span class="o">=</span> <span class="o">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">,</span> <span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="o">)</span>
+
+<span class="nl">addVector3:</span><span class="o">:(</span><span class="n">Num</span> <span class="n">a</span><span class="o">)=&gt;(</span><span class="n">a</span><span class="o">,</span> <span class="n">a</span><span class="o">)-&gt;(</span><span class="n">a</span><span class="o">,</span> <span class="n">a</span><span class="o">)-&gt;(</span><span class="n">a</span><span class="o">,</span> <span class="n">a</span><span class="o">)</span>
+<span class="n">addVector3</span> <span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span> <span class="o">(</span><span class="n">c</span><span class="o">,</span> <span class="n">d</span><span class="o">)</span> <span class="o">=</span> <span class="o">(</span><span class="n">a</span><span class="o">+</span><span class="n">c</span><span class="o">,</span> <span class="n">d</span><span class="o">+</span><span class="n">b</span><span class="o">)</span>
+
+<span class="nl">vectorNorm:</span><span class="o">:(</span><span class="n">Num</span> <span class="n">a</span><span class="o">)=&gt;(</span><span class="n">a</span><span class="o">,</span> <span class="n">a</span><span class="o">)-&gt;(</span><span class="n">a</span><span class="o">,</span> <span class="n">a</span><span class="o">)-&gt;(</span><span class="n">a</span><span class="o">)</span>
+<span class="n">vectorNorm</span> <span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">)</span> <span class="o">(</span><span class="n">c</span><span class="o">,</span> <span class="n">d</span><span class="o">)</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">c</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">d</span>
+
+<span class="nl">myHead:</span><span class="o">:[</span><span class="n">a</span><span class="o">]-&gt;</span><span class="n">a</span>
+<span class="nf">myHead</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="o">)</span> <span class="o">=</span> <span class="n">x</span>
+
+<span class="nl">myTail:</span><span class="o">:[</span><span class="n">a</span><span class="o">]-&gt;</span><span class="n">a</span>
+<span class="nf">myTail</span> <span class="o">(</span><span class="n">x</span><span class="o">:[])</span> <span class="o">=</span> <span class="n">x</span> 
+<span class="nf">myTail</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="o">)</span> <span class="o">=</span> <span class="n">myTail</span><span class="o">(</span><span class="n">xs</span><span class="o">)</span> 
+
+<span class="nl">myMap:</span><span class="o">:(</span><span class="n">a</span><span class="o">-&gt;</span><span class="n">b</span><span class="o">)-&gt;[</span><span class="n">a</span><span class="o">]-&gt;[</span><span class="n">b</span><span class="o">]</span>
+<span class="n">myMap</span> <span class="n">f</span> <span class="o">[]</span> <span class="o">=</span> <span class="o">[]</span>
+<span class="n">myMap</span> <span class="nf">f</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="o">)</span> <span class="o">=</span> <span class="n">f</span> <span class="n">x</span> <span class="o">:</span> <span class="n">myMap</span> <span class="n">f</span> <span class="n">xs</span>
+
+<span class="nl">myAdd:</span><span class="o">:</span><span class="n">Integer</span><span class="o">-&gt;</span><span class="n">Integer</span><span class="o">-&gt;</span><span class="n">Integer</span>
+<span class="n">myAdd</span> <span class="n">a</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="nl">myQuickSort:</span><span class="o">:[</span><span class="n">Float</span><span class="o">]-&gt;[</span><span class="n">Float</span><span class="o">]</span>
+<span class="n">myQuickSort</span> <span class="o">[]</span> <span class="o">=</span> <span class="o">[]</span>
+<span class="n">myQuickSort</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="o">)</span> <span class="o">=</span> <span class="n">myQuickSort</span><span class="o">[</span><span class="n">y</span> <span class="o">|</span> <span class="n">y</span> <span class="o">&lt;-</span> <span class="n">xs</span><span class="o">,</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">x</span><span class="o">]</span> <span class="o">++</span> <span class="o">[</span><span class="n">x</span><span class="o">]</span> <span class="o">++</span> <span class="n">myQuickSort</span><span class="o">[</span><span class="n">y</span> <span class="o">|</span> <span class="n">y</span><span class="o">&lt;-</span><span class="n">xs</span><span class="o">,</span> <span class="n">y</span><span class="o">&gt;=</span><span class="n">x</span><span class="o">]</span> 
+
+<span class="nl">myTake:</span><span class="o">:</span><span class="n">Integer</span><span class="o">-&gt;[</span><span class="n">Integer</span><span class="o">]-&gt;[</span><span class="n">Integer</span><span class="o">]</span>
+<span class="n">myTake</span> <span class="mi">0</span> <span class="n">_</span> <span class="o">=</span> <span class="o">[]</span>
+<span class="n">myTake</span> <span class="n">_</span> <span class="o">[]</span> <span class="o">=</span> <span class="o">[]</span>
+<span class="n">myTake</span> <span class="nf">n</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="o">)</span> <span class="o">=</span> <span class="n">x</span><span class="o">:</span><span class="n">myTake</span> <span class="o">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="n">xs</span>
+
+<span class="nl">myIndex:</span><span class="o">:</span><span class="n">Integer</span><span class="o">-&gt;[</span><span class="n">Integer</span><span class="o">]-&gt;</span><span class="n">Integer</span>
+<span class="n">myIndex</span> <span class="n">_</span> <span class="o">[]</span> <span class="o">=</span> <span class="mi">9</span> 
+<span class="n">myIndex</span> <span class="mi">0</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="o">)</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">myIndex</span> <span class="nf">n</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="o">)</span> <span class="o">=</span> <span class="n">myIndex</span> <span class="o">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="n">xs</span>
+
+<span class="nl">minlist:</span><span class="o">:[</span><span class="n">Integer</span><span class="o">]</span> <span class="o">-&gt;</span><span class="n">Integer</span>
+<span class="n">minlist</span> <span class="o">[]</span> <span class="o">=</span> <span class="n">error</span> <span class="s">&quot;list is empty&quot;</span> 
+<span class="n">minlist</span> <span class="o">[</span><span class="n">x</span><span class="o">]</span> <span class="o">=</span> <span class="n">x</span> 
+<span class="nf">minlist</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="o">)</span> <span class="o">=</span> <span class="n">min</span> <span class="nf">x</span> <span class="o">(</span><span class="n">minlist</span> <span class="n">xs</span><span class="o">)</span> 
+
+<span class="nl">removeFst:</span><span class="o">:</span><span class="n">Integer</span><span class="o">-&gt;[</span><span class="n">Integer</span><span class="o">]-&gt;[</span><span class="n">Integer</span><span class="o">]</span>
+<span class="n">removeFst</span> <span class="n">m</span> <span class="o">[]</span> <span class="o">=</span> <span class="o">[]</span>
+
+<span class="n">myputStr</span> <span class="o">::</span><span class="n">String</span><span class="o">-&gt;</span><span class="n">IO</span><span class="o">()</span>
+<span class="n">myputStr</span> <span class="o">[]</span> <span class="o">=</span> <span class="k">return</span> <span class="o">()</span>
+<span class="n">myputStr</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="o">)</span> <span class="o">=</span> <span class="k">do</span> <span class="n">putChar</span> <span class="n">x</span>
+                     <span class="n">myputStr</span> <span class="n">xs</span>
+
+
+
+
+<span class="n">y</span> <span class="o">=</span> 
+    <span class="n">let</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">_</span><span class="o">)</span> <span class="o">=</span> <span class="n">map</span> <span class="o">(*</span><span class="mi">2</span><span class="o">)[</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">]</span>
+    <span class="n">in</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span>
+    <span class="n">where</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">_</span><span class="o">)</span> <span class="o">=</span> <span class="n">map</span><span class="o">(*</span><span class="mi">100</span><span class="o">)[</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">]</span>
+
+<span class="o">--</span><span class="n">myMax</span><span class="o">::[</span><span class="n">Int</span><span class="o">]-&gt;</span><span class="n">Int</span>
+<span class="o">--</span><span class="n">myMax</span> <span class="o">[</span><span class="n">x</span><span class="o">]</span> <span class="o">=</span> <span class="n">x</span> 
+<span class="o">--</span><span class="n">myMax</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="o">)</span> <span class="o">=</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">myMax</span><span class="o">(</span><span class="n">xs</span><span class="o">))</span>  
+<span class="o">--</span><span class="n">main</span> <span class="o">=</span> <span class="n">print</span> <span class="o">(</span><span class="n">sumEveryTwo</span> <span class="o">[</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">])</span> 
+<span class="o">--</span><span class="n">main</span> <span class="o">=</span> <span class="n">print</span> <span class="o">(</span><span class="n">sumEveryTwo</span> <span class="o">[</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">])</span> 
+<span class="o">--</span><span class="n">main</span> <span class="o">=</span> <span class="n">print</span> <span class="o">(</span><span class="n">myMax</span><span class="o">[</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">])</span> 
+
+
+<span class="o">--</span><span class="n">myFun</span><span class="o">::(</span><span class="n">Point</span> <span class="n">Integer</span><span class="o">)=&gt;</span> <span class="n">Integer</span><span class="o">-&gt;</span> <span class="n">Integer</span> 
+<span class="o">--</span><span class="n">myFun</span> <span class="n">Integer</span> <span class="o">=</span> <span class="n">Integer</span> 
+
+
+<span class="n">fun</span> <span class="n">x</span> <span class="o">|</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">=</span>  <span class="s">&quot;cat&quot;</span>
+      <span class="o">|</span> <span class="n">otherwise</span> <span class="o">=</span> <span class="s">&quot;dog&quot;</span>
+
+
+<span class="n">max</span> <span class="n">x</span> <span class="n">y</span> <span class="o">|</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="o">|</span> <span class="n">otherwise</span> <span class="o">=</span> <span class="n">x</span>
+
+<span class="n">divids</span> <span class="n">d</span> <span class="n">n</span> <span class="o">=</span> <span class="n">rem</span> <span class="n">n</span> <span class="n">d</span> <span class="o">==</span> <span class="mi">0</span>
+
+<span class="n">ldf</span> <span class="n">k</span> <span class="n">n</span> <span class="o">|</span> <span class="n">divids</span> <span class="n">k</span> <span class="n">n</span> <span class="o">=</span> <span class="n">k</span>
+        <span class="o">|</span> <span class="n">k</span><span class="o">^</span><span class="mi">2</span> <span class="o">&gt;</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span>
+        <span class="o">|</span> <span class="n">otherwise</span> <span class="o">=</span> <span class="n">ldf</span> <span class="o">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="o">)</span> <span class="n">n</span>
+
+<span class="n">prime</span> <span class="n">n</span> <span class="o">=</span> <span class="n">ldf</span> <span class="mi">2</span> <span class="n">n</span> <span class="o">==</span> <span class="n">n</span>
+
+
+<span class="n">data</span> <span class="n">Foo</span> <span class="o">=</span> <span class="n">Bar</span> <span class="o">|</span> <span class="n">Baz</span> <span class="n">Int</span>
+<span class="nl">myfun:</span><span class="o">:</span><span class="n">Foo</span><span class="o">-&gt;</span><span class="n">Int</span>
+<span class="n">myfun</span>   <span class="n">Bar</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">myfun</span>   <span class="o">(</span><span class="n">Baz</span> <span class="n">x</span><span class="o">)</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="nl">myconcat:</span><span class="o">:[[</span><span class="n">a</span><span class="o">]]-&gt;[</span><span class="n">a</span><span class="o">]</span>
+<span class="n">myconcat</span> <span class="o">[]</span> <span class="o">=</span> <span class="o">[]</span>
+<span class="n">myconcat</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="o">)</span> <span class="o">=</span> <span class="n">x</span> <span class="o">++</span> <span class="n">myconcat</span><span class="o">(</span><span class="n">xs</span><span class="o">)</span>
+
+
+<span class="n">main</span> <span class="o">=</span>  <span class="k">do</span> 
+        <span class="n">print</span> <span class="o">(</span><span class="n">addVector</span> <span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">)</span> <span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">))</span> 
+        <span class="n">print</span> <span class="o">(</span><span class="n">sumEveryTwo</span> <span class="o">[</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">])</span> 
+        <span class="n">print</span> <span class="o">(</span><span class="n">fun</span> <span class="mi">4</span><span class="o">)</span> 
+        <span class="n">print</span> <span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">max</span> <span class="mi">1</span> <span class="mi">2</span><span class="o">)</span> 
+        <span class="n">print</span> <span class="o">(</span><span class="n">addVector2</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">))</span> 
+        <span class="n">print</span> <span class="o">(</span><span class="n">vectorNorm</span> <span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">)(</span><span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">))</span>
+        <span class="n">print</span> <span class="o">(</span><span class="n">myHead</span> <span class="o">[</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">])</span>
+        <span class="n">print</span> <span class="o">(</span><span class="n">myQuickSort</span><span class="o">[</span><span class="mi">1</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">2</span><span class="o">])</span>
+        <span class="n">print</span> <span class="o">(</span><span class="n">myMap</span> <span class="o">(</span><span class="n">myAdd</span> <span class="mi">1</span><span class="o">)</span> <span class="o">[</span><span class="mi">1</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">2</span><span class="o">])</span>
+        <span class="n">print</span> <span class="o">(</span><span class="n">divids</span> <span class="mi">3</span> <span class="mi">10</span><span class="o">)</span>
+        <span class="n">print</span> <span class="o">(</span><span class="n">ldf</span> <span class="mi">2</span> <span class="mi">100</span><span class="o">)</span>
+        <span class="n">print</span> <span class="o">(</span><span class="n">prime</span> <span class="mi">999999999999331111111199911</span><span class="o">)</span>
+        <span class="n">print</span> <span class="o">(</span><span class="n">myfun</span> <span class="o">(</span><span class="n">Baz</span> <span class="mi">3</span><span class="o">))</span>
+        <span class="n">print</span> <span class="o">(</span><span class="n">y</span><span class="o">)</span>
+        <span class="n">print</span> <span class="o">(</span><span class="n">z</span><span class="o">)</span>
+        <span class="n">myputStr</span> <span class="s">&quot;dog&quot;</span>
+</pre></div>

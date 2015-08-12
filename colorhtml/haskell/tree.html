@@ -1,0 +1,25 @@
+<div class="highlight"><pre><span class="n">data</span> <span class="n">Tree</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Empty</span> 
+            <span class="o">|</span> <span class="n">Node</span> <span class="nf">a</span> <span class="o">(</span><span class="n">Tree</span> <span class="n">a</span><span class="o">)</span> <span class="o">(</span><span class="n">Tree</span> <span class="n">a</span><span class="o">)</span> <span class="n">deriving</span> <span class="n">Show</span>
+
+<span class="n">mytree</span> <span class="o">=</span> <span class="n">Node</span> <span class="sc">&#39;R&#39;</span> 
+            <span class="o">(</span><span class="n">Node</span> <span class="sc">&#39;S&#39;</span> 
+                <span class="o">(</span><span class="n">Node</span> <span class="sc">&#39;T&#39;</span> <span class="n">Empty</span> <span class="n">Empty</span><span class="o">)</span>
+                <span class="o">(</span><span class="n">Node</span> <span class="sc">&#39;U&#39;</span> <span class="n">Empty</span> <span class="n">Empty</span><span class="o">)</span>
+            <span class="o">)</span> 
+            <span class="o">(</span><span class="n">Node</span> <span class="sc">&#39;T&#39;</span> 
+                <span class="o">(</span><span class="n">Node</span> <span class="sc">&#39;V&#39;</span> <span class="n">Empty</span> <span class="n">Empty</span><span class="o">)</span>
+                <span class="o">(</span><span class="n">Node</span> <span class="sc">&#39;W&#39;</span> <span class="n">Empty</span> <span class="n">Empty</span><span class="o">)</span>
+            <span class="o">)</span> 
+
+<span class="nl">preorderTraversal:</span><span class="o">:</span><span class="n">Tree</span> <span class="n">a</span> <span class="o">-&gt;[</span><span class="n">a</span><span class="o">]</span>
+<span class="n">preorderTraversal</span> <span class="n">Empty</span> <span class="o">=</span> <span class="o">[]</span> 
+<span class="n">preorderTraversal</span> <span class="o">(</span><span class="n">Node</span> <span class="n">a</span> <span class="n">l</span> <span class="n">r</span><span class="o">)</span> <span class="o">=</span> <span class="n">a</span><span class="o">:(</span><span class="n">preorderTraversal</span> <span class="n">l</span><span class="o">)</span> <span class="o">++</span> <span class="o">(</span><span class="n">preorderTraversal</span> <span class="n">r</span><span class="o">)</span>
+ 
+<span class="nl">inorderTraversal:</span><span class="o">:</span><span class="n">Tree</span> <span class="n">a</span> <span class="o">-&gt;[</span><span class="n">a</span><span class="o">]</span>
+<span class="n">inorderTraversal</span> <span class="n">Empty</span> <span class="o">=</span> <span class="o">[]</span> 
+<span class="n">inorderTraversal</span> <span class="o">(</span><span class="n">Node</span> <span class="n">a</span> <span class="n">l</span> <span class="n">r</span><span class="o">)</span> <span class="o">=</span> <span class="o">(</span><span class="n">inorderTraversal</span> <span class="n">l</span><span class="o">)</span> <span class="o">++[</span><span class="n">a</span><span class="o">]++(</span><span class="n">inorderTraversal</span> <span class="n">r</span><span class="o">)</span>
+ 
+<span class="nl">postorderTraversal:</span><span class="o">:</span><span class="n">Tree</span> <span class="n">a</span> <span class="o">-&gt;[</span><span class="n">a</span><span class="o">]</span>
+<span class="n">postorderTraversal</span> <span class="n">Empty</span> <span class="o">=</span> <span class="o">[]</span> 
+<span class="n">postorderTraversal</span><span class="o">(</span><span class="n">Node</span> <span class="n">a</span> <span class="n">l</span> <span class="n">r</span><span class="o">)</span> <span class="o">=</span> <span class="o">(</span><span class="n">postorderTraversal</span> <span class="n">l</span><span class="o">)</span> <span class="o">++</span> <span class="o">(</span><span class="n">postorderTraversal</span> <span class="n">r</span><span class="o">)</span> <span class="o">++</span> <span class="o">[</span><span class="n">a</span><span class="o">]</span>
+</pre></div>

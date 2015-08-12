@@ -1,0 +1,73 @@
+.haskellc{
+    background-color:#EEEEEE;
+    text-align:center;
+}
+
+.javac{
+    background-color:#FA8258;
+}
+
+.haskellBox{
+    width:100%;
+}
+
+.box {
+    border: 1px solid while;
+    margin-top:1px;
+    margin-bottom:1px;
+    margin-left:1px;
+    margin-right:1px;
+    float:auto;
+}
+
+div > img{
+    width:auto;
+    height:auto;
+    max-height:100%;
+    max-width:100%;
+}
+.centered{
+    margin-left:21%;
+    margin-right:auto;
+}
+
+.mathdef{
+    width:600px;
+    border: 1px solid red;
+    padding: 4px;
+}
+.mathdef_box1{
+    width:800px;
+    border:1px solid red;
+    padding: 4px;
+    margin-left:10%;
+    font-size:14px;
+    background:#FFFFFF;
+}
+
+.mathdef_box2{
+    width:900px;
+    border: 1px solid red;
+    padding: 4px;
+    margin-left:5%;
+    font-size:18px;
+}
+
+.mathdef_box3{
+    width:1000px;
+    border: 1px solid red;
+    padding: 4px;
+    margin-left:2%;
+    font-size:18px;
+}
+
+
+.mathbox {
+    border: 1px solid green;
+    margin-top:1px;
+    margin-bottom:1px;
+    margin-left:1px;
+    margin-right:1px;
+    background-color:#F8F7DB;
+    float:auto;
+}
