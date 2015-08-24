@@ -17,9 +17,8 @@ a:hover {
 	text-decoration:none;
 }
 h1, h2, h3 {
-	/*margin:.8em 0 .2em 0;*/
 	margin:.2em 0 .2em 0;
-	padding:0;
+	padding:2px;
 }
 p {
 	margin:.4em 0 .8em 0;
@@ -123,7 +122,7 @@ img {
 }
 /* 2 Column (right menu) settings */
 .rightmenu {
-	background:#eee;		/* right column background colour */
+	background:#FFFFFF;		/* right column background colour */
 }
 .rightmenu .colleft {
 	right:26.8%;			/* right column width */

@@ -20,12 +20,6 @@
     float:auto;
 }
 
-div > img{
-    width:auto;
-    height:auto;
-    max-height:100%;
-    max-width:100%;
-}
 .centered{
     margin-left:21%;
     margin-right:auto;
@@ -71,3 +65,41 @@ div > img{
     background-color:#F8F7DB;
     float:auto;
 }
+
+p {
+    font-size:1em;
+    line-height:1.25em;
+    margin:1.25em 0;
+    text-align:justify;
+    background: #FFFFFF;
+    border-radius:5px;
+    color: rgb(10, 10, 10);
+    padding:4px;
+    font-weight: 500;
+    font-family: monospace;
+}
+
+.mytextbox{
+    border: 1px solid #E8E0E0;
+    padding:4px;
+    margin-top:1px;
+    margin-bottom:1px;
+    margin-left:1px;
+    margin-right:1px;
+    font-size:18px;
+    float:auto;
+}
+
+.bigtext{
+    font-weight: 500;
+    color: rgb(10, 10, 10);
+    background: rgba(197, 133, 9, 0.62);
+}
+
+.circle{
+    background:#f00;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+}
+

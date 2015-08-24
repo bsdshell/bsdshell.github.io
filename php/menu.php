@@ -1,90 +1,88 @@
 <?php
-    $menu="";
-    $BinarySearch1D_File = "indexBinarySearch1D.html"; 
-    $BinarySearch1D_Title = "Binary Search one dimensions";
-    $BinarySearch1DLink = "<h3><a style=\"text-decoration:none;\" href=\"./$BinarySearch1D_File\">$BinarySearch1D_Title</a></h3>";
-    $BinarySearch1DTitle = "<h3>$BinarySearch1D_Title</h3>";
 
-    $BinarySearch2D_File = "indexBinarySearch2D.html";
-    $BinarySearch2D_Title = "Binary Search two dimensions";
-    $BinarySearch2DLink = "<h3><a style=\"text-decoration:none;\" href=\"./$BinarySearch2D_File\">$BinarySearch2D_Title</a></h3>";
-    $BinarySearch2DTitle= "<h3>$BinarySearch2D_Title</h3>";
+function createBasicPage($fileHtml)
+{
+    $content = "
+    <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">
+    <html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-GB\">
+    <head>
+        <title>Surface, Curve, Algorithm, Geometry, Algebra</title>
+        <meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\" />
+        <meta name=\"description\" content=\"Surface, Curve, Algorithm, Geometry, Algebra\" />
+        <meta name=\"keywords\" content=\"Surface, Curve, Algorithm, Geometry, Algebra\" />
+        <meta name=\"robots\" content=\"index, follow\" />
+        <link rel=\"shortcut icon\" href=\"/favicon.ico\" type=\"image/x-icon\" />
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"../screen.css\" media=\"screen\" />
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"../highlight.css\">
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"../style.css\">
+        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />
+        <script type=\"text/x-mathjax-config\">
+              MathJax.Hub.Config({
+                extensions: [\"tex2jax.js\",\"TeX/AMSmath.js\",\"TeX/AMSsymbols.js\"],
+                jax: [\"input/TeX\",\"output/HTML-CSS\"],
+                tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\(\",\"\\)\"]]}
+              });
+            </script>
+        <script type=\"text/javascript\" src=\"../MathJax-2.4-latest/MathJax.js\"></script>
+    </head>
+    <body>
+        <script src=\"../js/prism.js\"> </script>
+    <div id=\"header\">
+        <h1>Surface, Curve, Algorithm, Geometry, Algebra</h1>
+        <p id=\"layoutdims\">Measure columns in: <a href=\"../index.html\">Home</a> | <a href=\"\">About</a> | $\Lambda$</p>
+    </div>
+    <div class=\"colmask rightmenu\">
+        <div class=\"colleft\">
+            <div class=\"col1\">
+                <!-- Column 1 start -->
+                <div class=\"mytextbox highlight\">
+                    <p>
+                    Put your stuff here  
+                    </p>
+                </div>
+            <!-- Column 1 end -->
+            </div>
+            <div class=\"col2\">
+            <!-- Column 2 start -->
+                <div>
+                    <h3>
+                        <?php 
+                        \$fileName = \"$fileHtml\";
+                        include(\"../php/menu.php\"); 
+                        ?>
+                    </h3>
+                </div>
+            <!-- Column 2 end -->
+            </div>
+        </div>
+    </div>
 
-    $LongestIncreasingSubsequence_File = "indexLongestIncreasingSubsequence.html";
-    $LongestIncreasingSubsequence_Title = "Longest Increasing Subsequence Recursion";
-    $LongestIncreasingSubsequenceLink = "<h3><a style=\"text-decoration:none;\" href=\"./$LongestIncreasingSubsequence_File\">$LongestIncreasingSubsequence_Title</a></h3>";
-    $LongestIncreasingSubsequenceTitle = "<h3>$LongestIncreasingSubsequence_Title</h3>";
+    <div id=\"disqus_thread\"></div>
+    <script type=\"text/javascript\">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'zsurfacecom';
+        
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
 
-    $MiniCoinCount_File = "indexMiniCoinCount.html"; 
-    $MiniCoinCount_Title = "Mini Coin Change Algorithm"; 
-    $MiniCoinCountLink = "<h3><a style=\"text-decoration:none;\" href=\"./$MiniCoinCount_File\">$MiniCoinCount_Title</a></h3>";
-    $MiniCoinCountTitle= "<h3>$MiniCoinCount_Title</h3>";
+    <div id=\"footer\">
+        <p>This page uses the <a href=\"\">Put More Stuff Here</a> by <a href=\"\">ZSurface</a>. View more <a href=\"\">ZSurface</a> and <a href=\"\">ZSurface</a>.</p>
+    </div>
 
-    $Sequence_File = "indexSequence.html";
-    $Sequence_Title = "Proof on some sequences";
-    $SequenceLink = "<h3><a style=\"text-decoration:none;\" href=\"./$Sequence_File\">$Sequence_Title</a></h3>";
-    $SequenceTitle= "<h3>$Sequence_Title</h3>";
+    </body>
+    </html>
+    ";
+return $content;
+}
 
-    $FermatLittleTheorem_File = "indexFermatLittleTheorem.html"; 
-    $FermatLittleTheorem_Title = "Proof Fermat Little Theorem"; 
-    $FermatLittleTheoremLink= "<h3><a style=\"text-decoration:none;\" href=\"./$FermatLittleTheorem_File\">$FermatLittleTheorem_Title</a></h3>";
-    $FermatLittleTheoremTitle= "<h3>$FermatLittleTheorem_Title</h3>";
 
-    $HaskellTutorial_File = "indexHaskellTutorial.html";
-    $HaskellTutorial_Title = "Haskell Tutorial";
-    $HaskellTutorialLink= "<h3><a style=\"text-decoration:none;\" href=\"./$HaskellTutorial_File\">$HaskellTutorial_Title</a></h3>";
-    $HaskellTutorialTitle= "<h3>$HaskellTutorial_Title</h3>";
-
-    $JavaAlgorithm_File = "indexJavaAlgorithm.html";
-    $JavaAlgorithm_Title = "Java Algorithm";
-    $JavaAlgorithmLink= "<h3><a style=\"text-decoration:none;\" href=\"./$JavaAlgorithm_File\">$JavaAlgorithm_Title</a></h3>";
-    $JavaAlgorithmTitle= "<h3>$JavaAlgorithm_Title</h3>";
-
-    $PrimeNumber_File = "indexPrimeNumber.html";
-    $PrimeNumber_Title = "Prime Number";
-    $PrimeNumberLink= "<h3><a style=\"text-decoration:none;\" href=\"./$PrimeNumber_File\">$PrimeNumber_Title</a></h3>";
-    $PrimeNumberTitle= "<h3>$PrimeNumber_Title</h3>";
-
-    $MathDefinition_File = "indexMathDefinition.html"; 
-    $MathDefinition_Title = "Math Definition"; 
-    $MathDefinitionLink= "<h3><a style=\"text-decoration:none;\" href=\"./$MathDefinition_File\">$MathDefinition_Title</a></h3>";
-    $MathDefinitionTitle= "<h3>$MathDefinition_Title</h3>";
-
-    $ScalaTutorial_File = "indexScalaTutorial.html"; 
-    $ScalaTutorial_Title    = "Scala Tutorial"; 
-    $ScalaTutorialLink= "<h3><a style=\"text-decoration:none;\" href=\"./$ScalaTutorial_File\">$ScalaTutorial_Title</a></h3>";
-    $ScalaTutorialTitle= "<h3>$ScalaTutorial_Title</h3>";
-
-    $SquareRoot_File = "indexSquareRoot.html"; 
-    $SquareRoot_Title    = "Square Root of Two is irrational"; 
-    $SquareRootLink= "<h3><a style=\"text-decoration:none;\" href=\"./$SquareRoot_File\">$SquareRoot_Title</a></h3>";
-    $SquareRootTitle= "<h3>$SquareRoot_Title</h3>";
-
-    $CubicCurve_File = "indexCubicCurve.html"; 
-    $CubicCurve_Title    = "Cubic Curve"; 
-    $CubicCurveLink= "<h3><a style=\"text-decoration:none;\" href=\"./$CubicCurve_File\">$CubicCurve_Title</a></h3>";
-    $CubicCurveTitle= "<h3>$CubicCurve_Title</h3>";
-
-    $Differentiated_File = "indexDifferentiated.html"; 
-    $Differentiated_Title    = "Differentiated"; 
-    $DifferentiatedLink= "<h3><a style=\"text-decoration:none;\" href=\"./$Differentiated_File\">$Differentiated_Title</a></h3>";
-    $DifferentiatedTitle= "<h3>$Differentiated_Title</h3>";
-
-    $AlgebraicCurve_File = "indexAlgebraicCurve.html"; 
-    $AlgebraicCurve_Title    = "Algebraic Curve"; 
-    $AlgebraicCurveLink= "<h3><a style=\"text-decoration:none;\" href=\"./$AlgebraicCurve_File\">$AlgebraicCurve_Title</a></h3>";
-    $AlgebraicCurveTitle= "<h3>$AlgebraicCurve_Title</h3>";
-
-    $IOSDev_File = "indexIOSDev.html"; 
-    $IOSDev_Title    = "IOS Development"; 
-    $IOSDevLink= "<h3><a style=\"text-decoration:none;\" href=\"./$IOSDev_File\">$IOSDev_Title</a></h3>";
-    $IOSDevTitle= "<h3>$IOSDev_Title</h3>";
-
-    $Projective_File = "indexProjective.html"; 
-    $Projective_Title    = "Projective Geometry"; 
-    $ProjectiveLink= "<h3><a style=\"text-decoration:none;\" href=\"./$Projective_File\">$Projective_Title</a></h3>";
-    $ProjectiveTitle= "<h3>$Projective_Title</h3>";
-
+    
+    /*
     $indexHtml = "
                 <h3><a style=\"text-decoration:none;\" href=\"html/$BinarySearch1D_File\">$BinarySearch1D_Title</a></h3>
                 <h3><a style=\"text-decoration:none;\" href=\"html/$BinarySearch2D_File\">$BinarySearch2D_Title</a></h3>
@@ -103,385 +101,117 @@
                 <h3><a style=\"text-decoration:none;\" href=\"html/$AlgebraicCurve_File\">$AlgebraicCurve_Title</a></h3>
                 <h3><a style=\"text-decoration:none;\" href=\"html/$IOSDev_File\">$IOSDev_Title</a></h3>
                 <h3><a style=\"text-decoration:none;\" href=\"html/$Projective_File\">$Projective_Title</a></h3>
+                <h3><a style=\"text-decoration:none;\" href=\"html/$RotatedArray_File\">$RotatedArray_Title</a></h3>
+                <h3><a style=\"text-decoration:none;\" href=\"html/$SprialArray_File\">$SprialArray_Title</a></h3>
+                <h3><a style=\"text-decoration:none;\" href=\"html/$IOSDrawShape_File\">$IOSDrawShape_Title</a></h3>
+                <h3><a style=\"text-decoration:none;\" href=\"html/$CommandLineTrick_File\">$CommandLineTrick_Title</a></h3>
+                <h3><a style=\"text-decoration:none;\" href=\"html/$VimTrick_File\">$VimTrick_Title</a></h3>
                 ";
+    */
+
+    $pageArray = array(
+        0=>"Binary Search One Dimensions",
+        1=>"Binary Search Two Dimensions",
+        2=>"Longest Increasing Subsequence Recursion",
+        3=>"Mini Coin Change Algorithm", 
+        4=>"Proof On Some Sequences",
+        5=>"Proof Fermat Little Theorem", 
+        6=>"Haskell Tutorial",
+        7=>"Java Algorithm",
+        8=>"Prime Number",
+        9=>"Math Definition", 
+        10=>"Scala Tutorial", 
+        11=>"Square Root of Two is irrational", 
+        12=>"Cubic Curve", 
+        13=>"Differentiated", 
+        14=>"Algebraic Curve", 
+        15=>"IOS Development", 
+        16=>"Projective Geometry", 
+        17=>"Rotated Sorted Array", 
+        18=>"Print Sprial in 2D array", 
+        19=>"Draw Circle Rectangle Oval in iOS", 
+        20=>"Command Line Trick", 
+        21=>"Vim Tricks",
+        22=>"My Test2",
+        23=>"My Test3" 
+    );
+
+    $htmlDir = "../html/";
+    $indexHtml = "";
+    $tileArray = array();
+    $fileArray = array();
+    $linkArray = array();
+    $outputArray = array();
+    //print("curr=" . getcwd() . "\n");
+    for($i=0; $i<count($pageArray); $i++)
+    {
+        //print($pageArray[$i] . "\n");
+        $fileArray[] = "index" . preg_replace("/\s+/", '', $pageArray[$i]) . ".html";
+
+        $path = $htmlDir . $fileArray[$i];
+        //print("path=" . $path . "\n");
+        if(file_exists($path) === false)
+        {
+            @file_put_contents($path, createBasicPage($fileArray[$i])); 
+        }
+
+        $titleArray[] = "<span style=\"font-size:16px\">" . $pageArray[$i] . "</span>";
+        $htmlTitleArray[] = "<h3>" . $titleArray[$i] . "<h3>";
+        $linkArray[] = "<h3><a style=\"text-decoration:none;font-size:16px;\" href=\"{$fileArray[$i]}\">{$titleArray[$i]}</a></h3>";
+
+        //print("titleArray[" . $i . "]=". $titleArray[$i] . "\n");
+        //print("fileArray[" . $i . "]=". $fileArray[$i] . "\n");
+        //print("htmlTitleArray[" . $i . "]=". $htmlTitleArray[$i] . "\n");
+        //print("linkArray[" . $i . "]=". $linkArray[$i] . "\n");
+        $indexHtml .= "
+                <h3><a style=\"text-decoration:none;\" href=\"html/{$fileArray[$i]}\">{$titleArray[$i]}</a></h3>
+                ";
+    }
+    for($m=0; $m<count($pageArray); $m++)
+    {
+        $menuBar = "";
+        //print('count=' . count($pageArray) . "\n");
+        for($i=0; $i<count($pageArray); $i++)
+        {
+            //print("m=". $m . "  i=". $i . "\n");
+            if($m === $i)
+            {
+                //print("equal============" . "\n");
+                $menuBar.= $titleArray[$i];
+            }
+            else
+            {
+                $menuBar.= $linkArray[$i];
+            }
+        }
+        $outputArray[$fileArray[$m]] = $menuBar;
+    }
+    //print("indexHtml=". $indexHtml);
+    //print("==========================================\n");
+
+    
+    for($m=0; $m<count($pageArray); $m++)
+    {
+        //print("fileArray[" . $m . "]=" . $fileArray[$m]. "\n    ". $outputArray[$fileArray[$m]]);
+        //print("\n");
+    }
 
     if($fileName == "index.html")
     {
         $output = $indexHtml;
+        print($output);
     }
-    else if($fileName == $BinarySearch1D_File)
+    else
     {
-    $output="
-            $BinarySearch1DTitle
-            $BinarySearch2DLink
-            $LongestIncreasingSubsequenceLink
-            $MiniCoinCountLink
-            $SequenceLink
-            $FermatLittleTheoremLink
-            $HaskellTutorialLink
-            $JavaAlgorithmLink
-            $PrimeNumberLink
-            $MathDefinitionLink
-            $ScalaTutorialLink
-            $SquareRootLink
-            $CubicCurveLink
-            $DifferentiatedLink
-            $AlgebraicCurveLink
-            $IOSDevLink
-            $ProjectiveLink
-          "; 
-    }
-    else if($fileName == $BinarySearch2D_File)
-    {
-    $output="
-            $BinarySearch1DLink
-            $BinarySearch2DTitle
-            $LongestIncreasingSubsequenceLink
-            $MiniCoinCountLink
-            $SequenceLink
-            $FermatLittleTheoremLink
-            $HaskellTutorialLink
-            $JavaAlgorithmLink
-            $PrimeNumberLink
-            $MathDefinitionLink
-            $ScalaTutorialLink
-            $SquareRootLink
-            $CubicCurveLink
-            $DifferentiatedLink
-            $AlgebraicCurveLink
-            $IOSDevLink
-            $ProjectiveLink
-          "; 
-    }
-    else if($fileName == $LongestIncreasingSubsequence_File)
-    {
-    $output="
-            $BinarySearch1DLink
-            $BinarySearch2DLink
-            $LongestIncreasingSubsequenceTitle
-            $MiniCoinCountLink
-            $SequenceLink
-            $FermatLittleTheoremLink
-            $HaskellTutorialLink
-            $JavaAlgorithmLink
-            $PrimeNumberLink
-            $MathDefinitionLink
-            $ScalaTutorialLink
-            $SquareRootLink
-            $CubicCurveLink
-            $DifferentiatedLink
-            $AlgebraicCurveLink
-            $IOSDevLink
-            $ProjectiveLink
-          "; 
-    }
-    else if($fileName == $MiniCoinCount_File)
-    {
-    $output="
-            $BinarySearch1DLink
-            $BinarySearch2DLink
-            $LongestIncreasingSubsequenceLink
-            $MiniCoinCountTitle
-            $SequenceLink
-            $FermatLittleTheoremLink
-            $HaskellTutorialLink
-            $JavaAlgorithmLink
-            $PrimeNumberLink
-            $MathDefinitionLink
-            $ScalaTutorialLink
-            $SquareRootLink
-            $CubicCurveLink
-            $DifferentiatedLink
-            $AlgebraicCurveLink
-            $IOSDevLink
-            $ProjectiveLink
-          "; 
-    }
-    else if($fileName == $Sequence_File)
-    {
-    $output="
-            $BinarySearch1DLink
-            $BinarySearch2DLink
-            $LongestIncreasingSubsequenceLink
-            $MiniCoinCountLink
-            $SequenceTitle
-            $FermatLittleTheoremLink
-            $HaskellTutorialLink
-            $JavaAlgorithmLink
-            $PrimeNumberLink
-            $MathDefinitionLink
-            $ScalaTutorialLink
-            $SquareRootLink
-            $CubicCurveLink
-            $DifferentiatedLink
-            $AlgebraicCurveLink
-            $IOSDevLink
-            $ProjectiveLink
-          "; 
-    }
-    else if($fileName == $FermatLittleTheorem_File)
-    {
-    $output="
-            $BinarySearch1DLink
-            $BinarySearch2DLink
-            $LongestIncreasingSubsequenceLink
-            $MiniCoinCountLink
-            $SequenceLink
-            $FermatLittleTheoremTitle
-            $HaskellTutorialLink
-            $JavaAlgorithmLink
-            $PrimeNumberLink
-            $MathDefinitionLink
-            $ScalaTutorialLink
-            $SquareRootLink
-            $CubicCurveLink
-            $DifferentiatedLink
-            $AlgebraicCurveLink
-            $IOSDevLink
-            $ProjectiveLink
-          "; 
-    }
-    else if($fileName == $HaskellTutorial_File)
-    {
-    $output="
-            $BinarySearch1DLink
-            $BinarySearch2DLink
-            $LongestIncreasingSubsequenceLink
-            $MiniCoinCountLink
-            $SequenceLink
-            $FermatLittleTheoremLink
-            $HaskellTutorialTitle
-            $JavaAlgorithmLink
-            $PrimeNumberLink
-            $MathDefinitionLink
-            $ScalaTutorialLink
-            $SquareRootLink
-            $CubicCurveLink
-            $DifferentiatedLink
-            $AlgebraicCurveLink
-            $IOSDevLink
-            $ProjectiveLink
-          "; 
-    }
-    else if($fileName == $JavaAlgorithm_File)
-    {
-    $output="
-            $BinarySearch1DLink
-            $BinarySearch2DLink
-            $LongestIncreasingSubsequenceLink
-            $MiniCoinCountLink
-            $SequenceLink
-            $FermatLittleTheoremLink
-            $HaskellTutorialLink
-            $JavaAlgorithmTitle
-            $PrimeNumberLink
-            $MathDefinitionLink
-            $ScalaTutorialLink
-            $SquareRootLink
-            $CubicCurveLink
-            $DifferentiatedLink
-            $AlgebraicCurveLink
-            $IOSDevLink
-            $ProjectiveLink
-          "; 
-    }
-    else if($fileName == $PrimeNumber_File)
-    {
-    $output="
-            $BinarySearch1DLink
-            $BinarySearch2DLink
-            $LongestIncreasingSubsequenceLink
-            $MiniCoinCountLink
-            $SequenceLink
-            $FermatLittleTheoremLink
-            $HaskellTutorialLink
-            $JavaAlgorithmLink
-            $PrimeNumberTitle
-            $MathDefinitionLink
-            $ScalaTutorialLink
-            $SquareRootLink
-            $CubicCurveLink
-            $DifferentiatedLink
-            $AlgebraicCurveLink
-            $IOSDevLink
-            $ProjectiveLink
-          "; 
-    }
-    else if($fileName == $MathDefinition_File)
-    {
-    $output="
-            $BinarySearch1DLink
-            $BinarySearch2DLink
-            $LongestIncreasingSubsequenceLink
-            $MiniCoinCountLink
-            $SequenceLink
-            $FermatLittleTheoremLink
-            $HaskellTutorialLink
-            $JavaAlgorithmLink
-            $PrimeNumberLink
-            $MathDefinitionTitle
-            $ScalaTutorialLink
-            $SquareRootLink
-            $CubicCurveLink
-            $DifferentiatedLink
-            $AlgebraicCurveLink
-            $IOSDevLink
-            $ProjectiveLink
-          "; 
-    }
-    else if($fileName == $ScalaTutorial_File)
-    {
-    $output="
-            $BinarySearch1DLink
-            $BinarySearch2DLink
-            $LongestIncreasingSubsequenceLink
-            $MiniCoinCountLink
-            $SequenceLink
-            $FermatLittleTheoremLink
-            $HaskellTutorialLink
-            $JavaAlgorithmLink
-            $PrimeNumberLink
-            $MathDefinitionLink
-            $ScalaTutorialTitle
-            $SquareRootLink
-            $CubicCurveLink
-            $DifferentiatedLink
-            $AlgebraicCurveLink
-            $IOSDevLink
-            $ProjectiveLink
-          "; 
-    }
-    else if($fileName == $SquareRoot_File)
-    {
-    $output="
-            $BinarySearch1DLink
-            $BinarySearch2DLink
-            $LongestIncreasingSubsequenceLink
-            $MiniCoinCountLink
-            $SequenceLink
-            $FermatLittleTheoremLink
-            $HaskellTutorialLink
-            $JavaAlgorithmLink
-            $PrimeNumberLink
-            $MathDefinitionLink
-            $ScalaTutorialLink
-            $SquareRootTitle
-            $CubicCurveLink
-            $DifferentiatedLink
-            $AlgebraicCurveLink
-            $IOSDevLink
-            $ProjectiveLink
-          "; 
-    }
-    else if($fileName == $CubicCurve_File)
-    {
-    $output="
-            $BinarySearch1DLink
-            $BinarySearch2DLink
-            $LongestIncreasingSubsequenceLink
-            $MiniCoinCountLink
-            $SequenceLink
-            $FermatLittleTheoremLink
-            $HaskellTutorialLink
-            $JavaAlgorithmLink
-            $PrimeNumberLink
-            $MathDefinitionLink
-            $ScalaTutorialLink
-            $SquareRootLink
-            $CubicCurveTitle
-            $DifferentiatedLink
-            $AlgebraicCurveLink
-            $IOSDevLink
-            $ProjectiveLink
-          "; 
-    }
-    else if($fileName == $Differentiated_File)
-    {
-    $output="
-            $BinarySearch1DLink
-            $BinarySearch2DLink
-            $LongestIncreasingSubsequenceLink
-            $MiniCoinCountLink
-            $SequenceLink
-            $FermatLittleTheoremLink
-            $HaskellTutorialLink
-            $JavaAlgorithmLink
-            $PrimeNumberLink
-            $MathDefinitionLink
-            $ScalaTutorialLink
-            $SquareRootLink
-            $CubicCurveLink
-            $DifferentiatedTitle
-            $AlgebraicCurveLink
-            $IOSDevLink
-          "; 
-    }
-    else if($fileName == $AlgebraicCurve_File)
-    {
-    $output="
-            $BinarySearch1DLink
-            $BinarySearch2DLink
-            $LongestIncreasingSubsequenceLink
-            $MiniCoinCountLink
-            $SequenceLink
-            $FermatLittleTheoremLink
-            $HaskellTutorialLink
-            $JavaAlgorithmLink
-            $PrimeNumberLink
-            $MathDefinitionLink
-            $ScalaTutorialLink
-            $SquareRootLink
-            $CubicCurveLink
-            $DifferentiatedLink
-            $AlgebraicCurve_Title
-            $IOSDevLink
-            $ProjectiveLink
-          "; 
-    }
-    else if($fileName == $IOSDev_File)
-    {
-    $output="
-            $BinarySearch1DLink
-            $BinarySearch2DLink
-            $LongestIncreasingSubsequenceLink
-            $MiniCoinCountLink
-            $SequenceLink
-            $FermatLittleTheoremLink
-            $HaskellTutorialLink
-            $JavaAlgorithmLink
-            $PrimeNumberLink
-            $MathDefinitionLink
-            $ScalaTutorialLink
-            $SquareRootLink
-            $CubicCurveLink
-            $DifferentiatedLink
-            $AlgebraicCurveLink
-            $IOSDev_Title
-            $ProjectiveLink
-          "; 
-    }
-    else if($fileName == $Projective_File)
-    {
-    $output="
-            $BinarySearch1DLink
-            $BinarySearch2DLink
-            $LongestIncreasingSubsequenceLink
-            $MiniCoinCountLink
-            $SequenceLink
-            $FermatLittleTheoremLink
-            $HaskellTutorialLink
-            $JavaAlgorithmLink
-            $PrimeNumberLink
-            $MathDefinitionLink
-            $ScalaTutorialLink
-            $SquareRootLink
-            $CubicCurveLink
-            $DifferentiatedLink
-            $AlgebraicCurveLink
-            $IOSDevLink
-            $ProjectiveTitle
-          "; 
+
+        /*
+        for($m=0; $m<count($pageArray); $m++)
+        {
+            print("fileArray[" . $m . "]=" . $fileArray[$m]. "\n    ". $outputArray[$fileArray[$m]]);
+            print("\n");
+        }
+         */
+        print($outputArray[$fileName]);
     }
 
-    print($output);
 ?>

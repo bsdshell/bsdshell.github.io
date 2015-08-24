@@ -1,0 +1,55 @@
+<div class="highlight"><pre><span class="c1">// draw circle</span>
+<span class="o">-</span> <span class="o">(</span><span class="n">CAShapeLayer</span><span class="o">*)</span><span class="n">drawCircle</span><span class="o">:(</span><span class="n">CGPoint</span><span class="o">)</span><span class="n">location</span> <span class="n">radius</span><span class="o">:(</span><span class="n">CGFloat</span><span class="o">)</span><span class="n">radius</span> <span class="o">{</span>
+    <span class="n">CAShapeLayer</span><span class="o">*</span> <span class="n">shapeLayer</span> <span class="o">=</span> <span class="o">[</span><span class="n">CAShapeLayer</span> <span class="n">layer</span><span class="o">];</span>
+
+    <span class="n">UIBezierPath</span> <span class="o">*</span><span class="n">path</span> <span class="o">=</span> <span class="o">[</span><span class="n">UIBezierPath</span> <span class="n">bezierPath</span><span class="o">];</span>
+    <span class="o">[</span><span class="n">path</span> <span class="n">addArcWithCenter</span><span class="o">:</span><span class="n">location</span>
+                    <span class="n">radius</span><span class="o">:</span><span class="n">radius</span>
+                <span class="n">startAngle</span><span class="o">:</span><span class="mf">0.0</span>
+                  <span class="n">endAngle</span><span class="o">:</span><span class="n">M_PI</span> <span class="o">*</span> <span class="mf">2.0</span>
+                 <span class="n">clockwise</span><span class="o">:</span><span class="n">YES</span><span class="o">];</span>
+    
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">path</span> <span class="o">=</span> <span class="o">[</span><span class="n">path</span> <span class="n">CGPath</span><span class="o">];</span>
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">strokeColor</span> <span class="o">=</span> <span class="o">[[</span><span class="n">UIColor</span> <span class="n">redColor</span><span class="o">]</span> <span class="n">CGColor</span><span class="o">];</span>
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">fillColor</span> <span class="o">=</span> <span class="n">nil</span><span class="o">;</span>
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">lineWidth</span> <span class="o">=</span> <span class="mf">5.0</span><span class="o">;</span>
+    <span class="k">return</span> <span class="n">shapeLayer</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="c1">// draw oval</span>
+<span class="o">-(</span><span class="n">CAShapeLayer</span><span class="o">*)</span><span class="n">drawOval</span><span class="o">:(</span><span class="n">CGPoint</span><span class="o">)</span> <span class="n">location</span> <span class="n">semimajor</span><span class="o">:(</span><span class="n">CGFloat</span><span class="o">)</span><span class="n">semimajor</span> <span class="n">semiminor</span><span class="o">:(</span><span class="n">CGFloat</span><span class="o">)</span> <span class="n">semiminor</span><span class="o">{</span>
+    <span class="n">CAShapeLayer</span><span class="o">*</span> <span class="n">shapeLayer</span> <span class="o">=</span> <span class="o">[</span><span class="n">CAShapeLayer</span> <span class="n">layer</span><span class="o">];</span>
+    
+    <span class="n">UIBezierPath</span> <span class="o">*</span><span class="n">path</span> <span class="o">=</span> <span class="o">[</span><span class="n">UIBezierPath</span> <span class="n">bezierPathWithOvalInRect</span><span class="o">:</span><span class="n">CGRectMake</span><span class="o">(</span><span class="n">location</span><span class="o">.</span><span class="na">x</span><span class="o">-</span><span class="n">semimajor</span><span class="o">,</span> <span class="n">location</span><span class="o">.</span><span class="na">y</span><span class="o">-</span><span class="n">semiminor</span><span class="o">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">semimajor</span><span class="o">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">semiminor</span><span class="o">)];</span>
+    
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">path</span> <span class="o">=</span> <span class="o">[</span><span class="n">path</span> <span class="n">CGPath</span><span class="o">];</span>
+    
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">strokeColor</span> <span class="o">=</span> <span class="o">[[</span><span class="n">UIColor</span> <span class="n">greenColor</span><span class="o">]</span> <span class="n">CGColor</span><span class="o">];</span>
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">fillColor</span> <span class="o">=</span> <span class="o">[[</span><span class="n">UIColor</span> <span class="n">blackColor</span><span class="o">]</span> <span class="n">CGColor</span><span class="o">];</span>
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">lineWidth</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">;</span>
+    <span class="k">return</span> <span class="n">shapeLayer</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="c1">// draw rectangle</span>
+<span class="o">-(</span><span class="n">CAShapeLayer</span><span class="o">*)</span><span class="n">drawRectangle</span><span class="o">:(</span><span class="n">CGPoint</span><span class="o">)</span> <span class="n">location</span> <span class="n">semiWidth</span><span class="o">:(</span><span class="n">CGFloat</span><span class="o">)</span> <span class="n">semiWidth</span> <span class="n">semiHeight</span><span class="o">:(</span><span class="n">CGFloat</span><span class="o">)</span><span class="n">semiHeight</span><span class="o">{</span>
+    <span class="n">CAShapeLayer</span><span class="o">*</span> <span class="n">shapeLayer</span> <span class="o">=</span> <span class="o">[</span><span class="n">CAShapeLayer</span> <span class="n">layer</span><span class="o">];</span>
+    <span class="n">UIBezierPath</span><span class="o">*</span> <span class="n">path</span> <span class="o">=</span> <span class="o">[</span><span class="n">UIBezierPath</span> <span class="n">bezierPath</span><span class="o">];</span>
+    
+    <span class="c1">// start point</span>
+    <span class="o">[</span><span class="n">path</span> <span class="n">moveToPoint</span><span class="o">:</span><span class="n">CGPointMake</span><span class="o">(</span><span class="n">location</span><span class="o">.</span><span class="na">x</span> <span class="o">-</span> <span class="n">semiWidth</span><span class="o">,</span> <span class="n">location</span><span class="o">.</span><span class="na">y</span> <span class="o">-</span> <span class="n">semiHeight</span><span class="o">)];</span>
+    
+    <span class="c1">// draw lines</span>
+    <span class="o">[</span><span class="n">path</span> <span class="n">addLineToPoint</span><span class="o">:</span><span class="n">CGPointMake</span><span class="o">(</span><span class="n">location</span><span class="o">.</span><span class="na">x</span> <span class="o">+</span> <span class="n">semiWidth</span><span class="o">,</span> <span class="n">location</span><span class="o">.</span><span class="na">y</span> <span class="o">-</span> <span class="n">semiHeight</span><span class="o">)];</span>
+    <span class="o">[</span><span class="n">path</span> <span class="n">addLineToPoint</span><span class="o">:</span><span class="n">CGPointMake</span><span class="o">(</span><span class="n">location</span><span class="o">.</span><span class="na">x</span> <span class="o">+</span> <span class="n">semiWidth</span><span class="o">,</span> <span class="n">location</span><span class="o">.</span><span class="na">y</span> <span class="o">+</span> <span class="n">semiHeight</span><span class="o">)];</span>
+    <span class="o">[</span><span class="n">path</span> <span class="n">addLineToPoint</span><span class="o">:</span><span class="n">CGPointMake</span><span class="o">(</span><span class="n">location</span><span class="o">.</span><span class="na">x</span> <span class="o">-</span> <span class="n">semiWidth</span><span class="o">,</span> <span class="n">location</span><span class="o">.</span><span class="na">y</span> <span class="o">+</span> <span class="n">semiHeight</span><span class="o">)];</span>
+    <span class="o">[</span><span class="n">path</span> <span class="n">addLineToPoint</span><span class="o">:</span><span class="n">CGPointMake</span><span class="o">(</span><span class="n">location</span><span class="o">.</span><span class="na">x</span> <span class="o">-</span> <span class="n">semiWidth</span><span class="o">,</span> <span class="n">location</span><span class="o">.</span><span class="na">y</span> <span class="o">-</span> <span class="n">semiHeight</span><span class="o">)];</span>
+    <span class="c1">//[path closePath];</span>
+    
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">path</span> <span class="o">=</span> <span class="o">[</span><span class="n">path</span> <span class="n">CGPath</span><span class="o">];</span>
+    
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">strokeColor</span> <span class="o">=</span> <span class="o">[[</span><span class="n">UIColor</span> <span class="n">yellowColor</span><span class="o">]</span> <span class="n">CGColor</span><span class="o">];</span>
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">fillColor</span> <span class="o">=</span> <span class="o">[[</span><span class="n">UIColor</span> <span class="n">blackColor</span><span class="o">]</span> <span class="n">CGColor</span><span class="o">];</span>
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">lineWidth</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">;</span>
+    <span class="k">return</span> <span class="n">shapeLayer</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
