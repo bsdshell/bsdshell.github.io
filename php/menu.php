@@ -111,7 +111,8 @@ return $content;
         27=>"Daily Note",
     );
 
-    $htmlDir = "../html/";
+
+    $htmlDir = "/Library/WebServer/Documents/zsurface/html/";
     $indexHtml = "";
     $tileArray = array();
     $fileArray = array();
