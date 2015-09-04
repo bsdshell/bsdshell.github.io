@@ -30,10 +30,34 @@
 	<div class="colleft">
 		<div class="col1">
 			<!-- Column 1 start -->
-            <div class="mytextbox highlight">
-                <p>
-                Vim Tricks
-                </p>
+            <div class="cmdoutbox">
+                Vim High Light Search [:hls]<br>
+                <span class="cmdbox"> 
+                    hi search ctermbg=Black ctermfg=Brown<br>
+                </span>
+                <br>  
+                Vim command composition |  or (<bar> in map)<br>
+                <span class="cmdbox"> 
+                :.,&#36;s/&#92;S.*\S$/\\[ \0 \\]/gc &lt;bar&gt; :nohlsearch<br> 
+                </span>
+                <br>  
+                Search for the first printable char to the last printable char of a line<br>
+                <span class="cmdbox"> 
+                /\S.*\S [:h \S]
+                </span>
+                <br> 
+
+                Remove new lines:<br>
+                <span class="cmdbox"> 
+                Vim Tricks<br> 
+                </span>
+                <br> 
+                Remove new lines:<br>
+                <span class="cmdbox"> 
+                Vim Tricks<br> 
+                </span>
+                <br> 
+
             </div>
         <!-- Column 1 end -->
 		</div>

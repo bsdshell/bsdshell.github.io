@@ -80,35 +80,6 @@ function createBasicPage($fileHtml)
 return $content;
 }
 
-
-    
-    /*
-    $indexHtml = "
-                <h3><a style=\"text-decoration:none;\" href=\"html/$BinarySearch1D_File\">$BinarySearch1D_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$BinarySearch2D_File\">$BinarySearch2D_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$LongestIncreasingSubsequence_File\">$LongestIncreasingSubsequence_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$MiniCoinCount_File\">$MiniCoinCount_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$Sequence_File\">$Sequence_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$FermatLittleTheorem_File\">$FermatLittleTheorem_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$HaskellTutorial_File\">$HaskellTutorial_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$JavaAlgorithm_File\">$JavaAlgorithm_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$PrimeNumber_File\">$PrimeNumber_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$MathDefinition_File\">$MathDefinition_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$ScalaTutorial_File\">$ScalaTutorial_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$SquareRoot_File\">$SquareRoot_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$CubicCurve_File\">$CubicCurve_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$Differentiated_File\">$Differentiated_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$AlgebraicCurve_File\">$AlgebraicCurve_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$IOSDev_File\">$IOSDev_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$Projective_File\">$Projective_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$RotatedArray_File\">$RotatedArray_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$SprialArray_File\">$SprialArray_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$IOSDrawShape_File\">$IOSDrawShape_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$CommandLineTrick_File\">$CommandLineTrick_Title</a></h3>
-                <h3><a style=\"text-decoration:none;\" href=\"html/$VimTrick_File\">$VimTrick_Title</a></h3>
-                ";
-    */
-
     $pageArray = array(
         0=>"Binary Search One Dimensions",
         1=>"Binary Search Two Dimensions",
@@ -130,10 +101,14 @@ return $content;
         17=>"Rotated Sorted Array", 
         18=>"Print Sprial in 2D array", 
         19=>"Draw Circle Rectangle Oval in iOS", 
-        20=>"Command Line Trick", 
-        21=>"Vim Tricks",
-        22=>"My Test2",
-        23=>"My Test3" 
+        20=>"Merge Two Sorted Array",
+        21=>"ObjectiveC String Format Specifiers",
+        22=>"ObjectiveC Block",
+        23=>"Print All Permutation of an Array",
+        24=>"Command Line Trick", 
+        25=>"Vim Tricks",
+        26=>"Mathematic Note",
+        27=>"Daily Note",
     );
 
     $htmlDir = "../html/";
@@ -142,14 +117,11 @@ return $content;
     $fileArray = array();
     $linkArray = array();
     $outputArray = array();
-    //print("curr=" . getcwd() . "\n");
     for($i=0; $i<count($pageArray); $i++)
     {
-        //print($pageArray[$i] . "\n");
         $fileArray[] = "index" . preg_replace("/\s+/", '', $pageArray[$i]) . ".html";
 
         $path = $htmlDir . $fileArray[$i];
-        //print("path=" . $path . "\n");
         if(file_exists($path) === false)
         {
             @file_put_contents($path, createBasicPage($fileArray[$i])); 
@@ -159,10 +131,6 @@ return $content;
         $htmlTitleArray[] = "<h3>" . $titleArray[$i] . "<h3>";
         $linkArray[] = "<h3><a style=\"text-decoration:none;font-size:16px;\" href=\"{$fileArray[$i]}\">{$titleArray[$i]}</a></h3>";
 
-        //print("titleArray[" . $i . "]=". $titleArray[$i] . "\n");
-        //print("fileArray[" . $i . "]=". $fileArray[$i] . "\n");
-        //print("htmlTitleArray[" . $i . "]=". $htmlTitleArray[$i] . "\n");
-        //print("linkArray[" . $i . "]=". $linkArray[$i] . "\n");
         $indexHtml .= "
                 <h3><a style=\"text-decoration:none;\" href=\"html/{$fileArray[$i]}\">{$titleArray[$i]}</a></h3>
                 ";
@@ -170,13 +138,10 @@ return $content;
     for($m=0; $m<count($pageArray); $m++)
     {
         $menuBar = "";
-        //print('count=' . count($pageArray) . "\n");
         for($i=0; $i<count($pageArray); $i++)
         {
-            //print("m=". $m . "  i=". $i . "\n");
             if($m === $i)
             {
-                //print("equal============" . "\n");
                 $menuBar.= $titleArray[$i];
             }
             else
@@ -186,32 +151,14 @@ return $content;
         }
         $outputArray[$fileArray[$m]] = $menuBar;
     }
-    //print("indexHtml=". $indexHtml);
-    //print("==========================================\n");
-
     
-    for($m=0; $m<count($pageArray); $m++)
-    {
-        //print("fileArray[" . $m . "]=" . $fileArray[$m]. "\n    ". $outputArray[$fileArray[$m]]);
-        //print("\n");
-    }
-
-    if($fileName == "index.html")
+    if($fileName === "index.html")
     {
         $output = $indexHtml;
         print($output);
     }
     else
     {
-
-        /*
-        for($m=0; $m<count($pageArray); $m++)
-        {
-            print("fileArray[" . $m . "]=" . $fileArray[$m]. "\n    ". $outputArray[$fileArray[$m]]);
-            print("\n");
-        }
-         */
         print($outputArray[$fileName]);
     }
-
 ?>

@@ -32,37 +32,43 @@
 			<!-- Column 1 start -->
             <div class="mytextbox highlight">
                 <p>
-                    $\Large \color{red}\alpha$ 
-                    Change default location of Mac OSX screenshots, Open your Terminal and type:<br><br>
-                    <span style="color:#FFF; background:#000;border-radius:3px; padding:2px;">  
+                $\langle {\large{\color{red}\alpha}} \rangle$ 
+                Change default location of Mac OSX screenshots, Open your Terminal and type:
                         defaults write com.apple.screencapture location ~/myScreenShots<br>
-                    </span><br>
-                    And type:<br><br>
-                    <span style="color:#FFF; background:#000;border-radius:3px; padding:2px;">  
-                        killall SystemUIServer
-                    </span> 
-                </p>
+                    And type:<br>
+                    killall SystemUIServer<br><br>
 
-                <p>
-                    $\Large \color{red}\lambda$ 
-                    Rename file name of default screenshots in Mac OSX, Open your Terminal and type:<br><br>
-                    <span style="color:#FFF; background:#000;border-radius:3px; padding:2px;">  
+                    $\langle {\large{\color{red}\lambda}} \rangle$ 
+                    Rename file name of default screenshots in Mac OSX, Open your Terminal and type:<br>
                         defaults write com.apple.screencapture name "myName"<br>
-                    </span><br>
                     And type:<br><br>
-                    <span style="color:#FFF; background:#000;border-radius:3px; padding:2px;">  
-                        killall SystemUIServer
-                    </span> 
-                </p>
+                        killall SystemUIServer<br><br>
 
-                <p>
-                $\Large \color{red}\beta$ 
-                Print method name in Xcode/iOS:<br><br>
-                <span style="color:#FFF; background:#000;border-radius:3px; padding:2px;">  
-                        NSLog(@"%s", __PRETTY_FUNCTION__);<br>
-                </span><br>
+                $\langle {\large{\color{red}\epsilon}} \rangle$ 
+                Print method name in Xcode/iOS:<br>
+                NSLog(@"%s", __PRETTY_FUNCTION__);<br><br>
+
+                $\langle {\large{\color{red}\sigma}} \rangle$ 
+                Compile Vim with Python support so that you can use clang_complete plugin for Clang family languages such as C/C++/ObjectiveC<br><br>
+                I clone vim from github and compile it, but I have hard time to compile it.<br>
+                One simple solution is to use macport, here is the command<br>  
+                sudo port install vim +python27<br><br>
+
+                $\langle {\large{\color{red}\pi}} \rangle$ 
+                To find the clang on your Mac<br>
+                xcrun -find clang<br><br>
+
+                your output:<br>
+                /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang<br><br>
+
+                $\langle {\large{\color{red}\alpha}} \rangle$ 
+                locate libclang.dylib<br>
+                    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib<br><br>
+
+                $\langle {\large{\color{red}\zeta}} \rangle$ 
+                you need to set the path in your .vimrc file:<br>
+                let g:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
                 </p> 
-
             </div>
         <!-- Column 1 end -->
 		</div>

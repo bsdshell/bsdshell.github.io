@@ -14,7 +14,11 @@ pre{
 .highlight  { background: #FFFFFF; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .n { color: rgba(218, 219, 226, 0.97);} 
-.highlight .err { border: 1px solid #FF0000 } /* Error */
+
+/* weird result output*/
+/*.highlight .err { border: 1px solid #FF0000 }*/ /* Error */
+.highlight .err { color: #CC9B21; } /* Error */
+
 .highlight .k { color: #F1B70A; font-weight: bold } /* Keyword */
 .highlight .o { color: rgb(17, 189, 121); } /* Operator */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */

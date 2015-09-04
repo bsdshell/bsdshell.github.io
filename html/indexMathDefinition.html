@@ -33,7 +33,7 @@
         <div class="box">
             <div class="mathdef_box2">
                 \[\textbf{Ring}\]
-                $\text{let a, b, c } \in \mathbf{R}$
+                $\text{Let a, b, c } \in \mathbf{R}$
                 $\text{There are two binary operations: addition and multiplication. They satisfy}$<br>
                 \[ \text{Associative Law} \]
                 \[ a \times b \times c = a \times (b \times c) \] 
@@ -48,6 +48,55 @@
                 \[ \text{Multiplicative identity} \]
                 \[ \forall a \in \mathbb{R}, \quad \exists 1 \in \mathbb{R}\text{ such as }\]
                 \[1 \times a = a \times 1\]
+    
+                <div style="text-align:center">
+                    <img src="http://tiny3.com/image/1440616565.jpg" width="40%" height="40%" /><br> 
+                </div> 
+            </div><br>
+            <div class="mathdef_box2">
+
+                \[ \textbf{Ring homomorphism} \]
+                Let $\phi$ is a function between two rings $R$, then $\phi$ is a $\mathit{ring}$ homomorphism if<br>
+                for all $a \in R$ and $b \in R$<br>
+                \[\phi(a+b) = \phi(a) + \phi(b)\] 
+                \[\phi(ab) = \phi(a)\phi(b)\]
+                and \[\phi(1) = 1\]
+
+                Ideal<br>
+                Let $R$ be a ring and let $I$ is additive subgroup of $R$, then $I$ is called an ideal of $R$ and write $I \triangleleft R$<br>
+                if $\forall a \in I$ and $\forall r \in R $, and $ ar \in I$ and $ra \in I$<br><br>
+                Example<br>
+                $R = (\mathbb{N}, +)$ and $I = (2k, +) \quad k \in \mathbb{N}$<br>
+                <div style="text-align:center">
+                    <img src="http://tiny3.com/image/1440615630.jpg" width="40%" height="40%" /><br><br>
+                </div>
+
+                \[\text{Let I be a kernal of } \phi, \text{ then I is an ideal of R} \]
+                Let $a \in I$ and $r \in R$, then $\phi(ra) = \phi(r)\phi(a)$<br>
+                $I$ is kernal of $\phi$<br>
+                $\Rightarrow \phi(a) = 0 \therefore \phi(ra) = 0, \therefore ra \in I$<br>
+                <div style="text-align:center">
+                    <img src="http://tiny3.com/image/1440622401.jpg" width="40%" height="40%" /><br><br>
+                </div>
+
+                Let $\phi: \mathbb{C} \rightarrow \mathbb{C}$ be the map send a complex number to its complex conjugate. 
+                Then $\phi$ is an automorphism of $\mathbb{C}$. $\phi$ is its own inverse.<br><br>
+
+                \begin{equation}
+                \begin{aligned}
+                \phi(z) &= \overline{z}\\\\
+                \phi(z_1 + z_2) &= \overline{z_1 + z_2}\\
+                \overline{z_1 + z_2} &= \overline{z_1} + \overline{z_2}\\
+                \phi(z_1 z_2) &= \overline{z_1 z_2}\\
+                \overline{z_1 z_2} &= \overline{z_1} \cdot \overline{z_2} \nonumber\\
+                \phi(\phi(z)) &= z<br>
+                \end{aligned}
+                \end{equation}
+                <img src="../image/conjugate.svg" width="100%" height="100%" /><br>  
+
+                Let $\phi: \mathbb{R}[x] \rightarrow  \mathbb{R}[x]$ be the map that send $f(x)$ to $f(x+1)$.<br> 
+                Then $\phi$ is an automorphism of \mathbb{R}[x]. The inverse map sends $f(x)$ to $f(x-1)$<br>
+
             </div>
             <br>
             <div class="mathdef_box2">
@@ -62,10 +111,24 @@
                 $\exists \mathit{e} \in \mathbf{G} \text{ such that } \mathit{e}*a = a*\mathit{e} \in \mathbf{G}$<br>
                 Inverse<br>
                 $ \text{If a } \in \mathbf{G}, \exists a^{-1} \in \mathbf{G} \text{ such that } a*a^{-1} = e $<br>
+
+
+                \[\textbf{Group homomorphism(operation preserving)}\]
+                Given group $(G1, +)$ and $(G2, *)$,for all $a_1, a_2 \in G1$ and $b_1, b_2 \in G2$,<br>
+                if $\phi(a_1 + a_2) = \phi(b_1)*\phi(b_2)$, then $\phi$ is group homomorphism<br>
+                Given $G(\mathbb{R}, +)$ and $(\mathbb{R}, *)$, then $\phi(x) = e^x$ is homomorphism<br><br>
+                Let $a_1, b_1 \in \mathbb{R}$ and $a_2, b_2 \in \mathbb{R}$ <br>
+                $\phi(a_1+b_1) = e^{a_1 + b_1}$ and $\phi(a_2)*\phi(b_2) = e^{a_2}*e^{b_2} = e^{a_2+b_2}$<br>
+                $\Rightarrow \phi(a_1 + b_1) = \phi(a_2)*\phi(b_2)$<br>
+                $\Rightarrow \phi(x) = e^{x}$ is homomorphism for $G(\mathbb{R}, +)$ and $G(\mathbb{R}, *)$<br>
+
+                <div style="text-align:center">
+                    <img src="http://tiny3.com/image/1440668121.jpg" width="40%" height="40%"/><br><br>
+                </div>
             </div>
             <br>
             <div class="mathdef_box2">
-                \[\text{Vector Space}\]
+                \[\textbf{Vector Space}\]
                 $\text{Let }\vec{u}, \vec{v}, \vec{w} \in \vec{V} \text{ and scalars } \alpha, \beta \in \mathbb{F}$<br>
                 Closure<br>
                 $\vec{u} + \vec{v} \text{ and } \in \vec{V}$<br>
@@ -103,7 +166,7 @@
             </div>
             <br>
             <div class="mathdef_box2">
-                \[ \text{Affine Space from linear system equation} \]
+                \[ \textbf{Affine Space from linear system equation} \]
                 Consider an $(m \times n)$ linear sytem equations<br>
                 $\sum_{k=1}^{n} a_{i k} x_{k} = c_{i}, (1 \leq i \leq m) \quad\quad\quad \text{(1)}$<br>
                 where $d = n - rank(M), c_{i} \ne \vec{0} \in \mathbb{R}^{m}$<br>
@@ -133,7 +196,7 @@
             </div>
             <br>
             <div class="mathdef_box2">
-                \[\text{Theorem 1}\] 
+                \[\textbf{Theorem 1}\] 
                 The image of transformation is spanned by the image of the any basis of its domain.<br> 
                 For $T:\vec{V} \rightarrow \vec{W}, \text{ if } \beta=\{ \vec{b_1},\vec{b_2},...,\vec{b_n} \} \text{ is a basis of }\vec{V}, \text{ then }T(\beta) = \{ T(\vec{b_1}), T(\vec{b_2}), ... ,T(\vec{b_n})\} \text{ spans the image of }T$<br>
                 <br>
@@ -144,7 +207,7 @@
             </div>
             <br>
             <div class="mathdef_box2">
-                \[\text{Rank Theorem} \] 
+                \[\textbf{Rank Theorem} \] 
                 If the domain is finite dimension, then the dimension of domain is the sum of rank and nullity of the transformation<br>
 
                 $\text{Let } T:\vec{V} \rightarrow \vec{W} \text{ be a linear transformation },\text{let n be the dimension of }\vec{V},$<br>
@@ -182,6 +245,18 @@
 
                 \[ \text{Conjugate Symmetic}\]
                 \[ \langle \vec{v_1}, \vec{v_2} \rangle = \overline{\langle \vec{v_2}, \vec{v_1} \rangle}\]
+            </div>
+
+            <br>
+            <div class="mathdef_box2">
+                \[\textbf{Definition of topology}\]
+                $\text{Let }\mathcal{M} \text{ be a set. A topology }\mathcal{Q} \text{ is a subset } \mathcal{Q} \subseteq \mathcal{P}(\mathcal{M})$ Satisfy
+                $1. \varnothing\subseteq \mathcal{Q}, \mathcal{M} \subseteq \mathcal{Q}$<br>
+                $2. \mathcal{U} \subseteq \mathcal{Q},   \mathcal{V} \subseteq \mathcal{Q} \implies \mathcal{U} \cap \mathcal{V} \in \mathcal{Q}$<br>
+                $3. \mathcal{U} \in \mathcal{Q} \implies \bigcup_{\alpha \in \mathcal{A}} \mathcal{U}_\alpha \in \mathcal{Q}$<br>
+                <div style="text-align:center">
+                <img src="http://tiny3.com/image/1440718957.jpg" width="50%" height="50%" /><br> 
+                </div>  
             </div>
             <br>
         </div>

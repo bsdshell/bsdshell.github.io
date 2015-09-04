@@ -106,15 +106,13 @@ img {
 }
 /* common column settings */
 .colright,
-.colmid,
 .colleft {
 	float:left;
 	width:100%;
 	position:relative;
 }
 .col1,
-.col2,
-.col3 {
+.col2 {
 	float:left;
 	position:relative;
 	padding:0 0 1em 0;
