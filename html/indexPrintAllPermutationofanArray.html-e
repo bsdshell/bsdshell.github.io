@@ -1,0 +1,124 @@
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+    <head>
+        <title>Surface, Curve, Algorithm, Geometry, Algebra</title>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="robots" content="index, follow" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../highlight.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/x-mathjax-config">
+              MathJax.Hub.Config({
+                extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+                jax: ["input/TeX","output/HTML-CSS"],
+                tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
+              });
+            </script>
+        <script type="text/javascript" src="../MathJax-2.4-latest/MathJax.js"></script>
+    </head>
+    <body>
+    <div id="header">
+        <h1>Surface, Curve, Algorithm, Geometry, Algebra</h1>
+        <p >Measure columns in: <a href="../index.html">Home</a> | <a href="">About</a> | $\Lambda$</p>
+    </div>
+    <div class="colmask rightmenu">
+        <div class="colleft">
+            <div class="col1">
+                <!-- Column 1 start -->
+                <div class="mytextbox highlight">
+                    <p>
+                    $\langle {\large{\color{red}\alpha}} \rangle$ 
+                    Print all the permutation of an array<br>
+                    This is very popular question for software engineer technical interview.<br><br>
+                    $\langle {\large{\color{red}\zeta}} \rangle$ 
+                    This is very easy question to understand, but it is not so easy to code it up in 45 minutes.
+
+                    Let's try to understand that question.<br><br>
+                    Given array, char[] array = {'a', 'b', 'c'}, the following are all the permutations<br>
+                    a b c<br>
+                    a c b<br>
+
+                    c b a<br>
+                    c a b<br>
+
+                    b a c<br>
+                    b c a<br><br>
+                    The question is how we algorithmically print out the permutation?<br><br>
+                    1. If we fix the letter 'a', and permutate['b', 'c']<br>
+                    here is what we got?<br>
+                    'a', ['b', 'c']<br>
+                    'a', ['c', 'b']<br><br>
+
+                    2. we can swap 'a' to each char in ['b', 'c'] and ['c', 'b']<br>
+                    swap['a', ['b', 'c']] $\Rightarrow$ 'b', ['a', 'c'] and 'c', ['b', 'a']<br>
+                    swap['a', ['c', 'b']] $\Rightarrow$ 'c', ['a', 'b'] and 'b', ['c', 'a']<br><br>
+
+                    [a b c] $\Rightarrow$ [b a c] and [c b a]<br>
+                    [a c b] $\Rightarrow$ [c a b] and [b c a]<br><br>
+                    all the permutations[including the two array, [a b c] and [a c d]]<br>
+                    [a b c]<br>
+                    [b a c]<br>
+                    [c b a]<br>
+                    [a c b]<br>
+                    [c a b]<br>
+                    [b c a]<br><br>
+
+                    let's look at other example<br>
+                    Given char 'a' and string "123" and we fix the order of "123", how many different string[lenght=4] we can generate from 'a' and "123"<br>
+                    Remeber the order of "123" is fixed,["213a" is not allowed]<br>
+                    Obviously we can arrange:<br>
+                    a123<br>
+                    1a23<br>
+                    12a3<br>
+                    123a<br><br>
+
+                    but we can also think of using swap[index, index] operation<br>
+                    a123 swap[0, 0] $\Rightarrow$ a123<br>
+                    a123 swap[0, 1] $\Rightarrow$ 1a23<br>
+                    a123 swap[0, 2] $\Rightarrow$ 12a3<br>
+                    a123 swap[0, 3] $\Rightarrow$ 123a<br>
+
+                    </p>
+
+                </div>
+            <!-- Column 1 end -->
+            </div>
+            <div class="col2">
+            <!-- Column 2 start -->
+                <div>
+                    <h3>
+                        <?php
+                        $fileName = "indexPrintAllPermutationofanArray.html";
+                        include("../php/menu.php");
+                        ?>
+                    </h3>
+                </div>
+            <!-- Column 2 end -->
+            </div>
+        </div>
+    </div>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'zsurfacecom';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+    <div id="footer">
+        <p>This page uses the <a href="">Put More Stuff Here</a> by <a href="">ZSurface</a>. View more <a href="">ZSurface</a> and <a href="">ZSurface</a>.</p>
+    </div>
+
+    </body>
+    </html>

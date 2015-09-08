@@ -17,19 +17,8 @@ a:hover {
 	color:#000;
 }
 h1, h2, h3 {
-	margin:.2em 0 .2em 0;
+	margin: .1em 0 .1em 0;
 	padding:2px;
-}
-p {
-	margin:.4em 0 .8em 0;
-	padding:0;
-}
-img {
-	margin:10px 0 5px;
-}
-#ads img {
-	display:block;
-	padding-top:10px;
 }
 
 /* Header styles */

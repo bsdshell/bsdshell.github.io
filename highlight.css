@@ -3,11 +3,11 @@ pre{
     /*background:#002B36;*/
     background:rgba(54, 72, 76, 0.9);
     font-size:12pt;
-    box-shadow:3px 3px 5px 1px #888;
+    box-shadow:2px 2px 3px 1px #888;
     font-family:"Lucida Console", Courier, monospace;
-    line-height:1.2em;
+    line-height:1.1em;
     letter-spacing:0.05em;
-    border-radius: 0px;
+    border-radius:0px;
     padding:1em;
     font-weight:500;
 }
@@ -36,7 +36,7 @@ pre{
 .highlight .gs { font-weight: bold } /* Generic.Strong */
 .highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
 .highlight .gt { color: #0040D0 } /* Generic.Traceback */
-.highlight .kc { color: #E441BE; font-weight: bold } /* Keyword.Constant */
+.highlight .kc { color: rgba(228, 197, 181, 0.9); font-weight: bold } /* Keyword.Constant */
 .highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
 .highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
 .highlight .kp { color: #008000 } /* Keyword.Pseudo */
