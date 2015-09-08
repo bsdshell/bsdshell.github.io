@@ -1,12 +1,13 @@
 pre{
     /*background:#000308;*/
-    background:#002B36;
+    /*background:#002B36;*/
+    background:rgba(54, 72, 76, 0.9);
     font-size:12pt;
     box-shadow:3px 3px 5px 1px #888;
     font-family:"Lucida Console", Courier, monospace;
     line-height:1.2em;
     letter-spacing:0.05em;
-    border-radius: 10px;
+    border-radius: 0px;
     padding:1em;
     font-weight:500;
 }

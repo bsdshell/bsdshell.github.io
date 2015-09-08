@@ -28,7 +28,7 @@ function createBasicPage($fileHtml)
     <body>
     <div id=\"header\">
         <h1>Surface, Curve, Algorithm, Geometry, Algebra</h1>
-        <p id=\"layoutdims\">Measure columns in: <a href=\"../index.html\">Home</a> | <a href=\"\">About</a> | $\Lambda$</p>
+        <p id=\"layoutdims\">Info:<a href=\"../index.html\">Home</a> | <a href=\"\">About</a> | $\Lambda$</p>
     </div>
     <div class=\"colmask rightmenu\">
         <div class=\"colleft\">
@@ -105,9 +105,14 @@ return $content;
         22=>"ObjectiveC Block",
         23=>"Print All Permutation of an Array",
         24=>"Command Line Trick", 
-        25=>"Vim Tricks",
-        26=>"Mathematic Note",
-        27=>"Daily Note",
+        25=>"C and C++ Tutorial",
+        26=>"Quick Sort in C and C++",
+        27=>"Visualize Binomial Theorem",
+        28=>"Print all combination of r in a given array of size n",
+        29=>"Binomial Identity",
+        30=>"Vim Tricks",
+        31=>"Mathematic Note",
+        32=>"Daily Note",
     );
 
 
