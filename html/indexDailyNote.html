@@ -63,10 +63,7 @@
                        and wrote down the permutation of a few characters, eventually I can rewrite the algorithm.<br> 
                        The algorithm is similar to print out the upper triangle of two dimension array, usually we can use two loops and iterate horizontally and vertically<br>
                        but we can use recursion to replace one dimension and use only one loop.
-
-                       
                        </p>
-
                        <pre style="background:#EEE">
        printUpperTriangle()
        {
@@ -111,8 +108,154 @@
                        There is not many people on the Korean Caffee, and the steeet is empty. This is the typical Labour Holiday scene.<br>
                        Last night, there is police check point close the Korean town in El Camino Real.<br>
                        This is first time I was stoped by the police in CA and they ask for your driver license<br>
-                       I think they try to do some stuff to show the public they are doing drive public safe measure<br>
+                       I think they try to do some stuff to show the public they are doing drive public safe measure<br><br>
+
+                       $\langle {\large{\color{red}\mu}} \rangle$ 
+                       Tue Sep  7 17:50:42 PDT 2015
+                       Yesterday, I spent most of my time on reviewing algorithms.<br>
+                       I went through quick sort, merge sort and review the algorithm to find the clusters in 2D array<br> 
+                       Also, review the reverse the single linked list. I found the single linked list is not easy question actually,<br> 
+                       it is easy to make mistaken when you switch two links in two nodes, since you might forget the next link is overwritten<br>
+                       when two links are switched. For quick sort, the algorithm is not hard but the hard part is 
+                       when you partition the array with privot onlineb, Fortunately, the partition algorithm is very short/simple but it is not obvious.<br>
+                       <pre style="background:#666;color:#8DE884;">
+                       e.g. choose the first element of an array as pivot
+                       int[] array = {2, 4, 1, 3}
+
+                       int pivot = array[0];
+                       int lo = 0;
+                       int big = 0;
+                       for(int i=0; i < array.length; i++)
+                       {
+                            if(array[i] < pivot)
+                            {
+                                swap(array, i, big);
+                                big++;
+                            }
+                       }
+                       swap(array, lo, big-1), 
+                       </pre>
                        </p>
+                       <p>
+                       The algorithm is very short but it is not obvious[at least for me]<br>
+                       </p>
+                       <p>
+                       $\langle {\large{\color{red}\xi}} \rangle$ 
+                       Sat Sep 12 00:35:25 PDT 2015<br>
+                       In this couple days, I spend some time on two dimension drawing in iOS. There are a lots of stuff to read and digest[break down]<br> 
+                       Learn some new stuff. drawing coordinates, view coordinates and hardware coordinates<br> 
+                       The center[0, 0] of drawing coordinates is on the center of screen, this is my first time I hear the term "drawing coordiates".<br>
+                       Previously we heard view coordinates and the [0, 0] is usually on Up Left corner of rectangle. Also there is hardware coordinates, and<br> 
+                       we usually don't deal with hardware coordinates, the [0, 0] is also on the Up Left corder of a rectangle, but it is different from<br> 
+                       the view coordinates[from Apple Doc]<br>
+                       1. Drawing Coordinates is used when the drawing commands are applied<br> 
+                       2. View Coordinates is fixed coordinate system relative to the view<br>
+                       3. Hardware Coordinates is the coordinate system represents pixels on the physical screen<br>
+                       Also, there is something called default coordinate system which maps onto view's underlying coordinate system when the graphic contexts 
+                       establishs the initial drawing coordinate system.<br>
+                       <img src="../image/coordinate_differences_2x.png" width="100%" height="100%" /><br><br> 
+                       </p>
+                       <p>
+                       Sun Sep 13 14:22:57 PDT 2015<br>
+                       I'm working on some simple library which is moving the block around the screen.<br>
+                       There are a few operations that I would like to implement.<br>
+                       1. translation<br>
+                       2. rotation<br>
+                       3. reflection.[vertical, horizonal and diagonal]<br>
+                       4. flip<br> 
+                       5. cycle<br>
+
+                       when I play around with array indexes, there are some interested properties between the index of array and the value of array.<br>
+                       In group theory, permutation group is well known. There is obvious question is how the permutation group and array are related<br>
+                       <pre style="background:#666;color:#8DE884;">
+                       Given C['a', 'b', 'c', 'd']
+                             A[ 3,   1,   0,   2]
+                             B[ 0,   3,   2,   1]
+                       map:[0, 1, 2, 3] to [3, 1, 0, 2]
+
+                       Map C with the order in A
+                       [0->3]->'d'->0
+                       [1->1]->'b'->1
+                       [2->0]->'a'->2
+                       [3->2]->'c'->3
+                       for( i = 0; i< len; i++)
+                           D[i] = C[A[i]]
+
+                       Composite two maps 
+                       0->3->2
+                       1->1->1
+                       2->0->3
+                       3->2->0
+                       for( i = 0; i< len; i++)
+                           A[A[i]]
+
+                       Composition three maps becomes Identity map
+                       0->3->2->0
+                       1->1->1->1
+                       2->0->3->2
+                       3->2->0->3
+                       for( i = 0; i< len; i++)
+                           A[A[A[i]]]
+
+                       for( i = 0; i< len; i++)
+                           A[B[i]] 
+                       </pre>
+                       </p>
+                       Mon Sep 14 02:38:43 PDT 2015<br>
+                       I just learn a new vocabulary:<br>
+                       Circumvent [s&#601;rk&#601;m &#712;vent] find a way around an obstacle<br>
+                       Circumference<br>
+                       Circumcise cut off foreskin of<br>
+                       <p>
+                       Fri Sep 18 22:01:50 PDT 2015<br>
+                       descend [d&#616;&#712;send] move or fall downward<br> 
+                       descendant [d&#616;&#712;send&#601;nt] nonu, a person or animal that is descended from a particular ancestor<br>
+                       be descended from, be a direct blood relative from<br>
+                       ancestor   [&#712;&aelig;n&#716;sest&#601;r]<br>
+                       </p>
+                       <p>
+
+                       Sun Sep 20 17:59:45 PDT 2015<br>
+                       <span style="color:#777; font-size:22px;">
+                       &#x0250;[x0250] &nbsp; &#x0260;[x0260] &nbsp;&#x0270;[x0270] &nbsp; &#x0280;[x0280] &nbsp;&#x0290;[x0290] &nbsp; &#x02A0;[x02A0]<br>
+                       &#x0251;[x0251] &nbsp; &#x0261;[x0261] &nbsp;&#x0271;[x0271] &nbsp; &#x0281;[x0281] &nbsp;&#x0291;[x0291] &nbsp; &#x02A1;[x02A1]<br>
+                       &#x0252;[x0252] &nbsp; &#x0262;[x0262] &nbsp;&#x0272;[x0272] &nbsp; &#x0282;[x0282] &nbsp;&#x0292;[x0292] &nbsp; &#x02A2;[x02A2]<br>
+                       &#x0253;[x0253] &nbsp; &#x0263;[x0263] &nbsp;&#x0273;[x0273] &nbsp; &#x0283;[x0283] &nbsp;&#x0293;[x0293] &nbsp; &#x02A3;[x02A3]<br>
+                       &#x0254;[x0254] &nbsp; &#x0264;[x0264] &nbsp;&#x0274;[x0274] &nbsp; &#x0284;[x0284] &nbsp;&#x0294;[x0294] &nbsp; &#x02A4;[x02A4]<br>
+                       &#x0255;[x0255] &nbsp; &#x0265;[x0265] &nbsp;&#x0275;[x0275] &nbsp; &#x0285;[x0285] &nbsp;&#x0295;[x0295] &nbsp; &#x02A5;[x02A5]<br>
+                       &#x0256;[x0256] &nbsp; &#x0266;[x0266] &nbsp;&#x0276;[x0276] &nbsp; &#x0286;[x0286] &nbsp;&#x0296;[x0296] &nbsp; &#x02A6;[x02A6]<br>
+                       &#x0257;[x0257] &nbsp; &#x0267;[x0267] &nbsp;&#x0277;[x0277] &nbsp; &#x0287;[x0287] &nbsp;&#x0297;[x0297] &nbsp; &#x02A7;[x02A7]<br>
+                       &#x0258;[x0258] &nbsp; &#x0268;[x0268] &nbsp;&#x0278;[x0278] &nbsp; &#x0288;[x0288] &nbsp;&#x0298;[x0298] &nbsp; &#x02A8;[x02A8]<br>
+                       &#x0259;[x0259] &nbsp; &#x0269;[x0269] &nbsp;&#x0279;[x0279] &nbsp; &#x0289;[x0289] &nbsp;&#x0299;[x0299] &nbsp; &#x02A9;[x02A9]<br>
+                       &#x025A;[x025A] &nbsp; &#x026A;[x026A] &nbsp;&#x027A;[x027A] &nbsp; &#x028A;[x028A] &nbsp;&#x029A;[x029A] &nbsp; &#x02AA;[x02AA]<br>
+                       &#x025B;[x025B] &nbsp; &#x026B;[x026B] &nbsp;&#x027B;[x027B] &nbsp; &#x028B;[x028B] &nbsp;&#x029B;[x029B] &nbsp; &#x02AB;[x02AB]<br>
+                       &#x025C;[x025C] &nbsp; &#x026C;[x026C] &nbsp;&#x027C;[x027C] &nbsp; &#x028C;[x028C] &nbsp;&#x029C;[x029C] &nbsp; &#x02AC;[x02AC]<br>
+                       &#x025D;[x025D] &nbsp; &#x026D;[x026D] &nbsp;&#x027D;[x027D] &nbsp; &#x028D;[x028D] &nbsp;&#x029D;[x029D] &nbsp; &#x02AD;[x02AD]<br>
+                       &#x025E;[x025E] &nbsp; &#x026E;[x026E] &nbsp;&#x027E;[x027E] &nbsp; &#x028E;[x028E] &nbsp;&#x029E;[x029E] &nbsp; &#x02AE;[x02AE]<br>
+                       &#x025F;[x025F] &nbsp; &#x026F;[x026F] &nbsp;&#x027F;[x027F] &nbsp; &#x028F;[x028F] &nbsp;&#x029F;[x029F] &nbsp; &#x02AF;[x02AF]<br>
+                       </span>
+
+                       prefix [pr &#x0226A; ] add thing in font of sth or at the beginning of a word, add sth at the beginning of<br>          
+                       postfix [ ] append thing at the end of sth, append as a suffix<br>
+                       append [ ] add sth as an attachment or supplement<br>
+                       </p>
+                       Mon Sep 21 21:24:13 PDT 2015
+                       <pre style="background:#FFF;color:#000">
+                       Operators in Vim 
+                        c		change
+                        d		delete
+                        y		yank into register (does not change the text)
+                        gu		make lowercase
+                        gU		make uppercase
+                        !		filter through an external program
+                        gq		text formatting
+                        g?		ROT13 encoding
+                        >		shift right
+                        <		shift left
+                        zf		define a fold
+                        g@		call function set with the 'operatorfunc' option
+                       </pre>
+
                 </div>
             <!-- Column 1 end -->
             </div>

@@ -1,0 +1,27 @@
+<div class="highlight"><pre><span class="nd">@interface</span> <span class="n">TestClass</span> <span class="o">:</span> <span class="n">NSObject</span>
+    <span class="o">+(</span><span class="kt">void</span><span class="o">)</span><span class="n">classOrInstanceMethod</span><span class="o">;</span>
+    <span class="o">-(</span><span class="kt">void</span><span class="o">)</span><span class="n">classOrInstanceMethod</span><span class="o">;</span>
+<span class="nd">@end</span>
+
+<span class="nd">@implementation</span> <span class="n">TestClass</span>
+
+<span class="o">+(</span><span class="kt">void</span><span class="o">)</span><span class="n">classOrInstanceMethod</span><span class="o">{</span>
+    <span class="n">NSLog</span><span class="o">(</span><span class="err">@</span><span class="s">&quot;%s&quot;</span><span class="o">,</span> <span class="n">__PRETTY_FUNCTION__</span><span class="o">);</span> 
+<span class="o">}</span>
+<span class="o">-(</span><span class="kt">void</span><span class="o">)</span><span class="n">classOrInstanceMethod</span><span class="o">{</span>
+    <span class="n">NSLog</span><span class="o">(</span><span class="err">@</span><span class="s">&quot;%s&quot;</span><span class="o">,</span> <span class="n">__PRETTY_FUNCTION__</span><span class="o">);</span> 
+<span class="o">}</span>
+<span class="nd">@end</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="o">(</span><span class="kt">int</span> <span class="n">argc</span><span class="o">,</span> <span class="kd">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="o">[])</span>
+<span class="o">{</span>
+    <span class="nd">@autoreleasepool</span><span class="o">{</span>
+        <span class="n">NSLog</span><span class="o">(</span><span class="err">@</span><span class="s">&quot;Static method in ObjectiveC&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="n">NSArray</span><span class="o">*</span> <span class="n">arr</span> <span class="o">=</span> <span class="o">[</span><span class="n">NSArray</span> <span class="n">arrayWithObjects</span><span class="o">:[[</span><span class="n">TestClass</span> <span class="n">alloc</span><span class="o">]</span><span class="n">init</span><span class="o">],</span>
+                                            <span class="o">[</span><span class="n">TestClass</span> <span class="n">class</span><span class="o">],</span> <span class="n">nil</span><span class="o">];</span>
+    <span class="k">for</span><span class="o">(</span><span class="n">id</span> <span class="n">obj</span> <span class="n">in</span> <span class="n">arr</span><span class="o">)</span>
+        <span class="o">[</span><span class="n">obj</span> <span class="n">classOrInstanceMethod</span><span class="o">];</span>
+<span class="o">}</span>
+</pre></div>
