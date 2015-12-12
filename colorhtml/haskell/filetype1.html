@@ -1,0 +1,54 @@
+<div class="highlight"><pre><span class="c1">-- City is similar to Enum in Java/C++</span>
+<span class="c1">-- public enum City </span>
+<span class="c1">-- {</span>
+<span class="c1">--  PaloAlto, </span>
+<span class="c1">--  MountainView </span>
+<span class="c1">--  Sunnyvale</span>
+<span class="c1">-- }</span>
+<span class="c1">-- City city = MountainView</span>
+<span class="c1">--</span>
+<span class="kr">data</span> <span class="kt">City</span> <span class="ow">=</span> <span class="kt">PaloAlto</span>
+            <span class="o">|</span> <span class="kt">MountainView</span>
+            <span class="o">|</span> <span class="kt">Sunnyvale</span>
+    <span class="kr">deriving</span><span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+            
+
+<span class="nf">city</span><span class="ow">::</span><span class="kt">City</span>
+<span class="nf">city</span> <span class="ow">=</span> <span class="kt">MountainView</span>
+
+<span class="nf">listofCity</span><span class="ow">::</span><span class="p">[</span><span class="kt">City</span><span class="p">]</span>
+<span class="nf">listofCity</span> <span class="ow">=</span> <span class="p">[</span><span class="kt">PaloAlto</span><span class="p">,</span> <span class="kt">Sunnyvale</span><span class="p">,</span> <span class="kt">MountainView</span><span class="p">]</span>
+
+<span class="nf">isGoodCity</span><span class="ow">::</span><span class="kt">City</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span>
+<span class="nf">isGoodCity</span> <span class="kt">PaloAlto</span>     <span class="ow">=</span> <span class="kt">True</span>
+<span class="nf">isGoodCity</span> <span class="kt">MountainView</span> <span class="ow">=</span> <span class="kt">True</span>
+<span class="nf">isGoodCity</span> <span class="kt">Sunnyvale</span>    <span class="ow">=</span> <span class="kt">False</span>
+
+<span class="kr">data</span> <span class="kt">MyType</span> <span class="ow">=</span> <span class="kt">Failture</span>
+            <span class="o">|</span> <span class="kt">OK</span> <span class="p">(</span><span class="kt">Double</span><span class="p">)</span>
+    <span class="kr">deriving</span> <span class="kt">Show</span>
+
+<span class="nf">fa</span> <span class="ow">=</span> <span class="kt">Failture</span>
+<span class="nf">ok</span> <span class="ow">=</span> <span class="kt">OK</span> <span class="mf">3.31</span>
+
+<span class="nf">safeDiv</span><span class="ow">::</span><span class="kt">Double</span><span class="ow">-&gt;</span><span class="kt">Double</span><span class="ow">-&gt;</span><span class="kt">MyType</span>
+<span class="nf">safeDiv</span> <span class="kr">_</span> <span class="mi">0</span> <span class="ow">=</span> <span class="kt">Failture</span>
+<span class="nf">safeDiv</span> <span class="n">x</span> <span class="n">y</span> <span class="ow">=</span> <span class="kt">OK</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">)</span>
+
+<span class="nf">f</span><span class="ow">::</span><span class="kt">String</span><span class="ow">-&gt;</span><span class="kt">MyType</span>
+<span class="nf">f</span>   <span class="s">&quot;&quot;</span>    <span class="ow">=</span> <span class="kt">Failture</span>
+<span class="nf">f</span>   <span class="s">&quot;cat&quot;</span> <span class="ow">=</span> <span class="kt">OK</span> <span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="nf">f</span>   <span class="s">&quot;dog&quot;</span> <span class="ow">=</span> <span class="kt">OK</span> <span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="nf">f</span>   <span class="kr">_</span>     <span class="ow">=</span> <span class="kt">OK</span> <span class="mf">3.3</span>
+
+
+<span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span>
+        <span class="n">print</span> <span class="p">(</span><span class="n">isGoodCity</span> <span class="kt">PaloAlto</span><span class="p">)</span>
+        <span class="n">print</span> <span class="p">(</span><span class="n">isGoodCity</span> <span class="kt">Sunnyvale</span><span class="p">)</span>
+        <span class="n">print</span> <span class="p">(</span><span class="n">fa</span><span class="p">,</span> <span class="n">ok</span><span class="p">)</span>
+        <span class="n">print</span> <span class="p">(</span><span class="n">f</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">print</span> <span class="p">(</span><span class="n">f</span> <span class="s">&quot;cat&quot;</span><span class="p">)</span>
+        <span class="n">print</span> <span class="p">(</span><span class="n">f</span> <span class="s">&quot;dog&quot;</span><span class="p">)</span>
+        <span class="n">print</span> <span class="p">(</span><span class="n">safeDiv</span> <span class="mi">3</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">print</span> <span class="p">(</span><span class="n">safeDiv</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>

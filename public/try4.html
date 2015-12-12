@@ -1,0 +1,12 @@
+<div class="highlight"><pre>    <span class="c1">// allocate two dimension array in C</span>
+    <span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
+    <span class="kt">int</span><span class="o">**</span> <span class="n">ppt</span><span class="o">;</span>
+    
+    <span class="c1">// this is trick part</span>
+    <span class="n">ppt</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">**)</span><span class="n">malloc</span><span class="o">(</span><span class="n">sizeof</span><span class="o">(</span><span class="kt">int</span><span class="o">*)*</span><span class="n">col</span><span class="o">);</span>
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">col</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span>
+    <span class="o">{</span>
+        <span class="n">ppt</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">*)</span><span class="n">malloc</span><span class="o">(</span><span class="n">sizeof</span><span class="o">(</span><span class="kt">int</span><span class="o">)*</span><span class="n">row</span><span class="o">);</span>
+    <span class="o">}</span>
+</pre></div>

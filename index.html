@@ -1,10 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
 <head>
-	<title>Surface Curve Algorithm Geometry Algebra</title>
+	<title>Coin Change Algorithm, Minimum Coin change Problem</title>
 	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
 	<meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
-	<meta name="keywords" content="Surface Curve Algorithm Geometry Algebra" />
+	<meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
 	<meta name="robots" content="index, follow" />
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="screen.css" media="screen" />
@@ -23,44 +23,77 @@
 <body>
 
 <div id="header">
-	<h1>Surface Curve Algorithm Geometry Algebra</h1>
-	<p>Info: <a href="">About</a> | <a href="">News</a> | $\Lambda$</p>
 </div>
 <div class="colmask rightmenu">
 	<div class="colleft">
 		<div class="col1">
 			<!-- Column 1 start -->
-            
             <div class="box">
                 <div>
-                    <h3><?php include("colorhtml/BinarySearch.html"); ?></h3>
-                </div>
-                <div>
-                    <img src="image/BinarySearch1D.svg" width="100%" height="50%" />
-                </div>
-            </div>
 
-            <div class="box">
-                <div>
-                    <h3><?php include("colorhtml/BinSearch2D.html"); ?></h3>
-                </div>
-                <div>
-                    <img src="image/BinarySearch2D.svg" width="100%" height="50%" />
-                </div>
-            </div>
+                    <div>
+                        <h2>Given change C and <font color="red">$S=\{S_{1}, S_{2}, ... ,S_{k}  \}$</font>, find the mininum numbers of coins that adds up to C
+                            <br>let the numbers of coins to be $\varphi$ 
+                        </h2>
+                        <h3><font color="blue">Example 1. </font> Given change C = 6 and <font color="red">$S=\{2, 3, 4\}$</font>, find the mininum number of coins adds up to 6</h3>
+                        <h3>C = 6 = 2 + 2 + 2 $\Rightarrow \varphi =3$</h3>
+                        <h3>C = 6 = 2 + 4 $\Rightarrow \varphi =2$</h3>
+                        <h3>C = 6 = 4 + 2 $\Rightarrow \varphi =2$</h3>
+                        <h3>C = 6 = 3 + 3 $\Rightarrow \varphi =2$</h3>
+                        <h3>$\Rightarrow \varphi=2$</h3>
+                    </div>
 
-            <div class="box">
-                <div>
-                    <h2>Longest Increasing Subsequence Dynamic Programming $O(n^{2})$</h2>
-                    <h3><?php include("colorhtml/LongestIncreasingSubsequence.html"); ?></h3>
+                    <div class="mathbox">
+                        <h3><font color="#F2940F">Mathematic Concept</font></h3>
+                        <h3>Given C and find the linear combination of $S=\{S_{1}, S_{2}, ... ,S_{k}  \} \Rightarrow C = \sum_{i=1}^{k} x_{i}S_{i}$ </h3>
+                        <h3><font color="red">$C = 6\quad S=\{2, 3, 4\}$</font></h3>
+                        <h3>$6 = 1*2 + 1*2 + 1*2 \Rightarrow x_{1}=1\quad x_{2}=1\quad x_{3}=1 \Rightarrow \varphi = 1 + 1 + 1 = 3 \textbf{ coins}$</h3>
+                        <h3>$6 = 1*2 + 1*4 \Rightarrow x_{1}=1\quad x_{2}=1 \Rightarrow \varphi = 1 + 1 = 2 \textbf{ coins}$</h3>
+                        <h3>$6 = 1*4 + 1*2 \Rightarrow x_{1}=1\quad x_{2}=1 \Rightarrow \varphi = 1 + 1 = 2 \textbf{ coins}$ </h3>
+                        <h3>$6 = 1*3 + 1*3 \Rightarrow x_{1}=1\quad x_{2}=1 \Rightarrow \varphi = 1 + 1 = 2 \textbf{ coins}$</h3>
+                    </div>
+
+                    <br>
+                    <h3><font color="blue">Example 2. </font> Given change C = 0 and <font color="red">$S=\{2, 3, 4\}$</font>, find the mininum number of coins adds up to 0</h3>
+                    <h3>Since C = 0, zero coin adds up to C = 0. Therefore, the solution is zero coin</h3>
+                    <h3>C = 0 = 0 $\Rightarrow \varphi =0$</h3>
+
+                    <div class="mathbox">
+                        <h3><font color="#F2940F">Mathematic Concept</font></h3>
+                        <h3>$C = 0 = 0*2 + 0*3 + 0*4 \Rightarrow x_{1}=0\quad x_{2}=0\quad x_{3}=0 \Rightarrow \varphi = 0 + 0 + 0 = 0 \textbf{ coin}$</h3>
+                    </div>
+
+                    <br>
+                    <h3><font color="blue">Example 3. </font> Given change C = -2 and <font color="red">$S=\{2, 3, 4\}$</font>find the mininum number of coins adds up to C = -2</h3>
+                    <h3>There is no solution, since C is negative [ $\because$ we can't have negative number of coins ]</h3>
+                    <h3>If C < 0, then we can  let $\varphi =\infty$ </h3>
+                    <h3>Ok, you might ask why is $\varphi =\infty$, why not is $\varphi =0$</h3>
+                    <h3>Well, $\varphi =0$ is the solution for C = 0. But I still don't understand why $\varphi$ has to be $\infty$</h3>
+
+                    <div class="mathbox">
+                        <h3><font color="#F2940F">Real reason behind that why $\varphi$ has to be $\infty$</font></h3>
+                        <h3>$\infty$ acts as identity for min( , ) operation</h3>
+                        <h3><font color="blue">E.g.</font> $0$ is the identity for + since $0 + a = a, a \in \mathbb{N}$</h3>
+                        <h3><font color="blue">E.g.</font> $1$ is the identity for * since $1*a = a, a\in \mathbb{N}$</h3>
+                        <h3>Similarly, $\infty$ is the identity for $min( , )$ since $min(\infty, a) = a, a \in \mathbb{N}$</h3>
+                    </div>
+
+                    <h3>Ok, make sence, but why do we need the $\infty$ as identity for the [ coin change problem ]</h3>
+                    <h3>Let's look at the following graph for $\text{coin } = \{2, 3, 4\}, S = 6$</h3>
+                    <h3><font color="red">The value of each node $=$ the value of parent node $-$ weight of the edge [ except the root node ]</font></h3>
+                    <h3>Some leaf nodes are $\infty$ since the value of parent node $<$ the weight of edge</h3>
+                    <h3>Why we set the value of the node = $\infty$ ? since we know the path contains $\infty$ can't be a solution</h3>
+                    <h3>The only path might be a solution is the value of leaf node has to be zero [ which are the red node ]</h3>
+                    <h3>Since we are looking for the minimum number of coins, then the solution(s) has/have to be the shortest path from the root</h3>
+                    <div>
+                        <img src="image/CoinChangeGraph.svg" width="100%" height="50%" />
+                    </div>
                 </div>
+
                 <div>
-                    <h2>Longest Increasing Subsequence Recursion</h2>
-                    <h3><?php include("colorhtml/LISRecursion.html"); ?></h4>
+                    <h3><?php include("colorhtml/java/CoinChangeRecursive.html"); ?></h3>
                 </div>
-                <div>
-                    <img src="image/LISTree.svg" width="100%" height="50%" />
-                </div>
+                
             </div>
         <!-- Column 1 end -->
 		</div>
@@ -78,7 +111,6 @@
 		</div>
 	</div>
 </div>
-
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
@@ -91,7 +123,6 @@
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
-
 
 <div id="footer">
 	<p>This page uses the <a href="">Put More Stuff Here</a> by <a href="">ZSurface</a>. View more <a href="">ZSurface</a> and <a href="">ZSurface</a>.</p>

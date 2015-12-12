@@ -20,18 +20,29 @@
               });
             </script>
         <script type="text/javascript" src="../MathJax-2.4-latest/MathJax.js"></script>
+
+        <!-- beg for gist embed code-->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.3/gist-embed.min.js"></script>
+        <!-- end for gist embed code-->
     </head>
     <body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66282017-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
     <div id="header">
-        <h1>Surface, Curve, Algorithm, Geometry, Algebra</h1>
-        <p id="layoutdims">Info:<a href="../index.html">Home</a> | <a href="">About</a> | $\Lambda$</p>
     </div>
     <div class="colmask rightmenu">
         <div class="colleft">
             <div class="col1">
                 <!-- Column 1 start -->
-                <div class="mytextbox highlight">
-                    <p>
+                    <p class="fs cen">
                     Dynamically allocate two dimension array in C 
                     </p>
                     <pre style="background:#000;color:#DDE884;">
@@ -44,7 +55,15 @@
                         array[i] = (int*)malloc(sizeof(int)*width);
                     </pre>
                     <img src="../image/malloc.svg" width="60%" height="60%" /><br> 
-                </div>
+                    <p class="fs cen">
+                    Allocate and Deallocate 3D array or tripple pointers in C/C++/ObjectiveC with malloc 
+                    </p>
+                    <div class="cen">
+                    <img src="../image/cube.png" width="50%" height="50%" /><br> 
+                    </div>
+
+                    <code data-gist-id="7bf30da08b6bd7317222"></code>
+                    <code data-gist-id="92821d63ad970e0c88cd"></code>
             <!-- Column 1 end -->
             </div>
             <div class="col2">

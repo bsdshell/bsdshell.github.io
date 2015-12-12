@@ -1,0 +1,20 @@
+<div class="highlight"><pre><span class="cp">#include &lt;assert.h&gt;</span>
+<span class="cp">#include &lt;stdlib.h&gt;</span>
+<span class="cp">#include &lt;memory.h&gt;</span>
+<span class="cp">#include &lt;time.h&gt;</span>
+<span class="cp">#include &lt;new&gt;</span>
+
+<span class="c1">//#define _STATS</span>
+
+<span class="c1">// dummy malloc to prevent calls within the Container!</span>
+<span class="kt">void</span> <span class="o">*</span> <span class="nf">_DummyMalloc</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">nSize</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">assert</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;You&#39;re not allowed to call malloc/free or ordinary new/delete within the body of the container!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">#define malloc _DummyMalloc</span>
+<span class="cp">#include &quot;container.h&quot;</span>
+<span class="cp">#undef malloc</span>
+</pre></div>

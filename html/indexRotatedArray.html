@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+	<title>Surface, Curve, Algorithm, Geometry, Algebra</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+	<meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../highlight.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+          });
+        </script>
+    <script type="text/javascript" src="../MathJax-2.4-latest/MathJax.js"></script>
+</head>
+<body">
+
+<div id="header">
+	<p id="layoutdims">Measure columns in: <a href="../index.html">Home</a> | <a href="">About</a> | $\Lambda$</p>
+</div>
+<div class="colmask rightmenu">
+	<div class="colleft">
+		<div class="col1">
+			<!-- Column 1 start -->
+                <p>
+                    $\square$
+                    Given a rotated sorted array, find the index of maximum of value of the array in $O(\log{n})$ <br>
+                    <img src="../image/rotatedarrayfigure.svg" width="100%" height="100%" /><br>
+                    After the rotation, there two partial array:[4 5 6 7] and [1 2 3],
+                    We can create a picture from the two array [in figure (3)].<br><br>
+                    We try to use similar <span class="sd">binary search algorithm</span> which is as following<br>
+                    1. divide the array to two even parts,e.g. left and right<br>
+                    2. choose either left or right side of the array and do a recursive call<br><br>
+                    $\square$
+                    Q. How do we know the maximum value is on the left or right side?<br>
+                    <img src="../image/rotatedarray1.svg" width="100%" height="100%" /><br>
+
+                    <span style="color:#FF00EE; font-style:italic; font-weight:600;">Find</span> the middle element of the array<br>
+                    <span style="color:#FF0033">1.</span> int mid = (lo + hi)/2;<br>
+                    <span style="color:#FF0033">2.</span> compare arr[lo] and arr[mid]<br><br>
+                    if arr[lo] < arr[mid], we know the maximum value is between [mid] and [hi], [see figure (4)]<br>
+                    arr[lo] = 4 and arr[mid] = 7<br>
+                    otherwise, the maximum value is between [lo] and [mid], [see figure (5)]<br>
+                    arr[lo] = 6 and arr[mid] = 1<br>
+
+                    <pre style="background:#FFF">
+                        lo = 0, hi = 7
+                        mid = (lo + hi)/2 = 3;
+
+                        arr[lo] = 4, arr[mid] = 7;
+                        arr[lo] < arr[mid] 
+                        the maximum value is in [mid] to [hi]
+                    </pre>
+
+                    <pre style="background:#FFF">
+                        <span style="color:#FF0000">skeleton code</span>
+                        int findMaxIndex(int[][] arr, int lo, int li)
+                        {
+                            int mid = (lo + hi)/2;
+                            if(arr[lo] < arr[mid])
+                                return findMaxIndex(arr, mid, hi);
+                            else
+                                return findMaxIndex(arr, lo, mid);
+                        }
+                    </pre>
+
+                    <pre style="background:#FFF">
+                        there is <span style="color:#0000FF">one special case</span> that we need to be considered
+                        if the array does not rotate at all, e.g. [1, 2, 3, 4]
+                        then we can just check
+                            if([lo] < [hi])
+                                the array does not rotate at all, 
+                                the index of maximum value is [hi] 
+                    </pre>
+                </p>
+                <?php include("../colorhtml/java/RotatedSortedArray.html"); ?>
+        <!-- Column 1 end -->
+		</div>
+		<div class="col2">
+        <!-- Column 2 start -->
+            <div>
+                <h3>
+                    <?php 
+                    $fileName = "indexRotatedArray.html";
+                    include("../php/menu.php"); 
+                    ?>
+                </h3>
+            </div>
+        <!-- Column 2 end -->
+		</div>
+	</div>
+</div>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'zsurfacecom';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<div id="footer">
+	<p>This page uses the <a href="">Put More Stuff Here</a> by <a href="">ZSurface</a>. View more <a href="">ZSurface</a> and <a href="">ZSurface</a>.</p>
+</div>
+</body>
+</html>

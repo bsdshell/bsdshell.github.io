@@ -1,0 +1,12 @@
+<div class="highlight"><pre><span class="nf">suffixed</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">show</span> <span class="n">n</span> <span class="o">++</span> <span class="n">suffix</span>
+    <span class="kr">where</span> 
+        <span class="n">suffix</span>
+            <span class="o">|</span> <span class="n">n</span> <span class="p">`</span><span class="n">mod</span><span class="p">`</span> <span class="mi">100</span> <span class="p">`</span><span class="n">div</span><span class="p">`</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">=</span> <span class="s">&quot;th&quot;</span>
+            <span class="o">|</span> <span class="n">otherwise</span> <span class="ow">=</span> <span class="kr">case</span> <span class="n">n</span> <span class="p">`</span><span class="n">mod</span><span class="p">`</span> <span class="mi">10</span> <span class="kr">of</span> 
+                <span class="mi">1</span> <span class="ow">-&gt;</span> <span class="s">&quot;st&quot;</span>
+                <span class="mi">2</span> <span class="ow">-&gt;</span> <span class="s">&quot;nd&quot;</span>
+                <span class="mi">3</span> <span class="ow">-&gt;</span> <span class="s">&quot;rd&quot;</span>
+                <span class="kr">_</span> <span class="ow">-&gt;</span> <span class="s">&quot;th&quot;</span>
+
+<span class="nf">result</span> <span class="ow">=</span> <span class="n">map</span> <span class="n">suffixed</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">40</span><span class="p">]</span>
+</pre></div>

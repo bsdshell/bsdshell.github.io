@@ -22,16 +22,22 @@
         <script type="text/javascript" src="../MathJax-2.4-latest/MathJax.js"></script>
     </head>
     <body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66282017-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
     <div id="header">
-        <h1>Surface, Curve, Algorithm, Geometry, Algebra</h1>
-        <p >Info: <a href="../index.html">Home</a> | <a href="">About</a> | $\Lambda$</p>
     </div>
     <div class="colmask rightmenu">
         <div class="colleft">
             <div class="col1">
                 <!-- Column 1 start -->
-                <div class="mytextbox highlight">
-                    <p>
+                    <p class="fs">
                        $\langle {\large{\color{red}\zeta}} \rangle$   
                        Wed Sep  1 02:44:14 PDT 2015<br>
                        woke up pretty early this moring around 9:30am, that weather is hot but it is ok as long as you are in the shadow.<br> 
@@ -64,7 +70,7 @@
                        The algorithm is similar to print out the upper triangle of two dimension array, usually we can use two loops and iterate horizontally and vertically<br>
                        but we can use recursion to replace one dimension and use only one loop.
                        </p>
-                       <pre style="background:#EEE">
+                       <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
        printUpperTriangle()
        {
            for(int col = 0; col < array.length; col++)
@@ -91,7 +97,7 @@
       Obviously, their output are different, but if we remove all the duplicated elements 
       from the recursive one, then we can get same upper triangle,[the orders are different]
                        </pre>
-                       <p>
+                       <p class="fs">
                        Around 1pm, I went to get some lunch. The food is terrible in San Jose so I just get a donus, an apple and a milk.<br>
                        After lunch, I come back to library, and continue to study some algorithms.<br><br>
                     
@@ -118,7 +124,7 @@
                        it is easy to make mistaken when you switch two links in two nodes, since you might forget the next link is overwritten<br>
                        when two links are switched. For quick sort, the algorithm is not hard but the hard part is 
                        when you partition the array with privot onlineb, Fortunately, the partition algorithm is very short/simple but it is not obvious.<br>
-                       <pre style="background:#666;color:#8DE884;">
+                       <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
                        e.g. choose the first element of an array as pivot
                        int[] array = {2, 4, 1, 3}
 
@@ -136,10 +142,10 @@
                        swap(array, lo, big-1), 
                        </pre>
                        </p>
-                       <p>
+                       <p class="fs">
                        The algorithm is very short but it is not obvious[at least for me]<br>
                        </p>
-                       <p>
+                       <p class="fs">
                        $\langle {\large{\color{red}\xi}} \rangle$ 
                        Sat Sep 12 00:35:25 PDT 2015<br>
                        In this couple days, I spend some time on two dimension drawing in iOS. There are a lots of stuff to read and digest[break down]<br> 
@@ -155,7 +161,7 @@
                        establishs the initial drawing coordinate system.<br>
                        <img src="../image/coordinate_differences_2x.png" width="100%" height="100%" /><br><br> 
                        </p>
-                       <p>
+                       <p class="fs">
                        Sun Sep 13 14:22:57 PDT 2015<br>
                        I'm working on some simple library which is moving the block around the screen.<br>
                        There are a few operations that I would like to implement.<br>
@@ -167,7 +173,7 @@
 
                        when I play around with array indexes, there are some interested properties between the index of array and the value of array.<br>
                        In group theory, permutation group is well known. There is obvious question is how the permutation group and array are related<br>
-                       <pre style="background:#666;color:#8DE884;">
+                       <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
                        Given C['a', 'b', 'c', 'd']
                              A[ 3,   1,   0,   2]
                              B[ 0,   3,   2,   1]
@@ -201,19 +207,21 @@
                            A[B[i]] 
                        </pre>
                        </p>
+                       <p class="fs">
                        Mon Sep 14 02:38:43 PDT 2015<br>
                        I just learn a new vocabulary:<br>
                        Circumvent [s&#601;rk&#601;m &#712;vent] find a way around an obstacle<br>
                        Circumference<br>
                        Circumcise cut off foreskin of<br>
-                       <p>
+                       </p>
+                       <p class="fs">
                        Fri Sep 18 22:01:50 PDT 2015<br>
                        descend [d&#616;&#712;send] move or fall downward<br> 
                        descendant [d&#616;&#712;send&#601;nt] nonu, a person or animal that is descended from a particular ancestor<br>
                        be descended from, be a direct blood relative from<br>
                        ancestor   [&#712;&aelig;n&#716;sest&#601;r]<br>
                        </p>
-                       <p>
+                       <p class="fs">
 
                        Sun Sep 20 17:59:45 PDT 2015<br>
                        <span style="color:#777; font-size:22px;">
@@ -225,7 +233,7 @@
                        &#x0255;[x0255] &nbsp; &#x0265;[x0265] &nbsp;&#x0275;[x0275] &nbsp; &#x0285;[x0285] &nbsp;&#x0295;[x0295] &nbsp; &#x02A5;[x02A5]<br>
                        &#x0256;[x0256] &nbsp; &#x0266;[x0266] &nbsp;&#x0276;[x0276] &nbsp; &#x0286;[x0286] &nbsp;&#x0296;[x0296] &nbsp; &#x02A6;[x02A6]<br>
                        &#x0257;[x0257] &nbsp; &#x0267;[x0267] &nbsp;&#x0277;[x0277] &nbsp; &#x0287;[x0287] &nbsp;&#x0297;[x0297] &nbsp; &#x02A7;[x02A7]<br>
-                       &#x0258;[x0258] &nbsp; &#x0268;[x0268] &nbsp;&#x0278;[x0278] &nbsp; &#x0288;[x0288] &nbsp;&#x0298;[x0298] &nbsp; &#x02A8;[x02A8]<br>
+                       &#x0258;[x0258] &nbsp; &nbsp;&#x0278;[x0278] &nbsp; &#x0288;[x0288] &nbsp;&#x0298;[x0298] &nbsp; &#x02A8;[x02A8]<br>
                        &#x0259;[x0259] &nbsp; &#x0269;[x0269] &nbsp;&#x0279;[x0279] &nbsp; &#x0289;[x0289] &nbsp;&#x0299;[x0299] &nbsp; &#x02A9;[x02A9]<br>
                        &#x025A;[x025A] &nbsp; &#x026A;[x026A] &nbsp;&#x027A;[x027A] &nbsp; &#x028A;[x028A] &nbsp;&#x029A;[x029A] &nbsp; &#x02AA;[x02AA]<br>
                        &#x025B;[x025B] &nbsp; &#x026B;[x026B] &nbsp;&#x027B;[x027B] &nbsp; &#x028B;[x028B] &nbsp;&#x029B;[x029B] &nbsp; &#x02AB;[x02AB]<br>
@@ -233,15 +241,20 @@
                        &#x025D;[x025D] &nbsp; &#x026D;[x026D] &nbsp;&#x027D;[x027D] &nbsp; &#x028D;[x028D] &nbsp;&#x029D;[x029D] &nbsp; &#x02AD;[x02AD]<br>
                        &#x025E;[x025E] &nbsp; &#x026E;[x026E] &nbsp;&#x027E;[x027E] &nbsp; &#x028E;[x028E] &nbsp;&#x029E;[x029E] &nbsp; &#x02AE;[x02AE]<br>
                        &#x025F;[x025F] &nbsp; &#x026F;[x026F] &nbsp;&#x027F;[x027F] &nbsp; &#x028F;[x028F] &nbsp;&#x029F;[x029F] &nbsp; &#x02AF;[x02AF]<br>
-                       </span>
-
-                       prefix [pr &#x0226A; ] add thing in font of sth or at the beginning of a word, add sth at the beginning of<br>          
+                       &#x0268;[x0268] 
+                       </span><br>
+                       prefix [ ] add thing in font of sth or at the beginning of a word, add sth at the beginning of<br>          
                        postfix [ ] append thing at the end of sth, append as a suffix<br>
                        append [ ] add sth as an attachment or supplement<br>
+                       elaborate [&#x0268, l&#x0251;b&#0259;r ] involving carefully arranged parts or detailed or complicated in design<br>  
+                            the key idea of the book is [expressed] in the title and [elaborated] in the text<br>
                        </p>
+                       <p class="fs">
                        Mon Sep 21 21:24:13 PDT 2015
-                       <pre style="background:#FFF;color:#000">
+                       </p>
+                       <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
                        Operators in Vim 
+                        =       indentation e.g gg=G [h =]
                         c		change
                         d		delete
                         y		yank into register (does not change the text)
@@ -254,9 +267,357 @@
                         <		shift left
                         zf		define a fold
                         g@		call function set with the 'operatorfunc' option
+
+                        Left-right motion
+                        h       character to the Left
+                        l       character to the Right
+                        0       to the first character of the line
+                        ^       to the first non-bank character of the line
+                        $       to the end non-bank character of the line
+                        g_      to the last non-bank character of the line  
+                       </pre>
+                       <p class="fs">
+                       Fri Sep 25 20:41:49 PDT 2015<br>
+                       New Words:<br>
+                       duplicate [adjective] [verb]<br> 
+                       record    [noun]      [verb]<br>
+                       elaborate [adjective] [verb]<br>
+                       execute   [noun]      [verb]<br><br>
+                       disguise [] a different appearance in order to conceal one's identity<br>
+                       disguise [] a different appearance in order to conceal one's identity<br>
+                       disguise [] a different appearance in order to conceal one's identity<br> 
+                       gust [] noun - a brief or rush wind<br> 
+                       disgust  [] profound disapproved aroused by sth unpleasant or offensive<br> 
+                       elaborate [] involving carefully arranged part or details, detailed and complicated in design and planning<br>
+                       elaborate [] involking carefully arranged parts or details, detailed and complicated in design and planning.<br>
+                       elaborate [] involking carefully arranged parts or details, detailed and complicated in design and planning.<br><br>
+                       grandiose [ ] impressive and magnificent in appearance or style<br><br>
+
+                       bind [] [past and past participle bound]<br>
+                       visible [] seeable, obversable[obverse] notify, note, notice, noticeable, detectable[detect]<br>  
+                       e.g. the action putStrLn "Hello World" with previous result bound to sth.<br> 
+                       Have + Object + past participle<br>
+                       e.g. I have my hair cut.[I have cut my hair]<br><br>
+                       
+                       Being + adjective<br> 
+                       The structure being + adjective is used to talk about actions and behaviour<br>
+                       e.g. why are you being so silly<br>
+                       e.g. you are being cruel when you hurt others with your words or actions.<br><br>
+                       
+                       Being + past participle<br>
+                       Being can be followed by a past participle. This structure is used in the passive forms of present and past continuous tenses.<br>
+                       e.g. mother is cooking the dinner<br>
+                       e.g. the dinner is being cooked<br>
+                       e.g. I'm quite sure someone is following me[Active]<br>
+                       e.g. I'm quite sure I'm being followed[Passive]<br><br>
+
+                       Being in participle clauses<br>
+                       instead of because/since/as, we sometimes use an abverbial participle clause with being.<br>
+                       e.g. Being late, he could't watch the movie[Becase he is late, he could't watch the movie]<br><br>
+
+                       [Therefore, Consequently, For this reason, As a result, Thus]
+                       thing have changed recently-which led to people asking the questions<br> 
+                       [led to someone asking sth]<br>
+                       lay out the current setup<br>
+                       lines starting with '#'<br>
+                       lines ending with certain strings<br>
+                       sentence starting with capital letter<br> 
+                       print all the words separated by white spaces<br>
+                       use pattern matching and regular expression<br>
+                       how to split words separated by one or more whitespace<br>
+                       please [explain] why the merge is necessary<br>
+                       connecting and linking words in English<br>
+                       it is [essiential] to understand linking words, as part of speech, can be used<br> 
+                       to combine ideas in writing, and thus ensure that ideas within sentences and<br>
+                       paragraphs are elegantly connected - for the benefit of the reader.<br> 
+                       This will help to improve your writing[e.g. essay, comment, summary]<br>
+
+                       I just learn some interested words:<br>
+                       the words have different pronunciation but same spelling is called heteronym.<br> 
+                       
+                       show you how to 3d touch in iphone6<br>
+                       pop up little options, quick aciton, message will show you some recent message,<br>
+                       photos let you jump to seflies<br> 
+                       right now quick action, message, will show you show recent msg, photo show you recent camera<br> 
+                       when i click on weather, wallet let you add a card, note let you cratch, 3d touch make the screen press sensitive<br>
+                       ok, back to quick aciton, news have quick aciton, let you jump to different category,<br>
+                       let pee and pop, and i hold down a email message, if i keep holding down, perk and pop, if i hold down,<br>
+                       if i keep holding down, here is perk and pop, i'm going to athelet, this is perk and pop, let see how 3d toouch affect the keyboard,<br>
+                       the keyboard become track pad, swip through, let me see how 3d touch work in Safari, if you hold down on the link,<br>
+                       this is really neat, this is PC maC, apple called quick acitons,<br> 
+                       message will show you some recent message, photo will show your recent photos,<br> 
+                       selfies, if i click on, map let you pin current location, note let  you<br> 
+                       sketch your idea,<br>
+                       Nevertheless,<br> 
+                       In conclusion,<br>
+                       In summary, there is not clear case for one tax system compared to another<br>
+                       In Summary, there is not clear cases for one tax system compared to another<br>
+                       Nevertheless,<br> 
+                       to some extend,<br>
+                       it is essential to understand connecting and linking words, as parts of speech, can be used to combine sentences and paragraphs in writing,<br>
+                       and thus ensure the idea within the sentences and paragraphs are elegrantly connected<br>
+                       it is essential to understand connecting and linking words, as parts of speech, can be used to combine sentences and paragraph in writing,<br>
+                       and thus ensure the idea within the sentences and paragraphs are elegrantly connected<br>
+                       In summary, there is not clear tax system compared to another<br>
+                       print all the words separated with whitespace<br>
+                       split all the words separated with whitespace<br>
+                       
+
+                       it is essential to understand the connecting and linking words, as parts of speech, can be used to combine sentences and paragraphs in writing,<br>
+                       and thus ensure the idea within the sentences and paragraphs are elegrantly connected<br>
+                       In summary, there is not clear tax system compared to another.<br>
+                       If no input-file is specified, file is read from stdin. Otherwise, ...<br>
+                       [If sth..., sth.... Otherwise...]<br>
+                       If input-file is empty, the method returns false. Otherwise, return true ...<br>
+                       language attribute, language name, file type,<br> 
+                       Disable syntax highlighting for code block and inlines, even though when a language attribute is given.<br>
+                       [disable ... for ..., even though something]<br>
+                       somthing, even though when somthing<br>
+                       Remove the whitespace, even though the string is empty.<br>
+                       Return false, even though the input-file is empty.<br>
+                       [something ... even though ...]<br>
+                       split the string separated by whitespace, even though input-file is empty<br>
+                       [something ... even though ...]<br>
+                       numerical entities instead of UTF-8 when the option is selected<br>
+                       [something ... instead of something when ....]<br>
+                       San Francisco Disrupe News<br>
+                       Where do delimiter go?<br>
+                       The null delimiter, whitespace, empty string, null pointer, null reference, null value, zero value, empty value, empty string<br>
+                       split the string with delimiter[default is whitespace]
+                       preserving the null delimiter<br>
+                       split's return value<br>
+                       adjective, adverb,<br> 
+                       fortuniately, fortuniate, future, fortran, fortune, furniture<br>
+                       The star quantifier[zero or more]<br>
+                       if the split patter is unspecified, the method returns false.<br><br>
+                       if a file is written by the first action and the file is read by the second action, then the change to the file is visible to the read<br>
+                       [if sth.. and sth.., then the change to the file is visible..]<br>
+
+                       Sun Sep 27 13:31:14 PDT 2015<br>
+                       Last night, I try to write a simple script to read a text file and surround each line with Html tags.<br>
+                       The script should be fairly to write, but I decide to write it in Haskell.<br>
+                       I knew a bit of Haskll before so I still remember the basic syntax.<br>
+                       In Haskell, there is interactive command line tool called GHCi.<br>
+                       I primarily use the GHCi to get help on many unfamilar functions<br>
+                       :info concat - show the definition of concat function<br> 
+                       :load helloworld.hs - compile helloword.hs<br>
+                       :e helloword.hs - edit the helloword.hs[editor has to be set before that, e.g. vim]<br>
+                       :load helloword.hs following by main to run the code<br><br>
+                       
+                       
+                       Wed Sep 30 11:50:27 PDT 2015<br>
+                       I went to WallMart this morning to buy a money order.<br>
+                       I ask for 100 cash back and the WallMart employee just give me 100 bill.<br> 
+                       I ask him can you give me to 20 bills, he said, sorry, 'we don't have any 20 bills any more'<br>
+                       This is pretty ridiculous behavious.<br><br>
+                       Here is Why WallMart sucks:<br>
+                       The groceries are crappy. For example, it is extremely hard to find a good apple in WallMart.<br>
+                       The services are poor. For example, they don't have 20 bills for my 100 cash back.<br>
+                       The lines are extremely slow. For example, they don't hire enough cashiers<br><br>
+
+                       New words of the day:<br>
+                       cash [] - money in coins or notes<br>
+                       cash in [] - take advantage or exploit [a situation]<br> 
+                       cashable [adjective]<br> 
+                       cashier [] - a person who collects payments in stores - a person handling payments and receipts in store, bank, or other business.<br>
+                       cache [] - store away in hiding for future use<br><br>
+                       
+                       Fri Oct  2 12:08:51 PDT 2015<br>
+                       Last night, I spent some times on the Play Framework in Scala.<br>
+                       I download it from typesafe and install it, it is pretty smooth.<br>
+                       And I followed Youtube tutorial to get myself start it.<br>
+                       The Youtube tutorial is extremely clear.<br> 
+                       I have no Scala experience but I can follow it.<br>
+                       The tutorial teachs:<br>
+                       How to setup The Play Framework in Scana.<br>
+                       How to Run the Hello World in Play Framework.<br>
+                       How to use Intellij to load your Play Framwork project.<br>
+                       How to use template on your Project.<br>
+                       How to create your Models and Controller.<br> 
+                       How to link your Models/View/Controllers with  your template<br><br>
+
+                       The catch is you will get compile error when you just follow the tutorial.<br>
+                       "type Application is not a member of package controllers"<br><br>
+
+                       The reason for that is Play 2.4 generate default dependency injected router.<br> 
+                       unlike previously, when it used a static router.<br> 
+                       You have to options:<br>
+                       1. Remove the routeGenerator from build.sbt so play will generate a static router.<br>
+                       2. Make your controller classes instead of objects, and use dependency injection.<br><br>
+
+                       Sun Oct  4 17:41:01 PDT 2015<br>
+                       Update about the Play Framework in Scala<br>
+                       I spend some times on following the Youtube tutorial Play Framwork in Scala, 
+                       The tutorial is fanstic and recommand everyone should watch the video if you are new to Play Framework in Scala.
+                       Unfortunately, I missed some steps on from the tutorial that causes me many hours to debug my code. 
+                       The error was I use POST instead of GET on routes file, consequently[as a result, therefore] getPersons method can't be called from controller 
+
+                       Uploading file is working so far[need full file path on the server, otherwise, new file can't be created]<br><br>
+
+                       Sat Dec  5 03:00:24 PST 2015<br>
+                       The Play Framework:<br>
+                       <mark>Current Project in github/scala/PlayExample, the project can be opened from Intellij</mark><br>
+                       Run the project:<br>
+                       Goto PlayExample and ./activator run [it will open port localhost port:9000]<br><br> 
+
+
+                       Sun Oct  4 15:04:36 PDT 2015<br>
+                       The power of swap operation<br> 
+                       permutation<br>
+                       merge sort<br>  
+                       quick sort<br>
+                       merge two sorted lists<br>
+                       generate N unique random numbers<br><br>
+                       </p>
+                       <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                       XOR is pretty awesome operation in Computer Science  
+                       Swap two variables without a tmp variable 
+                       int a = 2 
+                       int b = 3
+                       int tmp = a; a = b; b = tmp;
+                       
+                       XOR algorithm
+                       int a = 0x010
+                       int b = 0x011
+                       a = a ^ b // 0x001 = 0x010 ^ 0x011
+                       b = a ^ b // 0x010 = 0x001 ^ 0x011
+                       a = a ^ b // 0x010 = 0x001 ^ 0x010
+                       </pre>
+                       <p class="fs">
+                       Wed Oct  7 16:52:27 PDT 2015<br>
+                       Play around with Scala today, it is pretty "nice" language.<br> 
+                       Scala is one of the most pop functional programming out there.<br><br>
+
+                       Sat Oct 10 14:59:17 PDT 2015<br>
+                       Play Framework update:<br>
+                       I just found out I make a stupid mistaken on the code, I forgot to register my class from Sorm Instance<br>
+                       and I got "Entity 'entity name' is not registered" error message.<br>
+                       What is working so far for the Play Framework in Scala:<br>
+                       1. Post data to database<br>
+                       2. Query data from database<br>
+                       3. Upload file to server<br>
+                       </p>
+                       <p class="fs">
+                       Thu Oct 22 23:23:06 PDT 2015<br>
+                       Install Tomcat7 on my Mac today,<br>
+                       Here is how to use HomeBrew<br>
+                       brew install tomcat<br>
+                       </p>
+                       <p class="fs">
+                       Sat Oct 24 13:18:21 PDT 2015<br>
+                       Fix bug on Coin Change Algorithm and clarify some ticky issues<br>
+                       Finally, add dynamic programming solution for Coin Change Algorithm, there is no step by step tutorial yet.<br> 
+                       </p>
+                       <p class="fs">
+                       Mon Oct 26 00:08:01 PDT 2015<br>
+                       Today, I use GraphiViz to generate the graph for [Coin Change Problem]<br>
+                       GraphViz is very powerful tool to generate all sorts of graphs.<br>
+                       For example, the nodes of the graph can be different chape such as circle, ellipse and rectangle, etc.<br>
+                       You can use different colors on node and edge.<br>
+                       GraphViz use DOT file format which is a simple wasy of describing graphs that boths humans and computer programs can use.<br> 
+                       
+                       <pre style="background:#000;color:#8DE884;">
+                                   digraph G{
+                                    a->b
+                                    a->c
+                                    b->d
+                                    b->e
+                                    c->f
+                                    c->g
+                                   }
+                       </pre>
+                       <div style="text-align:center;">
+                       <img src="../image/simplegraph.svg" width="30%" height="30%" /><br> 
+                       </div>
+
+                       <p style="text-align:center; font-size:24px;">
+                       coin{2, 3}, s = 6  
+                       </p>
+                       <div style="text-align:center;">
+                       <img src="../image/coinchange.svg" width="40%" height="40%" /><br> 
+                       </div >
+
+                       <p style="text-align:center; font-size:24px;">
+                       coin{2, 3}, s = 7  
+                       </p>
+                       <div style="text-align:center;">
+                       <img src="../image/graph1.svg" width="60%" height="60%" /><br> 
+                       </div >
+
+                       <p style="text-align:center; font-size:24px;">
+                       coin{1, 2}, s = 7  
+                       </p>
+                       <div style="text-align:center;">
+                       <img src="../image/graph2.svg" width="100%" height="100%" /><br> 
+                       </div >
+                       </p>
+
+                       <p class="fs">
+                       Mon Nov  2 21:09:24 PST 2015<br>
+                       In Tomcat 8.0.x, there is no user for the [Manager App], you need to manually add user and role to the tomcat-user.xml under conf directory.<br>
+                       </p>
+                       <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+        role rolename="admin"
+        role rolename="admin-gui"
+        role rolename="manager"
+        role rolename="manager-gui"
+        user username="tomcat" password="password" roles="admin,admin-gui,manager,manager-gui"
+                       </pre>
+                       <p class="fs">
+                       Make sure you add [admin], [admin-gui], [manager], [manager-gui], all of them.<br>
+                       Please don't ask me what are the difference among of them.<br><br>
+
+                       Apache Nutch is web crawler, website scraper tool.<br>
+                       Install Apache Nutch [current version 2.3] on Mac OSX 10.9.5<br>
+                       1. Download Apache Nutch and untar it<br>
+                       2. cd to your Apache Nutch directory [my current version is apache-nutch-2.3]<br>
+                       3. type: ant runtime [ant is the build tool like Maven. Install it if you don't have ant]<br>
+                       4. runtime directory is generated under your current directory<br>
+                       5. type: [path]apache-nutch-2.3/runtime/local/bin/nutch and you will see some output from your terminal.<br><br>
+
+                       Apache Solr is indexer tool<br>
+                       Install Apache Nutch [current version 5.3.1] on Mac OSX 10.9.5<br>
+                       1. download Apache Solr [You can just download the binary version solr-5.3.1.zip]<br>
+                       2. unzip solr-5.3.1.zip<br>
+                       3. cd  solr-5.3.1/<br>
+                       4. run: bin/solr start -e cloud -noprompt<br>
+                       5. you can see the Solr is running by loading Admin UI in your web browser: http://localhost:8983/solr/<br> 
+                       6. this is the main start point for administering Solr.<br>
+                       </p>
+                       <p class="fs">
+                        Mon Nov 23 15:08:08 PST 2015<br>
+                        Import car from U.S to Canada.<br>
+                        When you import a car from U.S to Canada, you need to get recall-clearance letter from your car manufactory.<br>
+                        Title, Receipt, and Manu<br><br>
+
+                        Call the Volkswagen today, and found out my car has recall issue.<br> 
+                        Call the Volkswagen dealer and make an appointment to fix the mess tomorrow<br>
+                        She told me it takes around two hours to fix the issue.Well, I expect it will take four hours to fix the mess.<br>
+                        you never trust what the dealer guys tell you.<br>
+                       </p>
+                       <p class="fs">
+                        Fri Dec  4 21:47:00 PST 2015<br>
+                        <mark>Vim Leader, mapleader, LocalLeader, maplocalleader</mark><br> 
+                        :nnoremap &#60;Buffer&#62;&#60;Leader&#62;s :%s/dog/cat/g &#60;Esc&#62; <br>
+                        Leader is special string that you can use to map character to shortcut key<br> 
+                        The default mapping is '\' character<br><br>
+                        When you type \s the shortcut will trigger :%s/dog/cat/g<br>
+                        If you want to change the default mapping to different character, then you can type<br>
+                        :let mapleader="," which will map ,s instead of \s and it can trigger :%s/dog/cat/g<br><br>
+                        LocalLeader is similar to Leader but it is to be used for mapping which are local to a buffer<br> 
+                        :map &#60;buffer&#62;&#60;LocalLeader&#62;A :%s/dog/cat/g &#60;Esc&#62;<br>
+                       </p>
+                       <p class="fs">
+                        Wed Dec  9 14:22:22 PST 2015<br>
+                        Delcare pointer of UIColor* in ObjecitiveC:
+                       </p>
+                       <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                        Wrong:
+                        UIColor** arrayPt = malloc(num*sizeof(UIColor*));  
+                        Right:
+                        UIColor*__strong* arrayPt = malloc(num*sizeof(UIColor*));  
                        </pre>
 
-                </div>
             <!-- Column 1 end -->
             </div>
             <div class="col2">

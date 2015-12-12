@@ -1,0 +1,254 @@
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+    <head>
+        <title>Draw Triangle OpenGL IOS</title>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="robots" content="index, follow" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../highlight.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/x-mathjax-config">
+              MathJax.Hub.Config({
+                extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+                jax: ["input/TeX","output/HTML-CSS"],
+                tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
+              });
+            </script>
+        <script type="text/javascript" src="../MathJax-2.4-latest/MathJax.js"></script>
+    </head>
+    <body>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-66282017-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <div id="header">
+    </div>
+    <div class="colmask rightmenu">
+        <div class="colleft">
+            <div class="col1">
+                <!-- Column 1 start -->
+                <div class="mytextbox">
+                    <pre style="color:rgba(0, 185, 5, 0.91); background:#444;">
+                            Draw your first Triangle in IOS OpenGL
+                    </pre>
+                    <p>
+                    <span style="color:red;">OpenGL</span> is low level computer graphic API, it powers most of graphic intensive games and softwares in this universe.<br>
+                    Ok, it is enough talk!, let's get into action and show some stuff!<br><br>
+                    
+                    First, we need to review the coordinates system<br>
+                    Normally, there are two coordinates systems in computer graphic<br>
+
+                    <span style="color:red;">OpenGL</span> uses [Right Hand Coordinates System] and <span style="color:red;">DirectX</span> uses [Left Hand Coordinates System]<br>
+                    <img src="../image/coorsystem.svg" width="100%" height="100%" /><br> 
+
+                    We set z-axis=0 anyway since we only draw two dim triangle<br>
+                    </p>
+
+                    <img src="../image/triangle.svg" width="100%" height="100%" /><br> 
+                    1. Create an array with three vertices p=[x, y, z]
+                    <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                    static const GLfloat triangle[] = {
+                        0, 0, 0,
+                        1, 0, 0,
+                        0, 1, 0,
+                    };
+                    </pre>
+
+                    <pre style="color:rgba(63, 185, 5, 0.91); background:#434;">
+    glVertexAttribPointer     - define an array of generic vertex attribute data
+    glEnableVertexAttribArray - enable a generic vertex attribute array
+    glDiableVertexAttribArray - diable a generic vertex attribute array
+    glDrawArrays              - render primitive from array data
+                    </pre>
+                    <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                    glVertexAttribPointer(ATTRIB_VERTEX, 3, GL_FLOAT, 0, 0, triangle);
+                    glEnableVertexAttribArray(ATTRIB_VERTEX);
+                    glDrawArrays(<span style="color:red;">GL_TRIANGLE_STRIP</span>, 0, 3);
+                    </pre>
+                    <div style="text-align:center"><img src="../image/triangle.png" width="20%" height="20%" /><br></div> 
+                    <p>
+                    This is the three functions that you need to call to draw a triangle in OpenGL<br> 
+                    When a triangle is drawn, there are three options can be used<br>
+                    <span style="color:rgba(63, 185, 5, 0.91);">GL_TRIANGLE_STRIP GL_TRIANGLE_FAN GL_TRIANGLES</span><br><br>
+                    What is <span style="color:rgba(63, 185, 5, 0.91);">GL_TRIANGLE_STRIP</span><br>
+                    Let assume we have four points p0=[0,0,0] p1=[1,0,1] p2=[1,1,0] p3=[0,1,0] in order.<br>
+                    First three points: {p0, p1, p2} forms a triangle, easy!<br>
+                    Second triangle is formed from {p1, p2, p3}<br>
+                    So each consecutive pair of triangle shares two vertices<br>
+                    Each new vertex is added, a new triangle is formed<br>
+                    The numbers of triangle can be formed in n vertices is n-2<br><br>  
+                    What is <span style="color:rgba(63, 185, 5, 0.91);">GL_TRIANGLE_FAN</span><br>
+                    GL_TRIANGLE_FAN use the first vertex and last two vertices to form a triangle<br>
+                    The numbers of triangle can be formed in n vertices is n-2<br><br>  
+                    What is <span style="color:rgba(63, 185, 5, 0.91);">GL_TRIANGLES</span><br>  
+                    GL_TRIANGLES treats each triple of vertices as independent triangle.<br>
+                    If there are 3*n vertices, then there are n triangle can be drawn<br>
+                    </p>
+                    <img src="../image/triangle_strip_fan.svg" width="100%" height="100%" /><br> 
+                    <p>
+                    Let draw some real stuff!
+                    </p>
+                    <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                    static const GLfloat triangle[] = {
+                        0, 0, 0,
+                        1, 0, 0,
+                        1, 1, 0,
+                        0, 1, 0,
+                    };
+                    </pre>
+
+                    <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                    glVertexAttribPointer(ATTRIB_VERTEX, 3, GL_FLOAT, 0, 0, triangle);
+                    glEnableVertexAttribArray(ATTRIB_VERTEX);
+                    glDrawArrays(<span style="color:red;">GL_TRIANGLE_STRIP</span>, 0, 4);
+                    </pre>
+                    <div style="text-align:center"><img src="../image/triangle_strip.png" width="20%" height="20%" /><br></div> 
+
+                    <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                    static const GLfloat triangle[] = {
+                        0, 0, 0,
+                        1, 0, 0,
+                        1, 1, 0,
+                        0, 1, 0,
+                    };
+                    </pre>
+
+                    <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                    glVertexAttribPointer(ATTRIB_VERTEX, 3, GL_FLOAT, 0, 0, triangle);
+                    glEnableVertexAttribArray(ATTRIB_VERTEX);
+                    glDrawArrays(<span style="color:red;">GL_TRIANGLE_FAN</span>, 0, 4);
+                    </pre>
+                    <div style="text-align:center"><img src="../image/triangle_fan.png" width="20%" height="20%" /><br></div> 
+
+
+                    <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                    static const GLfloat triangle[] = {
+                        0, 0, 0,
+                        1, 0, 0,
+                        1, 1, 0,
+                        
+                        0, 1, 0,
+                        0, 2, 0,
+                        1, 1.5, 0
+                    };
+                    </pre>
+
+                    <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                    glVertexAttribPointer(ATTRIB_VERTEX, 3, GL_FLOAT, 0, 0, triangle);
+                    glEnableVertexAttribArray(ATTRIB_VERTEX);
+                    glDrawArrays(<span style="color:red;">GL_TRIANGLES</span>, 0, 6);
+                    </pre>
+                    <div style="text-align:center"><img src="../image/triangle_list.png" width="20%" height="20%" /><br></div> 
+
+                    <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                    static const GLfloat triangle[] = {
+                        0, 0, 0,
+                        1, 0, 0,
+                        1, 1, 0,
+                        0, 1, 0,
+                    };
+                    </pre>
+
+                    <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                    glVertexAttribPointer(ATTRIB_VERTEX, 3, GL_FLOAT, 0, 0, triangle);
+                    glEnableVertexAttribArray(ATTRIB_VERTEX);
+                    glDrawArrays(<span style="color:red;">GL_LINE_LOOP</span>, 0, 4);
+                    </pre>
+                    <div style="text-align:center"><img src="../image/line_loop.png" width="20%" height="20%" /><br></div> 
+
+                    <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                    static const GLfloat triangle[] = {
+                        0, 0, 0,
+                        1, 0, 0,
+                        0, 1, 0,
+                        1, 1, 0,
+                    };
+                    </pre>
+
+                    <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                    glVertexAttribPointer(ATTRIB_VERTEX, 3, GL_FLOAT, 0, 0, triangle);
+                    glEnableVertexAttribArray(ATTRIB_VERTEX);
+                    glDrawArrays(<span style="color:red;">GL_TRIANGLE_STRIP</span>, 0, 4);
+                    </pre>
+                    <div style="text-align:center"><img src="../image/triangle_strip2.png" width="20%" height="20%" /><br></div> 
+
+                    <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                    static const GLfloat box[] = {
+                        0, 0, 0,
+                        1, 0, 0,
+                        0, 1, 0,
+                        1, 1, 0,
+                        
+                        0, 1, -1,
+                        1, 1, -1,
+                        0, 0, -1,
+                        1, 0, -1,
+                        
+                        1, 1, 0,
+                        1, 0, 0,
+                        0, 0, -1,
+                        0, 0, 0,
+                        
+                        0, 1, -1,
+                        0, 1, 0,
+                    };
+                    </pre>
+
+                    <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                    glVertexAttribPointer(ATTRIB_VERTEX, 3, GL_FLOAT, 0, 0, box);
+                    glEnableVertexAttribArray(ATTRIB_VERTEX);
+                    glDrawArrays(<span style="color:red;">GL_TRIANGLE_STRIP</span>, 0, 14);
+                    </pre>
+                    <div style="text-align:center"><img src="../image/box2.png" width="20%" height="20%" /><br></div> 
+                    <div style="text-align:center"><img src="../image/boxbox.png" width="20%" height="20%" /><br></div> 
+
+
+
+                </div>
+            <!-- Column 1 end -->
+            </div>
+            <div class="col2">
+            <!-- Column 2 start -->
+                <div>
+                    <h3>
+                        <?php 
+                        $fileName = "indexDrawTriangleOpenGLIOS.html";
+                        include("../php/menu.php"); 
+                        ?>
+                    </h3>
+                </div>
+            <!-- Column 2 end -->
+            </div>
+        </div>
+    </div>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'zsurfacecom';
+        
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+    <div id="footer">
+        <p>This page uses the <a href="">Put More Stuff Here</a> by <a href="">ZSurface</a>. View more <a href="">ZSurface</a> and <a href="">ZSurface</a>.</p>
+    </div>
+
+    </body>
+    </html>
+    

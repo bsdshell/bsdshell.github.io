@@ -21,10 +21,17 @@
     <script type="text/javascript" src="../MathJax-2.4-latest/MathJax.js"></script>
 </head>
 <body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66282017-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
 
 <div id="header">
-	<h1>Surface, Curve, Algorithm, Geometry, Algebra</h1>
-	<p >Info: <a href="../index.html">Home</a> | <a href="">About</a> | $\Lambda$</p>
 </div>
 <div class="colmask rightmenu">
 	<div class="colleft">
@@ -99,6 +106,28 @@
 
             </div>
             <br>
+
+            <div class="mathdef_box2">
+                \[ \textbf{ Semigroup } \]
+                Semigroup is a set $S$ and a binary operator $\otimes \colon S \times S \rightarrow S$ that satisfies 
+                associative property<br> 
+                \[ \forall \text{ a, b, c} \in S \text{ such as } a \otimes b\otimes c = a \otimes (b \otimes c) \]
+            </div><br>
+
+            <div class="mathdef_box2">
+                \[ \textbf{ Monoid } \]
+                A monoid is a triple $(S, \otimes, \overline{1})$<br> 
+                1. $\otimes$ is closed associative binary operator on the set $S$<br> 
+                2. $\overline{1}$ is identity element for $\otimes$<br> 
+                $\forall\quad a, b, c \in S$ such as<br>
+                \[ a \otimes b  \otimes c = a \otimes (b \otimes c)   \]
+                \[ a \otimes \overline{1} = \overline{1} \otimes a =  a  \]
+            </div><br>
+
+            <div class="mathdef_box2">
+            <?php include("../colorhtml/scala/monoid.html"); ?> 
+            </div><br>
+
             <div class="mathdef_box2">
                 \[\textbf{Group}\]
                 $\text{Let a, b, c} \in \mathbf{G}$<br>

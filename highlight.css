@@ -1,16 +1,19 @@
 pre{
-    /*background:#000308;*/
-    /*background:#002B36;*/
-    background:rgba(54, 72, 76, 0.9);
+    margin: 1em 0;
+    white-space: pre;
+    /*background:rgba(54, 72, 76, 0.9);*/
+    background:rgba(29, 37, 39, 0.9);
     font-size:12pt;
     box-shadow:2px 2px 3px 1px #888;
     font-family:"Lucida Console", Courier, monospace;
     line-height:1.1em;
     letter-spacing:0.05em;
     border-radius:0px;
-    padding:1em;
+    /*padding:1em;*/
+    margin-top:2px;
     font-weight:500;
 }
+
 .highlight .hll { background-color: #33333 }
 .highlight  { background: #FFFFFF; }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
@@ -46,7 +49,8 @@ pre{
 .highlight .s { color: #FAAC58} /* Literal.String */
 .highlight .na { color: #7D9029 } /* Name.Attribute */
 .highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .nc { color: rgba(236, 139, 33, 0.95); font-weight: bold } /* Name.Class */
+
 .highlight .no { color: #880000 } /* Name.Constant */
 .highlight .nd { color: rgba(98, 247, 54, 0.93); } /* Name.Decorator */
 .highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */

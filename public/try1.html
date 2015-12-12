@@ -1,0 +1,20 @@
+<div class="highlight"><pre><span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="k">assert</span><span class="o">.</span><span class="na">h</span><span class="o">&gt;</span>
+<span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">stdlib</span><span class="o">.</span><span class="na">h</span><span class="o">&gt;</span>
+<span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">memory</span><span class="o">.</span><span class="na">h</span><span class="o">&gt;</span>
+<span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">time</span><span class="o">.</span><span class="na">h</span><span class="o">&gt;</span>
+<span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="k">new</span><span class="o">&gt;</span>
+
+<span class="c1">//#define _STATS</span>
+
+<span class="c1">// dummy malloc to prevent calls within the Container!</span>
+<span class="kt">void</span> <span class="o">*</span> <span class="n">_DummyMalloc</span><span class="o">(</span><span class="n">size_t</span> <span class="n">nSize</span><span class="o">)</span>
+<span class="o">{</span>
+    <span class="k">assert</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+    <span class="n">printf</span><span class="o">(</span><span class="s">&quot;You&#39;re not allowed to call malloc/free or ordinary new/delete within the body of the container!\n&quot;</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">NULL</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="err">#</span><span class="n">define</span> <span class="n">malloc</span> <span class="n">_DummyMalloc</span>
+<span class="err">#</span><span class="n">include</span> <span class="s">&quot;container.h&quot;</span>
+<span class="err">#</span><span class="n">undef</span> <span class="n">malloc</span>
+</pre></div>

@@ -1,12 +1,12 @@
 <?php
 
-function createBasicPage($fileHtml)
+function createBasicPage($fileHtml, $title)
 {
     $content = "
     <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">
     <html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-GB\">
     <head>
-        <title>Surface, Curve, Algorithm, Geometry, Algebra</title>
+        <title>$title</title>
         <meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\" />
         <meta name=\"description\" content=\"Surface, Curve, Algorithm, Geometry, Algebra\" />
         <meta name=\"keywords\" content=\"Surface, Curve, Algorithm, Geometry, Algebra\" />
@@ -26,9 +26,16 @@ function createBasicPage($fileHtml)
         <script type=\"text/javascript\" src=\"../MathJax-2.4-latest/MathJax.js\"></script>
     </head>
     <body>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-66282017-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+
     <div id=\"header\">
-        <h1>Surface, Curve, Algorithm, Geometry, Algebra</h1>
-        <p id=\"layoutdims\">Info:<a href=\"../index.html\">Home</a> | <a href=\"\">About</a> | $\Lambda$</p>
     </div>
     <div class=\"colmask rightmenu\">
         <div class=\"colleft\">
@@ -78,55 +85,135 @@ function createBasicPage($fileHtml)
     ";
 return $content;
 }
-
     $pageArray = array(
-        0=>"Binary Search One Dimensions",
-        1=>"Binary Search Two Dimensions",
-        2=>"Longest Increasing Subsequence Recursion",
-        3=>"Mini Coin Change Algorithm", 
-        4=>"Proof On Some Sequences",
-        5=>"Proof Fermat Little Theorem", 
-        6=>"Haskell Tutorial",
-        7=>"Java Algorithm",
-        8=>"Prime Number",
-        9=>"Math Definition", 
-        10=>"Scala Tutorial", 
-        11=>"Square Root of Two is irrational", 
-        12=>"Cubic Curve", 
-        13=>"Differentiated", 
-        14=>"Algebraic Curve", 
-        15=>"IOS Development", 
-        16=>"Projective Geometry", 
-        17=>"Rotated Sorted Array", 
-        18=>"Print Sprial in 2D array", 
-        19=>"Draw Circle Rectangle Oval in iOS", 
-        20=>"Merge Two Sorted Array",
-        21=>"ObjectiveC String Format Specifiers",
-        22=>"ObjectiveC Block",
-        23=>"ObjectiveC Static Method",
-        24=>"ObjectiveC ARC qualifier",
-        25=>"ObjectiveC Double and Triple Pointer",
-        26=>"Add Image Resource to Xcode",
-        27=>"Print All Permutation of an Array",
-        28=>"Command Line Trick", 
-        29=>"C and C++ Tutorial",
-        30=>"Quick Sort in C and C++",
-        31=>"Visualize Binomial Theorem",
-        32=>"Print all combination of r in a given array of size n",
-        33=>"Binomial Identity",
-        34=>"IOS Simple App Demo",
-        35=>"Vim Tricks",
-        36=>"Mathematic Note",
-        37=>"Daily Note",
-        38=>"Allocate 2D array in C"
+        "Switch different RootController",
+        "Rename Project in Xcode 6.1",
+        "Tries Data Structure",
+        "Cycle Array",
+        "Binary Tree",
+        "Stack and Queue in Binary Tree",
+        "Touches Event in iOS",
+        "ObjectiveC pass double pointers",
+        "Draw Triangle OpenGL IOS",
+        "Computer Graphic Matrix",
+        "Binary Search One Dimensions",
+        "Binary Search Two Dimensions",
+        "Longest Increasing Subsequence Recursion",
+        "Coin Change Algorithm", 
+        "Coin Change Dynamic Programming", 
+        "Proof On Some Sequences",
+        "Proof Fermat Little Theorem", 
+        "Haskell Tutorial",
+        "Java Algorithm",
+        "Java Data Structure",
+        "Merge Sort In Java",
+        "Merge Sort In C",
+        "Merge Sort In C++",
+        "Merge Sort In Haskell",
+        "Merge Sort In Scala",
+        "Quick Sort In Java",
+        "Quick Sort In C",
+        "Quick Sort In C++",
+        "Quick Sort In Haskell",
+        "Quick Sort In Scala",
+
+        "Print n prime number in Java",
+        "Print n prime number in C",
+        "Print n prime number in C++",
+        "Print n prime number in Haskell",
+        "Print n prime number in Scala",
+
+        "Rotate 2D array 90 degrees in Java",
+        "Rotate 2D array 90 degrees in C",
+        "Rotate 2D array 90 degrees in c++",
+        "Rotate 2D array 90 degrees in Haskell",
+        "Rotate 2D array 90 degrees in Scala",
+
+        "Print all Permutation of String Length in Java",
+        "Print all Permutation of String Length in C",
+        "Print all Permutation of String Length in C++",
+        "Print all Permutation of String Length in Haskell",
+        "Print all Permutation of String Length in Scala",
+
+        "Reverse a LinkedList in Java",
+        "Reverse a LinkedList in C",
+        "Reverse a LinkedList in C++",
+        "Reverse a LinkedList in Haskell",
+        "Reverse a LinkedList in Scala",
+
+        "Merge two sorted lists in Java",
+        "Merge two sorted lists in C",
+        "Merge two sorted lists in C++",
+        "Merge two sorted lists in Haskell",
+        "Merge two sorted lists in Scala",
+
+        "Priority Queue in Java",
+        "Priority Queue in C",
+        "Priority Queue in C++",
+        "Priority Queue in Haskell",
+        "Priority Queue in Scala",
+
+        "Generate n prime in Java",
+        "Generate n prime in C",
+        "Generate n prime in C++",
+        "Generate n prime in Haskell",
+        "Generate n prime in Scala",
+
+        "Prime Number",
+        "Math Definition", 
+        "Scala Tutorial", 
+        "Square Root of Two is irrational", 
+        "Cubic Curve", 
+        "Differentiated", 
+        "Algebraic Curve", 
+        "Projective Geometry", 
+        "Merge Two Sorted Array",
+        "ObjectiveC String Format Specifiers",
+        "ObjectiveC Block",
+        "ObjectiveC Static Method",
+        "ObjectiveC ARC qualifier",
+        "ObjectiveC Double and Triple Pointer",
+        "IOS Play Sound",
+        "IOS Demo",
+        "IOS Simple App Demo",
+        "IOS Development", 
+        "Draw Circle Rectangle Oval in iOS", 
+        "Xcode Screenshots",
+        "Xcode Add Resource Bundle",
+        "Intellij SetUp",
+        "Intellij Add External Library",
+        "Intellij Add Maven to proejct",
+        "Intellij Add dependency to Maven",
+        "Intellij Add Framework Support",
+        "Intellij Add Scala SDK",
+        "Install Maven in Mac OSX ",
+        "Setup The Play Framework",
+        "Print All Permutation of an Array",
+        "C and C++ Tutorial",
+        "Quick Sort in C and C++",
+        "Visualize Binomial Theorem",
+        "Print all combination of r in a given array of size n",
+        "Binomial Identity",
+        "Mathematic Note",
+        "Allocate 2D array in C",
+        "Shuffle algorithm in C++",
+        "Permutation Algorithm in C++",
+        "Permutation Algorithm in Java",
+        "Rotated Sorted Array", 
+        "Multiply Array in Dynamic Programming",
+        "Multiply Long Integer",
+        "Print Sprial in 2D array",
+        "Vim Tricks",
+        "Command Line Tricks",
+        "Daily Note",
     );
 
 
-    $htmlDir = "/Library/WebServer/Documents/zsurface/html/";
-    $indexHtml = "";
-    $tileArray = array();
-    $fileArray = array();
-    $linkArray = array();
+    $htmlDir     = "/Library/WebServer/Documents/zsurface/html/";
+    $indexHtml   = "";
+    $tileArray   = array();
+    $fileArray   = array();
+    $linkArray   = array();
     $outputArray = array();
     for($i=0; $i<count($pageArray); $i++)
     {
@@ -135,7 +222,7 @@ return $content;
         $path = $htmlDir . $fileArray[$i];
         if(file_exists($path) === false)
         {
-            @file_put_contents($path, createBasicPage($fileArray[$i])); 
+            @file_put_contents($path, createBasicPage($fileArray[$i], $pageArray[$i])); 
         }
 
         $titleArray[] = "<span style=\"font-size:16px\">" . $pageArray[$i] . "</span>";

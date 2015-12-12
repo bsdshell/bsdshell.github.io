@@ -1,0 +1,6 @@
+<div class="highlight"><pre><span class="kr">data</span> <span class="kt">MyMaybe</span> <span class="n">a</span> <span class="ow">=</span> <span class="kt">MyJust</span> <span class="n">a</span> <span class="o">|</span> <span class="kt">MyNothing</span> <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+ 
+<span class="kr">instance</span> <span class="kt">Functor</span> <span class="kt">MyMaybe</span> <span class="kr">where</span>
+    <span class="n">fmap</span> <span class="n">f</span> <span class="kt">MyNothing</span> <span class="ow">=</span> <span class="kt">MyNothing</span>
+    <span class="n">fmap</span> <span class="n">f</span> <span class="p">(</span><span class="kt">MyJust</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=</span> <span class="kt">MyJust</span> <span class="p">(</span><span class="n">f</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>

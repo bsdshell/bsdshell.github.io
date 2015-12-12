@@ -1,0 +1,8 @@
+<div class="highlight"><pre><span class="c1">-- function composition foldable</span>
+<span class="nf">f1</span><span class="ow">::</span><span class="kt">Int</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">f1</span> <span class="n">a</span> <span class="ow">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">10</span> 
+
+<span class="nf">f2</span><span class="ow">::</span><span class="kt">Int</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">f2</span> <span class="n">a</span> <span class="ow">=</span> <span class="n">a</span> <span class="o">-</span> <span class="mi">10</span> 
+<span class="nf">compose</span> <span class="ow">=</span> <span class="p">(</span><span class="n">f1</span><span class="o">.</span><span class="n">f2</span><span class="p">)</span> <span class="mi">10</span>
+</pre></div>

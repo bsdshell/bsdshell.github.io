@@ -1,3 +1,8 @@
+
+.fs{
+    font-size:16px;
+}
+
 .haskellc{
     background-color:#EEEEEE;
     text-align:center;
@@ -18,6 +23,10 @@
     margin-left:1px;
     margin-right:1px;
     float:auto;
+}
+
+.cen{
+    text-align:center;
 }
 
 .centered{
@@ -81,13 +90,12 @@ p {
 
 .mytextbox{
     border: 1px solid #E8E0E0;
-    padding:4px;
+    padding:1px;
     margin-top:1px;
     margin-bottom:1px;
     margin-left:1px;
     margin-right:1px;
-    font-size:18px;
-    float:auto;
+    font-size:16px;
 }
 
 .bigtext{

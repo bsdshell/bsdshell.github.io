@@ -1,0 +1,39 @@
+<div class="highlight"><pre><span class="nf">f</span><span class="ow">::</span><span class="nb">()</span><span class="ow">-&gt;</span><span class="nb">()</span>
+<span class="nf">f</span> <span class="kr">_</span> <span class="ow">=</span> <span class="nb">()</span> 
+
+<span class="nf">f1</span><span class="ow">::</span><span class="kt">Bool</span><span class="ow">-&gt;</span><span class="kt">Bool</span>
+<span class="nf">f1</span> <span class="kr">_</span> <span class="ow">=</span> <span class="nb">()</span> <span class="o">==</span> <span class="nb">()</span> 
+
+<span class="nf">f2</span><span class="ow">::</span><span class="kt">Bool</span><span class="ow">-&gt;</span><span class="kt">Bool</span>
+<span class="nf">f2</span> <span class="n">x</span> <span class="ow">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="kt">True</span> 
+
+<span class="nf">f3</span><span class="ow">::</span><span class="kt">Bool</span><span class="ow">-&gt;</span><span class="kt">Bool</span>
+<span class="nf">f3</span> <span class="kr">_</span> <span class="ow">=</span> <span class="kt">False</span> 
+
+<span class="nf">f4</span><span class="ow">::</span><span class="kt">Bool</span><span class="ow">-&gt;</span><span class="kt">Bool</span>
+<span class="nf">f4</span> <span class="n">undefined</span> <span class="ow">=</span> <span class="kt">False</span> 
+
+<span class="nf">f5</span><span class="ow">::</span><span class="kt">Bool</span><span class="ow">-&gt;</span><span class="kt">Bool</span>
+<span class="nf">f5</span> <span class="n">undefined</span> <span class="ow">=</span> <span class="n">undefined</span> 
+
+<span class="nf">f6</span><span class="ow">::</span><span class="kt">Bool</span><span class="ow">-&gt;</span><span class="kt">Bool</span>
+<span class="nf">f6</span> <span class="kr">_</span> <span class="ow">=</span> <span class="n">undefined</span> 
+
+<span class="nf">f7</span><span class="ow">::</span><span class="kt">Bool</span><span class="ow">-&gt;</span><span class="kt">Bool</span>
+<span class="nf">f7</span> <span class="ow">=</span> <span class="n">undefined</span> 
+
+<span class="nf">f8</span><span class="ow">::</span><span class="kt">Bool</span><span class="ow">-&gt;</span><span class="kt">Bool</span>
+<span class="nf">f8</span> <span class="ow">=</span> <span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="n">undefined</span>
+
+<span class="nf">f9</span><span class="ow">::</span><span class="kt">Int</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">f9</span> <span class="ow">=</span> <span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> 
+
+<span class="nf">f10</span><span class="ow">::</span><span class="kt">Int</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">f10</span> <span class="ow">=</span> <span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="n">f9</span> <span class="n">x</span> 
+
+<span class="nf">f11</span><span class="ow">::</span><span class="kt">Int</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">f11</span> <span class="n">x</span> <span class="ow">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">f9</span> <span class="mi">1</span><span class="p">)</span> 
+
+<span class="nf">f12</span><span class="ow">::</span><span class="kt">Int</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">f12</span> <span class="ow">=</span> <span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
