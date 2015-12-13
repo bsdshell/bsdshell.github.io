@@ -225,9 +225,9 @@ return $content;
             @file_put_contents($path, createBasicPage($fileArray[$i], $pageArray[$i])); 
         }
 
-        $titleArray[] = "<span style=\"font-size:16px\">" . $pageArray[$i] . "</span>";
+        $titleArray[] = "<span style=\"font-size:14px\">" . $pageArray[$i] . "</span>";
         $htmlTitleArray[] = "<h3>" . $titleArray[$i] . "<h3>";
-        $linkArray[] = "<h3><a style=\"text-decoration:none;font-size:16px;\" href=\"{$fileArray[$i]}\">{$titleArray[$i]}</a></h3>";
+        $linkArray[] = "<h3><a style=\"text-decoration:none;font-size:12px;\" href=\"{$fileArray[$i]}\">{$titleArray[$i]}</a></h3>";
 
         $indexHtml .= "
                 <h3><a style=\"text-decoration:none;\" href=\"html/{$fileArray[$i]}\">{$titleArray[$i]}</a></h3>
