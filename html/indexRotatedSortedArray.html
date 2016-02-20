@@ -18,7 +18,7 @@
             tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
           });
         </script>
-    <script type="text/javascript" src="../MathJax-2.4-latest/MathJax.js"></script>
+    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
 </head>
 <body>
 
@@ -28,7 +28,7 @@
 	<div class="colleft">
 		<div class="col1">
 			<!-- Column 1 start -->
-                <p>
+                <p class="fs">
                     $\square$
                     Given a rotated sorted array, find the index of maximum of value of the array in $O(\log{n})$ <br>
                     <img src="../image/rotatedarrayfigure.svg" width="100%" height="100%" /><br>
@@ -59,7 +59,7 @@
 
                     <pre style="background:#FFF">
                         <span style="color:#FF0000">skeleton code</span>
-                        int findMaxIndex(int[][] arr, int lo, int li)
+                        int findMaxIndex(int[] arr, int lo, int li)
                         {
                             int mid = (lo + hi)/2;
                             if(arr[lo] < arr[mid])
@@ -77,6 +77,9 @@
                                 the array does not rotate at all, 
                                 the index of maximum value is [hi] 
                     </pre>
+                    <div class="cen">
+                    <img src="../image/rotatesorted.png" width="50%" height="50%" /><br>
+                    </div>
                 </p>
                 <?php include("../colorhtml/java/RotatedSortedArray.html"); ?>
         <!-- Column 1 end -->

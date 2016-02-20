@@ -18,7 +18,7 @@
             tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
           });
         </script>
-    <script type="text/javascript" src="../MathJax-2.4-latest/MathJax.js"></script>
+    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
 </head>
 <body>
 <script>
@@ -54,7 +54,9 @@
                 <?php include("../colorhtml/haskell/ifthen.html"); ?>
                 <h3 class="haskellc">Equation Guarding in Haskell<h3>
                 <?php include("../colorhtml/haskell/guards.html"); ?>
-                <img src="../image/guards.svg" width="50%" height="50%" />
+                <div class="cen">
+                    <img src="../image/guards.svg" width="40%" height="40%" />
+                </div>
                 <h3 class="haskellc">let binding in Haskell<h3>
                 <?php include("../colorhtml/haskell/letbinding.html"); ?>
                 <h3 class="haskellc">Print all permutation in Haskell<h3>
@@ -84,20 +86,20 @@
                 <h3 class="haskellc">Following is java interface and two classes</h3>
                 <?php include("../colorhtml/myshape.html"); ?>
 
-                <h3 class="haskellc">instance and class in Haskell</h3>
-                <?php include("../colorhtml/haskell/instance.html"); ?>
-
                 <h3 class="haskellc">Crazy function in Haskell</h3>
                 <?php include("../colorhtml/haskell/function.html"); ?>
 
                 <h3 class="haskellc">Composite function in Haskell</h3>
                 <?php include("../colorhtml/haskell/composite.html"); ?>
 
-                <h3 class="haskellc">Functor in Haskell</h3>
-                <?php include("../colorhtml/haskell/functor.html"); ?>
-
                 <h3 class="haskellc">Foldable in Haskell</h3>
                 <?php include("../colorhtml/haskell/foldable.html"); ?>
+
+                <h3 class="haskellc">instance and class in Haskell</h3>
+                <?php include("../colorhtml/haskell/instance.html"); ?>
+
+                <h3 class="haskellc">Functor in Haskell</h3>
+                <?php include("../colorhtml/haskell/functor.html"); ?>
 
                 <h3 class="haskellc">Algebraic Data Type in Haskell<h3>
                 <p> 
@@ -106,7 +108,7 @@
                 Sum is alternation[logic OR operator][A | B, meaning A or B but not both, e.g. enum in Java/C++]<br>
                 Product is combination[logic AND operator][A B, meaning A and B together, e.g. tuple, record]<br>
                 </p> 
-                <pre>
+                <pre style="background:#DDD;">
                 data Maybe a = Just a | Nothing 
                 There are two constructors:
                 Just is one constructor with one parameter a 
@@ -127,15 +129,53 @@
                 <h3 class="haskellc">let expressions and where causes local variable binding in Haskell<h3>
                 <?php include("../colorhtml/haskell/letwhere.html"); ?>
 
-                <h3 class="haskellc">case in Haskell<h3>
+                <h3 class="haskellc">simple case in Haskell<h3>
+                <p class="fs">
+                Case in Haskell is like switch statement in Java, except it is more beautiful! 
+                </p>
                 <?php include("../colorhtml/haskell/case.html"); ?>
+                <h3 class="haskellc">practical case in Haskell<h3>
+                <?php include("../colorhtml/haskell/mycase.html"); ?>
 
                 <h3 class="haskellc">First OpenGL Hello World in Haskell<h3>
                 <?php include("../colorhtml/haskell/firstOpenGL.html"); ?>
-                <img src="../image/firstOpenGL.png" width="30%" height="30%" />
+
+                <div class="cen">
+                    <img src="../image/firstOpenGL.png" width="30%" height="30%" />
+                </div>
                 <h3 class="haskellc">OpenGL Vertex and Color in Haskell<h3>
                 <?php include("../colorhtml/haskell/openGLColor.html"); ?>
-                <img src="../image/openGLColor.png" width="30%" height="30%" />
+                <div class="cen">
+                    <img src="../image/openGLColor.png" width="30%" height="30%" />
+                </div>
+                <h3 class="haskellc">Map Examples in Haskell<h3>
+                <p>
+                Haskell Map Example<br>
+                map::(a->b) -> [a] -> [b]<br>
+                map f xs is the list obtained by apply f to each element of xs<br>
+                map f [1..3] = [f(1) f(2) f(3)]<br>
+                map f [x1, x2, ...] = [f(x1), f(x2), ...]<br>
+                </p>
+                <?php include("../colorhtml/haskell/map.html"); ?>
+                <h3 class="haskellc">Unwrap Monad, Find Index and SubString in Haskell<h3>
+                <p>
+                1. Unwrap the Maybe Monad<br>
+                2. Find the Index of Char in a String<br>
+                3. SubString of two Indexes of string<br><br>
+                Similar Haskell functions<br>
+                </p>
+                <pre style="background:#DDD";>
+"abc" !! 1               -> 'b'
+elemIndex 'a' "ba"       -> Just 1
+isInfixOf "ab" "efab"    -> True
+findIndex (== 'a') "bac" -> 1
+findIndex (> 'a')  "bac" -> 2
+                </pre>
+                <?php include("../colorhtml/haskell/string.html"); ?>
+                <h3 class="haskellc">Regular Expression in Haskell<h3>
+                <?php include("../colorhtml/haskell/regex1.html"); ?>
+
+
         <!-- Column 1 end -->
 		</div>
 		<div class="col2">

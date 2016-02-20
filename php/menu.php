@@ -23,7 +23,7 @@ function createBasicPage($fileHtml, $title)
                 tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\(\",\"\\)\"]]}
               });
             </script>
-        <script type=\"text/javascript\" src=\"../MathJax-2.4-latest/MathJax.js\"></script>
+        <script type=\"text/javascript\" src=\"../MathJax-2.6-latest/MathJax.js\"></script>
     </head>
     <body>
     <script>
@@ -86,24 +86,55 @@ function createBasicPage($fileHtml, $title)
 return $content;
 }
     $pageArray = array(
+        "From Matrix to Lie Group", 
+        "Cubic Curve", 
+        "Differentiated", 
+        "Algebraic Curve", 
+        "Projective Geometry",
+        "Hermitian matrix has real eigenvalue value",
+        "Proof On Some Sequences",
+        "Mathematic Note",
+        "Math Definition",
+        "Square Root of Two is irrational", 
+        "Visualize Binomial Theorem",
+        "Binomial Identity",
+        "Proof Fermat Little Theorem", 
+        "Computer Graphic Matrix",
+
+        "Functional Picture",
+
+        "Draw Triangle OpenGL IOS",
+        "UIAlert in iOS",
+        "TableViewController in iOS",
         "Switch different RootController",
+        "IOS Slide Up Controller",
+        "IOS List Buttons",
+        "IOS Different Fonts",
+        "IOS Play Sound",
+        "IOS Demo",
+        "IOS Simple App Demo",
         "Rename Project in Xcode 6.1",
+        "Touches Event in iOS",
+        "Draw Circle Rectangle Oval in iOS", 
+        "Xcode Screenshots",
+        "Xcode Add Resource Bundle",
+        "ObjectiveC pass double pointers",
+        "ObjectiveC String Format Specifiers",
+        "ObjectiveC Block",
+        "ObjectiveC Static Method",
+        "ObjectiveC ARC qualifier",
+        "ObjectiveC Double and Triple Pointer",
+
         "Tries Data Structure",
         "Cycle Array",
         "Binary Tree",
         "Stack and Queue in Binary Tree",
-        "Touches Event in iOS",
-        "ObjectiveC pass double pointers",
-        "Draw Triangle OpenGL IOS",
-        "Computer Graphic Matrix",
         "Binary Search One Dimensions",
         "Binary Search Two Dimensions",
         "Longest Increasing Subsequence Recursion",
         "Coin Change Algorithm", 
         "Coin Change Dynamic Programming", 
-        "Proof On Some Sequences",
-        "Proof Fermat Little Theorem", 
-        "Haskell Tutorial",
+
         "Java Algorithm",
         "Java Data Structure",
         "Merge Sort In Java",
@@ -111,10 +142,9 @@ return $content;
         "Merge Sort In C++",
         "Merge Sort In Haskell",
         "Merge Sort In Scala",
-        "Quick Sort In Java",
+        "Quick Sort",
         "Quick Sort In C",
         "Quick Sort In C++",
-        "Quick Sort In Haskell",
         "Quick Sort In Scala",
 
         "Print n prime number in Java",
@@ -159,55 +189,36 @@ return $content;
         "Generate n prime in Haskell",
         "Generate n prime in Scala",
 
-        "Prime Number",
-        "Math Definition", 
+        "Haskell Tutorial",
+        "C and C++ Tutorial",
         "Scala Tutorial", 
-        "Square Root of Two is irrational", 
-        "Cubic Curve", 
-        "Differentiated", 
-        "Algebraic Curve", 
-        "Projective Geometry", 
-        "Merge Two Sorted Array",
-        "ObjectiveC String Format Specifiers",
-        "ObjectiveC Block",
-        "ObjectiveC Static Method",
-        "ObjectiveC ARC qualifier",
-        "ObjectiveC Double and Triple Pointer",
-        "IOS Play Sound",
-        "IOS Demo",
-        "IOS Simple App Demo",
-        "IOS Development", 
-        "Draw Circle Rectangle Oval in iOS", 
-        "Xcode Screenshots",
-        "Xcode Add Resource Bundle",
+         
         "Intellij SetUp",
         "Intellij Add External Library",
         "Intellij Add Maven to proejct",
         "Intellij Add dependency to Maven",
         "Intellij Add Framework Support",
         "Intellij Add Scala SDK",
-        "Install Maven in Mac OSX ",
-        "Setup The Play Framework",
+
+        "Prime Number",
+        "Merge Two Sorted Array",
         "Print All Permutation of an Array",
-        "C and C++ Tutorial",
         "Quick Sort in C and C++",
-        "Visualize Binomial Theorem",
         "Print all combination of r in a given array of size n",
-        "Binomial Identity",
-        "Mathematic Note",
         "Allocate 2D array in C",
         "Shuffle algorithm in C++",
-        "Permutation Algorithm in C++",
-        "Permutation Algorithm in Java",
         "Rotated Sorted Array", 
         "Multiply Array in Dynamic Programming",
         "Multiply Long Integer",
         "Print Sprial in 2D array",
-        "Vim Tricks",
+
         "Command Line Tricks",
+
+        "Install Maven in Mac OSX ",
+        "Setup The Play Framework",
+        "Latex Example",
         "Daily Note",
     );
-
 
     $htmlDir     = "/Library/WebServer/Documents/zsurface/html/";
     $indexHtml   = "";
@@ -215,7 +226,8 @@ return $content;
     $fileArray   = array();
     $linkArray   = array();
     $outputArray = array();
-    for($i=0; $i<count($pageArray); $i++)
+
+    for($i=0; $i < count($pageArray); $i++)
     {
         $fileArray[] = "index" . preg_replace("/\s+/", '', $pageArray[$i]) . ".html";
 
@@ -233,10 +245,10 @@ return $content;
                 <h3><a style=\"text-decoration:none;\" href=\"html/{$fileArray[$i]}\">{$titleArray[$i]}</a></h3>
                 ";
     }
-    for($m=0; $m<count($pageArray); $m++)
+    for($m=0; $m < count($pageArray); $m++)
     {
         $menuBar = "";
-        for($i=0; $i<count($pageArray); $i++)
+        for($i=0; $i < count($pageArray); $i++)
         {
             if($m === $i)
             {

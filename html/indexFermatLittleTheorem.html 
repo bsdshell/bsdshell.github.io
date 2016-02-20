@@ -18,7 +18,7 @@
             tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
           });
         </script>
-    <script type="text/javascript" src="../MathJax-2.4-latest/MathJax.js"></script>
+    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
 </head>
 <body>
 
@@ -30,12 +30,10 @@
 	<div class="colleft">
 		<div class="col1">
 			<!-- Column 1 start -->
-            <div class="box">
-                <div>
-                    <br>
-                    <h3>Prove Fermat Little Theorem $a^p \equiv a mod p$</h3>
-                    <h3>C = 0 = 0 $\Rightarrow \varphi =0$</h3>
-                </div>
+            <div>
+                <br>
+                <h3>Prove Fermat Little Theorem $a^p \equiv a mod p$</h3>
+                <h3>C = 0 = 0 $\Rightarrow \varphi =0$</h3>
             </div>
         <!-- Column 1 end -->
 		</div>

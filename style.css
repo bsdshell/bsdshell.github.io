@@ -6,6 +6,7 @@
 .haskellc{
     background-color:#EEEEEE;
     text-align:center;
+    box-shadow:0px 0px 0px 0px #888;
 }
 
 .javac{
@@ -25,8 +26,15 @@
     float:auto;
 }
 
+.tcen{
+    float:right;
+    width:80%;
+    font-size:16px;
+}
+
 .cen{
     text-align:center;
+    font-size:16px;
 }
 
 .centered{
@@ -34,34 +42,53 @@
     margin-right:auto;
 }
 
-.mathdef{
+.latexbox{
     width:600px;
-    border: 1px solid red;
+    border:1px solid gray;
     padding: 4px;
+    margin-top: 2px;
+    margin-left:22%;
+    font-size:16px;
+    background:#FFFFFF;
+}
+
+
+.mathdef{
+    width:800px;
+    margin-top: 2px;
+    border: 1px solid gray;
+    padding: 4px;
+    font-size:14px;
+    background:#FFFFFF;
 }
 .mathdef_box1{
     width:800px;
-    border:1px solid red;
+    border:1px solid gray;
     padding: 4px;
-    margin-left:10%;
+    margin-top: 2px;
+    margin-left:14%;
     font-size:14px;
     background:#FFFFFF;
 }
 
 .mathdef_box2{
     width:900px;
-    border: 1px solid red;
+    border: 1px solid gray;
     padding: 4px;
-    margin-left:5%;
-    font-size:18px;
+    margin-top: 2px;
+    margin-left:12%;
+    font-size:16px;
+    background:#FFFFFF;
 }
 
 .mathdef_box3{
     width:1000px;
-    border: 1px solid red;
+    border: 1px solid gray;
+    margin-top: 2px;
     padding: 4px;
-    margin-left:2%;
-    font-size:18px;
+    margin-left:8%;
+    font-size:14px;
+    background:#FFFFFF;
 }
 
 
@@ -75,10 +102,9 @@
     float:auto;
 }
 
-p {
+p{
     font-size:1em;
     line-height:1.25em;
-    margin:1.25em 0;
     text-align:justify;
     background: #FFFFFF;
     border-radius:0px;
@@ -89,7 +115,7 @@ p {
 }
 
 .mytextbox{
-    border: 1px solid #E8E0E0;
+    border: 0px solid #E8E0E0;
     padding:1px;
     margin-top:1px;
     margin-bottom:1px;

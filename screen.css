@@ -17,8 +17,8 @@ a:hover {
     color:#000;
 }
 h1, h2, h3 {
-    margin: .1em 0 .1em 0;
-    padding:2px;
+    margin: 0em 0 0em 0;
+    /*padding:2px;*/
 }
 
 /* Header styles */
@@ -105,8 +105,12 @@ h1, h2, h3 {
 .col2 {
     float:left;
     position:relative;
-    padding:0 0 1em 0;
+    padding: 0 0 1em 0;
     overflow:hidden;
+    margin-left:2px;
+    text-indent:4px;
+    margin-top: 2px;
+    background: rgb(239, 245, 233);
 }
 
 .rightmenu .colleft {
@@ -119,8 +123,11 @@ h1, h2, h3 {
 }
 
 .rightmenu .col2 {
-    width: 15%;/* right column content width (right column width minus left and right padding) */
+    width: 15.4%;/* right column content width (right column width minus left and right padding) */
     left: 27%;/* (right column width) plus (left column left and right padding) plus (right column left padding) */
+    background:rgb(239, 245, 233);
+    text-indent:6px;
+    font-size: 5px;
 }
 /* Footer styles */
 #footer {

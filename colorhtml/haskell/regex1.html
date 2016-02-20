@@ -1,0 +1,15 @@
+<div class="highlight"><pre><span class="nf">mymatch</span> <span class="n">regex</span> <span class="n">f</span> <span class="n">s</span> <span class="ow">=</span> 
+        <span class="kr">case</span> <span class="n">matchRegexAll</span> <span class="n">regex</span> <span class="n">s</span> <span class="kr">of</span> 
+            <span class="kt">Nothing</span><span class="ow">-&gt;</span><span class="n">s</span>
+            <span class="kt">Just</span><span class="p">(</span><span class="n">before</span><span class="p">,</span> <span class="n">matched</span><span class="p">,</span> <span class="n">after</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span><span class="ow">-&gt;</span><span class="n">before</span> <span class="o">++</span> <span class="n">f</span> <span class="n">l</span> <span class="o">++</span> <span class="n">after</span>
+
+<span class="nf">t1</span> <span class="ow">=</span> <span class="n">filter</span> <span class="p">(</span><span class="o">=~</span> <span class="s">&quot;is&quot;</span><span class="p">)</span> <span class="p">[</span><span class="s">&quot;this is it&quot;</span><span class="p">]</span> 
+<span class="c1">-- [&quot;this is it&quot;]</span>
+<span class="nf">ignoreCase</span> <span class="ow">=</span> <span class="n">makeRegexOpts</span><span class="p">(</span><span class="n">defaultCompOpt</span> <span class="o">.|.</span> <span class="n">compIgnoreCase</span><span class="p">)</span> <span class="n">defaultExecOpt</span>
+<span class="nf">t3</span> <span class="ow">=</span> <span class="n">filter</span> <span class="p">(</span><span class="n">matchTest</span> <span class="o">$</span> <span class="n">ignoreCase</span> <span class="s">&quot;apple&quot;</span><span class="p">)</span> <span class="p">[</span><span class="s">&quot;My Apple&quot;</span><span class="p">]</span> 
+<span class="c1">-- [&quot;My Apple&quot;]</span>
+<span class="nf">t4</span> <span class="ow">=</span> <span class="n">subRegex</span><span class="p">(</span><span class="n">mkRegex</span> <span class="s">&quot;p+&quot;</span><span class="p">)</span> <span class="s">&quot;apple sucks&quot;</span> <span class="s">&quot;PP&quot;</span> 
+<span class="c1">-- aPPle sucks</span>
+<span class="nf">t5</span> <span class="ow">=</span> <span class="n">mymatch</span><span class="p">(</span><span class="n">mkRegex</span> <span class="s">&quot;man([0-9])&quot;</span><span class="p">)</span> <span class="p">(</span><span class="nf">\</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="ow">-&gt;</span><span class="s">&quot;woman&quot;</span> <span class="o">++</span> <span class="n">n</span><span class="p">)</span> <span class="s">&quot;/cat/man3/dog.txt&quot;</span>
+<span class="c1">-- &quot;/cat/woman3/dog.txt&quot;</span>
+</pre></div>

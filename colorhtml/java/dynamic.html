@@ -1,7 +1,7 @@
 <div class="highlight"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[][]</span> <span class="nf">miniCoinDynamic</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">coin</span><span class="o">,</span> <span class="kt">int</span> <span class="n">sum</span><span class="o">)</span>
     <span class="o">{</span>
         <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">coin</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
-        <span class="kt">int</span><span class="o">[][]</span> <span class="n">array</span> <span class="o">=</span> <span class="n">init</span><span class="o">(</span><span class="n">len</span><span class="o">,</span> <span class="n">sum</span><span class="o">+</span><span class="mi">1</span><span class="o">);</span>
+        <span class="kt">int</span><span class="o">[][]</span> <span class="n">array</span> <span class="o">=</span> <span class="n">init</span><span class="o">(</span><span class="n">len</span><span class="o">,</span> <span class="n">sum</span><span class="o">);</span>
 
         <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">len</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
         <span class="o">{</span>
@@ -9,32 +9,33 @@
             <span class="o">{</span>
                 <span class="k">if</span><span class="o">(</span> <span class="n">s</span> <span class="o">-</span> <span class="n">coin</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">)</span>
                 <span class="o">{</span>
-                        <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
-                        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">k</span> <span class="o">&lt;=</span><span class="n">i</span><span class="o">;</span> <span class="n">k</span><span class="o">++)</span> 
-                            <span class="n">min</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">min</span><span class="o">,</span> <span class="n">array</span><span class="o">[</span><span class="n">k</span><span class="o">][</span><span class="n">s</span><span class="o">-</span><span class="n">coin</span><span class="o">[</span><span class="n">i</span><span class="o">]]);</span>
-                        <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">s</span><span class="o">]</span> <span class="o">=</span> <span class="n">min</span> <span class="o">==</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span> <span class="o">?</span> <span class="n">min</span><span class="o">:</span> <span class="n">min</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span> 
+                    <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
+                    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">k</span> <span class="o">&lt;=</span><span class="n">i</span><span class="o">;</span> <span class="n">k</span><span class="o">++)</span>
+                        <span class="n">min</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">min</span><span class="o">,</span> <span class="n">array</span><span class="o">[</span><span class="n">k</span><span class="o">][</span><span class="n">s</span><span class="o">-</span><span class="n">coin</span><span class="o">[</span><span class="n">i</span><span class="o">]]);</span>
+                    <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">s</span><span class="o">]</span> <span class="o">=</span> <span class="n">min</span> <span class="o">==</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span> <span class="o">?</span> <span class="n">min</span><span class="o">:</span> <span class="n">min</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
                 <span class="o">}</span>
             <span class="o">}</span>
         <span class="o">}</span>
 
         <span class="c1">// find the mini value on the most right column</span>
         <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">k</span> <span class="o">&lt;</span><span class="n">len</span><span class="o">;</span> <span class="n">k</span><span class="o">++)</span> 
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">k</span> <span class="o">&lt;</span><span class="n">len</span><span class="o">;</span> <span class="n">k</span><span class="o">++)</span>
             <span class="n">min</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">min</span><span class="o">,</span> <span class="n">array</span><span class="o">[</span><span class="n">k</span><span class="o">][</span><span class="n">sum</span><span class="o">]);</span>
-        <span class="n">array</span><span class="o">[</span><span class="n">len</span><span class="o">-</span><span class="mi">1</span><span class="o">][</span><span class="n">sum</span><span class="o">]</span> <span class="o">=</span> <span class="n">min</span><span class="o">;</span> 
+        <span class="n">array</span><span class="o">[</span><span class="n">len</span><span class="o">-</span><span class="mi">1</span><span class="o">][</span><span class="n">sum</span><span class="o">]</span> <span class="o">=</span> <span class="n">min</span><span class="o">;</span>
 
         <span class="k">return</span> <span class="n">array</span><span class="o">;</span>
     <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[][]</span> <span class="nf">init</span><span class="o">(</span><span class="kt">int</span> <span class="n">width</span><span class="o">,</span> <span class="kt">int</span> <span class="n">height</span><span class="o">)</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[][]</span> <span class="nf">init</span><span class="o">(</span><span class="kt">int</span> <span class="n">height</span><span class="o">,</span> <span class="kt">int</span> <span class="n">width</span><span class="o">)</span>
     <span class="o">{</span>
-        <span class="kt">int</span><span class="o">[][]</span> <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">width</span><span class="o">][</span><span class="n">height</span><span class="o">];</span>
+        <span class="kt">int</span><span class="o">[][]</span> <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">height</span><span class="o">][</span><span class="n">width</span><span class="o">+</span><span class="mi">1</span><span class="o">];</span>
         <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">height</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
         <span class="o">{</span>
             <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">width</span><span class="o">+</span><span class="mi">1</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span>
             <span class="o">{</span>
                 <span class="k">if</span><span class="o">(</span><span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
                     <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-                <span class="k">else</span> 
+                <span class="k">else</span>
                     <span class="n">array</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
             <span class="o">}</span>
         <span class="o">}</span>

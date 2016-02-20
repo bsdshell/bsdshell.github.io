@@ -19,7 +19,7 @@
                 tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
               });
             </script>
-        <script type="text/javascript" src="../MathJax-2.4-latest/MathJax.js"></script>
+        <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
     </head>
     <body>
 <script>
@@ -292,6 +292,7 @@
                        elaborate [] involking carefully arranged parts or details, detailed and complicated in design and planning.<br>
                        elaborate [] involking carefully arranged parts or details, detailed and complicated in design and planning.<br><br>
                        grandiose [ ] impressive and magnificent in appearance or style<br><br>
+                       liberal - adjective, open to new behavious or opinion and willing to discard traditional values
 
                        bind [] [past and past participle bound]<br>
                        visible [] seeable, obversable[obverse] notify, note, notice, noticeable, detectable[detect]<br>  
@@ -303,6 +304,7 @@
                        The structure being + adjective is used to talk about actions and behaviour<br>
                        e.g. why are you being so silly<br>
                        e.g. you are being cruel when you hurt others with your words or actions.<br><br>
+                       e.g. this involes being liberal with your SpaceBar and Enter/Return Key 
                        
                        Being + past participle<br>
                        Being can be followed by a past participle. This structure is used in the passive forms of present and past continuous tenses.<br>
@@ -617,6 +619,135 @@
                         Right:
                         UIColor*__strong* arrayPt = malloc(num*sizeof(UIColor*));  
                        </pre>
+                       <p class="fs"> 
+                       Fri Dec 18 11:39:43 PST 2015<br>
+                       Add ViewController to navigationController in iOS
+                       </p>
+                       <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                       0. Assume you implement UIApplicationDelegate 
+                       1. MyViewController* viewController = [[MyViewController alloc]init];
+                       2. UINavigationController* navController = [UINavigationController alloc]
+                                                            initWithRootViewController:viewController];
+                       3. [self.window addSubview:[navController view]];
+                       </pre>
+                       <div class="cen">
+                           <img src="../image/uinavigationcontroller.png" width="50%" height="50%" /><br> 
+                       </div>
+
+                        <p class="fs"> 
+                       How to get rid of the warning message in iOS:<br> 
+                       [Application windows are expected to have a root view controller at the end of application launch]<br><br>
+                       The following two methods are important<br> 
+                       [1] self.navigationController = [[UINavigationController alloc]initWithRootViewController:viewController];<br>
+                       - According to Apple Doc. The method push the Root View Controller without animation<br><br> 
+                       [2] [self.window setRootViewController:viewController];<br>
+                       - Set the View Controller as Root View[The View Controller is at [0] in Navigation Stack]<br>
+                       If you use the [1] then you can't get rid of the warnning message[I always though the two methods are the same before]<br>
+                       - The name of methods are confusing in iOS API sometimes<br>
+                       [<span style="color:#FF9933;">solution</span>]<br>
+                       You have to use [2] to set the RootViewController to get rid of the warnning message<br>
+                       </p>
+                       <div class="cen">
+                           <img src="../image/navigation_manager1.png" width="60%" height="60%" /><br> 
+                       </div>
+                       <p class="fs"> 
+                       Mon Dec 21 11:54:37 PST 2015<br>
+                       Why Mac OS search sucks so bad, here is why<br>
+                       By default, the search is for "Whole Mac OS" so earch search will come up billion of items<br>
+                       even though you open a folder to search<br>
+                       Here is how to fix the stupid Apple default search<br>
+                       <div class="cen">
+                           <img src="../image/macsuck.png" width="80%" height="80%" /><br> 
+                       </div>
+
+                       </p>
+                       <p class="fs"> 
+                       Sun Dec 27 02:08:37 PST 2015<br>
+                       Why You should learn Haskell?<br>
+                       1. Haskell is pure functional programming<br>
+                       2. Haskell is one of most elegant programming language out there<br>
+                       3. Haskell is extremely powerful if you know how to use it<br>
+                       4. Haskell is designed by very smart people<br>
+                       5. Haskell is strong type language<br>
+                       6. Haskell is lazy evaluation<br>
+                       7. Haskell has no side effect so it is good for concurrency<br>
+                       Java, C# and C++ adopt many functional programming features in their language<br> 
+                       Many companies adpot functional programming language like Scala<br>
+                       </p>
+
+                       <p class="fs"> 
+                        Sun Jan 17 10:55:47 PST 2016<br>
+                        On Saturday, I want to Burnaby play soccer again.<br> 
+                        I woke up around 9:30, brush my teeth and wash my face.<br>
+                        Cook some breakfast[it is not exact breakfast, it just left over from last night]<br>
+                        then I want to Richmond library and work on my project for around two hours.<br>
+                        Around 1:40pm, I drove to Westminister Hwy and turnned left toward 91 North[Burnaby/Vancouver].<br>
+                        After around five minutes, I cross the Knight St Bridge[Richmond BC]<br>
+                        After another 15 mintues, I meet E 22nd Ave then I turnned right toward to Vectoria Dr.<br> 
+                        The soccer field is around the Vectorial Dr.<br>
+                        There are around 24 people initially, and some people left and some came late.<br>
+                        We played untile 4:pm, it is fun.<br>
+                        </p>
+                        <p class="fs">
+                        Wed Jan 27 01:22:57 PST 2016<br>
+                        I just spend some time on searching for Good PDF file reader tonight.<br>
+                        MacOS has default PDF file reader called Preview and I use it for some time.<br>
+                        No long ago, I try to change the background of Preview, but I cannot find any option to change the background color in Preferences.<br>
+                        After Googling and clicking around the Preferences, I have no luck to go any where.<br>
+                        The next obvious option is to find other PDF reader. Google the phrase "PDF reader Mac", the first thing pops up is Adobe PDF reader.<br>
+                        I download the Adobe "standard" version PDF reader.<br>
+                        Luckly, there is option to change the background color in Adobe PDF reader.<br>
+                        </p>
+                        <p class="fs">
+                        I expored a number of options including Preview and Adobe PDF reader.<br>
+                        I expored a number of options including bank robbery and hacking<br>
+                        I exported a number of options to improve my English skill including reading one article and writing one article a day.<br> 
+                        </p>
+                        <p class="fs">
+                        Thu Jan 28 17:32:10 PST 2016<br>
+                        If you want someone rely on you, it is better to understimate your abilities and overestimate your risks than to go in a direction that<br> 
+                        actually involves more uncertainty than you can justfy.<br><br>
+                        She pushed the anxious uncertainties out of her mind.<br>
+                        </p>
+                        <p class="fs">
+                        I spend most of time to fix an issue on my game.<br> 
+                        When the game is saved, the selected/highlighted grid is not saved in the NSUserdefaults object.<br><br> 
+                        I still can't figure out how to fix the issue.<br>
+                        </p>
+                        <p class="fs">
+                        Fri Feb 19 14:14:53 PST 2016<br>
+                        I try to integrate Apple Game Center to my game today and I google around found a good tutorial in Raywenderlich.com<br>
+                        Here is the basic steps to integrate Game Center to my game.<br>
+                        1. Create and Set App ID[not sure what the hell it is, I hope it will be a bit clear late]<br>
+                            Login to iOS Dev Center, and from there log onto Provisioning Portal<br>
+                            From there, select the App ID for my App, similar to the following[except I will be choosing different values]<br>  
+                        <img src="../image/gamecenter.jpg" width="30%" height="30%" /><br>
+                        The most important part is the bundle identifier - you need to set that to a unique string<br> 
+                        so it can't be the same as other.<br>
+                        It is usually good practice to use a domain name you control followed by a unique string to avoid name collisions.<br>
+                        Once you are done, click submit. Then open the Cat Race Xcode project, select Resources\info.plist, and set your Bundle<br> 
+                        identifier to whatever you enter in the iOS Provisioning Portal, as shown below[except you will be entering a different value]<br>
+                        <img src="../image/bundle.jpg" width="30%" height="30%" /><br>
+                        One last thing, Xcode sometimes gets confusing when you change your bundle identifier mid-project, so to make sure everything's<br> 
+                        dandy take the following steps:<br>
+                            Delete any copies of Cat Race currently on your simulator of device<br>
+                            Quit your simulator if it's running<br>
+                            Do a clean build with Project\Clean<br>
+                        Congrats, now you have App ID for your app, your app is set up to use it.<br>
+                        Next you can register your app with iTunes Connect and enable Game Center<br>
+
+                        2. Register your app with iTunes Connect<br>
+                        The next step is to log on to iTunes Connect and create new entry for your app.<br>
+                        Once you are loged onto iTunes Connect, select Manager Your Applicaitons, and then click the blue "Add New App" button in the upper left.<br>
+                        Authenticate Your Local User: Strategy 
+                        Authenticate your Local User: Implementation
+
+                        3. MatchMaker, Make Me A Match
+
+                        </p>
+
+
+
 
             <!-- Column 1 end -->
             </div>

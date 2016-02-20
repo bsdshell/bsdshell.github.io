@@ -19,7 +19,7 @@
             tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
           });
         </script>
-    <script type="text/javascript" src="../MathJax-2.4-latest/MathJax.js"></script>
+    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
     <!--<script type="text/javascript" src="../prettify/prettify.js"></script>-->
 </head>
 <body>
@@ -30,8 +30,8 @@
 	<div class="colleft">
 		<div class="col1">
 			<!-- Column 1 start -->
-                <p>
-                    $\Huge \color{red}\tau$ </span> 
+                <p class="fs">
+                    $\large\color{red}\tau$ </span> 
                     Given an 2D $m \times n$ array, print out the elements in sprial shape<br>
                     e.g. 
                     \[
@@ -46,18 +46,20 @@
                    In fact, the probem is similar to "Rotate square matrix in counterclockwise 90 degree"<br><br>
                    but we assume $m \neq n$<br>
                    
-                   <img src="http://tiny3.com/image/1440030647.jpg" width="20%" height="20%" /><br> 
-                   <span style="color:#FF33EE">From</span> the pictures, we can try to come up a skeleton algorithm<br>
+                   <div class="cen">
+                   <img src="../image/spiralarray.png" width="40%" height="40%" /><br> 
+                   </div>
+                   <p class="fs">
+                   From the pictures, we can try to come up a skeleton algorithm<br>
                     1. we need to walk<br>
                     $\square$ from left to right [1, 2, 3]<br>
                     $\square$    from top to bottom [4, 8]<br>
                     $\square$    from right to left [12, 11, 10]<br>
                     $\square$    from bottom to top [9, 5]<br>
                     $\square$    finally, [6, 7]<br><br>
-
-                   <img src="http://tiny3.com/image/1440107962.jpg" width="30%" height="30%" style="float:right" /><br>
-                   <span style="color:#FF0033">In</span> two dimensions array, the first index is moving vertically, and the second index is moving horizontally.
-                       <pre style="background:#FFF; box-shadow:3px 3px 5px 1px #FFF;">
+                   In two dimensions array, the first index is moving vertically, and the second index is moving horizontally.
+                    </p>
+            <pre style="background:#DDD;">
            int array[height][width];
            for(int k=0; k &lt height; k++)
            {
@@ -70,12 +72,9 @@
             for(int h=k; h &lt height-1-k; h++)
                 array[height - 1 -h][k] (bottom to top)
            }
-                       </pre>
-                </p>
-                <?php include("../colorhtml/java/spiral.html"); ?>
 
-        <div class="box">
-        </div>
+                       </pre>
+            <?php include("../colorhtml/java/spiral.html"); ?>
         <!-- Column 1 end -->
 		</div>
 		<div class="col2">
