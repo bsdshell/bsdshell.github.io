@@ -82,17 +82,176 @@
                     \end{equation}
                     </pre>
                 </div>
-                \[ \text{Inner Product} \]
-                \[
-                    \langle \vec{u}, \vec{v} \rangle
-                \]
+            \[ \text{Inner Product} \]
+            \[
+                \langle \vec{u} \,, \vec{v} \rangle \\
+                \langle \cdot \,, \cdot \rangle \\
+                \langle \,, \rangle \\
+                \left\langle u\mathbf{M}^{\ast} \,, v\right\rangle = \left\langle u \,, \mathbf{M}^{\ast} v\right\rangle
+            \]
                 <div class="tex2jax_ignore">
                     <pre style="background:#FFF">
-                    \langle \vec{u}, \vec{v} \rangle
+        \langle \vec{u} \,, \vec{v} \rangle 
+        \langle \cdot \,, \cdot \rangle 
+        \langle \,, \rangle 
+        \left\langle u\mathbf{M}^{\ast} \,,  v\right\rangle = \left\langle u \,, \mathbf{M}^{\ast} v\right\rangle
                     </pre>
                 </div>
 
+
+                \[ \text{Derivatives} \]
+                \[
+                    \frac{du}{dt} \\
+
+                    \frac{d^2u}{dx^{2}} \\
+                    
+                    \frac{\partial u}{\partial t} = h^2 \left(     
+                    \frac{\partial^2 u}{\partial x^2} + 
+                    \frac{\partial^2 u}{\partial y^2} + 
+                    \frac{\partial^2 u}{\partial z^2}
+                    \right)
+                \]
+                <div class="tex2jax_ignore">
+                    <pre style="background:#FFF">
+                    \frac{du}{dt} 
+
+                    \frac{d^2u}{dx^{2}} 
+                    
+                    \frac{\partial u}{\partial t} = h^2 
+                    \left(     
+                        \frac{\partial^2 u}{\partial x^2} + 
+                        \frac{\partial^2 u}{\partial y^2} + 
+                        \frac{\partial^2 u}{\partial z^2}
+                    \right)
+
+                </pre>
             </div>
+
+                \[ \text{Norm} \]
+                \[
+                    \|\vec{v} \|
+                \]
+                <div class="tex2jax_ignore">
+                    <pre style="background:#FFF; text-align:center; border-color:#333;">
+            \|\vec{v} \|
+                    </pre>
+                </div>
+
+                \[ \text{Series} \]
+                \begin{equation}
+                \begin{aligned}
+                    \sin x & = \sum_{k=0}^{\infty} (-1)^k \frac{x^{2k+1}}{(2k+1)!} \\ 
+                    \sin x & = \frac{x^1}{1!} - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots \\
+                    \cos x & = \sum_{k=0}^{\infty} (-1)^k \frac{x^{2k}}{2k!} \\
+                    \cos x & = \frac{x^0}{0!} - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots 
+                \end{aligned}
+                \end{equation}
+
+                <div class="tex2jax_ignore">
+                    <pre style="background:#FFF">
+            \sin x & = \sum_{k=0}^{\infty} (-1)^k \frac{x^{2k+1}}{(2k+1)!}  
+
+            \sin x & = \frac{x^1}{1!} - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots 
+
+            \cos x & = \sum_{k=0}^{\infty} (-1)^k \frac{x^{2k}}{2k!} 
+
+            \cos x & = \frac{x^0}{0!} - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots 
+                    </pre>
+                </div>
+
+            \[ \text{Rotation Matrices} \]
+            \begin{equation}
+            \begin{aligned}
+                M_{z}(\beta) & =\begin{bmatrix}
+                        \cos\beta & -\sin\beta & 0\\
+                        \sin\beta & \cos\beta & 0\\   
+                        0      &   0    & 1  
+                    \end{bmatrix} \\
+                M_{y}(\beta) & =\begin{bmatrix}
+                        \cos \beta & \sin\beta & 0\\
+                        0      &   1    & 0    \\  
+                        -sin\beta & \cos\beta & 0   
+                    \end{bmatrix} \\
+                M_{x}(\beta) & =\begin{bmatrix}
+                        1 &   0      &     0   \\         
+                        0 & \cos\beta & -\sin\beta\\
+                        0 & \sin\beta& \cos\beta   
+                    \end{bmatrix} 
+            \end{aligned}
+            \end{equation}
+
+            <div class="tex2jax_ignore">
+                <pre style="background:#FFF">
+                                \begin{equation}
+                                \begin{aligned}
+                                    M_{z}(\beta) & =\begin{bmatrix}
+                                            \cos\beta & -\sin\beta & 0
+                                            \sin\beta & \cos\beta & 0   
+                                            0      &   0    & 1  
+                                        \end{bmatrix} 
+                                    M_{y}(\beta) & =\begin{bmatrix}
+                                            \cos \beta & sin\beta & 0
+                                            0      &   1    & 0      
+                                            -sin\beta & \cos\beta & 0   
+                                        \end{bmatrix} 
+                                    M_{x}(\beta) & =\begin{bmatrix}
+                                            1 &   0      &     0            
+                                            0 & \cos\beta & -\sin\beta
+                                            0 & sin\beta& \cos\beta   
+                                        \end{bmatrix} 
+                                \end{aligned}
+                                \end{equation}
+                </pre>
+            </div>
+            \[ \text{Derivative evaluated at} \]
+            \begin{equation}
+            \begin{aligned}
+                M_{z}(\theta) & =\begin{bmatrix}
+                            \cos\theta & -\sin\theta & 0\\
+                            \sin\theta & \cos\theta & 0\\   
+                            0      &   0    & 1  
+                        \end{bmatrix}  & \Rightarrow \left. {\frac{d M_z}{d\theta}} \right|_{\theta=0} & = 
+                        \begin{bmatrix}
+                            0 & -1 & 0\\
+                            1 &  0 & 0\\   
+                            0 &  0 & 0  
+                        \end{bmatrix} 
+            \end{aligned}
+            \end{equation}
+
+            <div class="tex2jax_ignore">
+                <pre style="background:#FFF">
+                M_{z}(\theta) & =\begin{bmatrix}
+                    \cos\theta & -\sin\theta & 0\\
+                    \sin\theta & \cos\theta & 0\\   
+                    0      &   0    & 1  
+                \end{bmatrix}  & \Rightarrow \left. {\frac{d M_z}{d\theta}} \right|_{\theta=0} & = 
+                \begin{bmatrix}
+                    0 & -1 & 0\\
+                    1 &  0 & 0\\   
+                    0 &  0 & 0  
+                \end{bmatrix} 
+                </pre>
+            </div>
+
+            \[ \text{Lie Algebra Symbol} \]
+            \[
+                \mathfrak{so}(3)
+            \]
+            <div class="tex2jax_ignore">
+                <pre style="background:#FFF">
+                                        \mathfrak{so}(3)
+                </pre>
+            </div>
+
+
+
+            <!--end of code-->
+            </div>
+            
+
+
+
             <!-- Column 1 end -->
             </div>
             <div class="col2">

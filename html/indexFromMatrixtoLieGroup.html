@@ -46,6 +46,9 @@
                     \sin(\beta) & \cos(\beta)
                     \end{bmatrix}
                 \]
+                <div class="cen">
+                    <img src="../image/circle.png" width="50%" height="50%" /><br>
+                </div> 
                 \[ A \text{ is orthonormal matrix, it means } \langle \vec{v_{i}}, \vec{u_{j}} \rangle = 0 \quad i \neq j ,\quad \rvert \vec{v_{i}} \rvert=1 \quad \forall i\]
                 \[ \text{The inverse of A is }  
                 A^{-1} = 
@@ -59,6 +62,10 @@
                     -\sin(\beta) & \cos(\beta)
                     \end{bmatrix}
                 \]
+                <div class="cen">
+                    <img src="../image/circle1.png" width="50%" height="50%" /><br>
+                </div> 
+
                 \[  
                     AA^{-1} =  
                     \begin{bmatrix}
@@ -74,6 +81,9 @@
                     0 & 1 
                     \end{bmatrix} 
                 \]
+                <div class="cen">
+                <img src="../image/identity.png" width="50%" height="50%" /><br>
+                </div> 
 
                 \begin{equation}
                 \begin{aligned}
@@ -232,7 +242,7 @@
            \] 
 
             \[ \text{angle between } l \text{ and } 
-                [\vec{y} =\left[
+                \vec{y} =\left[
                     \begin{array}{c}
                     0\\
                     1 
@@ -264,7 +274,7 @@
                 R(\beta) = \begin{bmatrix}
                     \cos\beta & -\sin\beta\\
                     \sin\beta & \cos\beta
-                \end{bmatrix}
+                \end{bmatrix} \quad
                 H(\alpha) = \begin{bmatrix}
                     \cos2\alpha & \sin2\alpha\\
                     \sin2\alpha & -\cos2\alpha
@@ -274,59 +284,142 @@
 
             \begin{equation}
             \begin{aligned}
-                & R(\beta) \circ R(\alpha) = 
+                R(\beta) \circ R(\alpha) &= 
                 \begin{bmatrix}
                     \cos\beta \cos\alpha - \sin\beta \sin\alpha & -(\cos\beta \sin\alpha + \sin\beta \cos\alpha)\\
                     \sin\beta \cos\alpha + \cos\beta \sin\alpha & -\sin\beta \sin\alpha + \cos\beta \cos\alpha 
-                \end{bmatrix} & = R(\beta + \alpha)\\
-                & R(\beta) \circ H(\alpha) = 
+                \end{bmatrix} &= R(\beta + \alpha)\\
+                R(\beta) \circ H(\alpha) &= 
                 \begin{bmatrix}
                     \cos\beta \cos2\alpha - \sin\beta \sin2\alpha & \cos\beta \sin2\alpha + \sin\beta \cos2\alpha \\
                     \sin\beta \cos2\alpha + \cos\beta \sin2\alpha & \cos\beta \cos2\alpha -\sin\beta \sin2\alpha  
-                \end{bmatrix} & = H(\alpha + \frac{\beta}{2})\\
-                & H(\alpha) \circ R(\beta) = 
+                \end{bmatrix} &= H(\alpha + \frac{\beta}{2})\\
+                H(\alpha) \circ R(\beta) &= 
                 \begin{bmatrix}
                     \cos2\alpha\cos\beta + \sin2\alpha \sin\beta & \cos 2\alpha \sin\beta + \sin2\alpha\cos\beta \\
                     \sin2\alpha \cos\beta - \cos2\alpha \sin2\beta & -\cos2\alpha \sin\beta - \cos2\alpha \cos\beta
-                \end{bmatrix} & = H(\alpha - \frac{\beta}{2})\\
-                & H(\beta) \circ H(\alpha) = 
+                \end{bmatrix} &= H(\alpha - \frac{\beta}{2})\\
+                H(\beta) \circ H(\alpha) &= 
                 \begin{bmatrix}
                     \cos2\beta \cos2\alpha + \sin2\beta \sin2\alpha & \cos2\beta \sin2\alpha - \sin2\beta \cos2\alpha \\
                     \cos2\beta \sin2\alpha - \cos2\beta \sin2\alpha & \sin2\beta \sin2\alpha + \cos2\beta \cos2\alpha 
-                \end{bmatrix} & = R(2(\alpha - \beta)) \nonumber
+                \end{bmatrix} &= R(2(\alpha - \beta)) \nonumber
             \end{aligned}
             \end{equation}
 
             \[ \langle R(\beta) , H(\alpha) \rangle \text{ generates a group} \]
 
-            \[ \text{ The determinant of the rotation } \det(R) = \cos^{2}\beta + \sin^{2}\beta = 1 \]
-            \[ \text{ The determinant of the reflection } \det(H) = -(\cos^{2}2\alpha+ \sin^{2}2\alpha)= -1 \]
+            \begin{equation}
+            \begin{aligned}
+                \text{ The determinant of the rotation } \\ 
+                \det(R) &= \cos^{2}\beta + \sin^{2}\beta &= 1 \\ 
+                \text{ The determinant of the reflection } \\ 
+                \det(H) &= -(\cos^{2}2\alpha+ \sin^{2}2\alpha) &= -1 
+            \end{aligned}
+            \end{equation}
 
-            \[ \text{ Exponential map } \]
-            \[ exp(A) = \sum_{k=0}^{n} \frac{A^{k}}{k!} \]
+            $\text{ Exponential map } \mbox{ maps } \mathfrak{so}(3) \mbox{ to } SO(3)$
+            \[ exp(\mathbf{A}) = \sum_{k=0}^{n} \frac{A^{k}}{k!} \]
             \[ \text{ If A is n by n matrix, then prove the series is converage} \]
 
             \begin{equation}
             \begin{aligned}
-                \exp(A)  & = \sum_{k=0}^{n} \frac{A^{k}}{k!} \\
-                \sin(A)  & = \sum_{k=0}^{n} (-1)^{k}\frac{A^{2k}}{2k!} \\
-                \cos(A)  & = \sum_{k=0}^{n} (-1)^{k}\frac{A^{2k+1}}{(2k+1)!} \\
-                \cosh(A) & = \sum_{k=0}^{n} \frac{A^{2k}}{(2k)!} \\
-                \sinh(A) & = \sum_{k=0}^{n} \frac{A^{2k+1}}{(2k+1)!}  \nonumber
+                \exp(\mathbf{A})  & = \sum_{k=0}^{n} \frac{\mathbf{A}^{k}}{k!} \\
+                \sin(\mathbf{A})  & = \sum_{k=0}^{n} (-1)^{k}\frac{\mathbf{A}^{2k}}{2k!} \\
+                \cos(\mathbf{A})  & = \sum_{k=0}^{n} (-1)^{k}\frac{\mathbf{A}^{2k+1}}{(2k+1)!} \nonumber
             \end{aligned}
             \end{equation}
 
-            \[ \text{Let } A = 
+            \[
+                \left[
+                    \begin{array}{c}
+                    x(\beta) \\ 
+                    y(\beta) 
+                    \end{array}  
+                \right] =
                 \begin{bmatrix}
-                0 & -\beta \\
-                \beta & 0 
+                \cos\beta & -\sin\beta\\
+                \sin\beta &  \cos\beta
                 \end{bmatrix}
-             
-            \] 
+                \left[
+                \begin{array}{c}
+                x \\ 
+                y
+                \end{array}  
+                \right]
+            \]
+
+            \[
+            \frac{d}{d \beta}    
+                    \left[
+                        \begin{array}{c}
+                        x(\beta) \\ 
+                        y(\beta) 
+                        \end{array}  
+                    \right] = 
+                    \begin{bmatrix}
+                    -\sin\beta & -\cos\beta\\
+                    \cos\beta &  -\sin\beta
+                    \end{bmatrix}
+                    \left[
+                    \begin{array}{c}
+                    x \\ 
+                    y
+                    \end{array}  
+                    \right]
+            \]
+
+            \[
+            \frac{d}{d \beta}    
+                    \left[
+                        \begin{array}{c}
+                        x(\beta) \\ 
+                        y(\beta) 
+                        \end{array}  
+                    \right] = 
+                    \begin{bmatrix}
+                    0 & -1 \\
+                    1 & 0 
+                    \end{bmatrix}
+                    \left[
+                    \begin{array}{c}
+                    x \\ 
+                    y
+                    \end{array}  
+                    \right] \quad \beta = 0
+            \]
+            \[
+                \begin{bmatrix}
+                0 & -1 \\
+                1 & 0 
+                \end{bmatrix} \quad \text{Infinitesimal Generator}
+            \]
 
             \begin{equation}
             \begin{aligned}
-                & \exp(A) = 
+                & \text{Let } \mathbf{A} = 
+                \begin{bmatrix}
+                0 & -\beta \\
+                \beta & 0 
+                \end{bmatrix}\\
+
+                & R(\beta) = 
+                \begin{bmatrix}
+                \cos\beta & -\sin\beta\\
+                \sin\beta &  \cos\beta
+                \end{bmatrix} \\
+                & R(\beta) = e^{\mathbf{A}} = \sum_{n=0}^{\infty} \frac{1}{n!} \mathbf{A}^{n} = 
+                \begin{bmatrix}
+                \cos\beta & -\sin\beta\\
+                \sin\beta &  \cos\beta
+                \end{bmatrix}  
+            \end{aligned}
+            \end{equation}
+
+            \begin{equation}
+            \begin{aligned}
+
+                & \exp(\mathbf{A}) = 
                     \begin{bmatrix}
                     1 & 0 \\
                     0 & 1 
@@ -359,19 +452,211 @@
                     \begin{bmatrix}
                     0 & -\beta^{5}\\
                     \beta^{5} & 0 
-                    \end{bmatrix} \\
-                & \exp(A) = 
+                    \end{bmatrix} 
+                    + ...\\
+                & \exp(\mathbf{A}) = 
                     \begin{bmatrix}
-                    1 + \frac{1}{2!}(-\beta^{2}) + \frac{1}{4!}\beta^{4} + ... & -\beta + \frac{1}{3!}\beta^{3} + ...\\
-                    \beta + \frac{1}{3!}-\beta^{3} + ... & 1 + \frac{1}{2!}\beta^{2} + \frac{1}{4!}\beta^{4} + ...
-                    \end{bmatrix}
-                    = 
+                    1 + \frac{1}{2!}(-\beta^{2}) + \frac{1}{4!}\beta^{4} + ... & -\beta + \frac{1}{3!}\beta^{3} - \frac{1}{5!}\beta^{5} + ...\\
+                    \beta - \frac{1}{3!}\beta^{3} + \frac{1}{5!}\beta^{5} + ... & 1 + \frac{1}{2!}\beta^{2} + \frac{1}{4!}\beta^{4} + ...
+                    \end{bmatrix} = 
                     \begin{bmatrix}
-                    \sin(\beta) & -\cos(\beta)\\
-                    \cos(\beta) & \sin(\beta)
-                    \end{bmatrix}
+                        \cos\beta & -\sin\beta\\
+                        \sin\beta &  \cos\beta
+                    \end{bmatrix}  
+
             \end{aligned}
             \end{equation}
+
+            <div class="cen">
+                <img src="../image/expmap.png" width="50%" height="50%" /><br>
+            </div> 
+            Lie algebra, $\mathfrak{so}(3)$, is the set of skew-symmetric matrices. The generator of $\mathfrak{so}(3)$ conrespond to the derivatives of rotation
+            around the each of standard axes, evaluated at the identity:
+
+            \begin{equation}
+            \begin{aligned}
+                M_{z}(\theta) & =\begin{bmatrix}
+                        \cos\theta & -\sin\theta & 0\\
+                        \sin\theta & \cos\theta & 0\\   
+                        0      &   0    & 1  
+                    \end{bmatrix}  & \Rightarrow \left. {\frac{d M_z}{d\theta}} \right|_{\theta=0} & = 
+                    \begin{bmatrix}
+                        0 & -1 & 0\\
+                        1 &  0 & 0\\   
+                        0 &  0 & 0  
+                    \end{bmatrix} \\
+
+                M_{y}(\theta) & =\begin{bmatrix}
+                        \cos \theta & \sin\theta & 0\\
+                        0      &   1    & 0    \\  
+                        -sin\theta & \cos\theta & 0   
+                    \end{bmatrix} & \Rightarrow \left. {\frac{d M_y}{d\theta}} \right|_{\theta=0} & = 
+                    \begin{bmatrix}
+                        0 & 0 & 1\\
+                        0 & 0 & 0\\   
+                        -1 & 0 & 0  
+                    \end{bmatrix} \\
+
+                M_{x}(\theta) & =\begin{bmatrix}
+                        1 &   0      &     0   \\         
+                        0 & \cos\theta & -\sin\theta\\
+                        0 & \sin\theta& \cos\theta   
+                    \end{bmatrix} & \Rightarrow \left. {\frac{d M_x}{d\theta}} \right|_{\theta=0} & = 
+                    \begin{bmatrix}
+                        0 & 0 & 0\\
+                        0 & 0 & -1\\   
+                        0 & 1 & 0  
+                    \end{bmatrix} 
+
+            \end{aligned}
+            \end{equation}
+
+            \[ 
+                \left\langle  G_x =  
+                    \begin{bmatrix}
+                        0 & 0 & 0\\
+                        0 & 0 & -1\\   
+                        0 & 1 & 0  
+                    \end{bmatrix}
+                \,, G_y  = 
+                    \begin{bmatrix}
+                        0 & 0 & 1\\
+                        0 & 0 & 0\\   
+                        -1 & 0 & 0  
+                    \end{bmatrix}
+                \,, G_z = 
+                    \begin{bmatrix}
+                        0 & -1 & 0\\
+                        1 &  0 & 0\\   
+                        0 &  0 & 0  
+                    \end{bmatrix}
+                \right\rangle \\
+            \]
+            \begin{equation}
+            \begin{aligned}
+                \omega = 
+                \left[
+                \begin{array}{c}
+                  \omega_1 \\
+                  \omega_2 \\
+                  \omega_3 
+                \end{array}
+                \right] & \in \mathbb{R}^{3} \\
+                \omega_1 G_x + \omega_2 G_y + \omega_3 G_z & \in $\mathfrak{so}(3)
+            \end{aligned}
+            \end{equation}
+
+            The exponential map is take the skew symmetric matrices to rotation matrices is simply the matrix exponential over a linear combination of the generators:
+            \begin{equation}
+            \begin{aligned}
+            \text{Let } \mathbf{M}  & = 
+                    \begin{bmatrix}
+                        0         & -\omega_3 & \omega_2 \\
+                        \omega_3  & 0         & -\omega_1 \\   
+                        -\omega_2  & \omega_1  & 0  
+                    \end{bmatrix} \\
+
+                    \exp(\mathbf{M}) & = exp \left(
+                            \begin{bmatrix}
+                                0         & -\omega_3 & \omega_2 \\
+                                \omega_3  & 0         & -\omega_1 \\   
+                                -\omega_2  & \omega_1  & 0  
+                            \end{bmatrix}
+                    \right) \\
+                        & = \mathbf{I} + M + \frac{1}{2!}M^2 + \frac{1}{3!}M^3 + ... \\
+            \text{Writing the term in pair, we have:} \\
+                \exp(\mathbf{M}) & = \mathbf{I} + \sum_{k=0}^{\infty} \left[ \frac{M^{2k + 1}}{(2k + 1)!} + \frac{M^{2k+2}}{(2k+2)!} \right] \\
+            \text{Now We take advantage of skew-symmetric matrices:} \\
+                \mathbf{M}^3 & = -(\omega^T \omega) \mathbf{M} \quad \text{ where  } 
+                    \omega = 
+                    \left[
+                    \begin{array}{c}
+                      \omega_1 \\
+                      \omega_2 \\
+                      \omega_3 
+                    \end{array}
+                    \right] \\
+            \text{First we extend the identity to general case:} \\
+                \omega^{T} \omega & = \langle \omega \,, \omega \rangle =  \| \omega \|^{2} = \theta^{2} \\
+                \mathbf{M}^{2k+1} & = (-1)^{k} \theta^{2k} \mathbf{M} \\
+                \mathbf{M}^{2k+2}   &= (-1)^{k} \theta^{2k)} \mathbf{M}^{2} \\
+                \exp(\mathbf{M}) & = \mathbf{I} + \sum_{k=0}^{\infty} \left[ \frac{(-1)^{k} \theta^{2k} \mathbf{M}}{(2k+1)!} + \frac{(-1)^{k} \theta^{2k)} \mathbf{M}^{2}}{(2k+2)!}  \right]  \\
+                \exp(\mathbf{M}) & = \mathbf{I} + \sum_{k=0}^{\infty} \left[ \frac{(-1)^{k} \theta^{2k} \mathbf{M}}{(2k+1)!} \right]  + 
+                                                  \sum_{k=0}^{\infty} \left[  \frac{(-1)^{k} \theta^{2k)} \mathbf{M}^{2}}{(2k+2)!}  \right] \\
+                \exp(\mathbf{M}) & = \mathbf{I} + (\frac{1}{1!} - \frac{\theta^2}{3!} + \frac{\theta^4}{5!} + ...) \mathbf{M} + 
+                                                  (\frac{1}{2!} - \frac{\theta^2}{4!} + \frac{\theta^4}{6!} + ...)\mathbf{M^2} \\
+                \exp(\mathbf{M}) & = \mathbf{I} + \left( \frac{\sin \theta }{\theta} \right) \mathbf{M} + \left( \frac{1 - \cos\theta }{\theta^2}  \right)\mathbf{M^2} \\
+            \end{aligned}
+            \end{equation}
+
+            This is the Rodrigue formula. The exponential map is yield a rotation by $\theta$ radians around axis given by 
+            \[
+            \omega = 
+                    \left[
+                    \begin{array}{c}
+                      \omega_1 \\
+                      \omega_2 \\
+                      \omega_3 
+                    \end{array}
+                    \right]
+            \]
+
+            <div class="cen">
+            <img src="../image/exprotation.png" width="50%" height="50%" /><br>
+            </div> 
+            Symmetric and Skew-Symmetric matrices
+            \[
+                \text{Let } \mathbf{C}_{nxn} \text{ be square matrix }. \text{We can write} \\
+                \mathbf{C} = \frac{1}{2}(\mathbf{C} + \mathbf{C}^t) + \frac{1}{2}(\mathbf{C} - \mathbf{C}^t) = \mathbf{A} + \mathbf{B} \\
+                \text{Where }  \mathbf{A} = \mathbf{A}^t \text{is symmetric and } -\mathbf{B} = \mathbf{B}^t \text{ is skew-symmetric} \\ 
+                \text{Examples:} \\ 
+            \]
+            \begin{equation}
+            \begin{aligned}
+                \mathbf{C} &= \begin{bmatrix}
+                    1 & 2 & 3\\
+                    4 & 5 & 6\\
+                    7 & 8 & 9\\
+                    \end{bmatrix} \\
+                \mathbf{A} &= \mathbf{C} + \mathbf{C}^t \Rightarrow  
+                   \begin{bmatrix}
+                    1 & 2 & 3\\
+                    4 & 5 & 6\\
+                    7 & 8 & 9\\
+                    \end{bmatrix} + 
+                    \begin{bmatrix}
+                    1 & 4 & 7\\
+                    2 & 5 & 8\\
+                    3 & 6 & 9\\
+                    \end{bmatrix} = 
+                    \begin{bmatrix}
+                    2 & 6 & 10\\
+                    6 & 10 & 14\\
+                    10 & 14 & 18\\
+                    \end{bmatrix} \\
+
+                \mathbf{B} &= \mathbf{C} - \mathbf{C}^t \Rightarrow 
+                   \begin{bmatrix}
+                    1 & 2 & 3\\
+                    4 & 5 & 6\\
+                    7 & 8 & 9\\
+                    \end{bmatrix} + 
+                    \begin{bmatrix}
+                    1 & 4 & 7\\
+                    2 & 5 & 8\\
+                    3 & 6 & 9\\
+                    \end{bmatrix} = 
+                    \begin{bmatrix}
+                    0 & -2 & -4\\
+                    2 & 0 & -2\\
+                    4 & 2 & 0\\
+                    \end{bmatrix} \\
+                \mathbf{C} &= \frac{1}{2}(\mathbf{A} + \mathbf{B}) 
+            \end{aligned}
+            \end{equation}
+
+             
+   
 
 
 

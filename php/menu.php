@@ -86,6 +86,8 @@ function createBasicPage($fileHtml, $title)
 return $content;
 }
     $pageArray = array(
+        "Find the eigenvalue of skew-symmetic matrix", 
+        "How to solve the system equation", 
         "From Matrix to Lie Group", 
         "Cubic Curve", 
         "Differentiated", 
