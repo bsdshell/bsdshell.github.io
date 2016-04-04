@@ -49,12 +49,12 @@
                     Normally, there are two coordinates systems in computer graphic<br>
 
                     <span style="color:red;">OpenGL</span> uses [Right Hand Coordinates System] and <span style="color:red;">DirectX</span> uses [Left Hand Coordinates System]<br>
-                    <img src="../image/coorsystem.svg" width="100%" height="100%" /><br> 
+                    <img src="http://localhost/zsurface/image/coorsystem.svg" width="100%" height="100%" /><br> 
 
                     We set z-axis=0 anyway since we only draw two dim triangle<br>
                     </p>
 
-                    <img src="../image/triangle.svg" width="100%" height="100%" /><br> 
+                    <img src="http://localhost/zsurface/image/triangle.svg" width="100%" height="100%" /><br> 
                     1. Create an array with three vertices p=[x, y, z]
                     <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
                     static const GLfloat triangle[] = {
@@ -75,7 +75,7 @@
                     glEnableVertexAttribArray(ATTRIB_VERTEX);
                     glDrawArrays(<span style="color:red;">GL_TRIANGLE_STRIP</span>, 0, 3);
                     </pre>
-                    <div style="text-align:center"><img src="../image/triangle.png" width="20%" height="20%" /><br></div> 
+                    <div style="text-align:center"><img src="http://localhost/zsurface/image/triangle.png" width="20%" height="20%" /><br></div> 
                     <p>
                     This is the three functions that you need to call to draw a triangle in OpenGL<br> 
                     When a triangle is drawn, there are three options can be used<br>
@@ -94,7 +94,7 @@
                     GL_TRIANGLES treats each triple of vertices as independent triangle.<br>
                     If there are 3*n vertices, then there are n triangle can be drawn<br>
                     </p>
-                    <img src="../image/triangle_strip_fan.svg" width="100%" height="100%" /><br> 
+                    <img src="http://localhost/zsurface/image/triangle_strip_fan.svg" width="100%" height="100%" /><br> 
                     <p>
                     Let draw some real stuff!
                     </p>
@@ -112,7 +112,7 @@
                     glEnableVertexAttribArray(ATTRIB_VERTEX);
                     glDrawArrays(<span style="color:red;">GL_TRIANGLE_STRIP</span>, 0, 4);
                     </pre>
-                    <div style="text-align:center"><img src="../image/triangle_strip.png" width="20%" height="20%" /><br></div> 
+                    <div style="text-align:center"><img src="http://localhost/zsurface/image/triangle_strip.png" width="20%" height="20%" /><br></div> 
 
                     <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
                     static const GLfloat triangle[] = {
@@ -128,7 +128,7 @@
                     glEnableVertexAttribArray(ATTRIB_VERTEX);
                     glDrawArrays(<span style="color:red;">GL_TRIANGLE_FAN</span>, 0, 4);
                     </pre>
-                    <div style="text-align:center"><img src="../image/triangle_fan.png" width="20%" height="20%" /><br></div> 
+                    <div style="text-align:center"><img src="http://localhost/zsurface/image/triangle_fan.png" width="20%" height="20%" /><br></div> 
 
 
                     <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
@@ -148,7 +148,7 @@
                     glEnableVertexAttribArray(ATTRIB_VERTEX);
                     glDrawArrays(<span style="color:red;">GL_TRIANGLES</span>, 0, 6);
                     </pre>
-                    <div style="text-align:center"><img src="../image/triangle_list.png" width="20%" height="20%" /><br></div> 
+                    <div style="text-align:center"><img src="http://localhost/zsurface/image/triangle_list.png" width="20%" height="20%" /><br></div> 
 
                     <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
                     static const GLfloat triangle[] = {
@@ -164,7 +164,7 @@
                     glEnableVertexAttribArray(ATTRIB_VERTEX);
                     glDrawArrays(<span style="color:red;">GL_LINE_LOOP</span>, 0, 4);
                     </pre>
-                    <div style="text-align:center"><img src="../image/line_loop.png" width="20%" height="20%" /><br></div> 
+                    <div style="text-align:center"><img src="http://localhost/zsurface/image/line_loop.png" width="20%" height="20%" /><br></div> 
 
                     <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
                     static const GLfloat triangle[] = {
@@ -180,7 +180,7 @@
                     glEnableVertexAttribArray(ATTRIB_VERTEX);
                     glDrawArrays(<span style="color:red;">GL_TRIANGLE_STRIP</span>, 0, 4);
                     </pre>
-                    <div style="text-align:center"><img src="../image/triangle_strip2.png" width="20%" height="20%" /><br></div> 
+                    <div style="text-align:center"><img src="http://localhost/zsurface/image/triangle_strip2.png" width="20%" height="20%" /><br></div> 
 
                     <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
                     static const GLfloat box[] = {
@@ -209,8 +209,8 @@
                     glEnableVertexAttribArray(ATTRIB_VERTEX);
                     glDrawArrays(<span style="color:red;">GL_TRIANGLE_STRIP</span>, 0, 14);
                     </pre>
-                    <div style="text-align:center"><img src="../image/box2.png" width="20%" height="20%" /><br></div> 
-                    <div style="text-align:center"><img src="../image/boxbox.png" width="20%" height="20%" /><br></div> 
+                    <div style="text-align:center"><img src="http://localhost/zsurface/image/box2.png" width="20%" height="20%" /><br></div> 
+                    <div style="text-align:center"><img src="http://localhost/zsurface/image/boxbox.png" width="20%" height="20%" /><br></div> 
 
 
 

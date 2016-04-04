@@ -32,7 +32,7 @@
                 <p>
                     $\square$
                     Given a rotated sorted array, find the index of maximum of value of the array in $O(\log{n})$ <br>
-                    <img src="../image/rotatedarrayfigure.svg" width="100%" height="100%" /><br>
+                    <img src="http://localhost/zsurface/image/rotatedarrayfigure.svg" width="100%" height="100%" /><br>
                     After the rotation, there two partial array:[4 5 6 7] and [1 2 3],
                     We can create a picture from the two array [in figure (3)].<br><br>
                     We try to use similar <span class="sd">binary search algorithm</span> which is as following<br>
@@ -40,7 +40,7 @@
                     2. choose either left or right side of the array and do a recursive call<br><br>
                     $\square$
                     Q. How do we know the maximum value is on the left or right side?<br>
-                    <img src="../image/rotatedarray1.svg" width="100%" height="100%" /><br>
+                    <img src="http://localhost/zsurface/image/rotatedarray1.svg" width="100%" height="100%" /><br>
 
                     <span style="color:#FF00EE; font-style:italic; font-weight:600;">Find</span> the middle element of the array<br>
                     <span style="color:#FF0033">1.</span> int mid = (lo + hi)/2;<br>
