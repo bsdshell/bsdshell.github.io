@@ -164,6 +164,16 @@
             </div>
             <br>
             <div class="mathdef_box2">
+            \[ \textbf{Linear Transformations} \]
+            \begin{aligned}
+                & \mbox{A function } \mathit{T}: \mathbb{R}^n \rightarrow \mathbb{R}^m \mbox{ is called linear transformation, if it satisfies} \\
+                & \mathit{T} ( \mathbf{u} + \mathbf{v} ) = \mathit{T}(\mathbf{u}) + \mathit{T}(\mathbf{v}) \quad \forall \; \mathbf{u} \,, \mathbf{v} \in \mathbb{R}^n\\
+                & \mathit{T} ( \lambda \mathbf{u} ) = \lambda \mathit{T}(\mathbf{u}) \quad \mbox{all scalars } \lambda \\
+            \end{aligned}
+            </div>
+            <br>
+
+            <div class="mathdef_box2">
                 \[\textbf{Euclidean Structure}\]
                 Euclidean Structure is defined by Inner product  
                 \[ \langle \vec{u}, \vec{v}  \rangle = \sum_{k=1}^{n} u_{k} v_{k}\]
@@ -180,8 +190,8 @@
                 \[\textbf{Affine Space}\]
                 An affine space is a set of points that admits free transitive action of a vector space $\vec{V}$ That is, there is a map $X \times \vec{V} \rightarrow X:(x, \vec{v}) \mapsto x + \vec{v}$,<br> called translation by a vector $\vec{v}$, such that<br>
                 1. Addition of vectors corresponds to composition of translation, i.e., for all $x \in X \text{ and } \vec{u}, \vec{v} \in \vec{V}, (x + \vec{u}) + \vec{v} = x + (\vec{u} + \vec{v})$<br> 
-                2. The zero vector $\vec{0}$ acts as the identity vector, i.e., for all $x \in X, x + \vec{0} = x$
-                        3. The action is transitive, i.e., for all $x, y \in X, \text{ exists } \vec{v} \in \vec{V} \text{ such that } y = x + \vec{v}$<br>
+                2. The zero vector $\vec{0}$ acts as the identity vector, i.e., for all $x \in X, x + \vec{0} = x$<br>
+                3. The action is transitive, i.e., for all $x, y \in X, \text{ exists } \vec{v} \in \vec{V} \text{ such that } y = x + \vec{v}$<br>
                 4. The dimension of X is the dimension of vector space translations, $\vec{V}$<br>
                 <br>
                 Or There is unique map<br>
@@ -203,7 +213,7 @@
                 Since $x_{p} \in A, \text{ we can declare point } x_{p} \text{ as origin of A and then introduct A coordinates as follows:homogenous system}$<br>
 
                 $\sum_{k=1}^{n} a_{i k} x_{k} = \vec{0} \quad (1 \leq i \leq m)$<br>
-                $\Rightarrow dim(Ker(M)) = d \quad \text{(Rank Theorem)}$<br>
+                $\Rightarrow dim(\ker(M)) = d \quad \text{(Rank Theorem)}$<br>
                 $\Rightarrow \text{(1) has d-linear independent solution } \vec{b_{j}} \in \mathbb{R}^{n} \quad\quad (1 \leq j \leq d)$<br>
                 Affine Space $A$ can be written as<br> 
                 $A = \Big\{ x_{p} + \sum_{j=1}^{d}\alpha_{j}\vec{b_{j}} \quad \mid \quad \alpha_{j} \in \mathbb{R} \quad\quad (1 \leq j \leq d)\Big\} $<br>
@@ -211,6 +221,22 @@
                 $\text{But note that addition(+) in the space refers to the chosen point } x_{p}, \text{ and not to the origin of the base vector space}$<br>
             </div>
             <br>
+            <div class="mathdef_box2">
+                \[ \textbf{Affine space and linear system} \]
+                The solution set $\mathit{K}$ of any system $\mathbf{A}\mathbf{x}=\mathbf{b}$ of $m$ linear equations in $n$ unknowns is 
+                an affine space, namely a coset of $\ker{T_{A}}$ represented by a particular solution $\mathbf{s} \in \mathbb{R}^{n}$ 
+                \[ \mathit{K} \in \mathbf{s} + \ker{T_{A}}  \]
+                $\mathbf{Proof}$: If $\mathbf{s} \,, \mathbf{w} \in \mathbf{K}$, then 
+                $\mathbf{A}(\mathbf{s} - \mathbf{w}) = \mathbf{A}\mathbf{s} - \mathbf{A}\mathbf{w} = \mathbf{b} - \mathbf{b} = \mathbf{0}$
+                so that $\mathbf{s} - \mathbf{w} \in \ker{T_{A}}$. Now let $\mathbf{k} = \mathbf{s} - \mathbf{w} \in \ker{T_{A}}$. Then
+                \[ \mathbf{w} = \mathbf{s} + \mathbf{k} \in \ker{T_{A}} \]
+                Hence $\mathbf{K} \subseteq \mathbf{s} + \ker{T_{A}}$. To show the conversion inclusion, suppose $\mathbf{w} \in \mathbf{s} + \ker{T_{A}}$. Then $\mathbf{w} = \mathbf{s} + \mathbf{K}$ for some $\mathbf{k} \in \ker{T_{A}}$. 
+                But then 
+                \[ \mathbf{A}\mathbf{w} = \mathbf{A}(\mathbf{s} + \mathbf{k}) = \mathbf{A}\mathbf{s} + \mathbf{A}\mathbf{k} = \mathbf{b} + \mathbf{0} = \mathbf{b} \]
+                so $\mathbf{w} \in \mathit{K}$, and $\mathbf{s} + \ker{T_{A}} \subseteq \mathit{K}$. Thus, $\mathit{K} = \mathbf{s} + \ker{T_{A}} \quad \square$
+            </div>
+            <br>
+
             <div class="mathdef_box2">
                 \[\textbf{If }  \gcd(a, b) = 1 \textbf{ and }  a \vert bc\]
                 \[ \textbf{Prove } a \vert c \]
@@ -265,14 +291,25 @@
             <div class="mathdef_box2">
                 \[ \textbf{Inner Product} \]
                 \[ \text{Positivity} \]
-                \[ \langle\vec{v}, \vec{v}\rangle \geq 0 \]
-                \[ \langle \vec{v} , \vec{v} \rangle = \vec{0} \iff \vec{v} = \vec{0}\]
+                \[ \langle\mathbf{v}, \mathbf{v}\rangle \geq 0 \]
+                \[ \langle \mathbf{v} , \mathbf{v} \rangle = \mathbf{0} \iff \mathbf{v} = \mathbf{0}\]
 
-                \[ \text{Bilinearity} \]
-                \[ \langle c_{1}\vec{v_1} + c_{2}\vec{v_2}, \vec{v_3}\rangle = c_{1}\langle \vec{v_1}, \vec{v_3}\rangle + c_{2}\langle\vec{v_2}, \vec{v_3} \rangle \]
+                \[ \text{Linearity in the first component} \]
+
+                \[ \langle c_{1}\mathbf{v_1} \,, \mathbf{v_2}\rangle = c_{1}\langle \mathbf{v_1}, \mathbf{v_2}\rangle \]
+                \[ \langle \mathbf{v_1} + \mathbf{v_2} \,,  \mathbf{v_3} \rangle = \langle \mathbf{v_1} \,, \mathbf{v_3}\rangle  + \langle \mathbf{v_2} \,, \mathbf{v_3}\rangle\]
+
+                \[ \langle c_{1}\mathbf{v_1} + c_{2}\mathbf{v_2}, \mathbf{v_3}\rangle = c_{1}\langle \mathbf{v_1}, \mathbf{v_3}\rangle + c_{2}\langle\mathbf{v_2}, \mathbf{v_3} \rangle \]
 
                 \[ \text{Conjugate Symmetic}\]
-                \[ \langle \vec{v_1}, \vec{v_2} \rangle = \overline{\langle \vec{v_2}, \vec{v_1} \rangle}\]
+                \[ \langle \mathbf{v_1}, \mathbf{v_2} \rangle = \overline{\langle \mathbf{v_2}, \mathbf{v_1} \rangle}\]
+
+                \[ \text{Properties of Inner product}\]
+                \[ \langle \mathbf{v_1} \,, \lambda \mathbf{v_2} \rangle =  \overline{\langle \lambda\mathbf{v_2} \,, \mathbf{v_1} \rangle} =  
+                    \overline{\lambda} \overline{\langle \mathbf{v_2} \,, \mathbf{v_1} \rangle} = \overline{\lambda} \langle \mathbf{v_1} \,, \mathbf{v_2} \rangle 
+                \]
+                
+
             </div>
 
             <br>

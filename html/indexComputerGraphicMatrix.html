@@ -109,8 +109,8 @@
                     \[ \text{Rotation} \]
                     \[
                         M_{z}(\theta)=\begin{bmatrix}
-                                cos(\theta) & sin(\theta) & 0\\
-                                -sin(\theta) & cos(\theta) & 0\\   
+                                cos(\theta) & -sin(\theta) & 0\\
+                                sin(\theta) & cos(\theta) & 0\\   
                                 0      &   0    & 1  
                             \end{bmatrix}
                             
@@ -129,12 +129,33 @@
                     \[
                         M_{x}(\theta)=\begin{bmatrix}
                                 1 &   0      &     0   \\         
-                                0 & cos(\theta) & sin(\theta)\\
-                                0 & -sin(\theta)& cos(\theta)   
+                                0 & cos(\theta) & -sin(\theta)\\
+                                0 & sin(\theta)& cos(\theta)   
                             \end{bmatrix}
                             \text{ rotate around the x-axis in y-z plane}
                     \]
                     </p>
+                <div class="mathdef_box2">
+                    \[ \textbf{Transform normal vector using transpose inverse matrix} \] 
+                    $\mbox{Let } \mathbf{n} \,, \mathbf{u} \in \mathbb{R}^n \,, \mathbf{M} \mbox{ is affine transformnation that transforms } \mathbf{u} $
+                    $\mathbf{A} \mbox{ is affine transformation that transforms the normal vector } \mathbf{n}$<br>
+                    $\mathbf{n} \mbox{ is normal vector to } \mathbf{u}$  <br>
+                    \begin{equation}
+                    \begin{aligned}
+                         & \Rightarrow \mathbf{n}^{T} \mathbf{u} = \mathbf{0} \\
+                         & \Rightarrow (\mathbf{A}\mathbf{n})^{T} \mathbf{M}\mathbf{u} = \mathbf{0} \\
+                         & \Rightarrow (\mathbf{A}\mathbf{n})^{T} \mathbf{M} = \mathbf{n}^{T}\\
+                         & \Rightarrow (\mathbf{A}\mathbf{n})^{T} = \mathbf{n}^{T}\mathbf{M}^{-1} \\
+                         & \Rightarrow (\mathbf{A}\mathbf{n}) = \mathbf{M}^{-T} \mathbf{n}\\
+                         & \Rightarrow \mathbf{A} = \mathbf{M}^{-T} \nonumber \\
+                    \end{aligned}
+                    \end{equation}
+                    <div class="cen">
+                    <img src="../image/normal_matrix1.png" width="50%" height="50%" /><br>
+                    </div> 
+                </div>
+                <br>
+
 
                 </div>
             <!-- Column 1 end -->

@@ -52,7 +52,7 @@
                 \]
                 \begin{equation}
                 \begin{aligned}
-                    & \det(\lambda \mathbf{I} - \mathbf{M}) = 0 \quad \lambda \in \mathbb{R} \\
+                    & \det\,(\lambda \mathbf{I} - \mathbf{M}\,) = 0 \quad \lambda \in \mathbb{R} \\
                     & \det \bigg(
                         \begin{bmatrix}
                         \lambda & 0\\
@@ -61,14 +61,13 @@
                         \begin{bmatrix}
                         0 & 4\\
                         -4 & 0  
-                        \end{bmatrix} = 0
-                    \bigg) \\
+                        \end{bmatrix} \bigg)= 0 \\
                     & \det \bigg(
                         \begin{bmatrix}
                         \lambda & 4\\
                         -4 & \lambda 
                         \end{bmatrix} \bigg) = 0  \\
-                    & \Rightarrow \lambda^{2} + 16 = 0 \\
+                    & \Rightarrow \lambda^{2} + 16 = 0 \quad \mbox{Characteristic Polynomial}\\
                     & \Rightarrow \lambda = \pm 4i
                 \end{aligned}
                 \end{equation}
@@ -77,7 +76,7 @@
                 \[ \mbox{How to find the eigenvalues of 3x3 skew-symmetic matrix} \] 
                 \begin{equation}
                 \begin{aligned}
-                    & \det(\lambda \mathbf{I} - \mathbf{M}) = 0 \quad \lambda \in \mathbb{R} \\
+                    & \det\,(\lambda \mathbf{I} - \mathbf{M}\,) = 0 \quad \lambda \in \mathbb{R} \\
                     & \det \bigg(
                         \begin{bmatrix}
                         \lambda & 0       & 0 \\
@@ -88,8 +87,7 @@
                         0  & a  & b \\
                         -a  & 0  & c \\
                         -b & -c  & 5 
-                        \end{bmatrix} = 0
-                    \bigg) \\
+                        \end{bmatrix} \bigg)= 0 \\
                     & \det \bigg(
                         \begin{bmatrix}
                         \color{red}{\lambda}  & a  & b \\
@@ -131,6 +129,40 @@
                 \end{equation}
 
                 </div>
+            <div class="latexbox">
+                \[ \mbox{Prove all non zero eigenvalues of real skew-symmetric matrices are pure imaginary} \] 
+                \[ \mathbf{A}^{\ast} = -\mathbf{A} \]
+                \[ \mathbf{u}^{\ast} \mathbf{A}^{\ast} \mathbf{v} = (\mathbf{A} \mathbf{u})^{\ast} \mathbf{v} \]
+                \[ \Rightarrow \langle \mathbf{A} \mathbf{u} \,, \mathbf{v} \rangle = \langle \mathbf{u} \,, \mathbf{A}^{\ast} \mathbf{v} \rangle \]
+                \[ \Rightarrow \langle \mathbf{A} \mathbf{u} \,, \mathbf{v} \rangle = \langle \mathbf{u} \,, \mathbf{A}^{T} \mathbf{v} \rangle \quad A \mbox{ is real}\]
+                \[ \mbox{Let } \mathbf{u} = \mathbf{v}\]
+                \[ \Rightarrow \langle \mathbf{A} \mathbf{v} \,, \mathbf{v} \rangle = \langle \mathbf{v} \,, \mathbf{A}^{T} \mathbf{v} \rangle \quad A \mbox{ is real}\]
+                \[ \mbox{Let } \mathbf{A}\mathbf{v} = \lambda \mathbf{v} \quad \mathbf{v} \neq 0 \quad \lambda \mbox{ is eigenvalue} \]
+                \[ \Rightarrow \langle \lambda \mathbf{v} \,, \mathbf{v} \rangle = \langle \mathbf{v} \,, -\mathbf{A} \mathbf{v} \rangle \]
+                \[ \Rightarrow \langle \lambda \mathbf{v} \,, \mathbf{v} \rangle = \langle \mathbf{v} \,, - \lambda\mathbf{v} \rangle \]
+                \[ \Rightarrow \lambda \langle \mathbf{v} \,, \mathbf{v} \rangle = - \overline{\lambda}\langle \mathbf{v} \,, \mathbf{v} \rangle \]
+                \[ \Rightarrow \lambda = - \overline{\lambda} \quad \because \mathbf{v} \neq \mathbf{0} \]
+                \[ \Rightarrow \lambda \mbox{ is pure imaginary}\]
+            </div>
+            <div class="latexbox">
+                \begin{equation}
+                \begin{aligned}
+                     & \mbox{Prove all the eigenvalues of symmetric matrix are real} \\ 
+                     & \mbox{Let } \mathbf{A}\mathbf{v} = \lambda \mathbf{v} \quad \mathbf{v} \neq 0 \quad \lambda \mbox{ is eigenvalue} \\
+                     & \Rightarrow (\mathbf{A}\mathbf{v})^{\ast} = (\lambda \mathbf{v})^{\ast}  \\
+                     & \Rightarrow \mathbf{v}^{\ast}\mathbf{A}^{\ast} = \mathbf{v}^{\ast} \lambda^{\ast}   \\
+                     & \Rightarrow \mathbf{v}^{\ast}\mathbf{A} = \mathbf{v}^{\ast} \lambda^{\ast}  \quad \because \mathbf{A} \mbox{ is symmetic} \\
+                     & \Rightarrow \mathbf{v}^{\ast}\mathbf{A}\mathbf{v} = \mathbf{v}^{\ast} \lambda^{\ast} \mathbf{v}  \\
+                     & \Rightarrow \mathbf{v}^{\ast} \lambda \mathbf{v}= \mathbf{v}^{\ast} \mathbf{v} \quad \because \mathbf{A} \mathbf{v} = \lambda \mathbf{v} \\
+                     & \Rightarrow \langle \mathbf{v} \,, \lambda\mathbf{v} \rangle = \langle \mathbf{v} \,, \lambda^{\ast}\mathbf{v} \rangle  \\
+                     & \Rightarrow \overline{\lambda} \langle \mathbf{v} \,, \mathbf{v} \rangle = \lambda \langle \mathbf{v} \,, \mathbf{v} \rangle \quad \because 
+                        \langle \mathbf{x} \,, \lambda \mathbf{y} \rangle = \overline{\lambda} \langle \mathbf{x} \,, \mathbf{y} \rangle   \\
+                     & \Rightarrow \lambda = \overline{\lambda} \quad \because \mathbf{v} \neq \mathbf{0} \,, \langle \mathbf{v} \,, \mathbf{v} \rangle \neq 0 \\
+                     & \Rightarrow \lambda \in \mathbb{R} \\
+                \end{aligned}
+                \end{equation}
+            </div>
+
             <!-- Column 1 end -->
             </div>
             <div class="col2">
