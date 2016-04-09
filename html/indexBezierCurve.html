@@ -31,7 +31,6 @@
       ga('send', 'pageview');
     </script>
 
-    <div id="header">
     </div>
     <div class="colmask rightmenu">
         <div class="colleft">
@@ -51,9 +50,7 @@
                     can be described using position vectors. Let $\mathbf{O}$ be some fixd point, then the $\textbf{position vector}$
                     $\mathbf{OQ}$ points at $\mathbf{Q}$. Let $\mathbf{P_1 P_2}$ be the vector between $\mathbf{P_1}$ and $\mathbf{P_2}$,
                     then $\mathbf{OQ}$ is described by 
-                    \[ 
-                       \overrightarrow{OQ}  =  \overrightarrow{O P_1} + t\overrightarrow{P_1 P_2} \quad t \in [0, 1]
-                    \]
+                    \[ \overrightarrow{OQ}  =  \overrightarrow{O P_1} + t\overrightarrow{P_1 P_2} \quad t \in [0, 1] \]
                     to find the coordinates of $\overrightarrow{P_1 P_2}$, position vector are used,<br>
                     \[ \overrightarrow{P_1 P_2} = \overrightarrow{O P_2} - \overrightarrow{O P_1} \]
                     We get<br>
@@ -82,9 +79,7 @@
                     \end{equation}
 
                     Just use $\mathbf{P}$ point to describe the movement $R_0$ we get that<br> 
-                    \[ 
-                        \mathbf{R_0} = (1-t)^2 \mathbf{P_0} + 2(1-t)t \mathbf{P_1}  + t^2 \mathbf{P_2} \quad t \in [0, 1]
-                    \]
+                    \[ \mathbf{R_0} = (1-t)^2 \mathbf{P_0} + 2(1-t)t \mathbf{P_1}  + t^2 \mathbf{P_2} \quad t \in [0, 1] \]
                     $\textit{Cubic Bezier Curve}$: for points $P_0$, $P_1$, $P_2$ $P_3$ are needed. $P_0$ and $P_3$ are anchor points, the other two are control points.
                     Just use $\mathbf{P}$-points to describe $\mathbf{T_0}$ we get that
                     \begin{equation}
@@ -110,18 +105,15 @@
             </div>
             <div class="col2">
             <!-- Column 2 start -->
-                <div>
-                    <h3>
-                        <?php 
-                        $fileName = "indexBezierCurve.html";
-                        @include("../php/menu.php"); 
-                        ?>
-                    </h3>
-                </div>
+                <ul>
+                    <?php 
+                    $fileName = "indexBezierCurve.html";
+                    @include("../php/menu.php"); 
+                    ?>
+                </ul>
             <!-- Column 2 end -->
             </div>
         </div>
-    </div>
 
     <div id="disqus_thread"></div>
     <script type="text/javascript">

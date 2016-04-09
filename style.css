@@ -102,18 +102,6 @@
     float:auto;
 }
 
-p{
-    font-size:1em;
-    line-height:1.25em;
-    text-align:justify;
-    background: #FFFFFF;
-    border-radius:0px;
-    color: rgb(10, 10, 10);
-    padding:4px;
-    font-weight: 500;
-    font-family: monospace;
-}
-
 .mytextbox{
     border: 0px solid #E8E0E0;
     padding:1px;

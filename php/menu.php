@@ -22,7 +22,7 @@ function createBasicPage($fileHtml, $title)
                 jax: [\"input/TeX\",\"output/HTML-CSS\"],
                 tex2jax: {inlineMath: [[\"$\",\"$\"],[\"\\(\",\"\\)\"]]}
               });
-            </script>
+        </script>
         <script type=\"text/javascript\" src=\"../MathJax-2.6-latest/MathJax.js\"></script>
     </head>
     <body>
@@ -35,8 +35,6 @@ function createBasicPage($fileHtml, $title)
       ga('send', 'pageview');
     </script>
 
-    <div id=\"header\">
-    </div>
     <div class=\"colmask rightmenu\">
         <div class=\"colleft\">
             <div class=\"col1\">
@@ -218,6 +216,8 @@ return $content;
         "C and C++ Tutorial",
         "Scala Tutorial", 
          
+        "Blender Help",
+
         "Intellij SetUp",
         "Intellij Add External Library",
         "Intellij Add Maven to proejct",
@@ -237,8 +237,6 @@ return $content;
         "Multiply Long Integer",
         "Print Sprial in 2D array",
 
-        "Command Line Tricks",
-
         "Install Maven in Mac OSX ",
         "Setup The Play Framework",
         "Latex Example",
@@ -252,48 +250,37 @@ return $content;
     $linkArray   = array();
     $outputArray = array();
 
-    for($i=0; $i < count($pageArray); $i++)
-    {
+    for($i=0; $i < count($pageArray); $i++) {
         $fileArray[] = "index" . preg_replace("/\s+/", '', $pageArray[$i]) . ".html";
 
         $path = $htmlDir . $fileArray[$i];
-        if(file_exists($path) === false)
-        {
+        if(file_exists($path) === false) {
             @file_put_contents($path, createBasicPage($fileArray[$i], $pageArray[$i])); 
         }
 
-        $titleArray[] = "<span style=\"font-size:14px\">" . $pageArray[$i] . "</span>";
-        $htmlTitleArray[] = "<h3>" . $titleArray[$i] . "<h3>";
-        $linkArray[] = "<h3><a style=\"text-decoration:none;font-size:12px;\" href=\"{$fileArray[$i]}\">{$titleArray[$i]}</a></h3>";
-
-        $indexHtml .= "
-                <h3><a style=\"text-decoration:none;\" href=\"html/{$fileArray[$i]}\">{$titleArray[$i]}</a></h3>
-                ";
+        $titleArray[] = "<li>" . $pageArray[$i] . "</li>";
+        $linkArray[] = "<li><a style=\"text-decoration:none;\" href=\"{$fileArray[$i]}\">{$pageArray[$i]}</a></li>";
+        $indexHtml .= " <li><a style=\"text-decoration:none;\" href=\"html/{$fileArray[$i]}\">{$pageArray[$i]}</a></li> ";
     }
-    for($m=0; $m < count($pageArray); $m++)
-    {
+
+    for($m=0; $m < count($pageArray); $m++) {
         $menuBar = "";
-        for($i=0; $i < count($pageArray); $i++)
-        {
-            if($m === $i)
-            {
+        for($i=0; $i < count($pageArray); $i++) {
+            if($m === $i) {
                 $menuBar.= $titleArray[$i];
             }
-            else
-            {
+            else {
                 $menuBar.= $linkArray[$i];
             }
         }
         $outputArray[$fileArray[$m]] = $menuBar;
     }
     
-    if($fileName === "index.html")
-    {
+    if($fileName === "index.html") {
         $output = $indexHtml;
         print($output);
     }
-    else
-    {
+    else {
         print($outputArray[$fileName]);
     }
 ?>
