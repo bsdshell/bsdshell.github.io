@@ -48,14 +48,12 @@ function createBasicPage($fileHtml, $title)
             </div>
             <div class=\"col2\">
             <!-- Column 2 start -->
-                <div>
-                    <h3>
-                        <?php 
-                        \$fileName = \"$fileHtml\";
-                        include(\"../php/menu.php\"); 
-                        ?>
-                    </h3>
-                </div>
+                <ul>
+                    <?php 
+                    \$fileName = \"$fileHtml\";
+                    include(\"../php/menu.php\"); 
+                    ?>
+                </ul>
             <!-- Column 2 end -->
             </div>
         </div>
