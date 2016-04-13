@@ -11,6 +11,10 @@
         <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="../highlight.css">
         <link rel="stylesheet" type="text/css" href="../style.css">
+
+        <link rel="stylesheet" type="text/css" href="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css" />
+        <script type="text/javascript" src="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraphcore.js"></script>
+
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <script type="text/x-mathjax-config">
               MathJax.Hub.Config({
@@ -80,6 +84,7 @@
 
                     Just use $\mathbf{P}$ point to describe the movement $R_0$ we get that<br> 
                     \[ \mathbf{R_0} = (1-t)^2 \mathbf{P_0} + 2(1-t)t \mathbf{P_1}  + t^2 \mathbf{P_2} \quad t \in [0, 1] \]
+
                     $\textit{Cubic Bezier Curve}$: for points $P_0$, $P_1$, $P_2$ $P_3$ are needed. $P_0$ and $P_3$ are anchor points, the other two are control points.
                     Just use $\mathbf{P}$-points to describe $\mathbf{T_0}$ we get that
                     \begin{equation}
@@ -91,6 +96,24 @@
                         \mathbf{S_0} &= (1-t)^3 \mathbf{P_0} + 3(1-t)^2 t\mathbf{P_1} + 3(1-t) t^{2}\mathbf{P_3} + t^{3} \mathbf{P_4} \nonumber
                     \end{aligned} 
                     \end{equation}
+
+                        <div id="jxgbox" class="jxgbox" style="width:400px; height:400px;margin:auto;width:60%;"></div>
+                        <script type="text/javascript">
+                            var brd = JXG.JSXGraph.initBoard('jxgbox',{boundingbox:[-4,4,4,-4],keepaspectratio:true,axis:true});
+                            var p = [];
+                            var col = 'red'; 
+                            p.push(brd.create('point',[2,1],{name:'P_0', strokeColor:col,fillColor:col}));        // data point
+                            col = 'blue'; 
+                            p.push(brd.create('point',[0.75,2.5],{name:'P_1', strokeColor:col,fillColor:col}));   // control point
+                            p.push(brd.create('point',[-0.3,0.3],{name:'P_2',strokeColor:col,fillColor:col}));   // control point
+                             
+                            col = 'red'; 
+                            p.push(brd.create('point',[-3,1],{name:'P_3', strokeColor:col,fillColor:col}));       // data point
+                             
+                            var c = brd.create('curve', JXG.Math.Numerics.bezier(p), 
+                                           {strokecolor:'blue', strokeOpacity:0.6, strokeWidth:5}); 
+                        </script>
+                    <br>
                     $\textit{Quartic Bezier Curve}$: Five points $P_0$, $P_1$, $P_2$, $P_3$, $P_4$ are needed, $P_0$ and $P_4$ are anchor points, the others are control points. 
                     Just use $\mathbf{P}$-points to describe $\mathbf{T_0}$ we get that
                     \[ 
@@ -99,6 +122,7 @@
                 <div class="cen">
                 <img src="http://localhost/zsurface/image/beziercurve.png" width="60%" height="60%" /><br> 
                 <img src="http://localhost/zsurface/image/quadraticbeziercurve.png" width="60%" height="60%" /><br> 
+                <img src="http://localhost/zsurface/image/bezier3.png" width="60%" height="60%" /><br> 
                 </div>
                 </div>
             <!-- Column 1 end -->

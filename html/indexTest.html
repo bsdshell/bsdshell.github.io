@@ -1,6 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
 <head>
+
+
 	<title>Surface, Curve, Algorithm, Geometry, Algebra</title>
 	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
 	<meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
@@ -11,42 +13,60 @@
     <link rel="stylesheet" type="text/css" href="../highlight.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-            jax: ["input/TeX","output/HTML-CSS"],
-            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
-          });
-        </script>
-    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css" />
+    <script type="text/javascript" src="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraphcore.js"></script>
+
 </head>
 <body>
+<div id="jxgbox" class="jxgbox" style="width:400px; height:400px;"></div>
+<script type="text/javascript">
+    var brd = JXG.JSXGraph.initBoard('jxgbox',{boundingbox:[-4,4,4,-4],keepaspectratio:true,axis:true});
+    var p = [];
+    var col = 'red'; 
+    p.push(brd.create('point',[2,1],{strokeColor:col,fillColor:col}));        // data point
+    col = 'blue'; 
+    p.push(brd.create('point',[0.75,2.5],{strokeColor:col,fillColor:col}));   // control point
+    p.push(brd.create('point',[-0.3,0.3],{strokeColor:col,fillColor:col}));   // control point
+     
+    col = 'red'; 
+    p.push(brd.create('point',[-3,1],{strokeColor:col,fillColor:col}));       // data point
+    col = 'blue'; 
+    p.push(brd.create('point',[-0.75,-2.5],{strokeColor:col,fillColor:col})); // control point
+    p.push(brd.create('point',[1.5,-2.8],{strokeColor:col,fillColor:col}));   // control point
+     
+    col = 'red'; 
+    p.push(brd.create('point',[2,-0.5],{strokeColor:col,fillColor:col}));     // data point
+     
+    var c = brd.create('curve', JXG.Math.Numerics.bezier(p), 
+                   {strokecolor:'blue', strokeOpacity:0.6, strokeWidth:5}); 
+     
+    var addSegment = function() {
+       brd.suspendUpdate();
+       col = 'blue'; 
+       p.push(brd.create('point',[Math.random()*8-4,Math.random()*8-4],
+               {strokeColor:col,fillColor:col})); // control point
+       p.push(brd.create('point',[Math.random()*8-4,Math.random()*8-4],
+               {strokeColor:col,fillColor:col}));   // control point
+       col = 'red'; 
+       p.push(brd.create('point',[Math.random()*8-4,Math.random()*8-4],
+               {strokeColor:col,fillColor:col}));     // data point
+       brd.unsuspendUpdate();
+    };
+     
+    var removeSegment = function() {
+       brd.suspendUpdate();
+     
+       if (p.length>4) {
+           brd.removeObject(p[p.length-1]);
+           brd.removeObject(p[p.length-2]);
+           brd.removeObject(p[p.length-3]);
+           p.splice(p.length-3,3);
+       }
+       brd.unsuspendUpdate();
+    };
 
-<div id="header">
-</div>
-<div class="colmask rightmenu">
-	<div class="colleft">
-		<div class="col1">
-			<!-- Column 1 start -->
-            <h3><?php include("../colorhtml/haskell/typeclass4.html"); ?></h3>
-        <!-- Column 1 end -->
-		</div>
-		<div class="col2">
-        <!-- Column 2 start -->
-            <ul>
-                
-                    <?php 
-                    $fileName = "indexTest.html";
-                    include("../php/menu.php"); 
-                    ?>
-                
-            </ul>
-        <!-- Column 2 end -->
-		</div>
-	</div>
-</div>
-<div id="footer">
-	<p>This page uses the <a href="">Put More Stuff Here</a> by <a href="">ZSurface</a>. View more <a href="">ZSurface</a> and <a href="">ZSurface</a>.</p>
-</div>
+</script>
+
 </body>
 </html>
