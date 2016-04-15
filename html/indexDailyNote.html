@@ -232,23 +232,8 @@
                        <div class="note">
                        Sun Sep 20 17:59:45 PDT 2015<br>
                        <span style="color:#777; font-size:22px;">
-                       &#x0250;[x0250] &nbsp; &#x0260;[x0260] &nbsp;&#x0270;[x0270] &nbsp; &#x0280;[x0280] &nbsp;&#x0290;[x0290] &nbsp; &#x02A0;[x02A0]<br>
-                       &#x0251;[x0251] &nbsp; &#x0261;[x0261] &nbsp;&#x0271;[x0271] &nbsp; &#x0281;[x0281] &nbsp;&#x0291;[x0291] &nbsp; &#x02A1;[x02A1]<br>
-                       &#x0252;[x0252] &nbsp; &#x0262;[x0262] &nbsp;&#x0272;[x0272] &nbsp; &#x0282;[x0282] &nbsp;&#x0292;[x0292] &nbsp; &#x02A2;[x02A2]<br>
-                       &#x0253;[x0253] &nbsp; &#x0263;[x0263] &nbsp;&#x0273;[x0273] &nbsp; &#x0283;[x0283] &nbsp;&#x0293;[x0293] &nbsp; &#x02A3;[x02A3]<br>
-                       &#x0254;[x0254] &nbsp; &#x0264;[x0264] &nbsp;&#x0274;[x0274] &nbsp; &#x0284;[x0284] &nbsp;&#x0294;[x0294] &nbsp; &#x02A4;[x02A4]<br>
-                       &#x0255;[x0255] &nbsp; &#x0265;[x0265] &nbsp;&#x0275;[x0275] &nbsp; &#x0285;[x0285] &nbsp;&#x0295;[x0295] &nbsp; &#x02A5;[x02A5]<br>
-                       &#x0256;[x0256] &nbsp; &#x0266;[x0266] &nbsp;&#x0276;[x0276] &nbsp; &#x0286;[x0286] &nbsp;&#x0296;[x0296] &nbsp; &#x02A6;[x02A6]<br>
-                       &#x0257;[x0257] &nbsp; &#x0267;[x0267] &nbsp;&#x0277;[x0277] &nbsp; &#x0287;[x0287] &nbsp;&#x0297;[x0297] &nbsp; &#x02A7;[x02A7]<br>
-                       &#x0258;[x0258] &nbsp; &nbsp;&#x0278;[x0278] &nbsp; &#x0288;[x0288] &nbsp;&#x0298;[x0298] &nbsp; &#x02A8;[x02A8]<br>
-                       &#x0259;[x0259] &nbsp; &#x0269;[x0269] &nbsp;&#x0279;[x0279] &nbsp; &#x0289;[x0289] &nbsp;&#x0299;[x0299] &nbsp; &#x02A9;[x02A9]<br>
-                       &#x025A;[x025A] &nbsp; &#x026A;[x026A] &nbsp;&#x027A;[x027A] &nbsp; &#x028A;[x028A] &nbsp;&#x029A;[x029A] &nbsp; &#x02AA;[x02AA]<br>
-                       &#x025B;[x025B] &nbsp; &#x026B;[x026B] &nbsp;&#x027B;[x027B] &nbsp; &#x028B;[x028B] &nbsp;&#x029B;[x029B] &nbsp; &#x02AB;[x02AB]<br>
-                       &#x025C;[x025C] &nbsp; &#x026C;[x026C] &nbsp;&#x027C;[x027C] &nbsp; &#x028C;[x028C] &nbsp;&#x029C;[x029C] &nbsp; &#x02AC;[x02AC]<br>
-                       &#x025D;[x025D] &nbsp; &#x026D;[x026D] &nbsp;&#x027D;[x027D] &nbsp; &#x028D;[x028D] &nbsp;&#x029D;[x029D] &nbsp; &#x02AD;[x02AD]<br>
-                       &#x025E;[x025E] &nbsp; &#x026E;[x026E] &nbsp;&#x027E;[x027E] &nbsp; &#x028E;[x028E] &nbsp;&#x029E;[x029E] &nbsp; &#x02AE;[x02AE]<br>
-                       &#x025F;[x025F] &nbsp; &#x026F;[x026F] &nbsp;&#x027F;[x027F] &nbsp; &#x028F;[x028F] &nbsp;&#x029F;[x029F] &nbsp; &#x02AF;[x02AF]<br>
-                       &#x0268;[x0268] 
+                       &#x00E6;[x00E6]<br>
+                       &#x0283;[x0283]<br>
                        </span><br>
                        prefix [ ] add thing in font of sth or at the beginning of a word, add sth at the beginning of<br>          
                        postfix [ ] append thing at the end of sth, append as a suffix<br>
@@ -834,26 +819,34 @@
                         Just learn how to manually create Obj file and load it to Blender<br>
                         The Obj[Wavefront Technologies and its Advanced Visualizer animation package] file format is pretty simple if you want to create a simple model such as pyramid or cube. Following is simple example for Obj file. Make sure the vertices are in counter-clockwise order.<br>
                         <pre style="color:#2EFF38; background:rgba(49, 45, 45, 0.54);">
-                        # pyramid.obj
+                        # pryamid.obj
                         g Object001
-
                         v 0.00      0.00    0.00
                         v 1.00      0.00    0.00 
                         v 0.00      1.00    0.00 
                         v 1.00      1.00    1.00 
-
                         f     1 2 3 
                         f     2 4 3 
                         f     3 1 4 
                         f     1 4 2 
                         </pre>
-                        Save the file [ e.g. mymod.obj ] and import it to Blender, then you will see the pyramid.<br> 
+                        <pre style="color:#2EFF38; background:rgba(49, 45, 45, 0.54);">
+                        # oneface.obj
+                        g Object002
+                        v 0.00      0.00    0.00
+                        v 1.00      0.00    0.00 
+                        v 0.00      1.00    0.00 
+                        f     1 2 3 
+                        </pre>
+                        Save the file [ e.g. pyramid.obj or oneface.obj ] and import it to Blender, then you will see a pyramid or triangle.<br>
+                         
                        </p>
                        <div class="cen">
                        <img src="../image/vertexface.svg" width="40%" height="40%" /><br> 
                        <img src="../image/pyramid.svg" width="40%" height="40%" /><br> 
                        Here is what you get from Blender<br>
                        <img src="../image/pyramid.png" width="40%" height="40%" /><br> 
+                       <img src="../image/oneface.png" width="40%" height="40%" /><br> 
                        </div>
                        </div>
                        <div class="note">
@@ -892,12 +885,19 @@
                        <div class="note">
                        Wed Apr 13 15:46:53 PDT 2016<i class="em em-pig"></i><br>
                        Today, I play around with JSXGraph library which is written JavaScript for geometric drawing.
-                       I linked the JSXGraph core library and copied some examples code from <a href=http://jsxgraph.uni-bayreuth.de/>University of Bayreuth<a>
-                       It seems to me that JSXGraph is very promising.<br><br> 
+                       I linked the JSXGraph core library and copied some examples code from <a href=http://jsxgraph.uni-bayreuth.de>University of Bayreuth<a>
+                       It seems to me that JSXGraph is very promising.<br><br>
 
                        1. The library has no dependency, only JavaScript.<br>
                        2. Point, line, curve and polygon are very easy to draw.<br>
                        3. The library are very clean.<br>
+                       </div>
+                       <div class="note">
+                       Thu Apr 14 00:52:46 PDT 2016<i class="em em-frog"></i>
+                       What is wrong with English?<br>
+                       I always don't remember how to spell Cash and Cache since they have the same pronunciation.<br>
+                       Cash  - [k&#x00E6;&#x0283;]<br>
+                       Cache - [k&#x00E6;&#x0283;]<br>
                        </div>
             <!-- Column 1 end -->
             </div>
