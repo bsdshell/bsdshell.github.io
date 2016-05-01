@@ -82,6 +82,7 @@ function createBasicPage($fileHtml, $title)
 return $content;
 }
     $pageArray = array(
+        "How to create animation gif",
         "Bezier Curve", 
         "Property of determinant", 
         "Change Matrix Basis", 
@@ -104,16 +105,20 @@ return $content;
         "Binomial Identity",
         "Proof Fermat Little Theorem", 
         "Computer Graphic Matrix",
-
         "Functional Picture",
         "Compute the Determiant of 2x2 Matrix", 
         "How to solve the system equation", 
         "How to plot a linear equation", 
-
         "Draw Triangle OpenGL IOS",
         "UIAlert in iOS",
         "TableViewController in iOS",
         "Switch different RootController",
+        "IOS Subdivision Curve",
+        "IOS Capture Screenshot",
+        "IOS Load Image",
+        "IOS UIBezierPath closePath",
+        "IOS Animation",
+        "IOS Simple Animation",
         "IOS Bezier Curve",
         "IOS Stop Watch",
         "IOS Rotate Different CAShapeLayers",
@@ -133,10 +138,11 @@ return $content;
         "IOS Play Sound",
         "IOS Demo",
         "IOS Simple App Demo",
-        "Xcode SnapShot Directory",
         "Rename Project in Xcode 6.1",
         "Touches Event in iOS",
         "Draw Circle Rectangle Oval in iOS", 
+        "Xcode SnapShot Directory",
+        "Xcode Remove Cache",
         "Xcode No such file or directory",
         "Xcode Screenshots",
         "Xcode Add Resource as Group",
@@ -157,6 +163,11 @@ return $content;
         "Longest Increasing Subsequence Recursion",
         "Coin Change Algorithm", 
         "Coin Change Dynamic Programming", 
+
+        "Binary Tree Mirror",
+        "Binary Tree Isomorphic",
+        "Binary Tree Symmetric",
+        "Binary Tree Maximum Height",
 
         "Java Algorithm",
         "Java Data Structure",
@@ -239,6 +250,7 @@ return $content;
 
         "Install Maven in Mac OSX ",
         "Setup The Play Framework",
+        "Latex Matrix",
         "Latex Example",
         "Daily Note",
     );

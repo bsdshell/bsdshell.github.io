@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>IOS Draw Hexagon</title>
+        <title>How to create animation gif</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
         <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
@@ -18,7 +18,7 @@
                 jax: ["input/TeX","output/HTML-CSS"],
                 tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
               });
-            </script>
+        </script>
         <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
     </head>
     <body>
@@ -31,33 +31,61 @@
       ga('send', 'pageview');
     </script>
 
-    <div id="header">
-    </div>
     <div class="colmask rightmenu">
         <div class="colleft">
             <div class="col1">
-                <!-- Column 1 start -->
+            <!-- Column 1 start -->
+                <div class="mytitle">
+                How to Create GIF Animation<br><br>
+                </div>
+                <div class="mysubtitle">
+                How to Create a list of png files with Povray.<br>
+                Create gif animation with command line tool called [convert] On Mac OSX or Linux
+                </div>
+                <br>
                 <div class="mytext">
-                CAShapeLayer Draw Hexagon only.<br>
-                Fix the close path issue.<br>
-                UIBezierPath [path closePath]<br>
-                </div><br>
+                Copy the following code and save as firstanimation.pov<br>
+                </div>
+                <script src="https://gist.github.com/bsdshell/0a3d0fd01f3b9f02944d25a611377be1.js"></script>
+                <div class="mytitle">
+                In order to create a list of png image files from Povray, an ini file is needed.<br>
+                Save the file as firstanimation.ini and put in the same directory as firstanimation.pov<br>
+                </div>
+                <script src="https://gist.github.com/bsdshell/de9a7b4826696b9ad5978e784310ab28.js"></script>
+
+                <div class="mytext">
+                Initial_Frame=1 and Final_Frame=30 tells Povray to generate 30 frames<br> 
+                Initial_Clock=0 and Final_Clock=1 tells Povray to create 30 frames in ONE second interval<br>
+                It means $\frac{1}{30}$ second each frame<br>
+                </div>
+                
+                <div class="mytitle">
+                Now you have firstanimation.pov and firstanimation.ini<br>
+                Run following command to generate a list of png files<br>
+                </div>
+                <pre style="color:rgba(63, 185, 5, 0.91); background:#DDD;">
+                povray firstanimation.ini
+                </pre>
+                <div class="mytitle">
+                Now you have 30 png files<br> 
+                Run following command to create gif animation on your Mac or Linux<br>
+                </div>
+                <pre style="color:rgba(63, 185, 5, 0.91); background:#DDD;">
+                convert -delay 30 firstanimation*.png animation.gif
+                </pre>
+
                 <div class="cen">
-                    <img src="http://localhost/zsurface/image/hexagon1.png" width="20%" height="20%" />
-                    <img src="http://localhost/zsurface/image/hexagon2.png" width="20%" height="20%" /><br>
-                    <a href="https://github.com/bsdshell/xcode/tree/master/DrawHexagon">source code</a>
+                <img src="http://localhost/zsurface/image/anima.gif" width="30%" height="30%" /><br>
                 </div>
             <!-- Column 1 end -->
             </div>
             <div class="col2">
             <!-- Column 2 start -->
                 <ul>
-                    
-                        <?php 
-                        $fileName = "indexIOSDrawHexagon.html";
-                        include("../php/menu.php"); 
-                        ?>
-                    
+                    <?php 
+                    $fileName = "indexHowtocreateanimationgif.html";
+                    include("../php/menu.php"); 
+                    ?>
                 </ul>
             <!-- Column 2 end -->
             </div>

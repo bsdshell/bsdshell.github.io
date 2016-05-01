@@ -117,14 +117,28 @@
                     $\textit{Quartic Bezier Curve}$: Five points $P_0$, $P_1$, $P_2$, $P_3$, $P_4$ are needed, $P_0$ and $P_4$ are anchor points, the others are control points. 
                     Just use $\mathbf{P}$-points to describe $\mathbf{T_0}$ we get that
                     \[ 
-                        \mathbf{T_0} = (1-t)^4 \mathbf{P_0} + 4(1-t)^3 t\mathbf{P_1} + 6(1-t)^2 t^{2}\mathbf{P_2} + 4(1-6) t^3 \mathbf{P_3} + t^4 \mathbf{P_4} 
+                        \mathbf{T_0} = (1-t)^4 \mathbf{P_0} + 4(1-t)^3 t\mathbf{P_1} + 6(1-t)^2 t^{2}\mathbf{P_2} + 4(1-t) t^3 \mathbf{P_3} + t^4 \mathbf{P_4} \\ 
+                    \]
+                    $\textit{Binomial Expansion}$:
+                    \[
+                        [t + (1-t)]^n = \sum_{k=0}^{n} \binom{n}{k} t^k (1-t)^{n-k} \\
+                    \]
+                    $\textit{Bezier Curve can be defined as following}$:
+                    \begin{equation}
+                    \begin{aligned} 
+                        \textbf{C}(t) &= \sum_{k=0}^{n} \textbf{B}_{n,k}(t) \mathbf{P}_k \\
+                        \textbf{B}_{n,k}(t) &= \binom{n}{k} t^k (1-t)^{n-k} \\
+                        1 &= \textbf{B}_{4,0}(t) + \textbf{B}_{4,1}(t) + \textbf{B}_{4,2}(t) + \textbf{B}_{4,3}(t) + \textbf{B}_{4,4}(t) \quad \text{where } n = 4 \quad \because [t+(1-t)]^4 = 1 \\
+
+                    \end{aligned} 
+                    \end{equation} 
+                    \[
+                        \textit{Plot } \textbf{B}_{4,0}(t) \,, \textbf{B}_{4,1}(t) \,, \textbf{B}_{4,2}(t) \,, \textbf{B}_{4,3}(t) \,, \textbf{B}_{4,4}(t)
                     \]
                 <div class="cen">
-                <img src="http://localhost/zsurface/image/beziercurve.png" width="60%" height="60%" /><br> 
-                <img src="http://localhost/zsurface/image/quadraticbeziercurve.png" width="60%" height="60%" /><br> 
-                <img src="http://localhost/zsurface/image/bezier3.png" width="60%" height="60%" /><br> 
+                <img src="http://localhost/zsurface/image/binomialcurve.svg" width="80%" height="80%" /><br> 
                 </div>
-                </div>
+            </div>
             <!-- Column 1 end -->
             </div>
             <div class="col2">
