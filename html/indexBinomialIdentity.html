@@ -39,18 +39,19 @@
                 <!-- Column 1 start -->
                 <div class="mathdef_box1">
                     \[ \text{Proof of Binomial Identity} \]<br> 
-                    \[  \binom{n}{k} = \binom{n}{k-1} + \binom{n-1}{k-1} \]<br> 
+                    \[  \binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1} \]<br> 
                     \[ \binom{n}{0} = 1 \text{ with } 1 \leq k \leq n\]<br> 
                     \begin{equation}
                     \begin{aligned}
                         \text{LHS} \quad \binom{n}{k} = \frac{P(n, k)}{k!} = \frac{\frac{n!}{(n-k)!}}{k!} &= \frac{n!}{(n-k)! k!}\\<br>
                         \text{RHS} \quad \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{P(n-1, k)}{k!} + \frac{P(n-1, k-1)}{(k-1)!}  \\<br>  
-                        \text{RHS} \quad \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{\frac{(n-1)!}{(n-1-k)!}}{k!} + \frac{(n-1)!}{[(n-1)-(k-1))]!(k-1)!}\\<br>    
+                        \text{RHS} \quad \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{\frac{(n-1)!}{(n-1-k)!}}{k!} + \frac{(n-1)!}{[(n-1)-(k-1)]!(k-1)!}\\<br>    
                         \text{RHS} \quad \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{(n-1)!}{(n-k-1)!k!} + \frac{(n-1)!}{(n-k)!(k-1)!}\\<br>    
                         \text{RHS} \quad \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{(n-k)(n-1)!}{(n-k)(n-k-1)!k!} + \frac{k(n-1)!}{k(n-k)!(k-1)!}\\<br>    
                         \text{RHS} \quad \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{(n-k)(n-1)!}{(n-k)!k!} + \frac{k(n-1)!}{(n-k)!k!}\\<br>    
                         \text{RHS} \quad \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{(n-1)!(n-k+k)}{(n-k)!k!}\\<br>    
-                        \text{RHS} \quad \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{(n!}{(n-k)!k!} \nonumber \quad \square\\<br>    
+                        \text{RHS} \quad \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{n!}{(n-k)!k!} \nonumber \\<br>    
+                        \text{LHS} &= \text{RHS} \quad \square
                     \end{aligned}
                     \end{equation}
                 </div>

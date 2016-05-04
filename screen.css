@@ -63,8 +63,9 @@ h1, h2, h3 {
 
 .rightmenu .colleft {
     /* right:26.9%; */            /* right column width */
-    background: #164b78;        /* left column background colour */
+    background: rgba(157, 175, 137, 0.44);        /* left column background colour */
 }
+
 .rightmenu .col1 {
     width: 78%;/* left column content width (left column width minus left and right padding) */
     /* left: 10%; *//* (right column width) plus (left column left padding) */

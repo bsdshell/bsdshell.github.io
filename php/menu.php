@@ -38,7 +38,7 @@ function createBasicPage($fileHtml, $title)
     <div class=\"colmask rightmenu\">
         <div class=\"colleft\">
             <div class=\"col1\">
-                <!-- Column 1 start -->
+            <!-- Column 1 start -->
                 <div class=\"mytextbox highlight\">
                     <p>
                     Put your stuff here  
@@ -163,7 +163,9 @@ return $content;
         "Longest Increasing Subsequence Recursion",
         "Coin Change Algorithm", 
         "Coin Change Dynamic Programming", 
+        "Count Number of Way for Coin Change", 
 
+        "Binary Maximum Sum Path",
         "Binary Tree Mirror",
         "Binary Tree Isomorphic",
         "Binary Tree Symmetric",

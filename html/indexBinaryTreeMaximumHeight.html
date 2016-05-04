@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Reverse a LinkedList in C++</title>
+        <title>Binary Tree Maximum Height</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
         <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
@@ -18,7 +18,7 @@
                 jax: ["input/TeX","output/HTML-CSS"],
                 tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
               });
-            </script>
+        </script>
         <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
     </head>
     <body>
@@ -31,39 +31,46 @@
       ga('send', 'pageview');
     </script>
 
-    <div id="header">
-    </div>
     <div class="colmask rightmenu">
         <div class="colleft">
             <div class="col1">
             <!-- Column 1 start -->
-            <div class="mytitle">
-            Reverse a single linked list with a while loop in C++ 
-            </div>
-            <pre class="codebg">
-                        Node* reverseLinkedList(){
-                            Node* curr = head;
-                            Node* prev = NULL;
-                            while(curr != NULL){
-                                Node* nnext = curr->next;
-                                curr->next = prev;
-                                prev = curr;
-                                curr = nnext;
+                <div class="mytitle">
+                Find the maximum Height of a Binary Tree
+                </div>
+                <div class="mytext">
+                The height of binary tree is the maximum distance from the root to the children<br>
+                If the binary tree is null or has only one node, then the height is zero.<br>
+                </div>
+                
+                <div class="mytext">
+                The maximum height of below tree is 2
+                </div>
+                
+                <div class="cen">
+                <img src="http://localhost/zsurface/image/maxheight.png" width="60%" height="60%" /><br>
+                </div>
+                <pre style="background:#EEE;">
+                    int maxHeight(Node root){
+                        if(root != null){
+                            if(root.left != null || root.right != null){
+                                int l = maxHeight(root.left);    
+                                int r = maxHeight(root.right);
+                                return max(l, r)+1;
                             }
-                            return prev;
                         }
-            </pre>
+                        return 0;
+                    }
+                </pre>
             <!-- Column 1 end -->
             </div>
             <div class="col2">
             <!-- Column 2 start -->
                 <ul>
-                    
-                        <?php 
-                        $fileName = "indexReverseaLinkedListinC++.html";
-                        include("../php/menu.php"); 
-                        ?>
-                    
+                    <?php 
+                    $fileName = "indexBinaryTreeMaximumHeight.html";
+                    include("../php/menu.php"); 
+                    ?>
                 </ul>
             <!-- Column 2 end -->
             </div>

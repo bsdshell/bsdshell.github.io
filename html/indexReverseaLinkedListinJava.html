@@ -36,12 +36,29 @@
     <div class="colmask rightmenu">
         <div class="colleft">
             <div class="col1">
-                <!-- Column 1 start -->
-                <div class="mytextbox">
-                    <p>
-                    Put your stuff here  
-                    </p>
-                </div>
+            <!-- Column 1 start -->
+            <div class="mytitle">
+            Reverse a single linked list with a while loop in Java<br>
+            </div>
+            <div class="mytext">
+            1. Create two Node references, the first Node reference stores the prevous node and the second Node reference stores the current node.<br>
+            2. Store the current next Node reference in a tmp, then switch the previous and current nodes.<br>
+            3. Iterate the current Node to the next Node.<br>
+            </div>
+            <pre class="codebg">
+            Node reverseLinkedList(Node node){
+                Node prev = null;
+                Node curr = node;
+                while(curr != null){
+                    // keep the current node in order to iterate it late on
+                    Node nnext = curr.next;
+                    curr.next = prev; 
+                    prev = curr;
+                    curr = nnext;
+                }
+                return prev;
+            }
+            </pre>
             <!-- Column 1 end -->
             </div>
             <div class="col2">

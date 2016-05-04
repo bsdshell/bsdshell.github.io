@@ -39,6 +39,9 @@
     margin-right:auto;
 }
 
+.codebg{
+    color: rgb(168, 220, 25);
+}
 .mytitle{
     margin:auto; width:100%;
     color:#af5f00;
@@ -56,6 +59,8 @@
 
 .mytext{
     margin:auto; width:80%;
+    color:#000;
+    font-size:18px;
 }
 
 
@@ -172,22 +177,35 @@
     padding:2px;
 }
 
+.lbox{
+    background: #3f4549;
+    font-size: 14px;
+    box-shadow: 3px 3px 5px 1px #FBF9F9;
+    font-family:"Lucida Console", Courier, monospace;
+    line-height:1.2em;
+    letter-spacing:0.05em;
+    border-radius: 4px;
+    color: #8FE80A;
+    text-align:left;
+}
 .tooltip-wrap {
   position: relative;
+  right:300px;
 }
+
 .tooltip-wrap .tooltip-content {
-  width: 41%;
+  width: 63%;
   display: none;
   position: absolute;
   bottom: 5%;
-  left: 58%;
-  right: 50%;
-  background-color: #FFF;
-  padding: 1px;
-  border: 1px solid brown;
+  left: 63%;
+  background-color: #fafcfc;
+  padding: 0px;
+  border: 0px solid brown;
   opacity: 0.6;
   filter: alpha(opacity=60); /* For IE8 and earlier */
 }
+
 .tooltip-wrap:hover .tooltip-content {
   display: block;
 }

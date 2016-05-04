@@ -1,0 +1,5 @@
+digraph G {
+    StartGameController->Set_rootController
+    Set_rootController->PlayGameController
+}
+
