@@ -1,0 +1,22 @@
+<div class="highlight"><pre><span class="c1">//Given coin{2, 3, 4} and s = 6</span>
+    <span class="c1">//Find the minimum number of coins sums up to s </span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">minCountWithDynamic</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">coin</span><span class="o">,</span> <span class="kt">int</span> <span class="n">s</span><span class="o">,</span> <span class="kt">int</span> <span class="n">k</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">s</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> 
+            <span class="n">min</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> 
+        <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">s</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">k</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="n">Integer</span> <span class="n">value</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">s</span><span class="o">-</span><span class="n">coin</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">value</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
+                    <span class="kt">int</span> <span class="n">childMin</span> <span class="o">=</span> <span class="n">minCountWithDynamic</span><span class="o">(</span><span class="n">coin</span><span class="o">,</span> <span class="n">s</span><span class="o">-</span><span class="n">coin</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">k</span><span class="o">,</span> <span class="n">map</span><span class="o">);</span>
+                    <span class="k">if</span><span class="o">(</span><span class="n">childMin</span> <span class="o">!=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">)</span> 
+                        <span class="n">min</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">min</span><span class="o">,</span> <span class="n">childMin</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+                <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+                    <span class="n">min</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">min</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>    
+                <span class="o">}</span>
+                <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">s</span><span class="o">-</span><span class="n">coin</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">min</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">min</span><span class="o">;</span>
+    <span class="o">}</span>
+</pre></div>

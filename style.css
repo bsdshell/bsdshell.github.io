@@ -40,14 +40,17 @@
 }
 
 .codebg{
-    color: rgb(168, 220, 25);
+    color: rgba(37, 43, 14, 0.57);
+    backgroundrgb(239, 245, 233): wheat;
+    background: rgb(239, 245, 233);
 }
+
 .mytitle{
-    margin:auto; width:100%;
-    color:#af5f00;
+    margin:auto;
+    width:100%;
+    color: #BDCAAB;
     font-size:20px;
     text-align:center;
-    //background:#444;
 }
 
 .mysubtitle{
@@ -56,13 +59,12 @@
     font-size:18px;
 }
 
-
 .mytext{
-    margin:auto; width:80%;
-    color:#000;
+    margin:auto;
+    width:80%;
+    color: #919C88;
     font-size:18px;
 }
-
 
 .centered{
     margin-left:21%;

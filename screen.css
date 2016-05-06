@@ -7,14 +7,17 @@ body {
     min-width:600px;        /* Minimum width of layout - remove line if not required */
 }
 
-a:hover{
-    color:#369;
-}
 
-a:active{
-    color:#444;
-    
-}
+a { color:gray; }
+a:visited { color:gray; }
+a:hover { color:green; }
+
+/*
+a {color:gray;}      
+a:visited {color:gray;}  
+a:hover {color:brown;}  
+a:active {color:yellow;}  
+*/
 
 li{
     list-style:none;

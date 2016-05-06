@@ -82,6 +82,7 @@ function createBasicPage($fileHtml, $title)
 return $content;
 }
     $pageArray = array(
+        "Sudoku Solver",
         "How to create animation gif",
         "Bezier Curve", 
         "Property of determinant", 
@@ -165,12 +166,14 @@ return $content;
         "Coin Change Dynamic Programming", 
         "Count Number of Way for Coin Change", 
 
+        "Binary Tree Generate Graphviz file",
         "Binary Maximum Sum Path",
         "Binary Tree Mirror",
         "Binary Tree Isomorphic",
         "Binary Tree Symmetric",
         "Binary Tree Maximum Height",
 
+        "Java Regular Expression",
         "Java Algorithm",
         "Java Data Structure",
         "Merge Sort In Java",

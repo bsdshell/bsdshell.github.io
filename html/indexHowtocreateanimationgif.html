@@ -1,11 +1,10 @@
-
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
         <title>How to create animation gif</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
-        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="description" content="How to create GIF animation with Povray" />
+        <meta name="keywords" content="Create GIF Animation with Povray, GIF file, Povray Animation" />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
@@ -43,7 +42,31 @@
                 If you don't have convert tool in your matchine, then you need to install it.<br>
                 Copy the following code and save as firstanimation.pov<br>
                 </div>
-                <script src="https://gist.github.com/bsdshell/0a3d0fd01f3b9f02944d25a611377be1.js"></script>
+                <pre class="codebg">
+                #version 3.7;
+                global_settings {  assumed_gamma 1.0 }
+                //---------------------------------------
+                camera{ ultra_wide_angle
+                        angle 75
+                        right x*image_width/image_height
+                        location  <0.0 , 1.0 ,-3.0>
+                        look_at   <0.0 , 0.0 , 0.0> }
+                //---------------------------------------
+                light_source{ <1500,2500,-2500>
+                              color rgb<1,1,1> }
+                //---------------------------------------
+                sky_sphere{ pigment{color rgb<1,1,1>}}
+                //---------------------------------------
+                // the rotating sphere:
+                sphere{ <0,0,0>, 0.25
+                        texture { pigment{ rgb<1,0,0> }
+                                  finish { diffuse 0.9
+                                           phong 1}
+                                } // end of texture
+                        translate < 1.0, 0, 0>
+                        rotate < 0, 0 ,360*clock>
+                       } 
+                </pre>
 
                 <div class="mytitle">
                 Create ini file for Povray
@@ -52,7 +75,22 @@
                 In order to create a list of png image files from Povray, an ini file is needed.<br>
                 Save the file as firstanimation.ini and put in the same directory as firstanimation.pov<br>
                 </div>
-                <script src="https://gist.github.com/bsdshell/de9a7b4826696b9ad5978e784310ab28.js"></script>
+                <pre class="codebg">
+                ; POV-Ray animation ini file
+                Antialias=Off
+                Antialias_Threshold=0.1
+                Antialias_Depth=2
+
+                Input_File_Name="firstanimation.pov"
+
+                Initial_Frame=1
+                Final_Frame=30
+                Initial_Clock=0
+                Final_Clock=1
+
+                Cyclic_Animation=on
+                Pause_when_Done=off
+                </pre>
 
                 <div class="mytitle">
                 A little bit of explaination for the parameters in ini file 

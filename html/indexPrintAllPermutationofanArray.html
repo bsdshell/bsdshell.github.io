@@ -3,9 +3,9 @@
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
         <title>Surface, Curve, Algorithm, Geometry, Algebra</title>
-        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
-        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta http-equiv="Content-Type" content="Print all permuation of given a string" />
+        <meta name="description" content="Print all permuation of given a string" />
+        <meta name="keywords" content="Print all permutation of string, print all permuation in Java" />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
@@ -28,6 +28,26 @@
         <div class="colleft">
             <div class="col1">
                 <!-- Column 1 start -->
+                    <div class="mytitle">
+                    Print all permuation of given a string.<br>
+                    </div><br>
+                    <div class="cen">
+                    <img src="http://localhost/zsurface/image/permtree1.svg" width="50%" height="50%" /><br>
+                    </div>
+                    <pre class="codebg">
+                                void perm(String prefix, String str){
+                                    if(str.length == 0)
+                                        print prefix
+                                    else{
+                                        for(int i=0; i < str.length; i++){
+                                            prefix += prefix + str.charAt(i);
+                                            newStr = remove(str, i);
+                                            perm(prefix, newStr);
+                                        }
+                                    }
+                                }
+                    </pre>
+
                     <p class="fs">
                     $\langle {\large{\color{red}\alpha}} \rangle$ 
                     Print all the permutation of an array<br>
