@@ -2,10 +2,10 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Intellij Add External Library</title>
+        <title>Java Command Snippet</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Intellij How to add Add External Library Screenshot" />
-        <meta name="keywords" content="Add external library to Intellij, Screenshot, Example" />
+        <meta name="description" content="Java Package, CLASSPATH, How to Create Package in Java" />
+        <meta name="keywords" content="Java Tutorial Package, Compile Java Class files" />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
@@ -18,7 +18,7 @@
                 jax: ["input/TeX","output/HTML-CSS"],
                 tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
               });
-            </script>
+        </script>
         <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
     </head>
     <body>
@@ -31,27 +31,55 @@
       ga('send', 'pageview');
     </script>
 
-    <div id="header">
-    </div>
     <div class="colmask rightmenu">
         <div class="colleft">
             <div class="col1">
             <!-- Column 1 start -->
-                <div class="mytitle">
-                Add external library to Intellij 
-                </div>
-                <img src="http://localhost/zsurface/image/external_library.png" width="100%" height="100%" /><br> 
+            <div class="mytitle">
+            Create Jar file in Java 
+            </div>
+            <div class="mytext">
+           jar cvf myjar.jar *.class 
+            </div>
+            <div class="mytitle">
+            Understand Java Package CLASSPATH Hell 
+            </div>
+            <div class="mytext">
+            <div class="mysubtitle">
+            Package Naming Covention 
+            </div>
+            A package name is made up of the reverse of Internet Domain Name and plus your origanizaton's project name, separated by '.' Package are in lowercase. For example, suppose your Internet Domain Name is "zsurface.com" and you can name your package as "com.zsurface.project.subproject".
+            <div class="mysubtitle">
+            Create Packages 
+            </div>
+            To make the class as part of a package, you have to include the package statement as the first statement in your source file.
+            <div class="mysubtitle">
+            Example 1
+            </div>
+            We shall create a class called MyClass in package com.zsurface. It is a good practice to store the source codes and classes in different directories, to facilitate the distribution of classes without source codes. Suppose that we save the source file as /home/PackageTutorial/src/com/zsurface, and the compiled classes as /home/PackageTutorial/classes/com/zsurface/MyClass.class. Let write the source as follows:
+            <pre class="codebg">
+            package com.zsurface;
+            public class MyClass{
+                void print(){
+                    System.out.println("MyClass");
+                }
+            }
+            </pre>
+            To Compile the source:[-d specify where to generate class files]<br>
+            javac -d /PackageTutorial/classes/com/zsurface    /PackageTutorial/src/com/zsurface/MyClass.java
+            </div>
+            
+
+                
             <!-- Column 1 end -->
             </div>
             <div class="col2">
             <!-- Column 2 start -->
                 <ul>
-                    
-                        <?php 
-                        $fileName = "indexIntellijAddExternalLibrary.html";
-                        include("../php/menu.php"); 
-                        ?>
-                    
+                    <?php 
+                    $fileName = "indexJavaCommandSnippet.html";
+                    include("../php/menu.php"); 
+                    ?>
                 </ul>
             <!-- Column 2 end -->
             </div>

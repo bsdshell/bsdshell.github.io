@@ -1,4 +1,28 @@
+.outer-container {
+    position :relative;
+    display: block;
+    width: 100%; /* This could be ANY width */
+    height: 100%; /* This could be ANY height */
+    background: #484E4C;
+}
 
+.inner-container {
+    display: table-cell;
+    vertical-align:middle;
+    text-align: center;
+    padding-left: 4px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+.centered-content {
+    display: inline-block;
+    text-align: left;
+    background: #FBF7F7;
+    padding: 10px;
+    border: 1px solid #EF40D1;
+    padding-left: 16px;
+    padding-right: 10px;
+}
 .fs{
     font-size:16px;
 }
@@ -17,6 +41,7 @@
     width:100%;
 }
 
+
 .box {
     border: 1px solid while;
     margin-top:1px;
@@ -24,6 +49,29 @@
     margin-left:1px;
     margin-right:1px;
     float:auto;
+}
+
+.box1 {
+    width: 100%;
+    height: 100px;
+    border: 0px solid #35353A;
+    box-sizing:border-box;
+    margin-left: 0%;
+    margin-top: 21%;
+    font-size: 40px;
+    font-family: cursive;
+    text-align: center;
+    vertical-align: middle;
+    color: #818181;
+    background:#D4DCCB;
+}
+
+.box2 {
+    width: 300px;
+    height: 100px;    
+    padding: 50px;
+    border: 1px solid red;
+    box-sizing: border-box;
 }
 
 .tcen{
@@ -54,9 +102,11 @@
 }
 
 .mysubtitle{
-    margin:auto; width:80%;
-    color:#000;
-    font-size:18px;
+   margin:auto;
+    width:100%;
+    color: #6C824D;
+    font-size:20px;
+    text-align:left;
 }
 
 .mytext{
@@ -66,10 +116,19 @@
     font-size:18px;
 }
 
+.mytable{
+    border:1px solid gray;
+    margin:auto;
+    width:11%;
+    color: #919C88;
+    font-size:18px;
+}
+
 .centered{
     margin-left:21%;
     margin-right:auto;
 }
+
 
 .note{
     width:97%;
@@ -180,16 +239,18 @@
 }
 
 .lbox{
-    background: #3f4549;
+    background: #EFF5E9;
     font-size: 14px;
-    box-shadow: 3px 3px 5px 1px #FBF9F9;
+    box-shadow: 0px 0px 2px 2px #150909;
     font-family:"Lucida Console", Courier, monospace;
     line-height:1.2em;
     letter-spacing:0.05em;
-    border-radius: 4px;
-    color: #8FE80A;
+    border-radius: 0px;
+    color: #808080;
     text-align:left;
+    margin: 0px 1px;
 }
+
 .tooltip-wrap {
   position: relative;
   right:300px;

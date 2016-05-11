@@ -38,6 +38,150 @@
             <div class="mytitle">
             Sudoku Solver Algorithm<br> 
             </div>
+            <div class="mytable">
+                 <table>
+                  <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                  </tr>
+                  <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                  </tr>
+                  <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                  </tr>
+                  <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                  </tr>
+                  <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                  </tr>
+                  <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                  </tr>
+                  <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                  </tr>
+                  <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                  </tr>
+                </table>
+            </div>
+            <div class="mytext">
+            Step 1<br> 
+            Check row and column for duplicate number<br>  
+            </div>
+            <pre class="codebg">
+                    public boolean checkColRow(int c, int r, int num) {
+                        for(int i=0; i < gridSize; i++) {
+                            if(board[c][i] == num || board[i][r] == num)
+                                return false;    
+                        }
+                        return true;
+                    }
+            </pre>
+            <div class="mytext">
+            Step 2<br> 
+            Check $3 \times 3$ square for duplicate number<br> 
+            </div>
+            <pre class="codebg">
+                    public boolean checkColRow(int c, int r, int num) {
+                        for(int i=0; i < gridSize; i++) {
+                            if(board[c][i] == num || board[i][r] == num)
+                                return false;    
+                        }
+                        return true;
+                    }
+
+            </pre>
+
+            <div class="mytext">
+            Step 3<br> 
+            Use backtrack to travel the tree<br> 
+            </div>
+            <pre class="codebg">
+            public void solver(int k) {
+                if(k == numEmpty) {
+                    printBoard();
+                }
+                else {
+                    int c = array[k][0];
+                    int r = array[k][1];
+                    for(int i=1; i <= gridSize; i++) {
+                        if(checkColRow(c, r, i) && checkSquare(c, r, i)) {
+                            board[c][r] = i;
+                            solver(k+1);
+                            board[c][r] = 0;
+                        }
+                    }
+                }
+            }
+            </pre>
+
+
             <!-- Column 1 end -->
             </div>
             <div class="col2">

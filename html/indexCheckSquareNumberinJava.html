@@ -2,10 +2,10 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Intellij Add External Library</title>
+        <title>Check Square Number in Java</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Intellij How to add Add External Library Screenshot" />
-        <meta name="keywords" content="Add external library to Intellij, Screenshot, Example" />
+        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
@@ -18,7 +18,7 @@
                 jax: ["input/TeX","output/HTML-CSS"],
                 tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
               });
-            </script>
+        </script>
         <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
     </head>
     <body>
@@ -31,27 +31,46 @@
       ga('send', 'pageview');
     </script>
 
-    <div id="header">
-    </div>
     <div class="colmask rightmenu">
         <div class="colleft">
             <div class="col1">
             <!-- Column 1 start -->
-                <div class="mytitle">
-                Add external library to Intellij 
-                </div>
-                <img src="http://localhost/zsurface/image/external_library.png" width="100%" height="100%" /><br> 
+            <div class="mytitle">
+            Check if a number is Square Number or not<br>
+            </div>
+            <div class="mysubtitle">
+            We use the following basic fact about square number $\textbf{M}$<br>
+            </div>
+            \[
+                \textbf{M} = \textbf{p}_1^{2k_1} \times \textbf{p}_2^{2k_2} \times \dots \times \textbf{P}_n^{2k_n}  \quad k_i \in \mathbf{N}\\
+            \]
+            <pre class="codebg">
+                            public static boolean squareNumber(int n){
+                                int num = (int)Math.sqrt(n);
+                                List<Integer> list = Aron.allPrimes(num);
+
+                                for (int i = 0; i < list.size(); i++) {
+                                    Integer p = list.get(i);
+                                    if (n % (p * p) == 0)
+                                        n = n / (p * p);
+                                }
+                                if(n == 1)
+                                    return true;
+                                else
+                                    return false;
+                            }
+            </pre>
+            
+                
             <!-- Column 1 end -->
             </div>
             <div class="col2">
             <!-- Column 2 start -->
                 <ul>
-                    
-                        <?php 
-                        $fileName = "indexIntellijAddExternalLibrary.html";
-                        include("../php/menu.php"); 
-                        ?>
-                    
+                    <?php 
+                    $fileName = "indexCheckSquareNumberinJava.html";
+                    include("../php/menu.php"); 
+                    ?>
                 </ul>
             <!-- Column 2 end -->
             </div>

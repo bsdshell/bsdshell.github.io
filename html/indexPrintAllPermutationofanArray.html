@@ -40,9 +40,7 @@
                                         print prefix
                                     else{
                                         for(int i=0; i < str.length; i++){
-                                            prefix += prefix + str.charAt(i);
-                                            newStr = remove(str, i);
-                                            perm(prefix, newStr);
+                                            perm(prefix + str.charAt(i), remove(str, i));
                                         }
                                     }
                                 }

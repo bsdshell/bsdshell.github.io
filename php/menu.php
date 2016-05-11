@@ -8,8 +8,8 @@ function createBasicPage($fileHtml, $title)
     <head>
         <title>$title</title>
         <meta http-equiv=\"Content-Type\" content=\"application/xhtml+xml; charset=utf-8\" />
-        <meta name=\"description\" content=\"Surface, Curve, Algorithm, Geometry, Algebra\" />
-        <meta name=\"keywords\" content=\"Surface, Curve, Algorithm, Geometry, Algebra\" />
+        <meta name=\"description\" content=\"Xcode Change Build from iPhone to Universal iPad \" />
+        <meta name=\"keywords\" content=\"Build iPhone and iPad, Change Xcode Build Target \" />
         <meta name=\"robots\" content=\"index, follow\" />
         <link rel=\"shortcut icon\" href=\"/favicon.ico\" type=\"image/x-icon\" />
         <link rel=\"stylesheet\" type=\"text/css\" href=\"../screen.css\" media=\"screen\" />
@@ -82,8 +82,11 @@ function createBasicPage($fileHtml, $title)
 return $content;
 }
     $pageArray = array(
+        "Eight Queen Solver",
+        "Magic Square Solver",
         "Sudoku Solver",
         "How to create animation gif",
+        "Check Square Number in Java",
         "Bezier Curve", 
         "Property of determinant", 
         "Change Matrix Basis", 
@@ -142,6 +145,9 @@ return $content;
         "Rename Project in Xcode 6.1",
         "Touches Event in iOS",
         "Draw Circle Rectangle Oval in iOS", 
+        "Xcode Remove Add Unit Test",
+        "Xcode Launch Screen File",
+        "Xcode Change Build from iPhone iPad",
         "Xcode SnapShot Directory",
         "Xcode Remove Cache",
         "Xcode No such file or directory",
@@ -173,6 +179,7 @@ return $content;
         "Binary Tree Symmetric",
         "Binary Tree Maximum Height",
 
+        "Java Command Snippet",
         "Java Regular Expression",
         "Java Algorithm",
         "Java Data Structure",
@@ -229,11 +236,15 @@ return $content;
         "Generate n prime in Scala",
 
         "Haskell Tutorial",
+        "C and C++ unsigned Integer Gotcha",
         "C and C++ Tutorial",
         "Scala Tutorial", 
          
         "Blender Help",
 
+        "Intellij Add Java File",
+        "Intellij Path Hell",
+        "Intellij Change Class Output Path",
         "Intellij SetUp",
         "Intellij Add External Library",
         "Intellij Add Maven to proejct",

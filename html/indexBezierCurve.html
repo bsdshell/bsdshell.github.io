@@ -1,11 +1,10 @@
-
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
         <title>Bezier Curve</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
-        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="description" content="Bezier Curve,  Quadratic Bezier Curve, Cubic Bezier Curve"/>
+        <meta name="keywords" content="Bernstein Polynomial, Parametric Equation of Bezier Curve, Bezier Curve for Beginning" />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
@@ -41,6 +40,9 @@
             <div class="col1">
                 <!-- Column 1 start -->
                 <div class="latexbox">
+                    <div class="mytitle">
+                    Definition of Bezier Curve
+                    </div>
                     $\textbf{Bezier Curve}$ is used to draw smooth curve along points on a path
                     A Bezier Curve goes through points called anchor points and the shape between
                     anchor points is defined by so call control points
@@ -70,7 +72,7 @@
                     $\textit{Linear Bezier Curve}$: Two points are needed. Both are anchor points, as $\mathbf{Q_0}$ moves along the line $\mathbf{P_0}$ and $\mathbf{P_1}$ 
                     it traces out a linear Bezier curve. Let t be a parameter, then the linear Bezier curve can be written as parameter curve
                     \[ \mathbf{Q_0} = (1-t) \mathbf{P_0} + t \mathbf{P_1} \quad t \in [0, 1] \]
-                    $\textit{Quadratic Bezier curve}$: Three points $P_0, P_1, P_2$ are needed. $P_0, P_2$ are anchor points, $P_1$ is a control point.
+                    $\textbf{Quadratic Bezier curve}$: Three points $P_0, P_1, P_2$ are needed. $P_0, P_2$ are anchor points, $P_1$ is a control point.
                     The $\mathbf{Q}$-points move along lines between the $\mathbf{P}$-points. As $R_0$ moves along a line $Q_0$ and $Q_1$, it traces out a quadratic Bezier
                     curve, the three movements are described by\\
                     \begin{equation}
@@ -85,7 +87,7 @@
                     Just use $\mathbf{P}$ point to describe the movement $R_0$ we get that<br> 
                     \[ \mathbf{R_0} = (1-t)^2 \mathbf{P_0} + 2(1-t)t \mathbf{P_1}  + t^2 \mathbf{P_2} \quad t \in [0, 1] \]
 
-                    $\textit{Cubic Bezier Curve}$: for points $P_0$, $P_1$, $P_2$ $P_3$ are needed. $P_0$ and $P_3$ are anchor points, the other two are control points.
+                    $\textbf{Cubic Bezier Curve}$: for points $P_0$, $P_1$, $P_2$ $P_3$ are needed. $P_0$ and $P_3$ are anchor points, the other two are control points.
                     Just use $\mathbf{P}$-points to describe $\mathbf{T_0}$ we get that
                     \begin{equation}
                     \begin{aligned} 
@@ -114,7 +116,7 @@
                                            {strokecolor:'blue', strokeOpacity:0.6, strokeWidth:5}); 
                         </script>
                     <br>
-                    $\textit{Quartic Bezier Curve}$: Five points $P_0$, $P_1$, $P_2$, $P_3$, $P_4$ are needed, $P_0$ and $P_4$ are anchor points, the others are control points. 
+                    $\textbf{Quartic Bezier Curve}$: Five points $P_0$, $P_1$, $P_2$, $P_3$, $P_4$ are needed, $P_0$ and $P_4$ are anchor points, the others are control points. 
                     Just use $\mathbf{P}$-points to describe $\mathbf{T_0}$ we get that
                     \[ 
                         \mathbf{T_0} = (1-t)^4 \mathbf{P_0} + 4(1-t)^3 t\mathbf{P_1} + 6(1-t)^2 t^{2}\mathbf{P_2} + 4(1-t) t^3 \mathbf{P_3} + t^4 \mathbf{P_4} \\ 
