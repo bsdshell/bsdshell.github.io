@@ -1,6 +1,16 @@
 <div class="highlight"><pre><span class="c1">-- identity = [] </span>
 <span class="nf">concat2</span><span class="ow">::</span><span class="p">[[</span><span class="kt">Int</span><span class="p">]]</span><span class="ow">-&gt;</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span>
 <span class="nf">concat2</span> <span class="n">vals</span> <span class="ow">=</span> <span class="n">foldr</span> <span class="p">(</span><span class="nf">\</span><span class="n">val</span> <span class="n">acc</span><span class="ow">-&gt;</span><span class="n">val</span> <span class="o">++</span> <span class="n">acc</span><span class="p">)</span> <span class="kt">[]</span> <span class="n">vals</span>
+<span class="c1">-- concat2 [[1, 2], [3, 4]] =  [1, 2] ++ ([3, 4] ++ []) = [1, 2, 3, 4]</span>
+
+<span class="nf">fo</span> <span class="ow">=</span> <span class="n">foldr</span> <span class="p">((</span><span class="kt">:</span><span class="p">))</span> <span class="kt">[]</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> 
+<span class="c1">-- output [1, 2, 3]</span>
+
+<span class="c1">-- alternative definition of map </span>
+<span class="nf">map&#39;</span><span class="ow">::</span><span class="p">(</span><span class="n">a</span><span class="ow">-&gt;</span><span class="n">b</span><span class="p">)</span><span class="ow">-&gt;</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="ow">-&gt;</span><span class="p">[</span><span class="n">b</span><span class="p">]</span>
+<span class="nf">map&#39;</span> <span class="n">f</span> <span class="ow">=</span> <span class="n">foldr</span> <span class="p">((</span><span class="kt">:</span><span class="p">)</span><span class="o">.</span><span class="n">f</span><span class="p">)</span> <span class="kt">[]</span> 
+<span class="c1">-- map&#39; (1+) 1 [1, 2, 3] = [2, 3, 4]</span>
+
 
 <span class="c1">-- identity = 0</span>
 <span class="nf">sum1</span><span class="ow">::</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="ow">-&gt;</span><span class="kt">Int</span>

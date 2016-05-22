@@ -1,0 +1,55 @@
+<div class="highlight"><pre><span class="kr">let</span> <span class="n">r1</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;(dog){1,2}(cat)&quot;</span>
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r1</span> <span class="s">&quot;dogcat&quot;</span>        <span class="s">&quot;1. [</span><span class="se">\\</span><span class="s">0]{</span><span class="se">\\</span><span class="s">1} &quot;</span><span class="c1">--1. [dogcat]{dog} </span>
+
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r1</span> <span class="s">&quot;dogdogcat&quot;</span>     <span class="s">&quot;2. [</span><span class="se">\\</span><span class="s">0]{</span><span class="se">\\</span><span class="s">1} &quot;</span><span class="c1">--2. [dogdogcat]{dog} </span>
+
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r1</span> <span class="s">&quot;dogdogdogcat&quot;</span>  <span class="s">&quot;3. [</span><span class="se">\\</span><span class="s">0]{</span><span class="se">\\</span><span class="s">1} &quot;</span><span class="c1">--3. [dogdogcat]{dog}</span>
+
+        <span class="kr">let</span> <span class="n">r3</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;a*(git)&quot;</span>
+
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r3</span> <span class="s">&quot;aaaagit&quot;</span>       <span class="s">&quot;5. [</span><span class="se">\\</span><span class="s">0] {</span><span class="se">\\</span><span class="s">1}&quot;</span><span class="c1">--5. [aaaagit] {git} </span>
+
+        <span class="kr">let</span> <span class="n">r4</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;(void)+&quot;</span>
+
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r4</span> <span class="s">&quot;voidvoid&quot;</span>      <span class="s">&quot;6. [</span><span class="se">\\</span><span class="s">0] {</span><span class="se">\\</span><span class="s">1}&quot;</span><span class="c1">--6. [voidvoid] {void} </span>
+
+        <span class="c1">-- capture group</span>
+        <span class="kr">let</span> <span class="n">r6</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;[a-z]+(git)&quot;</span>
+
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r6</span> <span class="s">&quot;1git   agit&quot;</span>   <span class="s">&quot;7. [</span><span class="se">\\</span><span class="s">0] {</span><span class="se">\\</span><span class="s">1}&quot;</span><span class="c1">--7. [agit] {git}</span>
+
+        <span class="c1">-- capture phone number</span>
+        <span class="kr">let</span> <span class="n">p1</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;[0-9]{3}[ -]?[0-9]{3}[ -]?[0-9]{4}&quot;</span> 
+
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">p1</span> <span class="s">&quot;416-123-4483&quot;</span>  <span class="s">&quot;8. [</span><span class="se">\\</span><span class="s">0]      &quot;</span><span class="c1">--8. [416-123-4483]</span>
+
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">p1</span> <span class="s">&quot;4161234483&quot;</span>    <span class="s">&quot;9. [</span><span class="se">\\</span><span class="s">0]      &quot;</span><span class="c1">--9. [4161234483] </span>
+
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">p1</span> <span class="s">&quot;416 123 4483&quot;</span>  <span class="s">&quot;10. [</span><span class="se">\\</span><span class="s">0]     &quot;</span><span class="c1">--10. [416 123 4483]</span>
+        
+        <span class="c1">-- split string</span>
+        <span class="n">print</span> <span class="o">$</span> <span class="n">splitRegex</span><span class="p">(</span><span class="n">mkRegex</span> <span class="s">&quot;:&quot;</span><span class="p">)</span> <span class="s">&quot;PaloAlto:MountainView&quot;</span> <span class="c1">-- [&quot;PaloAlto&quot;,&quot;MountainView&quot;]</span>
+
+        <span class="c1">-- capture function in ObjectiveC</span>
+        <span class="kr">let</span> <span class="n">me</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;(-|</span><span class="se">\\</span><span class="s">+)[[:space:]]*</span><span class="se">\\</span><span class="s">([[:space:]]*[[:print:]]+[[:space:]]*</span><span class="se">\\</span><span class="s">)[[:space:]]*[[:graph:]]+</span><span class="se">\</span>
+<span class="se">        \</span><span class="s">[[:space:]]*:?[[:space:]]*([[:space:]]*[[:graph:]]+[[:space:]]*:[[:space:]]*[[:graph:]]+[[:space:]]*)*&quot;</span>
+
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">me</span> <span class="s">&quot;- (NSstring*) swap :&quot;</span> <span class="s">&quot;11. [</span><span class="se">\\</span><span class="s">0]&quot;</span><span class="c1">--11. [- (NSstring*) swap :]</span>
+
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">me</span> <span class="s">&quot;- (NSstring*) method:(Integer)num width:(Integer)width</span><span class="se">\ </span>
+<span class="se">        \</span><span class="s"> height:(NSString*)str&quot;</span> <span class="s">&quot;12. [</span><span class="se">\\</span><span class="s">0]&quot;</span>
+        <span class="c1">--12. [- (NSstring*) method:(Integer)num width:(Integer)width  height:(NSString*)str]</span>
+
+        <span class="c1">-- https://hackage.haskell.org/package/regex-base-0.93.2/docs/Text-Regex-Base-RegexLike.html#t:RegexLike</span>
+        <span class="kr">let</span> <span class="n">r7</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;([A-Za-z]+)&quot;</span> 
+        <span class="kr">let</span> <span class="n">count</span> <span class="ow">=</span> <span class="n">matchCount</span> <span class="n">r7</span> <span class="s">&quot;haskell java C++ ObejctiveC aa#&quot;</span> 
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="s">&quot;count = &quot;</span> <span class="o">++</span> <span class="n">show</span> <span class="n">count</span>
+
+        <span class="c1">-- https://hackage.haskell.org/package/regex-base-0.93.2/docs/Text-Regex-Base-RegexLike.html#t:RegexLike</span>
+        <span class="kr">let</span> <span class="n">r8</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;[a-z]+&quot;</span>
+        <span class="kr">let</span> <span class="n">bo</span> <span class="ow">=</span> <span class="n">matchTest</span> <span class="n">r8</span> <span class="s">&quot;22323&quot;</span>
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="s">&quot;Is matched = &quot;</span> <span class="o">++</span> <span class="n">show</span> <span class="n">bo</span>   <span class="c1">-- return True</span>
+        
+        <span class="kr">let</span> <span class="n">bo</span> <span class="ow">=</span> <span class="n">matchTest</span> <span class="n">r8</span> <span class="s">&quot;Sunnyvale&quot;</span>       
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="s">&quot;Is matched = &quot;</span> <span class="o">++</span> <span class="n">show</span> <span class="n">bo</span>   <span class="c1">-- return False</span>
+</pre></div>

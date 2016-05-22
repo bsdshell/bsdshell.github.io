@@ -41,6 +41,11 @@
     width:100%;
 }
 
+.wbold{
+     font-size: 18px;
+
+    color: rgb(128, 140, 115);
+}
 
 .box {
     border: 1px solid while;
@@ -93,12 +98,23 @@
     background: rgb(239, 245, 233);
 }
 
+
+
 .mytitle{
     margin:auto;
     width:100%;
-    color: #BDCAAB;
+    color: #4D5F34;
     font-size:20px;
     text-align:center;
+}
+
+.mytext{
+    margin:auto;
+    /* width:80%; */
+    color: #919C88;
+    font-size:18px;
+    background: white;
+    margin-left: 3px;
 }
 
 .mysubtitle{
@@ -107,13 +123,6 @@
     color: #6C824D;
     font-size:20px;
     text-align:left;
-}
-
-.mytext{
-    margin:auto;
-    width:80%;
-    color: #919C88;
-    font-size:18px;
 }
 
 .mytable{

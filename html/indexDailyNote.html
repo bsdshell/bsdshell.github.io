@@ -70,10 +70,7 @@
                        and wrote down the permutation of a few characters, eventually I can rewrite the algorithm.<br> 
                        The algorithm is similar to print out the upper triangle of two dimension array, usually we can use two loops and iterate horizontally and vertically<br>
                        but we can use recursion to replace one dimension and use only one loop.
-                       </div>
-
-                       <div class="note">
-                       <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                       <pre class="codebg">
        printUpperTriangle()
        {
            for(int col = 0; col < array.length; col++)
@@ -129,7 +126,7 @@
                        it is easy to make mistaken when you switch two links in two nodes, since you might forget the next link is overwritten<br>
                        when two links are switched. For quick sort, the algorithm is not hard but the hard part is 
                        when you partition the array with privot onlineb, Fortunately, the partition algorithm is very short/simple but it is not obvious.<br>
-                       <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                       <pre class="codebg">
                        e.g. choose the first element of an array as pivot
                        int[] array = {2, 4, 1, 3}
 
@@ -178,7 +175,7 @@
 
                        when I play around with array indexes, there are some interested properties between the index of array and the value of array.<br>
                        In group theory, permutation group is well known. There is obvious question is how the permutation group and array are related<br>
-                       <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                       <pre class="codebg">
                        Given C['a', 'b', 'c', 'd']
                              A[ 3,   1,   0,   2]
                              B[ 0,   3,   2,   1]
@@ -242,33 +239,7 @@
                             the key idea of the book is [expressed] in the title and [elaborated] in the text<br>
                        </div>
 
-                       <div class="note">
-                       Mon Sep 21 21:24:13 PDT 2015
-                       <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
-                       Operators in Vim 
-                        =       indentation e.g gg=G [h =]
-                        c		change
-                        d		delete
-                        y		yank into register (does not change the text)
-                        gu		make lowercase
-                        gU		make uppercase
-                        !		filter through an external program
-                        gq		text formatting
-                        g?		ROT13 encoding
-                        >		shift right
-                        <		shift left
-                        zf		define a fold
-                        g@		call function set with the 'operatorfunc' option
-
-                        Left-right motion
-                        h       character to the Left
-                        l       character to the Right
-                        0       to the first character of the line
-                        ^       to the first non-bank character of the line
-                        $       to the end non-bank character of the line
-                        g_      to the last non-bank character of the line  
-                       </pre>
-                       </div>
+                       
 
                        <div class="note">
                        Fri Sep 25 20:41:49 PDT 2015<br>
@@ -465,7 +436,7 @@
                        quick sort<br>
                        merge two sorted lists<br>
                        generate N unique random numbers<br><br>
-                       <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                       <pre class="codebg">
                        XOR is pretty awesome operation in Computer Science  
                        Swap two variables without a tmp variable 
                        int a = 2 
@@ -515,7 +486,7 @@
                        You can use different colors on node and edge.<br>
                        GraphViz use DOT file format which is a simple way of describing graphs that boths humans and computer programs can use.<br> 
                        
-                       <pre style="background:#000;color:#8DE884;">
+                       <pre class="codebg">
                                    digraph G{
                                     a->b
                                     a->c
@@ -555,7 +526,7 @@
                        <div class="note">
                        Mon Nov  2 21:09:24 PST 2015<br>
                        In Tomcat 8.0.x, there is no user for the [Manager App], you need to manually add user and role to the tomcat-user.xml under conf directory.<br>
-                       <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                       <pre class="codebg">
         role rolename="admin"
         role rolename="admin-gui"
         role rolename="manager"
@@ -596,22 +567,11 @@
                         She told me it takes around two hours to fix the issue.Well, I expect it will take four hours to fix the mess.<br>
                         you never trust what the dealer guys tell you.<br>
                        </div>
-                       <div class="note">
-                        Fri Dec  4 21:47:00 PST 2015<br>
-                        <mark>Vim Leader, mapleader, LocalLeader, maplocalleader</mark><br> 
-                        :nnoremap &#60;Buffer&#62;&#60;Leader&#62;s :%s/dog/cat/g &#60;Esc&#62; <br>
-                        Leader is special string that you can use to map character to shortcut key<br> 
-                        The default mapping is '\' character<br><br>
-                        When you type \s the shortcut will trigger :%s/dog/cat/g<br>
-                        If you want to change the default mapping to different character, then you can type<br>
-                        :let mapleader="," which will map ,s instead of \s and it can trigger :%s/dog/cat/g<br><br>
-                        LocalLeader is similar to Leader but it is to be used for mapping which are local to a buffer<br> 
-                        :map &#60;buffer&#62;&#60;LocalLeader&#62;A :%s/dog/cat/g &#60;Esc&#62;<br>
-                       </div>
+                       
                        <div class="note">
                         Wed Dec  9 14:22:22 PST 2015<br>
-                        Delcare pointer of UIColor* in ObjecitiveC:
-                       <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                        Declare pointer of UIColor* in ObjecitiveC:
+                       <pre class="codebg">
                         Wrong:
                         UIColor** arrayPt = malloc(num*sizeof(UIColor*));  
                         Right:
@@ -625,7 +585,7 @@
                        </div>
 
                        <div class="note">
-                           <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                           <pre class="codebg">
                            0. Assume you implement UIApplicationDelegate 
                            1. MyViewController* viewController = [[MyViewController alloc]init];
                            2. UINavigationController* navController = [UINavigationController alloc]
@@ -818,7 +778,7 @@
                         Sun Apr 10 15:53:08 PDT 2016<br>
                         Just learn how to manually create Obj file and load it to Blender<br>
                         The Obj[Wavefront Technologies and its Advanced Visualizer animation package] file format is pretty simple if you want to create a simple model such as pyramid or cube. Following is simple example for Obj file. Make sure the vertices are in counter-clockwise order.<br>
-                        <pre style="color:#2EFF38; background:rgba(49, 45, 45, 0.54);">
+                        <pre class="codebg">
                         # pryamid.obj
                         g Object001
                         v 0.00      0.00    0.00
@@ -830,7 +790,7 @@
                         f     3 1 4 
                         f     1 4 2 
                         </pre>
-                        <pre style="color:#2EFF38; background:rgba(49, 45, 45, 0.54);">
+                        <pre class="codebg">
                         # oneface.obj
                         g Object002
                         v 0.00      0.00    0.00
@@ -926,7 +886,15 @@
                        Today I try to test De Casteliau's algorithm in Haskell and run GHCi, and start up GHCi on command line<br>
                        I got a strangle error from GHCi "can't open /tmp/ghci.log" file when I run a simple expression such as 1 + 2 in GHCi<br>
                        I never have the problem before I update my Mac OS to El capitan. Good Job Apple!<br>
-                       I downloaded new version GHCi 7.10.3 and install it. Run the GHCi in command, the same error pops up again!
+                       I downloaded new version GHCi 7.10.3 and install it. Run the GHCi in command, the same error pops up again!<br>
+                       Fri May 13 18:06:10 PDT 2016<br>
+                       Update: Apple change some permission for Clang something that causes the error<br>
+                       Sat May 14 12:13:26 PDT 2016<br>
+                       <span class="wbold">Location for GHCi and HaskellFrame</span> when Haskell is installed in Mac OSX[EL Capitan or Yosemite or Mavericks]<br>  
+                       <span class="wbold">/Library/Frameworks/GHC.framework</span><br> 
+                       <span class="wbold">/Library/Haskell</span><br>
+                       Uninstaller Location[At least on my Mac OSX El Capitan]<br>
+                       <span class="wbold">/usr/local/bin/uninstall-hs</span><br>
                        </div>
 
                        <div class="note">
@@ -976,8 +944,37 @@
                     2. Techie, Technical, Technician, Technology, Technologies<br>
                     3. Practice[Practise British] Practical, Practicable, Practicing[a practicing architech], Practician, Practicably<br>
                     </div>
-
-
+                    <div class="note">
+                        <div class="mytitle">
+                        Shell script is useful again<i class="em em-anchor"></i><br>
+                        </div>
+                    I just wrote some shell script to manage some the stuff on my Mac. Usually I do't like to write shell script since it is hard to remember those crazy characters such as dollar sign, ampersand etc.<br>
+                    Advantage of Shell Script:<br>
+                    1. Easy to write[Assume you know what you are doing]<br>
+                    2. Compatible[ There are some syntax issues in different shells ]<br>
+                    3. Easy to interface other programs that you have written other languages such as Java, C/C++, etc<br>
+                    Just learn a new word: etc. stands for etcetera which is Latin.<br>
+                    </div>
+                    <div class="note">
+                        <div class="mytitle">
+                        How to use command History in Vim<i class="em em-anchor"></i><br>
+                        </div>
+                        Today, I just learn something new how to use command History in Vim.<br>
+                        If you are typing a lots in Command Mode, then there are lots repeating commands that you want to call it again and again.<br>
+                        There are lots of way to do in Vim such as Abbreviation or Mapping, etc.<br>
+                        But the quick way to repeating the command is to open the history and search the command, then press Eneter<br>
+                        1. Open command history q:<br>
+                        2. Search the command like Normal Mode<br>
+                        3. Press <span class="wbold">Enter to execute the command</span> under your cursor. Done<br>
+                        4. [:h q:] [:h q/] [:h q?]
+                    </div>
+                    <div class="note">
+                        <div class="mytitle">
+                        How to update <span class="wbold">locate</span> command on Mac OSX El Capitan<i class="em em-anchor"></i><br>
+                        </div>
+                        sudo /usr/libexec/locate.updatedb
+                    </div>
+                    
             <!-- Column 1 end -->
             </div>
             <div class="col2">

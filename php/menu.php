@@ -82,6 +82,7 @@ function createBasicPage($fileHtml, $title)
 return $content;
 }
     $pageArray = array(
+        "Vim Tricks",
         "Eight Queen Solver",
         "Magic Square Solver",
         "Sudoku Solver",
@@ -235,6 +236,8 @@ return $content;
         "Generate n prime in Haskell",
         "Generate n prime in Scala",
 
+        "Haskell Map and Foldr",
+        "Haskell Install Remove GHCi On Mac OSX",
         "Haskell Tutorial",
         "C and C++ unsigned Integer Gotcha",
         "C and C++ Tutorial",
