@@ -82,6 +82,7 @@ function createBasicPage($fileHtml, $title)
 return $content;
 }
     $pageArray = array(
+        "Shell Script",
         "Vim Tricks",
         "Eight Queen Solver",
         "Magic Square Solver",
@@ -118,6 +119,7 @@ return $content;
         "UIAlert in iOS",
         "TableViewController in iOS",
         "Switch different RootController",
+        "IOS Center Two Button",
         "IOS Subdivision Curve",
         "IOS Capture Screenshot",
         "IOS Load Image",
@@ -146,6 +148,7 @@ return $content;
         "Rename Project in Xcode 6.1",
         "Touches Event in iOS",
         "Draw Circle Rectangle Oval in iOS", 
+        "Xcode Shortcut Key",
         "Xcode Remove Add Unit Test",
         "Xcode Launch Screen File",
         "Xcode Change Build from iPhone iPad",
@@ -159,7 +162,6 @@ return $content;
         "ObjectiveC String Format Specifiers",
         "ObjectiveC Block",
         "ObjectiveC Static Method",
-        "ObjectiveC ARC qualifier",
         "ObjectiveC Double and Triple Pointer",
 
         "Tries Data Structure",

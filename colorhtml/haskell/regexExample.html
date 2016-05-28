@@ -1,22 +1,16 @@
 <div class="highlight"><pre><span class="kr">let</span> <span class="n">r1</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;(dog){1,2}(cat)&quot;</span>
-        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r1</span> <span class="s">&quot;dogcat&quot;</span>        <span class="s">&quot;1. [</span><span class="se">\\</span><span class="s">0]{</span><span class="se">\\</span><span class="s">1} &quot;</span><span class="c1">--1. [dogcat]{dog} </span>
-
-        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r1</span> <span class="s">&quot;dogdogcat&quot;</span>     <span class="s">&quot;2. [</span><span class="se">\\</span><span class="s">0]{</span><span class="se">\\</span><span class="s">1} &quot;</span><span class="c1">--2. [dogdogcat]{dog} </span>
-
         <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r1</span> <span class="s">&quot;dogdogdogcat&quot;</span>  <span class="s">&quot;3. [</span><span class="se">\\</span><span class="s">0]{</span><span class="se">\\</span><span class="s">1} &quot;</span><span class="c1">--3. [dogdogcat]{dog}</span>
 
-        <span class="kr">let</span> <span class="n">r3</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;a*(git)&quot;</span>
-
-        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r3</span> <span class="s">&quot;aaaagit&quot;</span>       <span class="s">&quot;5. [</span><span class="se">\\</span><span class="s">0] {</span><span class="se">\\</span><span class="s">1}&quot;</span><span class="c1">--5. [aaaagit] {git} </span>
+        <span class="kr">let</span> <span class="n">r3</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;(na)*&quot;</span>
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r3</span> <span class="s">&quot;banana&quot;</span>       <span class="s">&quot;5. [</span><span class="se">\\</span><span class="s">0] {</span><span class="se">\\</span><span class="s">1} &quot;</span><span class="c1">--5. [] {}b5. [] {}a5. [nana] {na}</span>
 
         <span class="kr">let</span> <span class="n">r4</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;(void)+&quot;</span>
-
         <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r4</span> <span class="s">&quot;voidvoid&quot;</span>      <span class="s">&quot;6. [</span><span class="se">\\</span><span class="s">0] {</span><span class="se">\\</span><span class="s">1}&quot;</span><span class="c1">--6. [voidvoid] {void} </span>
 
-        <span class="c1">-- capture group</span>
-        <span class="kr">let</span> <span class="n">r6</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;[a-z]+(git)&quot;</span>
-
-        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r6</span> <span class="s">&quot;1git   agit&quot;</span>   <span class="s">&quot;7. [</span><span class="se">\\</span><span class="s">0] {</span><span class="se">\\</span><span class="s">1}&quot;</span><span class="c1">--7. [agit] {git}</span>
+        <span class="c1">-- capture group, capture email address</span>
+        <span class="kr">let</span> <span class="n">r6</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;([A-Za-z._-]+)+@(([a-z])+</span><span class="se">\\</span><span class="s">.([a-z]{2,4}))&quot;</span>
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r6</span> <span class="s">&quot;root_admin.last-name@gmail.com&quot;</span>   <span class="s">&quot;7. [</span><span class="se">\\</span><span class="s">0] {</span><span class="se">\\</span><span class="s">1}{</span><span class="se">\\</span><span class="s">2}&quot;</span>
+        <span class="c1">--7. [root_admin.last-name@gmail.com] {root_admin.last-name}{gmail.com}</span>
 
         <span class="c1">-- capture phone number</span>
         <span class="kr">let</span> <span class="n">p1</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;[0-9]{3}[ -]?[0-9]{3}[ -]?[0-9]{4}&quot;</span> 
