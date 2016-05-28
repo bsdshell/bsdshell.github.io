@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="../highlight.css">
         <link rel="stylesheet" type="text/css" href="../style.css">
+        <script type="text/javascript" src="../javascript/myhighlight.js"></script>
     </head>
     <body>
 
@@ -17,7 +18,14 @@
         <div class="colleft">
             <div class="col1">
             <!-- Column 1 start -->
-
+                <pre class="codebg">
+                    set undofile                " Save undo's after file closes
+                    set undodir=$HOME/.vim/undo " where to save undo histories
+                    set undolevels=1000         " How many undos
+                    set undoreload=10000        " number of lines to save for undo
+                    [:h undo-persistene]
+                </pre>
+            <button onclick="colorCode()">Click me</button>
             <!-- Column 1 end -->
             </div>
             <div class="col2">
