@@ -1,0 +1,83 @@
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">Node</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">next</span><span class="p">;</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">prev</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">data</span><span class="p">;</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">Node</span><span class="p">(</span><span class="kt">int</span> <span class="n">data</span><span class="p">){</span>
+            <span class="n">next</span> <span class="o">=</span> <span class="n">prev</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+            <span class="k">this</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+        <span class="p">}</span>
+
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">DDLinkedList</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">head</span><span class="p">;</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">tail</span><span class="p">;</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">DDLinkedList</span><span class="p">(){</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">tail</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">append</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">node</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">head</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
+                <span class="n">head</span> <span class="o">=</span> <span class="n">tail</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="n">tail</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span>
+                <span class="n">node</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">=</span> <span class="n">tail</span><span class="p">;</span>
+                <span class="n">tail</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">remove</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">remove</span><span class="p">){</span>
+            <span class="n">Node</span><span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+            <span class="k">while</span><span class="p">(</span><span class="n">remove</span> <span class="o">&amp;&amp;</span> <span class="n">curr</span><span class="p">){</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">curr</span> <span class="o">==</span> <span class="n">remove</span><span class="p">){</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
+                        <span class="c1">// first node</span>
+                        <span class="n">Node</span><span class="o">*</span> <span class="n">next</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+                        <span class="k">if</span><span class="p">(</span><span class="n">next</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
+                            <span class="c1">// [curr] </span>
+                            <span class="n">head</span> <span class="o">=</span> <span class="n">tail</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+                        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                            <span class="c1">// [curr]-&gt;[] </span>
+                            <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span> 
+                            <span class="n">next</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+                            <span class="n">head</span> <span class="o">=</span> <span class="n">next</span><span class="p">;</span>
+                        <span class="p">}</span>
+                        <span class="k">delete</span> <span class="n">remove</span><span class="p">;</span>
+                        <span class="n">remove</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+                    <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
+                        <span class="c1">// last node</span>
+                        <span class="n">Node</span><span class="o">*</span> <span class="n">prev</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">prev</span><span class="p">;</span>
+                        <span class="k">if</span><span class="p">(</span><span class="n">prev</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">){</span>
+                            <span class="c1">// []-&gt;[curr]</span>
+                            <span class="n">prev</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+                            <span class="n">curr</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+                            <span class="n">tail</span> <span class="o">=</span> <span class="n">prev</span><span class="p">;</span>
+                        <span class="p">}</span>
+                        <span class="k">delete</span> <span class="n">remove</span><span class="p">;</span>
+                        <span class="n">remove</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+                    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                        <span class="c1">// []-&gt;[curr]-&gt;[]</span>
+                        <span class="n">Node</span><span class="o">*</span> <span class="n">next</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+                        <span class="n">Node</span><span class="o">*</span> <span class="n">prev</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">prev</span><span class="p">;</span>
+                        <span class="n">next</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">=</span> <span class="n">prev</span><span class="p">;</span>
+                        <span class="n">prev</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">next</span><span class="p">;</span>
+                        <span class="k">delete</span> <span class="n">remove</span><span class="p">;</span>
+                        <span class="n">remove</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">print</span><span class="p">(){</span>
+            <span class="n">Node</span><span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+            <span class="k">while</span><span class="p">(</span><span class="n">curr</span><span class="p">){</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%d]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
+                <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+     
+<span class="p">};</span>
+</pre></div>

@@ -39,11 +39,19 @@ function createBasicPage($fileHtml, $title)
         <div class=\"colleft\">
             <div class=\"col1\">
             <!-- Column 1 start -->
-                <div class=\"mytextbox highlight\">
-                    <p>
-                    Put your stuff here  
-                    </p>
-                </div>
+
+            <div class=\"mytitle\">
+            Double Linked List with Smart Pointers
+            </div>
+            <div class=\"mytext\">
+            Reimplement Double Linked List With Smart Pointers<br>
+            </div>
+            <?php include(\"../colorhtml/cpp/mystack.html\"); ?> 
+            <div class=\"cen\">
+            <img src=\"http://localhost/zsurface/image/cppstd.png\" width=\"40%\" height=\"40%\" /><br>
+            <a href=\"https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp\">Source Code</a>
+            </div>
+
             <!-- Column 1 end -->
             </div>
             <div class=\"col2\">
@@ -82,6 +90,25 @@ function createBasicPage($fileHtml, $title)
 return $content;
 }
     $pageArray = array(
+        "C++ Merge three sorted arrays",
+        "C++ Merge two sorted arrays",
+        "C++ overload Operator",
+        "Java Synchronize Thread",
+        "Java Simple Thread",
+        "Maximum internval overlap",
+        "C++ find path in maze",
+        "C++ Binary Search",
+        "C++ Quick Sort",
+        "C++ two stacks get minimum",
+        "Generate n prime in C++",
+        "C++ Smart Pointers",
+        "C++ Double Linked List With Smart Pointer",
+        "C++ Virtual Class",
+        "C++ Dangling Pointer",
+        "C++ Regular Expression",
+        "Allocate 2D array in C",
+        "C and C++ unsigned Integer Gotcha",
+        "C and C++ Tutorial",
         "Shell Script",
         "Vim Tricks",
         "Eight Queen Solver",
@@ -148,6 +175,7 @@ return $content;
         "Rename Project in Xcode 6.1",
         "Touches Event in iOS",
         "Draw Circle Rectangle Oval in iOS", 
+        "Xcode C++ Standard Library",
         "Xcode Shortcut Key",
         "Xcode Remove Add Unit Test",
         "Xcode Launch Screen File",
@@ -186,6 +214,8 @@ return $content;
         "Java Regular Expression",
         "Java Algorithm",
         "Java Data Structure",
+
+        "C++ Data Structure",
         "Merge Sort In Java",
         "Merge Sort In C",
         "Merge Sort In C++",
@@ -234,15 +264,13 @@ return $content;
 
         "Generate n prime in Java",
         "Generate n prime in C",
-        "Generate n prime in C++",
         "Generate n prime in Haskell",
         "Generate n prime in Scala",
 
         "Haskell Map and Foldr",
         "Haskell Install Remove GHCi On Mac OSX",
         "Haskell Tutorial",
-        "C and C++ unsigned Integer Gotcha",
-        "C and C++ Tutorial",
+        
         "Scala Tutorial", 
          
         "Blender Help",
@@ -262,7 +290,6 @@ return $content;
         "Print All Permutation of an Array",
         "Quick Sort in C and C++",
         "Print all combination of r in a given array of size n",
-        "Allocate 2D array in C",
         "Shuffle algorithm in C++",
         "Rotated Sorted Array", 
         "Multiply Array in Dynamic Programming",

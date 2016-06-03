@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><!--This file was converted to xhtml by LibreOffice - see http://cgit.freedesktop.org/libreoffice/core/tree/filter/source/xslt for the code.--><head profile="http://dublincore.org/documents/dcmi-terms/"><meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/><title xml:lang="en-US">- no title specified</title><meta name="DCTERMS.title" content="" xml:lang="en-US"/><meta name="DCTERMS.language" content="en-US" scheme="DCTERMS.RFC4646"/><meta name="DCTERMS.source" content="http://xml.openoffice.org/odf2xhtml"/><meta name="DCTERMS.issued" content="2015-10-22T23:07:59.014593000" scheme="DCTERMS.W3CDTF"/><meta name="DCTERMS.modified" content="2015-10-22T23:21:32.547157000" scheme="DCTERMS.W3CDTF"/><meta name="DCTERMS.provenance" content="" xml:lang="en-US"/><meta name="DCTERMS.subject" content="," xml:lang="en-US"/><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" hreflang="en"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" hreflang="en"/><link rel="schema.DCTYPE" href="http://purl.org/dc/dcmitype/" hreflang="en"/><link rel="schema.DCAM" href="http://purl.org/dc/dcam/" hreflang="en"/><style type="text/css">
+	@page {  }
+	table { border-collapse:collapse; border-spacing:0; empty-cells:show }
+	td, th { vertical-align:top; font-size:12pt;}
+	h1, h2, h3, h4, h5, h6 { clear:both }
+	ol, ul { margin:0; padding:0;}
+	li { list-style: none; margin:0; padding:0;}
+	<!-- "li span.odfLiEnd" - IE 7 issue-->
+	li span. { clear: both; line-height:0; width:0; height:0; margin:0; padding:0; }
+	span.footnodeNumber { padding-right:1em; }
+	span.annotation_style_by_filter { font-size:95%; font-family:Arial; background-color:#fff000;  margin:0; border:0; padding:0;  }
+	* { margin:0;}
+	.P1 { font-size:12pt; font-family:Liberation Serif; writing-mode:page; }
+	.P2 { font-size:12pt; font-family:Liberation Serif; writing-mode:page; color:#000000; }
+	.T1 { color:#ff3333; }
+	.T2 { color:#000000; }
+	.T3 { color:#3333ff; }
+	.T4 { color:#ff6600; }
+	<!-- ODF styles with no properties representable as CSS -->
+	.Endnote_20_Symbol .Footnote_20_Symbol  { }
+	</style></head><body dir="ltr" style="max-width:8.5in;margin-top:0.7874in; margin-bottom:0.7874in; margin-left:0.7874in; margin-right:0.7874in; writing-mode:lr-tb; "><p class="P1">Just Upgrade <span class="T4">Ubuntu to 14.0x</span> and found out the all my sites are down.</p><p class="P1">The new update also updates Apaches to 2.4. (I did not know what my previous Apache version is).</p><p class="P1"> </p><p class="P1">Google around, and found the solution in SO.</p><p class="P1">You just need to modify all your virtual hosts file to new extension in <span class="T1">/etc/apache2/site-enabled</span></p><p class="P1">For example:</p><p class="P1"><span> Original virtual file is <span class="T1">mywebsite</span></span></p><p class="P1"><span class="T1">        </span><span class="T2">Change to </span><span class="T1">mywebsite</span><span class="T2">.</span><span class="T3">conf</span></p><p class="P1"><span class="T3">        </span><span class="T2">Also, you need to create new symlink in</span><span class="T3"> </span><span class="T1">/etc/apache2/site-available</span><span class="T3"> </span></p><p class="P1"><span class="T3"/></p><p class="P2">I'm not sure what is the point of the change in Apache 2.4, but it seems to me it does't make any difference.</p><p class="P2"> </p><p class="P1"><span class="T3"/></p><p class="P1"><span class="T3"/></p><p class="P1"><span class="T3"/></p><p class="P1"><span>  </span></p><p class="P1"> </p></body></html>

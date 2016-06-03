@@ -1,0 +1,9 @@
+<div class="highlight"><pre><span class="kt">void</span> <span class="nf">uniqueTransferOwnerShip</span><span class="p">(){</span>
+    <span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">upt</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span> 
+    <span class="c1">// error</span>
+    <span class="c1">// unique_ptr&lt;Node&gt; upt1 = upt;</span>
+    <span class="c1">// error</span>
+    <span class="c1">// unique_ptr&lt;Node&gt; upt2(upt);</span>
+    <span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">upt3</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">upt</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>

@@ -1,0 +1,22 @@
+<div class="highlight"><pre><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span><span class="p">(</span><span class="s">&quot;there is a subsequence in the string</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">regex</span> <span class="n">pattern</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">b(sub)([^ ]*)&quot;</span><span class="p">);</span>   <span class="c1">// matches words beginning by &quot;sub&quot;</span>
+
+  <span class="c1">// using string/c-string (3) version:</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">regex_replace</span> <span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span><span class="s">&quot;sub-$2&quot;</span><span class="p">);</span>
+
+  <span class="c1">// using range/c-string (6) version:</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">result</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">regex_replace</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span><span class="p">(</span><span class="n">result</span><span class="p">),</span> <span class="n">str</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">str</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">pattern</span><span class="p">,</span> <span class="s">&quot;$2&quot;</span><span class="p">);</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">result</span><span class="p">;</span>
+
+  <span class="c1">// with flags:</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">regex_replace</span> <span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">pattern</span><span class="p">,</span> <span class="s">&quot;$1 and $2&quot;</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">regex_constants</span><span class="o">::</span><span class="n">format_no_copy</span><span class="p">);</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+  <span class="c1">// cpp regex, cpp regular expression replace space to underscore</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">fileName</span> <span class="p">(</span><span class="s">&quot;screen cool dog.png</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">regex</span> <span class="n">reg</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">resultFileName</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">regex_replace</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">back_inserter</span><span class="p">(</span><span class="n">resultFileName</span><span class="p">),</span> <span class="n">fileName</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">fileName</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">reg</span><span class="p">,</span> <span class="s">&quot;_&quot;</span><span class="p">);</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span><span class="s">&quot;fileName-&gt;&quot;</span><span class="o">&lt;&lt;</span><span class="n">resultFileName</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>

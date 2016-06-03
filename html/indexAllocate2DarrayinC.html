@@ -42,10 +42,14 @@
         <div class="colleft">
             <div class="col1">
                 <!-- Column 1 start -->
-                    <p class="fs cen">
+                    <div class="mytitle">
+                    Allocate and Deallocate functions in C++
+                    </div>
+                    <?php include("../colorhtml/cpp/allocate.html"); ?> 
+                    <div class="mytitle">
                     Dynamically allocate two dimension array in C 
-                    </p>
-                    <pre style="background:#000;color:#DDE884;">
+                    </div>
+                    <pre class="codebg">
                     int height = 3;
                     int width  = 4;
                     int* pt = (int*)malloc(sizeof(int)*width);
@@ -54,10 +58,12 @@
                     for(int i = 0; i < height; i++)
                         array[i] = (int*)malloc(sizeof(int)*width);
                     </pre>
-                    <img src="http://localhost/zsurface/image/malloc.svg" width="60%" height="60%" /><br> 
-                    <p class="fs cen">
+                    <div class="cen">
+                        <img src="http://localhost/zsurface/image/malloc.svg" width="60%" height="60%" /><br> 
+                    </div>
+                    <div class="mytitle">
                     Allocate and Deallocate 3D array or tripple pointers in C/C++/ObjectiveC with malloc 
-                    </p>
+                    </div><br>
                     <div class="cen">
                     <img src="http://localhost/zsurface/image/cube.png" width="50%" height="50%" /><br> 
                     </div>

@@ -1,4 +1,5 @@
-<div class="highlight"><pre><span class="kr">let</span> <span class="n">r1</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;(dog){1,2}(cat)&quot;</span>
+<div class="highlight"><pre><span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span>
+        <span class="kr">let</span> <span class="n">r1</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;(dog){1,2}(cat)&quot;</span>
         <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r1</span> <span class="s">&quot;dogdogdogcat&quot;</span>  <span class="s">&quot;3. [</span><span class="se">\\</span><span class="s">0]{</span><span class="se">\\</span><span class="s">1} &quot;</span><span class="c1">--3. [dogdogcat]{dog}</span>
 
         <span class="kr">let</span> <span class="n">r3</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;(na)*&quot;</span>

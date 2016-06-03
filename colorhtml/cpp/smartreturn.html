@@ -1,0 +1,9 @@
+<div class="highlight"><pre><span class="n">Node</span><span class="o">*</span> <span class="nf">bad_idea</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">good_idea</span><span class="p">(){</span>
+    <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">pt</span><span class="p">(</span><span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+    <span class="k">return</span> <span class="n">pt</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>

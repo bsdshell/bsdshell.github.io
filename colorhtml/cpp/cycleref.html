@@ -1,0 +1,27 @@
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">Class2</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">Class1</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+    <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Class2</span><span class="o">&gt;</span> <span class="n">c2</span><span class="p">;</span>
+    <span class="c1">//weak_ptr&lt;Class2&gt; c2;</span>
+    <span class="k">public</span><span class="o">:</span>
+    <span class="o">~</span><span class="n">Class1</span><span class="p">(){</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Destroy Class1()</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Class2</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Class1</span><span class="o">&gt;</span> <span class="n">c1</span><span class="p">;</span>
+    <span class="k">public</span><span class="o">:</span>
+    <span class="o">~</span><span class="n">Class2</span><span class="p">(){</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Destroy Class2()</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">cycle</span><span class="p">(){</span>
+    <span class="k">auto</span> <span class="n">c1</span> <span class="o">=</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Class1</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="k">auto</span> <span class="n">c2</span> <span class="o">=</span> <span class="n">make_shared</span><span class="o">&lt;</span><span class="n">Class2</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">c1</span><span class="o">-&gt;</span><span class="n">c2</span> <span class="o">=</span> <span class="n">c2</span><span class="p">;</span>
+    <span class="n">c2</span><span class="o">-&gt;</span><span class="n">c1</span> <span class="o">=</span> <span class="n">c1</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>

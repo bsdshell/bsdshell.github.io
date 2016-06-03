@@ -1,0 +1,90 @@
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">MyInterface</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+    <span class="k">public</span><span class="o">:</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">play</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">getID</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">MusicPlay</span> <span class="o">:</span> <span class="k">public</span> <span class="n">MyInterface</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">MusicPlay</span><span class="p">(){</span>
+            <span class="n">id</span> <span class="o">=</span> <span class="n">arc4random_uniform</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="k">public</span><span class="o">:</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">play</span><span class="p">(){</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;MusicPlay play()</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> 
+    <span class="p">}</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">getID</span><span class="p">(){</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;id=[%d]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">);</span> 
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">VideoPlay</span> <span class="o">:</span> <span class="k">public</span> <span class="n">MyInterface</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">VideoPlay</span><span class="p">(){</span>
+            <span class="n">id</span> <span class="o">=</span> <span class="n">arc4random_uniform</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="k">public</span><span class="o">:</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">play</span><span class="p">(){</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;VideoPlay play()</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> 
+    <span class="p">}</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">getID</span><span class="p">(){</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;id=[%d]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">);</span> 
+    <span class="p">}</span>
+<span class="p">};</span>
+
+
+<span class="k">class</span> <span class="nc">TopClass</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">TopClass</span><span class="p">(){}</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="kt">void</span> <span class="n">draw</span><span class="p">(){</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;TopClass draw()</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> 
+        <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">TopSubClass</span> <span class="o">:</span> <span class="k">public</span> <span class="n">TopClass</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">TopSubClass</span><span class="p">(){</span>
+        <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">draw</span><span class="p">(){</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;TopSubClass draw()</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> 
+        <span class="p">}</span>
+        
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">MainClass</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">MainClass</span><span class="p">(){</span>
+        <span class="p">}</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">draw</span><span class="p">(){</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;MainClass draw()</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> 
+        <span class="p">}</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">fun1</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">overrideFun</span><span class="p">(){</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;MainClass overrideFun</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> 
+        <span class="p">}</span>
+
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">SubMainClass</span><span class="o">:</span> <span class="k">public</span> <span class="n">MainClass</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+       <span class="n">SubMainClass</span><span class="p">(){}</span> 
+
+    <span class="k">public</span><span class="o">:</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">draw</span><span class="p">(){</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;SubMainClass draw()</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> 
+        <span class="p">}</span>
+
+        <span class="kt">void</span> <span class="n">overrideFun</span><span class="p">(){</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;SubMainClass overrideFun</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> 
+        <span class="p">}</span>
+
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">fun1</span><span class="p">(){</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;SubMainClass fun1</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span> 
+        <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>

@@ -28,9 +28,11 @@
 }
 
 .haskellc{
-    background-color:#EEEEEE;
+    background-color: #EFF5E9;
     text-align:center;
-    box-shadow:0px 0px 0px 0px #888;
+    box-shadow: 0px 0px 0px 0px #888;
+    font-family: cursive;
+    color: #898A89;
 }
 
 .javac{
@@ -282,4 +284,6 @@
 .tooltip-wrap:hover .tooltip-content {
   display: block;
 }
+
+
 

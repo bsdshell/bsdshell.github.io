@@ -47,8 +47,38 @@
 
             for i in *; do echo $i ; done
             </pre>
+            <div class="mytitle">
+            Compare Number in Fish Shell
+            </div>
+            <pre class="codebg">
+            if math "$SHLVL == 1"
+                read -p 'echo "Exit? (y/n):"' -l confirm
+                if [ $confirm = "y" ]
+                    exit
+                end
+            else if math "$SHLVL > 1"
+                exit
+            end    
+            </pre>
 
+            <div class="mytitle">
+            Customize Prompt in Fish Shell 
+            </div>
+            <pre class="codebg">
+            function fish_prompt
+                set_color green 
+                echo -n (pwd)"[$SHLVL]"'>'
+            end
+            </pre>
 
+            <div class="mytitle">
+            Compare String in Fish Shell
+            </div>
+            <pre class="codebg">
+            if [ $confirm = "y" ]
+                exit
+            end
+            </pre>
 
             <!-- Column 1 end -->
             </div>
