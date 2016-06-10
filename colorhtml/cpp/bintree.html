@@ -1,0 +1,65 @@
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">Node</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="kt">int</span> <span class="n">data</span><span class="p">;</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">left</span><span class="p">;</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">right</span><span class="p">;</span>
+    <span class="k">public</span><span class="o">:</span>
+    <span class="n">Node</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">right</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">BinaryTree</span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">root</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">BinaryTree</span><span class="p">(){</span><span class="n">root</span><span class="o">=</span><span class="nb">NULL</span><span class="p">;}</span>
+
+    <span class="kt">void</span> <span class="n">insert</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">root</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">root</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="k">while</span><span class="p">(</span><span class="n">curr</span><span class="p">){</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">){</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
+                        <span class="n">curr</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+                <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
+                        <span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>        
+    <span class="o">~</span><span class="n">BinaryTree</span><span class="p">(){</span>
+        <span class="n">destroyTree</span><span class="p">(</span><span class="n">root</span><span class="p">);</span> 
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="n">destroyTree</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">r</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="p">){</span>
+            <span class="n">destroyTree</span><span class="p">(</span><span class="n">r</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+            <span class="n">destroyTree</span><span class="p">(</span><span class="n">r</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">r</span><span class="p">){</span>
+                <span class="k">delete</span> <span class="n">r</span><span class="p">;</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">inorder</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">root</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="p">){</span>
+        <span class="n">inorder</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;[&quot;</span><span class="o">&lt;&lt;</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="o">&lt;&lt;</span><span class="s">&quot;]&quot;</span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="n">inorder</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>

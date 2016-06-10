@@ -1,5 +1,5 @@
-<div class="highlight"><pre><span class="o">--</span><span class="n">Sum</span> <span class="n">all</span> <span class="n">the</span> <span class="n">integer</span> <span class="n">in</span> <span class="n">a</span> <span class="n">list</span>
-<span class="nl">sumlist:</span><span class="o">:[</span><span class="n">Int</span><span class="o">]-&gt;</span><span class="n">Int</span>
-<span class="n">sumlist</span> <span class="o">[]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">sumlist</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="o">)</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">sumlist</span><span class="o">(</span><span class="n">xs</span><span class="o">)</span> 
+<div class="highlight"><pre><span class="c1">-- Sum all the integer in a list</span>
+<span class="nf">sumlist</span><span class="ow">::</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">sumlist</span> <span class="kt">[]</span> <span class="ow">=</span> <span class="mi">0</span>
+<span class="nf">sumlist</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span> <span class="ow">=</span> <span class="n">x</span><span class="o">+</span><span class="n">sumlist</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
 </pre></div>
