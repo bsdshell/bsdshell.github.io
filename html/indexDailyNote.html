@@ -449,6 +449,24 @@
                        a = a ^ b // 0x001 = 0x010 ^ 0x011
                        b = a ^ b // 0x010 = 0x001 ^ 0x011
                        a = a ^ b // 0x010 = 0x001 ^ 0x010
+
+                       No XOR
+                       one = 1
+                       two = 2
+                       one = one + two
+                       two = one - two = 1
+                       one = one - two = 2
+
+                       XOR Trick, check power of two 
+                       Check whether a number is power of two
+                       int num = 10 = 0x1010;
+                       int nuu = 10-1 0x1001 
+                       num XOR nuu = 0x1010 ^ 0x1001 != 0
+                       num is not power of two
+
+                       XOR Trick, flip bit 
+                       int flipbit = 0x1010 ^ 0x1111 = 0x0101
+                       int recover = 0x0101 ^ 0x1111 = 0x1010
                        </pre>
                        </div>
 
@@ -742,6 +760,12 @@
                         The eigen3 will be installed in /usr/local/include/eigen3 directory<br>
                         How to compile your C++ file on Mac<br>
                         g++ -I /usr/local/include/eigen3  -o eigen eigen.cpp<br> 
+                        Sun Jun 12 20:17:25 PDT 2016<br>
+                        Just have some unexpected error when I try to compile c++ file github/cpp/eigen.cpp<br>
+                        ld: can't write output file: eigen for architecture x86_64<br>
+                        There is executable file called Eigen with root permission<br>
+                        and I try to compile my eigen.cpp<br> 
+                        g++ -I /usr/local/include/eigen3  -o eigen eigen.cpp<br> 
                         </div>
 
                         <div class="note">
@@ -994,7 +1018,7 @@
                     </div>
 
                     <div class="mytitle">
-                    Try to write a C++ makefile today<br>
+                    Try to write a C++ makefile today<i class="em em-boat"></i><br>
                     </div>
                     <div class="mytext">
                     I work on a simple C++ code and try to write a simple C++ makefile. But I just found I can't insert Tab from Vim.<br>
@@ -1004,6 +1028,99 @@
                     set shiftwidth=4<br>
                     set expandtab<br>
                     </div>
+                    <div class="mytitle">
+                    Can I change makefile name<i class="em em-bee"></i><br>
+                    </div>
+                    <div class="mytext">
+                    1. make will look for Makefile or makefile in your current directory<br> 
+                    2. you can change your Makefile or makefile to different name with -f option<br> 
+                    3. make -f mymakefile or  make --file=mymakefile
+                    </div>
+
+                    <div class="mytitle">
+                    Artistic Style 2.05 for C C++ Java Objective-C formatter<i class="em em-fire"></i><br>
+                    </div>
+                    <div class="mytext">
+                    0. Artistic Style is the formatter to beautify your code<br>
+                    1. Download the source file<br>
+                    2. Install with xcodebuild<br>
+                    3. cd astyle/build/xcode/<br>
+                    4. sudo xcodebuild install -project AStyle.xcodeproj<br>
+                    5. It is pretty easy to install it<br>
+                    6. URL http://astyle.sourceforge.net<br>
+                    How to use it<br>
+                    astyle --style=java foo.cpp<br>
+                    </div>
+
+                    <div class="mytitle">
+                    Why LibreOffice sucks so much<i class="em em-dog"></i><br>
+                    </div>
+                    <div class="mytext">
+                    I have used LibreOffice for many years. Current LibreOffice is 5.x, but there are more and more bugs in the software.<br>
+                    When I select an object[such as draw curve icon], the selection lose. I have to reselect the icon again in the left bar.<br>
+                    There is bug in the Color Palett too. After you select the color, the color is changed unexpectedly when the color is used<br>
+                    </div>
+
+                    <div class="mytitle">
+                    Night club shooting in Orlando Florida<i class="em em-pig"></i><br>
+                    </div>
+                    <div class="mytext">
+                    50 people are killed and 53 people are injured in a nightclub mass shooting in Orlando Florida<br>
+                    This is the worst mass shooting in U.S history, I'm not sure about that<br>
+                    Believe there are more than one shooter with assault rifle in the nightclub at 2am on Sunday.<br>
+                    Obama will come out and repeat the same thing. Hey, we need to solve the Guns issues..<br>
+                    American people said. Hey, own a gun is first amendent. We dont care how many get killed with illegal guns every year<br>
+                    What we know about the suspect?<br>
+                    The killed is identified as Omar Mateen. a U.S citizen of Afghan descent<br>
+                    U.S President Barack Obama called it 'an act of terror and an act of hate.' Islamic State claims responsibility<br> 
+                    </div>
+
+                    <div class="mytitle">
+                    Space in file directory name<i class="em em-pig"></i><br>
+                    </div>
+                    <div class="mytext">
+                    How to cd to dir with white space in dir<br>
+                    cd  "$(p 1)"<br> 
+                    </div>
+
+                    <div class="mytitle">
+                    Big new in Tech World Today, Microsoft Aquire Linkedin for 26.2 Billion<i class="em em-pig"></i><br>
+                    </div>
+                    
+
+                    
+                    <div class="mytext">
+                    Microsoft acquire Linkedin for 26.2 billion cash, this is a lots of cash<br>
+                    Microsoft paid 50% premium to Friday's close.<br>
+                    Not sure what is the rationality behind new CEO Satya Nadella<br>
+                    Microsoft bought Nokia phone business for 7.6 billion in April 2014<br>
+                    This is the biggest failure from Steve Ballmer.<br>
+                    Right now, Microsoft Window phone mareket share sinks below 1 percent<br>
+                    </div>
+
+                    <div class="mytitle">
+                    You can open URL from Vim  with gx if you use Vim 7.4, Awesome<i class="em em-pig"></i><br>
+                    </div>
+                    <div class="mytext">
+                    Vim are awesome gx<br>
+                    </div>
+
+                    <div class="mytitle">
+                    Add JavaLib to project<i class="em em-pig"></i><br>
+                    </div>
+                    <div class="mytext">
+                    </div>
+                    <div class="cen">
+                    <img src="http://localhost/zsurface/image/addjavalib.png" width="80%" height="80%" /><br>
+                    </div>
+                    <?php include("../colorhtml/java/addjavalib.html"); ?> 
+
+                     
+
+
+
+
+
 
                     
             <!-- Column 1 end -->
@@ -1011,12 +1128,10 @@
             <div class="col2">
             <!-- Column 2 start -->
                 <ul>
-                    
-                        <?php 
-                        $fileName = "indexDailyNote.html";
-                        include("../php/menu.php"); 
-                        ?>
-                    
+                    <?php 
+                    $fileName = "indexDailyNote.html";
+                    include("../php/menu.php"); 
+                    ?>
                 </ul>
             <!-- Column 2 end -->
             </div>

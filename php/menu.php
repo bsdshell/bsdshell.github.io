@@ -90,6 +90,21 @@ function createBasicPage($fileHtml, $title)
 return $content;
 }
     $pageArray = array(
+        "Traversal Iteration",
+        "Binary Iterator",
+        "Debug With LLDB",
+        "Count Occurrence pattern String",
+        "Check Prime Number Algorithm",
+        "Expedia Tech Interview",
+        "Directed Graph",
+        "Binary Tree Definition",
+        "Fix Swap Two nodes in Binary Search Tree",
+        "Swap Two nodes in Binary Search Tree",
+        "Java Longest component",
+        "Java Matrix Multiply",
+        "Microsoft Tech Interview Questions",
+        "Java Priority Heap",
+        "C++ Clone Double Linked List",
         "C++ Clone Single Linked List",
         "C++ Single Linked List",
         "C++ All children at K dist from a Node",
@@ -154,6 +169,7 @@ return $content;
         "Mathematic Note",
         "Math Definition",
         "Square Root of Two is irrational", 
+        "Square Root of Three is irrational", 
         "Visualize Binomial Theorem",
         "Binomial Identity",
         "Proof Fermat Little Theorem", 
@@ -295,6 +311,7 @@ return $content;
          
         "Blender Help",
 
+        "Java Help Compile Package ClassPath",
         "Intellij Add Java File",
         "Intellij Path Hell",
         "Intellij Change Class Output Path",

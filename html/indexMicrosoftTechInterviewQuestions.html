@@ -2,10 +2,10 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Java Regular Expression</title>
+        <title>Microsoft Tech Interview Questions</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
-        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
@@ -35,26 +35,21 @@
         <div class="colleft">
             <div class="col1">
             <!-- Column 1 start -->
+
             <div class="mytitle">
-            Java regular expression Match Group<br>
-            </div><br>
-            <?php include("../colorhtml/java/splitexp.html"); ?> 
-            <pre class="codebg">
-                        String pattern = "([a-z]+).([a-zA-Z-]+)(/)";
-                        String[] strArr = {
-                                        "www.google.com/search?q=goog/nice",
-                                        "http://www.google.msn.ca/a/b/c/d"
-                                        };
-                            Pattern r = Pattern.compile(pattern);
-                            for(int i=0; i < strArr.length; i++) {
-                                Matcher mat = r.matcher(strArr[i]);
-                                if(mat.find()) {
-                                    System.out.println("Found value: " + mat.group(1) );
-                                }
-                            }
-                                
-                       }
-            </pre>
+            K closest points in two dimension array 
+            </div>
+            <div class="mytext">
+            You are given a set of points, made up of x and y coordinates. You are also provide with a reference point.<br> 
+            Write a function that finds and return the k closest points to the reference point.<br> 
+            Assume the k can be up on serveral hundreds and allPoints is in the order of millions.<br>
+            What is the runtime complexity of your solutions?<br>
+            </div>
+            <?php include("../colorhtml/java/kclosest.html"); ?> 
+            <div class="cen">
+            <img src="http://localhost/zsurface/image/kclosest.png" width="40%" height="40%" /><br>
+            <a href="https://github.com/bsdshell/java/tree/master/KClosestPoint.java">Source Code</a>
+            </div>
 
             <!-- Column 1 end -->
             </div>
@@ -62,7 +57,7 @@
             <!-- Column 2 start -->
                 <ul>
                     <?php 
-                    $fileName = "indexJavaRegularExpression.html";
+                    $fileName = "indexMicrosoftTechInterviewQuestions.html";
                     include("../php/menu.php"); 
                     ?>
                 </ul>

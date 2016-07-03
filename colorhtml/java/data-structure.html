@@ -1,4 +1,4 @@
-<div class="highlight"><pre><span class="kt">int</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">};</span> 
+<div class="highlight"><pre><span class="kt">int</span><span class="o">[]</span> <span class="n">array</span>     <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">};</span>
         <span class="kt">int</span><span class="o">[][]</span>  <span class="n">array2</span> <span class="o">=</span> <span class="o">{{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">},</span>
                            <span class="o">{</span><span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">}};</span>
         <span class="c1">// ArrayList</span>
@@ -6,7 +6,7 @@
         <span class="n">alist</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;dog&quot;</span><span class="o">);</span>
         <span class="n">alist</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;cat&quot;</span><span class="o">);</span>
 
-        <span class="c1">// ArrayList 2D</span>
+        <span class="c1">// list of list, ArrayList 2D</span>
         <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">list2d</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;();</span>
         <span class="n">list2d</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">alist</span><span class="o">);</span>
 
@@ -63,7 +63,7 @@
         <span class="k">if</span><span class="o">(</span><span class="n">map</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">key</span><span class="o">))</span>
             <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;map contains key=&quot;</span> <span class="o">+</span> <span class="n">key</span><span class="o">);</span> 
 
-        <span class="c1">// List as Value in HashMap</span>
+        <span class="c1">// java, init list, java initialize list, List as Value in HashMap</span>
         <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">mapList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;();</span>
         <span class="n">mapList</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;1&quot;</span><span class="o">,</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">&quot;dog&quot;</span><span class="o">,</span> <span class="s">&quot;cat&quot;</span><span class="o">,</span> <span class="s">&quot;cow&quot;</span><span class="o">));</span>
         <span class="n">mapList</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;2&quot;</span><span class="o">,</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">&quot;C++&quot;</span><span class="o">,</span> <span class="s">&quot;Java&quot;</span><span class="o">,</span> <span class="s">&quot;Haskell&quot;</span><span class="o">));</span>
@@ -93,7 +93,7 @@
         <span class="o">}</span>
 
 
-        <span class="c1">// HashSet</span>
+        <span class="c1">// iterate set, for set, for hashset, loop set,   HashSet</span>
         <span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">));</span>
         <span class="n">Integer</span> <span class="n">item</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
         <span class="k">if</span><span class="o">(</span><span class="n">set</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">item</span><span class="o">))</span>
