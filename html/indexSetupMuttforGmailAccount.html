@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Fix Swap Two nodes in Binary Search Tree</title>
+        <title>Set up Mutt for Gmail Account</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
         <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -37,21 +37,64 @@
             <!-- Column 1 start -->
 
             <div class="mytitle">
-            Swap two node in BST, and fix/correct it 
+            How to set up Mutt for Gmail Account 
             </div>
             <div class="mytext">
-            1. Given a BST<br> 
-            2. Swap two nodes in the BST<br>
-            3. How to fix the BT to original BST<br>
-            Node: Use similar idea for isBST technic<br>
-            Pass the prev as argument so that prev and curr node can be compared<br>
+            1. Change Gmail Setting to support IMAP and POP<br>
+            2. brew install mutt [mutt 1.6] on Mac OSX<br>
             </div>
-            <?php include("../colorhtml/cpp/fixswapnode.html"); ?> 
             <div class="cen">
-            <img src="http://localhost/zsurface/image/swaptwonode.png" width="60%" height="60%" /><br>
-            <img src="http://localhost/zsurface/image/swaptwonode2.png" width="60%" height="60%" /><br>
-            <a href="https://github.com/bsdshell/cpp/tree/master/SwapNode.cpp">Source Code</a>
+            <img src="http://localhost/zsurface/image/imap.png" width="80%" height="80%" /><br>
+            <a href="https://github.com/bsdshell/text/tree/master/muttrc.txt">muttrc file</a>
             </div>
+
+            <div class="mytitle">
+            You need to jump through more hoops 
+            </div>
+            <div class="mytext">
+            If you still have trouble to connect to Gmail server, then check <span class="wbold">Sign-in and security</span> on your Gmail account 
+            </div>
+            <div class="cen">
+            <img src="http://localhost/zsurface/image/less.png" width="80%" height="80%" /><br>
+            </div>
+
+
+
+            <div class="mytext">
+             # Go to your Gmail Account setting and enable POP and IMAP<br>
+             # run Mutt -v<br>
+             # Make sure USE_POP  USE_IMAP  USE_SMTP are enabled<br>
+             # e.g. +USE_POP  +USE_IMAP  +USE_SMTP are good  <br>
+             # <br>
+             # If <span class="wbold">'-USE_POP  -USE_IMAP  -USE_SMTP'</span> is shown, then you need to enable it  <br>
+             # Mutt 1.4 is disabled by default. If you install Mutt on Mac using Brew[brew install mutt], then<br>
+             # Mutt 1.6 is installed and POP/IMAP are enabled by default<br>
+            <br>
+             # mutt -v  (mutt 1.6 on Mac OSX)<br>
+             #+HOMESPOOL  -USE_SETGID  +USE_DOTLOCK  -DL_STANDALONE  +USE_FCNTL  -USE_FLOCK   <br>
+             #<span class="wbold">+USE_POP  +USE_IMAP  +USE_SMTP</span>  <br>
+             #+USE_SSL_OPENSSL  -USE_SSL_GNUTLS  +USE_SASL  +USE_GSS  +HAVE_GETADDRINFO  <br>
+             #+HAVE_REGCOMP  -USE_GNU_REGEX  <br>
+             #+HAVE_COLOR  +HAVE_START_COLOR  +HAVE_TYPEAHEAD  +HAVE_BKGDSET  <br>
+             #+HAVE_CURS_SET  +HAVE_META  +HAVE_RESIZETERM  <br>
+             #+CRYPT_BACKEND_CLASSIC_PGP  +CRYPT_BACKEND_CLASSIC_SMIME  -CRYPT_BACKEND_GPGME  <br>
+            <br>
+            set imap_user           = 'yourname@gmail.com'<br>
+            set imap_pass           = 'yourname'<br>
+            set smtp_url            = 'smtp://yourname@smtp.gmail.com:587/'<br>
+            set smtp_pass           = 'password'<br>
+            set from                = 'yourname@gmail.com'<br>
+            set realname            = 'name'<br>
+            set folder              = 'imaps://imap.gmail.com:993'<br>
+            set spoolfile           = '+INBOX'<br>
+            set postponed           = '+[Gmail]/Drafts'<br>
+            set header_cache        = ~/.mutt/cache/headers<br>
+            set message_cachedir    = ~/.mutt/cache/bodies<br>
+            set certificate_file    = ~/.mutt/certificates<br>
+            set move                = no<br>
+            set smtp_authenticators = ‘gssapi:login’<br>
+            </div>
+
 
             <!-- Column 1 end -->
             </div>
@@ -59,7 +102,7 @@
             <!-- Column 2 start -->
                 <ul>
                     <?php 
-                    $fileName = "indexFixSwapTwonodesinBinarySearchTree.html";
+                    $fileName = "indexSetupMuttforGmailAccount.html";
                     include("../php/menu.php"); 
                     ?>
                 </ul>
