@@ -1,0 +1,66 @@
+<div class="highlight"><pre><span class="c1">//1, 1</span>
+    <span class="c1">//</span>
+    <span class="c1">//1, 4 </span>
+    <span class="c1">//&lt;1, 2-&gt;3&gt;</span>
+    <span class="c1">//&lt;2, 4&gt;</span>
+    <span class="c1">//&lt;3, 4&gt;</span>
+    <span class="c1">//&lt;2, 1&gt;</span>
+    <span class="c1">//              1 </span>
+    <span class="c1">//         2        3     </span>
+    <span class="c1">//              4</span>
+    <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isAPath</span><span class="o">(</span><span class="n">Node</span> <span class="n">sNode</span><span class="o">,</span> <span class="n">Node</span> <span class="n">dNode</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">,</span> <span class="n">Node</span><span class="o">&gt;</span> <span class="n">map</span><span class="o">,</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">set</span><span class="o">){</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">sNode</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">dNode</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">set</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">sNode</span><span class="o">)){</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+            <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+                <span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">sNode</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">sNode</span><span class="o">.</span><span class="na">data</span> <span class="o">==</span> <span class="n">dNode</span><span class="o">.</span><span class="na">data</span><span class="o">)</span>
+                <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="k">else</span><span class="o">{</span>
+                <span class="n">Node</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">sNode</span><span class="o">);</span>
+                <span class="k">while</span><span class="o">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+                    <span class="k">if</span><span class="o">(</span><span class="n">curr</span><span class="o">.</span><span class="na">data</span> <span class="o">==</span> <span class="n">dNode</span><span class="o">.</span><span class="na">data</span><span class="o">){</span>
+                        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+                    <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+                        <span class="k">return</span> <span class="n">isAPath</span><span class="o">(</span><span class="n">curr</span><span class="o">.</span><span class="na">next</span><span class="o">,</span> <span class="n">dNode</span><span class="o">,</span> <span class="n">map</span><span class="o">,</span> <span class="n">set</span><span class="o">);</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isLoop</span><span class="o">(</span><span class="n">Node</span> <span class="n">curr</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">,</span> <span class="n">Node</span><span class="o">&gt;</span> <span class="n">map</span><span class="o">,</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">set</span><span class="o">){</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">set</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">curr</span><span class="o">)){</span>
+                <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+                <span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">curr</span><span class="o">);</span>
+                <span class="n">Node</span> <span class="n">child</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">curr</span><span class="o">);</span>
+                <span class="k">while</span><span class="o">(</span><span class="n">child</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+                    <span class="k">if</span><span class="o">(</span><span class="n">isLoop</span><span class="o">(</span><span class="n">child</span><span class="o">,</span> <span class="n">map</span><span class="o">,</span> <span class="n">set</span><span class="o">))</span>
+                        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span> 
+                    <span class="n">child</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+                <span class="o">}</span>
+                <span class="n">set</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">curr</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isPathMatrix</span><span class="o">(</span><span class="kt">int</span> <span class="n">s</span><span class="o">,</span> <span class="kt">int</span> <span class="n">d</span><span class="o">,</span> <span class="kt">int</span><span class="o">[][]</span> <span class="n">arr</span><span class="o">,</span> <span class="kt">int</span> <span class="n">height</span><span class="o">,</span> <span class="kt">int</span> <span class="n">width</span><span class="o">){</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">arr</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">s</span> <span class="o">&lt;</span> <span class="n">height</span><span class="o">){</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">s</span> <span class="o">==</span> <span class="n">d</span><span class="o">)</span>
+                <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="k">else</span><span class="o">{</span>
+                <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span> <span class="n">width</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+                    <span class="k">if</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">s</span><span class="o">][</span><span class="n">i</span><span class="o">]</span> <span class="o">==</span> <span class="mi">1</span><span class="o">){</span>
+                        <span class="k">return</span> <span class="n">isPathMatrix</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">d</span><span class="o">,</span> <span class="n">arr</span><span class="o">,</span> <span class="n">height</span><span class="o">,</span> <span class="n">width</span><span class="o">);</span> 
+                    <span class="o">}</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="o">}</span>
+</pre></div>

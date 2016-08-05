@@ -1,0 +1,9 @@
+<div class="highlight"><pre><span class="c1">//postorder recursion</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">PostOrder</span><span class="o">(</span><span class="n">Node</span> <span class="n">r</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span> <span class="n">r</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">PostOrder</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
+            <span class="n">PostOrder</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;[&quot;</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="na">data</span> <span class="o">+</span> <span class="s">&quot;]&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</pre></div>

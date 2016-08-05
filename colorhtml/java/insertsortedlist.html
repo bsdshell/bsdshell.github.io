@@ -1,0 +1,32 @@
+<div class="highlight"><pre><span class="c1">// Insert node to a sorted list</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">SNode</span> <span class="nf">insert</span><span class="o">(</span><span class="n">SNode</span> <span class="n">node</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">){</span>
+        <span class="n">SNode</span> <span class="n">head</span> <span class="o">=</span> <span class="n">node</span><span class="o">;</span>
+        <span class="n">SNode</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">node</span><span class="o">;</span> 
+        <span class="n">SNode</span> <span class="n">prev</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span> 
+        <span class="k">while</span><span class="o">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="n">curr</span><span class="o">.</span><span class="na">data</span><span class="o">){</span>
+            <span class="n">prev</span> <span class="o">=</span> <span class="n">curr</span><span class="o">;</span>
+            <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="k">if</span><span class="o">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">prev</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+                <span class="c1">// 3, [2]&lt;-[4]  &gt;  [2]&lt;-{3}&lt;-[4]</span>
+                <span class="n">prev</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SNode</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
+                <span class="n">prev</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">curr</span><span class="o">;</span>
+            <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+                <span class="c1">// {1} [2] &gt; {1}&lt;-[2]</span>
+                <span class="n">head</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SNode</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
+                <span class="n">head</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">curr</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+            <span class="c1">// [2] {3}  &gt; [2]&lt;-{3}</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">prev</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+                <span class="n">prev</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SNode</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
+            <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+                <span class="c1">// {3}</span>
+                <span class="n">head</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SNode</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">head</span><span class="o">;</span>
+    <span class="o">}</span>
+</pre></div>

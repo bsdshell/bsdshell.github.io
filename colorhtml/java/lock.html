@@ -1,0 +1,16 @@
+<div class="highlight"><pre><span class="kd">class</span> <span class="nc">MyLock</span><span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">isLocked</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">boolean</span> <span class="nf">lock</span><span class="o">(){</span>
+        <span class="k">if</span><span class="o">(!</span><span class="n">isLocked</span><span class="o">){</span>
+            <span class="n">isLocked</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="k">return</span> <span class="n">isLocked</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">unlock</span><span class="o">(){</span>
+        <span class="n">isLocked</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="n">notify</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>

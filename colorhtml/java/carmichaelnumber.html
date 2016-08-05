@@ -1,0 +1,13 @@
+<div class="highlight"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">CarmichaelNumber</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">){</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="o">;</span> <span class="n">b</span><span class="o">&lt;</span><span class="n">n</span><span class="o">;</span> <span class="n">b</span><span class="o">++){</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">gcd</span><span class="o">(</span><span class="n">b</span><span class="o">,</span> <span class="n">n</span><span class="o">)</span> <span class="o">==</span> <span class="mi">1</span><span class="o">){</span>
+                <span class="n">BigDecimal</span> <span class="n">bg</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="n">b</span><span class="o">);</span>
+                <span class="n">BigDecimal</span> <span class="n">big</span> <span class="o">=</span> <span class="n">bg</span><span class="o">.</span><span class="na">pow</span><span class="o">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">);</span>
+                <span class="n">BigDecimal</span> <span class="n">bgremainder</span> <span class="o">=</span> <span class="n">big</span><span class="o">.</span><span class="na">remainder</span><span class="o">(</span><span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="n">n</span><span class="o">));</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">bgremainder</span><span class="o">.</span><span class="na">toString</span><span class="o">())</span> <span class="o">!=</span> <span class="mi">1</span><span class="o">)</span>
+                    <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+</pre></div>

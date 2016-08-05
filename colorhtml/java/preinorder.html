@@ -1,0 +1,51 @@
+<div class="highlight"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">preorder</span><span class="o">(</span><span class="n">Node</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">root</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;[&quot;</span> <span class="o">+</span> <span class="n">root</span><span class="o">.</span><span class="na">data</span> <span class="o">+</span> <span class="s">&quot;]&quot;</span><span class="o">);</span>
+            <span class="n">inorder</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
+            <span class="n">inorder</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">inorder</span><span class="o">(</span><span class="n">Node</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">root</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">inorder</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;[&quot;</span> <span class="o">+</span> <span class="n">root</span><span class="o">.</span><span class="na">data</span> <span class="o">+</span> <span class="s">&quot;]&quot;</span><span class="o">);</span>
+            <span class="n">inorder</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">preorderIteration</span><span class="o">(</span><span class="n">Node</span> <span class="n">r</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">st</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;();</span>
+        <span class="n">Node</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">r</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span> <span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">while</span><span class="o">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">||</span> <span class="o">!</span><span class="n">st</span><span class="o">.</span><span class="na">empty</span><span class="o">())</span> <span class="o">{</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;[&quot;</span><span class="o">+</span><span class="n">curr</span><span class="o">.</span><span class="na">data</span><span class="o">+</span><span class="s">&quot;]&quot;</span><span class="o">);</span>
+                    <span class="n">st</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">curr</span><span class="o">);</span>
+                    <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="na">left</span><span class="o">;</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                    <span class="n">Node</span> <span class="n">node</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+                    <span class="n">curr</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="na">right</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="n">r</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">inorderIteration</span><span class="o">(</span><span class="n">Node</span> <span class="n">r</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">st</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;();</span>
+        <span class="n">Node</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">r</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span> <span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">while</span><span class="o">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">||</span> <span class="o">!</span><span class="n">st</span><span class="o">.</span><span class="na">empty</span><span class="o">())</span> <span class="o">{</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">st</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="n">curr</span><span class="o">);</span>
+                    <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="na">left</span><span class="o">;</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                    <span class="n">Node</span> <span class="n">node</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;[&quot;</span><span class="o">+</span><span class="n">curr</span><span class="o">.</span><span class="na">data</span><span class="o">+</span><span class="s">&quot;]&quot;</span><span class="o">);</span>
+                    <span class="n">curr</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="na">right</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="n">r</span><span class="o">;</span>
+    <span class="o">}</span>
+</pre></div>

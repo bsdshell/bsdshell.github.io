@@ -1,0 +1,52 @@
+<div class="highlight"><pre><span class="kd">static</span> <span class="n">SNode</span> <span class="nf">mergeSortedList</span><span class="o">(</span><span class="n">SNode</span> <span class="n">head1</span><span class="o">,</span> <span class="n">SNode</span> <span class="n">head2</span><span class="o">){</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">head1</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+            <span class="k">return</span> <span class="n">head2</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">head2</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+            <span class="k">return</span> <span class="n">head1</span><span class="o">;</span>
+        <span class="n">SNode</span> <span class="n">curr1</span> <span class="o">=</span> <span class="n">head1</span><span class="o">;</span>
+        <span class="n">SNode</span> <span class="n">curr2</span> <span class="o">=</span> <span class="n">head2</span><span class="o">;</span>
+        <span class="n">SNode</span> <span class="n">curr</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span> 
+        <span class="n">SNode</span> <span class="n">head</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+
+        <span class="k">while</span><span class="o">(</span><span class="n">curr1</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">curr2</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">curr1</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+                    <span class="n">curr</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SNode</span><span class="o">(</span><span class="n">curr2</span><span class="o">.</span><span class="na">data</span><span class="o">);</span>
+                <span class="k">else</span>
+                    <span class="n">head</span> <span class="o">=</span> <span class="n">curr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SNode</span><span class="o">(</span><span class="n">curr2</span><span class="o">.</span><span class="na">data</span><span class="o">);</span>
+
+                <span class="n">curr2</span> <span class="o">=</span> <span class="n">curr2</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+
+            <span class="o">}</span><span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">curr2</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+                    <span class="n">curr</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SNode</span><span class="o">(</span><span class="n">curr1</span><span class="o">.</span><span class="na">data</span><span class="o">);</span>
+                <span class="k">else</span>
+                    <span class="n">head</span> <span class="o">=</span> <span class="n">curr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SNode</span><span class="o">(</span><span class="n">curr1</span><span class="o">.</span><span class="na">data</span><span class="o">);</span>
+
+                <span class="n">curr1</span> <span class="o">=</span> <span class="n">curr1</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+            <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">curr1</span><span class="o">.</span><span class="na">data</span> <span class="o">&lt;</span> <span class="n">curr2</span><span class="o">.</span><span class="na">data</span><span class="o">){</span>
+                    <span class="k">if</span><span class="o">(</span><span class="n">curr</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
+                        <span class="n">head</span> <span class="o">=</span> <span class="n">curr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SNode</span><span class="o">(</span><span class="n">curr1</span><span class="o">.</span><span class="na">data</span><span class="o">);</span>
+                    <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+                        <span class="n">curr</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SNode</span><span class="o">(</span><span class="n">curr1</span><span class="o">.</span><span class="na">data</span><span class="o">);</span>
+                    <span class="o">}</span>
+
+                    <span class="n">curr1</span> <span class="o">=</span> <span class="n">curr1</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+                <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+                    <span class="k">if</span><span class="o">(</span><span class="n">curr</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+                        <span class="n">head</span> <span class="o">=</span> <span class="n">curr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SNode</span><span class="o">(</span><span class="n">curr2</span><span class="o">.</span><span class="na">data</span><span class="o">);</span>
+                    <span class="k">else</span><span class="o">{</span>
+                        <span class="n">curr</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SNode</span><span class="o">(</span><span class="n">curr2</span><span class="o">.</span><span class="na">data</span><span class="o">);</span>
+                    <span class="o">}</span>
+
+                    <span class="n">curr2</span> <span class="o">=</span> <span class="n">curr2</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+
+            <span class="k">if</span><span class="o">(</span><span class="n">curr</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+                <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">head</span><span class="o">;</span>
+    <span class="o">}</span>
+</pre></div>

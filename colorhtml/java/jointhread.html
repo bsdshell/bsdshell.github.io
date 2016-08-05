@@ -1,0 +1,36 @@
+<div class="highlight"><pre><span class="kd">class</span> <span class="nc">TestJoin</span> <span class="kd">extends</span> <span class="n">Thread</span><span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(){</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">5</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">500</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;[id=&quot;</span> <span class="o">+</span> <span class="n">getId</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; name=&quot;</span> <span class="o">+</span> <span class="n">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;][&quot;</span><span class="o">+</span><span class="n">i</span><span class="o">+</span><span class="s">&quot;]&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JoinThread</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">test1</span><span class="o">();</span>
+    <span class="o">}</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">test1</span><span class="o">(){</span>
+        <span class="n">Aron</span><span class="o">.</span><span class="na">beg</span><span class="o">();</span>
+        <span class="n">TestJoin</span> <span class="n">t1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TestJoin</span><span class="o">();</span>
+        <span class="n">TestJoin</span> <span class="n">t2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TestJoin</span><span class="o">();</span>
+        <span class="n">TestJoin</span> <span class="n">t3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TestJoin</span><span class="o">();</span>
+
+        <span class="n">t1</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+        <span class="k">try</span><span class="o">{</span>
+            <span class="n">t1</span><span class="o">.</span><span class="na">join</span><span class="o">(</span><span class="mi">1500</span><span class="o">);</span>
+        <span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">){</span>
+        <span class="o">}</span>
+
+        <span class="n">t2</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+        <span class="n">t3</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+
+        <span class="n">Aron</span><span class="o">.</span><span class="na">end</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
