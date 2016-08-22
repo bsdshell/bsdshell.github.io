@@ -16,8 +16,7 @@ pre{
     font-weight:500;
 }
 
-.highlight .hll { background-color: #33333 }
-.highlight  { background: #FFFFFF; }
+.highlight .hll { background-color: #333333 }
 .highlight .c { color: #408080; font-style: italic } /* Comment */
 .highlight .n {color: rgba(1, 2, 10, 0.97);} 
 

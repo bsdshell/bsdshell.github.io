@@ -40,14 +40,32 @@
             Definition of Binary Search Tree 
             </div>
             <div class="mytext">
-            Binary Search Tree is Binary Tree and have following properties:<br> 
-            Maximum of left subtree is less than the root node<br>
-            Minimum of right subtree is greater than the root node<br>
+            <span class="wbold">Binary Search Tree is Binary Tree and have following properties</span><br> 
+            0. Null is Binary Search Tree<br>
+            1. Maximum of left subtree is less than the root node<br>
+            2. Minimum of right subtree is greater than the root node<br>
             </div>
-            <?php include("../colorhtml/cpp/mystack.html"); ?> 
+            <?php include("../colorhtml/java/isbstdef.html"); ?> 
+
+            <div class="mytext">
+            <span class="wbold">Use Backtrack to store the previous node</span><br> 
+            0. Null is Binary Search Tree<br>
+            1. Use inorder traveral to compare previous and current node<br>
+            2. Return false if previous node is greater than the current node<br>
+            </div>
+            <?php include("../colorhtml/java/isbst.html"); ?> 
+
+            <div class="mytext">
+            <span class="wbold">Use static variable to store the previous node</span><br> 
+            0. Null is Binary Search Tree<br>
+            1. Use inorder traveral to compare previous and current node<br>
+            2. Return false if previous node is greater than the current node<br>
+            </div>
+            <?php include("../colorhtml/java/isbststatic.html"); ?> 
+
+
             <div class="cen">
-            <img src="http://localhost/zsurface/image/bstdefinition.png" width="40%" height="40%" /><br>
-            <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
+            <a href="https://github.com/bsdshell/java/tree/master/isBST.java">Source Code</a>
             </div>
 
             <!-- Column 1 end -->

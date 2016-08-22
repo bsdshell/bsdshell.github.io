@@ -28,13 +28,27 @@
         <div class="colleft">
             <div class="col1">
                 <!-- Column 1 start -->
+                <div class="mytext">
+                Let's understand the question first<br>
+                Given an array [2, 3, 4], and you need to product an array [3*4, 2*4, 2*3] => [12, 8, 6]<br>
+                In other words, current element is removed and multiply the rest of elements.<br>
+                
+                It is easy to use two loops to solve the problem, but the runtime is <span class="wbold">$\mathcal{O}(n^2)$</span><br>  
+                How to solve the problem with runtime <span class="wbold">$\mathcal{O}(n)$</span>, but you can allow to use space <span class="wbold">$\mathcal{O}(n)$</span><br><br>  
+                <span class="wbold">Here is the trick with dynamic programming.</span><br>
+                </div> 
                 <div class="mytextbox">
                     <h3 class="haskellc">Product of all elements in array without the current element<h3>
                     <div class="cen">
-                    <img src="http://localhost/zsurface/image/MultiArray.svg" width="40%" height="40%" /><br>
+                    <img src="http://zsurface.com/image/MultiArray.svg" width="40%" height="40%" /><br>
                     </div>
                     <?php include("../colorhtml/java/multiply.html"); ?>
                 </div>
+
+                <div class="cen">
+                <a href="https://github.com/bsdshell/java/tree/master/MultiplyArrayInteger.java">Source Code</a>
+                </div>
+
             <!-- Column 1 end -->
             </div>
             <div class="col2">

@@ -90,6 +90,16 @@ function createBasicPage($fileHtml, $title)
 return $content;
 }
     $pageArray = array(
+        "Tokenize Simple XML",
+        "Jason Parser in Java",
+        "Find the Lowest Common Ancestor in a Binary Tree",
+        "Find a pair of elements from an array whose sum equals a given number",
+        "Least Recent Used LRU in Java",
+        "Array to Balanced BST",
+        "Implement HashMap with array",
+        "Find the First Non-Repeating Char from Stream Char",
+        "Excel Column Header",
+        "Minimum Distance Between two given words",
         "Set up Mutt for Gmail Account",
         "Throw Throws Throwable in Java",
         "Get All methods in Java",
@@ -106,7 +116,6 @@ return $content;
         "Design Parking Lot",
         "Graph Loop and Path",
         "Range Query",
-        "Nearest Common Ancessor Binary Tree",
         "Find the maximum children of given tree",
         "Serialize Binary Tree Ternary Tree",
         "Maximum Continuous Sum List",
@@ -173,7 +182,6 @@ return $content;
         "C and C++ unsigned Integer Gotcha",
         "C and C++ Tutorial",
         "Shell Script",
-        "Vim Tricks",
         "Eight Queen Solver",
         "Magic Square Solver",
         "Sudoku Solver",
@@ -340,6 +348,7 @@ return $content;
         "Blender Help",
 
         "Java Help Compile Package ClassPath",
+        "Intellij Import your package",
         "Intellij Add Java File",
         "Intellij Path Hell",
         "Intellij Change Class Output Path",
@@ -363,8 +372,10 @@ return $content;
 
         "Install Maven in Mac OSX ",
         "Setup The Play Framework",
+        "Vim Tricks",
         "Latex Matrix",
         "Latex Example",
+        "English Note",
         "Daily Note",
     );
 
