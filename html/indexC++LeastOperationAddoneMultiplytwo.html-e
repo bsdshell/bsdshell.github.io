@@ -42,7 +42,7 @@
             </div>
             <?php include("../colorhtml/cpp/leastop.html"); ?> 
             <div class="cen">
-            <img src="http://zsurface.com/image/leastop.png" width="40%" height="40%" /><br>
+            <img src="http://localhost/zsurface/image/leastop.png" width="40%" height="40%" /><br>
             <a href="https://github.com/bsdshell/cpp/tree/master/LeastOperation.cpp">Source Code</a>
             </div>
 

@@ -40,7 +40,7 @@
             </div> 
             <?php include("../colorhtml/cpp/smartcount.html"); ?> 
             <div class="cen">
-            <img src="http://zsurface.com/image/smartpointer1.png" width="50%" height="50%" /><br>
+            <img src="http://localhost/zsurface/image/smartpointer1.png" width="50%" height="50%" /><br>
             </div>
 
             <div class="mytitle">
@@ -52,7 +52,7 @@
             </div> 
             <?php include("../colorhtml/cpp/breakcycle.html"); ?> 
             <div class="cen">
-            <img src="http://zsurface.com/image/breakcycle.png" width="50%" height="50%" /><br>
+            <img src="http://localhost/zsurface/image/breakcycle.png" width="50%" height="50%" /><br>
             </div>
             <div class="mytitle">
             Use smart pointer in return

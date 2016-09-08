@@ -45,7 +45,7 @@
             </div>
             <?php include("../colorhtml/java/maxlistindex.html"); ?> 
             <div class="cen">
-            <img src="http://zsurface.com/image/maxlist.png" width="60%" height="60%" /><br>
+            <img src="http://localhost/zsurface/image/maxlist.png" width="60%" height="60%" /><br>
             <a href="https://github.com/bsdshell/java/tree/master/MaxContinuousList.java">Source Code</a>
             </div>
 

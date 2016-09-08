@@ -1,0 +1,26 @@
+<div class="highlight"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">serializeBinary</span><span class="o">(</span><span class="n">Node</span> <span class="n">root</span><span class="o">,</span> <span class="n">BufferedWriter</span> <span class="n">out</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">root</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">data</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="o">);</span>
+                <span class="n">serializeBinary</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">left</span><span class="o">,</span> <span class="n">out</span><span class="o">);</span>
+                <span class="n">serializeBinary</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">right</span><span class="o">,</span> <span class="n">out</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">&quot;# &quot;</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Error&quot;</span> <span class="o">+</span> <span class="n">e</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Node</span> <span class="nf">deserializeIterator</span><span class="o">(</span><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ite</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Node</span> <span class="n">root</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">ite</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">String</span> <span class="n">token</span> <span class="o">=</span> <span class="n">ite</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+            <span class="k">if</span><span class="o">(!</span><span class="n">token</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;#&quot;</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">root</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="o">(</span><span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">token</span><span class="o">));</span>
+                <span class="n">root</span><span class="o">.</span><span class="na">left</span> <span class="o">=</span> <span class="n">deserializeIterator</span><span class="o">(</span><span class="n">ite</span><span class="o">);</span>
+                <span class="n">root</span><span class="o">.</span><span class="na">right</span> <span class="o">=</span> <span class="n">deserializeIterator</span><span class="o">(</span><span class="n">ite</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span> 
+        <span class="k">return</span> <span class="n">root</span><span class="o">;</span>
+    <span class="o">}</span>
+</pre></div>

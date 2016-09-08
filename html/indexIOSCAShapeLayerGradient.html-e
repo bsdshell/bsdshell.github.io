@@ -41,7 +41,7 @@
                 Draw Rectangle with CAShapeLayer Gradient 
                 </div><br>
                 <div class="cen">
-                <img src="http://zsurface.com/image/gradient.png" width="30%" height="30%" /><br> 
+                <img src="http://localhost/zsurface/image/gradient.png" width="30%" height="30%" /><br> 
                 <a href="https://github.com/bsdshell/xcode/blob/master/OneGradientLayer/EmptyApplication/AppDelegate.m#L24">Source Code</a>
                 </div> 
             <!-- Column 1 end -->

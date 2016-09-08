@@ -45,7 +45,7 @@
             </div> 
             <?php include("../colorhtml/cpp/clonesll.html"); ?> 
             <div class="cen">
-            <img src="http://zsurface.com/image/clonesll.png" width="40%" height="40%" /><br>
+            <img src="http://localhost/zsurface/image/clonesll.png" width="40%" height="40%" /><br>
             <a href="https://github.com/bsdshell/cpp/tree/master/Aron.cpp">Source Code</a>
             </div>
 

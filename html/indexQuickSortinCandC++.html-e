@@ -28,7 +28,7 @@
         <div class="colleft">
             <div class="col1">
             <!-- Column 1 start -->
-                <img src="http://zsurface.com/image/quicksort_diagram.svg" width="100%" height="100%" /><br> 
+                <img src="http://localhost/zsurface/image/quicksort_diagram.svg" width="100%" height="100%" /><br> 
                 <?php include("../colorhtml/cpp/quicksort.html"); ?>
             <!-- Column 1 end -->
             </div>

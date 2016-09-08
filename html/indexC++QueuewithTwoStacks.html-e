@@ -44,7 +44,7 @@
             </div>
             <?php include("../colorhtml/cpp/queuetwostacks.html"); ?> 
             <div class="cen">
-            <img src="http://zsurface.com/image/cppstd.png" width="40%" height="40%" /><br>
+            <img src="http://localhost/zsurface/image/cppstd.png" width="40%" height="40%" /><br>
             <a href="https://github.com/bsdshell/cpp/tree/master/MyStack.cpp">Source Code</a>
             </div>
 

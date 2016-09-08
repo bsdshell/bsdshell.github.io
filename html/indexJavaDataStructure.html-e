@@ -41,7 +41,7 @@
                 Java Data Structure, Map, HashMap, Set, HashSet, List, ArrayList, Arrays.asList  
                 </div>
                 <div class="cen">
-                <img src="http://zsurface.com/image/javadatastructure.svg" width="60%" height="60%" /><br> 
+                <img src="http://localhost/zsurface/image/javadatastructure.svg" width="60%" height="60%" /><br> 
                 </div>
                 <?php include("../colorhtml/java/data-structure.html"); ?> 
             <!-- Column 1 end -->

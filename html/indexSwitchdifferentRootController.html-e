@@ -50,8 +50,8 @@
                     <a href="https://github.com/bsdshell/xcode/tree/master/SwitchRootController">Github Source</a>
                     </p>
                     <div class="cen">
-                    <img src="http://zsurface.com/image/controller1.png" width="20%" height="20%" /> 
-                    <img src="http://zsurface.com/image/controller2.png" width="20%" height="20%" /> 
+                    <img src="http://localhost/zsurface/image/controller1.png" width="20%" height="20%" /> 
+                    <img src="http://localhost/zsurface/image/controller2.png" width="20%" height="20%" /> 
                     </div>
                 </div>
             <!-- Column 1 end -->

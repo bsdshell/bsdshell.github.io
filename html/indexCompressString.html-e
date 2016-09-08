@@ -44,7 +44,7 @@
             </div>
             <?php include("../colorhtml/java/compressstr.html"); ?> 
             <div class="cen">
-            <img src="http://zsurface.com/image/compress.png" width="40%" height="40%" /><br>
+            <img src="http://localhost/zsurface/image/compress.png" width="40%" height="40%" /><br>
             <a href="https://github.com/bsdshell/java/tree/master/Compress.java">Source Code</a>
             </div>
 

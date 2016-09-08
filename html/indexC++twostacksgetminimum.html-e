@@ -40,7 +40,7 @@
             </div> 
             <?php include("../colorhtml/cpp/getmin.html"); ?> 
             <div class="cen">
-            <img src="http://zsurface.com/image/getminstack.png" width="50%" height="50%" /><br>
+            <img src="http://localhost/zsurface/image/getminstack.png" width="50%" height="50%" /><br>
             </div>
 
             <!-- Column 1 end -->

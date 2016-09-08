@@ -41,7 +41,7 @@
             </div>
             <?php include("../colorhtml/java/longestcomponent.html"); ?> 
             <div class="cen">
-            <img src="http://zsurface.com/image/longestcomponent.png" width="50%" height="50%" /><br>
+            <img src="http://localhost/zsurface/image/longestcomponent.png" width="50%" height="50%" /><br>
             <a href="https://github.com/bsdshell/java/tree/master/longestComponent.java">Source Code</a>
             </div>
 

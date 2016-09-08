@@ -44,7 +44,7 @@
             </div>
             <?php include("../colorhtml/cpp/mystack.html"); ?> 
             <div class="cen">
-            <img src="http://zsurface.com/image/pill.svg" width="50%" height="50%" /><br>
+            <img src="http://localhost/zsurface/image/pill.svg" width="50%" height="50%" /><br>
             <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
             </div>
 

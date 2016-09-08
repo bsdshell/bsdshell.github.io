@@ -40,24 +40,24 @@
                     <div class="mytitle">
                     One Queue in Binary Tree  
                     </div>
-                    <img src="http://zsurface.com/image/queue1.svg" width="100%" height="100%" /><br> 
+                    <img src="http://localhost/zsurface/image/queue1.svg" width="100%" height="100%" /><br> 
                     <div class="mytitle">
                     Two Queue in Binary Tree  
                     </div>
-                    <img src="http://zsurface.com/image/queue2.svg" width="100%" height="100%" /><br> 
+                    <img src="http://localhost/zsurface/image/queue2.svg" width="100%" height="100%" /><br> 
                     <div class="mytitle">
                     One Stack in Binary Tree  
                     </div>
-                    <img src="http://zsurface.com/image/stack1.svg" width="100%" height="100%" /><br> 
+                    <img src="http://localhost/zsurface/image/stack1.svg" width="100%" height="100%" /><br> 
                     <div class="mytitle">
                     Two Stack in Binary Tree  
                     </div>
-                    <img src="http://zsurface.com/image/stack2.svg" width="100%" height="100%" /><br> 
+                    <img src="http://localhost/zsurface/image/stack2.svg" width="100%" height="100%" /><br> 
                     <div class="mytitle">
                     Check Palindrome with Two Stacks  
                     </div>
                     <div class="cen">
-                    <img src="http://zsurface.com/image/twostack1.png" width="80%" height="80%" /><br> 
+                    <img src="http://localhost/zsurface/image/twostack1.png" width="80%" height="80%" /><br> 
                     </div>
 
             <!-- Column 1 end -->

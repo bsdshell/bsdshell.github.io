@@ -47,18 +47,18 @@
                     See the following screenshot how to switch different scheme file when you rename the project<br>
                     </p>
                         <div class="cen">
-                        <img src="http://zsurface.com/image/renameproject.png" width="80%" height="80%" /><br> 
+                        <img src="http://localhost/zsurface/image/renameproject.png" width="80%" height="80%" /><br> 
                         </div>
                     <p>
                     1. Delete the old test file<br>
                     2. Add new new test file to new name project<br>
                     </p>
                     <div class="cen">
-                        <img src="http://zsurface.com/image/screenshot11.png" width="50%" height="50%" /><br><br> 
-                        <img src="http://zsurface.com/image/screenshot12.png" width="50%" height="50%" /><br><br> 
-                        <img src="http://zsurface.com/image/screenshot13.png" width="50%" height="50%" /><br><br> 
-                        <img src="http://zsurface.com/image/screenshot14.png" width="50%" height="50%" /><br><br> 
-                        <img src="http://zsurface.com/image/screenshot15.png" width="50%" height="50%" /><br><br> 
+                        <img src="http://localhost/zsurface/image/screenshot11.png" width="50%" height="50%" /><br><br> 
+                        <img src="http://localhost/zsurface/image/screenshot12.png" width="50%" height="50%" /><br><br> 
+                        <img src="http://localhost/zsurface/image/screenshot13.png" width="50%" height="50%" /><br><br> 
+                        <img src="http://localhost/zsurface/image/screenshot14.png" width="50%" height="50%" /><br><br> 
+                        <img src="http://localhost/zsurface/image/screenshot15.png" width="50%" height="50%" /><br><br> 
                     </div>
                 </div>
             <!-- Column 1 end -->

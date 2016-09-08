@@ -56,6 +56,25 @@
      display: inline-flex;
 }
 
+.source{
+     font-size: 29px;
+     background: rgba(20, 80, 26, 0.86);
+     color: rgb(218, 215, 216);
+     border-radius: 2px;
+     padding: 2px, 2px, 2px, 1px;
+     font-family: monospace;
+     padding-right: 10px;
+     padding-left: 10px;
+     padding-bottom: 10px;
+     padding-top: 10px;
+     display: inline-flex;
+}
+
+
+a {
+    text-decoration: none;
+}
+
 .wbold{
      font-size: 18px;
      //color: rgb(179, 150, 36);
@@ -87,7 +106,7 @@
     text-align: center;
     vertical-align: middle;
     color: #818181;
-    background:#D4DCCB;
+    background: #ffffff;
 }
 
 .box2 {
@@ -103,12 +122,25 @@
     width:80%;
     font-size:16px;
 }
+.logo{
+    text-align:center;
+    font-size: 40px;
+    /* font-size:16px; */
+    font-family: cursive;
+    margin-top: 200px;
+    margin-left:auto;
+    margin-right:auto;
+    background: #fdfdfb;
+    color: beige;
+}
+
 
 .cen{
     text-align:center;
     font-size:16px;
     margin-left:auto;
     margin-right:auto;
+    background: #fdfdfb;
 }
 
 .codebg{
@@ -181,9 +213,9 @@ pre.textbox{
 .mytext{
     margin:auto;
     /* width:80%; */
-    color: rgb(236, 237, 241);
+    color: rgb(0, 0, 0);
     /* font-size:18px; */
-    background: #444;
+    background: #f3f3f3;
     margin-left: 0px;
     /* text-indent: 10px; */
     padding-left: 40px;
@@ -373,6 +405,9 @@ pre.textbox{
 .tooltip-wrap:hover .tooltip-content {
   display: block;
 }
+
+
+
 
 
 

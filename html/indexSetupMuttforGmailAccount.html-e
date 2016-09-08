@@ -40,11 +40,16 @@
             How to set up Mutt for Gmail Account 
             </div>
             <div class="mytext">
+            0. Mutt is Command line IMAP/POP email client.<br>
+            1. If you manage many emails and love Command Line, then Mutt is excellent tool for you.<br>
+            2. It is super easy to setup with Gmail<br><br>
+
+            <span class="wbold">Let's dive into the steps how to setup Mutt with Gmail</span><br>
             1. Change Gmail Setting to support IMAP and POP<br>
-            2. brew install mutt [mutt 1.6] on Mac OSX<br>
+            2. brew install mutt [mutt 1.6] on Mac OSX. If you don't see any error, you are good to go<br>
             </div>
             <div class="cen">
-            <img src="http://zsurface.com/image/imap.png" width="80%" height="80%" /><br>
+            <img src="http://localhost/zsurface/image/imap.png" width="80%" height="80%" /><br>
             <a href="https://github.com/bsdshell/text/tree/master/muttrc.txt">muttrc file</a>
             </div>
 
@@ -52,10 +57,10 @@
             You need to jump through more hoops 
             </div>
             <div class="mytext">
-            If you still have trouble to connect to Gmail server, then check <span class="wbold">Sign-in and security</span> on your Gmail account 
+            If you still have trouble to connect to Gmail Server, then check <span class="wbold">Sign-in and security</span> on your Gmail Account 
             </div>
             <div class="cen">
-            <img src="http://zsurface.com/image/less.png" width="80%" height="80%" /><br>
+            <img src="http://localhost/zsurface/image/less.png" width="80%" height="80%" /><br>
             </div>
 
 

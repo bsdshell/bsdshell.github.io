@@ -38,9 +38,60 @@
             <div class="col1">
             <!-- Column 1 start -->
                     <div class="mytitle">
+                    Vim Tips<i class="em em-anchor"></i><br>
+                    </div>
+
+                    <pre class="textbox">
+                    run man page inside vim
+                    <span class="cmd">:runtime ftplugin/man.vim</span>
+                    <span class="cmd">:Man grep</span>
+
+                    How to append content to register
+                    <span class="cmd">:"Ayy</span>    
+
+                    Split String to list
+                    <span class="cmd">split(str, '\zs')</span>
+
+                    redirect Ex command output to register [h redir]
+                    <span class="cmd">:redir @a | ls | redir END</span> 
+
+                    redirect Ex command output to file
+                    <span class="cmd">:redir > /tmp/log.txt |ls | redir END</span>
+
+                    redirect Ex command output to variable var
+                    <span class="cmd">:redir =>var |g/pattern/p | redir END</span>
+
+                    replace word with current buffer file name [h expand()], [h \=]
+                    <span class="cmd">:s/word/\=expand('%')/gc</span>
+
+                    increase number by one [h \=, :h submatch()]
+                    <span class="cmd">:s/\d\+/\=submatch(0) + 1/gc</span>
+
+                    select word under cursor
+                    <span class="cmd">&ltC-R&gt&ltC-W&gt</span> 
+
+                    select the current character
+                    <span class="cmd">/\%#</span>         
+
+                    select the current word under cursor
+                    <span class="cmd">/\k*\%#\k*</span>   
+
+                    select the iskeyword character from 0 to 10 column
+                    <span class="cmd">/\k*\%10c</span>    
+
+                    redirect shell output to current buffer [h :r] r => read
+                    <span class="cmd">:r! ls</span>    
+
+                    move cursor to top/bottom of page                    
+                    <span class="cmd">&ltS-h&gt &ltS-l&gt</span>    
+
+                    </pre>
+
+
+                    <div class="mytitle">
                     Add undo persistence in Vim<br>
                     </div>
-                    <pre class="codebg">
+                    <pre class="textbox">
                         set undofile                " Save undo's after file closes
                         set undodir=$HOME/.vim/undo " where to save undo histories
                         set undolevels=1000         " How many undos
@@ -50,8 +101,7 @@
                    <div class="mytitle">
                    Operators in Vim 
                    </div>
-                   Mon Sep 21 21:24:13 PDT 2015
-                   <pre class="codebg">
+                   <pre class="textbox">
                     =       indentation e.g gg=G [h =]
                     c		change
                     d		delete
@@ -77,37 +127,34 @@
                     <div class="mytitle">
                     Vim Leader, mapleader, LocalLeader, maplocalleader<br>
                     </div>
-                    Fri Dec  4 21:47:00 PST 2015<br>
                     <div class="mytext">
-                    :nnoremap &#60;Buffer&#62;&#60;Leader&#62;s :%s/dog/cat/g &#60;Esc&#62; <br>
+                    <span class="wbold">You want to be a Leader</span><br>
+                    :nnoremap &#60;Buffer&#62;&#60;Leader&#62;s <span class="cmd">:%s/dog/cat/g</span> &#60;Esc&#62; <br>
                     Leader is special string that you can use to map character to shortcut key<br> 
                     The default mapping is '\' character<br><br>
-                    When you type \s the shortcut will trigger :%s/dog/cat/g<br>
+                    When you type \s the shortcut will trigger <span class="cmd">:%s/dog/cat/g</span> <br>
                     If you want to change the default mapping to different character, then you can type<br>
-                    :let mapleader="," which will map ,s instead of \s and it can trigger :%s/dog/cat/g<br><br>
+                    :let mapleader="," which will map ,s instead of \s and it can trigger <span class="cmd">:%s/dog/cat/g</span> <br><br>
                     LocalLeader is similar to Leader but it is to be used for mapping which are local to a buffer<br> 
-                    :map &#60;buffer&#62;&#60;LocalLeader&#62;A :%s/dog/cat/g &#60;Esc&#62;<br>
+                    :map &#60;buffer&#62;&#60;LocalLeader&#62;A <span class="cmd">:%s/dog/cat/g</span> &#60;Esc&#62;<br>
                    </div>
                     <div class="mytitle">
                     How to use command History in Vim<i class="em em-anchor"></i><br>
                     </div>
-                    <div class="mytext">
-                    Today, I just learn something new on how to use <span class="wbold">Command History</span> in Vim.<br>
-                    If you are typing a lots in Command Mode, then there are lots repeating commands that you want to call it again and again.<br>
-                    There are lots of way to do in Vim such as Abbreviation or Mapping, etc.<br>
-                    But the quick way to repeating the command is to open the history and search the command, then press Eneter<br>
-                    1. Open command history q:<br>
-                    2. Search the command like Normal Mode<br>
-                    3. Press <span class="wbold">Enter to execute the command</span> under your cursor. Done<br>
+                    <pre class="textbox">
+                    Today, I just learn something new on how to use <span class="wbold">Command History</span> in Vim.
+                    If you are typing a lots in Command Mode, then there are lots repeating commands that you want to call it again and again.
+                    There are lots of way to do in Vim such as Abbreviation or Mapping, etc.
+                    But the quick way to repeating the command is to open the history and search the command, then press Eneter
+                    1. Open command history q:
+                    2. Search the command like Normal Mode
+                    3. Press <span class="wbold">Enter to execute the command</span> under your cursor. Done
                     4. [:h q:] [:h q/] [:h q?]
-                    </div>
-                    <div class="mytitle">
-                    How to append content to register<i class="em em-anchor"></i><br>
-                    </div>
-                    <pre class="codebg">
-                    "Ayy    // Append content to register a
                     </pre>
+                    
+                    
 
+                    
             <!-- Column 1 end -->
             </div>
 

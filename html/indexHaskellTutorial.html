@@ -57,21 +57,29 @@
                 <h3 class="haskellc">Equation Guarding in Haskell<h3>
                 <?php include("../colorhtml/haskell/guards.html"); ?>
                 <div class="cen">
-                    <img src="http://zsurface.com/image/guards.svg" width="40%" height="40%" />
+                    <img src="http://localhost/zsurface/image/guards.svg" width="40%" height="40%" />
                 </div>
                 <h3 class="haskellc">let binding in Haskell<h3>
                 <?php include("../colorhtml/haskell/letbinding.html"); ?>
                 <h3 class="haskellc">Print all permutation in Haskell<h3>
                 <?php include("../colorhtml/haskell/permutation.html"); ?>
                 <h3 class="haskellc">Tree Traversal: Preorder Inorder Postorder/DFS in Haskell<h3>
-                        <p>Normally there are preorder inorder and postorder traversals<br>
-                        preorder: + a b<br>
-                        inorder:  a + b<br>
-                        postorder: a b + 
-                        </p>
-                        <p>
-                        There are many applications for these traversals
-                        </p>
+                <pre>
+                There are preorder inorder and postorder traversals
+                preorder: + a b
+                inorder:  a + b
+                postorder: a b + 
+
+                There are many applications from these traversals
+                1. We can rebuild the tree with preorder and inorder
+                2. inorder is the sorted order in Binary Search Tree
+                3. Quick sort is related to preorder
+                4. inorder can be used to check whether a BT is BST
+                5. postorder can be implemented with two stacks with recursion
+                6. Merge sort is essential the postorder 
+                7. Quick sort is essential the preorder 
+                8. preorder and postorder can be used in serialization and deseriazation
+                </pre>
                 <?php include("../colorhtml/haskell/tree.html"); ?>
                 <h3 class="haskellc">Typeclass 1 in Haskell<h3>
                 <?php include("../colorhtml/haskell/typeclass1.html"); ?>
@@ -103,14 +111,28 @@
                 <h3 class="haskellc">Functor in Haskell</h3>
                 <?php include("../colorhtml/haskell/functor.html"); ?>
 
+                <h3 class="haskellc">data type in Haskell</h3>
+                <pre>
+                data Point a = Pt a a
+                norm::(Point Int)->(Point Int)->Int
+                norm(Pt a1 b1) (Pt a2 b2)  = a1*a2 + b1*b2 
+
+                dist::(Point Int)->(Point Int)->Int
+                dist (Pt a1 b1) (Pt a2 b2) = norm (Pt a1 b1) (Pt a2 b2) 
+                
+                // in Java 
+                class Point<T>{
+                    Point(T t1, T t2){}
+                }
+                </pre>
+
                 <h3 class="haskellc">Algebraic Data Type in Haskell<h3>
-                <p> 
+                <pre>
                 Algebraic Data type - Algebraic refers to the property that an algebraic data type is created 
-                                      by algebraic operations such as sum and product. There <br>
-                Sum is alternation[logic OR operator][A | B, meaning A or B but not both, e.g. enum in Java/C++]<br>
-                Product is combination[logic AND operator][A B, meaning A and B together, e.g. tuple, record]<br>
-                </p> 
-                <pre style="background:#DDD;">
+                                      by algebraic operations such as sum and product. There 
+                Sum is alternation[logic OR operator][A | B, meaning A or B but not both, e.g. enum in Java/C++]
+                Product is combination[logic AND operator][A B, meaning A and B together, e.g. tuple, record]
+
                 data Maybe a = Just a | Nothing 
                 There are two constructors:
                 Just is one constructor with one parameter a 
@@ -120,12 +142,12 @@
 
                 <h3 class="haskellc">foldr and foldl in Haskell<h3>
                 <div class="cen">
-                <img src="http://zsurface.com/image/fold.svg" width="50%" height="50%" /><br> 
+                <img src="http://localhost/zsurface/image/fold.svg" width="50%" height="50%" /><br> 
                 </div>
                 <?php include("../colorhtml/haskell/fold.html"); ?> <br>
                 <?php include("../colorhtml/java/foldjava.html"); ?> <br>
                 <div class="cen">
-                <img src="http://zsurface.com/image/fold2.svg" width="50%" height="50%" /><br> 
+                <img src="http://localhost/zsurface/image/fold2.svg" width="50%" height="50%" /><br> 
                 </div>
 
 
@@ -144,12 +166,12 @@
                 <?php include("../colorhtml/haskell/firstOpenGL.html"); ?>
 
                 <div class="cen">
-                    <img src="http://zsurface.com/image/firstOpenGL.png" width="30%" height="30%" />
+                    <img src="http://localhost/zsurface/image/firstOpenGL.png" width="30%" height="30%" />
                 </div>
                 <h3 class="haskellc">OpenGL Vertex and Color in Haskell<h3>
                 <?php include("../colorhtml/haskell/openGLColor.html"); ?>
                 <div class="cen">
-                    <img src="http://zsurface.com/image/openGLColor.png" width="30%" height="30%" />
+                    <img src="http://localhost/zsurface/image/openGLColor.png" width="30%" height="30%" />
                 </div>
                 <h3 class="haskellc">Map Examples in Haskell<h3>
                 <p>

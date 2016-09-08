@@ -37,14 +37,23 @@
             <!-- Column 1 start -->
 
             <div class="mytitle">
-            Double Linked List with Smart Pointers
+            Find the Least Common Ancestor Node from a Binary Tree with two given nodes 
             </div>
             <div class="mytext">
-            Reimplement Double Linked List With Smart Pointers<br>
+            <span class="wbold">What is Least Common Ancestor or [LCA] in a Binary Tree?</span><br>
+            From the Binary Tree below.<br>
+            LCA[12, 17] = 15<br>
+            LCA[16, 70] = 17<br>
+            LCA[8, 10] = 10<br>
+
+            If the Binary Tree have only two nodes such as [1] ->[2], then [1] is the LCA
+
+            </div>
+            <div class="cen">
+            <img src="http://localhost/zsurface/image/bintree1.svg" width="30%" height="30%" /><br>
             </div>
             <?php include("../colorhtml/cpp/mystack.html"); ?> 
             <div class="cen">
-            <img src="http://zsurface.com/image/cppstd.png" width="40%" height="40%" /><br>
             <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
             </div>
 

@@ -38,9 +38,9 @@
             <div class="col1">
                 <!-- Column 1 start -->
                <div class="cen">
-               <img src="http://zsurface.com/image/snapshot1.png" width="80%" height="80%" /><br><br> 
-               <img src="http://zsurface.com/image/snapshot2.png" width="80%" height="80%" /><br><br> 
-               <img src="http://zsurface.com/image/snapshot3.png" width="80%" height="80%" /><br> 
+               <img src="http://localhost/zsurface/image/snapshot1.png" width="80%" height="80%" /><br><br> 
+               <img src="http://localhost/zsurface/image/snapshot2.png" width="80%" height="80%" /><br><br> 
+               <img src="http://localhost/zsurface/image/snapshot3.png" width="80%" height="80%" /><br> 
                </div>
             <!-- Column 1 end -->
             </div>

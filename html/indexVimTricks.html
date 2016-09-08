@@ -46,10 +46,10 @@
                     <span class="cmd">:runtime ftplugin/man.vim</span>
                     <span class="cmd">:Man grep</span>
 
-                    How to append content to register
+                    how to append content to register
                     <span class="cmd">:"Ayy</span>    
 
-                    Split String to list
+                    split String to list
                     <span class="cmd">split(str, '\zs')</span>
 
                     redirect Ex command output to register [h redir]
@@ -84,6 +84,34 @@
 
                     move cursor to top/bottom of page                    
                     <span class="cmd">&ltS-h&gt &ltS-l&gt</span>    
+
+                    add file path to register                   
+                    <span class="cmd">:let @a=expand("%:p")</span>    
+
+                    open file inside the register in Ex mode                     
+                    <span class="cmd">:exec 'edit ' @a</span>    
+
+                    move lines to different location [h move] move line from 2 to 4 to top                     
+                    <span class="cmd">:2, 4 m 0</span>    
+
+                    filter g [match] and v or g! [not match]                    
+                    move lines contains pat to line 9
+                    <span class="cmd">:g/pat/ m 9</span>     
+
+                    move lines doesn't contains pat to line 9
+                    <span class="cmd">:v/pat/ m 9</span>    
+
+                    range 2 to 10 contains pat are moved to 9
+                    <span class="cmd">:2, 10 g/pat/ m 9</span>     
+
+                    \%[] 
+                    <span class="cmd">/r\%[ead]</span> match r, re rea read     
+                    []
+                    <span class="cmd">/r[ead]</span> match re ra re     
+
+                    commands that save Vim folding states in vimrc file
+                    <span class="cmd">autocmd BufWinLeave *.* mkview</span>
+                    <span class="cmd">autocmd BufWinEnter *.* silent loadview</span>
 
                     </pre>
 

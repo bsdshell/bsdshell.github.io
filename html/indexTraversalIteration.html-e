@@ -51,7 +51,7 @@
             <?php include("../colorhtml/java/twostackite.html"); ?> 
             
             <div class="cen">
-            <img src="http://zsurface.com/image/twoqueuestack.png" width="50%" height="50%" /><br>
+            <img src="http://localhost/zsurface/image/twoqueuestack.png" width="50%" height="50%" /><br>
             </div>
 
             <div class="mytext">
@@ -60,7 +60,7 @@
             <?php include("../colorhtml/java/postorderite.html"); ?> 
 
             <div class="cen">
-            <img src="http://zsurface.com/image/postite.png" width="50%" height="50%" /><br>
+            <img src="http://localhost/zsurface/image/postite.png" width="50%" height="50%" /><br>
             <a href="https://github.com/bsdshell/java/tree/master/TraversalIteration.java">Source Code</a>
             </div>
             
@@ -68,6 +68,11 @@
             1. Inorder and Inorder Iteration<br>
             </div>
             <?php include("../colorhtml/java/preinorder.html"); ?> 
+            <div class="mytext">
+            Implement Iterator with inorder traversal<br>
+            </div>
+            <?php include("../colorhtml/java/inorderiterator.html"); ?> 
+
 
             <!-- Column 1 end -->
             </div>

@@ -38,22 +38,35 @@
             <div class="col1">
                 <!-- Column 1 start -->
                 <div class="mytitle">
-                Tries Data Structure  
+                Tries Data Structure
                 </div>
                 <div class="mytext">
-                Tries<br>
-                1. Add<br>
-                1. Contains<br>
+                Implement Tries with Array<br>
+                1. insert - insert a string if the string doesn't exist, nop otherwise<br>
+                2. contains - check if input String exists in the Tries<br>
+                3. autocomplete - return all words which contain input String as suffix<br>
                 </div><br>
 
                 <div class="cen">
-                <img src="http://zsurface.com/image/tries.svg" width="50%" height="50%" /><br> 
-                <img src="http://zsurface.com/image/mytries.png" width="50%" height="50%" /><br> 
-                <img src="http://zsurface.com/image/mytries1.png" width="50%" height="50%" /><br> 
-                <a href="https://github.com/bsdshell/java/tree/master/MyTries.java">Source Code</a>
+                <img src="http://localhost/zsurface/image/simpletries.png" width="50%" height="50%" /><br> 
+                <img src="http://localhost/zsurface/image/mytries.png" width="50%" height="50%" /><br> 
+                <img src="http://localhost/zsurface/image/mytries1.png" width="50%" height="50%" /><br> 
                 </div> 
-
                 <?php include("../colorhtml/java/newtries.html"); ?> 
+                <div class="cen">
+                <a href="https://github.com/bsdshell/java/tree/master/MyTries.java"><span class="source">Source Code</span></a>
+                </div><br>
+                <div class="mytext">
+                Implement Tries with HashMap<br>
+                1. insert<br>
+                2. contains<br>
+                3. autocomplete<br>
+                </div><br>
+                <?php include("../colorhtml/java/triesmap.html"); ?> 
+
+                <div class="cen">
+                <a href="https://github.com/bsdshell/java/tree/master/TriesMap.java"><span class="source">Source Code</span></a>
+                </div>
 
             <!-- Column 1 end -->
             </div>

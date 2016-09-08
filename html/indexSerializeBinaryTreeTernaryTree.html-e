@@ -40,15 +40,20 @@
             Serialize Binary Tree and Serialize General Tree 
             </div>
             <div class="mytext">
-            1. No Stack<br>
-            2. With Stack<br>
+            Serialize and deSerialize general tree with <span class="wbold">preorder</span> and<span class="wbold"> postorder</span><br>
             </div>
             <?php include("../colorhtml/java/serializetree.html"); ?> 
-            <?php include("../colorhtml/java/deserializetree.html"); ?> 
             <div class="cen">
-            <img src="http://zsurface.com/image/serialize.png" width="40%" height="40%" /><br>
             <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
             </div>
+            <div class="mytext">
+            Serialize and deSerialize general tree with one <span class="wbold">stack</span><br> 
+            </div>
+            <?php include("../colorhtml/java/deserializetree.html"); ?> 
+            <div class="cen">
+            <img src="http://localhost/zsurface/image/serialize.png" width="50%" height="50%" /><br>
+            </div>
+
 
             <!-- Column 1 end -->
             </div>

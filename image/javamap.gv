@@ -1,0 +1,9 @@
+digraph G {
+    Map[style=filled, fillcolor=yellow]
+    Map->HashTable
+    Map->TreeMap
+    Map->HashMap
+    HashMap->LinkedHashMap
+}
+
+

@@ -47,7 +47,7 @@
             </div>
             <?php include("../colorhtml/java/kclosest.html"); ?> 
             <div class="cen">
-            <img src="http://zsurface.com/image/kclosest.png" width="40%" height="40%" /><br>
+            <img src="http://localhost/zsurface/image/kclosest.png" width="40%" height="40%" /><br>
             <a href="https://github.com/bsdshell/java/tree/master/KClosestPoint.java">Source Code</a>
             </div>
 

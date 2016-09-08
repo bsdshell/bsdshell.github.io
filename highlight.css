@@ -2,9 +2,9 @@ pre{
     /*margin: 0px 1px;*/
     white-space: pre;
     /* background: rgba(57, 128, 144, 0.9); */
-    background: rgb(239, 245, 233);
+    background: rgb(253, 253, 251);
     font-size:11pt;
-    box-shadow: 2px 2px 2px 1px rgba(14, 15, 16, 0.2);
+    /* box-shadow: 2px 2px 2px 1px rgba(14, 15, 16, 0.2); */
     font-family:"Lucida Console", Courier, monospace;
     /*font-family: "Miller Display Roman",georgia,serif;*/
     line-height:1.1em;
@@ -49,7 +49,7 @@ pre{
 .highlight .kt {color: #7C926D;} /* Keyword.Type */
 .highlight .m { color: #666666 } /* Literal.Number */
 .highlight .s {color: #AF7638;} /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .na {color: #d03dc2;} /* Name.Attribute */
 .highlight .nb { color: #008000 } /* Name.Builtin */
 .highlight .nc {color: rgba(64, 144, 138, 0.95);/* font-weight: bold; */} /* Name.Class */
 
@@ -84,6 +84,9 @@ pre{
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+
+
 
 
 

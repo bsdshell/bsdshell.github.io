@@ -62,8 +62,8 @@
             </div>
 
             <div class="cen" style="background:white">
-            <img src="http://zsurface.com/image/prime.svg" width="80%" height="40%" /><br>
-            <img src="http://zsurface.com/image/prime1.svg" width="30%" height="30%" /><br>
+            <img src="http://localhost/zsurface/image/prime.svg" width="80%" height="40%" /><br>
+            <img src="http://localhost/zsurface/image/prime1.svg" width="30%" height="30%" /><br>
             </div>
 
             <?php include("../colorhtml/java/anagrambasic.html"); ?> 
@@ -71,7 +71,7 @@
             <a href="https://github.com/bsdshell/java/tree/master/Anagram.java">Source Code</a>
             </div>
             <div class="cen" style="background:white">
-            <img src="http://zsurface.com/image/primefactorization.png" width="40%" height="40%" /><br>
+            <img src="http://localhost/zsurface/image/primefactorization.png" width="40%" height="40%" /><br>
             </div>
 
             <div class="mytitle">
@@ -123,7 +123,7 @@
             <a href="https://github.com/bsdshell/java/tree/master/IntersectionList.java">Source Code</a>
             </div>
             <div class="cen" style="background:white">
-            <img src="http://zsurface.com/image/intersectionlist.png" width="50%" height="50%" /><br>
+            <img src="http://localhost/zsurface/image/intersectionlist.png" width="50%" height="50%" /><br>
             </div>
 
             <div class="mytitle">
@@ -134,7 +134,7 @@
             <a href="https://github.com/bsdshell/xcode/tree/master/Anagram.java">Source Code</a>
             </div>
             <div class="cen" style="background:white">
-            <img src="http://zsurface.com/image/sortanagram.png" width="40%" height="40%" /><br>
+            <img src="http://localhost/zsurface/image/sortanagram.png" width="40%" height="40%" /><br>
             </div> 
 
 
