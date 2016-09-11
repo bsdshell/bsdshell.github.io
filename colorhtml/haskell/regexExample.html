@@ -11,11 +11,11 @@
         <span class="c1">-- capture group, capture email address</span>
         <span class="kr">let</span> <span class="n">r6</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;([A-Za-z._-]+)+@(([a-z])+</span><span class="se">\\</span><span class="s">.([a-z]{2,4}))&quot;</span>
         <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r6</span> <span class="s">&quot;root_admin.last-name@gmail.com&quot;</span>   <span class="s">&quot;7. [</span><span class="se">\\</span><span class="s">0] {</span><span class="se">\\</span><span class="s">1}{</span><span class="se">\\</span><span class="s">2}&quot;</span>
-        <span class="c1">--7. [root_admin.last-name@gmail.com] {root_admin.last-name}{gmail.com}</span>
 
         <span class="c1">-- capture phone number</span>
         <span class="kr">let</span> <span class="n">p1</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;[0-9]{3}[ -]?[0-9]{3}[ -]?[0-9]{4}&quot;</span> 
 
+        <span class="c1">-- replace string</span>
         <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">p1</span> <span class="s">&quot;416-123-4483&quot;</span>  <span class="s">&quot;8. [</span><span class="se">\\</span><span class="s">0]      &quot;</span><span class="c1">--8. [416-123-4483]</span>
 
         <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">p1</span> <span class="s">&quot;4161234483&quot;</span>    <span class="s">&quot;9. [</span><span class="se">\\</span><span class="s">0]      &quot;</span><span class="c1">--9. [4161234483] </span>

@@ -90,6 +90,7 @@ function createBasicPage($fileHtml, $title)
 return $content;
 }
     $pageArray = array(
+        "Maximum non consecutive sum",
         "Eight Queen Solver",
         "Java Lambda Expression",
         "Build Tree from pre and post",
@@ -293,58 +294,9 @@ return $content;
         "Java Data Structure",
 
         "C++ Data Structure",
-        "Merge Sort In Java",
-        "Merge Sort In C",
-        "Merge Sort In C++",
-        "Merge Sort In Haskell",
-        "Merge Sort In Scala",
-        "Quick Sort",
-        "Quick Sort In C",
-        "Quick Sort In C++",
-        "Quick Sort In Scala",
-
-        "Print n prime number in Java",
-        "Print n prime number in C",
-        "Print n prime number in C++",
-        "Print n prime number in Haskell",
-        "Print n prime number in Scala",
-
-        "Rotate 2D array 90 degrees in Java",
-        "Rotate 2D array 90 degrees in C",
-        "Rotate 2D array 90 degrees in c++",
-        "Rotate 2D array 90 degrees in Haskell",
-        "Rotate 2D array 90 degrees in Scala",
-
-        "Print all Permutation of String Length in Java",
-        "Print all Permutation of String Length in C",
-        "Print all Permutation of String Length in C++",
-        "Print all Permutation of String Length in Haskell",
-        "Print all Permutation of String Length in Scala",
 
         "Reverse a LinkedList in Java",
-        "Reverse a LinkedList in C",
-        "Reverse a LinkedList in C++",
-        "Reverse a LinkedList in Haskell",
-        "Reverse a LinkedList in Scala",
-
-        "Merge two sorted lists in Java",
-        "Merge two sorted lists in C",
-        "Merge two sorted lists in C++",
-        "Merge two sorted lists in Haskell",
-        "Merge two sorted lists in Scala",
-
-        "Priority Queue in Java",
-        "Priority Queue in C",
-        "Priority Queue in C++",
-        "Priority Queue in Haskell",
-        "Priority Queue in Scala",
-
-        "Generate n prime in Java",
-        "Generate n prime in C",
-        "Generate n prime in Haskell",
-        "Generate n prime in Scala",
-
-        "Haskell Map and Foldr",
+        
         "Haskell Install Remove GHCi On Mac OSX",
         "Haskell Tutorial",
         

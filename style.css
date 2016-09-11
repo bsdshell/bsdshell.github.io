@@ -190,13 +190,18 @@ pre.textbox{
     white-space:pre-line;
 }
 
+pre.mycode{
+    white-space: pre-line;
+    font-family: "Courier New", monospace;
+}
 
 .mytitle{
     margin:auto;
     width:100%;
-    color: #4D5F34;
+    color: #e05e0c;
     font-size:20px;
     text-align:center;
+    background: #deeadd;
 }
 
 //.mytext{

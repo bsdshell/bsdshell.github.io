@@ -50,7 +50,9 @@
                     $\langle {\large{\color{red}\alpha}} \rangle$ 
                     <span class="wbold">Print all the permutations of an array of characters</span><br>
                     This is very popular question for software engineer technical interview.<br><br>
+
                     $\langle {\large{\color{red}\zeta}} \rangle$ 
+                    <span class="wbold">Understand the question first</span><br>
                     This is very easy question to understand, but it is not so easy to code it up in 45 minutes.
 
                     Let's try to understand that question.<br><br>
@@ -93,7 +95,9 @@
                     12a3<br>
                     123a<br><br>
 
-                    But we can also think of using swap[index, index] operation<br>
+                
+                    $\langle {\large{\color{red}\omega}} \rangle$
+                    <span class="wbold">Use the power of swap[index, index] operation</span><br>
                     a123 swap[0, 0] $\Rightarrow$ a123<br>
                     a123 swap[0, 1] $\Rightarrow$ 1a23<br>
                     a123 swap[0, 2] $\Rightarrow$ 12a3<br>
@@ -111,8 +115,24 @@
                     <img src="http://localhost/zsurface/image/permutation.svg" width="70%" height="70%" /><br> 
                     </div>
 
-                    <h3 class="haskellc">Permutation Algorithm in Java<h3>
+                    <h3 class="haskellc">Permutation Algorithm in Java</h3>
                     <?php include("../colorhtml/java/PermuteJava.html"); ?>
+
+                    <div class="cen">
+                    <img src="http://localhost/zsurface/image/permu4.png" width="40%" height="40%" /><br> 
+                    </div>
+
+                    <div class="mytitle">
+                    Print all permutations in sorted order lexicographically
+                    </div>
+                    <div class="mytext">
+                    0. Previous algorithm does not generate sorted order permutations lexicographically.<br> 
+                    1. Following algorithm generates sorted order permutations<br>
+                    </div>
+                    <?php include("../colorhtml/java/permutationprefix.html"); ?>
+
+
+
                     <h3 class="haskellc">Permutaiton Algorithm in C++<h3>
                     <?php include("../colorhtml/cpp/permutate.html"); ?>
 
@@ -133,22 +153,6 @@
         </div>
     </div>
 
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES * * */
-        var disqus_shortname = 'zsurfacecom';
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-
-    <div id="footer">
-        <p>This page uses the <a href="">Put More Stuff Here</a> by <a href="">ZSurface</a>. View more <a href="">ZSurface</a> and <a href="">ZSurface</a>.</p>
-    </div>
 
     </body>
     </html>

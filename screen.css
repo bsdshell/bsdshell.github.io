@@ -21,14 +21,23 @@ a:active {color:yellow;}
 
 li{
     list-style:none;
+    display: inline-block;
+    float: left;
+    width: 293px;
+    padding: 3px;
+    margin: 0px;
+    background: #fdfafa;
 }
 
 ul {
-    display:inline-block;
+    /* display:inline-block; */
     float:left;
-    width:300px;
-    padding:8px;
-    margin:0px;
+    /* width:300px; */
+    padding: 0px;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    margin-top: 4px;
 }
 
 h1, h2, h3 {
@@ -78,7 +87,7 @@ h1, h2, h3 {
 .rightmenu .col2 {
     width: 21.6%;/* right column content width (right column width minus left and right padding) */
     /* left: 44%; *//* (right column width) plus (left column left and right padding) plus (right column left padding) */
-    background:rgb(239, 245, 233);
+    background: rgb(169, 173, 166);
     /*text-indent:6px;*/
     /* font-size: 5px; */
 }

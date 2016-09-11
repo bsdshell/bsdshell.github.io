@@ -35,12 +35,12 @@
         <div class="colleft">
             <div class="col1">
             <!-- Column 1 start -->
-               <div class="note">
-                   Sat May 14 13:57:22 PDT 2016<i class="em em-cat"></i><br>
                    <div class="mytitle">
                    Here is my note about Haskell on my Mac OSX[EL Capitan]<br>
                    Mac OS X El Capitan broke my Haskell GHCi [7.10.2]<br>
                    </div>
+                   <div class="mytext">
+                   Sat May 14 13:57:22 PDT 2016<br>
                    Today I try to test De Casteliau's algorithm in Haskell and run GHCi, and start up GHCi on command line<br>
                    I got a strangle error from GHCi "can't open /tmp/ghci.log" file when I run a simple expression such as 1 + 2 in GHCi<br>
                    I never have the problem before I update my Mac OS to El capitan. Good Job Apple!<br>
@@ -51,12 +51,13 @@
                    <span style="color:red;">/Library/Haskell</span><br>
                    Uninstaller Location[At least on my Mac OSX El Capitan]<br>
                    <span style="color:red;">/usr/local/bin/uninstall-hs</span><br>
-               </div>
-               <div class="note">
+                   </div>
                    <div class="mytitle">
                    How to clear up GHCi from your Mac OSX
                    </div>
+                   <div class="mytext">
                     If you run /usr/local/bin/uninstall-hs, it only clean up some stuff, but not all<br>
+                    </div>
                    <pre class="codebg">
                     sudo rm -rf /Library/Frameworks/GHC.framework
                     sudo rm -rf /Library/Frameworks/HaskellPlatform.framework
@@ -71,15 +72,31 @@
                     rm -rf /opt/local/bin/ghci-*
                     rm -rf /opt/local/lib/ghc-*
                 </pre>
-               </div>
                 
-                <div class="note">
-                   <div class="mytitle">
-                   Remove all Cabal, CHGi, GHC framework from my Mac OSX and reinstall Haskell 7.10.3<br> 
-                   </div>
-                   I spend may hours on the issue with Apple EL Capitan updategrade.<br>
-                   I don't realize Apple push a shity OSX out, even though they know there are shitload of bugs<br> 
+               <div class="mytitle">
+               Remove all Cabal, CHGi, GHC framework from my Mac OSX and reinstall Haskell 7.10.3<br> 
                </div>
+               <div class="mytext">
+               I spend many hours on the issue with Apple EL Capitan updategrade.<br>
+               I don't realize Apple push a shity OSX out, even though they know there are shitload of bugs<br> 
+               </div>
+
+               <div class="mytitle">
+               New version of directory module in Haskell<br> 
+               </div>
+               <div class="mytext">
+               import Sytem.Directory<br> 
+               listDirectory shows "Not in scope:" error message<br> 
+               
+               list all the packages<br>
+               ghc-pkg list shows the directory package is old [directory-1.2.2.0]<br>
+               listDirectory is in [1.2.5.0]<br>
+               run: cabal install cabal-install [update cabal]<br> 
+               run: cabal install directory-1.2.5.0<br>
+               it works after install the directory-1.2.5.0<br>
+
+               </div>
+
             <!-- Column 1 end -->
             </div>
             <div class="col2">
@@ -95,22 +112,6 @@
         </div>
     </div>
 
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES * * */
-        var disqus_shortname = 'zsurfacecom';
-        
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-
-    <div id="footer">
-        <p>This page uses the <a href="">Put More Stuff Here</a> by <a href="">ZSurface</a>. View more <a href="">ZSurface</a> and <a href="">ZSurface</a>.</p>
-    </div>
 
     </body>
     </html>

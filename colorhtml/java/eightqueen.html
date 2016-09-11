@@ -1,5 +1,10 @@
-<div class="highlight"><pre><span class="kd">class</span> <span class="nc">Queen</span><span class="o">{</span>
+<div class="highlight"><pre><span class="c1">// n queens problem</span>
+<span class="kd">class</span> <span class="nc">Queen</span><span class="o">{</span>
     <span class="n">List</span><span class="o">&lt;</span><span class="n">Move</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Queen</span><span class="o">(</span><span class="kt">int</span> <span class="n">width</span><span class="o">){</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">width</span> <span class="o">=</span> <span class="n">width</span><span class="o">;</span>
+    <span class="o">}</span>
 
     <span class="kd">class</span> <span class="nc">Move</span><span class="o">{</span>
         <span class="kd">public</span> <span class="kt">int</span> <span class="n">c</span><span class="o">;</span>
@@ -12,14 +17,13 @@
 
     <span class="c1">// int c = 0;</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">queenSolver</span><span class="o">(</span><span class="kt">int</span> <span class="n">c</span><span class="o">){</span>
-        <span class="kd">final</span> <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">8</span><span class="o">;</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="n">len</span><span class="o">){</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="n">width</span><span class="o">){</span>
             <span class="k">for</span><span class="o">(</span><span class="n">Move</span> <span class="n">m</span><span class="o">:</span><span class="n">list</span><span class="o">){</span>
                 <span class="n">Print</span><span class="o">.</span><span class="na">p</span><span class="o">(</span><span class="s">&quot;[&quot;</span> <span class="o">+</span> <span class="n">m</span><span class="o">.</span><span class="na">c</span> <span class="o">+</span> <span class="s">&quot;,&quot;</span> <span class="o">+</span> <span class="n">m</span><span class="o">.</span><span class="na">r</span> <span class="o">+</span> <span class="s">&quot;]&quot;</span><span class="o">);</span>
             <span class="o">}</span>
             <span class="n">Ut</span><span class="o">.</span><span class="na">l</span><span class="o">();</span>
         <span class="o">}</span><span class="k">else</span><span class="o">{</span>
-            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">r</span><span class="o">&lt;</span><span class="n">len</span><span class="o">;</span> <span class="n">r</span><span class="o">++){</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">r</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">r</span><span class="o">&lt;</span><span class="n">width</span><span class="o">;</span> <span class="n">r</span><span class="o">++){</span>
                 <span class="k">if</span><span class="o">(</span><span class="n">isValidMove</span><span class="o">(</span><span class="n">c</span><span class="o">,</span> <span class="n">r</span><span class="o">)){</span>
                     <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Move</span><span class="o">(</span><span class="n">c</span><span class="o">,</span> <span class="n">r</span><span class="o">));</span>
                     <span class="n">queenSolver</span><span class="o">(</span><span class="n">c</span><span class="o">+</span><span class="mi">1</span><span class="o">);</span>
