@@ -90,7 +90,19 @@ function createBasicPage($fileHtml, $title)
 return $content;
 }
     $pageArray = array(
+        "The beauty of Torus",
+        "one proof a day 5",
+        "one proof a day 4",
+        "one proof a day 3",
+        "one proof a day 2",
+        "one proof a day 1",
+        "Povray draw box",
+        "Singleton in Java",
+        "Maximum difference on an array",
+        "Maximum Continuous Sum List",
         "Maximum non consecutive sum",
+        "Auto Complete with Map and List",
+        "The power of image",
         "Eight Queen Solver",
         "Java Lambda Expression",
         "Build Tree from pre and post",
@@ -125,7 +137,7 @@ return $content;
         "Graph Loop and Path",
         "Range Query",
         "Find the maximum children of given tree",
-        "Maximum Continuous Sum List",
+      
         "Level order without queue",
         "Merge Sorted Single LinkedList",
         "Facebook Interview Question",
@@ -325,7 +337,7 @@ return $content;
         "Rotated Sorted Array", 
         "Multiply Array in Dynamic Programming",
         "Multiply Long Integer",
-        "Print Sprial in 2D array",
+        "Print Spiral in 2D array",
 
         "Install Maven in Mac OSX ",
         "Setup The Play Framework",

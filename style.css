@@ -75,6 +75,13 @@ a {
     text-decoration: none;
 }
 
+.bo{
+     font-family: 'Courier New', Courier, Fixed;
+     color:black;
+     font-weight:bold;
+     font-size:16px;
+}
+
 .wbold{
      font-size: 18px;
      //color: rgb(179, 150, 36);
@@ -193,6 +200,15 @@ pre.textbox{
 pre.mycode{
     white-space: pre-line;
     font-family: "Courier New", monospace;
+}
+
+pre.cc{
+    white-space: pre;
+    font-family: "Courier New", monospace;
+    padding-left: 0px;
+    margin-left: -115px;
+    background: #e7efe7;
+    color: #060a10;
 }
 
 .mytitle{

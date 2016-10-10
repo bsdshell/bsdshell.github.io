@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Facebook Interview Question</title>
+        <title>The beauty of Torus</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
         <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -37,51 +37,25 @@
             <!-- Column 1 start -->
 
             <div class="mytitle">
-            Facebook Interview Question 
+            Torus 
             </div>
             <div class="mytext">
-            Approach 1: go from back or go from front<br>
-            Move non-zero elements in int array to the left and return number of non-zero elements in the original array.<br> 
-            The order of the non-zero elements is not important. What is left on the right side of the array is not important. Minimize written to array.<br>
-            //[1, 0, 3, 0, 0, 4] -> [1, 4, 3, 0, 0, 0]<br><br> 
-
-            <span class="wbold">Use similar partition algorithm like quicksort partition array</span><br>
-            1. Use two indexes to keep track the zero element and non-zero element<br>
-            2. Initialize the two indexes to be last index<br>
-            3. One index is decreased by one only if other index is zero element 
+            All about torus<br>
             </div>
             <div class="cen">
-            <img src="http://localhost/zsurface/image/partition2.png" width="60%" height="60%" /><br>
-            </div>
-            <?php include("../colorhtml/java/part3.html"); ?> 
+            $\mbox{Parametric form}$
+            \begin{align}
+            &\textit{x}=(\textbf{R}+\textbf{r}*\cos{\alpha})*\cos{\beta}\\
+            &\textit{y}=(\textbf{R}+\textbf{r}*\cos{\alpha})*\sin{\beta}\\
+            &\textit{z}=\textbf{r}*\sin{\alpha}\\
+            \end{align}
 
-            <?php include("../colorhtml/java/partitionarray.html"); ?> 
-            <div class="cen">
-            <img src="http://localhost/zsurface/image/partition9.png" width="60%" height="60%" /><br>
-            <a href="https://github.com/bsdshell/java/tree/master/PartitionArray.java">Source Code</a>
+            $\mbox{Close form}$ 
+            \begin{align}
+            (x^2 + y^2 + z^2 + R^2 - r^2)^2 = R^2(x^2 + y^2) \\
+            \end{align}
+            <img src="http://localhost/zsurface/image/torusred.png" width="60%" height="60%" /><br>
             </div>
-
-            <div class="mytext">
-            Quicksort partition technic 
-            </div>
-            <?php include("../colorhtml/java/quicksortpart.html"); ?> 
-            <div class="cen">
-            <img src="http://localhost/zsurface/image/partition10.png" width="60%" height="60%" /><br>
-            </div>
-            <div class="mytext">
-            Given two words, determine if there is a path to get from word A to word B by changing one letter at a time to create valid intermediate words.<br>  
-            For example:<br>
-            BARK -> BACK -> RACK -> RANK<br>  
-            r->c<br>
-            b-r<br>
-            c-n<br>
-            Inputs are<br> 
-             - Start word<br>
-             - End word<br>
-             - Set of valid words<br>
-             - Return path of words [inclusive]<br>
-            </div>
-
 
             <!-- Column 1 end -->
             </div>
@@ -89,7 +63,7 @@
             <!-- Column 2 start -->
                 <ul>
                     <?php 
-                    $fileName = "indexFacebookInterviewQuestion.html";
+                    $fileName = "indexThebeautyofTorus.html";
                     include("../php/menu.php"); 
                     ?>
                 </ul>
@@ -98,6 +72,22 @@
         </div>
     </div>
 
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'zsurfacecom';
+        
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+    <div id="footer">
+        <p>This page uses the <a href="">Put More Stuff Here</a> by <a href="">ZSurface</a>. View more <a href="">ZSurface</a> and <a href="">ZSurface</a>.</p>
+    </div>
 
     </body>
     </html>

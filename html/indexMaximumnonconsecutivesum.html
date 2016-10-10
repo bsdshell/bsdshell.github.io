@@ -43,12 +43,43 @@
             0. Navies solution and its run time is $\mathcal{O}(n^2) $ <br>
             1. How the problem is related to maximum consecutive sum<br>
             2. How to come up the $\mathcal{O}(n)$ solution<br>
+
+            How does it work in Dynamic Programming?
+            Given an array 
+            \[ \{ n_0, n_1, \cdots, n_k, n_{k+1} \} \]    
+            Assume we can compute the max non-consecutive from \[ \{n_0, \cdots, n_k \}\] 
+                    \[ max = MaxNonCon(\{n_0, \cdots, n_k \}) \] 
+            How we can compute the $\{ n_0, n_1, \cdots, \color{red}{n_k}, n_{k+1} \} $ if we know the maximum of non consecutive of $ \{n_0, \cdots, n_k\}$<br>   
+            Here is the trick<br><br>
+            If $ n_k \in max $ then $ n_{k+1} $ can't be in $ max$ [ Non-consecutive ]<br>
+            then the max of $\{ n_0, n_1, \cdots, \color{red}{n_k}, n_{k+1} \} $ is<br> 
+            \[ max = Max(max\,, n_{k+1}) \] 
+            if $ n_k \notin max $ then $ n_{k+1}$ could be included since $ \color{red}{n_{k}}$ separates $ \{n_0, \cdots, n_{k-1}\}$ and $ n_{k+1}$<br>
+            so we have<br>
+            \[ max = Max(max\,, max + n_{k+1}) \] 
+                
+            
             </div>
-            <?php include("../colorhtml/cpp/mystack.html"); ?> 
+            <?php include("../colorhtml/java/nonconsecutive.html"); ?> 
             <div class="cen">
-            <img src="http://localhost/zsurface/image/cppstd.png" width="40%" height="40%" /><br>
-            <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
+            <img src="http://localhost/zsurface/image/maxnon.png" width="40%" height="40%" /><br>
+            <img src="http://localhost/zsurface/image/non-consecutive.png" width="40%" height="40%" /><br>
+            <a href="https://github.com/bsdshell/java/tree/master/NonConsecutive.java">Source Code</a>
             </div>
+
+            <div class="mytitle">
+            Find the maximum consecutive sum from given Integer array 
+            </div>
+            <div class="mytext">
+            This is similar question. Similar technic can be used to solve it
+            </div>
+            <?php include("../colorhtml/java/consecutive.html"); ?> 
+
+            <div class="cen">
+            <a href="https://github.com/bsdshell/java/tree/master/MaxConsecutiveArray.java">Source Code</a>
+            </div>
+
+
 
             <!-- Column 1 end -->
             </div>

@@ -35,7 +35,6 @@
         <div class="colleft">
             <div class="col1">
             <!-- Column 1 start -->
-
             <div class="mytitle">
             Find the Lowest Common Ancestor Node from a Binary Tree with two given nodes 
             </div>
@@ -65,7 +64,8 @@
             Instead of looking for one node, we can look for two nodes from the findNode method.<br>
             We change the findNode name to LCA from now on since we are working on LCA problem.<br>
             </div>
-            <pre>
+            <pre class="mycode">
+            <pre class="cc">
             Node LCA(Node r, int n1, int n2){
                 if(r != null){
                     if(r.data == n1 || r.data == n2){
@@ -78,6 +78,7 @@
                         return right;
                 }
             }
+            </pre>
             </pre>
             <div class="mytext">
             The above code essentially means if one of the node is found from the Binary Tree,<br>

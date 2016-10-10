@@ -63,6 +63,53 @@
             <img src="http://localhost/zsurface/image/less.png" width="80%" height="80%" /><br>
             </div>
 
+            <div class="mytitle">
+            Compile Mutt 1.8 with IMAP, POP and SMTP
+            </div>
+            <div class="mytext">
+            Thu Sep 15 12:48:13 PDT 2016<br>
+            Today I try to download Mutt 1.8 and try it out since there is some issue with Mutt 1.7 that I use currently.<br>
+            The main screen of Mutt is frozen when computer is idle<br><br> 
+            
+            I download the source code<br>
+            run: ./configure, make and make install<br>
+            It seems to be very smooth, there is no error. I ran 'mutt -v' to confirm the version is 1.8<br>
+            I have my old mutt 1.7 and the ~/.muttrc file in my home directory and I assume I don't need to change any sth on my configure file<br>
+            I hold my breath and run 'mutt'<br>
+            Unfortunately it turns out to be not very smooth. There is error message that I have never seen it before<br>
+            Error: imap_user variable is unknown<br> 
+            I used the older version than 1.7 before and I have similar error about IMAP<br> 
+            I ran 'mutt -v' again and found out IMAP, POP and SMTP are not enabled by default. Obviously the next question is how to enable them.<br>
+            I try Google it around and see whether I find the answer and I have no luck after a few minutes.<br>
+            I decide to take a look at the configure file and see I can find any clue.<br>  
+            Eventually I found out ./configure is accepted arguments which are the flags that enable/disable IMAP, POP and SMTP etc.<br><br>
+            after I run ./configure  --enable-pop   --enable-imap --enable-smtp<br>
+            and I run mutt again, I found there is another errors says the ssl and sasl are not enabled<br><br>
+
+            here is the final configure options<br><br>
+            ./configure  '--enable-hcache' '--with-sasl=yes' '--enable-pop'   '--enable-imap' '--enable-smtp' '--with-ssl=/opt/local'  '--with-libiconv-prefix=/opt/local' '--with-curses=/opt/local'<br><br>
+            
+            It works on my Mac OSX El Capitan[10.11.4] finally<br><br>
+
+
+            Also you need to change smtp_user to following. The previous port number is 587 with smtp in Mutt 1.7<br> 
+            set smtp_url = 'smtps://xxx@smtp.gmail.com:465/'<br><br>
+
+            
+            Here are the steps to build mutt with IMAP, POP, SMTP, SSL and SASL<br>
+            1 download the source code mutt 1.8<br>
+            2 unzip it and cd to your root directory<br>
+            3 run: ./configure  '--enable-hcache' '--with-sasl=yes' '--enable-pop'   '--enable-imap' '--enable-smtp' '--with-ssl=/opt/local'  '--with-libiconv-prefix=/opt/local' '--with-curses=/opt/local'<br><br>
+            4 done
+
+           
+
+            </div>
+            <div class="cen">
+            <img src="http://localhost/zsurface/image/less.png" width="80%" height="80%" /><br>
+            </div>
+
+
 
 
             <div class="mytext">

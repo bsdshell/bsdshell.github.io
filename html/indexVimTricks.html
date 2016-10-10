@@ -91,7 +91,7 @@
                     open file inside the register in Ex mode                     
                     <span class="cmd">:exec 'edit ' @a</span>    
 
-                    move lines to different location [h move] move line from 2 to 4 to top                     
+                    move lines to different location, move line 2 to line 4 to top                     
                     <span class="cmd">:2, 4 m 0</span>    
 
                     filter g [match] and v or g! [not match]                    
@@ -120,6 +120,28 @@
                     stdin to vim  
                     <span class="cmd">ls | vim -</span>
                     - vim accepts stdin
+
+                    Vimrc file multiline String  
+                    <span class="cmd"> let @*='first line \n \ second line'</span>
+
+                    Open URL from Vim  
+                    <span class="cmd">gx</span>
+
+                    Open file from Vim  
+                    <span class="cmd">gf</span>
+
+                    Start of line [^]  
+                    <span class="cmd">:./^\s*\w.*\w$//gc</span>
+
+                    Start of line [\_^], can be used anywhere in the pattern 
+                    <span class="cmd">:./^\s*\w.*\w$//gc</span>
+
+                    Vim match negative matching, delete all lines don't contains cat 
+                    <span class="cmd">:g!/cat/d</span>
+
+                    Substitute Visual mode, [something] 
+                    <span class="cmd">'<,'>s/\%V.*\%V/[\0]/gc</span>
+
 
                     </pre>
 
@@ -179,8 +201,8 @@
                     </div>
                     <pre class="textbox">
                     Today, I just learn something new on how to use <span class="wbold">Command History</span> in Vim.
-                    If you are typing a lots in Command Mode, then there are lots repeating commands that you want to call it again and again.
-                    There are lots of way to do in Vim such as Abbreviation or Mapping, etc.
+                    If you are typing a lots in Ex mode, then there are lots repeating commands that you want to call it again and again.
+                    There are lots of way to do in Vim such as Abbreviation or Map.
                     But the quick way to repeating the command is to open the history and search the command, then press Eneter
                     1. Open command history q:
                     2. Search the command like Normal Mode

@@ -1,0 +1,16 @@
+<div class="highlight"><pre><span class="nf">nameDo</span><span class="ow">::</span><span class="kt">IO</span> <span class="kt">String</span>
+<span class="nf">nameDo</span> <span class="ow">=</span> <span class="kr">do</span> <span class="n">putStr</span> <span class="s">&quot;What is your first name: &quot;</span>
+            <span class="n">first</span> <span class="ow">&lt;-</span> <span class="n">getLine</span>
+            <span class="n">putStr</span> <span class="s">&quot;What is your last name: &quot;</span>
+            <span class="n">last</span>  <span class="ow">&lt;-</span> <span class="n">getLine</span>
+            <span class="kr">let</span> <span class="n">full</span> <span class="ow">=</span> <span class="n">first</span> <span class="o">++</span> <span class="s">&quot; &quot;</span> <span class="o">++</span> <span class="n">last</span>
+            <span class="n">putStrLn</span><span class="p">(</span><span class="s">&quot;full name &quot;</span> <span class="o">++</span> <span class="n">full</span> <span class="o">++</span> <span class="s">&quot; &quot;</span><span class="p">)</span>
+            <span class="n">return</span> <span class="n">full</span>
+
+<span class="nf">main</span> <span class="ow">=</span> <span class="n">nameDo</span> <span class="o">&gt;&gt;=</span> <span class="nf">\</span><span class="n">name</span> <span class="ow">-&gt;</span> <span class="n">print</span> <span class="n">name</span>
+
+<span class="c1">-- alternative</span>
+<span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span>
+    <span class="n">name</span> <span class="ow">&lt;-</span> <span class="n">nameDo</span>
+    <span class="n">print</span> <span class="n">name</span>
+</pre></div>
