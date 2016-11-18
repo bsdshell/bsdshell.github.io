@@ -90,6 +90,17 @@ function createBasicPage($fileHtml, $title)
 return $content;
 }
     $pageArray = array(
+        "Haskell Quick Sort",
+        "OpenGL draw point",
+        "OpenGL draw line",
+        "OpenGL draw triangle",
+        "OpenGL draw polygon",
+        "OpenGL Vertex Array",
+        "OpenGL Vertex Array Triangle",
+        "Draw Triangle OpenGL IOS",
+        "Message Queue",
+        "Observer Pattern",
+        "Publish Subscribe Pattern",
         "The beauty of Torus",
         "one proof a day 5",
         "one proof a day 4",
@@ -232,7 +243,6 @@ return $content;
         "Compute the Determiant of 2x2 Matrix", 
         "How to solve the system equation", 
         "How to plot a linear equation", 
-        "Draw Triangle OpenGL IOS",
         "UIAlert in iOS",
         "TableViewController in iOS",
         "Switch different RootController",
@@ -317,6 +327,9 @@ return $content;
         "Blender Help",
 
         "Java Help Compile Package ClassPath",
+        "Mac OSX Full Screen Tab-Command Not working",
+        "Install Terminal Color Theme in Mac OSX",
+        "Intellij Remove Base Package",
         "Intellij Import your package",
         "Intellij Add Java File",
         "Intellij Path Hell",

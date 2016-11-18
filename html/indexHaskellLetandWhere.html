@@ -2,10 +2,10 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Intellij Change Class Output Path</title>
+        <title>Haskell Let and Where</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Intellij Change Class Output Path" />
-        <meta name="keywords" content="Intellij, How to Change Class Output Directory Folder in Intellij" />
+        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
@@ -35,35 +35,37 @@
         <div class="colleft">
             <div class="col1">
             <!-- Column 1 start -->
+
             <div class="mytitle">
-            How to Change Default Class Output and Test Output or Project Compiler Output in Intellij<br>
+            What is different between <span class="bo">where</span> and <span class="bo">let in</span> in Haskell 
             </div>
             <div class="mytext">
-            Intellij Change <span class="bo">Project Compiler Output</span> Directory<br>
-            Here is steps how to change the Project Compiler Output Directory<br> 
-            1. <span class="bo">File</span> => <span class="bo">Project Structure</span><br> 
-            2. In Project Settings => select <span class="bo">Project</span><br>
-            3. You can change the directory at the bottom of "Project Compiler Output"<br>
+            <span class="bo">Where is</span> declaration<br>  
+            <span class="bo">let in</span> is expression<br>
+            Here are some good examples<br> 
             </div>
-            <br>
+            <pre class="cc">
+                -- declare a = 3,  e.g. in Java, int a = 3; 
+                f x = a*x^2 + b*x + c
+                    where 
+                        a = 1
+                        b = 2
+                        c = 3
+
+                -- let in
+                -- expression: 3 > 2 in Java 
+                print $ let x = 3 in x > 2  -- output True 
+            </pre>
             <div class="cen">
-            <img src="http://localhost/zsurface/image/outclass.png" width="90%" height="90%" /><br>
-            <img src="http://localhost/zsurface/image/changepath11.png" width="90%" height="90%" /><br>
             </div>
-            <div class="mytext">
-            Intellij Change <span class="bo">Main class</span> output and <span class="bo">Test output</span> 
-            </div>
-            <div class="cen">
-            <img src="http://localhost/zsurface/image/testout.png" width="90%" height="90%" /><br>
-            </div>
-                
+
             <!-- Column 1 end -->
             </div>
             <div class="col2">
             <!-- Column 2 start -->
                 <ul>
                     <?php 
-                    $fileName = "indexIntellijChangeClassOutputPath.html";
+                    $fileName = "indexHaskellLetandWhere.html";
                     include("../php/menu.php"); 
                     ?>
                 </ul>
@@ -72,6 +74,22 @@
         </div>
     </div>
 
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'zsurfacecom';
+        
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+    <div id="footer">
+        <p>This page uses the <a href="">Put More Stuff Here</a> by <a href="">ZSurface</a>. View more <a href="">ZSurface</a> and <a href="">ZSurface</a>.</p>
+    </div>
 
     </body>
     </html>

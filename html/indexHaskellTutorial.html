@@ -108,33 +108,34 @@
             <div class="mytext">
             Haskell separates pure functions from computations where side effects must be considered 
             by encoding those side effects as values of a particular type. 
-            Specifically, a values of type [IO a] is an action, which if executed would product a value type of a<br><br>
-            
-            getLine::IO String<br>
-            putStrLn::String-> IO()<br>
-            randomRIO::(Random a) => (a, a) -> IO a<br>
+            Specifically, a values of type [IO a] is an action, which if executed would product a value type of a
             </div>
             <!-- <pre class="prettyprint lang-haskell"> -->
             <pre class="mycode">
+            <span class="bo">[IO a] is an action</span>
+            getLine::IO String
+            putStrLn::String-> IO()
+            randomRIO::(Random a) => (a, a) -> IO a
+
             <span class="bo">Some IO goodness</span>   
             -- define a function to print out "Hello World"
             fun::IO()
             fun = putStrLn "Hello World"
 
             -- IO action is like a type.  
-            putStrLn::String->IO ()  -- input is String, output IO()
+            putStrLn::String->IO ()  -- input is String, output is IO()
             
-            fun::String->String      -- input is String, output String
+            fun::String->String      -- input is String, output is String
 
             <span class="bo">Chain the IO actions</span>
-            (>>)::IO a -> IO b -> b
+            (>>)::IO a -> IO b -> IO b
             where if x and y are IO actions, then (x >> y) is the action performs x, dropping the result
             and then performs y and return its result. Great, we can now write programs which do multiple things
 
             main = putStrLn "Hello" >> putStrLn "World"
 
             <span class="bo">How to use the result of first action</span>
-            (>>=)::IO a -> (a -> IO b) -> b
+            (>>=)::IO a -> (a -> IO b) -> IO b
             Now, (x >>= y) is the action first perform x, and capture its result, passing the result to f, 
             which then computes a second actions to be performed. The action is then carried out, 
             and its result is the result of overall computation.
@@ -148,10 +149,16 @@
             <span class="bo">Chain readFile to print with</span> >>=  
             readFile >>=\contents -> print contents
 
+            <span class="bo">Definition of const</span> 
+            const::a -> b -> a  [keep the first argument and throw away the second argument]
+            It does't look that good from outside but some inside and be surprised [surprisedly]
+
+            const 3 4 -- output 3
+
             >> <span class="bo">can be defined in term of</span> >>=
             x >> y == x >>= const y 
             or
-            x >> y == x >>=\_ -> y
+            x >> y == x >>= \_ -> y
 
             How to turn a value to an IO action which do nothing
             return:: a -> IO a
@@ -225,6 +232,12 @@
             const 1 2  -- output 1
             map(const 3) [1..4] -- output [3, 3, 3]
 
+            <span class="bo">Implement repeat function</span>
+            repeat'::Int->a->[a]
+            repeat' n a = map(const a) [1..n]
+
+            repeat' 3 "x" -- output ["x", "x", "x"]
+
             <span class="bo">Implement length function</span>
             let length' = foldr(\_ acc -> 1 + acc) 0
 
@@ -285,8 +298,12 @@
             8. preorder and postorder can be used in serialization and deseriazation
             </pre>
             <?php include("../colorhtml/haskell/tree.html"); ?>
+            <div class="mytitle">Typeclass Record in Haskell</div>
+            <?php include("../colorhtml/haskell/record.html"); ?>
+
             <div class="mytitle">Typeclass 1 in Haskell</div>
             <?php include("../colorhtml/haskell/typeclass1.html"); ?>
+
             <div class="mytitle">More Typeclass 2 in Haskell</div>
             <?php include("../colorhtml/haskell/typeclass2.html"); ?>
             <div class="mytitle">More Typeclass 3 in Haskell</div>

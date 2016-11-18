@@ -28,15 +28,18 @@
 	<div class="colleft">
 		<div class="col1">
 			<!-- Column 1 start -->
-                <p class="fs">
-                    $\square$
-                    Given a rotated sorted array, find the index of maximum value of the array in $O(\log{n})$ <br>
+                <div class="mytitle">
+                Given a rotated sorted array, find the index of maximum value of the array in $O(\log{n})$ <br>
+                </div>
+                <div class="mytext">
+                    For example, rotate the array $[1, 2, 3, 4, 5, 6, 7, 8]$ three elements to the left,<br>
+                    we have $[4, 5, 6, 7, 8, 1, 2, 3]$
                     <img src="http://localhost/zsurface/image/rotatedarrayfigure.svg" width="100%" height="100%" /><br>
                     After the rotation, there are two partial array:[4 5 6 7 8] and [1 2 3],
                     We can visualize the array as [in figure (3)].<br><br>
                     We try to use similar <span class="sd">binary search algorithm</span> which is as following<br>
                     1. divide the array to two even parts,e.g. left and right<br>
-                    2. do a recursive call on one part that contains the max value<br><br>
+                    2. do a recursive call on one part of the array that contains the key<br><br>
                     $\square$
                     Q. How do we know the maximum value is on the left or on right side?<br>
                     <img src="http://localhost/zsurface/image/rotatedarray1.svg" width="100%" height="100%" /><br>
@@ -44,24 +47,22 @@
                     <span style="color:#FF0033">1. </span>find the middle element of the array [int mid = (lo + hi)/2]<br>
                     <span style="color:#FF0033">2. </span>compare arr[lo] and arr[mid]<br><br>
                     if arr[lo] < arr[mid], we know the maximum value is between [mid] and [hi], [see figure (4)]<br>
+
                     arr[lo] = 4 and arr[mid] = 7<br>
-                    otherwise, the maximum value is between [lo] and [mid], [see figure (5)]<br>
+                    Otherwise, the maximum value is in the range of [lo] and [mid], [see figure (5)]<br>
                     arr[lo] = 6 and arr[mid] = 1<br>
 
-                    <pre style="background:#FFF">
-                        arr[] = {4, 5, 6, 7, 8, 1, 2, 3}
-                        lo = 0, hi = 7
-                        mid = (lo + hi)/2 = 3;
+                    arr[] = {4, 5, 6, 7, 8, 1, 2, 3}
+                    lo = 0, hi = 7
+                    mid = (lo + hi)/2 = 3;
 
-                        arr[lo] = 4, arr[mid] = 7;
-                        arr[lo] < arr[mid] 
-                        The maximum value is from arr[mid] to arr[hi]
-                    </pre>
+                    arr[lo] = 4, arr[mid] = 7;
+                    arr[lo] < arr[mid] 
+                    The maximum value is from arr[mid] to arr[hi]
 
                     <pre style="background:#FFF">
-                        <span style="color:#FF0000">// pseudocode</span>
-                        int findMaxIndex(int[] arr, int lo, int li)
-                        {
+                        // pseudocode
+                        int findMaxIndex(int[] arr, int lo, int li) {
                             int mid = (lo + hi)/2;
                             if(arr[lo] < arr[mid])
                                 return findMaxIndex(arr, mid, hi);
@@ -70,22 +71,49 @@
                         }
                     </pre>
 
-                    <pre style="background:#FFF">
-                        There is <span style="color:#0000FF">one special case</span> that we need to be considered
-                        if the array does not rotate at all, e.g. [1, 2, 3, 4]
-                        then we can just check
-                            if([lo] < [hi])
-                                the array does not rotate at all, 
-                                the index of maximum value is [hi] 
-                    </pre><br>
-                    <div class="cen">
-                    <img src="http://localhost/zsurface/image/maxnew.png" width="50%" height="50%" /><br>
-                    <img src="http://localhost/zsurface/image/rotatesorted.png" width="50%" height="50%" /><br>
-                    <img src="http://localhost/zsurface/image/rotatedarray1.png" width="50%" height="50%" /><br>
-                    <img src="http://localhost/zsurface/image/findmaxmin.png" width="50%" height="50%" /><br>
-                    </div>
-                </p>
-                <?php include("../colorhtml/java/RotatedSortedArray.html"); ?>
+                    There is <span style="color:#0000FF">one special case</span> that we need to be considered
+                    if the array does not rotated at all, then above code will fail. 
+                    for example, given [1, 2, 3, 4]
+                    However, we can just compare the most left and most right elements in the array<br>
+                    Note: If the array doesn't rotated, then $arr[lo] \lt arr[hi]$, otherwise $arr[lo] \geq arr[hi]$
+                    <pre>
+                        if([lo] < [hi])
+                            the array does not rotate at all, 
+                            the index of maximum value is [hi] 
+                    </pre>
+
+                </div><br>
+
+                <div class="mytitle">
+                Full implementation in Java
+                </div>
+                <?php include("../colorhtml/java/findminmax.html"); ?>
+                <div class="mytitle">
+                Following up Question, find the index of the minimum element from above array 
+                </div>
+                <pre>
+                    // make sure check the case [2 1]
+                    int findIndexMinimum array lo hi
+                        // no rotation
+                        if(array[lo] <= array[hi])
+                            return lo
+                        else
+                            mid = lo + hi/2
+                            if array[lo] < array[mid]
+                                findIndexMinimum array mid+1 hi    // 2 1, 3 1 2
+                            else
+                                findIndexMinimum array lo mid
+
+                </pre>
+
+
+                <div class="cen">
+                <img src="http://localhost/zsurface/image/maxnew.png" width="50%" height="50%" /><br>
+                <img src="http://localhost/zsurface/image/rotatesorted.png" width="50%" height="50%" /><br>
+                <img src="http://localhost/zsurface/image/rotatedarray1.png" width="50%" height="50%" /><br>
+                <img src="http://localhost/zsurface/image/findmaxmin.png" width="50%" height="50%" /><br>
+                </div>
+
         <!-- Column 1 end -->
 		</div>
 		<div class="col2">

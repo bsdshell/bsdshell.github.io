@@ -1,0 +1,30 @@
+<div class="highlight"><pre><span class="c1">-- /Users/cat/myfile/github/haskell/Record.hs</span>
+<span class="c1">-- ref: http://learnyouahaskell.com/making-our-own-types-and-typeclasses </span>
+<span class="c1">-- -------------------------------------------------------------------------------- </span>
+<span class="c1">-- 1. how to create record</span>
+<span class="c1">-- 2. how to access field from typeclass, e.g. person.lastName in java</span>
+<span class="c1">-- 3. how to override == without doing anything with deriving(Eq)</span>
+<span class="c1">-- -------------------------------------------------------------------------------- </span>
+<span class="kr">data</span> <span class="kt">Person</span> <span class="ow">=</span> <span class="kt">Person</span> <span class="p">{</span><span class="n">firstName</span><span class="ow">::</span><span class="kt">String</span><span class="p">,</span> <span class="n">lastName</span><span class="ow">::</span><span class="kt">String</span><span class="p">,</span> <span class="n">age</span><span class="ow">::</span><span class="kt">Int</span><span class="p">}</span> <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Eq</span><span class="p">)</span>
+
+<span class="c1">-- Person derives from Eq, Haskell generates (==) and (/=) for us automatically,</span>
+<span class="c1">-- the catch is String and Int also have to be part of (Eq) typeclass </span>
+<span class="c1">-- access field from typeclass with record</span>
+<span class="nf">showPerson</span><span class="ow">::</span><span class="kt">Person</span><span class="ow">-&gt;</span><span class="kt">String</span>
+<span class="nf">showPerson</span> <span class="kt">Person</span><span class="p">{</span><span class="n">firstName</span> <span class="ow">=</span> <span class="n">firstName</span><span class="p">,</span> <span class="n">lastName</span> <span class="ow">=</span> <span class="n">lastName</span><span class="p">,</span> <span class="n">age</span> <span class="ow">=</span> <span class="n">age</span><span class="p">}</span> 
+                        <span class="ow">=</span> <span class="s">&quot;[&quot;</span> <span class="o">++</span> <span class="n">firstName</span> <span class="o">++</span> <span class="s">&quot; &quot;</span> <span class="o">++</span> <span class="n">lastName</span> <span class="o">++</span> <span class="s">&quot; &quot;</span> <span class="o">++</span> <span class="n">show</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">++</span> <span class="s">&quot;]&quot;</span>
+
+<span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span> 
+        <span class="kr">let</span> <span class="n">person</span> <span class="ow">=</span> <span class="kt">Person</span><span class="p">{</span><span class="n">firstName</span> <span class="ow">=</span> <span class="s">&quot;Jonathan&quot;</span><span class="p">,</span> <span class="n">lastName</span> <span class="ow">=</span> <span class="s">&quot;Michell&quot;</span><span class="p">,</span> <span class="n">age</span> <span class="ow">=</span> <span class="mi">20</span><span class="p">}</span>
+        <span class="kr">let</span> <span class="n">animal</span> <span class="ow">=</span> <span class="kt">Person</span><span class="p">{</span><span class="n">firstName</span> <span class="ow">=</span> <span class="s">&quot;Nonhuman&quot;</span><span class="p">,</span> <span class="n">lastName</span> <span class="ow">=</span> <span class="s">&quot;Michell&quot;</span><span class="p">,</span> <span class="n">age</span> <span class="ow">=</span> <span class="mi">20</span><span class="p">}</span>
+        <span class="n">print</span> <span class="o">$</span> <span class="n">showPerson</span> <span class="n">person</span>
+        <span class="n">print</span> <span class="o">$</span> <span class="n">showPerson</span> <span class="p">(</span><span class="kt">Person</span> <span class="s">&quot;Steven&quot;</span> <span class="s">&quot;Jobs&quot;</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="n">print</span> <span class="o">$</span> <span class="n">person</span> <span class="o">==</span> <span class="n">person</span>  <span class="c1">-- True</span>
+        <span class="n">print</span> <span class="o">$</span> <span class="n">person</span> <span class="o">==</span> <span class="n">animal</span>  <span class="c1">-- False </span>
+        <span class="n">print</span> <span class="o">$</span> <span class="n">person</span> <span class="o">/=</span> <span class="n">animal</span>  <span class="c1">-- True </span>
+        <span class="n">fl</span>
+        <span class="c1">-- person.firstName in java</span>
+        <span class="n">print</span> <span class="o">$</span> <span class="s">&quot;firstName=&quot;</span> <span class="o">++</span> <span class="n">firstName</span> <span class="n">person</span>  <span class="c1">-- Jonathan</span>
+        <span class="n">print</span> <span class="o">$</span> <span class="s">&quot;lastName =&quot;</span> <span class="o">++</span> <span class="n">lastName</span> <span class="n">person</span>   <span class="c1">-- Michell </span>
+        <span class="n">print</span> <span class="o">$</span> <span class="s">&quot;age      =&quot;</span> <span class="o">++</span> <span class="n">show</span><span class="p">(</span><span class="n">age</span> <span class="n">person</span><span class="p">)</span>  <span class="c1">-- 20</span>
+</pre></div>
