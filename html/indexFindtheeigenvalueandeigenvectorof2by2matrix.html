@@ -2,10 +2,10 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Reverse a LinkedList in Java</title>
+        <title>Find the eigenvalue and eigenvector of 2 by 2 matrix</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
-        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
@@ -18,7 +18,7 @@
                 jax: ["input/TeX","output/HTML-CSS"],
                 tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
               });
-            </script>
+        </script>
         <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
     </head>
     <body>
@@ -31,62 +31,59 @@
       ga('send', 'pageview');
     </script>
 
-    <div id="header">
-    </div>
     <div class="colmask rightmenu">
         <div class="colleft">
             <div class="col1">
             <!-- Column 1 start -->
-            <div class="mytitle">
-            Reverse a single linked list with a while loop in Java<br>
-            </div>
-            <div class="mytext">
-            1. Create two Node references, the first Node reference stores the prevous node and the second Node reference stores the current node.<br>
-            2. Store the current next Node reference in a tmp, then switch the previous and current nodes.<br>
-            3. Iterate the current Node to the next Node.<br>
-            </div>
-            <pre class="codebg">
-            Node reverseLinkedList(Node node){
-                Node prev = null;
-                Node curr = node;
-                while(curr != null){
-                    // keep the current node in order to iterate it late on
-                    Node nnext = curr.next;
-                    curr.next = prev; 
-                    prev = curr;
-                    curr = nnext;
-                }
-                return prev;
-            }
-            </pre>
 
             <div class="mytitle">
-            Reverse Single LinkedList 
+            Find the eigenvalue and eigenvector of 2 by 2 matrix 
             </div>
             <div class="mytext">
-            Simple, elegant but it is hard to get it right in the first shot<br>
+            Find the eigenvalue of 2 by 2 matrix<br>
             </div><br>
             <div class="cen">
-            <img src="http://localhost/zsurface/image/reversesll1.png" width="60%" height="60%" /><br>
+            <img src="http://localhost/zsurface/image/eigenvalue_tutorial.png" width="80%" height="80%" /><br>
             </div> 
-            
+            <div class="mytext">
+            Find the eigenvector of 2 by 2 matrix<br>
+            </div><br>
+            <div class="cen">
+            <img src="http://localhost/zsurface/image/eigenvector1.png" width="80%" height="80%" /><br>
+            </div> 
+
+
             <!-- Column 1 end -->
             </div>
             <div class="col2">
             <!-- Column 2 start -->
                 <ul>
-                    
-                        <?php 
-                        $fileName = "indexReverseaLinkedListinJava.html";
-                        include("../php/menu.php"); 
-                        ?>
-                    
+                    <?php 
+                    $fileName = "indexFindtheeigenvalueandeigenvectorof2by2matrix.html";
+                    include("../php/menu.php"); 
+                    ?>
                 </ul>
             <!-- Column 2 end -->
             </div>
         </div>
     </div>
 
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'zsurfacecom';
+        
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+    <div id="footer">
+        <p>This page uses the <a href="">Put More Stuff Here</a> by <a href="">ZSurface</a>. View more <a href="">ZSurface</a> and <a href="">ZSurface</a>.</p>
+    </div>
 
     </body>
     </html>

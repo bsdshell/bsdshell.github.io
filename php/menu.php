@@ -90,6 +90,9 @@ function createBasicPage($fileHtml, $title)
 return $content;
 }
     $pageArray = array(
+        "Print Previous element from Binary Tree",
+        "Tower Hanoi",
+        "Polish Notation and Preporder Traveral",
         "Haskell Quick Sort",
         "OpenGL draw point",
         "OpenGL draw line",
@@ -169,6 +172,7 @@ return $content;
         "Java Matrix Multiply",
         "Microsoft Tech Interview Questions",
         "Java Priority Heap",
+        "C++ Copy Constructor",
         "C++ Clone Double Linked List",
         "C++ Clone Single Linked List",
         "C++ Single Linked List",
@@ -223,6 +227,7 @@ return $content;
         "Image Processing", 
         "Euler Formula", 
         "Computing determinant with cofactor expansion", 
+        "Find the eigenvalue and eigenvector of 2 by 2 matrix", 
         "Find the eigenvalue of skew-symmetic matrix", 
         "From Matrix to Lie Group", 
         "Cubic Curve", 
