@@ -449,10 +449,30 @@
                          &\Rightarrow A \text{ is rotation matrix}
                     \end{split}
                     \end{align*}
-
-
-
                 </div>
+
+                <div class="mytitle">
+                Projection Matrix in OpenGL. 
+                </div>
+                What is Projection Matrix in OpenGL.<br>
+                There are two type of Projection Matrix in OpenGL.<br>
+                Perspective Projection and Orthogonal Projection<br> 
+                We will derived Perspective Projection.<br>
+                What does Perspective Projection do in OpenGL.<br>
+                It projects points in eye/camera space to Normal Device Coordinates[NDC]<br>
+
+                <div class="cen">
+                <img src="http://localhost/zsurface/image/ndc.png" width="50%" height="50%" /><br>
+                <img src="http://localhost/zsurface/image/similartri.png" width="50%" height="50%" /><br>
+                </div> 
+                    \begin{align*}
+                    \begin{split}
+
+                    \frac{x_p}{x_e} = \frac{-n}{z_e} \Rightarrow  x_p = \frac{nx_e}{-z_e} \\
+                    \frac{y_p}{y_e} = \frac{-n}{z_e} \Rightarrow  y_p = \frac{ny_e}{-z_e} \\
+
+                    \end{split}
+                    \end{align*}
             <!-- Column 1 end -->
             </div>
             <div class="col2">
