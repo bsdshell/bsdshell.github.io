@@ -471,6 +471,145 @@
                     \frac{x_p}{x_e} = \frac{-n}{z_e} \Rightarrow  x_p = \frac{nx_e}{-z_e} \\
                     \frac{y_p}{y_e} = \frac{-n}{z_e} \Rightarrow  y_p = \frac{ny_e}{-z_e} \\
 
+                   \left[ \begin{array}{c} 
+                    x_p \\ 
+                    y_p \\
+                    z_p \\
+                    w_p \\
+                    \end{array} \right] 
+                    = \begin{bmatrix} 
+                    n & 0  & 0 & 0 \\ 
+                    0 & n  & 0 & 0 \\
+                    0 & 0  & A & B \\
+                    0 & 0  & 0 & 1 \\
+                    \end{bmatrix} \times
+                   \left[ \begin{array}{c} 
+                    x_e \\ 
+                    y_e \\
+                    z_e \\
+                    w_e \\
+                    \end{array} \right] \\
+
+                    z_p &= Az_e + B w_e \\
+                    \frac{z_p}{-z_e} &= -A + \frac{B w_e}{-z_e} \\
+                    \text{Since we want to have something }  \\ 
+                    z_p &= \frac{\sigma}{-z_e} \\
+                    -z_p z_e &= \sigma \\
+                    \sigma &= A z_e + B w_e \\
+                    z_p &=  \frac{A z_e + B w_e}{-z_e} \\
+                    w_e &= 1  \\
+                    -n &= -A + \frac{B}{n} \quad \because  z_e = -n \\
+                    -f &= -A + \frac{B}{f} \quad \because  z_e = -f \\
+                    -n + f &= \frac{B}{n} - \frac{B}{f} \\
+                    B &=  nf \\
+                    A &= n + f \\
+                    z_p &=  \frac{(n+f) z_e + nf}{-z_e} \\
+                    
+
+                   \left[ \begin{array}{c} 
+                    x_p \\ 
+                    y_p \\
+                    z_p \\
+                    w_p \\
+                    \end{array} \right] 
+                    = \begin{bmatrix} 
+                    n & 0 & 0   & 0 \\
+                    0 & n & 0   & 0 \\
+                    0 & 0 & n+f & nf \\
+                    0 & 0 & 0   & 1 \\
+                    \end{bmatrix}
+                   \left[ \begin{array}{c} 
+                    x_e \\ 
+                    y_e \\
+                    z_e \\
+                    w_e \\
+                    \end{array} \right] \\
+                    \text{Map A} [x_p, y_p, z_p, w_p] [x_n, y_n, z_n, w_n]
+                    \end{split}
+                    \end{align*}
+
+                    <div class="cen">
+                    <img src="http://localhost/zsurface/image/projection_to_ndc.png" width="40%" height="40%" /><br>
+                    </div> 
+                    We try to map the near plane to font plane of NDC, they are linear relationship<br>
+                    <div class="cen">
+                    <img src="http://localhost/zsurface/image/xe_to_ndc.png" width="40%" height="40%" /><br>
+                    </div> 
+                    \begin{align*}
+                    \begin{split}
+                    
+                    x_n &= \frac{1-(-1)}{r-l} x_p + \alpha \\
+                    x_n &= \frac{2}{r - l} x_p + \alpha  \\
+                      1 &= \frac{2}{r - l} r + \alpha  \\
+                      \alpha &= 1 -   \frac{2}{r - l} r \\
+                      \alpha &= -\frac{r + l}{r - l} \\ 
+                    x_n &= \frac{2}{r - l} x_p - \frac{r + l}{r - l} \\ 
+                    x_n &= \frac{2}{r - l} \frac{nx_e}{-z_e} - \frac{r + l}{r - l} \quad \because x_p = \frac{nx_e}{-z_e} \\ 
+                    x_n &= \frac{ \frac{2n}{r-l}x_e +  \frac{r + l}{r - l}z_e }{-z_e} \\ \\
+
+                    \end{split}
+                    \end{align*}
+
+                    <div class="cen">
+                    <img src="http://localhost/zsurface/image/yeyn.png" width="40%" height="40%" /><br>
+                    </div> 
+
+                    \begin{align*}
+                    \begin{split}
+                    y_n &= \frac{1-(-1)}{t - b} y_p + \beta \\
+                    y_n &= \frac{2}{t - b} y_p + \beta \\
+                      1 &= \frac{2}{t - b} r + \beta \\
+                   \beta &=  -\frac{t + b}{t - b} \\
+                    y_n &= \frac{2}{t - b} y_p - \frac{t + b}{t - b} \\ 
+                    y_n &= \frac{2}{t - b} \frac{ny_e}{-z_e} - \frac{t + b}{t - b} \quad \because y_p = \frac{ny_e}{-z_e} \\ 
+                    y_n &= \frac{ \frac{2n}{t - b}y_e +  \frac{t + b}{t - b}z_e }{-z_e} \\ \\
+
+                    \end{split}
+                    \end{align*}
+
+                    <div class="cen">
+                    <img src="http://localhost/zsurface/image/zezn.png" width="40%" height="40%" /><br>
+                    </div> 
+                    \begin{align*}
+                    \begin{split}
+
+                   \text{Similary} \\
+
+                   z_n    &= \frac{1-(-1)}{n - f} z_p + \gamma \\
+                   z_n    &= \frac{2}{n - f} z_p + \gamma \\
+                   z_n    &= -1 \quad z_p = -n \\
+                   -1     &= \frac{2}{n-f} - n + \gamma \\
+                   \gamma &= \frac{n + f}{n - f} \\
+                   z_n    &= \frac{2}{n-f} z_p + \frac{n+f}{n-f} \quad \because z_p =  \frac{(n+f) z_e + nf}{-z_e} \\
+                   z_n    &= \frac{2}{n-f} \frac{[(n+f) z_e + nf]}{-z_e} + \frac{n+f}{n-f} \\
+                   z_n    &= \frac{2}{n-f} \frac{[(n+f) z_e + nf]}{-z_e} + \frac{(n+f)(-z_e)}{(n-f)(-z_e)} \\
+                   z_n    &= \frac{(n+f)z_e + 2nf}{(n-f)(-z_e)} \\
+                   z_n    &= \frac{\frac{n+f}{n-f}z_e}{-z_e} + \frac{ \frac{2nf}{n-f}}{-z_e} \\
+                    \end{split}
+                    \end{align*}
+
+                    \begin{align*}
+                    \begin{split}
+
+                   \left[ \begin{array}{c} 
+                    x_n \\ 
+                    y_n \\
+                    z_n \\
+                    w_n \\
+                    \end{array} \right] 
+                    &= \begin{bmatrix} 
+                    \frac{2n}{r-l} & 0              & \frac{r+l}{r-l} & 0 \\
+                    0              & \frac{2n}{t-b} & \frac{t+b}{t-b} & 0 \\
+                    0              & 0              & \frac{n+f}{n-f}  & \frac{2nf}{n-f} \\
+                    0              & 0              & 0                & 1 \\
+                    \end{bmatrix} 
+                   \left[ \begin{array}{c} 
+                    x_e \\ 
+                    y_e \\
+                    z_e \\
+                    w_e \\
+                    \end{array} \right] \\
+
                     \end{split}
                     \end{align*}
             <!-- Column 1 end -->
