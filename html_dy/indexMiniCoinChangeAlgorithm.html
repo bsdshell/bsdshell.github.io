@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+	<title>Surface, Curve, Algorithm, Geometry, Algebra</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+	<meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../highlight.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+          });
+        </script>
+    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+</head>
+<body>
+
+<div id="header">
+</div>
+<div class="colmask rightmenu">
+	<div class="colleft">
+		<div class="col1">
+			<!-- Column 1 start -->
+                <div>
+                    <div>
+                        <h2>Given change C and <font color="red">$S=\{S_{1}, S_{2}, ... ,S_{k}  \}$</font>, find the mininum numbers of coins that adds up to C
+                            <br>let the numbers of coins to be $\varphi$ 
+                        </h2>
+                        <h3><font color="blue">Example 1 </font> Given change C = 6 and <font color="red">$S=\{2, 3, 4\}$</font>, find the mininum number of coins adds up to 6</h3>
+                        <h3>C = 6 = 2 + 2 + 2 $\Rightarrow \varphi =3$</h3>
+                        <h3>C = 6 = 2 + 4 $\Rightarrow \varphi =2$</h3>
+                        <h3>C = 6 = 4 + 2 $\Rightarrow \varphi =2$</h3>
+                        <h3>C = 6 = 3 + 3 $\Rightarrow \varphi =2$</h3>
+                        <h3>$\Rightarrow \varphi=2$</h3>
+                    </div>
+
+                    <div class="mathbox">
+                        <h3><font color="#F2940F">Mathematic Concept</font></h3>
+                        <h3>Given C and find the linear combination of $S=\{S_{1}, S_{2}, ... ,S_{k}  \} \Rightarrow C = \sum_{i=1}^{k} x_{i}S_{i}$ </h3>
+                        <h3><font color="red">$C = 6\quad S=\{2, 3, 4\}$</font></h3>
+                        <h3>$6 = 1*2 + 1*2 + 1*2 \Rightarrow x_{1}=1\quad x_{2}=1\quad x_{3}=1 \Rightarrow \varphi = 1 + 1 + 1 = 3 \textbf{ coins}$</h3>
+                        <h3>$6 = 1*2 + 1*4 \Rightarrow x_{1}=1\quad x_{2}=1 \Rightarrow \varphi = 1 + 1 = 2 \textbf{ coins}$</h3>
+                        <h3>$6 = 1*4 + 1*2 \Rightarrow x_{1}=1\quad x_{2}=1 \Rightarrow \varphi = 1 + 1 = 2 \textbf{ coins}$ </h3>
+                        <h3>$6 = 1*3 + 1*3 \Rightarrow x_{1}=1\quad x_{2}=1 \Rightarrow \varphi = 1 + 1 = 2 \textbf{ coins}$</h3>
+                    </div>
+
+                    <br>
+                    <h3><font color="blue">Example 2 </font> Given change C = 0 and <font color="red">$S=\{2, 3, 4\}$</font>, find the mininum number of coins adds up to 0</h3>
+                    <h3>Since C = 0, zero coin adds up to C = 0. Therefore, the solution is zero coin</h3>
+                    <h3>C = 0 = 0 $\Rightarrow \varphi =0$</h3>
+
+                    <div class="mathbox">
+                        <h3><font color="#F2940F">Mathematic Concept</font></h3>
+                        <h3>$C = 0 = 0*2 + 0*3 + 0*4 \Rightarrow x_{1}=0\quad x_{2}=0\quad x_{3}=0 \Rightarrow \varphi = 0 + 0 + 0 = 0 \textbf{ coin}$</h3>
+                    </div>
+
+                    <br>
+                    <h3><font color="blue">Example 3 </font> Given change C = 6 and <font color="red">$S=\{\}$</font>(has no coin), find the mininum number of coins adds up to 6</h3>
+                    <h3>There is no coin, therefore there is no solution</h3>
+                    <h3>C = 0 = 0 $\Rightarrow \varphi =\infty$</h3>
+                    <div class="mathbox">
+                        <h3><font color="#F2940F">Mathematic Concept</font></h3>
+                        <h3>$C = 0 = x*\emptyset \Rightarrow x\notin \mathbb{N}\quad set \quad \varphi =\infty$</h3>
+                    </div>
+                </div>
+
+                <div>
+                    <h3><?php include("../colorhtml/MiniCoinCount.html"); ?></h3>
+                </div>
+                <div>
+                    <img src="http://localhost/zsurface/image/CoinChangeGraph.svg" width="100%" height="50%" />
+                </div>
+        <!-- Column 1 end -->
+		</div>
+		<div class="col2">
+			<!-- Column 2 start -->
+            <ul>
+                
+                    <?php 
+                    $fileName = "indexMiniCoinChangeAlgorithm.html";
+                    include("../php/menu.php"); 
+                    ?>
+                
+            </ul>
+            <!-- Column 2 end -->
+		</div>
+	</div>
+</div>
+</body>
+</html>

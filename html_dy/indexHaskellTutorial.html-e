@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+	<title>Surface, Curve, Algorithm, Geometry, Algebra</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="description" content="Haskell Snippet" />
+	<meta name="keywords" content="Haskell example, Haskell Hello World, Haskell Binding, Haskell Typeclass, Foldable" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../highlight.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+          });
+        </script>
+    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+</head>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66282017-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+<div id="header">
+</div>
+<div class="colmask rightmenu">
+	<div class="colleft">
+		<div class="col1">
+			<!-- Column 1 start -->
+                <h3 class="haskellc">Regular Expression in Haskell<h3>
+                <?php include("../colorhtml/haskell/regexExample.html"); ?>
+                <h3 class="haskellc">Hello World in Haskell<h3>
+                <?php include("../colorhtml/haskell/helloworld.html"); ?>
+                <h3 class="haskellc">Factorial function in Haskell<h3>
+                <?php include("../colorhtml/haskell/factorial.html"); ?>
+
+                <h3 class="haskellc">Sum all integers in a list in Haskell<h3>
+                <?php include("../colorhtml/haskell/suminteger.html"); ?>
+                <h3 class="haskellc">Palindrome in Haskell<h3>
+                <?php include("../colorhtml/haskell/palindrome.html"); ?>
+
+                <h3 class="haskellc">Maximum of a list<h3>
+                <?php include("../colorhtml/haskell/maximum.html"); ?>
+
+                <h3 class="haskellc">If else in Haskell<h3>
+                <?php include("../colorhtml/haskell/ifthen.html"); ?>
+                <h3 class="haskellc">Equation Guarding in Haskell<h3>
+                <?php include("../colorhtml/haskell/guards.html"); ?>
+                <div class="cen">
+                    <img src="http://localhost/zsurface/image/guards.svg" width="40%" height="40%" />
+                </div>
+                <h3 class="haskellc">let binding in Haskell<h3>
+                <?php include("../colorhtml/haskell/letbinding.html"); ?>
+                <h3 class="haskellc">Print all permutation in Haskell<h3>
+                <?php include("../colorhtml/haskell/permutation.html"); ?>
+                <h3 class="haskellc">Tree Traversal: Preorder Inorder Postorder/DFS in Haskell<h3>
+                        <p>Normally there are preorder inorder and postorder traversals<br>
+                        preorder: + a b<br>
+                        inorder:  a + b<br>
+                        postorder: a b + 
+                        </p>
+                        <p>
+                        There are many applications for these traversals
+                        </p>
+                <?php include("../colorhtml/haskell/tree.html"); ?>
+                <h3 class="haskellc">Typeclass 1 in Haskell<h3>
+                <?php include("../colorhtml/haskell/typeclass1.html"); ?>
+                <h3 class="haskellc">More Typeclass 2 in Haskell<h3>
+                <?php include("../colorhtml/haskell/typeclass2.html"); ?>
+                <h3 class="haskellc">More Typeclass 3 in Haskell<h3>
+                <?php include("../colorhtml/haskell/typeclass3.html"); ?>
+                <h3 class="haskellc">More Typeclass 4 in Haskell<h3>
+                <?php include("../colorhtml/haskell/typeclass4.html"); ?>
+                <h3 class="haskellc">More Typeclass 5 in Haskell<h3>
+                <?php include("../colorhtml/haskell/typeclass5.html"); ?>
+                <h3 class="haskellc">More Typeclass 6 in Haskell<h3>
+                <?php include("../colorhtml/haskell/typeclass6.html"); ?>
+                <h3 class="haskellc">Following is java interface and two classes</h3>
+                <?php include("../colorhtml/myshape.html"); ?>
+
+                <h3 class="haskellc">Crazy function in Haskell</h3>
+                <?php include("../colorhtml/haskell/function.html"); ?>
+
+                <h3 class="haskellc">Composite function in Haskell</h3>
+                <?php include("../colorhtml/haskell/composite.html"); ?>
+
+                <h3 class="haskellc">Foldable in Haskell</h3>
+                <?php include("../colorhtml/haskell/foldable.html"); ?>
+
+                <h3 class="haskellc">instance and class in Haskell</h3>
+                <?php include("../colorhtml/haskell/instance.html"); ?>
+
+                <h3 class="haskellc">Functor in Haskell</h3>
+                <?php include("../colorhtml/haskell/functor.html"); ?>
+
+                <h3 class="haskellc">Algebraic Data Type in Haskell<h3>
+                <p> 
+                Algebraic Data type - Algebraic refers to the property that an algebraic data type is created 
+                                      by algebraic operations such as sum and product. There <br>
+                Sum is alternation[logic OR operator][A | B, meaning A or B but not both, e.g. enum in Java/C++]<br>
+                Product is combination[logic AND operator][A B, meaning A and B together, e.g. tuple, record]<br>
+                </p> 
+                <pre style="background:#DDD;">
+                data Maybe a = Just a | Nothing 
+                There are two constructors:
+                Just is one constructor with one parameter a 
+                Nothing is other constrcutor with no parameter
+                </pre>
+                <?php include("../colorhtml/haskell/filetype1.html"); ?>
+
+                <h3 class="haskellc">foldr and foldl in Haskell<h3>
+                <div class="cen">
+                <img src="http://localhost/zsurface/image/fold.svg" width="50%" height="50%" /><br> 
+                </div>
+                <?php include("../colorhtml/haskell/fold.html"); ?> <br>
+                <?php include("../colorhtml/java/foldjava.html"); ?> <br>
+                <div class="cen">
+                <img src="http://localhost/zsurface/image/fold2.svg" width="50%" height="50%" /><br> 
+                </div>
+
+
+                <h3 class="haskellc">let expressions and where causes local variable binding in Haskell<h3>
+                <?php include("../colorhtml/haskell/letwhere.html"); ?>
+
+                <h3 class="haskellc">simple case in Haskell<h3>
+                <p class="fs">
+                Case in Haskell is like switch statement in Java, except it is more beautiful! 
+                </p>
+                <?php include("../colorhtml/haskell/case.html"); ?>
+                <h3 class="haskellc">practical case in Haskell<h3>
+                <?php include("../colorhtml/haskell/mycase.html"); ?>
+
+                <h3 class="haskellc">First OpenGL Hello World in Haskell<h3>
+                <?php include("../colorhtml/haskell/firstOpenGL.html"); ?>
+
+                <div class="cen">
+                    <img src="http://localhost/zsurface/image/firstOpenGL.png" width="30%" height="30%" />
+                </div>
+                <h3 class="haskellc">OpenGL Vertex and Color in Haskell<h3>
+                <?php include("../colorhtml/haskell/openGLColor.html"); ?>
+                <div class="cen">
+                    <img src="http://localhost/zsurface/image/openGLColor.png" width="30%" height="30%" />
+                </div>
+                <h3 class="haskellc">Map Examples in Haskell<h3>
+                <p>
+                Haskell Map Example<br>
+                map::(a->b) -> [a] -> [b]<br>
+                map f xs is the list obtained by apply f to each element of xs<br>
+                map f [1..3] = [f(1) f(2) f(3)]<br>
+                map f [x1, x2, ...] = [f(x1), f(x2), ...]<br>
+                </p>
+                <?php include("../colorhtml/haskell/map.html"); ?>
+                <h3 class="haskellc">Unwrap Monad, Find Index and SubString in Haskell<h3>
+                <p>
+                1. Unwrap the Maybe Monad<br>
+                2. Find the Index of Char in a String<br>
+                3. SubString of two Indexes of string<br><br>
+                Similar Haskell functions<br>
+                </p>
+                <pre style="background:#DDD";>
+"abc" !! 1               -> 'b'
+elemIndex 'a' "ba"       -> Just 1
+isInfixOf "ab" "efab"    -> True
+findIndex (== 'a') "bac" -> 1
+findIndex (> 'a')  "bac" -> 2
+                </pre>
+                <?php include("../colorhtml/haskell/string.html"); ?>
+                <h3 class="haskellc">Regular Expression in Haskell<h3>
+                <?php include("../colorhtml/haskell/regex1.html"); ?>
+
+
+        <!-- Column 1 end -->
+		</div>
+		<div class="col2">
+        <!-- Column 2 start -->
+            <ul>
+                
+                    <?php 
+                    $fileName = "indexHaskellTutorial.html";
+                    include("../php/menu.php"); 
+                    ?>
+                
+            </ul>
+        <!-- Column 2 end -->
+		</div>
+	</div>
+</div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'zsurfacecom';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<div id="footer">
+	<p>This page uses the <a href="">Put More Stuff Here</a> by <a href="">ZSurface</a>. View more <a href="">ZSurface</a> and <a href="">ZSurface</a>.</p>
+</div>
+</body>
+</html>

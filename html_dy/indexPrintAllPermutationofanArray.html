@@ -1,0 +1,158 @@
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+    <head>
+        <title>Surface, Curve, Algorithm, Geometry, Algebra</title>
+        <meta http-equiv="Content-Type" content="Print all permuation of given a string" />
+        <meta name="description" content="Print all permuation of given a string" />
+        <meta name="keywords" content="Print all permutation of string, print all permuation in Java" />
+        <meta name="robots" content="index, follow" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../highlight.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/x-mathjax-config">
+              MathJax.Hub.Config({
+                extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+                jax: ["input/TeX","output/HTML-CSS"],
+                tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
+              });
+            </script>
+        <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+    </head>
+    <body>
+    <div id="header">
+    </div>
+    <div class="colmask rightmenu">
+        <div class="colleft">
+            <div class="col1">
+                <!-- Column 1 start -->
+                    <div class="mytitle">
+                    Print all permuation of given a string.<br>
+                    </div><br>
+                    <div class="cen">
+                    <img src="http://localhost/zsurface/image/permtree1.svg" width="60%" height="60%" /><br>
+                    </div>
+                    <pre class="codebg">
+                                void perm(String prefix, String str){
+                                    if(str.length == 0)
+                                        print prefix
+                                    else{
+                                        for(int i=0; i < str.length; i++){
+                                            perm(prefix + str.charAt(i), remove(str, i));
+                                        }
+                                    }
+                                }
+                    </pre>
+
+                    <div class="mytext">
+                    $\langle {\large{\color{red}\alpha}} \rangle$ 
+                    <span class="wbold">Print all the permutations of an array of characters</span><br>
+                    This is very popular question for software engineer technical interview.<br><br>
+
+                    $\langle {\large{\color{red}\zeta}} \rangle$ 
+                    <span class="wbold">Understand the question first</span><br>
+                    This is very easy question to understand, but it is not so easy to code it up in 45 minutes.
+
+                    Let's try to understand that question.<br><br>
+                    Given array, char[] array = {'a', 'b', 'c'}, the following are all the permutations<br>
+                    a b c<br>
+                    a c b<br>
+
+                    c b a<br>
+                    c a b<br>
+
+                    b a c<br>
+                    b c a<br><br>
+                    The question is how we algorithmically print out the permutation?<br><br>
+                    1. If we fix the letter 'a', and permutate['b', 'c']<br>
+                    here is what we got?<br>
+                    a, [b, c]<br>
+                    a, [c, b]<br><br>
+
+                    2. we can swap 'a' to each char in [b c] and [c b]<br>
+                    swap{a,b} $\Rightarrow$ b [a c] and swap{a,c} $\Rightarrow$ c [b a]<br>
+                    swap{a,c} $\Rightarrow$ c [a b] and swap{a,b} $\Rightarrow$ b [c a]<br><br>
+
+                    [a b c] $\Rightarrow$ [b a c] and [c b a]<br>
+                    [a c b] $\Rightarrow$ [c a b] and [b c a]<br><br>
+                    all the permutations from 'a', 'b', 'c'<br>
+                    [a b c]<br>
+                    [b a c]<br>
+                    [c b a]<br>
+                    [a c b]<br>
+                    [c a b]<br>
+                    [b c a]<br><br>
+
+                    $\langle {\large{\color{red}\psi}} \rangle$
+                    <span class="wbold">Fix the order of a partial string</span><br>
+                    Given char 'a' and string "123" and we fix the order of "123", how many different string[lenght=4] we can generate from 'a' and "123"<br>
+                    Please remember the order of "123" is fixed,[e.g "213a" is not allowed]<br>
+                    Obviously we can generate all the strings as following:<br>
+                    a123<br>
+                    1a23<br>
+                    12a3<br>
+                    123a<br><br>
+
+                
+                    $\langle {\large{\color{red}\omega}} \rangle$
+                    <span class="wbold">Use the power of swap[index, index] operation</span><br>
+                    a123 swap[0, 0] $\Rightarrow$ a123<br>
+                    a123 swap[0, 1] $\Rightarrow$ 1a23<br>
+                    a123 swap[0, 2] $\Rightarrow$ 12a3<br>
+                    a123 swap[0, 3] $\Rightarrow$ 123a<br>
+                    </div> 
+
+
+                    <div class="cen">
+                    <img src="http://localhost/zsurface/image/colorpermutation.png" width="40%" height="40%" /><br> 
+                    </div>
+                    <div class="cen">
+                    <img src="http://localhost/zsurface/image/permutation_img.png" width="40%" height="40%" /><br> 
+                    </div>
+                    <div class="cen">
+                    <img src="http://localhost/zsurface/image/permutation.svg" width="70%" height="70%" /><br> 
+                    </div>
+
+                    <h3 class="haskellc">Permutation Algorithm in Java</h3>
+                    <?php include("../colorhtml/java/PermuteJava.html"); ?>
+
+                    <div class="cen">
+                    <img src="http://localhost/zsurface/image/permu4.png" width="40%" height="40%" /><br> 
+                    </div>
+
+                    <div class="mytitle">
+                    Print all permutations in sorted order lexicographically
+                    </div>
+                    <div class="mytext">
+                    0. Previous algorithm does not generate sorted order permutations lexicographically.<br> 
+                    1. Following algorithm generates sorted order permutations<br>
+                    </div>
+                    <?php include("../colorhtml/java/permutationprefix.html"); ?>
+
+
+
+                    <h3 class="haskellc">Permutaiton Algorithm in C++<h3>
+                    <?php include("../colorhtml/cpp/permutate.html"); ?>
+
+            <!-- Column 1 end -->
+            </div>
+            <div class="col2">
+            <!-- Column 2 start -->
+                <ul>
+                    
+                        <?php
+                        $fileName = "indexPrintAllPermutationofanArray.html";
+                        include("../php/menu.php");
+                        ?>
+                    
+                </ul>
+            <!-- Column 2 end -->
+            </div>
+        </div>
+    </div>
+
+
+    </body>
+    </html>

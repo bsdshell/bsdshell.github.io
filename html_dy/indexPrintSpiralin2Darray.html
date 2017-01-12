@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+	<title>Surface, Curve, Algorithm, Geometry, Algebra</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+	<meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../highlight.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!--<link rel="stylesheet" type="text/css" href="../prettify/prettify.css">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+          });
+        </script>
+    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+    <!--<script type="text/javascript" src="../prettify/prettify.js"></script>-->
+</head>
+<body>
+
+<div id="header">
+</div>
+<div class="colmask rightmenu">
+	<div class="colleft">
+		<div class="col1">
+            <!-- Column 1 start -->
+            <div class="mytext">
+            $\large\color{red}\tau$ </span> 
+            Given an 2D $m \times n$ array, print out the elements in spiral shape<br>
+            e.g. 
+            \[
+                \begin{bmatrix}
+                1 & 2  & 3 & 4\\
+                4 & 5  & 6 & 21\\
+                7 & 8  & 9 & 11\\
+                \end{bmatrix}
+            \] 
+            Output: [1 2 3 4 21 11 9 8 7 4 5 6]<br><br>
+            1. If the 2D array is square matrix, then the algorithm is a bit easier<br>
+            In fact, the probem is similar to [Rotate square matrix in counterclockwise 90 degrees]<br><br>
+            but we assume $m \neq n$<br>
+            </div>
+            <div class="cen">
+            <img src="http://localhost/zsurface/image/spiralpic.png" width="40%" height="40%" /><br> 
+            </div>
+
+            <div class="mytext">
+            There are two special cases that you need to pay attention to<br>
+            1. when $ m \gt n$<br>
+            $n$ will be decreased to 0 or 1 first<br>
+            if $n == 1$<br>
+            we just can print the inner vertical column<br>
+            </div>
+            <div class="cen">
+            <img src="http://localhost/zsurface/image/vertical.png" width="40%" height="40%" /><br> 
+            </div>
+
+            <div class="mytext">
+            2. when $ m \lt n$<br>
+            $m$ will be decreased to 0 or 1 first<br>
+            if $m == 1$<br>
+            we just can print the inner horizontal row<br>
+            </div>
+
+            <div class="cen">
+            <img src="http://localhost/zsurface/image/horizontal.png" width="40%" height="40%" /><br> 
+            </div>
+
+            <div class="cen">
+            <img src="http://localhost/zsurface/image/spiralarray.png" width="40%" height="40%" /><br> 
+            </div>
+            <div class="mytext">
+            From the pictures, we can try to come up a skeleton algorithm<br>
+            1. we need to walk<br>
+            From left to right [1, 2, 3]<br>
+            From top to bottom [4, 21]<br>
+            From right to left [11, 9, 8]<br>
+            From bottom to top [7, 4]<br>
+            From left to right [5, 6]<br><br>
+            In two dimensions array, the first index is moving vertically, and the second index is moving horizontally.
+            </div>
+            <pre class="mycode">
+            <pre class="cc">
+            int array[height][width];
+            for(int k=0; k &lt height; k++) {
+               for(int w=k; w &lt width-1-k; w++)
+                   array[k][w]                      // left to right
+               for(int h=k; h &lt height-1-k; h++)
+                   array[h][width - 1 - k]          // top to bottom
+               for(int w=k; w &lt width-1-k; w++)
+                   array[width-1-w][height - 1 - k] // right to left
+               for(int h=k; h &lt height-1-k; h++)
+                   array[height - 1 -h][k]          // bottom to top
+            }
+            </pre>
+            </pre>
+        <?php include("../colorhtml/java/spiralnew.html"); ?>
+        <?php include("../colorhtml/java/spiralbest.html"); ?>
+        <div class="cen">
+        <a href="https://github.com/bsdshell/java/tree/master/Spiral.java">Source Code</a>
+        </div> 
+
+        <!-- Column 1 end -->
+		</div>
+		<div class="col2">
+        <!-- Column 2 start -->
+            <ul>
+            <?php 
+            $fileName = "indexPrintSpiralin2Darray.html";
+            include("../php/menu.php"); 
+            ?>
+            </ul>
+        <!-- Column 2 end -->
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>

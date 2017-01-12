@@ -1,0 +1,183 @@
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+    <head>
+        <title>Computer Graphic Matrix</title>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="robots" content="index, follow" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../highlight.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/x-mathjax-config">
+              MathJax.Hub.Config({
+                extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+                jax: ["input/TeX","output/HTML-CSS"],
+                tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
+              });
+            </script>
+        <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+    </head>
+    <body>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-66282017-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <div id="header">
+    </div>
+    <div class="colmask rightmenu">
+        <div class="colleft">
+            <div class="col1">
+                <!-- Column 1 start -->
+                <div class="mytextbox">
+                    <div class="mytitle">
+                    Computer Graphic Matrix
+                    </div>
+                    <div class="mytext">
+                    What is matrix anyway?<br>
+                    Well, I don't know the answer anyway, but I will come up a simple[non-official] answer for you.<br>
+                    Matrix is like a box and there are bunch of stuff inside the box<br>
+                    </div>
+                    \[ \text{Identity} \]
+                    \[
+                            \begin{bmatrix}
+                                1 & 0 & 0\\
+                                0 & 1 & 0\\   
+                                0 & 0 & 1  
+                            \end{bmatrix}
+                            \left[ \begin{array}{c}
+                            a \\
+                            b \\
+                            c 
+                            \end{array}
+                            \right] = \left[ \begin{array}{c}
+                            a \\
+                            b \\
+                            c 
+                            \end{array}
+                            \right]
+                    \]
+
+                    \[ \text{Scalar} \]
+                    \[
+                            \begin{bmatrix}
+                                x & 0 & 0\\
+                                0 & y & 0\\   
+                                0 & 0 & z  
+                            \end{bmatrix}
+                            \left[ \begin{array}{c}
+                            a \\
+                            b \\
+                            c 
+                            \end{array}
+                            \right] = \left[ \begin{array}{c}
+                            ax \\
+                            by \\
+                            cz
+                            \end{array}
+                            \right]
+
+                    \]
+                    \[ \text{Translation} \]
+                    \[
+                            \begin{bmatrix}
+                                1 & 0 & 0 & x\\
+                                0 & 1 & 0 & y\\   
+                                0 & 0 & 1 & z\\
+                                0 & 0 & 0 & 1 
+                            \end{bmatrix}
+                            \left[ \begin{array}{c}
+                            a \\
+                            b \\
+                            c \\
+                            d
+                            \end{array}
+                            \right] = \left[ \begin{array}{c}
+                            a + x \\
+                            b + y \\
+                            c + z \\
+                            d
+                            \end{array}
+                            \right]
+                    \]
+                    \[ \text{Rotation} \]
+                    \[
+                        M_{z}(\theta)=\begin{bmatrix}
+                                cos(\theta) & -sin(\theta) & 0\\
+                                sin(\theta) & cos(\theta) & 0\\   
+                                0      &   0    & 1  
+                            \end{bmatrix}
+                            
+                            \text{ rotate around the z-axis in x-y plane}
+                    \]
+
+                    \[
+                        M_{y}(\theta)=\begin{bmatrix}
+                                cos(\theta) & sin(\theta) & 0\\
+                                0      &   1    & 0    \\  
+                                -sin(\theta) & cos(\theta) & 0   
+                            \end{bmatrix}
+                            \text{ rotate around the y-axis in x-z plane}
+                    \]
+
+                    \[
+                        M_{x}(\theta)=\begin{bmatrix}
+                                1 &   0      &     0   \\         
+                                0 & cos(\theta) & -sin(\theta)\\
+                                0 & sin(\theta)& cos(\theta)   
+                            \end{bmatrix}
+                            \text{ rotate around the x-axis in y-z plane}
+                    \]
+                    </p>
+                <div class="mathdef_box2">
+                    \[ \textbf{Transform normal vector using transpose inverse matrix} \] 
+                    $\mbox{Let } \mathbf{n} \,, \mathbf{u} \in \mathbb{R}^n \,, \mathbf{M} \mbox{ is affine transformnation that transforms } \mathbf{u} $
+                    $\mathbf{A} \mbox{ is affine transformation that transforms the normal vector } \mathbf{n}$<br>
+                    $\mathbf{n} \mbox{ is normal vector to } \mathbf{u}$  <br>
+                    \begin{equation}
+                    \begin{aligned}
+                         & \Rightarrow \mathbf{n}^{T} \mathbf{u} = \mathbf{0} \\
+                         & \Rightarrow (\mathbf{A}\mathbf{n})^{T} \mathbf{M}\mathbf{u} = \mathbf{0} \\
+                         & \Rightarrow (\mathbf{A}\mathbf{n})^{T} \mathbf{M} = \mathbf{n}^{T}\\
+                         & \Rightarrow (\mathbf{A}\mathbf{n})^{T} = \mathbf{n}^{T}\mathbf{M}^{-1} \\
+                         & \Rightarrow (\mathbf{A}\mathbf{n}) = \mathbf{M}^{-T} \mathbf{n}\\
+                         & \Rightarrow \mathbf{A} = \mathbf{M}^{-T} \nonumber \\
+                    \end{aligned}
+                    \end{equation}
+                    <div class="cen">
+                    <img src="http://localhost/zsurface/image/normal_matrix1.png" width="50%" height="50%" /><br>
+                    </div> 
+                </div>
+                <br>
+
+
+                </div>
+            <!-- Column 1 end -->
+            </div>
+            <div class="col2">
+            <!-- Column 2 start -->
+                <ul>
+                    
+                        <?php 
+                        $fileName = "indexComputerGraphicMatrix.html";
+                        include("../php/menu.php"); 
+                        ?>
+                    
+                </ul>
+            <!-- Column 2 end -->
+            </div>
+        </div>
+    </div>
+
+
+    </body>
+    </html>
+    
