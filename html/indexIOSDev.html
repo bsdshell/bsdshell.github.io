@@ -38,7 +38,14 @@
                     2. How to compile it in command line(yes, not in Xcode)<br>
                 </p>
             </div>
-            <h3><?php include("../colorhtml/xcode/HelloWorld.html"); ?></h3>
+            <h3><div class="highlight"><pre><span class="kt">int</span> <span class="nf">main</span><span class="o">(</span><span class="kt">int</span> <span class="n">argc</span><span class="o">,</span> <span class="kd">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="o">[])</span>
+<span class="o">{</span>
+    <span class="nd">@autoreleasepool</span><span class="o">{</span>
+        <span class="n">NSLog</span><span class="o">(</span><span class="err">@</span><span class="s">&quot;Hello World&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</h3>
             <div class="mytextbox">
                 <p>
                 $\square$
@@ -62,18 +69,59 @@
                 Foundation is defined a base layer of ObjectiveC classes $\square$
                 </p>
             </div>
-            <h3><?php include("../colorhtml/xcode/myblock.html"); ?></h3>
+            <h3><div class="highlight"><pre><span class="c1">//=============================================================================</span>
+<span class="c1">// How to compile:</span>
+<span class="c1">// Assume block.m is in the current directory</span>
+<span class="c1">//=============================================================================</span>
+<span class="c1">// clang -fobjc-arc -framework Foundation block.m</span>
+<span class="c1">//=============================================================================</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="o">(</span><span class="kt">int</span> <span class="n">argc</span><span class="o">,</span> <span class="kd">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="o">[])</span>
+<span class="o">{</span>
+    <span class="c1">// 1. simple block example</span>
+    <span class="kt">void</span> <span class="o">(^</span><span class="n">simpleBlock</span><span class="o">)(</span><span class="kt">void</span><span class="o">);</span>
+    
+    <span class="n">simpleBlock</span> <span class="o">=</span> <span class="o">^{</span>
+        <span class="n">NSLog</span><span class="o">(</span><span class="err">@</span><span class="s">&quot;This is Block Objective-C tutorial \r\n&quot;</span><span class="o">);</span>
+    <span class="o">};</span>
+    
+    <span class="n">simpleBlock</span><span class="o">();</span>
+    
+    <span class="c1">// 2. a bit more complicated block example </span>
+    <span class="kt">int</span> <span class="o">(^</span><span class="n">returnBlock</span><span class="o">)(</span><span class="kt">int</span><span class="o">,</span> <span class="kt">int</span><span class="o">);</span>
+    
+    <span class="n">returnBlock</span> <span class="o">=</span> <span class="o">^</span> <span class="kt">int</span> <span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">){</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">;</span>
+    <span class="o">};</span>
+    
+    <span class="c1">// 3. access non-local variables</span>
+    <span class="kt">double</span> <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.1415</span><span class="o">;</span>
+    <span class="kt">double</span> <span class="n">radius</span> <span class="o">=</span> <span class="mf">10.0</span><span class="o">;</span>
+    <span class="kt">double</span> <span class="o">(^</span><span class="n">area</span><span class="o">)(</span><span class="kt">double</span> <span class="n">radius</span><span class="o">);</span>
+
+    <span class="n">area</span> <span class="o">=</span> <span class="o">^</span><span class="kt">double</span> <span class="o">(</span><span class="kt">double</span> <span class="n">radius</span><span class="o">){</span>
+        <span class="k">return</span> <span class="n">pi</span><span class="o">*</span><span class="n">radius</span><span class="o">*</span><span class="n">radius</span><span class="o">;</span>
+    <span class="o">};</span>
+
+    <span class="n">pi</span> <span class="o">=</span> <span class="mf">10000.0</span><span class="o">;</span>
+    <span class="c1">// 4. modify the non-local variable</span>
+    <span class="n">__block</span> <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="o">(^</span><span class="n">increase</span><span class="o">)(</span><span class="kt">void</span><span class="o">)</span> <span class="o">=</span> <span class="o">^{</span>
+        <span class="k">return</span> <span class="n">count</span><span class="o">++;</span>
+    <span class="o">};</span>
+
+    <span class="kt">int</span><span class="o">(^</span><span class="n">index</span><span class="o">)(</span><span class="kt">int</span><span class="o">,</span> <span class="kt">int</span><span class="o">,</span> <span class="kt">int</span><span class="o">)</span> <span class="o">=</span> <span class="o">^(</span><span class="kt">int</span> <span class="n">col</span><span class="o">,</span> <span class="kt">int</span> <span class="n">row</span><span class="o">,</span> <span class="kt">int</span> <span class="n">width</span><span class="o">){</span>
+        <span class="k">return</span> <span class="n">col</span><span class="o">*</span><span class="n">width</span><span class="o">+</span><span class="n">row</span><span class="o">;</span>
+    <span class="o">};</span>
+<span class="o">}</span>
+</pre></div>
+</h3>
         <!-- Column 1 end -->
 		</div>
 		<div class="col2">
         <!-- Column 2 start -->
             <ul>
                 
-                    <?php 
-                    $fileName = "indexIOSDev.html";
-                    include("../php/menu.php"); 
-                    ?>
-                
+                                    
             </ul>
         <!-- Column 2 end -->
 		</div>

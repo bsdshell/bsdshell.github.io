@@ -52,7 +52,44 @@
             <div class="cen">
             <img src="http://localhost/zsurface/image/bintree1.svg" width="30%" height="30%" /><br>
             </div>
-            <?php include("../colorhtml/cpp/mystack.html"); ?> 
+            <div class="highlight"><pre><span class="k">class</span> <span class="nc">Stack</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="kt">int</span> <span class="n">maxLen</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
+        <span class="kt">char</span><span class="o">*</span> <span class="n">array</span><span class="p">;</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">Stack</span><span class="p">(</span><span class="kt">int</span> <span class="n">max</span><span class="p">){</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">maxLen</span> <span class="o">=</span> <span class="n">max</span><span class="p">;</span>
+            <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="n">maxLen</span><span class="p">];</span>
+        <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">push</span><span class="p">(</span><span class="kt">char</span> <span class="n">ch</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">count</span> <span class="o">&lt;</span> <span class="n">maxLen</span><span class="p">){</span>
+                <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">ch</span><span class="p">;</span>
+                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="kt">char</span> <span class="n">pop</span><span class="p">(){</span>
+            <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+                <span class="n">ch</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+                <span class="n">count</span><span class="o">--</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="n">ch</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">bool</span> <span class="n">isEmpty</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">int</span> <span class="n">size</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="o">~</span><span class="n">Stack</span><span class="p">(){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+                <span class="k">delete</span><span class="p">[]</span> <span class="n">array</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+ 
             <div class="cen">
             <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
             </div>
@@ -62,11 +99,7 @@
             <div class="col2">
             <!-- Column 2 start -->
                 <ul>
-                    <?php 
-                    $fileName = "indexNearestCommonAncessorBinaryTree.html";
-                    include("../php/menu.php"); 
-                    ?>
-                </ul>
+                                    </ul>
             <!-- Column 2 end -->
             </div>
         </div>

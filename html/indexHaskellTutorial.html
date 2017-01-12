@@ -259,34 +259,184 @@
 
 
             <div class="mytitle">What is do statement in Haskell</div>
-            <?php include("../colorhtml/haskell/whatisdo.html"); ?>
+            <div class="highlight"><pre><span class="nf">nameDo</span><span class="ow">::</span><span class="kt">IO</span> <span class="kt">String</span>
+<span class="nf">nameDo</span> <span class="ow">=</span> <span class="kr">do</span> <span class="n">putStr</span> <span class="s">&quot;What is your first name: &quot;</span>
+            <span class="n">first</span> <span class="ow">&lt;-</span> <span class="n">getLine</span>
+            <span class="n">putStr</span> <span class="s">&quot;What is your last name: &quot;</span>
+            <span class="n">last</span>  <span class="ow">&lt;-</span> <span class="n">getLine</span>
+            <span class="kr">let</span> <span class="n">full</span> <span class="ow">=</span> <span class="n">first</span> <span class="o">++</span> <span class="s">&quot; &quot;</span> <span class="o">++</span> <span class="n">last</span>
+            <span class="n">putStrLn</span><span class="p">(</span><span class="s">&quot;full name &quot;</span> <span class="o">++</span> <span class="n">full</span> <span class="o">++</span> <span class="s">&quot; &quot;</span><span class="p">)</span>
+            <span class="n">return</span> <span class="n">full</span>
+
+<span class="nf">main</span> <span class="ow">=</span> <span class="n">nameDo</span> <span class="o">&gt;&gt;=</span> <span class="nf">\</span><span class="n">name</span> <span class="ow">-&gt;</span> <span class="n">print</span> <span class="n">name</span>
+
+<span class="c1">-- alternative</span>
+<span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span>
+    <span class="n">name</span> <span class="ow">&lt;-</span> <span class="n">nameDo</span>
+    <span class="n">print</span> <span class="n">name</span>
+</pre></div>
 
             <div class="mytitle">Regular Expression in Haskell</div>
-            <?php include("../colorhtml/haskell/regexExample.html"); ?>
+            <div class="highlight"><pre><span class="nf">re1</span> <span class="ow">=</span> <span class="s">&quot;my food&quot;</span>         <span class="o">=~</span> <span class="s">&quot;foo&quot;</span><span class="ow">::</span><span class="kt">Bool</span>                      <span class="c1">-- True</span>
+<span class="nf">re2</span> <span class="ow">=</span> <span class="s">&quot;my food foo&quot;</span>     <span class="o">=~</span> <span class="s">&quot;foo&quot;</span><span class="ow">::</span><span class="kt">String</span>                    <span class="c1">-- &quot;foo&quot;</span>
+<span class="nf">re3</span> <span class="ow">=</span> <span class="s">&quot;my foolish fool&quot;</span> <span class="o">=~</span> <span class="s">&quot;foo.&quot;</span><span class="ow">::</span><span class="p">[[</span><span class="kt">String</span><span class="p">]]</span>               <span class="c1">-- [[&quot;fool&quot;],[&quot;fool&quot;]]</span>
+<span class="nf">re4</span> <span class="ow">=</span> <span class="s">&quot;my foolish fool&quot;</span> <span class="o">=~</span> <span class="s">&quot;foo.&quot;</span><span class="ow">::</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span> <span class="c1">-- (&quot;my &quot;,&quot;fool&quot;,&quot;ish fool&quot;)</span>
+
+<span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span>
+        <span class="c1">-- /Users/cat/myfile/github/haskell/regexExample.hs </span>
+        <span class="c1">-- </span>
+        <span class="c1">-- replace pattern </span>
+        <span class="c1">--</span>
+        <span class="c1">-- pattern = mkRegex &quot;pattern&quot;</span>
+        <span class="c1">--</span>
+        <span class="c1">-- subRegex pattern inputString replaceString =&gt; output text </span>
+        <span class="c1">--</span>
+        <span class="c1">-- </span>
+        <span class="c1">-- gx http://hackage.haskell.org/package/regex-compat-0.95.1/docs/Text-Regex.html#t:Regex</span>
+        <span class="c1">-- </span>
+        <span class="kr">let</span> <span class="n">r1</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;google&quot;</span>
+        <span class="kr">let</span> <span class="n">input</span> <span class="ow">=</span> <span class="s">&quot;http://google.com&quot;</span>
+        <span class="kr">let</span> <span class="n">replace1</span> <span class="ow">=</span> <span class="s">&quot;[</span><span class="se">\\</span><span class="s">0]&quot;</span>
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r1</span> <span class="n">input</span> <span class="n">replace1</span>            <span class="c1">-- http://[google].com</span>
+
+        <span class="kr">let</span> <span class="n">r3</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;(na)*&quot;</span>
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r3</span> <span class="s">&quot;banana&quot;</span> <span class="s">&quot;[</span><span class="se">\\</span><span class="s">0] {</span><span class="se">\\</span><span class="s">1}&quot;</span>    <span class="c1">-- [] {}b5. [] {}a5. [nana] {na}</span>
+
+        <span class="kr">let</span> <span class="n">r4</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;(void)+&quot;</span>
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r4</span> <span class="s">&quot;voidvoid&quot;</span> <span class="s">&quot;[</span><span class="se">\\</span><span class="s">0] {</span><span class="se">\\</span><span class="s">1}&quot;</span>  <span class="c1">-- [voidvoid] {void}</span>
+
+                                                         <span class="c1">-- use POSIX regex  &quot;/pat/i&quot; ignore case</span>
+        <span class="kr">let</span> <span class="n">r5</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;.*</span><span class="se">\\</span><span class="s">.pdf&quot;</span>
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r5</span> <span class="s">&quot;http://file.pdf&quot;</span> <span class="s">&quot;[</span><span class="se">\\</span><span class="s">0]&quot;</span> <span class="c1">-- [http://file.PDF]</span>
+
+        <span class="c1">-- capture group, capture email address</span>
+        <span class="kr">let</span> <span class="n">r6</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;([A-Za-z._-]+)+@(([a-z])+</span><span class="se">\\</span><span class="s">.([a-z]{2,4}))&quot;</span>
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r6</span> <span class="s">&quot;root_admin.last-name@gmail.com&quot;</span>   <span class="s">&quot;7. [</span><span class="se">\\</span><span class="s">0] {</span><span class="se">\\</span><span class="s">1}{</span><span class="se">\\</span><span class="s">2}&quot;</span>
+
+        <span class="c1">-- capture phone number</span>
+        <span class="kr">let</span> <span class="n">p1</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;[0-9]{3}[ -]?[0-9]{3}[ -]?[0-9]{4}&quot;</span> 
+
+        <span class="c1">-- https://hackage.haskell.org/package/regex-compat-0.95.1/docs/Text-Regex.html</span>
+        <span class="kr">let</span> <span class="n">r7</span> <span class="ow">=</span> <span class="n">mkRegexWithOpts</span> <span class="s">&quot;(</span><span class="se">\\</span><span class="s">.pdf)&quot;</span> <span class="kt">True</span> <span class="kt">False</span>
+        <span class="kr">let</span> <span class="n">input</span> <span class="ow">=</span> <span class="s">&quot;/home/user/file/mybook.PDF&quot;</span>
+        <span class="kr">let</span> <span class="n">callMeMaybe</span> <span class="ow">=</span> <span class="n">matchRegex</span> <span class="n">r7</span> <span class="n">input</span>
+        <span class="n">print</span> <span class="o">$</span> <span class="n">show</span><span class="p">(</span><span class="n">callMeMaybe</span><span class="p">)</span>
+
+        <span class="c1">-- replace string</span>
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">p1</span> <span class="s">&quot;416-123-4483&quot;</span>  <span class="s">&quot;[</span><span class="se">\\</span><span class="s">0]&quot;</span>    <span class="c1">-- [416-123-4483]</span>
+
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">p1</span> <span class="s">&quot;4161234483&quot;</span>    <span class="s">&quot;[</span><span class="se">\\</span><span class="s">0]&quot;</span>    <span class="c1">-- [4161234483]</span>
+
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">p1</span> <span class="s">&quot;416 123 4483&quot;</span>  <span class="s">&quot;[</span><span class="se">\\</span><span class="s">0]&quot;</span>    <span class="c1">-- [416 123 4483]</span>
+        
+        <span class="n">print</span> <span class="o">$</span> <span class="n">splitRegex</span><span class="p">(</span><span class="n">mkRegex</span> <span class="s">&quot;:&quot;</span><span class="p">)</span> <span class="s">&quot;PaloAlto:MountainView&quot;</span> <span class="c1">-- [&quot;PaloAlto&quot;,&quot;MountainView&quot;]</span>
+
+        <span class="c1">-- capture function in ObjectiveC</span>
+        <span class="kr">let</span> <span class="n">me</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;(-|</span><span class="se">\\</span><span class="s">+)[[:space:]]*</span><span class="se">\\</span><span class="s">([[:space:]]*[[:print:]]+[[:space:]]*</span><span class="se">\\</span><span class="s">)[[:space:]]*[[:graph:]]+</span><span class="se">\</span>
+<span class="se">        \</span><span class="s">[[:space:]]*:?[[:space:]]*([[:space:]]*[[:graph:]]+[[:space:]]*:[[:space:]]*[[:graph:]]+[[:space:]]*)*&quot;</span>
+
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">me</span> <span class="s">&quot;- (NSstring*) swap :&quot;</span> <span class="s">&quot;[</span><span class="se">\\</span><span class="s">0]&quot;</span> <span class="c1">-- [- (NSstring*) swap :]</span>
+
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">me</span> <span class="s">&quot;- (NSstring*) method:(Integer)num width:(Integer)width</span><span class="se">\ </span>
+<span class="se">        \</span><span class="s"> height:(NSString*)str&quot;</span> <span class="s">&quot;12. [</span><span class="se">\\</span><span class="s">0]&quot;</span>
+        <span class="c1">-- [- (NSstring*) method:(Integer)num width:(Integer)width  height:(NSString*)str]</span>
+
+        <span class="c1">-- https://hackage.haskell.org/package/regex-base-0.93.2/docs/Text-Regex-Base-RegexLike.html#t:RegexLike</span>
+        <span class="kr">let</span> <span class="n">r7</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;([A-Za-z]+)&quot;</span> 
+        <span class="kr">let</span> <span class="n">count</span> <span class="ow">=</span> <span class="n">matchCount</span> <span class="n">r7</span> <span class="s">&quot;haskell java C++ ObejctiveC aa#&quot;</span> 
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="s">&quot;count = &quot;</span> <span class="o">++</span> <span class="n">show</span> <span class="n">count</span>
+
+        <span class="c1">-- https://hackage.haskell.org/package/regex-base-0.93.2/docs/Text-Regex-Base-RegexLike.html#t:RegexLike</span>
+        <span class="kr">let</span> <span class="n">r8</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;[a-z]+&quot;</span>
+        <span class="kr">let</span> <span class="n">bo</span> <span class="ow">=</span> <span class="n">matchTest</span> <span class="n">r8</span> <span class="s">&quot;22323&quot;</span>
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="s">&quot;Is matched = &quot;</span> <span class="o">++</span> <span class="n">show</span> <span class="n">bo</span> <span class="c1">-- return True</span>
+        
+        <span class="kr">let</span> <span class="n">bo</span> <span class="ow">=</span> <span class="n">matchTest</span> <span class="n">r8</span> <span class="s">&quot;Sunnyvale&quot;</span>
+        <span class="n">putStrLn</span> <span class="o">$</span> <span class="s">&quot;Is matched = &quot;</span> <span class="o">++</span> <span class="n">show</span> <span class="n">bo</span> <span class="c1">-- return False</span>
+</pre></div>
             <div class="mytitle">Hello World in Haskell</div>
-            <?php include("../colorhtml/haskell/helloworld.html"); ?>
+            <div class="highlight"><pre><span class="n">main</span> <span class="o">=</span> <span class="n">print</span><span class="o">(</span><span class="s">&quot;Hello World&quot;</span><span class="o">)</span>
+</pre></div>
             <div class="mytitle">Factorial function in Haskell</div>
-            <?php include("../colorhtml/haskell/factorial.html"); ?>
+            <div class="highlight"><pre><span class="c1">--Factorial function</span>
+<span class="nf">factorial</span><span class="ow">::</span><span class="kt">Int</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">factorial</span> <span class="mi">0</span> <span class="ow">=</span> <span class="mi">1</span>
+<span class="nf">factorial</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
 
             <div class="mytitle">Sum all integers in a list in Haskell</div>
-            <?php include("../colorhtml/haskell/suminteger.html"); ?>
+            <div class="highlight"><pre><span class="c1">-- Sum all the integer in a list</span>
+<span class="nf">sumlist</span><span class="ow">::</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">sumlist</span> <span class="kt">[]</span> <span class="ow">=</span> <span class="mi">0</span>
+<span class="nf">sumlist</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span> <span class="ow">=</span> <span class="n">x</span><span class="o">+</span><span class="n">sumlist</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+</pre></div>
             <div class="mytitle">Palindrome in Haskell</div>
-            <?php include("../colorhtml/haskell/palindrome.html"); ?>
+            <div class="highlight"><pre><span class="nl">isPalindrome:</span><span class="o">:</span> <span class="n">Eq</span> <span class="n">a</span><span class="o">=&gt;[</span><span class="n">a</span><span class="o">]-&gt;</span><span class="n">Bool</span>
+<span class="n">isPalindrome</span> <span class="o">[</span><span class="n">a</span><span class="o">]</span> <span class="o">=</span> <span class="n">True</span>
+<span class="n">isPalindrome</span> <span class="o">[</span><span class="n">x</span><span class="o">,</span><span class="n">y</span><span class="o">]</span> <span class="o">=</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
+<span class="nf">isPalindrome</span> <span class="o">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="o">)</span> <span class="o">=</span> <span class="n">x</span> <span class="o">==</span> <span class="o">(</span><span class="n">last</span> <span class="n">xs</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">isPalindrome</span><span class="o">(</span><span class="n">init</span><span class="o">(</span><span class="n">xs</span><span class="o">))</span>
+
+<span class="n">main</span> <span class="o">=</span> <span class="k">do</span>
+        <span class="n">print</span> <span class="o">(</span><span class="s">&quot;aba=&quot;</span><span class="o">++</span> <span class="n">show</span><span class="o">(</span><span class="n">isPalindrome</span><span class="o">(</span><span class="s">&quot;aaa&quot;</span><span class="o">)))</span>
+</pre></div>
 
             <div class="mytitle">Maximum of a list</div>
-            <?php include("../colorhtml/haskell/maximum.html"); ?>
+            <div class="highlight"><pre><span class="c1">--find the maximum of a list</span>
+<span class="nf">maximum1&#39;</span><span class="ow">::</span><span class="p">(</span><span class="kt">Ord</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="ow">-&gt;</span><span class="n">a</span>
+<span class="nf">maximum1&#39;</span> <span class="kt">[]</span>  <span class="ow">=</span> <span class="ne">error</span> <span class="s">&quot;empty list&quot;</span> 
+<span class="nf">maximum1&#39;</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="ow">=</span> <span class="n">x</span>
+<span class="nf">maximum1&#39;</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span> 
+        <span class="o">|</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">maxTail</span> <span class="ow">=</span> <span class="n">x</span> 
+        <span class="o">|</span> <span class="n">otherwise</span> <span class="ow">=</span> <span class="n">maxTail</span>
+        <span class="kr">where</span> <span class="n">maxTail</span> <span class="ow">=</span> <span class="n">maximum1&#39;</span> <span class="n">xs</span>
+<span class="c1">--find the maximum of a list without where</span>
+<span class="nf">maximum2&#39;</span><span class="ow">::</span><span class="p">(</span><span class="kt">Ord</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=&gt;</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="ow">-&gt;</span><span class="n">a</span>
+<span class="nf">maximum2&#39;</span> <span class="kt">[]</span> <span class="ow">=</span> <span class="ne">error</span> <span class="s">&quot;empty list&quot;</span>
+<span class="nf">maximum2&#39;</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="ow">=</span> <span class="n">x</span>
+<span class="nf">maximum2&#39;</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span> <span class="ow">=</span> <span class="n">max</span> <span class="n">x</span> <span class="p">(</span><span class="n">maximum2&#39;</span> <span class="n">xs</span><span class="p">)</span>
+</pre></div>
 
             <div class="mytitle">If else in Haskell</div>
-            <?php include("../colorhtml/haskell/ifthen.html"); ?>
+            <div class="highlight"><pre><span class="c1">--if else in Haskell</span>
+<span class="nf">mySign</span> <span class="n">x</span> <span class="ow">=</span> 
+        <span class="kr">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span>
+            <span class="kr">then</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="kr">else</span> <span class="kr">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span>
+            <span class="kr">then</span> <span class="mi">1</span>
+        <span class="kr">else</span> <span class="mi">0</span>
+
+<span class="nf">main</span> <span class="ow">=</span>  <span class="kr">do</span> 
+        <span class="n">print</span> <span class="p">(</span><span class="n">mySign</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
             <div class="mytitle">Equation Guarding in Haskell</div>
-            <?php include("../colorhtml/haskell/guards.html"); ?>
+            <div class="highlight"><pre><span class="c1">--Guards in Haskell</span>
+<span class="nf">myGuards</span> <span class="n">x</span> 
+        <span class="o">|</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="o">|</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">=</span> <span class="mi">1</span>
+        <span class="o">|</span> <span class="n">otherwise</span> <span class="ow">=</span> <span class="mi">0</span>
+
+<span class="nf">main</span> <span class="ow">=</span>  <span class="kr">do</span> 
+        <span class="n">print</span> <span class="p">(</span><span class="n">myGuards</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
             <div class="cen">
                 <img src="http://localhost/zsurface/image/guards.svg" width="40%" height="40%" />
             </div>
             <div class="mytitle">let binding in Haskell</div>
-            <?php include("../colorhtml/haskell/letbinding.html"); ?>
+            <div class="highlight"><pre><span class="c1">-- let binding in Haskell</span>
+<span class="c1">-- ax^2 + bx + c = 0</span>
+<span class="c1">-- Find the root of the quadratic equation</span>
+<span class="nf">roots</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="ow">=</span>
+        <span class="kr">let</span> <span class="n">discriminant</span><span class="ow">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">b</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">)</span>
+        <span class="kr">in</span> <span class="p">(</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">discriminant</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">discriminant</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">))</span>
+
+<span class="nf">main</span> <span class="ow">=</span>  <span class="kr">do</span> 
+        <span class="n">print</span> <span class="p">(</span><span class="n">roots</span> <span class="mi">3</span> <span class="mi">9</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
             <div class="mytitle">Print all permutation in Haskell</div>
-            <?php include("../colorhtml/haskell/permutation.html"); ?>
+            <div class="highlight"><pre><span class="nl">myperm:</span><span class="o">:</span> <span class="n">Eq</span> <span class="n">a</span> <span class="o">=&gt;[</span><span class="n">a</span><span class="o">]-&gt;[[</span><span class="n">a</span><span class="o">]]</span>
+<span class="n">myperm</span> <span class="o">[]</span> <span class="o">=</span> <span class="o">[[]]</span>
+<span class="n">myperm</span> <span class="n">xs</span> <span class="o">=</span> <span class="o">[</span> <span class="n">x</span><span class="o">:</span><span class="n">ys</span> <span class="o">|</span> <span class="n">x</span> <span class="o">&lt;-</span> <span class="n">xs</span> <span class="o">,</span> <span class="n">ys</span> <span class="o">&lt;-</span> <span class="n">myperm</span><span class="o">(</span><span class="n">delete</span> <span class="n">x</span> <span class="n">xs</span><span class="o">)]</span>
+</pre></div>
             <div class="mytitle">Tree Traversal: Preorder Inorder Postorder/DFS in Haskell</div>
             <pre class="mycode">
             There are preorder inorder and postorder traversals
@@ -304,25 +454,160 @@
             7. Quick sort is essential the preorder 
             8. preorder and postorder can be used in serialization and deseriazation
             </pre>
-            <?php include("../colorhtml/haskell/tree.html"); ?>
+            <div class="highlight"><pre><span class="n">data</span> <span class="n">Tree</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Empty</span> 
+            <span class="o">|</span> <span class="n">Node</span> <span class="nf">a</span> <span class="o">(</span><span class="n">Tree</span> <span class="n">a</span><span class="o">)</span> <span class="o">(</span><span class="n">Tree</span> <span class="n">a</span><span class="o">)</span> <span class="n">deriving</span> <span class="n">Show</span>
+
+<span class="n">mytree</span> <span class="o">=</span> <span class="n">Node</span> <span class="sc">&#39;R&#39;</span> 
+            <span class="o">(</span><span class="n">Node</span> <span class="sc">&#39;S&#39;</span> 
+                <span class="o">(</span><span class="n">Node</span> <span class="sc">&#39;T&#39;</span> <span class="n">Empty</span> <span class="n">Empty</span><span class="o">)</span>
+                <span class="o">(</span><span class="n">Node</span> <span class="sc">&#39;U&#39;</span> <span class="n">Empty</span> <span class="n">Empty</span><span class="o">)</span>
+            <span class="o">)</span> 
+            <span class="o">(</span><span class="n">Node</span> <span class="sc">&#39;T&#39;</span> 
+                <span class="o">(</span><span class="n">Node</span> <span class="sc">&#39;V&#39;</span> <span class="n">Empty</span> <span class="n">Empty</span><span class="o">)</span>
+                <span class="o">(</span><span class="n">Node</span> <span class="sc">&#39;W&#39;</span> <span class="n">Empty</span> <span class="n">Empty</span><span class="o">)</span>
+            <span class="o">)</span> 
+
+<span class="nl">preorderTraversal:</span><span class="o">:</span><span class="n">Tree</span> <span class="n">a</span> <span class="o">-&gt;[</span><span class="n">a</span><span class="o">]</span>
+<span class="n">preorderTraversal</span> <span class="n">Empty</span> <span class="o">=</span> <span class="o">[]</span> 
+<span class="n">preorderTraversal</span> <span class="o">(</span><span class="n">Node</span> <span class="n">a</span> <span class="n">l</span> <span class="n">r</span><span class="o">)</span> <span class="o">=</span> <span class="n">a</span><span class="o">:(</span><span class="n">preorderTraversal</span> <span class="n">l</span><span class="o">)</span> <span class="o">++</span> <span class="o">(</span><span class="n">preorderTraversal</span> <span class="n">r</span><span class="o">)</span>
+ 
+<span class="nl">inorderTraversal:</span><span class="o">:</span><span class="n">Tree</span> <span class="n">a</span> <span class="o">-&gt;[</span><span class="n">a</span><span class="o">]</span>
+<span class="n">inorderTraversal</span> <span class="n">Empty</span> <span class="o">=</span> <span class="o">[]</span> 
+<span class="n">inorderTraversal</span> <span class="o">(</span><span class="n">Node</span> <span class="n">a</span> <span class="n">l</span> <span class="n">r</span><span class="o">)</span> <span class="o">=</span> <span class="o">(</span><span class="n">inorderTraversal</span> <span class="n">l</span><span class="o">)</span> <span class="o">++[</span><span class="n">a</span><span class="o">]++(</span><span class="n">inorderTraversal</span> <span class="n">r</span><span class="o">)</span>
+ 
+<span class="nl">postorderTraversal:</span><span class="o">:</span><span class="n">Tree</span> <span class="n">a</span> <span class="o">-&gt;[</span><span class="n">a</span><span class="o">]</span>
+<span class="n">postorderTraversal</span> <span class="n">Empty</span> <span class="o">=</span> <span class="o">[]</span> 
+<span class="n">postorderTraversal</span><span class="o">(</span><span class="n">Node</span> <span class="n">a</span> <span class="n">l</span> <span class="n">r</span><span class="o">)</span> <span class="o">=</span> <span class="o">(</span><span class="n">postorderTraversal</span> <span class="n">l</span><span class="o">)</span> <span class="o">++</span> <span class="o">(</span><span class="n">postorderTraversal</span> <span class="n">r</span><span class="o">)</span> <span class="o">++</span> <span class="o">[</span><span class="n">a</span><span class="o">]</span>
+</pre></div>
             <div class="mytitle">Typeclass Record in Haskell</div>
-            <?php include("../colorhtml/haskell/record.html"); ?>
+            <div class="highlight"><pre><span class="c1">-- /Users/cat/myfile/github/haskell/Record.hs</span>
+<span class="c1">-- ref: http://learnyouahaskell.com/making-our-own-types-and-typeclasses </span>
+<span class="c1">-- -------------------------------------------------------------------------------- </span>
+<span class="c1">-- 1. how to create record</span>
+<span class="c1">-- 2. how to access field from typeclass, e.g. person.lastName in java</span>
+<span class="c1">-- 3. how to override == without doing anything with deriving(Eq)</span>
+<span class="c1">-- -------------------------------------------------------------------------------- </span>
+<span class="kr">data</span> <span class="kt">Person</span> <span class="ow">=</span> <span class="kt">Person</span> <span class="p">{</span><span class="n">firstName</span><span class="ow">::</span><span class="kt">String</span><span class="p">,</span> <span class="n">lastName</span><span class="ow">::</span><span class="kt">String</span><span class="p">,</span> <span class="n">age</span><span class="ow">::</span><span class="kt">Int</span><span class="p">}</span> <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Eq</span><span class="p">)</span>
+
+<span class="c1">-- Person derives from Eq, Haskell generates (==) and (/=) for us automatically,</span>
+<span class="c1">-- the catch is String and Int also have to be part of (Eq) typeclass </span>
+<span class="c1">-- access field from typeclass with record</span>
+<span class="nf">showPerson</span><span class="ow">::</span><span class="kt">Person</span><span class="ow">-&gt;</span><span class="kt">String</span>
+<span class="nf">showPerson</span> <span class="kt">Person</span><span class="p">{</span><span class="n">firstName</span> <span class="ow">=</span> <span class="n">firstName</span><span class="p">,</span> <span class="n">lastName</span> <span class="ow">=</span> <span class="n">lastName</span><span class="p">,</span> <span class="n">age</span> <span class="ow">=</span> <span class="n">age</span><span class="p">}</span> 
+                        <span class="ow">=</span> <span class="s">&quot;[&quot;</span> <span class="o">++</span> <span class="n">firstName</span> <span class="o">++</span> <span class="s">&quot; &quot;</span> <span class="o">++</span> <span class="n">lastName</span> <span class="o">++</span> <span class="s">&quot; &quot;</span> <span class="o">++</span> <span class="n">show</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">++</span> <span class="s">&quot;]&quot;</span>
+
+<span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span> 
+        <span class="kr">let</span> <span class="n">person</span> <span class="ow">=</span> <span class="kt">Person</span><span class="p">{</span><span class="n">firstName</span> <span class="ow">=</span> <span class="s">&quot;Jonathan&quot;</span><span class="p">,</span> <span class="n">lastName</span> <span class="ow">=</span> <span class="s">&quot;Michell&quot;</span><span class="p">,</span> <span class="n">age</span> <span class="ow">=</span> <span class="mi">20</span><span class="p">}</span>
+        <span class="kr">let</span> <span class="n">animal</span> <span class="ow">=</span> <span class="kt">Person</span><span class="p">{</span><span class="n">firstName</span> <span class="ow">=</span> <span class="s">&quot;Nonhuman&quot;</span><span class="p">,</span> <span class="n">lastName</span> <span class="ow">=</span> <span class="s">&quot;Michell&quot;</span><span class="p">,</span> <span class="n">age</span> <span class="ow">=</span> <span class="mi">20</span><span class="p">}</span>
+        <span class="n">print</span> <span class="o">$</span> <span class="n">showPerson</span> <span class="n">person</span>
+        <span class="n">print</span> <span class="o">$</span> <span class="n">showPerson</span> <span class="p">(</span><span class="kt">Person</span> <span class="s">&quot;Steven&quot;</span> <span class="s">&quot;Jobs&quot;</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="n">print</span> <span class="o">$</span> <span class="n">person</span> <span class="o">==</span> <span class="n">person</span>  <span class="c1">-- True</span>
+        <span class="n">print</span> <span class="o">$</span> <span class="n">person</span> <span class="o">==</span> <span class="n">animal</span>  <span class="c1">-- False </span>
+        <span class="n">print</span> <span class="o">$</span> <span class="n">person</span> <span class="o">/=</span> <span class="n">animal</span>  <span class="c1">-- True </span>
+        <span class="n">fl</span>
+        <span class="c1">-- person.firstName in java</span>
+        <span class="n">print</span> <span class="o">$</span> <span class="s">&quot;firstName=&quot;</span> <span class="o">++</span> <span class="n">firstName</span> <span class="n">person</span>  <span class="c1">-- Jonathan</span>
+        <span class="n">print</span> <span class="o">$</span> <span class="s">&quot;lastName =&quot;</span> <span class="o">++</span> <span class="n">lastName</span> <span class="n">person</span>   <span class="c1">-- Michell </span>
+        <span class="n">print</span> <span class="o">$</span> <span class="s">&quot;age      =&quot;</span> <span class="o">++</span> <span class="n">show</span><span class="p">(</span><span class="n">age</span> <span class="n">person</span><span class="p">)</span>  <span class="c1">-- 20</span>
+</pre></div>
 
             <div class="mytitle">Typeclass 1 in Haskell</div>
-            <?php include("../colorhtml/haskell/typeclass1.html"); ?>
+            <div class="highlight"><pre><span class="c1">-- Typeclass in Haskell</span>
+<span class="c1">-- Shape is similar to interface in Java</span>
+<span class="c1">-- Circle and Rectangle are similar to class in Java</span>
+
+<span class="kr">data</span> <span class="kt">Shape</span> <span class="ow">=</span> <span class="kt">Circle</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="o">|</span> <span class="kt">Rectangle</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+
+<span class="nf">area</span><span class="ow">::</span><span class="kt">Shape</span><span class="ow">-&gt;</span><span class="kt">Float</span>
+<span class="nf">area</span><span class="p">(</span><span class="kt">Circle</span> <span class="kr">_</span> <span class="kr">_</span> <span class="n">r</span><span class="p">)</span> <span class="ow">=</span> <span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">^</span><span class="mi">2</span>
+<span class="nf">area</span><span class="p">(</span><span class="kt">Rectangle</span> <span class="n">topx</span> <span class="n">topy</span> <span class="n">bottomx</span> <span class="n">bottomy</span><span class="p">)</span> <span class="ow">=</span> <span class="n">abs</span><span class="p">(</span><span class="n">bottomy</span> <span class="o">-</span> <span class="n">topy</span><span class="p">)</span><span class="o">*</span><span class="n">abs</span><span class="p">(</span><span class="n">bottomx</span> <span class="o">-</span> <span class="n">topx</span><span class="p">)</span>
+
+<span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span> 
+        <span class="n">print</span><span class="p">(</span><span class="s">&quot;Typeclass in Haskell&quot;</span><span class="p">)</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">area</span> <span class="o">$</span> <span class="kt">Circle</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">area</span> <span class="o">$</span> <span class="kt">Rectangle</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">8</span><span class="p">)</span>
+</pre></div>
 
             <div class="mytitle">More Typeclass 2 in Haskell</div>
-            <?php include("../colorhtml/haskell/typeclass2.html"); ?>
+            <div class="highlight"><pre><span class="c1">--Typeclass 2 in Haskell</span>
+<span class="kr">data</span> <span class="kt">Point</span> <span class="ow">=</span> <span class="kt">Point</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kr">deriving</span><span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+<span class="kr">data</span> <span class="kt">Shape</span> <span class="ow">=</span> <span class="kt">Circle</span> <span class="kt">Point</span> <span class="kt">Float</span> <span class="o">|</span> <span class="kt">Rectangle</span> <span class="kt">Point</span> <span class="kt">Point</span> <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+
+<span class="nf">area</span><span class="ow">::</span><span class="kt">Shape</span><span class="ow">-&gt;</span><span class="kt">Float</span>
+<span class="nf">area</span><span class="p">(</span><span class="kt">Circle</span> <span class="kr">_</span> <span class="n">r</span><span class="p">)</span> <span class="ow">=</span> <span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">^</span><span class="mi">2</span> 
+<span class="nf">area</span><span class="p">(</span><span class="kt">Rectangle</span> <span class="p">(</span><span class="kt">Point</span> <span class="n">topx</span> <span class="n">topy</span><span class="p">)</span> <span class="p">(</span><span class="kt">Point</span> <span class="n">bottomx</span> <span class="n">bottomy</span><span class="p">))</span> <span class="ow">=</span> <span class="n">abs</span><span class="p">(</span><span class="n">bottomy</span> <span class="o">-</span> <span class="n">topy</span><span class="p">)</span><span class="o">*</span><span class="n">abs</span><span class="p">(</span><span class="n">bottomx</span> <span class="o">-</span> <span class="n">topx</span><span class="p">)</span>
+
+<span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span> 
+        <span class="n">print</span><span class="p">(</span><span class="n">area</span> <span class="o">$</span> <span class="kt">Circle</span> <span class="p">(</span><span class="kt">Point</span> <span class="mi">1</span> <span class="mi">4</span><span class="p">)</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">area</span> <span class="o">$</span> <span class="kt">Rectangle</span> <span class="p">(</span><span class="kt">Point</span> <span class="mi">1</span> <span class="mi">4</span><span class="p">)</span> <span class="p">(</span><span class="kt">Point</span> <span class="mi">2</span> <span class="mi">7</span><span class="p">))</span>
+</pre></div>
             <div class="mytitle">More Typeclass 3 in Haskell</div>
-            <?php include("../colorhtml/haskell/typeclass3.html"); ?>
+            <div class="highlight"><pre><span class="c1">-- Library/WebServer/Documents/zsurface/github/haskell/typeclass3.hs</span>
+<span class="c1">-- Typeclass in Haskell</span>
+<span class="c1">-- Shape is similar to interface in Java</span>
+<span class="c1">-- Circle and Rectangle are similar to class in Java</span>
+
+<span class="kr">data</span> <span class="kt">Point</span> <span class="ow">=</span> <span class="kt">Point</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kr">deriving</span><span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+<span class="kr">data</span> <span class="kt">Shape</span> <span class="ow">=</span> <span class="kt">Circle</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="o">|</span> <span class="kt">Rectangle</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+
+<span class="c1">--call constructor</span>
+<span class="nf">circleShape</span><span class="ow">::</span><span class="kt">Shape</span>
+<span class="nf">circleShape</span> <span class="ow">=</span> <span class="kt">Circle</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span>
+<span class="nf">rectangleShape</span> <span class="ow">=</span> <span class="kt">Rectangle</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> 
+
+<span class="c1">--list of typeclasses</span>
+<span class="nf">listShape</span><span class="ow">::</span><span class="p">[</span><span class="kt">Shape</span><span class="p">]</span>
+<span class="nf">listShape</span> <span class="ow">=</span> <span class="p">[</span><span class="kt">Circle</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">,</span> <span class="kt">Rectangle</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">]</span>
+
+<span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span> 
+        <span class="n">print</span><span class="p">(</span><span class="n">circleShape</span><span class="p">)</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">rectangleShape</span><span class="p">)</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">listShape</span><span class="p">)</span>
+</pre></div>
             <div class="mytitle">More Typeclass 4 in Haskell</div>
-            <?php include("../colorhtml/haskell/typeclass4.html"); ?>
+            <div class="highlight"><pre><span class="c1">--Library/WebServer/Documents/zsurface/github/haskell/typeclass4.hs</span>
+<span class="c1">--Deconstructing type in Haskell</span>
+
+<span class="kr">data</span> <span class="kt">Point</span> <span class="ow">=</span> <span class="kt">Point</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kr">deriving</span><span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+<span class="kr">data</span> <span class="kt">Shape</span> <span class="ow">=</span> <span class="kt">Circle</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="o">|</span> <span class="kt">Rectangle</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+
+
+<span class="nf">showShape</span><span class="ow">::</span><span class="kt">Shape</span><span class="ow">-&gt;</span><span class="kt">String</span>
+<span class="nf">showShape</span><span class="p">(</span><span class="kt">Circle</span> <span class="n">x</span> <span class="n">y</span> <span class="n">radial</span><span class="p">)</span> <span class="ow">=</span> <span class="n">show</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">++</span> <span class="s">&quot;  &quot;</span><span class="o">++</span><span class="n">show</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">++</span> <span class="s">&quot;  &quot;</span> <span class="o">++</span> <span class="n">show</span><span class="p">(</span><span class="n">radial</span><span class="p">)</span> 
+<span class="nf">showShape</span><span class="p">(</span><span class="kt">Rectangle</span> <span class="n">x1</span> <span class="n">y1</span> <span class="n">x2</span> <span class="n">y2</span> <span class="p">)</span> <span class="ow">=</span> <span class="n">show</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span> <span class="o">++</span> <span class="s">&quot;  &quot;</span><span class="o">++</span><span class="n">show</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span><span class="o">++</span> <span class="s">&quot;  &quot;</span> <span class="o">++</span> <span class="n">show</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span><span class="o">++</span><span class="s">&quot; &quot;</span><span class="o">++</span><span class="n">show</span><span class="p">(</span><span class="n">y2</span><span class="p">)</span> 
+
+<span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span> 
+        <span class="n">print</span><span class="p">(</span><span class="n">showShape</span><span class="p">(</span><span class="kt">Circle</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">))</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">showShape</span><span class="p">(</span><span class="kt">Rectangle</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
             <div class="mytitle">More Typeclass 5 in Haskell</div>
-            <?php include("../colorhtml/haskell/typeclass5.html"); ?>
+            <div class="highlight"><pre><span class="n">data</span> <span class="n">Foo</span> <span class="o">=</span> <span class="n">Bar</span> <span class="o">|</span> <span class="n">Baz</span> <span class="n">Int</span>
+<span class="nl">myfun:</span><span class="o">:</span><span class="n">Foo</span><span class="o">-&gt;</span><span class="n">Int</span>
+<span class="n">myfun</span>   <span class="n">Bar</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">myfun</span>   <span class="o">(</span><span class="n">Baz</span> <span class="n">x</span><span class="o">)</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
             <div class="mytitle">More Typeclass 6 in Haskell</div>
-            <?php include("../colorhtml/haskell/typeclass6.html"); ?>
+            <div class="highlight"><pre><span class="n">data</span> <span class="n">Person</span> <span class="o">=</span> <span class="n">Person</span> <span class="n">String</span> <span class="n">Integer</span> <span class="n">String</span> <span class="n">deriving</span> <span class="n">Show</span>
+        
+<span class="nl">getAge:</span><span class="o">:</span><span class="n">Person</span><span class="o">-&gt;</span><span class="n">Integer</span>
+<span class="nf">getAge</span><span class="o">(</span><span class="n">Person</span> <span class="n">_</span> <span class="n">n</span> <span class="n">_</span><span class="o">)</span> <span class="o">=</span> <span class="n">n</span>
+
+<span class="nl">getName:</span><span class="o">:</span><span class="n">Person</span><span class="o">-&gt;</span><span class="n">String</span>
+<span class="nf">getName</span><span class="o">(</span><span class="n">Person</span> <span class="n">name</span> <span class="n">_</span> <span class="n">_</span><span class="o">)</span> <span class="o">=</span> <span class="n">name</span>
+
+<span class="nl">getInfo:</span><span class="o">:</span><span class="n">Person</span><span class="o">-&gt;</span><span class="n">String</span>
+<span class="n">getInfo</span> <span class="n">p</span><span class="err">@</span><span class="o">(</span><span class="n">Person</span> <span class="n">_</span> <span class="n">_</span> <span class="n">_</span><span class="o">)</span> <span class="o">=</span> <span class="s">&quot;(&quot;</span> <span class="o">++</span> <span class="n">show</span><span class="o">(</span><span class="n">p</span><span class="o">)</span> <span class="o">++</span> <span class="s">&quot;)&quot;</span>
+</pre></div>
             <div class="mytitle">More Typeclass 7 in Haskell</div>
-            <?php include("../colorhtml/haskell/typeclass7.html"); ?>
+            <div class="highlight"><pre><span class="kr">data</span> <span class="kt">Point</span> <span class="n">a</span> <span class="ow">=</span> <span class="kt">Pt</span> <span class="n">a</span> <span class="n">a</span> <span class="kr">deriving</span><span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+
+<span class="nf">dist</span><span class="ow">::</span><span class="kt">Point</span> <span class="kt">Int</span><span class="ow">-&gt;</span> <span class="kt">Point</span> <span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Int</span>
+<span class="nf">dist</span> <span class="p">(</span><span class="kt">Pt</span> <span class="n">x0</span> <span class="n">y0</span><span class="p">)</span> <span class="p">(</span><span class="kt">Pt</span> <span class="n">x1</span> <span class="n">y1</span><span class="p">)</span> <span class="ow">=</span> <span class="p">(</span><span class="n">x0</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x0</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">y0</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y0</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span>
+
+<span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span>
+        <span class="n">print</span> <span class="p">(</span><span class="kt">Pt</span> <span class="mi">1</span> <span class="mi">3</span> <span class="ow">::</span> <span class="kt">Point</span> <span class="kt">Int</span><span class="p">)</span> 
+        <span class="n">print</span> <span class="o">$</span> <span class="n">dist</span><span class="p">(</span><span class="kt">Pt</span> <span class="mi">1</span> <span class="mi">4</span><span class="p">)</span> <span class="p">(</span><span class="kt">Pt</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
 
             <div class="mytitle">data type in Haskell</div>
             <pre>
@@ -339,22 +624,146 @@
             }
             </pre>
             <div class="mytitle">Following is java interface and two classes</div>
-            <?php include("../colorhtml/myshape.html"); ?>
+            <div class="highlight"><pre><span class="kd">interface</span> <span class="nc">Shape</span>
+<span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getArea</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Circle</span> <span class="kd">implements</span> <span class="n">Shape</span>
+<span class="o">{</span>
+    <span class="kt">double</span> <span class="n">x</span><span class="o">;</span>
+    <span class="kt">double</span> <span class="n">y</span><span class="o">;</span>
+    <span class="kt">double</span> <span class="n">radial</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Circle</span><span class="o">(</span><span class="kt">double</span> <span class="n">x</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y</span><span class="o">,</span> <span class="kt">double</span> <span class="n">radial</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">radial</span> <span class="o">=</span> <span class="n">radial</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getArea</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="mf">3.14</span><span class="o">*</span><span class="n">radial</span><span class="o">*</span><span class="n">radial</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Rectangle</span> <span class="kd">implements</span> <span class="n">Shape</span>
+<span class="o">{</span>
+    <span class="kt">double</span> <span class="n">topx</span><span class="o">;</span>
+    <span class="kt">double</span> <span class="n">topy</span><span class="o">;</span>
+    <span class="kt">double</span> <span class="n">bottomx</span><span class="o">;</span>
+    <span class="kt">double</span> <span class="n">bottomy</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Rectangle</span><span class="o">(</span><span class="kt">double</span> <span class="n">topx</span><span class="o">,</span> <span class="kt">double</span> <span class="n">topy</span><span class="o">,</span> <span class="kt">double</span> <span class="n">bottomx</span><span class="o">,</span> <span class="kt">double</span> <span class="n">bottomy</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">topx</span> <span class="o">=</span> <span class="n">topx</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">topy</span> <span class="o">=</span> <span class="n">topy</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">bottomx</span><span class="o">=</span> <span class="n">bottomx</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">bottomy</span><span class="o">=</span> <span class="n">bottomy</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getArea</span><span class="o">()</span>
+    <span class="o">{</span>
+        <span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">bottomx</span> <span class="o">-</span> <span class="n">topx</span><span class="o">)*</span><span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">bottomy</span> <span class="o">-</span> <span class="n">topy</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
 
             <div class="mytitle">Crazy function in Haskell</div>
-            <?php include("../colorhtml/haskell/function.html"); ?>
+            <div class="highlight"><pre><span class="nf">f</span><span class="ow">::</span><span class="nb">()</span><span class="ow">-&gt;</span><span class="nb">()</span>
+<span class="nf">f</span> <span class="kr">_</span> <span class="ow">=</span> <span class="nb">()</span> 
+
+<span class="nf">f1</span><span class="ow">::</span><span class="kt">Bool</span><span class="ow">-&gt;</span><span class="kt">Bool</span>
+<span class="nf">f1</span> <span class="kr">_</span> <span class="ow">=</span> <span class="nb">()</span> <span class="o">==</span> <span class="nb">()</span> 
+
+<span class="nf">f2</span><span class="ow">::</span><span class="kt">Bool</span><span class="ow">-&gt;</span><span class="kt">Bool</span>
+<span class="nf">f2</span> <span class="n">x</span> <span class="ow">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="kt">True</span> 
+
+<span class="nf">f3</span><span class="ow">::</span><span class="kt">Bool</span><span class="ow">-&gt;</span><span class="kt">Bool</span>
+<span class="nf">f3</span> <span class="kr">_</span> <span class="ow">=</span> <span class="kt">False</span> 
+
+<span class="nf">f4</span><span class="ow">::</span><span class="kt">Bool</span><span class="ow">-&gt;</span><span class="kt">Bool</span>
+<span class="nf">f4</span> <span class="n">undefined</span> <span class="ow">=</span> <span class="kt">False</span> 
+
+<span class="nf">f5</span><span class="ow">::</span><span class="kt">Bool</span><span class="ow">-&gt;</span><span class="kt">Bool</span>
+<span class="nf">f5</span> <span class="n">undefined</span> <span class="ow">=</span> <span class="n">undefined</span> 
+
+<span class="nf">f6</span><span class="ow">::</span><span class="kt">Bool</span><span class="ow">-&gt;</span><span class="kt">Bool</span>
+<span class="nf">f6</span> <span class="kr">_</span> <span class="ow">=</span> <span class="n">undefined</span> 
+
+<span class="nf">f7</span><span class="ow">::</span><span class="kt">Bool</span><span class="ow">-&gt;</span><span class="kt">Bool</span>
+<span class="nf">f7</span> <span class="ow">=</span> <span class="n">undefined</span> 
+
+<span class="nf">f8</span><span class="ow">::</span><span class="kt">Bool</span><span class="ow">-&gt;</span><span class="kt">Bool</span>
+<span class="nf">f8</span> <span class="ow">=</span> <span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="n">undefined</span>
+
+<span class="nf">f9</span><span class="ow">::</span><span class="kt">Int</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">f9</span> <span class="ow">=</span> <span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> 
+
+<span class="nf">f10</span><span class="ow">::</span><span class="kt">Int</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">f10</span> <span class="ow">=</span> <span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="n">f9</span> <span class="n">x</span> 
+
+<span class="nf">f11</span><span class="ow">::</span><span class="kt">Int</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">f11</span> <span class="n">x</span> <span class="ow">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="n">f9</span> <span class="mi">1</span><span class="p">)</span> 
+
+<span class="nf">f12</span><span class="ow">::</span><span class="kt">Int</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">f12</span> <span class="ow">=</span> <span class="nf">\</span><span class="n">x</span> <span class="ow">-&gt;</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
 
             <div class="mytitle">Composite function in Haskell</div>
-            <?php include("../colorhtml/haskell/composite.html"); ?>
+            <div class="highlight"><pre><span class="c1">-- function composition foldable</span>
+<span class="nf">f1</span><span class="ow">::</span><span class="kt">Int</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">f1</span> <span class="n">a</span> <span class="ow">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">10</span> 
+
+<span class="nf">f2</span><span class="ow">::</span><span class="kt">Int</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">f2</span> <span class="n">a</span> <span class="ow">=</span> <span class="n">a</span> <span class="o">-</span> <span class="mi">10</span> 
+<span class="nf">compose</span> <span class="ow">=</span> <span class="p">(</span><span class="n">f1</span><span class="o">.</span><span class="n">f2</span><span class="p">)</span> <span class="mi">10</span>
+</pre></div>
 
             <div class="mytitle">Foldable in Haskell</div>
-            <?php include("../colorhtml/haskell/foldable.html"); ?>
+            <div class="highlight"><pre><span class="c1">-- identity = [] </span>
+<span class="nf">concat2</span><span class="ow">::</span><span class="p">[[</span><span class="kt">Int</span><span class="p">]]</span><span class="ow">-&gt;</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span>
+<span class="nf">concat2</span> <span class="n">vals</span> <span class="ow">=</span> <span class="n">foldr</span> <span class="p">(</span><span class="nf">\</span><span class="n">val</span> <span class="n">acc</span><span class="ow">-&gt;</span><span class="n">val</span> <span class="o">++</span> <span class="n">acc</span><span class="p">)</span> <span class="kt">[]</span> <span class="n">vals</span>
+<span class="c1">-- concat2 [[1, 2], [3, 4]] =  [1, 2] ++ ([3, 4] ++ []) = [1, 2, 3, 4]</span>
+
+<span class="nf">fo</span> <span class="ow">=</span> <span class="n">foldr</span> <span class="p">((</span><span class="kt">:</span><span class="p">))</span> <span class="kt">[]</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> 
+<span class="c1">-- output [1, 2, 3]</span>
+
+<span class="c1">-- alternative definition of map </span>
+<span class="nf">map&#39;</span><span class="ow">::</span><span class="p">(</span><span class="n">a</span><span class="ow">-&gt;</span><span class="n">b</span><span class="p">)</span><span class="ow">-&gt;</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="ow">-&gt;</span><span class="p">[</span><span class="n">b</span><span class="p">]</span>
+<span class="nf">map&#39;</span> <span class="n">f</span> <span class="ow">=</span> <span class="n">foldr</span> <span class="p">((</span><span class="kt">:</span><span class="p">)</span><span class="o">.</span><span class="n">f</span><span class="p">)</span> <span class="kt">[]</span> 
+<span class="c1">-- map&#39; (1+) 1 [1, 2, 3] = [2, 3, 4]</span>
+
+
+<span class="c1">-- identity = 0</span>
+<span class="nf">sum1</span><span class="ow">::</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">sum1</span> <span class="n">vals</span> <span class="ow">=</span> <span class="n">foldl</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="n">y</span><span class="ow">-&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span> <span class="mi">0</span> <span class="n">vals</span> 
+
+<span class="c1">-- identity = 1 </span>
+<span class="nf">product1</span><span class="ow">::</span><span class="p">[</span><span class="kt">Int</span><span class="p">]</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">product1</span> <span class="n">vals</span> <span class="ow">=</span> <span class="n">foldl</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="n">y</span><span class="ow">-&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span> <span class="mi">1</span> <span class="n">vals</span> 
+
+<span class="c1">-- identity = [] </span>
+<span class="nf">concat1</span><span class="ow">::</span><span class="p">[[</span><span class="kt">Char</span><span class="p">]]</span><span class="ow">-&gt;</span><span class="kt">String</span>
+<span class="nf">concat1</span> <span class="n">vals</span> <span class="ow">=</span> <span class="n">foldl</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="n">y</span><span class="ow">-&gt;</span><span class="n">concat</span><span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span> <span class="kt">[]</span> <span class="n">vals</span>
+</pre></div>
 
             <div class="mytitle">instance and class in Haskell</div>
-            <?php include("../colorhtml/haskell/instance.html"); ?>
+            <div class="highlight"><pre><span class="c1">--class  Eq a  where</span>
+   <span class="c1">--(==), (/=) :: a -&gt; a -&gt; Bool</span>
+   <span class="c1">--x /= y     =  not (x == y)</span>
+   <span class="c1">--x == y     =  not (x /= y)</span>
+
+<span class="c1">-- instance class</span>
+<span class="kr">data</span> <span class="kt">Myfoo</span> <span class="ow">=</span> <span class="kt">Myfoo</span><span class="p">{</span><span class="n">int</span><span class="ow">::</span><span class="kt">Integer</span><span class="p">,</span> <span class="n">str</span><span class="ow">::</span><span class="kt">String</span><span class="p">}</span>
+<span class="kr">instance</span> <span class="kt">Eq</span> <span class="kt">Myfoo</span> <span class="kr">where</span> 
+    <span class="p">(</span><span class="kt">Myfoo</span> <span class="n">int1</span> <span class="n">str1</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="kt">Myfoo</span> <span class="n">int2</span> <span class="n">str2</span><span class="p">)</span> <span class="ow">=</span> <span class="p">(</span><span class="n">int1</span> <span class="o">==</span> <span class="n">int2</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">str1</span> <span class="o">==</span> <span class="n">str2</span>
+</pre></div>
 
             <div class="mytitle">Functor in Haskell</div>
-            <?php include("../colorhtml/haskell/functor.html"); ?>
+            <div class="highlight"><pre><span class="kr">data</span> <span class="kt">MyMaybe</span> <span class="n">a</span> <span class="ow">=</span> <span class="kt">MyJust</span> <span class="n">a</span> <span class="o">|</span> <span class="kt">MyNothing</span> <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+ 
+<span class="kr">instance</span> <span class="kt">Functor</span> <span class="kt">MyMaybe</span> <span class="kr">where</span>
+    <span class="n">fmap</span> <span class="n">f</span> <span class="kt">MyNothing</span> <span class="ow">=</span> <span class="kt">MyNothing</span>
+    <span class="n">fmap</span> <span class="n">f</span> <span class="p">(</span><span class="kt">MyJust</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=</span> <span class="kt">MyJust</span> <span class="p">(</span><span class="n">f</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
 
 
             <div class="mytitle">Algebraic Data Type in Haskell</div>
@@ -378,14 +787,98 @@
                 public Nothing(){}
             }
             </pre>
-            <?php include("../colorhtml/haskell/filetype1.html"); ?>
+            <div class="highlight"><pre><span class="c1">-- City is similar to Enum in Java/C++</span>
+<span class="c1">-- public enum City </span>
+<span class="c1">-- {</span>
+<span class="c1">--  PaloAlto, </span>
+<span class="c1">--  MountainView </span>
+<span class="c1">--  Sunnyvale</span>
+<span class="c1">-- }</span>
+<span class="c1">-- City city = MountainView</span>
+<span class="c1">--</span>
+<span class="kr">data</span> <span class="kt">City</span> <span class="ow">=</span> <span class="kt">PaloAlto</span>
+            <span class="o">|</span> <span class="kt">MountainView</span>
+            <span class="o">|</span> <span class="kt">Sunnyvale</span>
+    <span class="kr">deriving</span><span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
+            
+
+<span class="nf">city</span><span class="ow">::</span><span class="kt">City</span>
+<span class="nf">city</span> <span class="ow">=</span> <span class="kt">MountainView</span>
+
+<span class="nf">listofCity</span><span class="ow">::</span><span class="p">[</span><span class="kt">City</span><span class="p">]</span>
+<span class="nf">listofCity</span> <span class="ow">=</span> <span class="p">[</span><span class="kt">PaloAlto</span><span class="p">,</span> <span class="kt">Sunnyvale</span><span class="p">,</span> <span class="kt">MountainView</span><span class="p">]</span>
+
+<span class="nf">isGoodCity</span><span class="ow">::</span><span class="kt">City</span> <span class="ow">-&gt;</span> <span class="kt">Bool</span>
+<span class="nf">isGoodCity</span> <span class="kt">PaloAlto</span>     <span class="ow">=</span> <span class="kt">True</span>
+<span class="nf">isGoodCity</span> <span class="kt">MountainView</span> <span class="ow">=</span> <span class="kt">True</span>
+<span class="nf">isGoodCity</span> <span class="kt">Sunnyvale</span>    <span class="ow">=</span> <span class="kt">False</span>
+
+<span class="kr">data</span> <span class="kt">MyType</span> <span class="ow">=</span> <span class="kt">Failture</span>
+            <span class="o">|</span> <span class="kt">OK</span> <span class="p">(</span><span class="kt">Double</span><span class="p">)</span>
+    <span class="kr">deriving</span> <span class="kt">Show</span>
+
+<span class="nf">fa</span> <span class="ow">=</span> <span class="kt">Failture</span>
+<span class="nf">ok</span> <span class="ow">=</span> <span class="kt">OK</span> <span class="mf">3.31</span>
+
+<span class="nf">safeDiv</span><span class="ow">::</span><span class="kt">Double</span><span class="ow">-&gt;</span><span class="kt">Double</span><span class="ow">-&gt;</span><span class="kt">MyType</span>
+<span class="nf">safeDiv</span> <span class="kr">_</span> <span class="mi">0</span> <span class="ow">=</span> <span class="kt">Failture</span>
+<span class="nf">safeDiv</span> <span class="n">x</span> <span class="n">y</span> <span class="ow">=</span> <span class="kt">OK</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">y</span><span class="p">)</span>
+
+<span class="nf">f</span><span class="ow">::</span><span class="kt">String</span><span class="ow">-&gt;</span><span class="kt">MyType</span>
+<span class="nf">f</span>   <span class="s">&quot;&quot;</span>    <span class="ow">=</span> <span class="kt">Failture</span>
+<span class="nf">f</span>   <span class="s">&quot;cat&quot;</span> <span class="ow">=</span> <span class="kt">OK</span> <span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="nf">f</span>   <span class="s">&quot;dog&quot;</span> <span class="ow">=</span> <span class="kt">OK</span> <span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="nf">f</span>   <span class="kr">_</span>     <span class="ow">=</span> <span class="kt">OK</span> <span class="mf">3.3</span>
+
+
+<span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span>
+        <span class="n">print</span> <span class="p">(</span><span class="n">isGoodCity</span> <span class="kt">PaloAlto</span><span class="p">)</span>
+        <span class="n">print</span> <span class="p">(</span><span class="n">isGoodCity</span> <span class="kt">Sunnyvale</span><span class="p">)</span>
+        <span class="n">print</span> <span class="p">(</span><span class="n">fa</span><span class="p">,</span> <span class="n">ok</span><span class="p">)</span>
+        <span class="n">print</span> <span class="p">(</span><span class="n">f</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">print</span> <span class="p">(</span><span class="n">f</span> <span class="s">&quot;cat&quot;</span><span class="p">)</span>
+        <span class="n">print</span> <span class="p">(</span><span class="n">f</span> <span class="s">&quot;dog&quot;</span><span class="p">)</span>
+        <span class="n">print</span> <span class="p">(</span><span class="n">safeDiv</span> <span class="mi">3</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">print</span> <span class="p">(</span><span class="n">safeDiv</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
 
             <div class="mytitle">foldr and foldl in Haskell</div>
             <div class="cen">
             <img src="http://localhost/zsurface/image/fold.svg" width="50%" height="50%" /><br> 
             </div>
-            <?php include("../colorhtml/haskell/fold.html"); ?> <br>
-            <?php include("../colorhtml/java/foldjava.html"); ?> <br>
+            <div class="highlight"><pre><span class="c1">-- folding examples</span>
+<span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span> 
+        <span class="n">print</span><span class="p">(</span><span class="n">foldr</span> <span class="p">(</span><span class="o">-</span><span class="p">)</span> <span class="mi">1</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="c1">-- output 2</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">foldl</span> <span class="p">(</span><span class="o">-</span><span class="p">)</span> <span class="mi">1</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="c1">-- output -8 </span>
+
+        <span class="kr">let</span> <span class="n">fr</span> <span class="ow">=</span> <span class="n">foldr</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="n">y</span><span class="ow">-&gt;</span><span class="n">concat</span><span class="p">[</span><span class="s">&quot;(&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s">&quot;-&quot;</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">&quot;)&quot;</span><span class="p">])</span> <span class="s">&quot;1&quot;</span> <span class="p">(</span><span class="n">map</span> <span class="n">show</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> 
+        <span class="n">print</span><span class="p">(</span><span class="n">fr</span><span class="p">)</span>
+        <span class="c1">--output &quot;(2-(3-(4-1)))&quot;</span>
+
+        <span class="kr">let</span> <span class="n">fl</span> <span class="ow">=</span> <span class="n">foldl</span> <span class="p">(</span><span class="nf">\</span><span class="n">x</span> <span class="n">y</span><span class="ow">-&gt;</span><span class="n">concat</span><span class="p">[</span><span class="s">&quot;(&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s">&quot;-&quot;</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">&quot;)&quot;</span><span class="p">])</span> <span class="s">&quot;1&quot;</span> <span class="p">(</span><span class="n">map</span> <span class="n">show</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">fl</span><span class="p">)</span>
+        <span class="c1">--output &quot;(((1-2)-3)-4)&quot;</span>
+</pre></div>
+ <br>
+            <div class="highlight"><pre><span class="c1">// foldr (-) 1 [2, 3, 4]  output = 2 </span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">foldr</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">){</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">4</span><span class="o">){</span>
+            <span class="k">return</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">else</span><span class="o">{</span>
+            <span class="k">return</span> <span class="n">n</span> <span class="o">-</span> <span class="n">foldr</span><span class="o">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="c1">// foldl (-) 1 [2, 3, 4] output = -8 </span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">foldl</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">){</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="o">){</span>
+            <span class="k">return</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">n</span><span class="o">;</span>
+        <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+            <span class="k">return</span> <span class="n">foldl</span><span class="o">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">-</span> <span class="n">n</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</pre></div>
+ <br>
             <div class="cen">
             <img src="http://localhost/zsurface/image/fold2.svg" width="50%" height="50%" /><br> 
             </div>
@@ -417,24 +910,123 @@
             </pre>
 
             <div class="mytitle">let expressions and where causes local variable binding in Haskell</div>
-            <?php include("../colorhtml/haskell/letwhere.html"); ?>
+            <div class="highlight"><pre><span class="c1">-- where cause and let binding in Haskell</span>
+<span class="c1">--</span>
+<span class="c1">-- let binding in Haskell</span>
+<span class="c1">-- ax^2 + bx + c = 0</span>
+<span class="c1">-- Find the root of the quadratic equation</span>
+
+<span class="nf">roots</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="ow">=</span>
+        <span class="kr">let</span> <span class="n">discriminant</span><span class="ow">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">b</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">)</span>
+        <span class="kr">in</span> <span class="p">(</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">discriminant</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">discriminant</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">))</span>
+
+<span class="nf">longest</span> <span class="kt">[]</span>     <span class="ow">=</span> <span class="kt">[]</span>
+<span class="nf">longest</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span> <span class="ow">=</span> <span class="kr">if</span> <span class="n">length</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">length</span> <span class="p">(</span><span class="n">longest</span> <span class="n">xs</span><span class="p">)</span> <span class="kr">then</span> <span class="n">x</span> <span class="kr">else</span> <span class="p">(</span><span class="n">longest</span> <span class="n">xs</span><span class="p">)</span>
+
+<span class="nf">newlongest</span> <span class="kt">[]</span>     <span class="ow">=</span> <span class="kt">[]</span>
+<span class="nf">newlongest</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span> <span class="ow">=</span> <span class="kr">if</span> <span class="n">length</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">length</span> <span class="n">max</span> <span class="kr">then</span> <span class="n">x</span> <span class="kr">else</span> <span class="n">max</span> 
+    <span class="kr">where</span> <span class="n">max</span> <span class="ow">=</span> <span class="n">newlongest</span> <span class="n">xs</span>
+
+<span class="nf">main</span> <span class="ow">=</span>  <span class="kr">do</span> 
+        <span class="n">print</span> <span class="p">(</span><span class="n">roots</span> <span class="mi">3</span> <span class="mi">9</span> <span class="mi">1</span><span class="p">)</span> 
+        <span class="n">print</span> <span class="p">(</span><span class="n">longest</span> <span class="p">[</span><span class="kt">[]</span><span class="p">,[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span> 
+        <span class="n">print</span> <span class="p">(</span><span class="n">newlongest</span> <span class="p">[</span><span class="kt">[]</span><span class="p">,[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+</pre></div>
 
             <div class="mytitle">simple case in Haskell</div>
             <div class="mytext">
             Case in Haskell is like switch statement in Java, except it is more beautiful! 
             </div>
-            <?php include("../colorhtml/haskell/case.html"); ?>
+            <div class="highlight"><pre><span class="nf">suffixed</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">show</span> <span class="n">n</span> <span class="o">++</span> <span class="n">suffix</span>
+    <span class="kr">where</span> 
+        <span class="n">suffix</span>
+            <span class="o">|</span> <span class="n">n</span> <span class="p">`</span><span class="n">mod</span><span class="p">`</span> <span class="mi">100</span> <span class="p">`</span><span class="n">div</span><span class="p">`</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">=</span> <span class="s">&quot;th&quot;</span>
+            <span class="o">|</span> <span class="n">otherwise</span> <span class="ow">=</span> <span class="kr">case</span> <span class="n">n</span> <span class="p">`</span><span class="n">mod</span><span class="p">`</span> <span class="mi">10</span> <span class="kr">of</span> 
+                <span class="mi">1</span> <span class="ow">-&gt;</span> <span class="s">&quot;st&quot;</span>
+                <span class="mi">2</span> <span class="ow">-&gt;</span> <span class="s">&quot;nd&quot;</span>
+                <span class="mi">3</span> <span class="ow">-&gt;</span> <span class="s">&quot;rd&quot;</span>
+                <span class="kr">_</span> <span class="ow">-&gt;</span> <span class="s">&quot;th&quot;</span>
+
+<span class="nf">result</span> <span class="ow">=</span> <span class="n">map</span> <span class="n">suffixed</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">40</span><span class="p">]</span>
+</pre></div>
             <div class="mytitle">practical case in Haskell</div>
-            <?php include("../colorhtml/haskell/mycase.html"); ?>
+            <div class="highlight"><pre><span class="nf">fun</span> <span class="n">x</span> <span class="ow">=</span> <span class="kr">case</span> <span class="n">x</span> <span class="p">`</span><span class="n">mod</span><span class="p">`</span> <span class="mi">2</span> <span class="kr">of</span>
+            <span class="mi">0</span> <span class="ow">-&gt;</span> <span class="s">&quot;even&quot;</span>
+            <span class="kr">_</span> <span class="ow">-&gt;</span> <span class="s">&quot;odd&quot;</span>
+
+<span class="nf">fun&#39;</span> <span class="n">x</span> <span class="ow">=</span> <span class="n">answer</span> 
+            <span class="kr">where</span> <span class="n">answer</span> 
+                    <span class="o">|</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="ow">=</span> <span class="s">&quot;less then 10&quot;</span>
+                    <span class="o">|</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">10</span> <span class="ow">=</span> <span class="s">&quot;equal 10&quot;</span>
+                    <span class="o">|</span> <span class="n">otherwise</span> <span class="ow">=</span> <span class="kr">case</span> <span class="n">x</span> <span class="p">`</span><span class="n">mod</span><span class="p">`</span> <span class="mi">2</span> <span class="kr">of</span> 
+                                        <span class="mi">0</span> <span class="ow">-&gt;</span> <span class="s">&quot;greater than 10 even&quot;</span> 
+                                        <span class="kr">_</span> <span class="ow">-&gt;</span> <span class="s">&quot;greater than 10 and odd&quot;</span>
+</pre></div>
 
             <div class="mytitle">First OpenGL Hello World in Haskell</div>
-            <?php include("../colorhtml/haskell/firstOpenGL.html"); ?>
+            <div class="highlight"><pre><span class="kn">import</span> <span class="nn">Graphics.UI.GLUT</span>
+
+<span class="nl">myPoints:</span><span class="o">:[(</span><span class="n">GLfloat</span><span class="o">,</span> <span class="n">GLfloat</span><span class="o">,</span> <span class="n">GLfloat</span><span class="o">)]</span>
+<span class="n">myPoints</span> <span class="o">=</span> <span class="o">[(</span><span class="n">sin</span><span class="o">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">k</span><span class="o">/</span><span class="mi">12</span><span class="o">),</span> <span class="n">cos</span><span class="o">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">k</span><span class="o">/</span><span class="mi">12</span><span class="o">),</span> <span class="mi">0</span><span class="o">)</span> <span class="o">|</span> <span class="n">k</span> <span class="o">&lt;-</span> <span class="o">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">12</span><span class="o">]]</span>
+
+<span class="nl">main:</span><span class="o">:</span><span class="n">IO</span><span class="o">()</span>
+<span class="n">main</span> <span class="o">=</span> <span class="k">do</span>
+    <span class="o">(</span><span class="n">_progName</span><span class="o">,</span> <span class="n">_args</span><span class="o">)</span> <span class="o">&lt;-</span> <span class="n">getArgsAndInitialize</span>
+    <span class="n">_window</span> <span class="o">&lt;-</span> <span class="n">createWindow</span> <span class="s">&quot;Hello World&quot;</span>
+    <span class="n">displayCallback</span> <span class="n">$</span><span class="o">=</span> <span class="n">display</span>
+    <span class="n">mainLoop</span>
+
+<span class="nl">display:</span><span class="o">:</span><span class="n">DisplayCallback</span>
+<span class="n">display</span> <span class="o">=</span> <span class="k">do</span>
+    <span class="n">clear</span> <span class="o">[</span> <span class="n">ColorBuffer</span><span class="o">]</span>
+    <span class="n">renderPrimitive</span> <span class="n">Triangles$</span> <span class="nf">mapM_</span> <span class="o">(</span><span class="err">\</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="n">z</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">vertex</span> <span class="n">$</span> <span class="n">Vertex3</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span><span class="o">)</span> <span class="n">myPoints</span>
+    <span class="n">flush</span>
+</pre></div>
 
             <div class="cen">
                 <img src="http://localhost/zsurface/image/firstOpenGL.png" width="30%" height="30%" />
             </div>
             <div class="mytitle">OpenGL Vertex and Color in Haskell</div>
-            <?php include("../colorhtml/haskell/openGLColor.html"); ?>
+            <div class="highlight"><pre><span class="kn">import</span> <span class="nn">Graphics.UI.GLUT</span>
+
+<span class="nl">main:</span><span class="o">:</span><span class="n">IO</span><span class="o">()</span>
+<span class="n">main</span> <span class="o">=</span> <span class="k">do</span>
+    <span class="o">(</span><span class="n">_progName</span><span class="o">,</span> <span class="n">_args</span><span class="o">)</span> <span class="o">&lt;-</span> <span class="n">getArgsAndInitialize</span>
+    <span class="n">_window</span> <span class="o">&lt;-</span> <span class="n">createWindow</span> <span class="s">&quot;OpenGL Vertex and Color in Haskell&quot;</span>
+    <span class="n">displayCallback</span> <span class="n">$</span><span class="o">=</span> <span class="n">display</span>
+    <span class="n">mainLoop</span>
+
+<span class="nl">display:</span><span class="o">:</span><span class="n">DisplayCallback</span>
+<span class="n">display</span> <span class="o">=</span> <span class="k">do</span>
+    <span class="n">let</span> <span class="n">color3f</span> <span class="n">r</span> <span class="n">g</span> <span class="n">b</span> <span class="o">=</span> <span class="n">color</span> <span class="n">$</span> <span class="n">Color3</span> <span class="n">r</span> <span class="nf">g</span> <span class="o">(</span><span class="n">b</span><span class="o">::</span><span class="n">GLfloat</span><span class="o">)</span>
+        <span class="n">vertex3f</span> <span class="n">x</span> <span class="n">y</span> <span class="n">z</span> <span class="o">=</span> <span class="n">vertex</span> <span class="n">$</span> <span class="n">Vertex3</span> <span class="n">x</span> <span class="nf">y</span> <span class="o">(</span><span class="n">z</span><span class="o">::</span><span class="n">GLfloat</span><span class="o">)</span>
+    <span class="n">clear</span> <span class="o">[</span><span class="n">ColorBuffer</span><span class="o">]</span>
+    <span class="n">renderPrimitive</span> <span class="n">Quads</span> <span class="n">$</span>  <span class="k">do</span>
+        <span class="n">color3f</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">0</span>
+        <span class="n">vertex3f</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+        <span class="n">vertex3f</span> <span class="mi">0</span> <span class="mf">0.2</span> <span class="mi">0</span>
+        <span class="n">vertex3f</span> <span class="mf">0.2</span> <span class="mf">0.2</span> <span class="mi">0</span> 
+        <span class="n">vertex3f</span> <span class="mf">0.2</span> <span class="mi">0</span> <span class="mi">0</span> 
+
+        <span class="n">color3f</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mf">0.5</span> 
+        <span class="n">vertex3f</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+        <span class="n">vertex3f</span> <span class="mi">0</span> <span class="o">(-</span><span class="mf">0.2</span><span class="o">)</span> <span class="mi">0</span>
+        <span class="n">vertex3f</span> <span class="mf">0.2</span> <span class="o">(-</span><span class="mf">0.2</span><span class="o">)</span> <span class="mi">0</span> 
+        <span class="n">vertex3f</span> <span class="mf">0.2</span> <span class="mi">0</span> <span class="mi">0</span>
+
+        <span class="n">color3f</span> <span class="mi">0</span> <span class="mf">0.5</span>  <span class="mi">1</span>
+        <span class="n">vertex3f</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+        <span class="n">vertex3f</span> <span class="mi">0</span> <span class="o">(-</span><span class="mf">0.2</span><span class="o">)</span> <span class="mi">0</span> 
+        <span class="n">vertex3f</span> <span class="o">(-</span><span class="mf">0.2</span><span class="o">)</span> <span class="o">(-</span><span class="mf">0.2</span><span class="o">)</span> <span class="mi">0</span> 
+        <span class="n">vertex3f</span> <span class="o">(-</span><span class="mf">0.2</span><span class="o">)</span> <span class="mi">0</span> <span class="mi">0</span> 
+
+        <span class="n">color3f</span> <span class="mf">0.3</span> <span class="mf">0.3</span> <span class="mf">0.3</span> 
+        <span class="n">vertex3f</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> 
+        <span class="n">vertex3f</span> <span class="mi">0</span> <span class="mf">0.2</span> <span class="mi">0</span>
+        <span class="n">vertex3f</span> <span class="o">(-</span><span class="mf">0.2</span><span class="o">)</span> <span class="mf">0.2</span> <span class="mi">0</span> 
+        <span class="n">vertex3f</span> <span class="o">(-</span><span class="mf">0.2</span><span class="o">)</span> <span class="mi">0</span> <span class="mi">0</span> 
+    <span class="n">flush</span>
+</pre></div>
             <div class="cen">
                 <img src="http://localhost/zsurface/image/openGLColor.png" width="30%" height="30%" />
             </div>
@@ -446,7 +1038,21 @@
             map f [1..3] = [f(1) f(2) f(3)]<br>
             map f [x1, x2, ...] = [f(x1), f(x2), ...]<br>
             </div>
-            <?php include("../colorhtml/haskell/map.html"); ?>
+            <div class="highlight"><pre><span class="nf">f</span><span class="ow">::</span><span class="kt">Int</span><span class="ow">-&gt;</span><span class="kt">Int</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">f</span> <span class="n">a</span> <span class="n">b</span> <span class="ow">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+
+<span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span> 
+        <span class="n">print</span><span class="p">(</span><span class="n">map</span> <span class="p">(</span><span class="o">+</span> <span class="mi">2</span><span class="p">)</span>     <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span><span class="p">])</span> <span class="c1">-- (2 + 1) (2 + 2) (2 + 3)</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">map</span> <span class="p">(</span><span class="mi">2</span> <span class="o">-</span><span class="p">)</span>     <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span><span class="p">])</span> <span class="c1">-- (2 - 1) (2 - 2) (2 - 2)</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">map</span> <span class="p">((</span><span class="o">-</span><span class="p">)</span> <span class="mi">2</span><span class="p">)</span>   <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span><span class="p">])</span> <span class="c1">-- (2 - 1) (2 - 2) (2 - 3)</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">map</span> <span class="p">(</span><span class="n">mod</span> <span class="mi">2</span><span class="p">)</span>   <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span><span class="p">])</span> <span class="c1">-- (2 mod 1) (2 mod 2) (2 mod 3)</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">map</span> <span class="p">(`</span><span class="n">mod</span><span class="p">`</span> <span class="mi">2</span><span class="p">)</span> <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span><span class="p">])</span> <span class="c1">-- (1 mod 2) (2 mod 2) (3 mod 2)</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">map</span> <span class="p">(</span><span class="o">/</span> <span class="mi">2</span><span class="p">)</span>     <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span><span class="p">])</span> <span class="c1">-- (2 / 1) (2 / 2) (2 / 3)</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">map</span> <span class="p">(</span><span class="o">*</span> <span class="mi">2</span><span class="p">)</span>     <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span><span class="p">])</span> <span class="c1">-- (2 * 1) (2 * 2) (2 * 3)</span>
+
+        <span class="n">print</span><span class="p">(</span><span class="n">map</span> <span class="p">(</span><span class="n">f</span> <span class="mi">10</span><span class="p">)</span>    <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span><span class="p">])</span> <span class="c1">-- (10 - 1) (10 - 2) (10 - 3)</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">map</span> <span class="p">(`</span><span class="n">f</span><span class="p">`</span> <span class="mi">10</span><span class="p">)</span>  <span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span><span class="p">])</span> <span class="c1">-- (1 - 10) (2 - 10) (3 - 10)</span>
+</pre></div>
             <div class="mytitle">Unwrap Monad, Find Index and SubString in Haskell</div>
             <div class="mytext">
             1. Unwrap the Maybe Monad<br>
@@ -461,9 +1067,36 @@
             findIndex (== 'a') "bac" -> 1<br>
             findIndex (> 'a')  "bac" -> 2<br>
             </div>
-            <?php include("../colorhtml/haskell/string.html"); ?>
+            <div class="highlight"><pre><span class="c1">--unwrap Maybe</span>
+<span class="nf">open</span><span class="ow">::</span><span class="kt">Maybe</span> <span class="n">a</span><span class="ow">-&gt;</span><span class="n">a</span>
+<span class="nf">open</span> <span class="kt">Nothing</span> <span class="ow">=</span> <span class="ne">error</span> <span class="s">&quot;error&quot;</span>
+<span class="nf">open</span> <span class="p">(</span><span class="kt">Just</span> <span class="n">a</span><span class="p">)</span> <span class="ow">=</span> <span class="n">a</span>
+
+<span class="c1">-- find the index of Char</span>
+<span class="nf">findChar</span><span class="ow">::</span><span class="kt">Char</span><span class="ow">-&gt;</span><span class="kt">String</span><span class="ow">-&gt;</span><span class="kt">Int</span>
+<span class="nf">findChar</span> <span class="kr">_</span> <span class="kt">[]</span> <span class="ow">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="nf">findChar</span> <span class="n">a</span> <span class="p">(</span><span class="n">x</span><span class="kt">:</span><span class="n">xs</span><span class="p">)</span> <span class="ow">=</span> <span class="kr">if</span> <span class="n">a</span> <span class="o">/=</span> <span class="n">x</span> <span class="kr">then</span> <span class="p">((</span><span class="n">findChar</span> <span class="n">a</span> <span class="n">xs</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="kr">else</span> <span class="mi">0</span>
+
+<span class="c1">-- substring from l to r</span>
+<span class="nf">range</span><span class="ow">::</span><span class="kt">Int</span><span class="ow">-&gt;</span><span class="kt">Int</span><span class="ow">-&gt;</span><span class="kt">String</span><span class="ow">-&gt;</span><span class="kt">String</span>
+<span class="nf">range</span> <span class="n">l</span> <span class="n">r</span> <span class="n">str</span> <span class="ow">=</span> <span class="kr">if</span> <span class="n">l</span> <span class="o">&gt;=</span> <span class="n">length</span> <span class="n">str</span> <span class="o">||</span> <span class="n">r</span> <span class="o">&gt;=</span> <span class="n">length</span> <span class="n">str</span> <span class="kr">then</span> <span class="kt">[]</span> <span class="kr">else</span> <span class="p">(</span><span class="kr">if</span> <span class="n">l</span> <span class="o">&lt;=</span> <span class="n">r</span> <span class="kr">then</span> <span class="n">str</span> <span class="o">!!</span> <span class="n">l</span> <span class="kt">:[]</span> <span class="o">++</span> <span class="n">range</span> <span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="n">r</span> <span class="n">str</span> <span class="kr">else</span> <span class="kt">[]</span><span class="p">)</span>
+</pre></div>
             <div class="mytitle">Regular Expression in Haskell</div>
-            <?php include("../colorhtml/haskell/regex1.html"); ?>
+            <div class="highlight"><pre><span class="nf">mymatch</span> <span class="n">regex</span> <span class="n">f</span> <span class="n">s</span> <span class="ow">=</span> 
+        <span class="kr">case</span> <span class="n">matchRegexAll</span> <span class="n">regex</span> <span class="n">s</span> <span class="kr">of</span> 
+            <span class="kt">Nothing</span><span class="ow">-&gt;</span><span class="n">s</span>
+            <span class="kt">Just</span><span class="p">(</span><span class="n">before</span><span class="p">,</span> <span class="n">matched</span><span class="p">,</span> <span class="n">after</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span><span class="ow">-&gt;</span><span class="n">before</span> <span class="o">++</span> <span class="n">f</span> <span class="n">l</span> <span class="o">++</span> <span class="n">after</span>
+
+<span class="nf">t1</span> <span class="ow">=</span> <span class="n">filter</span> <span class="p">(</span><span class="o">=~</span> <span class="s">&quot;is&quot;</span><span class="p">)</span> <span class="p">[</span><span class="s">&quot;this is it&quot;</span><span class="p">]</span> 
+<span class="c1">-- [&quot;this is it&quot;]</span>
+<span class="nf">ignoreCase</span> <span class="ow">=</span> <span class="n">makeRegexOpts</span><span class="p">(</span><span class="n">defaultCompOpt</span> <span class="o">.|.</span> <span class="n">compIgnoreCase</span><span class="p">)</span> <span class="n">defaultExecOpt</span>
+<span class="nf">t3</span> <span class="ow">=</span> <span class="n">filter</span> <span class="p">(</span><span class="n">matchTest</span> <span class="o">$</span> <span class="n">ignoreCase</span> <span class="s">&quot;apple&quot;</span><span class="p">)</span> <span class="p">[</span><span class="s">&quot;My Apple&quot;</span><span class="p">]</span> 
+<span class="c1">-- [&quot;My Apple&quot;]</span>
+<span class="nf">t4</span> <span class="ow">=</span> <span class="n">subRegex</span><span class="p">(</span><span class="n">mkRegex</span> <span class="s">&quot;p+&quot;</span><span class="p">)</span> <span class="s">&quot;apple sucks&quot;</span> <span class="s">&quot;PP&quot;</span> 
+<span class="c1">-- aPPle sucks</span>
+<span class="nf">t5</span> <span class="ow">=</span> <span class="n">mymatch</span><span class="p">(</span><span class="n">mkRegex</span> <span class="s">&quot;man([0-9])&quot;</span><span class="p">)</span> <span class="p">(</span><span class="nf">\</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="ow">-&gt;</span><span class="s">&quot;woman&quot;</span> <span class="o">++</span> <span class="n">n</span><span class="p">)</span> <span class="s">&quot;/cat/man3/dog.txt&quot;</span>
+<span class="c1">-- &quot;/cat/woman3/dog.txt&quot;</span>
+</pre></div>
 
 
         <!-- Column 1 end -->
@@ -472,11 +1105,7 @@
         <!-- Column 2 start -->
             <ul>
                 
-                    <?php 
-                    $fileName = "indexHaskellTutorial.html";
-                    include("../php/menu.php"); 
-                    ?>
-                
+                    <li><a style="text-decoration:none;" href="indexPrintPreviouselementfromBinaryTree.html">Print Previous element from Binary Tree</a></li><li><a style="text-decoration:none;" href="indexTowerHanoi.html">Tower Hanoi</a></li><li><a style="text-decoration:none;" href="indexPolishNotationandPreporderTraveral.html">Polish Notation and Preporder Traveral</a></li><li><a style="text-decoration:none;" href="indexHaskellQuickSort.html">Haskell Quick Sort</a></li><li><a style="text-decoration:none;" href="indexOpenGLdrawpoint.html">OpenGL draw point</a></li><li><a style="text-decoration:none;" href="indexOpenGLdrawline.html">OpenGL draw line</a></li><li><a style="text-decoration:none;" href="indexOpenGLdrawtriangle.html">OpenGL draw triangle</a></li><li><a style="text-decoration:none;" href="indexOpenGLdrawpolygon.html">OpenGL draw polygon</a></li><li><a style="text-decoration:none;" href="indexOpenGLVertexArray.html">OpenGL Vertex Array</a></li><li><a style="text-decoration:none;" href="indexOpenGLVertexArrayTriangle.html">OpenGL Vertex Array Triangle</a></li><li><a style="text-decoration:none;" href="indexDrawTriangleOpenGLIOS.html">Draw Triangle OpenGL IOS</a></li><li><a style="text-decoration:none;" href="indexMessageQueue.html">Message Queue</a></li><li><a style="text-decoration:none;" href="indexObserverPattern.html">Observer Pattern</a></li><li><a style="text-decoration:none;" href="indexPublishSubscribePattern.html">Publish Subscribe Pattern</a></li><li><a style="text-decoration:none;" href="indexThebeautyofTorus.html">The beauty of Torus</a></li><li><a style="text-decoration:none;" href="indexoneproofaday5.html">one proof a day 5</a></li><li><a style="text-decoration:none;" href="indexoneproofaday4.html">one proof a day 4</a></li><li><a style="text-decoration:none;" href="indexoneproofaday3.html">one proof a day 3</a></li><li><a style="text-decoration:none;" href="indexoneproofaday2.html">one proof a day 2</a></li><li><a style="text-decoration:none;" href="indexoneproofaday1.html">one proof a day 1</a></li><li><a style="text-decoration:none;" href="indexPovraydrawbox.html">Povray draw box</a></li><li><a style="text-decoration:none;" href="indexSingletoninJava.html">Singleton in Java</a></li><li><a style="text-decoration:none;" href="indexMaximumdifferenceonanarray.html">Maximum difference on an array</a></li><li><a style="text-decoration:none;" href="indexMaximumContinuousSumList.html">Maximum Continuous Sum List</a></li><li><a style="text-decoration:none;" href="indexMaximumnonconsecutivesum.html">Maximum non consecutive sum</a></li><li><a style="text-decoration:none;" href="indexAutoCompletewithMapandList.html">Auto Complete with Map and List</a></li><li><a style="text-decoration:none;" href="indexThepowerofimage.html">The power of image</a></li><li><a style="text-decoration:none;" href="indexEightQueenSolver.html">Eight Queen Solver</a></li><li><a style="text-decoration:none;" href="indexJavaLambdaExpression.html">Java Lambda Expression</a></li><li><a style="text-decoration:none;" href="indexBuildTreefrompreandpost.html">Build Tree from pre and post</a></li><li><a style="text-decoration:none;" href="indexBuildTreefrompreorderandinorder.html">Build Tree from preorder and inorder</a></li><li><a style="text-decoration:none;" href="indexSerializeBinaryTreeTernaryTree.html">Serialize Binary Tree Ternary Tree</a></li><li><a style="text-decoration:none;" href="indexTokenizeSimpleXML.html">Tokenize Simple XML</a></li><li><a style="text-decoration:none;" href="indexPrintAllBinary.html">Print All Binary</a></li><li><a style="text-decoration:none;" href="indexTokenizeSimpleXML.html">Tokenize Simple XML</a></li><li><a style="text-decoration:none;" href="indexJsonParserinJava.html">Json Parser in Java</a></li><li><a style="text-decoration:none;" href="indexFindtheLowestCommonAncestorinaBinaryTree.html">Find the Lowest Common Ancestor in a Binary Tree</a></li><li><a style="text-decoration:none;" href="indexFindapairofelementsfromanarraywhosesumequalsagivennumber.html">Find a pair of elements from an array whose sum equals a given number</a></li><li><a style="text-decoration:none;" href="indexLeastRecentUsedLRUinJava.html">Least Recent Used LRU in Java</a></li><li><a style="text-decoration:none;" href="indexArraytoBalancedBST.html">Array to Balanced BST</a></li><li><a style="text-decoration:none;" href="indexImplementHashMapwitharray.html">Implement HashMap with array</a></li><li><a style="text-decoration:none;" href="indexFindtheFirstNon-RepeatingCharfromStreamChar.html">Find the First Non-Repeating Char from Stream Char</a></li><li><a style="text-decoration:none;" href="indexExcelColumnHeader.html">Excel Column Header</a></li><li><a style="text-decoration:none;" href="indexMinimumDistanceBetweentwogivenwords.html">Minimum Distance Between two given words</a></li><li><a style="text-decoration:none;" href="indexSetupMuttforGmailAccount.html">Set up Mutt for Gmail Account</a></li><li><a style="text-decoration:none;" href="indexThrowThrowsThrowableinJava.html">Throw Throws Throwable in Java</a></li><li><a style="text-decoration:none;" href="indexGetAllmethodsinJava.html">Get All methods in Java</a></li><li><a style="text-decoration:none;" href="indexCloneSkipListOnepassorNOExtraSpace.html">Clone Skip List One pass or NO Extra Space</a></li><li><a style="text-decoration:none;" href="indexInsertnodetosortedlist.html">Insert node to sorted list</a></li><li><a style="text-decoration:none;" href="indexGraphImplementation.html">Graph Implementation</a></li><li><a style="text-decoration:none;" href="indexMergeSortedArraywithExtraSpace.html">Merge Sorted Array with Extra Space</a></li><li><a style="text-decoration:none;" href="indexGooglePillInterviewQuestion.html">Google Pill Interview Question</a></li><li><a style="text-decoration:none;" href="indexNimGame.html">Nim Game</a></li><li><a style="text-decoration:none;" href="indexCompressString.html">Compress String</a></li><li><a style="text-decoration:none;" href="indexDesignURLshortener.html">Design URL shortener</a></li><li><a style="text-decoration:none;" href="indexDesignVendorMachina.html">Design Vendor Machina</a></li><li><a style="text-decoration:none;" href="indexDesignCoinChangeMachina.html">Design Coin Change Machina</a></li><li><a style="text-decoration:none;" href="indexDesignParkingLot.html">Design Parking Lot</a></li><li><a style="text-decoration:none;" href="indexGraphLoopandPath.html">Graph Loop and Path</a></li><li><a style="text-decoration:none;" href="indexRangeQuery.html">Range Query</a></li><li><a style="text-decoration:none;" href="indexFindthemaximumchildrenofgiventree.html">Find the maximum children of given tree</a></li><li><a style="text-decoration:none;" href="indexLevelorderwithoutqueue.html">Level order without queue</a></li><li><a style="text-decoration:none;" href="indexMergeSortedSingleLinkedList.html">Merge Sorted Single LinkedList</a></li><li><a style="text-decoration:none;" href="indexFacebookInterviewQuestion.html">Facebook Interview Question</a></li><li><a style="text-decoration:none;" href="indexCarmichaelNumber.html">Carmichael Number</a></li><li><a style="text-decoration:none;" href="indexMergeIntervals.html">Merge Intervals</a></li><li><a style="text-decoration:none;" href="indexThepowerofnextnext.html">The power of next next</a></li><li><a style="text-decoration:none;" href="indexTraversalIteration.html">Traversal Iteration</a></li><li><a style="text-decoration:none;" href="indexBinaryIterator.html">Binary Iterator</a></li><li><a style="text-decoration:none;" href="indexDebugWithLLDB.html">Debug With LLDB</a></li><li><a style="text-decoration:none;" href="indexCountOccurrencepatternString.html">Count Occurrence pattern String</a></li><li><a style="text-decoration:none;" href="indexCheckPrimeNumberAlgorithm.html">Check Prime Number Algorithm</a></li><li><a style="text-decoration:none;" href="indexExpediaTechInterview.html">Expedia Tech Interview</a></li><li><a style="text-decoration:none;" href="indexDirectedGraph.html">Directed Graph</a></li><li><a style="text-decoration:none;" href="indexBinaryTreeDefinition.html">Binary Tree Definition</a></li><li><a style="text-decoration:none;" href="indexFixSwapTwonodesinBinarySearchTree.html">Fix Swap Two nodes in Binary Search Tree</a></li><li><a style="text-decoration:none;" href="indexSwapTwonodesinBinarySearchTree.html">Swap Two nodes in Binary Search Tree</a></li><li><a style="text-decoration:none;" href="indexJavaLongestcomponent.html">Java Longest component</a></li><li><a style="text-decoration:none;" href="indexJavaMatrixMultiply.html">Java Matrix Multiply</a></li><li><a style="text-decoration:none;" href="indexMicrosoftTechInterviewQuestions.html">Microsoft Tech Interview Questions</a></li><li><a style="text-decoration:none;" href="indexJavaPriorityHeap.html">Java Priority Heap</a></li><li><a style="text-decoration:none;" href="indexC++CopyConstructor.html">C++ Copy Constructor</a></li><li><a style="text-decoration:none;" href="indexC++CloneDoubleLinkedList.html">C++ Clone Double Linked List</a></li><li><a style="text-decoration:none;" href="indexC++CloneSingleLinkedList.html">C++ Clone Single Linked List</a></li><li><a style="text-decoration:none;" href="indexC++SingleLinkedList.html">C++ Single Linked List</a></li><li><a style="text-decoration:none;" href="indexC++AllchildrenatKdistfromaNode.html">C++ All children at K dist from a Node</a></li><li><a style="text-decoration:none;" href="indexC++PrintnodesatKdistancefromRoot.html">C++ Print nodes at K distance from Root</a></li><li><a style="text-decoration:none;" href="indexC++InvertBinaryTree.html">C++ Invert Binary Tree</a></li><li><a style="text-decoration:none;" href="indexC++QueuewithTwoStacks.html">C++ Queue with Two Stacks</a></li><li><a style="text-decoration:none;" href="indexC++MultiplyLongInteger.html">C++ Multiply Long Integer</a></li><li><a style="text-decoration:none;" href="indexC++productofallintegersexceptcurrentone.html">C++ product of all integers except current one</a></li><li><a style="text-decoration:none;" href="indexC++PrintSprialfromRectangle.html">C++ Print Sprial from Rectangle</a></li><li><a style="text-decoration:none;" href="indexC++Rotate2darray90degree.html">C++ Rotate 2d array 90 degree</a></li><li><a style="text-decoration:none;" href="indexC++DrawCircleUsingSymmetricproperty.html">C++ Draw Circle Using Symmetric property</a></li><li><a style="text-decoration:none;" href="indexC++ReverseByte.html">C++ Reverse Byte</a></li><li><a style="text-decoration:none;" href="indexC++LeastOperationAddoneMultiplytwo.html">C++ Least Operation Add one Multiply two</a></li><li><a style="text-decoration:none;" href="indexC++PowerofTwo.html">C++ Power of Two</a></li><li><a style="text-decoration:none;" href="indexC++PrintAllBinaryWithBinaryTree.html">C++ Print All Binary With Binary Tree</a></li><li><a style="text-decoration:none;" href="indexC++PrintAllBinary.html">C++ Print All Binary</a></li><li><a style="text-decoration:none;" href="indexC++DecimalToBinary.html">C++ Decimal To Binary</a></li><li><a style="text-decoration:none;" href="indexC++BinaryTreeInsert.html">C++ Binary Tree Insert</a></li><li><a style="text-decoration:none;" href="indexC++Tries.html">C++ Tries</a></li><li><a style="text-decoration:none;" href="indexC++DataStructure.html">C++ Data Structure</a></li><li><a style="text-decoration:none;" href="indexC++Mergethreesortedarrays.html">C++ Merge three sorted arrays</a></li><li><a style="text-decoration:none;" href="indexC++Mergetwosortedarrays.html">C++ Merge two sorted arrays</a></li><li><a style="text-decoration:none;" href="indexC++overloadOperator.html">C++ overload Operator</a></li><li><a style="text-decoration:none;" href="indexJavaLockCompareAndSwap.html">Java Lock Compare And Swap</a></li><li><a style="text-decoration:none;" href="indexJavaJoinThread.html">Java Join Thread</a></li><li><a style="text-decoration:none;" href="indexJavaSynchronizeThread.html">Java Synchronize Thread</a></li><li><a style="text-decoration:none;" href="indexJavaSimpleThread.html">Java Simple Thread</a></li><li><a style="text-decoration:none;" href="indexMaximuminternvaloverlap.html">Maximum internval overlap</a></li><li><a style="text-decoration:none;" href="indexC++findpathinmaze.html">C++ find path in maze</a></li><li><a style="text-decoration:none;" href="indexC++BinarySearch.html">C++ Binary Search</a></li><li><a style="text-decoration:none;" href="indexC++QuickSort.html">C++ Quick Sort</a></li><li><a style="text-decoration:none;" href="indexC++twostacksgetminimum.html">C++ two stacks get minimum</a></li><li><a style="text-decoration:none;" href="indexGeneratenprimeinC++.html">Generate n prime in C++</a></li><li><a style="text-decoration:none;" href="indexC++SmartPointers.html">C++ Smart Pointers</a></li><li><a style="text-decoration:none;" href="indexC++DoubleLinkedListWithSmartPointer.html">C++ Double Linked List With Smart Pointer</a></li><li><a style="text-decoration:none;" href="indexC++VirtualClass.html">C++ Virtual Class</a></li><li><a style="text-decoration:none;" href="indexC++DanglingPointer.html">C++ Dangling Pointer</a></li><li><a style="text-decoration:none;" href="indexC++RegularExpression.html">C++ Regular Expression</a></li><li><a style="text-decoration:none;" href="indexAllocate2DarrayinCandC++.html">Allocate 2D array in C and C++</a></li><li><a style="text-decoration:none;" href="indexCandC++unsignedIntegerGotcha.html">C and C++ unsigned Integer Gotcha</a></li><li><a style="text-decoration:none;" href="indexCandC++Tutorial.html">C and C++ Tutorial</a></li><li><a style="text-decoration:none;" href="indexShellScript.html">Shell Script</a></li><li><a style="text-decoration:none;" href="indexMagicSquareSolver.html">Magic Square Solver</a></li><li><a style="text-decoration:none;" href="indexSudokuSolver.html">Sudoku Solver</a></li><li><a style="text-decoration:none;" href="indexHowtocreateanimationgif.html">How to create animation gif</a></li><li><a style="text-decoration:none;" href="indexCheckSquareNumberinJava.html">Check Square Number in Java</a></li><li><a style="text-decoration:none;" href="indexBezierCurve.html">Bezier Curve</a></li><li><a style="text-decoration:none;" href="indexPropertyofdeterminant.html">Property of determinant</a></li><li><a style="text-decoration:none;" href="indexChangeMatrixBasis.html">Change Matrix Basis</a></li><li><a style="text-decoration:none;" href="indexSimilarMatrix.html">Similar Matrix</a></li><li><a style="text-decoration:none;" href="indexImageProcessing.html">Image Processing</a></li><li><a style="text-decoration:none;" href="indexEulerFormula.html">Euler Formula</a></li><li><a style="text-decoration:none;" href="indexComputingdeterminantwithcofactorexpansion.html">Computing determinant with cofactor expansion</a></li><li><a style="text-decoration:none;" href="indexFindtheeigenvalueandeigenvectorof2by2matrix.html">Find the eigenvalue and eigenvector of 2 by 2 matrix</a></li><li><a style="text-decoration:none;" href="indexFindtheeigenvalueofskew-symmeticmatrix.html">Find the eigenvalue of skew-symmetic matrix</a></li><li><a style="text-decoration:none;" href="indexFromMatrixtoLieGroup.html">From Matrix to Lie Group</a></li><li><a style="text-decoration:none;" href="indexCubicCurve.html">Cubic Curve</a></li><li><a style="text-decoration:none;" href="indexDifferentiated.html">Differentiated</a></li><li><a style="text-decoration:none;" href="indexAlgebraicCurve.html">Algebraic Curve</a></li><li><a style="text-decoration:none;" href="indexProjectiveGeometry.html">Projective Geometry</a></li><li><a style="text-decoration:none;" href="indexHermitianmatrixhasrealeigenvaluevalue.html">Hermitian matrix has real eigenvalue value</a></li><li><a style="text-decoration:none;" href="indexProofOnSomeSequences.html">Proof On Some Sequences</a></li><li><a style="text-decoration:none;" href="indexMathematicNote.html">Mathematic Note</a></li><li><a style="text-decoration:none;" href="indexMathDefinition.html">Math Definition</a></li><li><a style="text-decoration:none;" href="indexSquareRootofTwoisirrational.html">Square Root of Two is irrational</a></li><li><a style="text-decoration:none;" href="indexSquareRootofThreeisirrational.html">Square Root of Three is irrational</a></li><li><a style="text-decoration:none;" href="indexVisualizeBinomialTheorem.html">Visualize Binomial Theorem</a></li><li><a style="text-decoration:none;" href="indexBinomialIdentity.html">Binomial Identity</a></li><li><a style="text-decoration:none;" href="indexProofFermatLittleTheorem.html">Proof Fermat Little Theorem</a></li><li><a style="text-decoration:none;" href="indexComputerGraphicMatrix.html">Computer Graphic Matrix</a></li><li><a style="text-decoration:none;" href="indexFunctionalPicture.html">Functional Picture</a></li><li><a style="text-decoration:none;" href="indexComputetheDetermiantof2x2Matrix.html">Compute the Determiant of 2x2 Matrix</a></li><li><a style="text-decoration:none;" href="indexHowtosolvethesystemequation.html">How to solve the system equation</a></li><li><a style="text-decoration:none;" href="indexHowtoplotalinearequation.html">How to plot a linear equation</a></li><li><a style="text-decoration:none;" href="indexUIAlertiniOS.html">UIAlert in iOS</a></li><li><a style="text-decoration:none;" href="indexTableViewControlleriniOS.html">TableViewController in iOS</a></li><li><a style="text-decoration:none;" href="indexSwitchdifferentRootController.html">Switch different RootController</a></li><li><a style="text-decoration:none;" href="indexIOSCenterTwoButton.html">IOS Center Two Button</a></li><li><a style="text-decoration:none;" href="indexIOSSubdivisionCurve.html">IOS Subdivision Curve</a></li><li><a style="text-decoration:none;" href="indexIOSCaptureScreenshot.html">IOS Capture Screenshot</a></li><li><a style="text-decoration:none;" href="indexIOSLoadImage.html">IOS Load Image</a></li><li><a style="text-decoration:none;" href="indexIOSUIBezierPathclosePath.html">IOS UIBezierPath closePath</a></li><li><a style="text-decoration:none;" href="indexIOSAnimation.html">IOS Animation</a></li><li><a style="text-decoration:none;" href="indexIOSSimpleAnimation.html">IOS Simple Animation</a></li><li><a style="text-decoration:none;" href="indexIOSBezierCurve.html">IOS Bezier Curve</a></li><li><a style="text-decoration:none;" href="indexIOSStopWatch.html">IOS Stop Watch</a></li><li><a style="text-decoration:none;" href="indexIOSRotateDifferentCAShapeLayers.html">IOS Rotate Different CAShapeLayers</a></li><li><a style="text-decoration:none;" href="indexIOSAnchorPointBoundsFrame.html">IOS Anchor Point Bounds Frame</a></li><li><a style="text-decoration:none;" href="indexIOSRotateCAShapeLayer.html">IOS Rotate CAShapeLayer</a></li><li><a style="text-decoration:none;" href="indexIOSTransformRotation3.html">IOS Transform Rotation 3</a></li><li><a style="text-decoration:none;" href="indexIOSTransformRotation2.html">IOS Transform Rotation 2</a></li><li><a style="text-decoration:none;" href="indexIOSTransformRotation1.html">IOS Transform Rotation 1</a></li><li><a style="text-decoration:none;" href="indexIOSCAShapeLayerGradient.html">IOS CAShapeLayer Gradient</a></li><li><a style="text-decoration:none;" href="indexIOSDrawHexagon.html">IOS Draw Hexagon</a></li><li><a style="text-decoration:none;" href="indexIOSClickInsideCircleorRectangle.html">IOS Click Inside Circle or Rectangle</a></li><li><a style="text-decoration:none;" href="indexIOSRemoveCAShapeLayer.html">IOS Remove CAShapeLayer</a></li><li><a style="text-decoration:none;" href="indexIOSCAShaperLayerStrokeColor.html">IOS CAShaperLayer StrokeColor</a></li><li><a style="text-decoration:none;" href="indexIOSSlideUpController.html">IOS Slide Up Controller</a></li><li><a style="text-decoration:none;" href="indexIOSListButtons.html">IOS List Buttons</a></li><li><a style="text-decoration:none;" href="indexIOSDifferentFonts.html">IOS Different Fonts</a></li><li><a style="text-decoration:none;" href="indexIOSPlaySound.html">IOS Play Sound</a></li><li><a style="text-decoration:none;" href="indexIOSDemo.html">IOS Demo</a></li><li><a style="text-decoration:none;" href="indexIOSSimpleAppDemo.html">IOS Simple App Demo</a></li><li><a style="text-decoration:none;" href="indexRenameProjectinXcode6.1.html">Rename Project in Xcode 6.1</a></li><li><a style="text-decoration:none;" href="indexTouchesEventiniOS.html">Touches Event in iOS</a></li><li><a style="text-decoration:none;" href="indexDrawCircleRectangleOvaliniOS.html">Draw Circle Rectangle Oval in iOS</a></li><li><a style="text-decoration:none;" href="indexXcodeC++StandardLibrary.html">Xcode C++ Standard Library</a></li><li><a style="text-decoration:none;" href="indexXcodeShortcutKey.html">Xcode Shortcut Key</a></li><li><a style="text-decoration:none;" href="indexXcodeRemoveAddUnitTest.html">Xcode Remove Add Unit Test</a></li><li><a style="text-decoration:none;" href="indexXcodeLaunchScreenFile.html">Xcode Launch Screen File</a></li><li><a style="text-decoration:none;" href="indexXcodeChangeBuildfromiPhoneiPad.html">Xcode Change Build from iPhone iPad</a></li><li><a style="text-decoration:none;" href="indexXcodeSnapShotDirectory.html">Xcode SnapShot Directory</a></li><li><a style="text-decoration:none;" href="indexXcodeRemoveCache.html">Xcode Remove Cache</a></li><li><a style="text-decoration:none;" href="indexXcodeNosuchfileordirectory.html">Xcode No such file or directory</a></li><li><a style="text-decoration:none;" href="indexXcodeScreenshots.html">Xcode Screenshots</a></li><li><a style="text-decoration:none;" href="indexXcodeAddResourceasGroup.html">Xcode Add Resource as Group</a></li><li><a style="text-decoration:none;" href="indexXcodeAddResourceBundle.html">Xcode Add Resource Bundle</a></li><li><a style="text-decoration:none;" href="indexObjectiveCpassdoublepointers.html">ObjectiveC pass double pointers</a></li><li><a style="text-decoration:none;" href="indexObjectiveCStringFormatSpecifiers.html">ObjectiveC String Format Specifiers</a></li><li><a style="text-decoration:none;" href="indexObjectiveCBlock.html">ObjectiveC Block</a></li><li><a style="text-decoration:none;" href="indexObjectiveCStaticMethod.html">ObjectiveC Static Method</a></li><li><a style="text-decoration:none;" href="indexObjectiveCDoubleandTriplePointer.html">ObjectiveC Double and Triple Pointer</a></li><li><a style="text-decoration:none;" href="indexTriesDataStructure.html">Tries Data Structure</a></li><li><a style="text-decoration:none;" href="indexCycleArray.html">Cycle Array</a></li><li><a style="text-decoration:none;" href="indexBinaryTree.html">Binary Tree</a></li><li><a style="text-decoration:none;" href="indexStackandQueueinBinaryTree.html">Stack and Queue in Binary Tree</a></li><li><a style="text-decoration:none;" href="indexBinarySearchOneDimensions.html">Binary Search One Dimensions</a></li><li><a style="text-decoration:none;" href="indexBinarySearchTwoDimensions.html">Binary Search Two Dimensions</a></li><li><a style="text-decoration:none;" href="indexLongestIncreasingSubsequenceRecursion.html">Longest Increasing Subsequence Recursion</a></li><li><a style="text-decoration:none;" href="indexCoinChangeAlgorithm.html">Coin Change Algorithm</a></li><li><a style="text-decoration:none;" href="indexCoinChangeDynamicProgramming.html">Coin Change Dynamic Programming</a></li><li><a style="text-decoration:none;" href="indexCountNumberofWayforCoinChange.html">Count Number of Way for Coin Change</a></li><li><a style="text-decoration:none;" href="indexBinaryTreeGenerateGraphvizfile.html">Binary Tree Generate Graphviz file</a></li><li><a style="text-decoration:none;" href="indexBinaryMaximumSumPath.html">Binary Maximum Sum Path</a></li><li><a style="text-decoration:none;" href="indexBinaryTreeMirror.html">Binary Tree Mirror</a></li><li><a style="text-decoration:none;" href="indexBinaryTreeIsomorphic.html">Binary Tree Isomorphic</a></li><li><a style="text-decoration:none;" href="indexBinaryTreeSymmetric.html">Binary Tree Symmetric</a></li><li><a style="text-decoration:none;" href="indexBinaryTreeMaximumHeight.html">Binary Tree Maximum Height</a></li><li><a style="text-decoration:none;" href="indexJavaCommandSnippet.html">Java Command Snippet</a></li><li><a style="text-decoration:none;" href="indexJavaRegularExpression.html">Java Regular Expression</a></li><li><a style="text-decoration:none;" href="indexJavaAlgorithm.html">Java Algorithm</a></li><li><a style="text-decoration:none;" href="indexJavaDataStructure.html">Java Data Structure</a></li><li><a style="text-decoration:none;" href="indexC++DataStructure.html">C++ Data Structure</a></li><li><a style="text-decoration:none;" href="indexReverseaLinkedListinJava.html">Reverse a LinkedList in Java</a></li><li><a style="text-decoration:none;" href="indexHaskellInstallRemoveGHCiOnMacOSX.html">Haskell Install Remove GHCi On Mac OSX</a></li><li>Haskell Tutorial</li><li><a style="text-decoration:none;" href="indexScalaTutorial.html">Scala Tutorial</a></li><li><a style="text-decoration:none;" href="indexBlenderHelp.html">Blender Help</a></li><li><a style="text-decoration:none;" href="indexJavaHelpCompilePackageClassPath.html">Java Help Compile Package ClassPath</a></li><li><a style="text-decoration:none;" href="indexMacOSXFullScreenTab-CommandNotworking.html">Mac OSX Full Screen Tab-Command Not working</a></li><li><a style="text-decoration:none;" href="indexInstallTerminalColorThemeinMacOSX.html">Install Terminal Color Theme in Mac OSX</a></li><li><a style="text-decoration:none;" href="indexIntellijRemoveBasePackage.html">Intellij Remove Base Package</a></li><li><a style="text-decoration:none;" href="indexIntellijImportyourpackage.html">Intellij Import your package</a></li><li><a style="text-decoration:none;" href="indexIntellijAddJavaFile.html">Intellij Add Java File</a></li><li><a style="text-decoration:none;" href="indexIntellijPathHell.html">Intellij Path Hell</a></li><li><a style="text-decoration:none;" href="indexIntellijChangeClassOutputPath.html">Intellij Change Class Output Path</a></li><li><a style="text-decoration:none;" href="indexIntellijSetUp.html">Intellij SetUp</a></li><li><a style="text-decoration:none;" href="indexIntellijAddExternalLibrary.html">Intellij Add External Library</a></li><li><a style="text-decoration:none;" href="indexIntellijAddMaventoproejct.html">Intellij Add Maven to proejct</a></li><li><a style="text-decoration:none;" href="indexIntellijAdddependencytoMaven.html">Intellij Add dependency to Maven</a></li><li><a style="text-decoration:none;" href="indexIntellijAddFrameworkSupport.html">Intellij Add Framework Support</a></li><li><a style="text-decoration:none;" href="indexIntellijAddScalaSDK.html">Intellij Add Scala SDK</a></li><li><a style="text-decoration:none;" href="indexPrimeNumber.html">Prime Number</a></li><li><a style="text-decoration:none;" href="indexMergeTwoSortedArray.html">Merge Two Sorted Array</a></li><li><a style="text-decoration:none;" href="indexPrintAllPermutationofanArray.html">Print All Permutation of an Array</a></li><li><a style="text-decoration:none;" href="indexQuickSortinCandC++.html">Quick Sort in C and C++</a></li><li><a style="text-decoration:none;" href="indexPrintallcombinationofrinagivenarrayofsizen.html">Print all combination of r in a given array of size n</a></li><li><a style="text-decoration:none;" href="indexShufflealgorithminC++.html">Shuffle algorithm in C++</a></li><li><a style="text-decoration:none;" href="indexRotatedSortedArray.html">Rotated Sorted Array</a></li><li><a style="text-decoration:none;" href="indexMultiplyArrayinDynamicProgramming.html">Multiply Array in Dynamic Programming</a></li><li><a style="text-decoration:none;" href="indexMultiplyLongInteger.html">Multiply Long Integer</a></li><li><a style="text-decoration:none;" href="indexPrintSpiralin2Darray.html">Print Spiral in 2D array</a></li><li><a style="text-decoration:none;" href="indexInstallMaveninMacOSX.html">Install Maven in Mac OSX </a></li><li><a style="text-decoration:none;" href="indexSetupThePlayFramework.html">Setup The Play Framework</a></li><li><a style="text-decoration:none;" href="indexVimTricks.html">Vim Tricks</a></li><li><a style="text-decoration:none;" href="indexCommandLineTricks.html">Command Line Tricks</a></li><li><a style="text-decoration:none;" href="indexLatexMatrix.html">Latex Matrix</a></li><li><a style="text-decoration:none;" href="indexLatexExample.html">Latex Example</a></li><li><a style="text-decoration:none;" href="indexEnglishNote.html">English Note</a></li><li><a style="text-decoration:none;" href="indexDailyNote.html">Daily Note</a></li>                
             </ul>
         <!-- Column 2 end -->
 		</div>
