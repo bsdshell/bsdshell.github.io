@@ -146,9 +146,41 @@
     <span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">upt3</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">upt</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
- 
 
+        <div class="mytitle">
+        How to use weak pointer 
+        </div>
+        <div class="mytext">
+        1. Use weak pointer to check whether a pointer still exists or not
+        </div>
+        <pre class="cc">
+                int* pt1 = new int(10);
+                int* pt2 = pt1;
+                delete pt1;
+                
+                // pt2 is danging pointer
 
+                // how to use weak pointer to solve it
+                shared_ptr<int> spt1;
+                spt1.reset(new int(100));
+
+                weak_ptr<int> wptr = spt1;
+
+                if(auto tmp = wptr.lock())
+                    cout<<"wptr is not expired yet"<<endl;
+
+                spt1.reset(new int(444));
+
+                if(auto tmp = wptr.lock())
+                    cout<<"wptr is expired yet"<<endl;
+
+        </pre>
+        <div class="cen">
+        <img src="http://localhost/zsurface/image/weakptr.png" width="40%" height="40%" /><br>
+        </div> 
+        <div class="cen">
+        <a href="https://github.com/bsdshell/cpp/blob/weak/WeakPointer/weak_pointer.cpp">Source Code</a>
+        </div>
 
             <!-- Column 1 end -->
             </div>

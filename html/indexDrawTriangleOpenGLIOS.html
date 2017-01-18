@@ -627,6 +627,59 @@
                     <div class="cen">
                     <img src="http://localhost/zsurface/image/glortho.png" width="40%" height="40%" /><br>
                     </div> 
+
+                    <div class="mytitle">
+                    Lighting in OpenGL 
+                    </div>
+                    <div class="mytext">
+                    1. Enable Lighting in OpenGL<br>
+                        glEnable[GL_LIGHTING]<br><br>
+                    2. Setup Light position in OpenGL<br>
+                        glEnable[GL_LIGHT0] // enable light0<br><br>
+                    3. Setup Normal for Light in OpenGL<br>
+                        compute the normal of vertex, OpenGL uses normal to compute the light<br><br>
+                    4. Setup material for Light in OpenGL<br>
+                       In OpenGL, there are something call "Material Properties"<br><br> 
+                       GL_DIFFUSE   - there are two characteristics: Diffuse reflection and Specular reflection.<br>
+                                    - Diffuse reflection reflects light in different directions.<br>
+                                    - Specular reflection reflects more light in mirror direction.<br>
+                       GL_AMBIENT   - Ambient light is the light come from different direction.<br>
+                       GL_SPECULAR  - The property sets the specular color. Note that the specular color for most surface is white, event if the surface is a different color.<br>
+                       GL_EMISSION  - The emission property is how much the surface generates its own light<br> 
+                       GL_SHININESS - This determine how much shiny a surface is. Values from 0 to 128<br>
+                    </div>
+                    <pre class="cc">
+                       // enable light
+                       glEnable(GL_LIGHTING)
+
+                       // enable GL_LIGHT0
+                       glEnable(GL_LIGHT0)
+                       
+                       // setup normal
+                       glNormal3d(0, 1, 0)
+                        
+                       // setup material
+                       glfloat cyan[] = {0.0f, 0.8f, 0.8f, 1.f}
+                       glMaterialfv(GL_FRONT, GL_DIFFUSE, cyan);
+                   </pre>
+                    <div class="mytitle">
+                    Transparent or Blender 
+                    </div>
+                    <div class="mytext">
+                    1. Enable Blender in OpenGL
+                    2. Use glColor4f instread of glColor3f
+                    3. set each vertex for different colors
+                    </div>
+                    <pre class="cc">
+                    glEnable(GL_BLEND);
+                    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+                    glColor4f(0, 0, 1, 0.5) // alpha = 0.5
+                    </pre>
+                    <div class="cen">
+                    <img src="http://localhost/zsurface/image/blender.png" width="40%" height="40%" /><br>
+                    </div> 
+
             <!-- Column 1 end -->
             </div>
             <div class="col2">
