@@ -7,9 +7,9 @@
     <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
     <meta name="robots" content="index, follow" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="screen.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="highlight.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../highlight.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <script type="text/x-mathjax-config">
           MathJax.Hub.Config({
@@ -33,14 +33,49 @@
     <div class="colleft">
         <div class="col1">
         <!-- Column 1 start -->
-        <div class="mytitle">
-        Double Linked List with Smart Pointers
-        </div>
-        <div class="mytext">
-        Reimplement Double Linked List With Smart Pointers<br>
-        <img src="http://localhost/zsurface/image/cppstd.png" width="40%" height="40%" /><br>
-        <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
-        </div>
+
+        <pre class="mycode">
+        <span class="bo">Markov Chain Algorithm Generate Text</span>
+        Given a sentence: my dog is black and my cat is white, my cat eats my dog.
+            <pre class="cc">
+            prefix          suffix
+            "" ""           my
+            "" my           dog
+            my dog          is
+            dog is          black
+            is black        and
+            black and       my
+            and my          cat
+            my cat          is
+            cat is          white
+            is white        my
+            white my        cat
+            my cat          eats
+            cat eats        my
+            eats my         dog
+            </pre>
+
+        <span class="bo">Input: prefix and suffix.</span>
+        prefix: my cat        
+        suffix: is 
+        remove the first word from the prefix and use the suffix word as 
+        new prefix: cat is
+
+            <pre class="cc">
+            prefix: cat is   -> white
+            prefix: is white -> my
+            prefix: white my -> cat
+            prefix: my cat   -> eats
+            prefix: cat eats -> my
+            prefix: eats my  -> dog
+            prefix: my dog   -> is
+            prefix: dog is   -> black
+            prefix: is black -> and
+            end if the number of words hit certain limit or no suffix is founded.
+            </pre>
+        </pre> 
+         
+
         <!-- Column 1 end -->
         </div>
         <div class="col2">
