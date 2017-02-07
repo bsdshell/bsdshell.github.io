@@ -156,6 +156,11 @@
             <span class="bo">Chain readFile to print with</span> >>=  
             readFile >>=\contents -> print contents
 
+            <span class="bo">What you can come up a picture about IO monad</span>
+            <div class="cen">
+            <img src="http://localhost/zsurface/image/monadpic3.png" width="40%" height="40%" /><br>
+            </div> 
+
             <span class="bo">Definition of const</span> 
             const::a -> b -> a  [keep the first argument and throw away the second argument]
             It does't look that good from outside but some inside and be surprised [surprisedly]
@@ -172,7 +177,7 @@
 
             <span class="bo">Use IO in function</span>
             myReadFile::FilePath->IO String
-            myReadFile f = readFile >>=\contents -> return(contents)
+            myReadFile f = readFile f >>=\contents -> return(contents)
 
             <span class="bo">How to use myReadFile ?</span>
             contents <- myReadFile "file.txt" 

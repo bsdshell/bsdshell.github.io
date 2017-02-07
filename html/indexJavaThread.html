@@ -7,9 +7,9 @@
     <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
     <meta name="robots" content="index, follow" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="screen.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="highlight.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../highlight.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <script type="text/x-mathjax-config">
           MathJax.Hub.Config({
@@ -33,14 +33,75 @@
     <div class="colleft">
         <div class="col1">
         <!-- Column 1 start -->
-        <div class="mytitle">
-        Double Linked List with Smart Pointers
-        </div>
-        <div class="mytext">
-        Reimplement Double Linked List With Smart Pointers<br>
-        <img src="http://localhost/zsurface/image/cppstd.png" width="40%" height="40%" /><br>
-        <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
-        </div>
+        <pre class="mycode"> 
+        <span class="bo">Java Synchronize method 1: keyword synchronized</span>
+            <pre class="cc">
+            synchronized void fun(){
+                count++;
+                queue.add(count);
+            }
+            </pre>
+        <span class="bo">Java Synchronize method 2: lock the current this object</span>
+            <pre class="cc">
+            void fun(){
+                synchronized(this){
+                    count++;
+                    queue.add(count);
+                }
+            }
+            </pre>
+        <span class="bo">Java Synchronize method 3: create locked object</span>
+            <pre class="cc">
+            private Object lock1 = new Object();
+            private Object lock2 = new Object();
+            private long c1;
+            private long c2;
+            void fun(){
+                synchronized(lock1){
+                    c1++;
+                }
+
+                synchronized(lock2){
+                    c2++;
+                }
+            }
+            </pre>
+        <span class="bo">Java Create simple thread</span>
+        <span class="bo">1: synchronized the method</span>
+        <span class="bo">2: implements Runnable interface, and override run()</span>
+            <pre class="cc">
+            class Account{
+                int sum = 0;
+                Queue<Integer> q;
+
+                public void Account(){
+                    Queue<Integer> q = new LinkedList<Integer>();
+                }
+                public synchronized void add(){
+                    sum++;
+                    q.add(sum);
+                }
+            }
+            class MyThread implements Runnable{
+                Account acc;
+                public MyThread(Account acc){
+                    this.acc = acc;
+                }
+                public void run(){
+                    acc.add();
+                }
+            }
+
+            // spawn num_threads
+            Account acc = new Account();
+            for(int i=0; i < num_threads; i++){
+                Thread t = new Thread(new MyThread(acc));
+                t.start();
+            }
+            </pre>
+
+        </pre>
+
         <!-- Column 1 end -->
         </div>
         <div class="col2">

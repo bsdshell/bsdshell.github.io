@@ -90,6 +90,7 @@ function createBasicPage($fileHtml, $title)
 return $content;
 }
     $pageArray = array(
+        "Tableau Interview Questions",
         "Print Previous element from Binary Tree",
         "Tower Hanoi",
         "Polish Notation and Preporder Traveral",
