@@ -99,8 +99,53 @@
                 t.start();
             }
             </pre>
+        <span class="bo">sleep(), wait(), notify() and notifyall() in Java</span>
+            <pre class="cc">
+            sleep() - is static method, it can be used in the current thread.
+                    - a sleeping thread can be awaked by interrupt or time expires 
+            wait()  - each object has wait() method, and wait() can be used in synchronized block only.
+                    - put the thread to sleep state and release the lock or monitor so that other thread can execute it
+                    - a waiting thread can awaked by notify or notifyall
+            notify()- each object has notify/notify, and it can be used in synchronized block only.
+            </pre>
 
-        </pre>
+        <span class="bo">Conditional variables, Condition(), await(), signal() in Java</span>
+            <pre class="cc">
+            await() - 1. notFull.await(), release the lock associated with notFull, 
+                      2. disable the current thread. 
+
+            Lock lock = new ReentrantLock();
+            Condition notFull = lock.newCondition();
+            Condition notEmpty = new lock.newCondition();
+
+            void get(){ // not empty
+                lock.lock();
+                try{
+                    while(queue.size() == 0)
+                        notEmpty.await();  
+
+                    x = queue.poll();
+                    notFull.signal();
+                }finally{
+                    lock.unlock();
+                }
+            }
+
+            void put(int x){ // not full
+                lock.lock();
+                try{
+                    while(queue.size() == MAx)
+                        notFull.await();
+
+                    queue.add(x);
+                    notEmpty.signal();
+                }finally{
+                    lock.unlock();
+                }
+            }
+            </pre>
+            <span class="bo">CountDownLatch() in Java</span>
+        
 
         <!-- Column 1 end -->
         </div>
