@@ -49,12 +49,12 @@
                     Normally, there are two coordinates systems in computer graphic<br>
 
                     <span style="color:red;">OpenGL</span> uses [Right Hand Coordinates System] and <span style="color:red;">DirectX</span> uses [Left Hand Coordinates System]<br>
-                    <img src="http://localhost/zsurface/image/coorsystem.svg" width="100%" height="100%" /><br> 
+                    <img src="http://zsurface.com/image/coorsystem.svg" width="100%" height="100%" /><br> 
 
                     We set z-axis=0 anyway since we only draw two dim triangle<br>
                     </p>
 
-                    <img src="http://localhost/zsurface/image/triangle.svg" width="100%" height="100%" /><br> 
+                    <img src="http://zsurface.com/image/triangle.svg" width="100%" height="100%" /><br> 
                     1. Create an array with three vertices p=[x, y, z]
                     <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
                     static const GLfloat triangle[] = {
@@ -75,7 +75,7 @@
                     glEnableVertexAttribArray(ATTRIB_VERTEX);
                     glDrawArrays(<span style="color:red;">GL_TRIANGLE_STRIP</span>, 0, 3);
                     </pre>
-                    <div style="text-align:center"><img src="http://localhost/zsurface/image/triangle.png" width="20%" height="20%" /><br></div> 
+                    <div style="text-align:center"><img src="http://zsurface.com/image/triangle.png" width="20%" height="20%" /><br></div> 
                     <p>
                     This is the three functions that you need to call to draw a triangle in OpenGL<br> 
                     When a triangle is drawn, there are three options can be used<br>
@@ -94,7 +94,7 @@
                     GL_TRIANGLES treats each triple of vertices as independent triangle.<br>
                     If there are 3*n vertices, then there are n triangle can be drawn<br>
                     </p>
-                    <img src="http://localhost/zsurface/image/triangle_strip_fan.svg" width="100%" height="100%" /><br> 
+                    <img src="http://zsurface.com/image/triangle_strip_fan.svg" width="100%" height="100%" /><br> 
                     <p>
                     Let draw some real stuff!
                     </p>
@@ -112,7 +112,7 @@
                     glEnableVertexAttribArray(ATTRIB_VERTEX);
                     glDrawArrays(<span style="color:red;">GL_TRIANGLE_STRIP</span>, 0, 4);
                     </pre>
-                    <div style="text-align:center"><img src="http://localhost/zsurface/image/triangle_strip.png" width="20%" height="20%" /><br></div> 
+                    <div style="text-align:center"><img src="http://zsurface.com/image/triangle_strip.png" width="20%" height="20%" /><br></div> 
 
                     <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
                     static const GLfloat triangle[] = {
@@ -128,7 +128,7 @@
                     glEnableVertexAttribArray(ATTRIB_VERTEX);
                     glDrawArrays(<span style="color:red;">GL_TRIANGLE_FAN</span>, 0, 4);
                     </pre>
-                    <div style="text-align:center"><img src="http://localhost/zsurface/image/triangle_fan.png" width="20%" height="20%" /><br></div> 
+                    <div style="text-align:center"><img src="http://zsurface.com/image/triangle_fan.png" width="20%" height="20%" /><br></div> 
 
 
                     <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
@@ -148,7 +148,7 @@
                     glEnableVertexAttribArray(ATTRIB_VERTEX);
                     glDrawArrays(<span style="color:red;">GL_TRIANGLES</span>, 0, 6);
                     </pre>
-                    <div style="text-align:center"><img src="http://localhost/zsurface/image/triangle_list.png" width="20%" height="20%" /><br></div> 
+                    <div style="text-align:center"><img src="http://zsurface.com/image/triangle_list.png" width="20%" height="20%" /><br></div> 
 
                     <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
                     static const GLfloat triangle[] = {
@@ -164,7 +164,7 @@
                     glEnableVertexAttribArray(ATTRIB_VERTEX);
                     glDrawArrays(<span style="color:red;">GL_LINE_LOOP</span>, 0, 4);
                     </pre>
-                    <div style="text-align:center"><img src="http://localhost/zsurface/image/line_loop.png" width="20%" height="20%" /><br></div> 
+                    <div style="text-align:center"><img src="http://zsurface.com/image/line_loop.png" width="20%" height="20%" /><br></div> 
 
                     <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
                     static const GLfloat triangle[] = {
@@ -180,7 +180,7 @@
                     glEnableVertexAttribArray(ATTRIB_VERTEX);
                     glDrawArrays(<span style="color:red;">GL_TRIANGLE_STRIP</span>, 0, 4);
                     </pre>
-                    <div style="text-align:center"><img src="http://localhost/zsurface/image/triangle_strip2.png" width="20%" height="20%" /><br></div> 
+                    <div style="text-align:center"><img src="http://zsurface.com/image/triangle_strip2.png" width="20%" height="20%" /><br></div> 
 
                     <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
                     static const GLfloat box[] = {
@@ -209,8 +209,8 @@
                     glEnableVertexAttribArray(ATTRIB_VERTEX);
                     glDrawArrays(<span style="color:red;">GL_TRIANGLE_STRIP</span>, 0, 14);
                     </pre>
-                    <div style="text-align:center"><img src="http://localhost/zsurface/image/box2.png" width="20%" height="20%" /><br></div> 
-                    <div style="text-align:center"><img src="http://localhost/zsurface/image/boxbox.png" width="20%" height="20%" /><br></div> 
+                    <div style="text-align:center"><img src="http://zsurface.com/image/box2.png" width="20%" height="20%" /><br></div> 
+                    <div style="text-align:center"><img src="http://zsurface.com/image/boxbox.png" width="20%" height="20%" /><br></div> 
 
                     <div class="mytitle">
                     OpenGL, understand View Matrix
@@ -220,11 +220,11 @@
                     Specify the eye poistion, lookat position, and up position.
                     In OpenGL, Cartesian Coordinate is used Right-Hand System, it means
                     <div class="cen">
-                    <img src="http://localhost/zsurface/image/righthand.png" width="40%" height="40%" /><br>
+                    <img src="http://zsurface.com/image/righthand.png" width="40%" height="40%" /><br>
                     </div> 
                     </div><br>
                     <div class="cen">
-                    <img src="http://localhost/zsurface/image/mapcoor.png" width="50%" height="50%" /><br>
+                    <img src="http://zsurface.com/image/mapcoor.png" width="50%" height="50%" /><br>
                     </div> 
                     <div class="mytext">
                     Once $\vec{s}, \vec{u}, \vec{f}$ are known, View Matrix can be constructed<br>
@@ -398,10 +398,10 @@
                     </div>
 
                     <div class="cen">
-                    <img src="http://localhost/zsurface/image/lookatmatrix1.png" width="50%" height="50%" /><br>
+                    <img src="http://zsurface.com/image/lookatmatrix1.png" width="50%" height="50%" /><br>
                     </div> 
                     <div class="cen">
-                    <img src="http://localhost/zsurface/image/matrix1.jpg" width="50%" height="50%" /><br>
+                    <img src="http://zsurface.com/image/matrix1.jpg" width="50%" height="50%" /><br>
                     </div> 
 
                     <div class="mytitle">
@@ -462,8 +462,8 @@
                 It projects points in eye/camera space to Normal Device Coordinates[NDC]<br>
 
                 <div class="cen">
-                <img src="http://localhost/zsurface/image/ndc.png" width="50%" height="50%" /><br>
-                <img src="http://localhost/zsurface/image/similartri.png" width="50%" height="50%" /><br>
+                <img src="http://zsurface.com/image/ndc.png" width="50%" height="50%" /><br>
+                <img src="http://zsurface.com/image/similartri.png" width="50%" height="50%" /><br>
                 </div> 
                     \begin{align*}
                     \begin{split}
@@ -529,11 +529,11 @@
                     \end{align*}
 
                     <div class="cen">
-                    <img src="http://localhost/zsurface/image/projection_to_ndc.png" width="40%" height="40%" /><br>
+                    <img src="http://zsurface.com/image/projection_to_ndc.png" width="40%" height="40%" /><br>
                     </div> 
                     We try to map the near plane to font plane of NDC, they are linear relationship<br>
                     <div class="cen">
-                    <img src="http://localhost/zsurface/image/xe_to_ndc.png" width="40%" height="40%" /><br>
+                    <img src="http://zsurface.com/image/xe_to_ndc.png" width="40%" height="40%" /><br>
                     </div> 
                     \begin{align*}
                     \begin{split}
@@ -551,7 +551,7 @@
                     \end{align*}
 
                     <div class="cen">
-                    <img src="http://localhost/zsurface/image/yeyn.png" width="40%" height="40%" /><br>
+                    <img src="http://zsurface.com/image/yeyn.png" width="40%" height="40%" /><br>
                     </div> 
 
                     \begin{align*}
@@ -568,7 +568,7 @@
                     \end{align*}
 
                     <div class="cen">
-                    <img src="http://localhost/zsurface/image/zezn.png" width="40%" height="40%" /><br>
+                    <img src="http://zsurface.com/image/zezn.png" width="40%" height="40%" /><br>
                     </div> 
                     \begin{align*}
                     \begin{split}
@@ -589,7 +589,7 @@
                     \end{align*}
 
                     <div class="cen">
-                    <img src="http://localhost/zsurface/image/mapforumtondc.png" width="40%" height="40%" /><br>
+                    <img src="http://zsurface.com/image/mapforumtondc.png" width="40%" height="40%" /><br>
                     </div> 
 
                     \begin{align*}
@@ -625,7 +625,7 @@
                     </div>
 
                     <div class="cen">
-                    <img src="http://localhost/zsurface/image/glortho.png" width="40%" height="40%" /><br>
+                    <img src="http://zsurface.com/image/glortho.png" width="40%" height="40%" /><br>
                     </div> 
 
                     <div class="mytitle">
@@ -677,7 +677,7 @@
                     glColor4f(0, 0, 1, 0.5) // alpha = 0.5
                     </pre>
                     <div class="cen">
-                    <img src="http://localhost/zsurface/image/blender.png" width="40%" height="40%" /><br>
+                    <img src="http://zsurface.com/image/blender.png" width="40%" height="40%" /><br>
                     </div> 
 
             <!-- Column 1 end -->
