@@ -1,51 +1,256 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
-<head>
-    <title>$title</title>
-    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
-    <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="screen.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="highlight.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-            jax: ["input/TeX","output/HTML-CSS"],
-            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
-          });
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+    <head>
+        <title>Expedia Tech Interview</title>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
+        <meta name="robots" content="index, follow" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../highlight.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/x-mathjax-config">
+              MathJax.Hub.Config({
+                extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+                jax: ["input/TeX","output/HTML-CSS"],
+                tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
+              });
+        </script>
+        <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+    </head>
+    <body>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-66282017-2', 'auto');
+      ga('send', 'pageview');
     </script>
-    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
-</head>
-<body>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-66282017-2', 'auto');
-  ga('send', 'pageview');
-</script>
-<div class="colmask rightmenu">
-    <div class="colleft">
-        <div class="col1">
-        <!-- Column 1 start -->
-        <div class="mytitle">
-        Double Linked List with Smart Pointers
-        </div>
-        <div class="mytext">
-        Reimplement Double Linked List With Smart Pointers<br>
-        <img src="http://localhost/zsurface/image/cppstd.png" width="40%" height="40%" /><br>
-        <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
-        </div>
-        <!-- Column 1 end -->
-        </div>
-        <div class="col2">
-        <!-- Column 2 start -->
-            <ul>
+
+    <div class="colmask rightmenu">
+        <div class="colleft">
+            <div class="col1">
+            <!-- Column 1 start -->
+
+            <div class="mytitle">
+            Expedia Software Engineer Interview
+            </div>
+            <div class="mytext">
+            Given a list of words initially, write a method that takes in a word, and returns all known anagrams.<br> 
+            Two words are anagrams if they have the same characters, but not necessarily in the same order.<br> 
+            You can do whatever setup you want in order to make the method fast.<br>
+            ex:<br>
+            known words: {cat, dog, bird, act, god}<br>
+            input:  tca<br>
+            output: {cat, act}<br><br>
+            We learn <span class="wbold">Fundamental Theorem of Arithmetic</span> in Linear Algebra class, but we hardly use the Theorem in real life.<br>
+            Here is real life application for <span class="wbold">Fundamental Theorem of Arithmetic</span>, you can impress you friends or co-workers<br> 
+            </div>
+            <div class="mytitle">
+            Use Prime Number to Solve anagram problem [ <span class="wbold">Fundamental Theorem of Arithmetic</span> ]<br>
+            </div>
+            <div class="mytext">
+            1. Map each prime to each alphabet and compute the product<br>
+            <span class="wbold">dog</span> = $7 \times 53 \times 17 = 6307$<br>
+            <span class="wbold">god</span> = $17 \times 53 \times 7 = 6307$<br><br>
+            2. Map each product to list of words<br>
+            $6307 \rightarrow \{dog, god\}$<br>
+            </div>
+
+            <div class="cen" style="background:white">
+            <img src="http://zsurface.com/image/prime.svg" width="80%" height="40%" /><br>
+            <img src="http://zsurface.com/image/prime1.svg" width="30%" height="30%" /><br>
+            </div>
+
+            <div class="highlight"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">primeMap</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">getPrime</span><span class="o">(</span><span class="mi">26</span><span class="o">);</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;();</span>
+        <span class="kt">char</span> <span class="n">ch</span> <span class="o">=</span> <span class="sc">&#39;a&#39;</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="n">Integer</span> <span class="n">p</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">ch</span> <span class="o">+</span> <span class="s">&quot;&quot;</span><span class="o">,</span> <span class="n">p</span><span class="o">);</span>
+            <span class="n">ch</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">map</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Integer</span> <span class="nf">getProduct</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="n">primeMap</span><span class="o">();</span>
+        <span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">p</span> <span class="o">*=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">((</span><span class="n">str</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">+</span> <span class="s">&quot;&quot;</span><span class="o">).</span><span class="na">toLowerCase</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">p</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">anagrams</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="n">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;();</span>
+
+        <span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">getProduct</span><span class="o">(</span><span class="n">s</span><span class="o">));</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">l</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">l</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+                <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">getProduct</span><span class="o">(</span><span class="n">s</span><span class="o">),</span> <span class="n">l</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ll</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+                <span class="n">ll</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+                <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">getProduct</span><span class="o">(</span><span class="n">s</span><span class="o">),</span> <span class="n">ll</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">getProduct</span><span class="o">(</span><span class="n">str</span><span class="o">));</span>
+    <span class="o">}</span>
+</pre></div>
+ 
+            <div class="cen">
+            <a href="https://github.com/bsdshell/java/tree/master/Anagram.java">Source Code</a>
+            </div>
+            <div class="cen" style="background:white">
+            <img src="http://zsurface.com/image/primefactorization.png" width="40%" height="40%" /><br>
+            </div>
+
+            <div class="mytitle">
+            Expedia Software Engineer Interview
+            </div>
+            <div class="mytext">
+            Given a list of list Integer, find the intersection of all the lists<br> 
+            Input:<br> 
+            list0 = [0] = {2, 1, 1}<br>
+            list1 = [1] = {7, 5, 1}<br>
+            list2 = [2] = {4, 5, 5, 1}<br><br>
+            Return:<br>
+            retList = {5, 1}<br>
+            </div>
+
+            <div class="mytitle">
+            Algorithm and Data Structure to Solve it 
+            </div>
+
+            <div class="mytext">
+            We can map each Integer in a list to Index of the list<br>
+            e.g.<br>
+            $2 \rightarrow \{0\}$<br>
+            2 is the element of list0<br>
+            0 is the index of list0<br>
+            $7 \rightarrow \{1\}$<br>
+            7 is the element of list1<br>
+            1 is the index of list1<br><br>
+
+            process list0<br>
+            $2 \rightarrow \{0\}$<br>
+            $1 \rightarrow \{0\}$<br><br>
+
+            process list1<br>
+            $7 \rightarrow \{1\}$<br>
+            $5 \rightarrow \{1\}$<br>
+            $1 \rightarrow \{0, 1\}$<br><br>
+
+            process list2<br>
+            $4 \rightarrow \{2\}$<br>
+            $5 \rightarrow \{1, 2\}$<br>
+            $1 \rightarrow \{0, 1, 2\}$<br><br>
+
+            Only 1 map to three indices. {0, 1, 2} so 1 is the intersection of three lists<br>
+            </div>
+            <div class="highlight"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">intersection</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="n">lists</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">retList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">lists</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;();</span>
+
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">lists</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">lists</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+
+                <span class="k">for</span> <span class="o">(</span><span class="n">Integer</span> <span class="n">n</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
+                    <span class="k">if</span> <span class="o">(</span><span class="n">set</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+                        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="n">set</span><span class="o">);</span>
+                    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                        <span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">nSet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+                        <span class="n">nSet</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+                        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="n">nSet</span><span class="o">);</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;&gt;</span> <span class="n">entry</span> <span class="o">:</span> <span class="n">map</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+                <span class="n">Integer</span> <span class="n">n</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">();</span>
+                <span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">set</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">==</span> <span class="n">lists</span><span class="o">.</span><span class="na">size</span><span class="o">())</span>
+                    <span class="n">retList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">retList</span><span class="o">;</span>
+    <span class="o">}</span>
+</pre></div>
+ 
+            
+            <div class="cen">
+            <a href="https://github.com/bsdshell/java/tree/master/IntersectionList.java">Source Code</a>
+            </div>
+            <div class="cen" style="background:white">
+            <img src="http://zsurface.com/image/intersectionlist.png" width="50%" height="50%" /><br>
+            </div>
+
+            <div class="mytitle">
+            Use sort technic to solve anagram problem 
+            </div>
+            <div class="highlight"><pre><span class="c1">//================================================================================ </span>
+    <span class="c1">// java anagram </span>
+    <span class="c1">// Use sort technic to solve anagrams problem </span>
+    <span class="c1">// Use sorted str as key</span>
+    <span class="c1">// {dog, god}</span>
+    <span class="c1">// dgo-&gt;{dog, god}</span>
+    <span class="c1">// -------------------------------------------------------------------------------- </span>
+    <span class="kd">static</span> <span class="n">String</span> <span class="nf">sortStr</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">char</span><span class="o">[]</span> <span class="n">clist</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">();</span>
+        <span class="n">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">clist</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">clist</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">static</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">anagrams</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">,</span> <span class="n">String</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;();</span>
+
+        <span class="k">if</span><span class="o">(</span><span class="n">list</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">input</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">String</span> <span class="n">key</span> <span class="o">=</span> <span class="n">sortStr</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+                <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">l</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">l</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">l</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+                    <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">l</span><span class="o">);</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ll</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+                    <span class="n">ll</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+                    <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">ll</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">sortStr</span><span class="o">(</span><span class="n">input</span><span class="o">));</span>
+    <span class="o">}</span>
+</pre></div>
+ 
+            <div class="cen">
+            <a href="https://github.com/bsdshell/xcode/tree/master/Anagram.java">Source Code</a>
+            </div>
+            <div class="cen" style="background:white">
+            <img src="http://zsurface.com/image/sortanagram.png" width="40%" height="40%" /><br>
+            </div> 
+
+
+
+            <!-- Column 1 end -->
+            </div>
+            <div class="col2">
+            
+
+
+
+
+
+<!-- Column 2 start -->
+<ul>
+<li><a style="text-decoration:none;" href="http://zsurface.com/html/indexTestitonly.html"</a>Test it only</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexDifferencebetweenMutexandSemaphore.html"</a>Difference between Mutex and Semaphore</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexMultipleThreadLinkedListQueueHashMap.html"</a>Multiple Thread LinkedList Queue HashMap</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexMarkovChainAlgorithmGenerateText.html"</a>Markov Chain Algorithm Generate Text</li>
@@ -319,25 +524,25 @@
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexLatexExample.html"</a>Latex Example</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexEnglishNote.html"</a>English Note</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexDailyNote.html"</a>Daily Note</li>
+</ul>
+<!-- Column 2 end -->
 
-            </ul>
-        <!-- Column 2 end -->
+
+
+
+
+
+            </div>
         </div>
     </div>
-</div>
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'zsurfacecom';
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<div id="footer">
-    <p>This page uses the <a href="">Put More Stuff Here</a> by <a href="">ZSurface</a>. View more <a href="">ZSurface</a> and <a href="">ZSurface</a>.</p>
-</div>
-</body>
-</html>
+
+
+    </body>
+    </html>
+    
+
+
+
+
+
+

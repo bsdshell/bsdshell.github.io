@@ -1,15 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
 <head>
-    <title>$title</title>
-    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
-    <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="screen.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="highlight.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+	<title>Surface, Curve, Algorithm, Geometry, Algebra</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+	<meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../highlight.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <script type="text/x-mathjax-config">
           MathJax.Hub.Config({
@@ -17,35 +17,68 @@
             jax: ["input/TeX","output/HTML-CSS"],
             tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
           });
-    </script>
+        </script>
     <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
 </head>
 <body>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-66282017-2', 'auto');
-  ga('send', 'pageview');
-</script>
+
+<div id="header">
+	<p id="layoutdims">Measure columns in: <a href="../index.html">Home</a> | <a href="">About</a> | $\Lambda$</p>
+</div>
 <div class="colmask rightmenu">
-    <div class="colleft">
-        <div class="col1">
-        <!-- Column 1 start -->
-        <div class="mytitle">
-        Double Linked List with Smart Pointers
+	<div class="colleft">
+		<div class="col1">
+			<!-- Column 1 start -->
+        <div class="mathdef_box1">
+            \[\textbf{Prove square root of 2 is irrational}\]
+            <h3>$\text{Assume } \sqrt{2} \in \mathbb{Q}$</h3>
+            <h3>$\text{let }n = min\{ n \in \mathbb{N} \mid n\sqrt{2} \in \mathbb{N}\}$</h3>
+            <h3>$\Rightarrow n(\sqrt{2} - 1)\sqrt{2} \in \mathbb{Q}$</h3>
+            <h3>$\because \sqrt{2} - 1 \le 1$</h3>
+            <h3>$\Rightarrow n(\sqrt{2} - 1)\sqrt{2} \le n\sqrt{2}$</h3>
+            <h3>$\Rightarrow n(\sqrt{2} - 1) \le n \text{ such as } n(\sqrt{2} - 1)\sqrt{2} \in \mathbb{N}$</h3>
+            <h3>$\Rightarrow \text{This contracts our assumption } \quad \square$</h3>
         </div>
-        <div class="mytext">
-        Reimplement Double Linked List With Smart Pointers<br>
-        <img src="http://localhost/zsurface/image/cppstd.png" width="40%" height="40%" /><br>
-        <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
+        <br>
+        <div class="mathdef_box1">
+            <img src="http://zsurface.com/image/squareroottwo.svg" />
+                \[ \text{Prove Square root of 2 is irrational} \text{ [ Geometric proof ] }\]
+                $\text{Assume } \sqrt{2} \in \mathbb{Q}$<br>
+                $\Rightarrow \frac{a}{b} = \sqrt{2} \quad a, b \in \mathbb{N} \text{ and } \gcd(a, b) = 1, a > b$<br><br>
+
+                Given a right issoseles triangle [above figure]<br>
+                $AB = AC, \quad FE \text{  tangles to arc at point } E $<br>
+                $\Rightarrow AF = EF$<br>
+                $\text{Let } AB = AC = 1$<br>
+                $\Rightarrow BC = \sqrt{2}$<br>
+                $\Rightarrow FB = 1-EB = 1-(\sqrt{2} - 1) = 2-\sqrt{2}$<br>
+                $\because \frac{AC}{CB} = \frac{EB}{FB} = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}-1}{2-\sqrt{2}}$<br>
+                $\therefore \frac{1}{\sqrt{2}} =\frac{1}{\frac{a}{b}} = \frac{\sqrt{2}-1}{2-\sqrt{2}} = \frac{\frac{a}{b} - 1}{2-\frac{a}{b}}$<br>
+                $\therefore \frac{b}{a} = \frac{ \frac{a-b}{b} } {\frac{2b - a}{b}} = \frac{a-b}{2b-a}$<br>
+                $\because \sqrt{2} \lt \sqrt{4} = 2 \therefore  a \lt 2b $<br>
+                $\Rightarrow  \color{red}{a-b \lt b} $<br>
+                $\because 2a \gt 2b$<br>
+                $\Rightarrow  \color{red}{2b - a \lt a}$<br>
+                $\frac{b}{a} = \frac{\color{red}{a-b}}{\color{red}{2b-a}}$<br>
+                $\text{That contracts our assumption } \gcd(a, b) = 1$<br>
+                $\Rightarrow \frac{b}{a} \notin \mathbb{Q}$
+        </div>
+        <br>
+        <div class="mathdef_box1">
+            The geometric proof is similar to the first proof, in fact both proofs use the idea which rational number can be written in $\frac{a}{b} \text{ and }\gcd(a,b)=1$ and contraction will be merged once the donominator/numerator are reducted
         </div>
         <!-- Column 1 end -->
-        </div>
-        <div class="col2">
-        <!-- Column 2 start -->
-            <ul>
+		</div>
+		<div class="col2">
+        
+
+
+
+
+
+<!-- Column 2 start -->
+<ul>
+<li><a style="text-decoration:none;" href="http://zsurface.com/html/indexTestitonly.html"</a>Test it only</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexDifferencebetweenMutexandSemaphore.html"</a>Difference between Mutex and Semaphore</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexMultipleThreadLinkedListQueueHashMap.html"</a>Multiple Thread LinkedList Queue HashMap</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexMarkovChainAlgorithmGenerateText.html"</a>Markov Chain Algorithm Generate Text</li>
@@ -319,25 +352,23 @@
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexLatexExample.html"</a>Latex Example</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexEnglishNote.html"</a>English Note</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexDailyNote.html"</a>Daily Note</li>
+</ul>
+<!-- Column 2 end -->
 
-            </ul>
-        <!-- Column 2 end -->
-        </div>
-    </div>
+
+
+
+
+
+		</div>
+	</div>
 </div>
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'zsurfacecom';
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<div id="footer">
-    <p>This page uses the <a href="">Put More Stuff Here</a> by <a href="">ZSurface</a>. View more <a href="">ZSurface</a> and <a href="">ZSurface</a>.</p>
 </div>
 </body>
 </html>
+
+
+
+
+
+
