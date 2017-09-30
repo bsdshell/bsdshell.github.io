@@ -43,6 +43,12 @@
     width:100%;
 }
 
+table.center {
+    border: 1px solid black;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
 .cmd{
      font-size: 15px;
      background: rgba(56, 136, 11, 0.86);
