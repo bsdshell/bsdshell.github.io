@@ -33,143 +33,19 @@
     <div class="colleft">
         <div class="col1">
         <!-- Column 1 start -->
-        <pre class="mycode"> 
-        <span class="bo">Java Synchronize method 1: keyword synchronized</span>
-            <pre class="cc">
-            synchronized void fun(){
-                count++;
-                queue.add(count);
-            }
-            </pre>
-        <span class="bo">Java Synchronize method 2: lock the current this object</span>
-            <pre class="cc">
-            void fun(){
-                synchronized(this){
-                    count++;
-                    queue.add(count);
-                }
-            }
-            </pre>
-        <span class="bo">Java Synchronize method 3: create locked object</span>
-            <pre class="cc">
-            private Object lock1 = new Object();
-            private Object lock2 = new Object();
-            private long c1;
-            private long c2;
-            void fun(){
-                synchronized(lock1){
-                    c1++;
-                }
-
-                synchronized(lock2){
-                    c2++;
-                }
-            }
-            </pre>
-        <span class="bo">Java Create simple thread</span>
-        <span class="bo">1: synchronized the method</span>
-        <span class="bo">2: implements Runnable interface, and override run()</span>
-            <pre class="cc">
-            class Account{
-                int sum = 0;
-                Queue<Integer> q;
-
-                public void Account(){
-                    Queue<Integer> q = new LinkedList<Integer>();
-                }
-                public synchronized void add(){
-                    sum++;
-                    q.add(sum);
-                }
-            }
-            class MyThread implements Runnable{
-                Account acc;
-                public MyThread(Account acc){
-                    this.acc = acc;
-                }
-                public void run(){
-                    acc.add();
-                }
-            }
-
-            // spawn num_threads
-            Account acc = new Account();
-            for(int i=0; i < num_threads; i++){
-                Thread t = new Thread(new MyThread(acc));
-                t.start();
-            }
-            </pre>
-        <span class="bo">sleep(), wait(), notify() and notifyall() in Java</span>
-            <pre class="cc">
-            sleep() - is static method, it can be used in the current thread.
-                    - a sleeping thread can be awaked by interrupt or time expires 
-            wait()  - each object has wait() method, and wait() can be used in synchronized block only.
-                    - put the thread to sleep state and release the lock or monitor so that other thread can execute it
-                    - a waiting thread can awaked by notify or notifyall
-            notify()- each object has notify/notify, and it can be used in synchronized block only.
-            </pre>
-
-        <span class="bo">Conditional variables, Condition(), await(), signal() in Java</span>
-            <pre class="cc">
-            await() - 1. notFull.await(), release the lock associated with notFull, 
-                      2. disable the current thread. 
-
-            Lock lock = new ReentrantLock();
-            Condition notFull = lock.newCondition();
-            Condition notEmpty = new lock.newCondition();
-
-            void get(){ // not empty
-                lock.lock();
-                try{
-                    while(queue.size() == 0)
-                        notEmpty.await();  
-
-                    x = queue.poll();
-                    notFull.signal();
-                }finally{
-                    lock.unlock();
-                }
-            }
-
-            void put(int x){ // not full
-                lock.lock();
-                try{
-                    while(queue.size() == MAx)
-                        notFull.await();
-
-                    queue.add(x);
-                    notEmpty.signal();
-                }finally{
-                    lock.unlock();
-                }
-            }
-            </pre>
-            <span class="bo">CountDownLatch() in Java</span>
-        
-
+        <div class="mytitle">
+        Double Linked List with Smart Pointers
+        </div>
+        <div class="mytext">
+        Reimplement Double Linked List With Smart Pointers<br>
+        <img src="http://zsurface/image/cppstd.png" width="40%" height="40%" /><br>
+        <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
+        </div>
         <!-- Column 1 end -->
         </div>
         <div class="col2">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Column 2 start -->
-<ul>
+        <!-- Column 2 start -->
+            <ul>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexGmailOperator.html"</a>Gmail Operator</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexRegularExpression.html"</a>Regular Expression</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexDifferencebetweenMutexandSemaphore.html"</a>Difference between Mutex and Semaphore</li>
@@ -445,26 +321,9 @@
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexLatexExample.html"</a>Latex Example</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexEnglishNote.html"</a>English Note</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexDailyNote.html"</a>Daily Note</li>
-</ul>
-<!-- Column 2 end -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            </ul>
+        <!-- Column 2 end -->
         </div>
     </div>
 </div>
@@ -484,21 +343,3 @@
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
