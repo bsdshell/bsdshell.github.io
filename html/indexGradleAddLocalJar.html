@@ -34,19 +34,45 @@
         <div class="col1">
         <!-- Column 1 start -->
         <div class="mytitle">
-        Double Linked List with Smart Pointers
+        Add local jar file to Gradle
         </div>
         <div class="mytext">
-        Reimplement Double Linked List With Smart Pointers<br>
-        <img src="http://zsurface/image/cppstd.png" width="40%" height="40%" /><br>
-        <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
+        1. Create Lib folder in your root project directory.<br>
+        2. Copy your jar file to Lib  folder.<br>
+        3. Add following to build.gradle<br> 
         </div>
+            <pre class="cc">
+               // create Lib under [root.Project.name="MyProject"] from setting.gradle
+               // add following to build.gradle
+               dependencies {
+                   compile fileTree('Lib')  // this includes all the files under 'Lib'
+               }
+           </pre>
+        <div class="mytext">
+        <img src="http://zsurface.com/image/gradle_add_local_jar.png" width="80%" height="80%" /><br>
+        </div>
+        <div class="mytext">
+        <strong style="color:red">Note:</strong> Make sure you sync  Gradle files in Intellij[2016.3 CE] after you change the build.gradle file.<br>
+        You might see the following screenshot after you modify build.gradle, and click on [apply suggestion]<br>
+        <img src="http://zsurface.com/image/addgradle6.png" width="80%" height="80%" /><br>
+        <strong style="color:red">Warning:</strong> If you still can not detect the jar file, then you need to close Intellij and <strong style="color:red">reimport</strong> your gradle project.<br>
+        </div>
+
+
         <!-- Column 1 end -->
         </div>
         <div class="col2">
-        <!-- Column 2 start -->
-            <ul>
-<li><a style="text-decoration:none;" href="http://zsurface.com/html/indexGmailOperator.html"</a>Gmail Operator</li>
+        
+
+
+
+
+
+
+
+
+<!-- Column 2 start -->
+<ul>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexRegularExpression.html"</a>Regular Expression</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexDifferencebetweenMutexandSemaphore.html"</a>Difference between Mutex and Semaphore</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexMultipleThreadLinkedListQueueHashMap.html"</a>Multiple Thread LinkedList Queue HashMap</li>
@@ -321,9 +347,17 @@
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexLatexExample.html"</a>Latex Example</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexEnglishNote.html"</a>English Note</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexDailyNote.html"</a>Daily Note</li>
+</ul>
+<!-- Column 2 end -->
 
-            </ul>
-        <!-- Column 2 end -->
+
+
+
+
+
+
+
+
         </div>
     </div>
 </div>
@@ -343,3 +377,12 @@
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

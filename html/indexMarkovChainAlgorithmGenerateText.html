@@ -33,20 +33,63 @@
     <div class="colleft">
         <div class="col1">
         <!-- Column 1 start -->
-        <div class="mytitle">
-        Double Linked List with Smart Pointers
-        </div>
-        <div class="mytext">
-        Reimplement Double Linked List With Smart Pointers<br>
-        <img src="http://zsurface/image/cppstd.png" width="40%" height="40%" /><br>
-        <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
-        </div>
+
+        <pre class="mycode">
+        <span class="bo">Markov Chain Algorithm Generate Text</span>
+        Given a sentence: my dog is black and my cat is white, my cat eats my dog.
+            <pre class="cc">
+            prefix          suffix
+            "" ""           my
+            "" my           dog
+            my dog          is
+            dog is          black
+            is black        and
+            black and       my
+            and my          cat
+            my cat          is
+            cat is          white
+            is white        my
+            white my        cat
+            my cat          eats
+            cat eats        my
+            eats my         dog
+            </pre>
+
+        <span class="bo">Input: prefix and suffix.</span>
+        prefix: my cat        
+        suffix: is 
+        remove the first word from the prefix and use the suffix word as 
+        new prefix: cat is
+
+            <pre class="cc">
+            prefix: cat is   -> white
+            prefix: is white -> my
+            prefix: white my -> cat
+            prefix: my cat   -> eats
+            prefix: cat eats -> my
+            prefix: eats my  -> dog
+            prefix: my dog   -> is
+            prefix: dog is   -> black
+            prefix: is black -> and
+            end if the number of words hit certain limit or no suffix is founded.
+            </pre>
+        </pre> 
+         
+
         <!-- Column 1 end -->
         </div>
         <div class="col2">
-        <!-- Column 2 start -->
-            <ul>
-<li><a style="text-decoration:none;" href="http://zsurface.com/html/indexGmailOperator.html"</a>Gmail Operator</li>
+        
+
+
+
+
+
+
+
+
+<!-- Column 2 start -->
+<ul>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexRegularExpression.html"</a>Regular Expression</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexDifferencebetweenMutexandSemaphore.html"</a>Difference between Mutex and Semaphore</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexMultipleThreadLinkedListQueueHashMap.html"</a>Multiple Thread LinkedList Queue HashMap</li>
@@ -321,9 +364,17 @@
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexLatexExample.html"</a>Latex Example</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexEnglishNote.html"</a>English Note</li>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexDailyNote.html"</a>Daily Note</li>
+</ul>
+<!-- Column 2 end -->
 
-            </ul>
-        <!-- Column 2 end -->
+
+
+
+
+
+
+
+
         </div>
     </div>
 </div>
@@ -343,3 +394,12 @@
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
