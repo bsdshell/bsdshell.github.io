@@ -20,9 +20,6 @@ a:active {color:yellow;}
 */
 
 li{
-    list-style:none;
-    display: inline-block;
-    float: left;
     background: #fdfafa;
 }
 
