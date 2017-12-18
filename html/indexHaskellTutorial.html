@@ -196,7 +196,12 @@
             for [] f = return ()
             for (x:xs) f = f x >> for xs f
 
-            for [1..10] (\x -> show x)
+            for [1..10] (\x -> putStrLn x)
+            
+            for [1..10] (\x -> do
+                        putStrLn x
+                        putStrLn x
+                        )
 
             <pre class="cc">
             -- get two Chars
