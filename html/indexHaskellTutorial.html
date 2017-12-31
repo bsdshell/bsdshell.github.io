@@ -229,8 +229,20 @@
             (>>=)::IO a -> (a -> IO b) -> IO b   
             return::a -> IO a             [wrap a with IO and return it]
 
-            </pre>
+            class Monad m where
+            (>>=)::m a -> (a -> m b) -> m b
+            return:: a -> m a
 
+            because [] is instance of Monad
+
+            we can write:
+            fun::[(Integer, Integer)]
+            fun = do
+                x <- [-3..3]
+                if x > 0
+                then []
+                else return (x, x+1)
+            </pre>
 
             <div class="cen">
                 <img src="http://zsurface.com/image/chain1.png" width="40%" height="40%" />
@@ -1122,6 +1134,10 @@
 
 
 
+
+
+
+
 <!-- Column 2 start -->
 <ul>
 <li><a style="text-decoration:none;" href="http://zsurface.com/html/indexDifferencebetweenMutexandSemaphore.html"</a>Difference between Mutex and Semaphore</li>
@@ -1414,11 +1430,19 @@
 
 
 
+
+
+
+
 		</div>
 	</div>
 </div>
 </body>
 </html>
+
+
+
+
 
 
 
