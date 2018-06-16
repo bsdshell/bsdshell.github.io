@@ -74,7 +74,7 @@ h1, h2, h3 {
 }
 
 .rightmenu .col1 {
-    width: 85%;/* left column content width (left column width minus left and right padding) */
+    width: 100%;/* left column content width (left column width minus left and right padding) */
     /* left: 10%; *//* (right column width) plus (left column left padding) */
 }
 
@@ -96,13 +96,3 @@ h1, h2, h3 {
     padding:10px;
     margin:0;
 }
-
-
-
-
-
-
-
-
-
-
