@@ -26,7 +26,7 @@ li{
 ul {
     /* display:inline-block; */
     float:left;
-    /* width:300px; */
+    width: 100%;
     padding: 0px;
     margin-left: 4px;
     margin-right: 4px;
@@ -58,7 +58,7 @@ h1, h2, h3 {
 .col1,
 .col2 {
     float:left;
-    /* width: 60%; */
+    width: 60%;
     /* position:relative; */
     padding: 0 0 1em 0;
     overflow:hidden;
@@ -74,15 +74,15 @@ h1, h2, h3 {
 }
 
 .rightmenu .col1 {
-    width: 78%;/* left column content width (left column width minus left and right padding) */
+    width: 85%;/* left column content width (left column width minus left and right padding) */
     /* left: 10%; *//* (right column width) plus (left column left padding) */
 }
 
 .rightmenu .col2 {
-    width: 21.6%;/* right column content width (right column width minus left and right padding) */
+    width: 14.8%;/* right column content width (right column width minus left and right padding) */
     /* left: 44%; *//* (right column width) plus (left column left and right padding) plus (right column left padding) */
     background: rgb(169, 173, 166);
-    /*text-indent:6px;*/
+    text-indent:6px;
     /* font-size: 5px; */
 }
 /* Footer styles */
@@ -96,6 +96,10 @@ h1, h2, h3 {
     padding:10px;
     margin:0;
 }
+
+
+
+
 
 
 
