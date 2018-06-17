@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+	<title>Surface, Curve, Algorithm, Geometry, Algebra</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+	<meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../highlight.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+          });
+        </script>
+    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+</head>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66282017-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<div id="header">
+
+</div>
+<div class="colmask rightmenu">
+	<div class="colleft">
+		<div class="col1">
+			<!-- Column 1 start -->
+                <p>
+                    $\Large \color{red}\Omega$ </span> 
+                This tutorial will show you how to draw <span style="color:#FF00EE">Circle Rectangle/Square Oval/Ellipse</span> on top of photo in <span class="nf">ObjectiveC/iOS</span><br><br>
+
+                    <span style="text-align:center;font-size:24px;">1. Write a minimum App</span><br>
+                    A. Create header file[*.h] <span style="color:#3300EE">AppDelegate : UIResponder&lt;UIApplicaitonDelegate&gt; </span> <br>
+                    <div class="highlight"><pre><span class="nd">@interface</span> <span class="n">AppDelegate</span> <span class="o">:</span> <span class="n">UIResponder</span> <span class="o">&lt;</span><span class="n">UIApplicationDelegate</span><span class="o">&gt;</span>
+
+<span class="nd">@property</span> <span class="o">(</span><span class="n">strong</span><span class="o">,</span> <span class="n">nonatomic</span><span class="o">)</span> <span class="n">UIWindow</span> <span class="o">*</span><span class="n">window</span><span class="o">;</span>
+
+<span class="nd">@end</span>
+</pre></div>
+                  </p>
+                  <p>
+                    B. In your implementation file, you only need to override one following method,<br>
+                    the method only set the background of window to <span style="color:#FFF; background:#000;border-radius:3px; padding:1px;">while</span> and makes the window <span style="color:#FFF; background:#000;border-radius:3px; padding:1px;">visible</span><br>
+                    <div class="highlight"><pre><span class="o">-</span> <span class="o">(</span><span class="n">BOOL</span><span class="o">)</span><span class="n">application</span><span class="o">:(</span><span class="n">UIApplication</span> <span class="o">*)</span><span class="n">application</span> <span class="n">didFinishLaunchingWithOptions</span><span class="o">:(</span><span class="n">NSDictionary</span> <span class="o">*)</span><span class="n">launchOptions</span> <span class="o">{</span>
+    <span class="n">self</span><span class="o">.</span><span class="na">window</span> <span class="o">=</span> <span class="o">[[</span><span class="n">UIWindow</span> <span class="n">alloc</span><span class="o">]</span> <span class="n">initWithFrame</span><span class="o">:[[</span><span class="n">UIScreen</span> <span class="n">mainScreen</span><span class="o">]</span> <span class="n">bounds</span><span class="o">]];</span>
+
+    <span class="c1">// Override point for customization after application launch.</span>
+    <span class="n">self</span><span class="o">.</span><span class="na">window</span><span class="o">.</span><span class="na">backgroundColor</span> <span class="o">=</span> <span class="o">[</span><span class="n">UIColor</span> <span class="n">whiteColor</span><span class="o">];</span>
+    
+    <span class="o">[</span><span class="n">self</span><span class="o">.</span><span class="na">window</span> <span class="n">makeKeyAndVisible</span><span class="o">];</span>
+    
+    <span class="c1">// Override point for customization after application launch.</span>
+    <span class="k">return</span> <span class="n">YES</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+                </p>
+                <p>
+                <span style="text-align:center;font-size:24px;">2. Draw label on your App, add the following code in previous method.</span><br>
+                The code creates a label and add the label to subView of your <span style="color:#FFF; background:#000;border-radius:3px; padding:2px;">UIApplication </span> 
+                <div class="highlight"><pre>    
+    <span class="c1">// create simple text label</span>
+    <span class="n">UILabel</span> <span class="o">*</span><span class="n">myLabel</span> <span class="o">=</span> <span class="o">[[</span><span class="n">UILabel</span> <span class="n">alloc</span><span class="o">]</span> <span class="n">initWithFrame</span><span class="o">:</span><span class="n">CGRectMake</span><span class="o">(</span><span class="mi">50</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">300</span><span class="o">,</span> <span class="mi">300</span><span class="o">)];</span>
+    <span class="o">[</span><span class="n">myLabel</span> <span class="n">setTextColor</span><span class="o">:[</span><span class="n">UIColor</span> <span class="n">redColor</span><span class="o">]];</span>
+    <span class="o">[</span><span class="n">myLabel</span> <span class="n">setBackgroundColor</span><span class="o">:[</span><span class="n">UIColor</span> <span class="n">clearColor</span><span class="o">]];</span>
+    <span class="o">[</span><span class="n">myLabel</span> <span class="n">setFont</span><span class="o">:[</span><span class="n">UIFont</span> <span class="n">fontWithName</span><span class="o">:</span> <span class="err">@</span><span class="s">&quot;Trebuchet MS&quot;</span> <span class="n">size</span><span class="o">:</span> <span class="mf">20.0f</span><span class="o">]];</span>
+    <span class="o">[</span><span class="n">myLabel</span> <span class="n">setText</span><span class="o">:</span><span class="err">@</span><span class="s">&quot;Supper Simple Application&quot;</span><span class="o">];</span>
+    
+    <span class="o">[</span><span class="n">self</span><span class="o">.</span><span class="na">window</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">myLabel</span><span class="o">];</span>
+</pre></div>
+                </p>
+                <p>
+                <span style="text-align:center;font-size:24px;">3. Load an image on your window.</span><br>
+                A. Get an image and rename it to myimage.jpg<br>
+                B. Drag the image to your Images.xcassets window (see screen shot)<br>
+                <img src="../image/dragimage.png" width="100%" height="100%" /><br><br>
+                C. Declare  <span style="color:#FFF; background:#000;border-radius:3px; padding:2px;"> UIImageView* imageView</span> on your header file[*.h]<br><br>
+                D. Add the bellow code to following method<br><br>
+                <span style="color:#008800; background:#000;border-radius:3px; padding:2px;">- (void)applicationDidFinishLaunching:(UIApplication *)application </span> 
+                <div class="highlight"><pre>    <span class="n">self</span><span class="o">.</span><span class="na">imageView</span> <span class="o">=</span> <span class="o">[[</span><span class="n">UIImageView</span> <span class="n">alloc</span><span class="o">]</span><span class="n">initWithFrame</span><span class="o">:</span><span class="n">self</span><span class="o">.</span><span class="na">window</span><span class="o">.</span><span class="na">bounds</span><span class="o">];</span>
+    <span class="n">self</span><span class="o">.</span><span class="na">imageView</span><span class="o">.</span><span class="na">image</span><span class="o">=[</span><span class="n">UIImage</span> <span class="n">imageNamed</span><span class="o">:</span><span class="err">@</span><span class="s">&quot;myimage.jpg&quot;</span><span class="o">];</span>
+    <span class="o">[</span><span class="n">self</span><span class="o">.</span><span class="na">window</span> <span class="n">addSubview</span><span class="o">:</span><span class="n">self</span><span class="o">.</span><span class="na">imageView</span><span class="o">];</span>
+</pre></div>
+                </p>
+                <p>
+                <span style="text-align:center;font-size:24px;">3. Draw Circle, Oval/Ellipse and Rectangle/Square.</span><br>
+                <div class="highlight"><pre><span class="c1">// draw circle</span>
+<span class="o">-</span> <span class="o">(</span><span class="n">CAShapeLayer</span><span class="o">*)</span><span class="n">drawCircle</span><span class="o">:(</span><span class="n">CGPoint</span><span class="o">)</span><span class="n">location</span> <span class="n">radius</span><span class="o">:(</span><span class="n">CGFloat</span><span class="o">)</span><span class="n">radius</span> <span class="o">{</span>
+    <span class="n">CAShapeLayer</span><span class="o">*</span> <span class="n">shapeLayer</span> <span class="o">=</span> <span class="o">[</span><span class="n">CAShapeLayer</span> <span class="n">layer</span><span class="o">];</span>
+
+    <span class="n">UIBezierPath</span> <span class="o">*</span><span class="n">path</span> <span class="o">=</span> <span class="o">[</span><span class="n">UIBezierPath</span> <span class="n">bezierPath</span><span class="o">];</span>
+    <span class="o">[</span><span class="n">path</span> <span class="n">addArcWithCenter</span><span class="o">:</span><span class="n">location</span>
+                    <span class="n">radius</span><span class="o">:</span><span class="n">radius</span>
+                <span class="n">startAngle</span><span class="o">:</span><span class="mf">0.0</span>
+                  <span class="n">endAngle</span><span class="o">:</span><span class="n">M_PI</span> <span class="o">*</span> <span class="mf">2.0</span>
+                 <span class="n">clockwise</span><span class="o">:</span><span class="n">YES</span><span class="o">];</span>
+    
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">path</span> <span class="o">=</span> <span class="o">[</span><span class="n">path</span> <span class="n">CGPath</span><span class="o">];</span>
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">strokeColor</span> <span class="o">=</span> <span class="o">[[</span><span class="n">UIColor</span> <span class="n">redColor</span><span class="o">]</span> <span class="n">CGColor</span><span class="o">];</span>
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">fillColor</span> <span class="o">=</span> <span class="n">nil</span><span class="o">;</span>
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">lineWidth</span> <span class="o">=</span> <span class="mf">5.0</span><span class="o">;</span>
+    <span class="k">return</span> <span class="n">shapeLayer</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="c1">// draw oval</span>
+<span class="o">-(</span><span class="n">CAShapeLayer</span><span class="o">*)</span><span class="n">drawOval</span><span class="o">:(</span><span class="n">CGPoint</span><span class="o">)</span> <span class="n">location</span> <span class="n">semimajor</span><span class="o">:(</span><span class="n">CGFloat</span><span class="o">)</span><span class="n">semimajor</span> <span class="n">semiminor</span><span class="o">:(</span><span class="n">CGFloat</span><span class="o">)</span> <span class="n">semiminor</span><span class="o">{</span>
+    <span class="n">CAShapeLayer</span><span class="o">*</span> <span class="n">shapeLayer</span> <span class="o">=</span> <span class="o">[</span><span class="n">CAShapeLayer</span> <span class="n">layer</span><span class="o">];</span>
+    
+    <span class="n">UIBezierPath</span> <span class="o">*</span><span class="n">path</span> <span class="o">=</span> <span class="o">[</span><span class="n">UIBezierPath</span> <span class="n">bezierPathWithOvalInRect</span><span class="o">:</span><span class="n">CGRectMake</span><span class="o">(</span><span class="n">location</span><span class="o">.</span><span class="na">x</span><span class="o">-</span><span class="n">semimajor</span><span class="o">,</span> <span class="n">location</span><span class="o">.</span><span class="na">y</span><span class="o">-</span><span class="n">semiminor</span><span class="o">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">semimajor</span><span class="o">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">semiminor</span><span class="o">)];</span>
+    
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">path</span> <span class="o">=</span> <span class="o">[</span><span class="n">path</span> <span class="n">CGPath</span><span class="o">];</span>
+    
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">strokeColor</span> <span class="o">=</span> <span class="o">[[</span><span class="n">UIColor</span> <span class="n">greenColor</span><span class="o">]</span> <span class="n">CGColor</span><span class="o">];</span>
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">fillColor</span> <span class="o">=</span> <span class="o">[[</span><span class="n">UIColor</span> <span class="n">blackColor</span><span class="o">]</span> <span class="n">CGColor</span><span class="o">];</span>
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">lineWidth</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">;</span>
+    <span class="k">return</span> <span class="n">shapeLayer</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="c1">// draw rectangle</span>
+<span class="o">-(</span><span class="n">CAShapeLayer</span><span class="o">*)</span><span class="n">drawRectangle</span><span class="o">:(</span><span class="n">CGPoint</span><span class="o">)</span> <span class="n">location</span> <span class="n">semiWidth</span><span class="o">:(</span><span class="n">CGFloat</span><span class="o">)</span> <span class="n">semiWidth</span> <span class="n">semiHeight</span><span class="o">:(</span><span class="n">CGFloat</span><span class="o">)</span><span class="n">semiHeight</span><span class="o">{</span>
+    <span class="n">CAShapeLayer</span><span class="o">*</span> <span class="n">shapeLayer</span> <span class="o">=</span> <span class="o">[</span><span class="n">CAShapeLayer</span> <span class="n">layer</span><span class="o">];</span>
+    <span class="n">UIBezierPath</span><span class="o">*</span> <span class="n">path</span> <span class="o">=</span> <span class="o">[</span><span class="n">UIBezierPath</span> <span class="n">bezierPath</span><span class="o">];</span>
+    
+    <span class="c1">// start point</span>
+    <span class="o">[</span><span class="n">path</span> <span class="n">moveToPoint</span><span class="o">:</span><span class="n">CGPointMake</span><span class="o">(</span><span class="n">location</span><span class="o">.</span><span class="na">x</span> <span class="o">-</span> <span class="n">semiWidth</span><span class="o">,</span> <span class="n">location</span><span class="o">.</span><span class="na">y</span> <span class="o">-</span> <span class="n">semiHeight</span><span class="o">)];</span>
+    
+    <span class="c1">// draw lines</span>
+    <span class="o">[</span><span class="n">path</span> <span class="n">addLineToPoint</span><span class="o">:</span><span class="n">CGPointMake</span><span class="o">(</span><span class="n">location</span><span class="o">.</span><span class="na">x</span> <span class="o">+</span> <span class="n">semiWidth</span><span class="o">,</span> <span class="n">location</span><span class="o">.</span><span class="na">y</span> <span class="o">-</span> <span class="n">semiHeight</span><span class="o">)];</span>
+    <span class="o">[</span><span class="n">path</span> <span class="n">addLineToPoint</span><span class="o">:</span><span class="n">CGPointMake</span><span class="o">(</span><span class="n">location</span><span class="o">.</span><span class="na">x</span> <span class="o">+</span> <span class="n">semiWidth</span><span class="o">,</span> <span class="n">location</span><span class="o">.</span><span class="na">y</span> <span class="o">+</span> <span class="n">semiHeight</span><span class="o">)];</span>
+    <span class="o">[</span><span class="n">path</span> <span class="n">addLineToPoint</span><span class="o">:</span><span class="n">CGPointMake</span><span class="o">(</span><span class="n">location</span><span class="o">.</span><span class="na">x</span> <span class="o">-</span> <span class="n">semiWidth</span><span class="o">,</span> <span class="n">location</span><span class="o">.</span><span class="na">y</span> <span class="o">+</span> <span class="n">semiHeight</span><span class="o">)];</span>
+    <span class="o">[</span><span class="n">path</span> <span class="n">addLineToPoint</span><span class="o">:</span><span class="n">CGPointMake</span><span class="o">(</span><span class="n">location</span><span class="o">.</span><span class="na">x</span> <span class="o">-</span> <span class="n">semiWidth</span><span class="o">,</span> <span class="n">location</span><span class="o">.</span><span class="na">y</span> <span class="o">-</span> <span class="n">semiHeight</span><span class="o">)];</span>
+    <span class="c1">//[path closePath];</span>
+    
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">path</span> <span class="o">=</span> <span class="o">[</span><span class="n">path</span> <span class="n">CGPath</span><span class="o">];</span>
+    
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">strokeColor</span> <span class="o">=</span> <span class="o">[[</span><span class="n">UIColor</span> <span class="n">yellowColor</span><span class="o">]</span> <span class="n">CGColor</span><span class="o">];</span>
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">fillColor</span> <span class="o">=</span> <span class="o">[[</span><span class="n">UIColor</span> <span class="n">blackColor</span><span class="o">]</span> <span class="n">CGColor</span><span class="o">];</span>
+    <span class="n">shapeLayer</span><span class="o">.</span><span class="na">lineWidth</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">;</span>
+    <span class="k">return</span> <span class="n">shapeLayer</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>
+                </p>
+                <p>
+                4. Use above three methods and you can see the final output
+                <div class="highlight"><pre>    <span class="n">CAShapeLayer</span><span class="o">*</span> <span class="n">layerCircle</span> <span class="o">=</span> <span class="o">[</span><span class="n">self</span> <span class="n">drawCircle</span><span class="o">:</span><span class="n">CGPointMake</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">100</span><span class="o">)</span> <span class="n">radius</span><span class="o">:</span><span class="mi">60</span><span class="o">];</span>
+    <span class="o">[</span><span class="n">self</span><span class="o">.</span><span class="na">imageView</span><span class="o">.</span><span class="na">layer</span> <span class="n">addSublayer</span><span class="o">:</span><span class="n">layerCircle</span><span class="o">];</span>
+
+    <span class="c1">// draw oval</span>
+    <span class="n">CAShapeLayer</span><span class="o">*</span> <span class="n">layerOval</span> <span class="o">=</span> <span class="o">[</span><span class="n">self</span> <span class="n">drawOval</span><span class="o">:</span><span class="n">CGPointMake</span><span class="o">(</span><span class="mi">200</span><span class="o">,</span> <span class="mi">100</span><span class="o">)</span> <span class="n">semimajor</span><span class="o">:</span><span class="mi">40</span> <span class="n">semiminor</span><span class="o">:</span><span class="mi">20</span><span class="o">];</span>
+    <span class="o">[</span><span class="n">self</span><span class="o">.</span><span class="na">imageView</span><span class="o">.</span><span class="na">layer</span> <span class="n">addSublayer</span><span class="o">:</span><span class="n">layerOval</span><span class="o">];</span>
+
+    <span class="c1">// draw rectangle</span>
+    <span class="n">CAShapeLayer</span><span class="o">*</span> <span class="n">layerRect</span> <span class="o">=</span> <span class="o">[</span><span class="n">self</span> <span class="n">drawRectangle</span><span class="o">:</span><span class="n">CGPointMake</span><span class="o">(</span><span class="mi">200</span><span class="o">,</span> <span class="mi">200</span><span class="o">)</span> <span class="n">semiWidth</span><span class="o">:</span><span class="mi">60</span> <span class="n">semiHeight</span><span class="o">:</span><span class="mi">80</span><span class="o">];</span>
+    <span class="o">[</span><span class="n">self</span><span class="o">.</span><span class="na">imageView</span><span class="o">.</span><span class="na">layer</span> <span class="n">addSublayer</span><span class="o">:</span><span class="n">layerRect</span><span class="o">];</span>
+    
+</pre></div>
+                <div style="text-align:center;">
+                    <img src="../image/drawshape.png" width="30%" height="30%" /><br> 
+                </p>
+            </div>
+        <!-- Column 1 end -->
+		</div>
+		<div class="col2">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
