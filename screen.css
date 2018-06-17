@@ -20,7 +20,9 @@ a:active {color:yellow;}
 */
 
 li{
-    background: #fdfafa;
+    background: #4433;
+    list-style-type: none;
+    padding: 1px;
 }
 
 ul {
@@ -43,4 +45,3 @@ h1, h2, h3 {
     width: 50%;
     margin: auto;
 }
-
