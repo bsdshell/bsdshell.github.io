@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+	<title>Surface, Curve, Algorithm, Geometry, Algebra</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+	<meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../highlight.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+          });
+        </script>
+    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+</head>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66282017-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<div id="header">
+
+</div>
+<div class="colmask rightmenu">
+	<div class="colleft">
+		<div class="col1">
+			<!-- Column 1 start -->
+            <div class="centered">
+                <div class="mathdef">
+                    A function $f(x)$ is differentiable on $x_{0} \in \mathbb{R}$ if<br>
+                    \[  f'(x_{0}) =  \lim_{h \to 0} \frac{f(x_{0} +h) - f(x_{0})}{h} \]
+                    exists
+                </div>
+                <br>
+                <div class="mathdef">
+                    \[\text{Show } f(x) = x^{2} \text{ is differentiable for all } x  \in \mathbb{R} \]
+                    \begin{equation}
+                    \begin{aligned}
+                    f'(x) &=  \lim_{h \to 0} \frac{f(x +h) - f(x)}{h}\\
+                    f'(x) &= \lim_{h \to 0} \frac{x^2 + h^2 + 2xh - x^2  }{h} \\
+                    f'(x) &= \lim_{h \to 0} \frac{h^2 + 2xh}{h}\\
+                    f'(x) &= \lim_{h \to 0} h + 2x\\
+                    f'(x) &= 2x \quad \text{ for all } x \in \mathbb{R}
+                    \end{aligned}
+                    \end{equation}
+                </div>
+                <br>
+                <div class="mathdef">
+                    Holomorphic<br>
+                A function $f(z)$ defined on some open neibourhood of a point $z_{0} \in \mathbb{C}$ is said to be holomorphic at $z_{0}$ if the complex derivative 
+                \[ f'(z_{0}) = \lim_{h \to 0 } \frac{f(z_{0} + h) - f(z_{0})}{h} \] exists.
+                We said $f$ is holomorphic on an open set $\Omega$ if it is holomorphic at every $z_{0} \in \Omega$ and we said $f$ is holomorphic in a closed set $\mathbf{C}$ if it is holomorphic on some open set $\Omega$ containing $\mathbf{C}$.
+                Functions are holomorphic on all of $\mathbb{C}$ are said to be $\mathit{entire}$
+
+                </div>
+                <br>
+                <div class="mathdef">
+                    \[ \text{Show } f(z) = z^2 \text{ is holomorphic} \]
+                    \begin{equation}
+                    \begin{aligned}
+                    f'(z) &= \lim_{h \to 0} \frac{(z+h)^2 - z^2}{h} \\
+                    f'(z) &= \lim_{h \to 0} \frac{z^2 + 2hz + h^2 - z^2}{h}\\
+                    f'(z) &= \lim_{h \to 0} \frac{2hz + h^2}{h} \nonumber \\
+                    f'(z) &= \lim_{h \to 0} 2z + h\\
+                    f'(z) &= 2z
+                    \end{aligned}
+                    \end{equation}
+                </div>
+                <br>
+                <div class="mathdef">
+                    <img src="../image/cubic4.svg" width="100%" height="100%" />
+                </div>
+            </div>
+        <!-- Column 1 end -->
+		</div>
+		<div class="col2">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Column 2 start -->
+<ul>
+</ul>
+<!-- Column 2 end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
