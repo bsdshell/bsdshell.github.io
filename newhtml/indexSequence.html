@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+	<title>Surface, Curve, Algorithm, Geometry, Algebra</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+	<meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../highlight.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+          });
+        </script>
+    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+</head>
+<body>
+
+<div id="header">
+	<p id="layoutdims">Measure columns in: <a href="../index.html">Home</a> | <a href="">About</a> | $\Lambda$</p>
+</div>
+<div class="colmask rightmenu">
+	<div class="colleft">
+		<div class="col1">
+			<!-- Column 1 start -->
+                <br>
+                <div class="mathdef_box1">
+                    <h2>Find the sum of squares $S = \sum_{k=1}^{n}k^2$ [ Proof by Picture ]</h2><br>
+                    <h2>$\frac{(2n + 1)(1 + 2 + 3 + ... + n)}{3} = \sum_{k=1}^{n}k^2$</h2><br>
+                    <img src="../image/SquareSequence.svg" width="100%" height="50%" />
+                </div>
+                <br>
+                <div class="mathdef_box1">
+                    <h2>Find the sum of squares $S = \sum_{k=1}^{n}k^2$ [Proof by Algebra]</h2><br>
+                    $\sum_{k=1}^{n}((k+1)^3 - k^3) = \sum_{k=1}^{n}(k^2+1+2k)(k+1) - k^3$<br><br>
+                    $\sum_{k=1}^{n} (k^3+k+2k^2+k^2+1+2k)-k^3$<br><br>
+                    $\sum_{k=1}^{n} (k^3+3k^2+3k+1)-k^3$<br><br>
+                    $\sum_{k=1}^{n} (3k^2+3k+1)$<br><br>
+                    $\Rightarrow  \sum_{k=1}^{n}(k+1)^3 - \sum_{k=1}^{n}k^3 =(n+1)^3 - 1$<br><br>
+                    $\Rightarrow 2^3 + 3^3 + ... + n^3 + (n+1)^3 - (1 + 2^3 + 3^3 + ... + n^3) = (n+1)^3 -1$<br><br>
+                    $\Rightarrow (n+1)^3-1 = \sum_{k=1}^{n}(3k^2+3k+1) $<br><br>
+                    $\Rightarrow (n+1)^3-1 = 3\sum_{k=1}^{n} k^2 +  3\sum_{k=1}^{n} k + n $<br><br>
+                    $\Rightarrow (n+1)^3-1 = 3\sum_{k=}^{n} k^2 + (n+1) n \frac{3}{2} + n$<br><br>
+                    $\Rightarrow (n+1)^3-1 -  (n+1) n \frac{3}{2} - n= 3\sum_{k=1}^{n} k^2 $<br><br>
+                    $\Rightarrow (n+1)((n+1)^2-n \frac{3}{2})-(n+1) = 3\sum_{k=1}^{n} k^2$<br><br>
+                    $\Rightarrow (n+1)( (n+1)^2 -n\frac{3}{2}-1) = 3\sum_{k=1}^{n} k^2$<br><br>	
+                    $\Rightarrow (n+1)( n^2+1+2n-n\frac{3}{2} - 1) = 3\sum_{k=1}^{n} k^2$<br><br>	
+                    $\Rightarrow (n+1)(n^2 + \frac{1}{2}n) = \sum_{k=1}^{n} k^2$<br><br>
+                    $\Rightarrow \frac{1}{2}(n+1)(2n^2+n)=\sum_{k=1}^{n} k^2$<br><br>
+                    $\Rightarrow \frac{1}{6}n(n+1)(2n+1) = \sum_{k=1}^{n} k^2 $<br><br>
+                </div>
+                <br>
+                <div>
+                    <div class="mathdef_box1">
+                        <h2 >Prove $S = 1 + 3 + ... + (2n-1) = n^2$ [ Proof by Picture ]</h2>
+                        <h3>From the picture, each number represents each colors(row/column)</h3>
+                        $1 + 3 + 5 + 7 + 9 + 11 = 6^2$<br><br>
+                        $\Rightarrow 1 + 3 + 5 + (2n-1) = n^2$<br><br>
+                    <img src="../image/ProofSquareNumberRightUp.svg" width="100%" height="50%" />
+                    </div>
+                </div>
+                <br>
+
+                <div>
+                    <div class="mathdef_box1">
+                        <h2>Prove the sum of old numbers are square number</h2>
+                        <h2 >Prove $S = 1 + 3 + ... + (2n-1) = n^2$</h2>
+                        <br>
+                        $1 + 3 + 5 = 4(1 + 3 + 5)$<br><br>
+                        $\Rightarrow 1 + 3 + 5 + ... + (2n-1) = 4(2n)^2 = n^2$<br><br>
+                    <img src="../image/4Tile.svg" width="100%" height="50%" />
+                    </div>
+                </div>
+        <!-- Column 1 end -->
+		</div>
+		<div class="col2">
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+	</div>
+</div>
+	<p>This page uses the <a href="">Put More Stuff Here</a> by <a href="">ZSurface</a>. View more <a href="">ZSurface</a> and <a href="">ZSurface</a>.</p>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
