@@ -8,7 +8,7 @@ body {
 }
 
 
-a { color:gray; }
+a {color: #000000;}
 a:visited { color:gray; }
 a:hover { color:green; }
 
@@ -20,9 +20,11 @@ a:active {color:yellow;}
 */
 
 li{
-    background: #4433;
+    background: #f3f3f3;
     list-style-type: none;
     padding: 1px;
+    color: #0000;
+    font-size: 20px;
 }
 
 ul {
