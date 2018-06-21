@@ -37,18 +37,31 @@
         <div class="col1">
         <!-- Column 1 start -->
         <div class="mytitle">
-        🐼 Swift is Apple new programming language for iOS, it it much better than Objective-C from many aspects
+        🐼 Swift is Apple new programming language for iOS, it it much better than Objective-C in many aspects
         </div>
         <pre>
-        1. Functional style
-        2. Use optional
-        3. Take many "good" features from C/C++/Java/C# and Haskell
+        I'm still pretty new to the language, but I found it is pretty easy to learn if you know Java/C/C++/C# or Haskell
+        Here are a few of many features that I like
+        1.0 Functional style
+            1.1 Swift adapts many functional style such as map, filter, reduce/fold, closure/lambda function and so on.
+                Variables can be declared as Mutable or Immutable with var or let
+
+        2.0 Optional in Swift 
+            2.1 Optional can be used to reduce nil pointer check
+
+        3.0 Swift uses similar Haskell array syntax
+            Create and initialize array are dead simple
+
+        4.0 Swift finally adapts one of the very powerful feature in C++: Operator overloading, Java sucks:)
+            Operator overloading is very convenient for mathematical operation such as Matrix, Complex Number and Vector etc.
+
         </pre>
         <div class="mytitle">
         😍 array is much easier to deal with than C/C++/Java/C#
         </div>
-        <pre>
-        0. Mutable and Immutable variable with var and let
+
+        <pre class="prettyprint">
+        0.0 Mutable and Immutable variable with var and let
            var num = 3
            num can changed or reuse
            e.g. you can do: 
@@ -58,14 +71,54 @@
            x can NOT be changed or reuse
            x += 1 // get error ∵ x is immutable variable
 
-        1. Swift make initialize array very easy (if you want to initialize array in C++/Java/C#, it is very painful)
-            var array = [Int]()             // create one dimensional array
+        1.0 Swift make initialize array very easy (if you want to initialize array in C++/Java/C#, it is very painful)
+            var array = [Int]()             // create one dimensional array has length = 0
             let array = [1, 2, 3]           // initialize one dimensional array with 1, 2, 3
             let array = [[1, 2], [3, 4]]    // initialize two dimentional array with [1, 2] , [3, 4]
 
-        2. Create subarray from array
-           let arr:array<Int> = [1, 2, 3, 4, 5]
+        1.1 Swift adapts similar syntax as Haskell for array, it is dead simple to use it
+            // In Swift
+            let arr:[Int] = []
+            let arr:[String] = []
+
+            // In Haskell
+            let arr = []::[Integer]
+            let arr = []::[String]
+
+        2.0 Create subarray from array
+           let arr:Array&lt;Int&gt; = [1, 2, 3, 4, 5]
            let subarr = arr[1...4]          // subarr = [2, 3, 4]
+
+        2.1 How Swift and Haskell handle range for array, => Haskell is much more elegant language
+            // In Swift
+            let arr = Array(1...4) 
+            print(arr)
+
+            // Haskell needs two dots:)
+            let arr = [1..4]
+
+        </pre>
+        <div class="mytitle">
+        🍑 Compare Two dimensional Array to Java
+        </div>
+        <pre class="prettyprint">
+        // In Java
+        int[][] array = {{}}
+        int len = array.length; // 1
+        array[0].length         // 0 
+
+        // In Swift
+        var array:[[Int]] = [[]]
+        var len = array.count  // 1
+        array[0].count         // 0 
+
+        // In Java
+        int[][] array = new int[0][0]
+        int len = array.length; // 0 
+
+        // In Swift
+        var array = [[Int]]()
+        var len = array.count  // 0 
         </pre>
         <div class="mytitle">
         🍑 filter, map, flatmap, reduce/fold(in Haskell) makes your life easier
@@ -135,7 +188,8 @@
         <pre>
         Apple remove C-style for loop from Swift, many developers get pissed
         We do understand the reason behind that ∵ C-style for-loop is hard to grasp and easy to make mistake.
-        
+        </pre>
+        <pre class="prettyprint">
         var array = [1, 2, 3]
         for item in array{
             print(item) // 1 2 3
@@ -154,6 +208,23 @@
         for i in 0..&lt;array.count{
             print(array[i])
         }
+
+        for i in (0..<4){
+            print("i=\(i)")
+        }
+
+        for i in (0..<4).reversed(){
+            print("i=\(i)")
+        }
+
+        for i in stride(from:3, to:0, by: -1){
+            print("i=\(i)") //  3 2 1 
+        }
+
+        for i in stride(from:3, through:0, by: -1){
+            print("i=\(i)") // 3 2 1 0
+        }
+
         </pre>
         <div class="mytitle">
         🍑 Swift as script language in MacOS 
@@ -162,7 +233,8 @@
         1. Make sure you have swift under /usr/bin on your MacOS
         2. create file call myscript.swift, and copy the follow code to the file.
         3. Run > ./myscript.swift
-
+        </pre>
+        <pre class="prettyprint">
         #!/usr/bin/swift
         func fibonacci(_ n:Int)->Int{
             if n <= 2{
@@ -176,7 +248,7 @@
         <div class="mytitle">
          😼 Closure and map, convert digit to String, showing the power of modulo and division
         </div>
-        <pre>
+        <pre class="prettyprint">
         // convert digit to String
         var digitalName = [
         0:"Zero", 1:"One", 2:"Two", 3:"Three", 4:"Four",
