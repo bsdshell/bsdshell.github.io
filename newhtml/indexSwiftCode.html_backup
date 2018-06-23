@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+    <title>Xfido.com</title>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
+    <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../highlight.css" />
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+          });
+    </script>
+    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+</head>
+<body>
+<!--<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script> -->
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66282017-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<div class="colmask rightmenu">
+    <div class="colleft">
+        <div class="col1">
+        <!-- Column 1 start -->
+        <div class="mytitle">
+        🐼 Swift Package Manager  [Thu Jun 21 14:54:14 PDT 2018]
+        </div>
+        <pre>
+        The tutorial will show you how to use package manager to build a command line tool
+        0. Open your terminal 
+        1. mkdir commandline
+        2. cd commandline
+        3. swift package init --type executable   // --type executable create package for command line instead of framework
+
+        What is in the folder? 
+        .gitignore      // Contain ./build Package and *.xcodeproj which will be ignored by git
+        Package.swift   // which define your package, and all the dependency 
+        README.md       // Read me file, nothing interesting
+        Sources         // Source code dir, it contains main.swift
+        Tests           // Unit test dir
+
+        </pre>
+        <div class="mytitle">
+        🐼 Swift is Apple new programming language for iOS, it it much better than Objective-C in many aspects
+        </div>
+        <pre>
+        I'm still pretty new to the language, but I found it is pretty easy to learn if you know Java/C/C++/C# or Haskell
+        Here are a few of many features that I like
+        1.0 Functional style
+            1.1 Swift adapts many functional style such as map, filter, reduce/fold, closure/lambda function and so on.
+                Variables can be declared as Mutable or Immutable with var or let
+
+        2.0 Optional in Swift 
+            2.1 Optional can be used to reduce nil pointer check
+
+        3.0 Swift uses similar Haskell array syntax
+            Create and initialize array are dead simple
+
+        4.0 Swift finally adapts one of the very powerful feature in C++: Operator overloading, Java sucks:)
+            Operator overloading is very convenient for mathematical operation such as Matrix, Complex Number and Vector etc.
+
+        </pre>
+        <div class="mytitle">
+        😍 array is much easier to deal with than C/C++/Java/C#
+        </div>
+
+        <pre class="prettyprint">
+        0.0 Mutable and Immutable variable with var and let
+           var num = 3
+           num can changed or reuse
+           e.g. you can do: 
+           num += 1  
+
+           let x = 3
+           x can NOT be changed or reuse
+           x += 1 // get error ∵ x is immutable variable
+
+        1.0 Swift make initialize array very easy (if you want to initialize array in C++/Java/C#, it is very painful)
+            var array = [Int]()             // create one dimensional array has length = 0
+            let array = [1, 2, 3]           // initialize one dimensional array with 1, 2, 3
+            let array = [[1, 2], [3, 4]]    // initialize two dimentional array with [1, 2] , [3, 4]
+
+        1.1 Swift adapts similar syntax as Haskell for array, it is dead simple to use it
+            // In Swift
+            let arr:[Int] = []
+            let arr:[String] = []
+
+            // In Haskell
+            let arr = []::[Integer]
+            let arr = []::[String]
+
+        2.0 Create subarray from array
+           let arr:Array&lt;Int&gt; = [1, 2, 3, 4, 5]
+           let subarr = arr[1...4]          // subarr = [2, 3, 4]
+
+        2.1 How Swift and Haskell handle range for array, => Haskell is much more elegant language
+            // In Swift
+            let arr = Array(1...4) 
+            print(arr)
+
+            // Haskell needs two dots:)
+            let arr = [1..4]
+
+        </pre>
+        <div class="mytitle">
+        🍑 Compare Two dimensional Array to Java
+        </div>
+        <pre class="prettyprint">
+        // In Java
+        int[][] array = {{}}
+        int len = array.length; // 1
+        array[0].length         // 0 
+
+        // In Swift
+        var array:[[Int]] = [[]]
+        var len = array.count  // 1
+        array[0].count         // 0 
+
+        // In Java
+        int[][] array = new int[0][0]
+        int len = array.length; // 0 
+
+        // In Swift
+        var array = [[Int]]()
+        var len = array.count  // 0 
+        </pre>
+        <div class="mytitle">
+        🍑 filter, map, flatmap, reduce/fold(in Haskell) makes your life easier
+        </div>
+        <pre class="prettyprint">
+        let array:Array<Int> = [1, 2, 3, 4]
+        let subarr = array[1...3]
+
+        let filter = array.filter{$0 > 4}
+
+        let f1 = array.filter{$0 % 2 == 0}
+
+        let reduce = array.reduce(0, {x, y in x + y})                    // ((((0 + 1) + 2) + 3 + 4) = 10
+
+        let r1 = array.reduce(10, +) //   ((((10 + 1) + 2) + 3) + 4) = 20
+
+        let p1 = array.reduce(1, *)  //   ((((1*1)*2)*3)*4 = 24
+
+        let s1 = array.reduce(9, -)  //   (((((9-1)-2)-3)-4) = -1
+
+        let arrays = ["Fibonacci", "Euler", "Albert Einstein"]
+        let red1 = arrays.reduce("", +)
+
+        let array2 = ["Golden Ratio", "Silver Ratio", "Copper Ratio"]
+        let long = array2.reduce("⚽︎") {first, second in "\(first),\(second)"}
+
+        // lambda function inside the reduce
+        let sum = [1, 2].reduce(0){
+            (acc:Int, next:Int)->Int in return acc + next
+        }
+        // Haskell way with foldr or foldl
+        let sum = foldl(\x y -> x + y) 0 [1, 2] 
+
+        let m1 = array.map{$0 * $0}
+
+        let array2d = [[1, 2], [3, 4]]
+        let collect = array2d.flatMap{ $0 }
+        </pre>
+        <div class="mytitle">
+        🍑 Compose map and filter 
+        </div>
+        <pre>
+        let array = [2, 2, 3, 4, 3, 4]
+        let group = Set(array).map{ v in return array.filter{$0 == v} }
+        print("group=\(group)") // [[2, 2], [3, 3], [4, 4]]
+        </pre>
+
+        <div class="mytitle">
+        🍑 Array and ArraySlice 
+        </div>
+        <pre>
+        var array:Array<Int> = [1, 2, 3, 4, 5]
+        
+        // create a slice
+        var slice:ArraySlice<Int> = [4, 5, 6, 7, 8]
+        
+        var sli = array[2...3]
+        var startIndex = sli.startIndex
+        var endIndex = sli.endIndex
+        
+        // convert ArraySlice to Array
+        var arr = Array(slice)
+        </pre>
+        <div class="mytitle">
+        🍑 Loop in Swift 
+        </div>
+        <pre>
+        Apple remove C-style for loop from Swift, many developers get pissed
+        We do understand the reason behind that ∵ C-style for-loop is hard to grasp and easy to make mistake.
+        </pre>
+        <pre class="prettyprint">
+        var array = [1, 2, 3]
+        for item in array{
+            print(item) // 1 2 3
+        }
+
+        // condition in the loop
+        var done:Bool = true
+        for item in array where done{
+            if item == 2{
+                done = false
+            }else{
+                print(item)
+            }
+        }
+
+        for i in 0..&lt;array.count{
+            print(array[i])
+        }
+
+        for i in (0..<4){
+            print("i=\(i)")
+        }
+
+        for i in (0..<4).reversed(){
+            print("i=\(i)")
+        }
+
+        for i in stride(from:3, to:0, by: -1){
+            print("i=\(i)") //  3 2 1 
+        }
+
+        for i in stride(from:3, through:0, by: -1){
+            print("i=\(i)") // 3 2 1 0
+        }
+
+        </pre>
+        <div class="mytitle">
+        🍑 Swift as script language in MacOS 
+        </div>
+        <pre>
+        1. Make sure you have swift under /usr/bin on your MacOS
+        2. create file call myscript.swift, and copy the follow code to the file.
+        3. Run > ./myscript.swift
+        </pre>
+        <pre class="prettyprint">
+        #!/usr/bin/swift
+        func fibonacci(_ n:Int)->Int{
+            if n <= 2{
+                return 1
+            }else{
+                return fibonacci(n-2) + fibonacci(n-1)
+            }
+        }
+        print(fibonacci(10))
+        </pre>
+        <div class="mytitle">
+         😼 Closure and map, convert digit to String, showing the power of modulo and division
+        </div>
+        <pre class="prettyprint">
+        // convert digit to String
+        var digitalName = [
+        0:"Zero", 1:"One", 2:"Two", 3:"Three", 4:"Four",
+        5:"Five", 6:"Six", 7:"Seven", 8:"Eight", 9:"Nine"
+        ]
+        
+        var number = [0, 1, 123]
+        let strlist = number.map { (num)->String in
+            var decimal = num
+            var output = ""
+            
+            repeat {
+                output = digitalName[decimal % 10]! + output  // 123 -> 3
+                decimal /= 10                                 // 123 -> 12
+            } while decimal > 0
+            return output
+        }
+        print(strlist)
+        </pre>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

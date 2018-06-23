@@ -1,0 +1,353 @@
+<ul>
+<li>Given an array of integer/char, print all the permutation of integer/char</li>
+<li>E.g. Given "abc"</li>
+<li>permutation: abc, acb, bac, bca, cab, cba</li>
+</ul>
+
+<h4>There are a few algorithms to generate permutation of the characters of a string in order</h4>
+
+<h5>I will present two algorithms here</h5>
+
+<h5>Algorithm 1 ( strings are not in order )</h5>
+
+<p>(e.g. abc, acb, bac, bca, cba, cab)</p>
+
+<p>The algorithm is short, but it is not easy to understand why it works
+In order to understand why the algorithm 1 works <br />
+Some group theory are need to understand. <br />
+In particular, it is called permutation group</p>
+
+<h5>Algorithm 2 ( string are in order)</h5>
+
+<p>(e.g. abc, acb, bac, bca, cab, cba)</p>
+
+<p>This algorithm is relative easier to understand</p>
+
+<ol>
+<li>Given a string "abc"</li>
+<li>Choose the first character of the string and permute the rest of the character
+<ul>
+<li>permute("abc") => "a" permute("bc")</li>
+<li>"a" permute("bc") => "a" "b" permute("c")</li>
+<li>"a" "b" permute("c") => "a" "b" "c" permute("")</li>
+</ul></li>
+</ol>
+
+<h5>Algorithm 3 (Use permutation with repeated characters)</h5>
+
+<p>The algorithm is similar to (1), but strings with repeated characters are removed with HashSet</p>
+
+<ol>
+<li>Image two dimension array <br />
+*. First, go down the rows vertically <br />
+*. Second, return to the previous row once the last row is reached. </li>
+<li>Permute all characters with Depth First Search</li>
+<li>Remove all strings with duplicated characters with LinkedHashSet(keep insection order)</li>
+</ol>
+
+<h5>Algorithm to solve Eight Queen problem</h5>
+
+<ol>
+<li>Eight Queeen problem can be solved with permutation with repeated characters(algorithm 3)  </li>
+<li>The two algorithms are "same"</li>
+<li>They are both use Depth First Search and find the path from root to leaf node</li>
+</ol>
+
+<h5>Algorithm to solve sudoku</h5>
+
+<ol>
+<li>Again, the algorithm to solve sudoku are very "similar" to Eight Queen algorithm </li>
+</ol>
+
+<h5>Convert Number to English Words Algorithm</h5>
+
+<ul>
+<li>Given an Integer 1240, output: one thousand two thundred forty </li>
+<li>Use 2D array to store the integer in base 1000</li>
+</ul>
+
+<p>map.put("0", "zero") <br />
+map.put("1", "one") <br />
+map.put("2", "two") <br />
+map.put("3", "three") <br />
+map.put("4", "four") <br />
+map.put("5", "five") <br />
+map.put("6", "six") <br />
+map.put("7", "seven") <br />
+map.put("8", "eight") <br />
+map.put("9", "nine") <br />
+map.put("10", "ten") <br />
+map.put("11", "eleven") <br />
+map.put("12", "twelve") <br />
+map.put("13", "thirteen") <br />
+map.put("14", "fourteen") <br />
+map.put("15", "fifteen") <br />
+map.put("16", "sixteen") <br />
+map.put("17", "seventeen") <br />
+map.put("18", "eighteen") <br />
+map.put("19", "nineteen") <br />
+map.put("20", "twenty") <br />
+map.put("30", "thirty") <br />
+map.put("40", "forty") <br />
+map.put("50", "fifty") <br />
+map.put("60", "sixty") <br />
+map.put("70", "seventy") <br />
+map.put("80", "eighty") <br />
+map.put("90", "ninety") <br />
+map.put("100", "hundred") <br />
+map.put("1000", "thousand") <br />
+map.put("1000000", "million") <br />
+map.put("1000000000", "billion") <br />
+map.put("1000000000000", "trillion")  </p>
+
+<h5>Convert English words number to numerical integer</h5>
+
+<ol>
+<li><p>e.g. two thousand four thundred and twelve (2411)
+2000
+400
+11</p></li>
+<li><p>e.g. five millons eleven thundreds thousand six thundreds and forty six(5110646)</p></li>
+</ol>
+
+<p>5000000
+110000
+600
+42</p>
+
+<h5>Build a binary tree from preorder</h5>
+
+<ul>
+<li>Given preorder nodes, and build a binary tree from the preorder nodes</li>
+</ul>
+
+<h5>Find a maximum path in a binary tree</h5>
+
+<h5>Mirror a binary tree</h5>
+
+<h5>Find the longest path in a binary tree</h5>
+
+<h5>Find the number of connected components in a two dimension array</h5>
+
+<h5>Print a binary tree in level order</h5>
+
+<h5>Serialize binary tree and deserialize binary tree</h5>
+
+<ul>
+<li><p>There are three(two) algorithms to serialize and deserialize a binary tree</p>
+
+<ol>
+<li><p>Use parent children relationship(parent->left right)
+if parent has no child, use special symbol to mark it(parent-># right)</p></li>
+<li><p>Use special character to indicate null nodes</p></li>
+<li><p>Use array to represent binary tree with leftchild = 2<em>k parent=k rightchild=2</em>k+1 
+relationship</p></li>
+</ol></li>
+</ul>
+
+<h5>Serialize/Deserialize N-ary</h5>
+
+<h5>Build a heap with array</h5>
+
+<h5>Inorder traveral with iteration</h5>
+
+<ul>
+<li>Print out all the nodes in order traveral without using recursion</li>
+</ul>
+
+<h5>Print out the first occurrence character from a stream</h5>
+
+<ul>
+<li>Data Structure: HashMap and LinkedList    </li>
+<li>The Algorithm is similar to LRU/Least Recent Used Cache</li>
+</ul>
+
+<h5>Print all the node k distance from a given node</h5>
+
+<h5>Print all the continuous/connected components from a 2D grid</h5>
+
+<pre><code>    1. Use Depth First Search to find all connected squares
+</code></pre>
+
+<h5>Find a path from top left corner to the right botton cornder in a maze</h5>
+
+<h5>Given a binary tree, determine whether the tree is binary search tree or not</h5>
+
+<h5>Given a binary tree, determine whether the tree is a sumtree or not</h5>
+
+<h5>Delete a node from double linked list</h5>
+
+<h5>Build a hashtable (delete/insert operation)</h5>
+
+<h5>Implement data structure for Least Recent Used Cache</h5>
+
+<h5>Insert an integer to order list</h5>
+
+<h5>Insert an integer to circular list</h5>
+
+<h5>Reverse a single linked list</h5>
+
+<h5>Reverse the circular list</h5>
+
+<h5>Find the longest increasing subsequence integers</h5>
+
+<pre><code>    sub(i) = max(sub(i)) + 1 if [i] &gt; [i-1] 
+    sub(i) = max(sub(i)) if [i] &lt; [i-1]
+</code></pre>
+
+<h5>Print out all the square number up to n without using multiplication, division and module</h5>
+
+<pre><code>    SquareNumber(int n)
+    {
+        int prevSquare = 0
+        int prev = 0
+        for(i=1; i&lt;n; i++)
+        {
+            prevSquare = prevSquare + prev + curr
+            prev = curr
+        }
+    }
+</code></pre>
+
+<h5>Binary Search in 2d array</h5>
+
+<pre><code>    Revise the original algorithm
+</code></pre>
+
+<h5>Clone a single linked list</h5>
+
+<h5>Clone and reverse a single linked list</h5>
+
+<h5>Clone double linked list</h5>
+
+<h5>Clone and reverse a double linked list</h5>
+
+<h5>Clone a list with random node</h5>
+
+<h5>Clone a binary tree</h5>
+
+<h5>Find the least common ancestor from two given nodes</h5>
+
+<h5>Shuffle a n elements array with n random</h5>
+
+<h5>Given a sequence of words, print all anagrams</h5>
+
+<h5>Inorder Preorder Postorder with iteration</h5>
+
+<h5>Excel Sheet row problem</h5>
+
+<pre><code>    1. Given
+</code></pre>
+
+<h5>PostOrder Traversal in iteration</h5>
+
+<pre><code>    1. Use two stacks
+    2. Use one stack(e.g Stack&lt;List&lt;Node&gt;&gt; list(parent, left, right))
+
+    Two Stacks Algorithm
+
+    PostOrderIteration(Node root)
+    {
+        if(root != null)
+        {
+            Stack&lt;Node&gt; st1 = new Stack&lt;Node&gt;();
+            Stack&lt;Node&gt; st2 = new Stack&lt;Node&gt;();
+            st1.push(root)
+            whiel(!st1.empty())
+            {
+                Node node = st1.pop()
+                st2.push(node)
+                if(node.left != null)
+                    st1.push(node.left)
+                if(node.right != null)
+                    st1.push(node.right)
+
+            }
+            while(!st2.empty())
+            {
+                print(st2.pop().data)
+            }
+        }
+    }
+</code></pre>
+
+<h5>PostOrder or Depth First Search in iteration</h5>
+
+<pre><code>    1. Use one Stack, one list, and hashmap
+</code></pre>
+
+<h5>Given a string "123" and putchar, write a function to print out unsigned long decimal</h5>
+
+<pre><code>    e.g. "123" -&gt; 123
+    int printLong(String s)
+    {
+        unsigned s=0;
+        for(int i=s.length()-1; i &gt;= 0 i--)
+        {   //check '0' &lt;= s.charAt(i) &lt;= '9'
+            int n = s.charAt(i) - '0';
+            s += n*Math.pow(10, i);
+        }
+        return s;
+    }
+</code></pre>
+
+<h5>Given unsigned integer, write a function to print out the decimal(use preorder traversal)</h5>
+
+<pre><code>    e.g 123 -&gt; 1, 2, 3
+    printDeciaml(unsigned num)
+    {
+        putchar('0'+num%10)
+        if(num &gt;= 10)
+        {
+            printDeciaml(num/10)
+        }
+    }
+</code></pre>
+
+<h5>Given unsigned integer, write a function to print out the decimal in reverse order (use postorder traversal)</h5>
+
+<pre><code>    e.g 123 -&gt; 3, 2, 1
+    printReverseDeciaml(unsigned num)
+    {
+        if(num &gt;= 10)
+        {
+            printReverseDeciaml(num/10)
+        }
+        putchar('0'+num%10)
+    }
+</code></pre>
+
+<h5>Given a list, print all the node in order(use preorder traversal)</h5>
+
+<pre><code>    e.g [1]-&gt;[2]-&gt;[3] output:[1] [2] [3]
+    printNode(Node curr)
+    {
+        if(curr != null)
+        {
+            print(curr.data)
+            printNode(curr.next)
+        }
+    }
+</code></pre>
+
+<h5>Given a list, print all the node in reverse order (use postorder traversal)</h5>
+
+<pre><code>    e.g [1]-&gt;[2]-&gt;[3] output: [3] [2] [1]
+    printNode(Node curr)
+    {
+        if(curr != null)
+        {
+            printNode(curr.next)
+            print(curr.data)
+        }
+    }
+</code></pre>
+
+<h5>Find reverse pair of string in two arrays</h5>
+
+<pre><code>    A1 = "6 2 8 9 7 1"
+    A2 = "1 2 7 9 6"
+    2 &amp; 1
+    2 &amp; 6
+    7 &amp; 9
+</code></pre>
