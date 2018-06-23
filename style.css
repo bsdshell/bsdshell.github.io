@@ -217,14 +217,24 @@ pre.cc{
     color: #060a10;
 }
 
+//.mytitle{
+//    margin:auto;
+//    width:100%;
+//    color: #e05e0c;
+//    font-size:24px;
+//    text-align:center;
+//    background: #deeadd;
+//}
+
 .mytitle{
     margin:auto;
     width:100%;
-    color: #e05e0c;
-    font-size:20px;
+    color: deeppink;
+    font-size: 30px;
     text-align:center;
-    background: #deeadd;
+    background: #EEE;
 }
+
 
 //.mytext{
 //    margin:auto;
