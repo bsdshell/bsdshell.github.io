@@ -7,7 +7,6 @@ body {
     min-width:600px;        /* Minimum width of layout - remove line if not required */
 }
 
-
 a {color: #000000;}
 a:visited { color:gray; }
 a:hover { color:green; }

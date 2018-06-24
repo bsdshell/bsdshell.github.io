@@ -31,26 +31,35 @@
       ga('create', 'UA-66282017-2', 'auto');
       ga('send', 'pageview');
     </script>
-
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-            <!-- Column 1 start -->
-
             <div class="mytitle">
             Shell Script loop 
             </div>
-            <pre class="codebg">
+            <pre class="">
             for i in *; do
                 echo $i
             done
 
             for i in *; do echo $i ; done
+
+            # copy all file name with pattern debug to $w/zsurface/image
+            for i in $(ls | grep html | awk '{print $1}'); do cp $w/zsurface/image; done
+
+            # print file name in ls -lah
+            awk '{print $9}'
             </pre>
+
+            <div class="mytitle">
+            gsed, sed replace text in many files
+            </div>
+            <pre class="">
+            # replace oldstring with newstring for all html file and backup all the files with suffix _backup
+            gsed -i_backup 's/oldstring/newstring/' *.html  
+            </pre>
+
             <div class="mytitle">
             Compare Number in Fish Shell
             </div>
-            <pre class="codebg">
+            <pre class="">
             if math "$SHLVL == 1"
                 read -p 'echo "Exit? (y/n):"' -l confirm
                 if [ $confirm = "y" ]
@@ -64,7 +73,7 @@
             <div class="mytitle">
             Customize Prompt in Fish Shell 
             </div>
-            <pre class="codebg">
+            <pre class="">
             function fish_prompt
                 set_color green 
                 echo -n (pwd)"[$SHLVL]"'>'
@@ -74,103 +83,11 @@
             <div class="mytitle">
             Compare String in Fish Shell
             </div>
-            <pre class="codebg">
+            <pre class="">
             if [ $confirm = "y" ]
                 exit
             end
             </pre>
-
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-
 
     </body>
     </html>

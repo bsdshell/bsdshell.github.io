@@ -49,8 +49,8 @@ table.center {
     margin-right:auto;
 }
 
-.cmd{
-     font-size: 15px;
+pre.cmd{
+     font-size: 20px;
      background: rgba(56, 136, 11, 0.86);
      color: rgb(254, 255, 254);
      border-radius: 2px;
