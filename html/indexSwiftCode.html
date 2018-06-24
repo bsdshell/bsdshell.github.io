@@ -37,14 +37,15 @@
         <div class="col1">
         <!-- Column 1 start -->
         <div class="mytitle">
-        🐼 Swift Package Manager  [Thu Jun 21 14:54:14 PDT 2018]
+        🐼 Swift Package Manager 
         </div>
         <pre>
         The tutorial will show you how to use package manager to build a command line tool
         0. Open your terminal 
         1. mkdir commandline
         2. cd commandline
-        3. swift package init --type executable   // --type executable create package for command line instead of framework
+        3. swift package init --type executable // --type => executable, not framework
+
 
         What is in the folder? 
         .gitignore      // Contain ./build Package and *.xcodeproj which will be ignored by git
@@ -58,9 +59,10 @@
         🐼 Swift is Apple new programming language for iOS, it it much better than Objective-C in many aspects
         </div>
         <pre>
-        Apple finally released a new programming language called Swift in June 2014 and I finally have time to try it out recently.
-        In my opinion, Swift is the language that takes all the "good" stuffs from C/C++/Java/C# and Haskell and put it into one BIG 🎁
-        I'm still pretty new to the language, but I found it is pretty easy to get started if you are familliar Java/C/C++/C# or ƛ Haskell.
+        Apple finally released a new programming language called Swift in June 2014 and I finally have time to try it 
+        out recently. In my opinion, Swift is the language that takes all the "good" stuffs from C/C++/Java/C# and 
+        Haskell and put it into one BIG 🎁. I'm still pretty new to the language, but I found it is pretty easy to 
+        get started if you are familliar Java/C/C++/C# or ƛ Haskell.
         Here are a few of many features that I like in Swift [4.1.2]
 
         0. The language is much cleaner [compare to Objective-C, Java and C++]
@@ -76,8 +78,9 @@
         3. Array is awesome in Swift, it seems to me that &#x1F34E; stole the syntax from Haskell again.
            Create and initialize array are dead simple in Swift, plus map, filter and reduce with closure 
 
-        4. Swift finally adapts one of the very powerful feature in C++ or C#[if you are the MS guy/girl]: Operator overloading => Java sucks:)
-           Operator overloading is very convenient for mathematical operation such as Matrix, Complex Number and Vector etc.
+        4. Swift finally adapts one of the very powerful feature in C++ or C#[if you are the MS guy/girl]: 
+           Operator overloading => Java sucks. Operator overloading is very convenient for mathematical operation 
+           such as Matrix, Complex Number and Vector etc.
 
         5. Pattern Matching
            Pattern matching is simple, powerful and elegant. The only way that you can feel the power is to use it. 
@@ -87,7 +90,8 @@
 
         7. Swift use the Default parameter for Contructor and Function like C++ 
 
-        8. Swift use one of lovely feature from Objective-C is argument labels, you can take overloading to the next level.
+        8. Swift use one of lovely feature from Objective-C is argument labels, 
+           In other word, you can take overloading to the next level.
 
         Here are a few that I hate it in Swift.
         1. Swift use init method instead of contructor, I think the reason behind that is Objective-C using init() 
@@ -96,26 +100,19 @@
         2. Coming soon 
         </pre>
         <div class="mytitle">
-        😍 array is much easier to deal with than C/C++/Java/C#
+        😍 Array is much easier to deal with than C/C++/Java/C#
         </div>
-
         <pre class="prettyprint">
-        0.0 Mutable and Immutable variable with var and let
-           var num = 3
-           num can changed or reuse
-           e.g. you can do: 
-           num += 1  
-
-           let x = 3
-           x can NOT be changed or reuse
-           x += 1 // get error ∵ x is immutable variable
-
-        1.0 Swift make initialize array very easy (if you want to initialize array in C++/Java/C#, it is very painful)
+        Array is one of the most frequently used data structure in modern programming language.
+        C++ and Java make array initialization very painful.
+        1. Swift make initialize array very easy (if you want to initialize array in C++/Java/C#, it is very painful)
+            var array = []
+            var array = [[]]
             var array = [Int]()             // create one dimensional array has length = 0
             let array = [1, 2, 3]           // initialize one dimensional array with 1, 2, 3
             let array = [[1, 2], [3, 4]]    // initialize two dimentional array with [1, 2] , [3, 4]
+            let array = [MyClass(1), MyClass(2)]
 
-        1.1 Swift adapts similar syntax as Haskell for array, it is dead simple to use it
             // In Swift
             let arr:[Int] = []
             let arr:[String] = []
@@ -124,11 +121,11 @@
             let arr = []::[Integer]
             let arr = []::[String]
 
-        2.0 Create subarray from array
+        2. Create subarray from array
            let arr:Array&lt;Int&gt; = [1, 2, 3, 4, 5]
            let subarr = arr[1...4]          // subarr = [2, 3, 4]
 
-        2.1 How Swift and Haskell handle range for array, => Haskell is much more elegant language
+        3. How Swift and Haskell handle range for array, => Haskell is much more elegant language
             // In Swift
             let arr = Array(1...4) 
             print(arr)
