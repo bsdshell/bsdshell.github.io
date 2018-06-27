@@ -198,6 +198,27 @@
         let group = Set(array).map{ v in return array.filter{$0 == v} }
         print("group=\(group)") // [[2, 2], [3, 3], [4, 4]]
         </pre>
+        <div class="mytitle">
+        🍑 Map and Reduce => MapReduce 
+        </div>
+        \[
+        x \left[ \begin{array}{c} 
+        1 \\
+        2 \\ 
+        3 
+        \end{array} 
+        \right]
+        \]
+        <pre class="prettyprint">
+        let list = [1, 2, 3]
+        map{ x in return x*v } list
+        </pre>
+        <pre>
+        let arr = [1, 2, 3]
+        let re = arr.map{ v in return v + 1 }.reduce(1) { 
+            (acc:Int, next:Int) -> Int in return acc*next
+        }
+        </pre>
 
         <div class="mytitle">
         🍑 Array and ArraySlice 
