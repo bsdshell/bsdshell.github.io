@@ -32,6 +32,47 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+
+        <div class="mytitle">
+        🐼 SKNode and SKAction, put action in sequence  
+        </div>
+        <pre class="prettyprint">
+        let act1 = SKAction.move(...)
+        let act2 = SKAction.move(...)
+        let sequence = SKAction.sequence([act1, act2], ...)
+        node.run(sequence, completion:{
+            print("act1 => act2 => completion")
+        })
+        </pre>
+        <div class="mytitle">
+        🐼 SKNode and SKAction, put action in group  
+        </div>
+        </div>
+        <pre class="prettyprint">
+        let act1 = SKAction.move(...)
+        let act2 = SKAction.move(...)
+        let sequence = SKAction.group([act1, act2], ...)
+        node.run(sequence, completion:{
+            print("act1, act2 => completion")
+        })
+        </pre>
+        <pre class="prettyprint">
+        // code example 
+        if GameScene.lock == 0{
+            GameScene.lock = 1
+            let m1 = SKAction.move(to:CGPoint(x:100, y:0.0), duration:2.0)
+            let m2 = SKAction.move(to:CGPoint(x:100, y:100), duration:2.0)
+
+            let sequence = SKAction.sequence([m1, m2, SKAction.run {
+                                    print("running{}")
+                }])
+
+            self.ballnode?.run(sequence, completion:{
+                    GameScene.lock = 0
+                })
+        }
+        </pre>
+
         <div class="mytitle">
         🐼 Swift Package Manager 
         </div>
@@ -95,6 +136,44 @@
            But I can not come up any reason why Swift can not get rid of init()
 
         2. Coming soon 
+        </pre>
+
+        <div class="mytitle">
+        Pass closure as parameter in Swift, and compute $\sum_{x=i}^{n} x $ and $\sum_{i}^{n} x^2$
+        </div>
+        <pre class="prettyprint">
+        // pass clousre as parameter
+        func fun(from:Int, to:Int, f:(Int)->(Int))->Int{
+            var sum = 0
+            for i in from..&lt;to{
+                sum += f(i)
+            }
+            return sum
+        }
+        let 𝚺:(Int)->(Int)={
+            $0 
+        }
+        print(fun(from:1, to:4, f:𝚺)) // 6
+
+        let δ:(Int)->(Int)={
+            $0*$0
+        }
+        print(fun(from:1, to:4, f:δ)) // 16
+        </pre>
+        <div class="mytitle">
+        😍 inout parameter in Swift 
+        </div>
+        <pre>
+        Swift uses inout to tell programmer that parameter is passed by reference
+        so that you can modify it inside the function and get the result outside of your function
+        </pre>
+        <pre class="prettyprint">
+        func fun(num:inout Int){
+            num = 3
+        }
+        var num = 0
+        fun(num:&num)
+        print("num=(num)") // num=3
         </pre>
         <div class="mytitle">
         😍 Array is much easier to deal with than C/C++/Java/C#
@@ -191,7 +270,7 @@
         let collect = array2d.flatMap{ $0 }
         </pre>
         <div class="mytitle">
-        🍑 Compose map and filter 
+        Partition array with Set, Map and Filter 
         </div>
         <pre>
         let array = [2, 2, 3, 4, 3, 4]
@@ -199,20 +278,46 @@
         print("group=\(group)") // [[2, 2], [3, 3], [4, 4]]
         </pre>
         <div class="mytitle">
-        🍑 Map and Reduce => MapReduce 
-        </div>
-        \[
+        🍑 Map, compute $
         x \left[ \begin{array}{c} 
         1 \\
         2 \\ 
         3 
         \end{array} 
         \right]
-        \]
+        $
+        </div>
         <pre class="prettyprint">
         let list = [1, 2, 3]
         map{ x in return x*v } list
         </pre>
+
+        <div class="mytitle">
+        🍑 Map, Zip and Reduce, compute $ 
+        \left<
+        \left[ \begin{array}{c} 
+        1 \\
+        2 \\ 
+        3 
+        \end{array} 
+        \right]
+        ,
+        \left[ \begin{array}{c} 
+        2 \\
+        3 \\ 
+        4 
+        \end{array} 
+        \right]
+        \right>
+        $
+        </div>
+        <pre class="prettyprint">
+        let v1 = [1, 2, 3]
+        let v2 = [2, 3, 4]
+        let c3 = zip(v1, v2).flatMap{[$0.0 + $0.1]}.reduce(0, +) // 15
+        </pre>
+
+
         <pre>
         let arr = [1, 2, 3]
         let re = arr.map{ v in return v + 1 }.reduce(1) { 
