@@ -227,6 +227,16 @@ pre.cc{
     background: #FFf;
 }
 
+.mybutton{
+    margin:auto;
+    width:100%;
+    color: hotpink;
+    font-size: 30px;
+    text-align:center;
+    font-weight: 600;
+}
+
+
 
 //.mytext{
 //    margin:auto;
@@ -443,4 +453,17 @@ pre.cc{
 
 .tooltip-wrap:hover .tooltip-content {
   display: block;
+}
+
+.button {
+    background-color: hotpink;
+    border: none;
+    color: white;
+    padding: 6px 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }

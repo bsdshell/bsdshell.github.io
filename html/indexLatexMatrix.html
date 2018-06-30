@@ -32,12 +32,10 @@
       ga('send', 'pageview');
     </script>
 
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-                <!-- Column 1 start -->
                 <div class="tooltip-wrap">
-                    <div class="mytitle">mati2</div>
+                    <div class="mybutton">
+                    <button class="button" onClick="clip(document.getElementById('copy1'));">2x2 Matrix</button>
+                    </div>
                     \[
                         I_2 = \begin{bmatrix}
                         1 & 0\\
@@ -46,9 +44,9 @@
                     \]
                     <div class="tooltip-content">
                     <div class="tex2jax_ignore">
-                    <pre  class="lbox" onClick="clip(document.getElementById('copy1'));" id="copy1">
+                    <pre class="lbox" id="copy1">
     I_2 = \begin{bmatrix}
-    1 & 0\\
+    1 & 0 \\
     0 & 1 
     \end{bmatrix} 
                     </pre>
@@ -57,6 +55,9 @@
                 </div>
 
                 <div class="tooltip-wrap">
+                    <div class="mybutton">
+                    <button class="button" onClick="clip(document.getElementById('copy2'));">3x3 Matrix</button>
+                    </div>
                     \[
                         I_3 = \begin{bmatrix}
                             1 & 0 & 0\\
@@ -66,7 +67,7 @@
                     \] 
                     <div class="tooltip-content">
                     <div class="tex2jax_ignore">
-                    <pre class="lbox" onClick="clip(document.getElementById('copy2'));" id="copy2">
+                    <pre class="lbox" id="copy2">
      I_3 = \begin{bmatrix}
         1 & 0 & 0\\
         0 & 1 & 0\\   
@@ -78,6 +79,9 @@
                 </div>
 
                 <div class="tooltip-wrap">
+                    <div class="mybutton">
+                    <button class="button" onClick="clip(document.getElementById('copy3'));">2x2 Rotation Matrix</button>
+                    </div>
                     \[
                         R_2 = \begin{bmatrix}
                         \cos \beta & -\sin \beta\\
@@ -86,7 +90,7 @@
                     \]
                     <div class="tooltip-content">
                     <div class="tex2jax_ignore">
-                    <pre class="lbox"  onClick="clip(document.getElementById('copy3'));" id="copy3">
+                    <pre class="lbox" id="copy3">
      R_2 = \begin{bmatrix}
     \cos(\beta) & -\sin(\beta)\\
     \sin(\beta) & \cos(\beta)
@@ -97,6 +101,7 @@
                 </div>
 
                 <div class="tooltip-wrap">
+                    <div class="mytitle">3x3 Rotaton by Y Matrix</div>
                     \[
                         M_{y}(\alpha) =\begin{bmatrix}
                             \cos\alpha & \sin\alpha & 0\\
@@ -118,6 +123,7 @@
                 </div>
                     
                 <div class="tooltip-wrap">
+                    <div class="mytitle">3x3 Rotaton by X Matrix</div>
                     \[
                         M_{x}(\alpha) =\begin{bmatrix}
                                 1 &   0      &     0   \\         
@@ -139,6 +145,7 @@
                 </div>
                     
                 <div class="tooltip-wrap">
+                    <div class="mytitle">3x3 Rotaton by Z Matrix</div>
                     \[
                         M_{z}(\alpha) =\begin{bmatrix}
                                 \cos\alpha & \sin\alpha & 0\\
@@ -160,6 +167,7 @@
                 </div>
                     
                 <div class="tooltip-wrap">
+                    <div class="mytitle">Translate to [x, y, z] Matrix</div>
                     \[
                         S = \begin{bmatrix}
                                 1 & 0 & 0 & x\\
@@ -183,7 +191,7 @@
                 </div>
 
                 <div class="tooltip-wrap">
-                    <div class="mytitle"> 3 by 3 matrix x y z</div>
+                    <div class="mytitle"> 3x3 Matrix, Stretching or Squeezing</div>
                     \[
                         T =\begin{bmatrix}
                                 x & 0 & 0\\
@@ -204,30 +212,10 @@
                     </div>
                 </div>
                
-                <div class="tooltip-wrap">
-                    <div class="mytitle">
-                    3 by 3 matrix                    
-                    </div>
-                    \[
-                        A = \left| \begin{array}{ccc}
-                        a & b & c \\
-                        d & e & f \\
-                        g & h & i \end{array} \right|  \\
-                    \]
-                    <div class="tooltip-content">
-                    <div class="tex2jax_ignore">
-                    <pre class="lbox"  onClick="clip(document.getElementById('copy9'));" id="copy9">
- A = \left| \begin{array}{ccc}
-    a & b & c \\
-    d & e & f \\
-    g & h & i \end{array} \right|  \\
-                    </pre>
-                    </div>
-                    </div>
-                </div>
 
                 
                 <div class="tooltip-wrap">
+                    <div class="mytitle">Matrix dots and indices</div>
                     \[
                         A_{m,n} = 
                         \begin{pmatrix}
@@ -253,6 +241,7 @@
                 </div>
 
               <div class="tooltip-wrap">
+                    <div class="mytitle">Matrix with Round Bracket</div>
                     \[
                         A =\left( \begin{array}{ccc}
                         a & b & c \\
@@ -270,6 +259,134 @@
                     </div>
                     </div>
                 </div> 
+
+              <div class="tooltip-wrap">
+                    <div class="mytitle">Matrix with Curly Bracket</div>
+                    \[
+                        A =\left \{ \begin{array}{ccc}
+                        a & b & c \\
+                        d & e & f \\
+                        g & h & i \end{array} \right \} \\
+                    \]
+                    <div class="tooltip-content">
+                    <div class="tex2jax_ignore">
+                    <pre class="lbox"  onClick="clip(document.getElementById('copy4411'));" id="copy4411">
+     A =\left \{ \begin{array}{ccc}
+        a & b & c \\
+        d & e & f \\
+        g & h & i \end{array} \right \} \\
+                    </pre>
+                    </div>
+                    </div>
+                </div> 
+
+              <div class="tooltip-wrap">
+                    <div class="mytitle">Matrix with Square Bracket</div>
+                    \[
+                        A =\left[ \begin{array}{ccc}
+                        a & b & c \\
+                        d & e & f \\
+                        g & h & i \end{array} \right] \\
+                    \]
+                    <div class="tooltip-content">
+                    <div class="tex2jax_ignore">
+                    <pre class="lbox"  onClick="clip(document.getElementById('copy14411'));" id="copy14411">
+     A =\left[ \begin{array}{ccc}
+        a & b & c \\
+        d & e & f \\
+        g & h & i \end{array} \right] \\
+                    </pre>
+                    </div>
+                    </div>
+                </div> 
+
+                <div class="tooltip-wrap">
+                    <div class="mytitle"> 3x3 Matrix With Vertical Bar</div>
+                    \[
+                        A = \left| \begin{array}{ccc}
+                        a & b & c \\
+                        d & e & f \\
+                        g & h & i \end{array} \right|  \\
+                    \]
+                    <div class="tooltip-content">
+                    <div class="tex2jax_ignore">
+                    <pre class="lbox"  onClick="clip(document.getElementById('copy9'));" id="copy9">
+     A = \left| \begin{array}{ccc}
+        a & b & c \\
+        d & e & f \\
+        g & h & i \end{array} \right|  \\
+                    </pre>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="tooltip-wrap">
+                    <div class="mytitle"> Matrix With Vertical Bar [simpler form]</div>
+                    \[
+                        \begin{vmatrix} 
+                        a_1 & a_2 & a_3 \\ 
+                        b_1 & b_2 & b_3 \\ 
+                        c_1 & c_2 & c_3  
+                        \end{vmatrix}
+                    \]
+                    <div class="tooltip-content">
+                    <div class="tex2jax_ignore">
+                    <pre class="lbox"  onClick="clip(document.getElementById('copy99934'));" id="copy99934">
+        \begin{vmatrix} 
+        a_1 & a_2 & a_3 \\ 
+        b_1 & b_2 & b_3 \\ 
+        c_1 & c_2 & c_3  
+        \end{vmatrix}
+                    </pre>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="tooltip-wrap">
+                    <div class="mytitle"> Matrix With Double Vertical Bar</div>
+                    \[
+                        \begin{Vmatrix} 
+                        a_1 & a_2 & a_3 \\ 
+                        b_1 & b_2 & b_3 \\ 
+                        c_1 & c_2 & c_3  
+                        \end{Vmatrix}
+                    \]
+                    <div class="tooltip-content">
+                    <div class="tex2jax_ignore">
+                    <pre class="lbox"  onClick="clip(document.getElementById('copy99933'));" id="copy99933">
+        \begin{Vmatrix} 
+        a_1 & a_2 & a_3 \\ 
+        b_1 & b_2 & b_3 \\ 
+        c_1 & c_2 & c_3  
+        \end{Vmatrix}
+                    </pre>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="tooltip-wrap">
+                    <div class="mytitle">Matrix Without brackets</div>
+                    \[
+                        \begin{matrix} 
+                        a_1 & a_2 & a_3 \\ 
+                        b_1 & b_2 & b_3 \\ 
+                        c_1 & c_2 & c_3  
+                        \end{matrix}
+                    \]
+                    <div class="tooltip-content">
+                    <div class="tex2jax_ignore">
+                    <pre class="lbox"  onClick="clip(document.getElementById('copy99935'));" id="copy99935">
+        \begin{matrix} 
+        a_1 & a_2 & a_3 \\ 
+        b_1 & b_2 & b_3 \\ 
+        c_1 & c_2 & c_3  
+        \end{matrix}
+                    </pre>
+                    </div>
+                    </div>
+                </div>
+
+
 
               <div class="tooltip-wrap">
                     \[
@@ -357,7 +474,6 @@
                         -d & \lambda - e & -f \\
                         -g & -h & \lambda - i \end{array} \right| \\
                     \]
-
                     <div class="tooltip-content">
                     <div class="tex2jax_ignore">
                     <pre class="lbox"  onClick="clip(document.getElementById('copy12'));" id="copy12">
@@ -371,6 +487,7 @@
                 </div>
                     
                <div class="tooltip-wrap">
+                <div class="mytitle">Inner Product with 2D Vector</div>
                     \[
                 \left<  
                     \left[ \begin{array}{cc} 
@@ -385,12 +502,10 @@
                     \end{array} 
                     \right]^{\ast}   
                 \right>
-
                     \]
                     <div class="tooltip-content">
                     <div class="tex2jax_ignore">
                     <pre class="lbox"  onClick="clip(document.getElementById('copy14'));" id="copy14">
-
                 \left<  
                     \left[ \begin{array}{cc} 
                     1 \\
@@ -410,6 +525,7 @@
                 </div>
 
                <div class="tooltip-wrap">
+                <div class="mytitle">3D Vector</div>
                     \[
     v =\left[ \begin{array}{cc} 
     c_1 \\
@@ -433,6 +549,7 @@
                 </div>
 
                <div class="tooltip-wrap">
+                <div class="mytitle">Vector with Dots</div>
                     \[
                         v =\left[ \begin{array}{cc} 
                         c_1 \\
@@ -834,6 +951,7 @@
                 </div>
                 </div>
                 <!-- end tooltip-wrap--> 
+
                 <!-- begin tooltip-wrap-->
                 <div class="tooltip-wrap">
                 \[ \text{Equation} \]
@@ -861,6 +979,7 @@
                 </div>
                 </div>
                 <!-- end tooltip-wrap--> 
+
                 <!-- begin tooltip-wrap-->
                 <div class="tooltip-wrap">
                 \[ \text{Inner Product} \]
@@ -1281,148 +1400,5 @@ $\end{document}$
                 </div>
                 <!-- end tooltip-wrap--> 
 
-
-
-
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-
     </body>
     </html>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
