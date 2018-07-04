@@ -31,117 +31,51 @@
       ga('send', 'pageview');
     </script>
 
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-            <!-- Column 1 start -->
-
-            <div class="mytitle">
-            Command Line Tricks 
-            </div>
-            <div class="mytext">
-            curl download sequence files<br>
-            <span class="cmd">curl http://google-maps-icons.googlecode.com/files/blue0[0-9].png -O "#1.png"</span>
-            </div>
-
-            <div class="mytitle">
-            install package in MacOS 
-            </div>
-            <div class="mytext">
-            <span class="cmd">brew install vim or brew uninstall vim</span>
-            </div>
-
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
+        <div class="mytitle">
+        Run tmux commands from shell script 
         </div>
-    </div>
+        <pre class="prettyprint">
+        # 1. create new-sessin and name it "latexmk"
+        # 2. create new window and name it "latex" and open file with vim
+        tmux new-session -n "latexmk" latexmk -pvc -pdf $1 > /dev/null 2>&1 ';' new-window  -n "latex" vim $1
+        </pre>
 
+        <div class="mytitle">
+        Redirect stdin=Fid 0, stdout=Fid 1, stderr=Fid 2 to file
+        </div>
+        <pre class="prettyprint">
+        &2 >1  # redirect stderr to stdout
+        &2> file # redirect stderr and stdout to file
+        > /dev/null 1>&2  # redirect stdout to nothing(discard), and redirect out to stderr
+        #e.g.
+        ls -la > /dev/null
+        ls -la non-existing-file > /dev/null
+        ls -la non-existing-file > /dev/null 2>&1
+        </pre>
+
+        <div class="mytitle">
+        curl download sequence files
+        </div>
+        <pre class="prettyprint">
+        curl http://google-maps-icons.googlecode.com/files/blue0[0-9].png -O "#1.png"
+        </pre>
+
+        <div class="mytitle">
+        Install package in MacOS 
+        </div>
+        <pre class="prettyprint">
+        brew install vim or brew uninstall vim
+        </pre>
+
+
+        <div class="mytitle">
+        Latex, latexmk and Skim refresh latex in real time 
+        </div>
+        <pre class="prettyprint">
+        " Use latexmk and Skim to run realtime fresh latex
+        latexmk -pvc -pdf mythesis.tex  (command line)
+        !open -a /Applications/Skim.app/Contents/MacOS/Skim %:p:r.pdf
+        </pre>
 
     </body>
     </html>
