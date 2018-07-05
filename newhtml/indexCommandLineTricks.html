@@ -67,7 +67,6 @@
         brew install vim or brew uninstall vim
         </pre>
 
-
         <div class="mytitle">
         Latex, latexmk and Skim refresh latex in real time 
         </div>
@@ -77,55 +76,18 @@
         !open -a /Applications/Skim.app/Contents/MacOS/Skim %:p:r.pdf
         </pre>
 
+        <div class="mytitle">
+        Generate public/private key with ssh-keygen 
+        </div>
+        <pre class="prettyprint">
+        ssh-keygen -C noname    // avoid your email or host name inside the public key
+        // you might need to ssh-add ~/.ssh/your_private_key to to shs-agent in MacOS,
+        // You might spend many hours on figuring out what is wrong with your public/private key
+        // on MacOS.e.g. In Github, you might not authenticate your private key
+        // because you didnot ssh-add your private key to ssh-agent[you need another passphrase]
+        </pre>
+
     </body>
     </html>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

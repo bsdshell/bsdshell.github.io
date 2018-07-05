@@ -38,6 +38,29 @@
 	<div class="colleft">
 		<div class="col1">
 			<!-- Column 1 start -->
+            <div class="mytitle">
+            Haskell class and instance
+            </div>
+            <pre>
+            Haskell class and instance are very similar to template/generic, interface in Java/C++
+            1. Create interface with generic
+            2. Implement it with concrete type
+            </pre>
+            <pre>
+            class Test a where
+                tme::a -> a -> Bool 
+
+            data Dump = Dump{int::Int, str::String} 
+
+            instance Test Dump where
+                tme d1 d2 = int d1 == int d2 
+            
+            -- test it
+            let d1 = Dump{int=3, str="dog"}
+            let d2 = Dump{int=3, str="dog"}
+            print $ tme d1 d2   -- True
+            </pre>
+
             <div class="mytitle">Functor in Haskell</div>
             <div class="cen">
                 <img src="../image/functor1.png" width="40%" height="40%" />
@@ -282,6 +305,22 @@
             x >> y = x >>= const y         [const is here to save you] 
             x >> y = x >>= \_ -> y         [lambda! Ok, it does make sense] 
             x >> y = (. const) . (>>=)     [that doesn't make sense for me at least]
+            </pre>
+            <div class="mytitle">let binder inside the map</div>
+            <pre class="mycode">
+            // let .. in .. => let something then return something
+            let list = [1..10]
+            map(\x -> let square = x*x in square `mod` 3 == 0) list
+
+            -- let binding in Haskell
+            -- ax^2 + bx + c = 0
+            -- Find the root of the quadratic equation
+            roots a b c =
+                    let discriminant= sqrt(b^2 - 4*a*c)
+                    in ( (-b + discriminant)/(2*a), (-b - discriminant)/(2*a))
+
+            main =  do 
+                    print (roots 3 9 1)
             </pre>
 
 
