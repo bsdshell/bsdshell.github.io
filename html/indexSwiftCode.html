@@ -37,6 +37,11 @@
         🐼 SKNode and SKAction, put action in sequence  
         </div>
         <pre class="prettyprint">
+        // Run actions in sequence or in parallel, we have SKAction.sequence(..) and SKAction.group(..)
+        // After node.run(..), the action run on different thread instead of main thread so it is async.
+        // How can we make it run in the main thread, not sure..?
+        // completion{..} will be called after all the actions finish.
+
         let act1 = SKAction.move(...)
         let act2 = SKAction.move(...)
         let sequence = SKAction.sequence([act1, act2], ...)

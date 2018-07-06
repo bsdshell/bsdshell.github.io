@@ -19,7 +19,7 @@ a:active {color:yellow;}
 */
 
 li{
-    background: #f3f3f3;
+    /*background: #f3f3f3;*/
     list-style-type: none;
     padding: 1px;
     color: #0000;

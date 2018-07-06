@@ -203,20 +203,19 @@
                     $       to the end non-bank character of the line
                     g_      to the last non-bank character of the line  
                    </pre>
-                    <div class="mytitle">
-                    Vim Leader, mapleader, LocalLeader, maplocalleader<br>
-                    </div>
-                    <div class="mytext">
-                    <span class="wbold">You want to be a Leader</span><br>
-                    :nnoremap &#60;Buffer&#62;&#60;Leader&#62;s <span class="cmd">:%s/dog/cat/g</span> &#60;Esc&#62; <br>
-                    Leader is special string that you can use to map character to shortcut key<br> 
-                    The default mapping is '\' character<br><br>
-                    When you type \s the shortcut will trigger <span class="cmd">:%s/dog/cat/g</span> <br>
+                    
+                   <div class="mytitle">You need to be a leader, mapleader, localLeader maplocalleader</div>
+                   <pre class="textbox">
+                    :nnoremap &#60;Buffer&#62;&#60;Leader&#62;s <span class="cmd">:%s/dog/cat/g</span> &#60;Esc&#62; 
+                    Leader is special string that you can use to map character to shortcut key<br>
+                    The default mapping is '\' character
+                    When you type \s the shortcut will trigger <span class="cmd">:%s/dog/cat/g</span>
                     If you want to change the default mapping to different character, then you can type<br>
-                    :let mapleader="," which will map ,s instead of \s and it can trigger <span class="cmd">:%s/dog/cat/g</span> <br><br>
-                    LocalLeader is similar to Leader but it is to be used for mapping which are local to a buffer<br> 
-                    :map &#60;buffer&#62;&#60;LocalLeader&#62;A <span class="cmd">:%s/dog/cat/g</span> &#60;Esc&#62;<br>
-                   </div>
+                    :let mapleader="," which will map ,s instead of \s and it can trigger <span class="cmd">:%s/dog/cat/g</span><br>
+                    LocalLeader is similar to Leader but it is to be used for mapping which are local to a buffer 
+                    :map &#60;buffer&#62;&#60;LocalLeader&#62;A <span class="cmd">:%s/dog/cat/g</span> &#60;Esc&#62;
+                   </pre>
+
                     <div class="mytitle">
                     How to use command History in Vim<i class="em em-anchor"></i><br>
                     </div>
