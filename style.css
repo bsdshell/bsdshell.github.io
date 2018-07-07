@@ -208,6 +208,12 @@ pre.mycode{
     font-family: "Courier New", monospace;
 }
 
+pre.bigcode{
+    /*white-space: pre-line;*/
+    font-family: "Courier New", monospace;
+    font-size:30px;
+}
+
 pre.cc{
     white-space: pre;
     font-family: "Courier New", monospace;
@@ -260,7 +266,7 @@ pre.cc{
     padding-left: 40px;
     font-family: 'Courier New', Courier, Fixed;
     line-height: 20px;
-    padding: 4px 4px 4px 4px;
+    /*padding: 4px 4px 4px 4px;*/
     border-radius: 3px;
     display: block;
     font-style: normal;
@@ -389,6 +395,20 @@ pre.cc{
     color: rgb(10, 10, 10);
     background: rgba(197, 133, 9, 0.62);
 }
+
+.bigsyntax{
+    margin:auto;
+    width:100%;
+    color: hotpink;
+    font-size: 30px;
+    /*text-align:center;*/
+    font-weight: 600;
+    background: #FFf;
+    font-weight: 500;
+    color: rgb(10, 10, 10);
+}
+
+
 
 .cmdoutbox{
     background: rgba(7, 10, 10, 0.66);

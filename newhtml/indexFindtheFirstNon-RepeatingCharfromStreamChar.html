@@ -40,6 +40,9 @@
             Find the first non-repeating character from a stream characters 
             </div>
             <div class="mytext">
+            We need to understand the question first, then try to find the solution from the words in the sentence.<br>
+            'first' $\Rightarrow$ Linklist is the good data structure to be thinking.<br>
+            'non-repeating' $\Rightarrow$ HashMap is something on top of your head.<br><br>
             <span class="wbold">Apply LinkedList and HashMap</span><br>
             Use <span class="wbold">LinkedList</span> to keep track of the first non-repeating character<br>
             Use <span class="wbold">HashMap</span> to identify the repeating character<br>
@@ -51,17 +54,17 @@
             6. Return the first Node from the LinkedList if the LinkedList has at least one node.<br>
             7. Otherwise there is no non-repeating character<br><br>
 
-            Given a stream: [a, b, b]<br> 
-            Read first char: 'a'<br> 
-            Check the HashMap whether it contains 'a'<br>
-            NO, insert 'a' to HashMap and append a Node contains 'a' to the LinkedList<br>
-            Read second char: 'b'<br>
-            Check the HashMap whether it contains 'b'<br>
-            NO, insert 'b' to HashMap and append a Node contains 'b' to the LinkedList<br>
-            Read third char: 'b'<br>
-            Check the HashMap whether it contains 'b'<br> 
-            YES, get the reference to the Node contains 'b' in the LinkedList, remove the Node from the LinkedList<br>
-            Update the value to be null with key equals 'b' in HashMap<br><br>
+            0. Given a stream: [a, b, b, ...]<br> 
+            1. Read first char: 'a'<br> 
+            2. Check the HashMap whether it contains 'a'<br>
+            3. NO, insert 'a' to HashMap and append a Node contains 'a' to the LinkedList<br>
+            4. Read second char: 'b'<br>
+            5. Check the HashMap whether it contains 'b'<br>
+            6. NO, insert 'b' to HashMap and append a Node contains 'b' to the LinkedList<br>
+            7. Read third char: 'b'<br>
+            8. Check the HashMap whether it contains 'b'<br> 
+            9. YES, get the reference to the Node contains 'b' in the LinkedList, remove the Node from the LinkedList<br>
+            10. Update the value to be null with key equals 'b' in HashMap<br><br>
 
             <span class="wbold">Note:</span> This is similar question for <span class="wbold">LRU</span>[Least Recent Used] Cache<br>
             Use <span class="wbold">LinkedList</span> and <span class="wbold">HashMap</span>, but the Node has to contain key so that Node can be deleted from the HashMap when the Cache is full<br>
