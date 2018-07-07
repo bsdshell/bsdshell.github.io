@@ -62,10 +62,15 @@ var closePara:(Int)->(Int)={
 fun(num:10, closure:closePara)
 </pre><br>
 
-<div class="bigsyntax">Tailing closure in Swift</div>
+<div class="bigsyntax">Tailing Closure Syntax in Swift</div>
+<div class="bigsyntax">Closure is the last parameter to the function</div>
 <pre class="bigcode">
-var closure:()->String{
-    return "hi"
+func tailClosure(num:Int, closure:()->()){
+    print("Hello")
+    closure()
+}
+tailClosure(num:3){
+    print("World")
 }
 </pre><br>
 
