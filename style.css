@@ -94,6 +94,13 @@ a {
      color: #ffa310;
 }
 
+.keyw{
+     font-size: 30px;
+     //color: rgb(179, 150, 36);
+     color: #10140f;
+     text-shadow: 2px 2px #827db4;
+}
+
 .microlight {
     font-family : monospace;
     white-space : pre;
