@@ -30,25 +30,26 @@
   ga('send', 'pageview');
 </script>
 <div class="myclass">
-<div class="bigsyntax">Closure has no parameter</div>
+<div class="bigsyntax">Closure has no parameter, no return type</div>
 <pre class="bigcode">
-var closure:()->String{
-    return "hi"
+var closureEmpty:()->() = {
+    print("no parameter, no return")
 }
+print(closureEmpty())
+</pre><br>
+<div class="bigsyntax">Alternative to do the same thing</div>
+<pre class="bigcode">
+var closeEmpty1:()->Void={
+    print("no parameter, no return")
+}
+closeEmpty1()
 </pre><br>
  
-<div class="bigsyntax">Cloesure has parameter</div>
+<div class="bigsyntax">Cloesure has no parameter, but return type</div>
 <pre class="bigcode">
 var clousre:()->String{
     return "hi"
 }
-</pre><br>
-<div class="bigsyntax">Closure has no return type</div>
-<pre class="bigcode">
-var closeNoReturn:()->Void={
-    print("No return")
-}
-closeNoReturn()
 </pre><br>
 
 <div class="bigsyntax">Pass closure as parameter in Swift</div>
@@ -62,15 +63,15 @@ var closePara:(Int)->(Int)={
 fun(num:10, closure:closePara)
 </pre><br>
 
-<div class="bigsyntax">Tailing Closure Syntax in Swift</div>
-<div class="bigsyntax">Closure is the last parameter to the function</div>
+<div class="bigsyntax">Trailing Closure Syntax in Swift</div>
+<div class="bigsyntax">It means Closure is the last parameter to the function</div>
 <pre class="bigcode">
 func tailClosure(num:Int, closure:()->()){
     print("Hello")
     closure()
 }
 tailClosure(num:3){
-    print("World")
+    print("Closure Block code")
 }
 </pre><br>
 

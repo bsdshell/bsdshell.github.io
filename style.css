@@ -211,7 +211,10 @@ pre.mycode{
 pre.bigcode{
     /*white-space: pre-line;*/
     font-family: "Courier New", monospace;
-    font-size:30px;
+    font-size:27px;
+    background: #f3d49f33;
+    color: #060901;
+    padding-left: 4px;
 }
 
 pre.cc{
@@ -405,7 +408,7 @@ pre.cc{
     font-weight: 600;
     background: #FFf;
     font-weight: 500;
-    color: rgb(10, 10, 10);
+    color: rgb(207, 44, 171);
 }
 
 
@@ -493,3 +496,4 @@ pre.cc{
 	height: 20px;
 	background: pink;
 }
+
