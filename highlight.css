@@ -18,9 +18,11 @@ pre{
     margin-right:0px;
     font-weight:500;
 }
-pre.prettyprint.prettyprinted {
-    border: 0px;
-}
 
+pre.prettyprint.prettyprinted {
+    /*! border: 0px; */
+    font-size: 30px;
+    background: #fffcf1;
+}
 
 
