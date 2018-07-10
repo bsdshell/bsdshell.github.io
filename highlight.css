@@ -25,4 +25,13 @@ pre.prettyprint.prettyprinted {
     background: #fffcf1;
 }
 
+pre.prettyprint.prettylatex {
+    /*! border: 0px; */
+    font-size: 20px;
+    background: #fffcf1;
+    text-align:left;
+    margin: 0px 1px;
+}
+
+
 
