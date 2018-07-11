@@ -32,113 +32,65 @@
       ga('create', 'UA-66282017-2', 'auto');
       ga('send', 'pageview');
     </script>
-            <div class="mytitle">
-            Shell Script loop 
-            </div>
-            <pre class="">
-            for i in *; do
-                echo $i
-            done
+<div class="myclass">
+    <div class="mytitle">
+    Shell Script loop 
+    </div>
+    <pre class="prettyprint">
+    for i in *; do
+        echo $i
+    done
 
-            for i in *; do echo $i ; done
+    for i in *; do echo $i ; done
 
-            # copy all file name with pattern debug to $w/zsurface/image
-            for i in $(ls | grep html | awk '{print $1}'); do cp $w/zsurface/image; done
+    # copy all file name with pattern debug to $w/zsurface/image
+    for i in $(ls | grep html | awk '{print $1}'); do cp $w/zsurface/image; done
 
-            # print file name in ls -lah
-            awk '{print $9}'
-            </pre>
+    # print file name in ls -lah
+    awk '{print $9}'
+    </pre>
+    <div class="mytitle">
+    gsed, sed replace text in many files
+    </div>
+    <pre class="prettyprint">
+    # replace oldstring with newstring for all html file and backup all the files with suffix _backup
+    gsed -i_backup 's/oldstring/newstring/' *.html  
+    </pre>
 
-            <div class="mytitle">
-            gsed, sed replace text in many files
-            </div>
-            <pre class="">
-            # replace oldstring with newstring for all html file and backup all the files with suffix _backup
-            gsed -i_backup 's/oldstring/newstring/' *.html  
-            </pre>
+    <div class="mytitle">
+    Compare Number in Fish Shell
+    </div>
+    <pre class="prettyprint">
+    if math "$SHLVL == 1"
+        read -p 'echo "Exit? (y/n):"' -l confirm
+        if [ $confirm = "y" ]
+            exit
+        end
+    else if math "$SHLVL > 1"
+        exit
+    end    
+    </pre>
 
-            <div class="mytitle">
-            Compare Number in Fish Shell
-            </div>
-            <pre class="">
-            if math "$SHLVL == 1"
-                read -p 'echo "Exit? (y/n):"' -l confirm
-                if [ $confirm = "y" ]
-                    exit
-                end
-            else if math "$SHLVL > 1"
-                exit
-            end    
-            </pre>
+    <div class="mytitle">
+    Customize Prompt in Fish Shell 
+    </div>
+    <pre class="prettyprint">
+    function fish_prompt
+        set_color green 
+        echo -n (pwd)"[$SHLVL]"'>'
+    end
+    </pre>
 
-            <div class="mytitle">
-            Customize Prompt in Fish Shell 
-            </div>
-            <pre class="">
-            function fish_prompt
-                set_color green 
-                echo -n (pwd)"[$SHLVL]"'>'
-            end
-            </pre>
-
-            <div class="mytitle">
-            Compare String in Fish Shell
-            </div>
-            <pre class="">
-            if [ $confirm = "y" ]
-                exit
-            end
-            </pre>
+    <div class="mytitle">
+    Compare String in Fish Shell
+    </div>
+    <pre class="prettyprint">
+    if [ $confirm = "y" ]
+        exit
+    end
+    </pre>
+    </div>
 
     </body>
     </html>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

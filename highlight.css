@@ -21,9 +21,10 @@ pre{
 
 pre.prettyprint.prettyprinted {
     /*! border: 0px; */
-    font-size: 30px;
+    font-size: 20px;
     background: #fffcf1;
 }
+
 
 pre.prettyprint.prettylatex {
     /*! border: 0px; */
