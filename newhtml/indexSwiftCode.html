@@ -141,7 +141,15 @@
         1. Swift use init method instead of contructor, I think the reason behind that is Objective-C using init() 
            But I can not come up any reason why Swift can not get rid of init()
 
-        2. Coming soon 
+        2. Closure CAN NOT modify inout(reference in C++) e.g.
+           func myfun(num:inout Int){ 
+                some closure...
+                completion:{
+                    num = 3    // get error, you need to pass by value instead of reference
+                }
+           }
+
+        3. Coming soon 
         </pre>
 
         <div class="mytitle">
