@@ -35,10 +35,28 @@
   ga('send', 'pageview');
 </script>
 
-<div class="colmask rightmenu">
-	<div class="colleft">
-		<div class="col1">
-			<!-- Column 1 start -->
+            <div class="myclass">
+            <div class="mytitle">
+            Split String in Haskell 
+            </div>
+            <pre class="prettyprint">
+            break(\x -> isDigit x == False) "123dog"
+            -- ("123", "dog")
+
+            break(\x -> isSpace x) "123  dog"
+            -- ("123", " dog")
+
+            filter(\x -> isDigit x) "123dog" 
+            -- "123" 
+
+            let reg = mkRegex "[[:space:]]+"
+            splitRegex r "Agentina Switzerland Sweden"
+            -- ["Agentia", "Switzerland", "Sweden"]
+
+            -- split string at a particular position 
+            splitAt 3 "Agentina" -- ["Age", "ntina"]
+            </pre>
+
             <div class="mytitle">
             Haskell class and instance
             </div>
@@ -1164,145 +1182,8 @@
 <span class="nf">t5</span> <span class="ow">=</span> <span class="n">mymatch</span><span class="p">(</span><span class="n">mkRegex</span> <span class="s">&quot;man([0-9])&quot;</span><span class="p">)</span> <span class="p">(</span><span class="nf">\</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="ow">-&gt;</span><span class="s">&quot;woman&quot;</span> <span class="o">++</span> <span class="n">n</span><span class="p">)</span> <span class="s">&quot;/cat/man3/dog.txt&quot;</span>
 <span class="c1">-- &quot;/cat/woman3/dog.txt&quot;</span>
 </pre></div>
-
-
-        <!-- Column 1 end -->
-		</div>
-		<div class="col2">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		</div>
-	</div>
 </div>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
