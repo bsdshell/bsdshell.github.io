@@ -31,174 +31,101 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+<div class="mytitle">
+Convert String to digit in C
+</div>
+</div>
+<pre class="prettyprint">
+    #include <stdio.h>
+    #include <stdlib.h>
 
-    <div id="header">
-    </div>
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-                <!-- Column 1 start -->
-                <h3><div class="highlight"><pre>    <span class="c1">//C/C++ initialize array</span>
-    <span class="kt">int</span> <span class="n">array</span><span class="o">[]</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">};</span>
+    // convert string to digits
+    //
+    // gcc -o try1 try1.c   on MacOSX
+    // Fri Jul 13 00:14:39 PDT 2018
+    //  
+    // 
+    int main () {
+       char str[30] = "2030300 This 444 is test";
+       char *ptr;
+       long ret;
 
-    <span class="c1">// now pointer pt points to array</span>
-    <span class="kt">int</span><span class="o">*</span> <span class="n">pt</span> <span class="o">=</span> <span class="n">array</span><span class="o">;</span> 
+       ret = strtol(str, &ptr, 10);
+       printf("The number(unsigned long integer) is %ld\n", ret);
+       printf("String part is [%s]", ptr);
 
-    <span class="c1">// print out the array</span>
-    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
-    <span class="o">{</span>
-        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;[&quot;</span><span class="o">&lt;&lt;</span><span class="n">i</span><span class="o">&lt;&lt;</span><span class="s">&quot;]=&quot;</span><span class="o">&lt;&lt;</span><span class="n">pt</span><span class="o">[</span><span class="n">i</span><span class="o">]&lt;&lt;</span><span class="n">endl</span><span class="o">;</span>
-    <span class="o">}</span>
+       return(0);
+    }
 
-    <span class="c1">// print out using the pointer</span>
-    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
-    <span class="o">{</span>
-        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;[&quot;</span><span class="o">&lt;&lt;</span><span class="n">i</span><span class="o">&lt;&lt;</span><span class="s">&quot;]=&quot;</span><span class="o">&lt;&lt;*(</span><span class="n">pt</span><span class="o">+</span><span class="n">i</span><span class="o">)&lt;&lt;</span><span class="n">endl</span><span class="o">;</span>
-    <span class="o">}</span>
+    //C/C++ initialize array
+    int array[] = {1, 2, 3};
 
-    <span class="c1">// dynamically allocate memory in C</span>
-    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
-    <span class="kt">int</span><span class="o">*</span> <span class="n">pt1</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">*)</span><span class="n">malloc</span><span class="o">(</span><span class="n">sizeof</span><span class="o">(</span><span class="kt">int</span><span class="o">)*</span><span class="n">size</span><span class="o">);</span>
+    // now pointer pt points to array
+    int* pt = array; 
 
-    <span class="c1">// dellocate memory in C</span>
-    <span class="n">free</span><span class="o">(</span><span class="n">pt1</span><span class="o">);</span>
+    // print out the array
+    for(int i=0; i&lt;3; i++)
+    {
+        cout&lt;&lt;"["&lt;&lt;i&lt;&lt;"]="&lt;&lt;pt[i]&lt;&lt;endl;
+    }
 
-    <span class="c1">// dynamically allocate memory in C++</span>
-    <span class="kt">int</span> <span class="o">*</span><span class="n">pt2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">];</span>
+    // print out using the pointer
+    for(int i=0; i&lt;3; i++)
+    {
+        cout&lt;&lt;"["&lt;&lt;i&lt;&lt;"]="&lt;&lt;*(pt+i)&lt;&lt;endl;
+    }
 
-    <span class="c1">// dellocate memory in C++</span>
-    <span class="n">delete</span> <span class="n">pt2</span><span class="o">;</span>
+    // dynamically allocate memory in C
+    int size = 3;
+    int* pt1 = (int*)malloc(sizeof(int)*size);
 
-    <span class="c1">// allocate two dimension array in C</span>
-    <span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
-    <span class="kt">int</span><span class="o">**</span> <span class="n">ppt</span><span class="o">;</span>
+    // dellocate memory in C
+    free(pt1);
+
+    // dynamically allocate memory in C++
+    int *pt2 = new int[3];
+
+    // dellocate memory in C++
+    delete pt2;
+
+    // allocate two dimension array in C
+    int col = 4;
+    int row = 3;
+    int** ppt;
     
-    <span class="c1">// this is trick part</span>
-    <span class="n">ppt</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">**)</span><span class="n">malloc</span><span class="o">(</span><span class="n">sizeof</span><span class="o">(</span><span class="kt">int</span><span class="o">*)*</span><span class="n">col</span><span class="o">);</span>
-    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">col</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span>
-    <span class="o">{</span>
-        <span class="n">ppt</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">*)</span><span class="n">malloc</span><span class="o">(</span><span class="n">sizeof</span><span class="o">(</span><span class="kt">int</span><span class="o">)*</span><span class="n">row</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">col</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
-    <span class="o">{</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">row</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span>
-        <span class="o">{</span>
-            <span class="n">ppt</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">c</span><span class="o">++;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">col</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
-    <span class="o">{</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">row</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span>
-        <span class="o">{</span>
-            <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;[&quot;</span><span class="o">&lt;&lt;</span><span class="n">i</span><span class="o">&lt;&lt;</span><span class="s">&quot;]=&quot;</span><span class="o">&lt;&lt;</span><span class="n">ppt</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]&lt;&lt;</span><span class="s">&quot; &quot;</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">col</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span>
-    <span class="o">{</span>
-        <span class="n">free</span><span class="o">(</span><span class="n">ppt</span><span class="o">[</span><span class="n">j</span><span class="o">]);</span>
-    <span class="o">}</span>
-</pre></div>
-</h3>
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-
-
-    </body>
-    </html>
+    // this is trick part
+    ppt = (int**)malloc(sizeof(int*)*col);
+    for(int j=0; j&lt;col; j++)
+    {
+        ppt[j] = (int*)malloc(sizeof(int)*row);
+    }
+
+    int c = 0;
+    for(int i=0; i &lt; col; i++)
+    {
+        for(int j=0; j &lt; row; j++)
+        {
+            ppt[i][j] = c++;
+        }
+    }
+
+    for(int i=0; i &lt; col; i++)
+    {
+        for(int j=0; j &lt; row; j++)
+        {
+            cout&lt;&lt;"["&lt;&lt;i&lt;&lt;"]="&lt;&lt;ppt[i][j]&lt;&lt;" ";
+        }
+        cout&lt;&lt;endl;
+    }
+
+    for(int j=0; j &lt; col; j++)
+    {
+        free(ppt[j]);
+    }
+</pre>
+
+</body>
+</html>
     
 
 

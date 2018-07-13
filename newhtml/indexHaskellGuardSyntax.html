@@ -37,9 +37,16 @@
         </div>
         <pre class="prettyprint">
         checkDigit s 
-                    | s == '0' = True
-                    | s == '1' = True
-                    | otherwise = False
+                 | s == '0' = True
+                 | s == '1' = True
+                 | s == '2' = True
+                 | otherwise = False
+
+        --Guards in Haskell
+        myGuards x 
+                | x < 0 = -1
+                | x > 0 = 1
+                | otherwise = 0
         </pre>
 </div>
 
