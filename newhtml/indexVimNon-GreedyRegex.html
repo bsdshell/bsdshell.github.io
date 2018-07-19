@@ -33,6 +33,7 @@
 
 
 <div class="myclass">
+
 <div class="mytitle">Non greedy match in Vim Regex</div>
 <pre class="prettyprint bigfont">
 :%/<.\{-}>
@@ -41,7 +42,32 @@
 " %    => match the WHOLE file in current buffer
 " \{-} => non-greedy match, match as less as possible 
 " match html from open-angle-bracket to close-angle-bracket 
-" e.g.  match &lt;div class="myclass">
+" e.g. => match "&lt;div id=cat>"
+</pre>
+
+
+<div class="mytitle">Alternative to accomplish the same thing </div>
+<pre class="prettyprint bigfont">
+:%/<[^>]*>
+</pre>
+<pre class="prettyprint">
+" %    => match the WHOLE file in current buffer
+" [^>] => [ ] is Character classes, ^ => NOT match  
+" *    => zero or more 
+" e.g. match &lt;div class="myclass">
+" Note: => it will match "<>" too
+</pre>
+
+<div class="mytitle">Can we do better? Yes</div>
+<pre class="prettyprint bigfont">
+:%/<[^>]\+>
+</pre>
+<pre class="prettyprint">
+" %    => match the WHOLE file in current buffer
+" [^>] => [ ] is Character classes, ^ => NOT match  
+" \+   => one or more 
+" e.g. match &lt;div class="myclass">
+" Note: => it will NOT match "<>" since "<>" is not a valid HTML tag
 </pre>
 
 
