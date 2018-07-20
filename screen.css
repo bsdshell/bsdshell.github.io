@@ -43,6 +43,10 @@ h1, h2, h3 {
     /*padding:2px;*/
 }
 
+#big{
+    font-size:30px;
+}
+
 .myclass{
     width: 80%;
     margin: auto;
@@ -52,3 +56,14 @@ h1, h2, h3 {
     width: 50%;
     margin: auto;
 }
+
+p::first-letter {
+  font-weight: bold;
+  color: red;
+  font-size:40px;
+}
+
+p.art{
+    font-size:20px;
+}
+
