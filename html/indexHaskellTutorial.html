@@ -34,6 +34,19 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+        
+            <div class="mytitle">
+            Find all prime number in Haskell
+            </div>
+            <pre class="prettyprint">
+            prime = sieve[2..]
+                    where sieve(p:xs) = p:sieve[ x | x <- xs, mod x p /= 0] 
+
+            -- sieve[2, 3, 4, 5, 6]
+            --    2:sieve([3, 5]) 
+            --        2:3:sieve([5])
+            --            2:3:5:sieve([])
+            </pre> 
 
             <div class="myclass">
             <div class="mytitle">
