@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Shell Script</title>
+        <title>Array in Shell Script</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
         <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -33,6 +33,29 @@
       ga('send', 'pageview');
     </script>
 <div class="myclass">
+
+    <div class="mytitle">
+    Array in Shell Script 
+    </div>
+    <p class="art">
+    Shell script is powerful if you could remember all the weird syntax. Here is the example to show how to use Array in Shell script.
+    Note: readarray only works in Bash 4.x, check your version: bash --version
+    </p>
+    <pre class="prettyprint">
+    string='Paris, France, Europe';
+    echo $string
+    readarray -td, array <<<"$string"; declare -p array;
+    ## declare -a array=([0]="Paris" [1]=" France" [2]=$' Europe\n')
+
+    country='Paris/Frence/Europe/Sweden/Croatia';
+    echo $country
+    readarray -td/ array <<<"$country"; declare -p array;
+    for item in "${array[@]}" 
+    do
+        echo "$item" 
+    done
+    </pre>
+
     <div class="mytitle">
     Shell Script loop 
     </div>
