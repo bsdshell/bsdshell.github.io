@@ -32,23 +32,26 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+<div class="myclass">
     <div class="mytitle">
     Html page is not refreshing on Github
     </div>
-    <pre class="prettyprint">
-    I host my static html content on Github. Recently, I push my updated html files to Github
-    but I can not see any new content.
+    <p class="art">
+    I host my currnet site on Github. Recently, I push my updated html files to Github,
+    but I can not see any new update. I struggled more than an hour to figure out what causes the issue.
+    Apparently, my site stop building when I push the code. The error does tell me there is symbol link 
+    issue on one of the html file.
 
     Here is the problem:
-    I have a symbol link in my html folder and I deleted the file but not the symbol link.
+    I have found a dead symbol link in my html folder. Once I delete the dead symbol link, the problem goes away.
 
     I went to my repos(which hosts my html files, e.g. xxx.github.io) and click on Setting
     I found some errors in the Setting, here is the nice screenshot.
-    </pre>
-    <br>
+    </p>
     <div class="cen">
     <img src="../image/githuberror.png" width="40%" height="40%" /><br>
     </div>
+</div>
 
 </body>
 </html>
