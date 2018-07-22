@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
 <head>
-    <title>$title</title>
+    <title>Vim Tips, Add file to register in Ex mode</title>
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
     <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
     <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -30,8 +30,21 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+
 <div class="myclass">
-add content here
+<div class="mytitle">Add file path to register in Ex mode</div>
+<pre class="prettyprint bigfont">
+:let @a=expand("%:p")
+</pre> 
+<pre class="prettyprint">
+:              => Ex mode
+let            => declare a variable
+@a             => register 'a'
+let @a         => Set register 'a' to whatever you like, e.g. let @a="Croatia"
+expand({expr}) => Expand {expr} - it can be different form, e.g. "%:p" current file
+Note :ls       => list the content of all registers, ofcuz @a too
+</pre> 
 </div>
+
 </body>
 </html>
