@@ -30,8 +30,34 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+
 <div class="myclass">
-add content here
+<div class="mytitle">
+How to Set or Get Environment in Ex mode in Vim
 </div>
+<p class="art">
+It is quite often that you need to pass data from to Vim to shell[e.g. bash] or vice versa. There is simple way to do in Ex mode. Here are the commands that make your life easier.
+</p>
+<pre class="prettyprint bigfont">
+:let $pp=expand('%:p')
+:let var=$PATH
+</pre> 
+<pre class="prettyprint">
+:             => Ex mode in Vim, nothing fancy
+let           => Set the internal variable to the result of right handside
+$             => It indicates the 'Environment' variable
+expand('%:p') => It is just an expression
+
+let var       => Set the vim variable to the result of $PATH 
+
+How to use $pp in shell? e.g.
+:sh  => drop into your shell
+>find ./ -iname $pp -print
+
+Note: $pp is only available in your current session.
+</pre> 
+
+</div>
+
 </body>
 </html>
