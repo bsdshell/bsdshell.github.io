@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
 <head>
-    <title>$title</title>
+    <title>Insert newline in Ex mode in Vim</title>
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
     <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
     <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -30,8 +30,27 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+
 <div class="myclass">
-add content here
+
+<div class="mytitle">
+How to insert newline in Ex mode in Vim
 </div>
+<pre class="prettyprint bigfont">
+:iab ii \[  &lt;CR>  \] 
+</pre> 
+<pre class="prettyprint">
+Create abbreviation 'ii' in Insert mode, &lt;CR> will be inserted as newline
+:       => Ex mode in Vim, nothing out of ordinary
+iab     => abbreviation for insert mode
+ii      => abbreviation name, e.g. type 'ii' in Insert mode, you will get \[ \n \]
+\[      => open bracket in math mode in Latex
+&lt;CR> => newline
+\]      => close bracket in math mode in Latex
+
+</pre> 
+
+</div>
+
 </body>
 </html>
