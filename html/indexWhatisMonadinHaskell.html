@@ -47,23 +47,72 @@ Monad can be understood in three steps:
 \]
 </p>
 
-<div class="cen">
 <p class="art">
-What is Group?
-</p>
-</div>
+What is Group?<br>
+Here is the informal definition of Group:<br>
+Given a set $S$, all the elements are closed under a binary operation denoted as $\otimes$ and  
+the binary operation $\otimes$ is associative. Each elements has its own inverse and there is identity in the set $S$.
 
-<div class="cen">
+\begin{align*}
+    \text{Let }a, b, c &\in S \\
+    (a \otimes b) \otimes c                   &= a (\otimes b \otimes c) \tag{1} \\
+    \exists I, I \otimes a                    &= a \otimes I = a          \tag{2} \\
+    \exists a' \in S, a \otimes a' &= a' \otimes a = I \tag{3} \\
+\end{align*}
+<h3>Concret example</h3>
+Given a $S = \{0, 1, 2, \dots \}$ and let $a = 1,  b = 2, c = 3, \quad I = 0, a' = -1, \quad \otimes = +$
+\begin{align*}
+    (1 + 2) + 3  &= 1 + (2 + 3) \quad &\text{ satisfy } (1) \\
+    0 + 1        &= 1 + 0 = 1 \quad &\text{ satisfy } (2)  \\
+    -1 + 1       &= 1 + (-1) = 0 \quad &\text{ satisfy } (3)  \\
+\end{align*}
+
+</p>
+
 <p class="art">
 What is Monoid?
 </p>
-</div>
-
-<div class="cen">
 <p class="art">
-How can we use Monoid definition to understand Monad?
+Monoid is a group without the third condition (3)
+\begin{align*}
+    \text{Let }a, b, c &\in S \\
+    (a \otimes b) \otimes c                   &= a (\otimes b \otimes c) \tag{1} \\
+    \exists I, I \otimes a                    &= a \otimes I = a          \tag{2} \\
+\end{align*}
+<h3>Concret example: List concatenation</h3>
+\[ \text{let } \otimes = ++, I = []\]
+                                                <pre>
+                                                Given a = [a], b = [e, f], c = [h, i] 
+                                                a ++ b ++ c = [a, e, f, h, i]
+                                                a ++ (b ++ c) = [a] ++ [e, f, h, i] = [a, e, f, h, i] 
+                                                => a ++ b ++ c = a ++ (b ++ c)      (1)
+
+                                                [] ++ [a] = [a] ++ [] = [a]         (2)
+                                                </pre>
 </p>
-</div>
+
+<p class="art">
+How can we use Monoid definition to understand Monad?<br>
+<h3>we need to clarify the definition of Category</h3>
+Categories is defined as following: <br>
+1. Objects - it likes integer in $\mathbf{N}$ <br>
+2. Arrows -  it likes function that we are already known <br> 
+3. There is Arrow between any two Objects. <br>
+4. Each Object has Arrow to its self. (like identity function)<br><br>
+
+Concrete example: <br>
+Vector Space $\mathscr{V}$ with a set of linear maps $\mathscr{L}$ is a Category<br>
+1. Objects - vectors in $\vec{V}$ <br>
+2. Arrows - matrices in $\mathscr{L}$ <br>
+3. Each pair of vectors, we can find a matrix such as $A \vec{u} = \vec{v}$<br>
+4. Each vector, we can find an identity matrix to transform the vector to its self. $A \vec{I} = \vec{I} A = A$ <br><br>
+
+<h3>What is Functor</h3>
+In abstract algebra, if two groups are homomorphic, then two group need to satisfy the following conditions: <br>   
+
+ 
+
+</p>
 
 
 </div>
