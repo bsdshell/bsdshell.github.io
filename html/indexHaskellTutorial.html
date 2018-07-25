@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
 <head>
-	<title>Surface, Curve, Algorithm, Geometry, Algebra</title>
+	<title>What is Moand?</title>
 	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
 	<meta name="description" content="Haskell Snippet" />
 	<meta name="keywords" content="Haskell example, Haskell Hello World, Haskell Binding, Haskell Typeclass, Foldable" />
@@ -34,7 +34,42 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+
         
+            <div class="myclass">
+            
+            <div class="mytitle">
+            What is Monad in Haskell  
+            </div>
+            <p class="art">
+            Monad is very simple definition. It is nothing more complicated than Ring $\mathbf{I}$, Field $\mathbf{R}$
+            Group $\mathbf{G}$ or Monoid $\mathbf{M}$.  
+            If you google it, you will find hundreds of thousands of posts about Monad. Many people just threw out endofunctor, 
+            nature transformation, morphism, category to category etc. You will get more confusing if you read more posts online. <br>
+
+            Instead of explaining what is Monad directly, we can just use our known knowledge and twist a bit. <br><br>
+            </p>
+            <h3>Let us review the definition of Group. </h3>
+            Group is just a binary operation over a set of elements, e.g. <br>
+            binary operation: + <br>
+            set of elements: $S = \{0, 1, 2, \dots \}$ <br>
+            associativity: $(2 + 3) + 4 = 2 + (3 + 4) $ <br>
+            identity: $0 + 2 = 2 + 0 $ <br>
+            inverse: $2 + (-2) = 0 $<br><br>
+            <h3>What is Monoid?</h3>
+            Monoid is same as Group without inverse, e.g. <br>
+            $(+, \{0, 1, 2, \dots \})$ <br><br>
+            
+            String concatenation: <br>
+            $"" + "dog" = "dog" + ""$ <br>
+            $"dog" + "cat" + "cow" = "dog" + ("cat" + "cow") = "dogcatcow"$<br><br>
+
+            <h3>What is Monad?</h3>
+            Monad is just like a Monoid. <br>
+            The binary operation is functor composition(it is just function composition in Haskell) <br>
+            The set of elements is the element in Category.<br>
+
+            </div>
             <div class="myclass">
             <div class="mytitle">
             Find all prime number in Haskell
@@ -48,6 +83,7 @@
             --        2:3:sieve([5])
             --            2:3:5:sieve([])
             </pre> 
+            </div>
             </div>
 
             <div class="myclass">
