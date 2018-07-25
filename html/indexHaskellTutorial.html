@@ -46,7 +46,6 @@
             Group $\mathbf{G}$ or Monoid $\mathbf{M}$.  
             If you google it, you will find hundreds of thousands of posts about Monad. Many people just threw out endofunctor, 
             nature transformation, morphism, category to category etc. You will get more confusing if you read more posts online. <br>
-
             Instead of explaining what is Monad directly, we can just use our known knowledge and twist a bit. <br><br>
             </p>
             <h3>Let us review the definition of Group. </h3>
@@ -59,15 +58,15 @@
             <h3>What is Monoid?</h3>
             Monoid is same as Group without inverse, e.g. <br>
             $(+, \{0, 1, 2, \dots \})$ <br><br>
-            
+
             String concatenation: <br>
             $"" + "dog" = "dog" + ""$ <br>
             $"dog" + "cat" + "cow" = "dog" + ("cat" + "cow") = "dogcatcow"$<br><br>
 
             <h3>What is Monad?</h3>
             Monad is just like a Monoid. <br>
-            The binary operation is functor composition(it is just function composition in Haskell) <br>
-            The set of elements is the element in Category.<br>
+            The binary operation is functor composition(join in Haskell) <br>
+            The identity is just return in Haskell<br>
 
             </div>
             <div class="myclass">
