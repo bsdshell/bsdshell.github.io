@@ -98,26 +98,27 @@ Categories is defined as following: <br>
 1. Objects - it likes integer in $\mathbf{N}$ <br>
 2. Arrows -  it likes function that we are already known <br> 
 3. There is Arrow between any two Objects. <br>
-4. Each Object has Arrow to its self. (like identity function)<br><br>
+4. Each Object has Arrow to its self. (like identity function)<br>
+5. The composition of Arrows are associative<br> <br> 
 
 Concrete example: <br>
 Vector Space $\mathscr{V}$ with a set of linear maps $\mathscr{L}$ is a Category<br>
 1. Objects - vectors in $\vec{V}$ <br>
 2. Arrows - matrices in $\mathscr{L}$ <br>
 3. Each pair of vectors, we can find a matrix such as $A \vec{u} = \vec{v}$<br>
-4. Each vector, we can find an identity matrix to transform the vector to its self. $A \vec{I} = \vec{I} A = A$ <br><br>
-
+4. Each vector, we can find an identity matrix to transform the vector to its self. $A \vec{I} = \vec{I} A = A$ <br>
+5. Matrix composition(multiplicaiton) is associative<br> <br> 
 
 
 <h3>What is Functor</h3>
 In abstract algebra, if two groups are homomorphic, then two group need to satisfy the following conditions: <br>   
 Given two groups: 
 \begin{align*} 
-&(G, \oplus), (H, \otimes) \text{ and } g, h \in G 
+&(G, \oplus), (H, \otimes) \text{ and } g_1, g_2 \in G 
 &\text{ If there exists } \phi: G \rightarrow H, \text{ such as } \\ 
-    &\phi(g \oplus h) = \phi(g) \otimes \phi(h)  \tag{1} \\
+    &\phi(g_1 \oplus g_2) = \phi(g_1) \otimes \phi(g_2)  \tag{1} \\
     &\phi(1_g) = 1_h \tag{2} \\
-    &\text{ then } \phi \text{ is homomorphism of } G \text{ and } H  \\
+    &\text{ then } \phi \text{ is the homomorphism from } G \text{ to } H  \\
 \end{align*}
 
 The homomorphism $\phi$ is like mapping addition $f$ to multiplicaiton $g$ <br>  
@@ -126,14 +127,22 @@ Example: Given two groups  $G(+, \Re), H(\times, \Re)$ and function $\phi(x) = e
     \text{Let } x, y &\in \Re  \\        
     \phi(x + y) &= e^{x + y} \\
     \phi(x) \times \phi(y) &= e^x \times \phi(y) = e^{x + y} \\
-    \implies \phi(x + y) &= \phi(x) \times \phi(y) \\
-    \phi(0) &= e^0 = 1 \\
+    \implies \phi(x + y) &= \phi(x) \times \phi(y) 
 \end{align*}
  
 
 Functor is like homomorphism in Groups, but it is defined in Category <br> 
-and the two conditions are almost identical from (1) and (2) <br> 
-Given two Categories $C$ and $G$
+and the two conditions are almost identical from (1) and (2) <br> <br> 
+Given two Categories $C$ and $D$,  $X \in Obj(C), Y \in Obj(D)$ <br> 
+A Functor $F: C \rightarrow D$ is defined as following: <br> 
+For each object $X \in C$, there is associatived object $F(X) \in D$ <br>
+For each map $f \in C$, there is associatived map $F(f) \in D$ <br> 
+
+<strong>Two conditions are similar to Group Homomorphism</strong><br> 
+$F(id_c) = id_d(F)$, it is like left and right identity of matrix multiplicaiton <br> 
+If $f \in C(X, Y), g \in D(Z, Y)$, then $F (f \circ g) = F(f) \circ F(g) \in D$ <br> <br>  
+
+What is Monad finally<br>
 
 
 
