@@ -138,13 +138,18 @@ A Functor $F: C \rightarrow D$ is defined as following: <br>
 For each object $X \in C$, there is associatived object $F(X) \in D$ <br>
 For each map $f \in C$, there is associatived map $F(f) \in D$ <br> 
 
-<strong>Two conditions are similar to Group Homomorphism</strong><br> 
+<strong>The two conditions are similar to Group Homomorphism</strong><br> 
 $F(id_c) = id_d(F)$, it is like left and right identity of matrix multiplicaiton <br> 
 If $f \in C(X, Y), g \in D(Z, Y)$, then $F (f \circ g) = F(f) \circ F(g) \in D$ <br> <br>  
 
-What is Monad finally<br>
-
-
+What is Monad?<br>
+If you understand (+ $\Re$) is <strong>Group<strong>, then Monad is just a Monoid and the elements are functors. <br>
+Monad is analogic to (+ $\Re$), Monoid has two axioms: (1) (2) from definition. <br>
+$T$ is functor. (many people use 'endofunctor' - which is $F : C \rightarrow C$, the domain and image are the same category) 
+\begin{align*}
+    \mu : T \times T \rightarrow T \\
+    \eta : I  \rightarrow T
+\end{align*}
 
 </p>
 
