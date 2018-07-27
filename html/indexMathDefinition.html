@@ -176,13 +176,29 @@
 
 
                 \[\textbf{Group homomorphism(operation preserving)}\]
-                Given group $(G1, +)$ and $(G2, *)$,for all $a_1, a_2 \in G1$ and $b_1, b_2 \in G2$,<br>
-                if $\phi(a_1 + a_2) = \phi(b_1)*\phi(b_2)$, then $\phi$ is group homomorphism<br>
-                Given $G(\mathbb{R}, +)$ and $(\mathbb{R}, *)$, then $\phi(x) = e^x$ is homomorphism<br><br>
-                Let $a_1, b_1 \in \mathbb{R}$ and $a_2, b_2 \in \mathbb{R}$ <br>
-                $\phi(a_1+b_1) = e^{a_1 + b_1}$ and $\phi(a_2)*\phi(b_2) = e^{a_2}*e^{b_2} = e^{a_2+b_2}$<br>
-                $\Rightarrow \phi(a_1 + b_1) = \phi(a_2)*\phi(b_2)$<br>
-                $\Rightarrow \phi(x) = e^{x}$ is homomorphism for $G(\mathbb{R}, +)$ and $G(\mathbb{R}, *)$<br>
+                Given group $(G, \oplus)$ and $(H, \otimes)$,for all $a, b \in G$<br>
+                If there is function $\phi : G \rightarrow H$ <br>
+                If $\phi(a \oplus b) = \phi(a) \otimes \phi(b)$, then $\phi$ is group homomorphism from $(G, \oplus)$ to $(H, \otimes)$<br><br>
+                <strong>Concreate example</strong><br>
+                Given $G(\mathbb{R}, +)$ and $H(\mathbb{R}, *)$, then $\phi(x) = e^x$ is homomorphism from $G(\mathbb{R}, +)$ to $H(\mathbb{R}, *)$<br>
+                \begin{align*}
+                \forall &a, b \in \mathbb{R} \\
+                \phi(a + b) &= e^{a + b}  \\
+                \phi(a)*\phi(b) &= e^{a}*e^{b} = e^{a+b} \\
+                \Rightarrow \phi(a_1 + b_1) &= \phi(a_2)*\phi(b_2) \\
+                \Rightarrow \phi(x) &= e^{x} \text{ is homomorphism from } G(\mathbb{R}, +) \text{ and } H(\mathbb{R}, *) \\
+                \end{align*}
+                Note:
+                $\phi$ will map the identity of $G$ to identity of $H$ automatically, and we can derive it, Why Not?<br>
+                \begin{align*}
+                &\forall a, b \in \mathbb{R} \\
+                &\text{Let a = 0, b = 0} \\
+                &\phi(0 + 0) = e^{0 + 0} = 1 \\
+                &\phi(0)*\phi(0) = e^{0}*e^{0} = 1*1 = 1 \\
+                &\Rightarrow \phi(0_G) = 1_H \\
+                &\Rightarrow \phi \text{ map the identity } 0_G \in G \text{ to the identity} 1_H \in H  \quad \square
+                \end{align*}
+
 
             </div>
             <br>

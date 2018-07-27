@@ -54,10 +54,10 @@ Given a set $S$, all the elements are closed under a binary operation denoted as
 the binary operation $\otimes$ is associative. Each elements has its own inverse and there is identity in the set $S$.
 
 \begin{align*}
-    \text{Let }a, b, c &\in S \\
-    (a \otimes b) \otimes c                   &= a (\otimes b \otimes c) \tag{1} \\
-    \exists I, I \otimes a                    &= a \otimes I = a          \tag{2} \\
-    \exists a' \in S, a \otimes a' &= a' \otimes a = I \tag{3} \\
+    \forall a, b, c &\in S \\
+    (a \otimes b) \otimes c                   &= a (\otimes b \otimes c) &\quad \text{Associative}\tag{1} \\
+    \exists I, I \otimes a                    &= a \otimes I = a         &\quad \text{Identity} \tag{2} \\
+    \exists a' \in S, a \otimes a' &= a' \otimes a = I                   &\quad \text{Inverse}  \tag{3} \\
 \end{align*}
 <h3>Concret example</h3>
 Given a $S = \{0, 1, 2, \dots \}$ and let $a = 1,  b = 2, c = 3, \quad I = 0, a' = -1, \quad \otimes = +$
@@ -69,27 +69,34 @@ Given a $S = \{0, 1, 2, \dots \}$ and let $a = 1,  b = 2, c = 3, \quad I = 0, a'
 
 </p>
 
+
+
+
 <p class="art">
-What is Monoid?
+What is Monoid? <br>
+Monoid is a group without the third condition (3), it means each element does not need to have inverse in Monoid.
 </p>
-<p class="art">
-Monoid is a group without the third condition (3)
 \begin{align*}
-    \text{Let }a, b, c &\in S \\
+    \forall a, b, c &\in S \\
     (a \otimes b) \otimes c                   &= a (\otimes b \otimes c) \tag{1} \\
     \exists I, I \otimes a                    &= a \otimes I = a          \tag{2} \\
 \end{align*}
-<h3>Concret example: List concatenation</h3>
-\[ \text{let } \otimes = ++, I = []\]
-                                                <pre>
-                                                Given a = [a], b = [e, f], c = [h, i] 
-                                                a ++ b ++ c = [a, e, f, h, i]
-                                                a ++ (b ++ c) = [a] ++ [e, f, h, i] = [a, e, f, h, i] 
-                                                => a ++ b ++ c = a ++ (b ++ c)      (1)
+<h3>Concret example: List concatenation can be defined as Monoid</h3>
+What are the elements in Monoid?<br>
+If we define $\Sigma = \{a, b, c, \dots , z\}$ all the strings in $\Sigma^{*}$ are elements. <br> <br> 
+What is the operation? <br>  
+The operation can be defined as <strong>string concatenation</strong> or ++ in <strong>Haskell</strong> <br> <br>  
+What is the identity? <br> 
+The <strong>identity</strong> can be defined as empty string, e.g. [] in <strong>Haskell</strong> <br> 
+\begin{align*} 
+    \otimes &= \text{ ++ }, I = [] \\
+    \text{ Given }a &= [a], b =[e, f], c = [h, i] \\ 
+    a \text{ ++ } b \text{ ++ } c     &= [a, e, f, h, i] \\ 
+    a \text{ ++ } (b \text{ ++ } c)   &= [a] \text{ ++ } [e, f, h, i] = [a, e, f, h, i] \\ 
+    => a \text{ ++ } b \text{ ++ } c  &= a \text{ ++ } (b \text{ ++ } c)      \text{ Associativity } (1) \\ 
+    [] \text{ ++ } [a]       &= [a] \text{ ++ } []           = [a]         \text{ Identity } (2) \\ 
+\end{align*}
 
-                                                [] ++ [a] = [a] ++ [] = [a]         (2)
-                                                </pre>
-</p>
 
 <p class="art">
 How can we use Monoid definition to understand Monad?<br>
@@ -118,10 +125,11 @@ Given two groups:
 &\text{ If there exists } \phi: G \rightarrow H, \text{ such as } \\ 
     &\phi(g_1 \oplus g_2) = \phi(g_1) \otimes \phi(g_2)  \tag{1} \\
     &\phi(1_g) = 1_h \tag{2} \\
-    &\text{ then } \phi \text{ is the homomorphism from } G \text{ to } H  \\
+    &\text{ then } \phi \text{ is the homomorphism from } (G, \oplus) \text{ to } (H, \otimes)  \\
+    &\text{Or } (G, \oplus) \text{ and } (H, \otimes) \text{ are homomorphic}
 \end{align*}
 
-The homomorphism $\phi$ is like mapping addition $f$ to multiplicaiton $g$ <br>  
+The homomorphism $\phi$ is like a map $F$: mapping $(f = \oplus)$ to multiplicaiton $(g = \otimes)$ <br>  
 Example: Given two groups  $G(+, \Re), H(\times, \Re)$ and function $\phi(x) = e^x$, it is easy to show $\phi$ is homomorphism of from $G$ to $H$
 \begin{align*} 
     \text{Let } x, y &\in \Re  \\        
@@ -130,6 +138,20 @@ Example: Given two groups  $G(+, \Re), H(\times, \Re)$ and function $\phi(x) = e
     \implies \phi(x + y) &= \phi(x) \times \phi(y) 
 \end{align*}
  
+<strong>Identical Morphism</strong><br>
+For every object $X \in \mathcal{C}$, there is identity morphism $1_X : X \rightarrow X$ by definition of Category. It satisfies:
+\begin{align*}
+    1_x \circ f = f, \text{ for all objects } Y \in \mathcal{C} \text{ and morphism } f:Y \rightarrow X \\
+    f \circ 1_x = f, \text{ for all Objects } X \in \mathcal{C} \text{ and morphism } f:X \rightarrow Y
+\end{align*}
+
+<strong>Identical Functor</strong><br>
+There is functor $I_C : \mathcal{C} \rightarrow \mathcal{C}$ with properties: <br>
+\begin{align*}
+    I_C(X) &= X, \forall X \in \mathcal{C} \\
+    I_C(f) &= f, \text{ for every pair of } X, Y \in \mathcal{C} \text{ and morphism } f: X \rightarrow Y
+\end{align*}
+
 
 Functor is like homomorphism in Groups, but it is defined in Category <br> 
 and the two conditions are almost identical from (1) and (2) <br> <br> 
@@ -142,14 +164,24 @@ For each map $f \in C$, there is associatived map $F(f) \in D$ <br>
 $F(id_c) = id_d(F)$, it is like left and right identity of matrix multiplicaiton <br> 
 If $f \in C(X, Y), g \in D(Z, Y)$, then $F (f \circ g) = F(f) \circ F(g) \in D$ <br> <br>  
 
-What is Monad?<br>
-If you understand (+ $\Re$) is <strong>Group<strong>, then Monad is just a Monoid and the elements are functors. <br>
+Build on top of the definitions above, we can define what is <strong>Monad</strong><br>
+If you understand (+ $\Re$) is a <strong>Group</strong>, then Monad is just a Monoid and the elements are functors. <br>
 Monad is analogic to (+ $\Re$), Monoid has two axioms: (1) (2) from definition. <br>
-$T$ is functor. (many people use 'endofunctor' - which is $F : C \rightarrow C$, the domain and image are the same category) 
+$T$ is functor or some nerds call it endofunctor<br> 
+endofunctor - $F : \mathcal{C} \rightarrow \mathcal{C}$, the domain and image are the same <strong>Category</strong>
 \begin{align*}
-    \mu : T \times T \rightarrow T \\
-    \eta : I  \rightarrow T
+     \mu &: T \times T \rightarrow T \\
+    \eta &: I  \rightarrow T
 \end{align*}
+There is some interested fact about the two <strong>nature transformation</strong> <br> 
+e.g. commutative diagram: <br>
+\begin{align*}
+    T \circ \mu &: T^3 \rightarrow T^2  \\
+    T \circ T \circ \mu &: T^3 \rightarrow T^2 \rightarrow T \\
+    \mu \circ T &: T^3 \rightarrow T^2  \\
+    T \circ \mu \circ T &: T^3 \rightarrow T^2 \rightarrow T \\
+\end{align*}
+
 
 </p>
 

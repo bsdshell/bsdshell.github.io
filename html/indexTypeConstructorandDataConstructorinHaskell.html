@@ -30,8 +30,47 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+
+
 <div class="myclass">
-add content here
+
+<div class="mytitle">
+Type Constructor and Data Constructor in Haskell
 </div>
+<pre class="prettyprint">
+data Color = Red | Green | Blue 
+</pre> 
+<pre class="prettyprint">
+The data Constructor is Red, Green, Blue
+:t Red => Red::Color    = function with return type Color
+:t Green => Green::Color = function with return type Color
+:t Color => Error, Color has no type
+:kind Color => Color::*  -- Color is a kind 
+</pre> 
+
+<div class="mytitle">
+Type Constructor and Data Constructor in Haskell
+</div>
+<pre class="prettyprint">
+data Color = RGB Int Int Int
+</pre> 
+<pre class="prettyprint">
+RGB is data Constructor
+RGB is a function RGB::Int->Int->Int
+:kind Color - Color is kind
+</pre> 
+
+<div class="mytitle">
+Type Constructor
+</div>
+<pre class="prettyprint bigfont">
+data Color a = Red a | Green a
+</pre> 
+<pre class="prettyprint">
+Color is type Constructor
+</pre> 
+
+</div>
+
 </body>
 </html>
