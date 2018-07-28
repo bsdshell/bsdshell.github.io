@@ -57,3 +57,12 @@ pre.prettyprint.mfont {
     text-align:left;
     margin: 0px 1px;
 }
+
+pre.prettyprint.myfont {
+    /*! border: 0px; */
+    font-size: 20px;
+    font-size: 3.0vw;
+    background: #fffcf1;
+    text-align:left;
+    margin: 1px 1px;
+}

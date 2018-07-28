@@ -31,11 +31,21 @@
   ga('send', 'pageview');
 </script>
 <div class="myclass">
+
 <div class="mytitle">
-add content here
+Compile Haskell file to binary file
 </div>
-<pre class="prettyprint">
+<pre class="prettyprint myfont">
+ghc -O2 mycode.hs && time ./t > /dev/null
 </pre> 
+
+<div class="mytitle">
+Compile Haskell file to different directory 
+</div>
+<pre class="prettyprint myfont">
+ghc -O2 mycode.hs -o /myfile/mycode 
+</pre> 
+
 </div>
 </body>
 </html>
