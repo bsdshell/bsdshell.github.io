@@ -67,3 +67,11 @@ p.art{
     font-size:20px;
 }
 
+.wrap{
+    width:1200px;
+}
+.blocks {
+    display: inline-block;
+    border: solid 1px red;
+}
+
