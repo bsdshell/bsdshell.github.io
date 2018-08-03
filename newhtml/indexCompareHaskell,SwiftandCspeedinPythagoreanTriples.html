@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+    <title>$title</title>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
+    <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../highlight.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+          });
+    </script>
+    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+</head>
+<body>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66282017-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<div class="myclass">
+    <div class="mytitle">
+    Compare the speed of Haskell, Swift and C
+    </div>
+    <p class="art">Different programming languages has different strength and weakness. Haskell, Swift and C are popular programming languages out there. We want to compare the speed of three languages. Many low level APIs are written in C for Haskell and Swift. It is obvious that C is the fastest one, but we want to know how much faster it compares to Haskell and Swift.
+   C is the fastest program language out there if you don't count assembly language, but we do love Haskell and Swift too since Haskell is elegant and Swift is useful in iOS dev. I will try to compare the speed of three languages and see how they stack up against each other.
+We are going to find all <strong>Pythagorean Tripple</strong> such as 
+\[
+    S = \{ (a, b, c) \mid a^2 + b^2 = c^2, \text{ where } 1 \leq a, b, c \leq 1000 \} \\
+\]
+<p class="art">
+Conclusion: C language is still the King of speed in this case. Obviously there are many ways to optimize all the codes and the result will vary.
+However, all the code below are pretty standard.
+</p>
+
+    </p>
+    <div class="mytitle">
+    Haskell Code 
+    </div>
+    <pre class="prettyprint">
+    -- ghc -O2 t.hs && time ./t >/dev/null
+    -- time_taken 0m4.183s
+    --
+    let s = [1..1000]::[Int]
+    let p = [(a, b, c) | a <- s, b <- s, c <- s, a^2 + b^2 == c^2]
+    </pre> 
+
+    <div class="mytitle">
+    Swift Code 
+    </div>
+    <pre class="prettyprint">
+    // swiftc pythagorean_tripple.swift  
+    // time_taken=11.289597
+    // 
+    // swiftc -O -whole-module-optimization pythagorean_tripple.swift  
+    // time_taken=1.317325
+
+    let num = 1001 
+    for a in 1..&lt;num{
+        for b in 1..&lt;num{
+            for c in 1..&lt;num{
+                if a*a + b*b == c*c{
+                    print("\(a), \(b), \(c)")
+                }
+            }
+        }
+    }
+    </pre> 
+
+    <div class="mytitle">
+    C Code 
+    </div>
+    <pre class="prettyprint">
+    // gcc -o pythagorean_tripple pythagorean_tripple.c
+    // time_taken=2.561056
+    int num = 1000;
+    for(int a = 0; a <= num; a++){
+        for(int b = 0; b <= num; b++){
+            for(int c = 0; c <= num; b++){
+                printf("(%d, %d, %d) \n", a, b, c);
+            }
+        }
+    }
+    </pre>
+    <div class="cen">
+    <img src="../image/speed.png" width="40%" height="40%" /><br>
+    </div>
+</div>
+
+</body>
+</html>
+

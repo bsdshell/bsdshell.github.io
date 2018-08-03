@@ -1,0 +1,94 @@
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+    <head>
+        <title>Command Line Tricks</title>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
+        <meta name="robots" content="index, follow" />
+        <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../highlight.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/x-mathjax-config">
+              MathJax.Hub.Config({
+                extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+                jax: ["input/TeX","output/HTML-CSS"],
+                tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
+              });
+        </script>
+        <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+    </head>
+    <body>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-66282017-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+        <div class="mytitle">
+        Run tmux commands from shell script 
+        </div>
+        <pre class="prettyprint">
+        # 1. create new-sessin and name it "latexmk"
+        # 2. create new window and name it "latex" and open file with vim
+        tmux new-session -n "latexmk" latexmk -pvc -pdf $1 > /dev/null 2>&1 ';' new-window  -n "latex" vim $1
+        </pre>
+
+        <div class="mytitle">
+        Redirect stdin=Fid 0, stdout=Fid 1, stderr=Fid 2 to file
+        </div>
+        <pre class="prettyprint">
+        &2 >1  # redirect stderr to stdout
+        &2> file # redirect stderr and stdout to file
+        > /dev/null 1>&2  # redirect stdout to nothing(discard), and redirect out to stderr
+        #e.g.
+        ls -la > /dev/null
+        ls -la non-existing-file > /dev/null
+        ls -la non-existing-file > /dev/null 2>&1
+        </pre>
+
+        <div class="mytitle">
+        curl download sequence files
+        </div>
+        <pre class="prettyprint">
+        curl http://google-maps-icons.googlecode.com/files/blue0[0-9].png -O "#1.png"
+        </pre>
+
+        <div class="mytitle">
+        Install package in MacOS 
+        </div>
+        <pre class="prettyprint">
+        brew install vim or brew uninstall vim
+        </pre>
+
+        <div class="mytitle">
+        Latex, latexmk and Skim refresh latex in real time 
+        </div>
+        <pre class="prettyprint">
+        " Use latexmk and Skim to run realtime fresh latex
+        latexmk -pvc -pdf mythesis.tex  (command line)
+        !open -a /Applications/Skim.app/Contents/MacOS/Skim %:p:r.pdf
+        </pre>
+
+        <div class="mytitle">
+        Generate public/private key with ssh-keygen 
+        </div>
+        <pre class="prettyprint">
+        ssh-keygen -C noname    // avoid your email or host name inside the public key
+        // you might need to ssh-add ~/.ssh/your_private_key to to ssh-agent in MacOS,
+        // You might spend many hours on figuring out what is wrong with your public/private key
+        // on MacOS.e.g. In Github, you might not authenticate your private key
+        // because you didnot ssh-add your private key to ssh-agent[you need another passphrase]
+        </pre>
+
+    </body>
+    </html>
+
+
