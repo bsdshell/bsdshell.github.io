@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
 <head>
-    <title>What is concatMap in Haskell</title>
+    <title>What is foldr and foldl in Haskell, foldr and foldl example</title>
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
     <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
     <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -30,36 +30,56 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+
 <div class="myclass">
 <div class="mytitle">
-What is concatMap in Haskell
+Understand <span id="red">foldr</span> and <span id="red">foldl</span> with examples.
 </div>
 <pre class="prettyprint">
-The signature of Haskell function is confusing and initimite, lets see an example
-If you see the signature of foldr with Java/C++ background, you would say WTF.
+1. foldr(-) 4 [1, 2, 3]
 
-foldr::(a -> b -> b) -> b -> [a] -> b
-foldr(++) "kk" ["dog", "cat"] // here is how to use foldr 
+2. it is equavalent to following:
+   foldr(\x -> x - 4) [1, 2, 3] 
 
-1. (a -> b -> b) is function with two arguments, e.g. ++:("dog" "kk") -> "dogkk"
-2. b is the second argument,                     e.g. b = "kk"
-3. [a] is the third argument,                    e.g. ["dog", "cat"]
-4. last b is the output,                         e.g. "dotcatkk"
+3. fold[r] => [r] => right => it means "The list is folded from RIGHT side"
 
-The signature of concatMap, WTF?
-concatMap::(a -> [b]) -> [a] -> [b]
-concatMap f = foldr((++) . f)) []    // it seems to me concapMap is only for String
-Note: the implementaton of concapMap is not exactly like that in Haskell, but close
+4. The order of x and 4 are important.
+   (x - 4) it NOT equal (4 - x) 
 
-concatMap(map(toUpper)) ["dog", "cat"] => "DOGCAT"
+5. Remember "The list is folded from RIGHT side"
+   foldr(\x -> x - 4) [1, 2, 3] 
+   = (1 - (2 - (3 - 4)))  -- x = 3 
+   = (1 - (2 - (-1)))     -- x = 2 
+   = (1 - 3)              -- x = 1
+   = -2
 
-=>foldr((++) . map(toUpper)) [] ["dog", "cat"]
-=>foldr((++)) [] [map(toUpper) "dog", map(toUpper) "cat"]
-=>foldr((++)) [] ["DOG", "CAT"]
-=> "DOG" ++ ("CAT" ++ [])
-=> "DOGCAT"
+7. Please confirm inside your GHCi
+----------------------------------------------------------------------------
+1. foldl(-) 4 [1, 2, 3]
+
+2. it is equavalent to following: 
+   foldl(\x -> 4 - x) 4 [1, 2, 3]
+
+3. Remember "The list is folded from LEFT side"
+   foldl(\x -> 4 - x) 4 [1, 2, 3]
+   = (((1 - 4) - 2) - 3) -- x = 1
+   = ((-3 - 2) - 3)      -- x = 2
+   = ((-5) - 3)          -- x = 3
+   = -8
+
+4. Please confirm inside your GHCi
 
 </pre> 
 </div>
+<div class="mytitle">
+Picture is worth of a thousand words 
+</div>
+<div class="cen">
+            <img src="../image/fold2.svg" width="50%" height="50%" /><br> 
+            </div>
+
+
+
 </body>
 </html>
+

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
 <head>
-    <title>$title</title>
+    <title>What is foldr and foldl in Haskell, foldr and foldl example</title>
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
     <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
     <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -30,12 +30,55 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+
 <div class="myclass">
 <div class="mytitle">
-add content here
+Understand <span id="red">foldr</span> and <span id="red">foldl</span> with examples.
 </div>
 <pre class="prettyprint">
+1. foldr(-) 4 [1, 2, 3]
+
+2. it is equavalent to following:
+   foldr(\x -> x - 4) [1, 2, 3] 
+
+3. fold[r] => [r] => right => it means "The list is folded from RIGHT side"
+
+4. The order of x and 4 are important.
+   (x - 4) it NOT equal (4 - x) 
+
+5. Remember "The list is folded from RIGHT side"
+   foldr(\x -> x - 4) [1, 2, 3] 
+   = (1 - (2 - (3 - 4)))  -- x = 3 
+   = (1 - (2 - (-1)))     -- x = 2 
+   = (1 - 3)              -- x = 1
+   = -2
+
+7. Please confirm inside your GHCi
+----------------------------------------------------------------------------
+1. foldl(-) 4 [1, 2, 3]
+
+2. it is equavalent to following: 
+   foldl(\x -> 4 - x) 4 [1, 2, 3]
+
+3. Remember "The list is folded from LEFT side"
+   foldl(\x -> 4 - x) 4 [1, 2, 3]
+   = (((1 - 4) - 2) - 3) -- x = 1
+   = ((-3 - 2) - 3)      -- x = 2
+   = ((-5) - 3)          -- x = 3
+   = -8
+
+4. Please confirm inside your GHCi
+
 </pre> 
 </div>
+<div class="mytitle">
+Picture is worth of a thousand words 
+</div>
+<div class="cen">
+            <img src="../image/fold2.svg" width="50%" height="50%" /><br> 
+            </div>
+
+
+
 </body>
 </html>
