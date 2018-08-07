@@ -30,12 +30,25 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+
 <div class="myclass">
 <div class="mytitle">
-add content here
+How Haskell call C function
 </div>
 <pre class="prettyprint">
+-- Here is simple code for FFI
+--
+import Foreign
+import Foreign.C.Types
+
+foreign import ccall unsafe "math.h sin"
+     c_sin :: CDouble -> CDouble
+
+main = do 
+        let c = c_sin 3.1415 
+        print c
 </pre> 
 </div>
+
 </body>
 </html>
