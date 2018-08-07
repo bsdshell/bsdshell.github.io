@@ -399,9 +399,77 @@
                 \[ \text{Properties of Inner product}\]
                 \[ \langle \mathbf{v_1} \,, \lambda \mathbf{v_2} \rangle =  \overline{\langle \lambda\mathbf{v_2} \,, \mathbf{v_1} \rangle} =  
                     \overline{\lambda} \overline{\langle \mathbf{v_2} \,, \mathbf{v_1} \rangle} = \overline{\lambda} \langle \mathbf{v_1} \,, \mathbf{v_2} \rangle 
-                \]
-                
+                \] 
+                <br>
 
+                \[ \textbf{Outer Product} \]
+                The outer product $\vec{u} \oplus \vec{v}$ is equivalent to $u v^{T}$, for instance 
+                \[ 
+                    u \otimes v = 
+                    u v^{T} =
+                    \left[ \begin{array}{c}
+                    u_1 \\
+                    u_2 \\
+                    u_3 
+                    \end{array} \right] 
+                    \left[ \begin{array}{cccc}
+                    v_1 & v_2 & v_3 & v_4
+                    \end{array} \right] =
+                    \begin{bmatrix}
+                    u_0 v_1 & u_0 v_2  & u_0 v_3 & u_0 v_4 \\
+                    u_2 v_1 & u_2 v_2  & u_2 v_3 & u_2 v_4 \\
+                    u_3 v_1 & u_3 v_2  & u_3 v_3 & u_3 v_4 \\
+                    \end{bmatrix}
+                \]
+                \[ \textbf{Matrix Multiplication definited as Outer Product} \]
+                \[
+                    \begin{bmatrix}
+                    a_{11} & a_{12} \\
+                    a_{21} & a_{22} \\
+                    \end{bmatrix} 
+                    \begin{bmatrix}
+                    b_{11} & b_{12} \\
+                    b_{21} & b_{22} \\
+                    \end{bmatrix} = 
+
+                    \begin{bmatrix}
+                    a_{11} \\
+                    a_{21} 
+                    \end{bmatrix} \otimes
+                    \begin{bmatrix}
+                    b_{11} \\
+                    b_{12}
+                    \end{bmatrix} 
+                    +
+                    \begin{bmatrix}
+                    a_{12} \\
+                    a_{22} 
+                    \end{bmatrix} \otimes
+                    \begin{bmatrix}
+                    b_{21} \\
+                    b_{22}
+                    \end{bmatrix} 
+                    =
+                    \begin{bmatrix}
+                    a_{11} \\
+                    a_{21} 
+                    \end{bmatrix} 
+                    \begin{bmatrix}
+                    b_{11} & b_{12}
+                    \end{bmatrix}
+                    +
+                    \begin{bmatrix}
+                    a_{12} \\
+                    a_{22} 
+                    \end{bmatrix} 
+                    \begin{bmatrix}
+                    b_{21} & b_{22}
+                    \end{bmatrix}
+                \]
+
+                
+                
+                
             </div>
 
             <br>
@@ -432,11 +500,10 @@
                 <div class="cen">
                 <img src="../image/homeomorphism1.png" width="50%" height="50%" /><br> 
                 </div>
-                \[\textbf{Smooth and Differentiable mapping}\]
-                Smooth<br>
+                \[\textbf{Smooth}\]
                 Given $f: U \rightarrow V$ $f$ is continuous in $U$ and  
                 all derivatives of the $f_i$ of any orders exist <br><br>
-                Diffeomorphic <br>
+                \[\textbf{Diffeomorphic}\]
                 1. $f$ is Homeomorphic <br>
                 2. $f$ and $f^{-1}$ both are differentiable in any order.(smooth or $C^{\infty}$)<br><br>
 
