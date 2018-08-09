@@ -23,147 +23,45 @@
     </head>
     <body>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-    <div id="header">
+    <div class="mytitle">
+    Multiply Array Integer  
     </div>
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-                <!-- Column 1 start -->
-                <div class="mytextbox">
-                    <p class="cen">
-                    Multiply Array Integer  
-                    </p>
-                    <div class="cen">
-                    <img src="../image/multiplication1.png" width="40%" height="40%" /><br> 
-                    <img src="../image/multiplication2.png" width="40%" height="40%" /><br> 
-                    <img src="../image/shiftlen.png" width="40%" height="40%" /><br> 
-                    </div>
-                    <div class="highlight"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">multiplynew</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr1</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">arr2</span><span class="o">){</span>
-        <span class="kt">int</span> <span class="n">len1</span> <span class="o">=</span> <span class="n">arr1</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">len2</span> <span class="o">=</span> <span class="n">arr2</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">len1</span> <span class="o">+</span> <span class="n">len2</span><span class="o">;</span>
-        <span class="kt">int</span><span class="o">[][]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">len1</span><span class="o">][</span><span class="n">len1</span><span class="o">+</span><span class="n">len2</span><span class="o">];</span>
-
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">len2</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">--){</span>
-            <span class="kt">int</span> <span class="n">carry</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-            <span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
-            <span class="k">for</span><span class="o">(</span><span class="n">j</span><span class="o">=</span><span class="n">len1</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">--){</span>
-                <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">][(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">)+</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="o">(</span><span class="n">arr1</span><span class="o">[</span><span class="n">j</span><span class="o">]*</span><span class="n">arr2</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="n">carry</span><span class="o">)</span> <span class="o">%</span><span class="mi">10</span><span class="o">;</span>
-                <span class="n">carry</span> <span class="o">=</span> <span class="o">(</span><span class="n">arr1</span><span class="o">[</span><span class="n">j</span><span class="o">]*</span><span class="n">arr2</span><span class="o">[</span><span class="n">i</span><span class="o">]+</span><span class="n">carry</span><span class="o">)</span> <span class="o">/</span> <span class="mi">10</span><span class="o">;</span>
-            <span class="o">}</span>
-            <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">][(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">)+</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">carry</span><span class="o">;</span>
-        <span class="o">}</span>
-
-        <span class="kt">int</span><span class="o">[]</span> <span class="n">total</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">len</span><span class="o">];</span>
-        <span class="kt">int</span> <span class="n">carry</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">len</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">--){</span>
-            <span class="kt">int</span> <span class="n">s</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
-            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len2</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
-                <span class="n">s</span> <span class="o">+=</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">];</span>
-            <span class="o">}</span>
-            <span class="n">total</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="o">(</span><span class="n">s</span> <span class="o">+</span> <span class="n">carry</span><span class="o">)</span> <span class="o">%</span> <span class="mi">10</span><span class="o">;</span>
-            <span class="n">carry</span> <span class="o">=</span> <span class="o">(</span><span class="n">s</span> <span class="o">+</span> <span class="n">carry</span><span class="o">)/</span><span class="mi">10</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">total</span><span class="o">;</span>
-    <span class="o">}</span>
-</pre></div>
- 
-                </div>
-                <div class="cen">
-                <a href="https://github.com/bsdshell/java/tree/master/MultiplyLongInt.java">Source Code</a>
-                </div> 
-
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
+    <pre class="prettyprint">
+    public static int[] multiplynew(int[] arr1, int[] arr2){
+        int len1 = arr1.length;
+        int len2 = arr2.length;
+        int len = len1 + len2;
+        int[][] arr = new int[len1][len1+len2];
+
+        for(int i=len2-1; i >= 0; i--){
+            int carry = 0;
+            int j=0;
+            for(j=len1-1; j >= 0; j--){
+                int shiftLeft = i + 1;
+                arr[i][j + shiftLeft] = (arr1[j]*arr2[i] + carry) %10;
+                carry = (arr1[j]*arr2[i]+carry) / 10;
+            }
+            arr[i][(i+1)+j] = carry;
+        }
+
+        int[] total = new int[len];
+        int carry = 0;
+        for(int j=len-1; j >= 0; j--){
+            int s=0;
+            for(int i=0; i < len2; i++){
+                s += arr[i][j];
+            }
+            total[j] = (s + carry) % 10;
+            carry = (s + carry)/10;
+        }
+        return total;
+    }
+    </pre> 
+    <div class="cen">
+    <img src="../image/multiplication1.png" width="40%" height="40%" /><br> 
+    <img src="../image/multiplication2.png" width="40%" height="40%" /><br> 
+    <img src="../image/shiftlen.png" width="40%" height="40%" /><br> 
     </div>
-
 
     </body>
     </html>
