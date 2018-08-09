@@ -34,16 +34,16 @@
 <div class="mytitle">
 g command and chain normal mode command
 </div>
-<pre class="prettyprint bigfont">
+<pre class="prettyprint mfont">
 :g/\w\+()/exec "norm! J"
 </pre> 
-<pre class="prettyprint">
+<pre class="prettyprint smallfont">
 :g => Global for multiple repeats
 \w\+() => matches pattern, e.g fun_name()
 exec  => execute string as command 
 norm  => normal mode
 norm! => [!] - mapping will not be used 
-J     => move next line to the end of current line 
+J     => CTRL-j, move next line to the end of current line 
 
 The interesting point here is "exec" which CHAINs the normal mode: J
 
