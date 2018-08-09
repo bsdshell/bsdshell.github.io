@@ -41,16 +41,19 @@ f n = take n (repeat ())
 f'::[()] -> Int
 f' = length
 
-let num = f' [(), ()] + f' [()]
-let len = f' ([(), ()] ++ [()]) 
-pp $ num == len
+main = do 
+        print "Isomorphism"
+        let n1 = f' [(), ()] + f' [()]
+        let n2 = f' ([(), ()] ++ [()]) 
+        print $ n1 == n2 
 
-let dd = (f 3) ++ (f 2)
-let ff = f $ 3 + 2
-pp $ dd == ff
+        let dd = (f 3) ++ (f 2)
+        let ff = f $ 3 + 2
+        print $ dd == ff
 
-let bb = (f' . f) 1 
-let cc = (f . f') [()] 
+        let bb = (f' . f) 1 
+        let cc = (f . f')  [()] 
+        print $ dd == ff
 </pre> 
 
 </div>
