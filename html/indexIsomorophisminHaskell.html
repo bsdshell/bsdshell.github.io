@@ -38,20 +38,19 @@ Isomorphsim from string concat to number addition
 f::Int->[()]
 f n = take n (repeat ()) 
 
-revf::[()] -> Int
-revf = length
+f'::[()] -> Int
+f' = length
 
-let num = revf [(), ()] + revf [()]
-let len = revf ([(), ()] ++ [()]) 
+let num = f' [(), ()] + f' [()]
+let len = f' ([(), ()] ++ [()]) 
 pp $ num == len
 
 let dd = (f 3) ++ (f 2)
 let ff = f $ 3 + 2
 pp $ dd == ff
 
-let bb = (revf . f) 1 
-let cc = (f . revf)  [()] 
-
+let bb = (f' . f) 1 
+let cc = (f . f') [()] 
 </pre> 
 
 </div>
