@@ -32,133 +32,38 @@
       ga('send', 'pageview');
     </script>
 
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-            <!-- Column 1 start -->
             <div class="mytitle">
             Java regular expression Match Group<br>
-            </div><br>
-            <div class="highlight"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">SplitExpr</span><span class="o">(</span><span class="n">String</span> <span class="n">exp</span><span class="o">){</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+            </div>
+            <pre class="prettyprint">
+            public static List<String> splitExpr(String exp){
+                List<String> list = new ArrayList<String>();
 
-        <span class="n">StringTokenizer</span> <span class="n">stoken</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringTokenizer</span><span class="o">(</span><span class="n">exp</span><span class="o">,</span> <span class="s">&quot;+-/*&quot;</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
-        <span class="k">while</span><span class="o">(</span><span class="n">stoken</span><span class="o">.</span><span class="na">hasMoreTokens</span><span class="o">()){</span>
-            <span class="n">String</span> <span class="n">token</span> <span class="o">=</span> <span class="n">stoken</span><span class="o">.</span><span class="na">nextToken</span><span class="o">();</span>
-            <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">token</span><span class="o">);</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">token</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">list</span><span class="o">;</span>
-    <span class="o">}</span>
-</pre></div>
- 
-            <pre class="codebg">
-                        String pattern = "([a-z]+).([a-zA-Z-]+)(/)";
-                        String[] strArr = {
-                                        "www.google.com/search?q=goog/nice",
-                                        "http://www.google.msn.ca/a/b/c/d"
-                                        };
-                            Pattern r = Pattern.compile(pattern);
-                            for(int i=0; i < strArr.length; i++) {
-                                Matcher mat = r.matcher(strArr[i]);
-                                if(mat.find()) {
-                                    System.out.println("Found value: " + mat.group(1) );
-                                }
-                            }
-                                
-                       }
+                StringTokenizer stoken = new StringTokenizer(exp, "+-/* ", true);
+                while(stoken.hasMoreTokens()){
+                    String token = stoken.nextToken();
+                    list.add(token);
+                }
+                return list;
+            }
             </pre>
-
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
+             
+            <pre class="prettyprint">
+            String pattern = "([a-z]+).([a-zA-Z-]+)(/)";
+            String[] strArr = {
+                            "www.google.com/search?q=goog/nice",
+                            "http://www.google.msn.ca/a/b/c/d"
+                            };
+                Pattern r = Pattern.compile(pattern);
+                for(int i=0; i < strArr.length; i++) {
+                    Matcher mat = r.matcher(strArr[i]);
+                    if(mat.find()) {
+                        System.out.println("Found value: " + mat.group(1) );
+                    }
+                }
+                    
+           }
+            </pre>
 
 
     </body>
