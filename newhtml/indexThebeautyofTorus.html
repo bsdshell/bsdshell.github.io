@@ -75,17 +75,25 @@
             <img src="../image/two_circle_torus.svg" width="60%" height="60%" /><br>
             </div> 
             <div class="mytext">
-            From above picture, we can define two parametric equations:<br>
-            1. $(x + 6)^2 + y^2 - 1 = 0$ <br>
-            2. $(x - 6)^2 + y^2 - 1 = 0$ <br>
-            We can multiply two equations(polynomials) in both sides:<br>
+            From above picture, we define two parametric equations:<br>
+            1. $(x + 6)^2 + y^2 - 1 = 0$ [left circle]<br>
+            2. $(x - 6)^2 + y^2 - 1 = 0$ [right circle]<br><br>
+            We can multiply two equations[polynomials] in both sides:<br>
             $c(x)= [(x + 6)^2 + y^2 - 1] [(x - 6)^2 + y^2 - 1] = 0$<br>
             The equation will be two circles in the $xz-plane$<br><br>
             why $c(x)$ is the equation for two circles?<br><br>
+            That can be proved informally as following<br>
+            </div>
             
+            
+            <div class="mytitle">
+            Polynomial Ring
+            </div>
+
+            <div class="mytext">
             Polynomial Ring $\mathbf{R}[X]$ in $x$ over the Ring $\mathbf{R}$ is defined as following
             \[
-                p(x) = \sum_{i=0}^{m} a_i x^i
+                p(x) = \sum_{i=0}^{n} a_i x^i
             \]
             where $a_0, a_1, \dots a_n$ are coefficients, $x^0, x^1, \dots x^n$ are symbols<br>
             In our case, $\mathbf{R} = \Re, \mathbf{X} = x$<br>
@@ -99,17 +107,24 @@
                 f(x) &= a_m x^m \dots \\
                 g(x) &= b_n x^n \dots \\
                 f(x) g(x) &= a_m b_n x^{m + n} \dots \\
-                \implies f(x) g(x) &\neq  0 \quad \because a_m, b_n \text{ are in Integral Domain } \mathbf{R} = \Re
+                \implies a_m b_n &\neq 0 \quad \because a_m, b_n \text{ are in Integral Domain } \mathbf{R} = \Re  \\
+                \implies f(x) g(x) &\neq  0 
             \end{align*}
             <br>
             From above Lemma:<br>
             Let $f(x) = (x + 6)^2 + y^2 - 1,  g(x) = (x - 6)^2 + y^2 - 1 \implies f(x) = 0 \text{ or } g(x) = 0$
             which is two circles on the $xz$-plane from above picture.<br><br>
+            </div>
             <div class="cen">
             <img src="../image/xy_plane.svg" width="60%" height="60%" /><br>
             </div> 
 
-            We can investigate how the y-Axis is changed relative to x-Axis and z-Axis<br>
+            <div class="mytitle">
+            $x$ and $y$ in $xy$-plane
+            </div>
+
+            <div class="mytext">
+            We can investigate how the y-Axis is changed relative to x-Axis and z-Axis on $xy$-plane<br>
             If two circles are rotated around the z-Axis, then $z$ is not changed at all.<br>
             The relationship between $x$ and $y$ is $r = \sqrt{x^2 + y^2}$ on the $xy$-plane <br>
             For equation $c(x)$ from above, the $y$ is zero since $c(x)$ on the $xz$-plane <br>
@@ -121,9 +136,12 @@
                 c(x) &= [(r + 6)^2 + y^2 - 1] [(r - 6)^2 + y^2 - 1] = 0 \\
             \end{align*} 
             </div>
-            <h3>The Close Form Equation for Torus can be written as following</h3>
+            <div class="mytitle">
+            The Close Form Equation for Torus
+            </div>
             \begin{align}
-            [(r + 6)^2 + y^2 - 1] [(r - 6)^2 + y^2 - 1] = 0 \\
+            &[(r + 6)^2 + y^2 - 1] [(r - 6)^2 + y^2 - 1] = 0 \\
+            &r = \sqrt{x^2 + y^2} 
             \end{align}
 
             <div class="cen">
