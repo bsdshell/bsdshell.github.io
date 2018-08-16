@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
 <head>
-    <title>Multiple lines function in GHCi in Haskell</title>
+    <title>$title</title>
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
     <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
     <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -30,45 +30,12 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
-
 <div class="myclass">
 <div class="mytitle">
-How to write multiple lines function in GHCi in Haskell
+add content here
 </div>
-<pre class="prettyprint bigfont">
-:set +m
-</pre> 
 <pre class="prettyprint">
-let's define a function called f(x) = x + 1 in multiple lines mode
-
->:set +m
->let 
->f::Int->Int
->f x = x + 1 
->       -- the newline will end defintion of function f
->f 1
-2
-
-Apparently, there is some bug/issue in GHCi 7.10.3 for multiple line mode, e.g.
-:{
-ff::Int -> Int
-ff x = x + 1
-:}
-ff 1, parse error on input ‘=’
-
-GHCi 7.10.3 does not recognize 'prompt2' any more.
-GHCi 8.4.3 use prompt-cont (stand for: prompt continuation)
-
-Download the Haskell Framework (GHC and GHCi 8.4.3) and install it, 
-above error has not gone away
-The problem is the last line need to be EMPTY line. 
-:{
-ff::Int -> Int
-ff x = x + 1
-        <-- empty line here
-:}
 </pre> 
 </div>
-
 </body>
 </html>

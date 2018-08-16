@@ -78,7 +78,7 @@ Monoid is a group without the third condition (3), it means each element does no
 </p>
 \begin{align*}
     \forall a, b, c &\in S \\
-    (a \otimes b) \otimes c                   &= a (\otimes b \otimes c) \tag{1} \\
+    (a \otimes b) \otimes c                   &= a \otimes (b \otimes c) \tag{1} \\
     \exists I, I \otimes a                    &= a \otimes I = a          \tag{2} \\
 \end{align*}
 <h3>Concret example: List concatenation can be defined as Monoid</h3>
@@ -89,12 +89,12 @@ The operation can be defined as <strong>string concatenation</strong> or ++ in <
 What is the identity? <br> 
 The <strong>identity</strong> can be defined as empty string, e.g. [] in <strong>Haskell</strong> <br> 
 \begin{align*} 
-    \otimes &= \text{ ++ }, I = [] \\
-    \text{ Given }a &= [a], b =[e, f], c = [h, i] \\ 
+    \otimes &= \text{ ++ }, \quad I = [] \\
+    \text{ Given }a &= [a], \quad b =[e, f], \quad c = [h, i] \\ 
     a \text{ ++ } b \text{ ++ } c     &= [a, e, f, h, i] \\ 
     a \text{ ++ } (b \text{ ++ } c)   &= [a] \text{ ++ } [e, f, h, i] = [a, e, f, h, i] \\ 
-    => a \text{ ++ } b \text{ ++ } c  &= a \text{ ++ } (b \text{ ++ } c)      \text{ Associativity } (1) \\ 
-    [] \text{ ++ } [a]       &= [a] \text{ ++ } []           = [a]         \text{ Identity } (2) \\ 
+    => a \text{ ++ } b \text{ ++ } c  &= a \text{ ++ } (b \text{ ++ } c)  \quad   \text{ Associativity } (1) \\ 
+    [] \text{ ++ } [a]       &= [a] \text{ ++ } []           = [a]      \quad   \text{ Identity } (2) \\ 
 \end{align*}
 
 <p class="art">What is morphism?<br>
@@ -188,9 +188,18 @@ Monad is analogic to (+ $\Re$), Monoid has two axioms: (1) (2) from definition. 
 $T$ is functor or some nerds call it endofunctor<br> 
 endofunctor - $F : \mathcal{C} \rightarrow \mathcal{C}$, the domain and image are the same <strong>Category</strong>
 \begin{align*}
-     \mu &: T \times T \rightarrow T \\
-    \eta &: I  \rightarrow T
+    \mu &: T \times T \rightarrow T  \quad \text{ where } T \text{ is endofunctor}     \\ 
+    \eta &: I  \rightarrow T              \\ 
+    \mu_a &: T \times T a \rightarrow T a \\ 
+    \eta_a &: I a \rightarrow T a     \quad \text{ where } I \text{ identity endofunctor }    \\ 
 \end{align*}
+In Haskell:<br>
+join::m(m a) $\rightarrow$ m a <br>
+join [[1]] $\rightarrow$ [1] <br><br>
+
+return::(Monad m)=> a $\rightarrow$ m a <br>
+return 3 $\rightarrow$ m 3 <br>
+
 There is some interested fact about the two <strong>nature transformation</strong> <br> 
 e.g. commutative diagram: <br>
 \begin{align*}
