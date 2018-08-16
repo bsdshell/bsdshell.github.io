@@ -1,0 +1,60 @@
+Wed Aug 15 17:14:22 2018 
+Get error start mysql server on MacOS, mysql 5.7 and mysql 8.0
+==================================================================  
+Remove all versions of MySQL (I had 5.7.21, 5.7.22, and 8.0.11) : brew uninstall --force mysql
+
+Confirm Removal and Repair : brew services list and then brew doctor
+
+Rename original MySQL : mv /usr/local/var/mysql /usr/local/var/old.mysql
+
+Install latest MySQL (currently 8.0.11) : brew install mysql
+
+MySQL Secure Install : /usr/local/bin/mysql_secure_installation
+==================================================================  
+*haskell file manager*  *h file manager*  *file manager* 
+ghci add
+:m +System.FilePath.Posix
+------------------------------------------------------------------ 
+A library for FilePath manipulations, using Posix style paths on all platforms. Importing System.FilePath is usually better.
+
+Given the example FilePath: /directory/file.ext
+
+We can use the following functions to extract pieces.
+
+    takeFileName gives "file.ext"  *file_ext*
+    takeFileName "dog/cat" => cat
+    takeDirectory gives "/directory"  
+    takeExtension gives ".ext"
+    dropExtension gives "/directory/file"
+    takeBaseName gives "file"
+
+And we could have built an equivalent path with the following expressions:
+
+    "/directory" </> "file.ext".
+    "/directory/file" <.> "ext".
+    "/directory/file.txt" -<.> "ext".
+==================================================================  
+Remove symbol links in Haskell
+------------------------------------------------------------------ 
+Hard links
+createLink :: FilePath -> FilePath -> IO () Source#
+
+createLink old new creates a new path, new, linked to an existing file, old.
+
+Note: calls link.
+
+removeLink :: FilePath -> IO () Source#
+
+removeLink path removes the link named path.
+
+Note: calls unlink.
+
+Symbolic links
+createSymbolicLink :: FilePath -> FilePath -> IO () Source#
+
+createSymbolicLink file1 file2 creates a symbolic link named file2 which points to the file file1.
+
+Symbolic links are interpreted at run-time as if the contents of the link had been substituted into the path being followed to find a file or directory.
+
+Note: calls symlink.
+------------------------------------------------------------------ 
