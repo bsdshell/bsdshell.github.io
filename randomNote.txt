@@ -57,4 +57,17 @@ createSymbolicLink file1 file2 creates a symbolic link named file2 which points 
 Symbolic links are interpreted at run-time as if the contents of the link had been substituted into the path being followed to find a file or directory.
 
 Note: calls symlink.
+==================================================================  
+cabal update
+cabal install OpenGL
+or runall to see all the installed packages
+------------------------------------------------------------------ 
+http://hackage.haskell.org/package/OpenGL
+OpenGL 3.0.2.2 is Haskell binding for OpenGL system(GL verision 4.6)
+and its accompanying utility system GLU, version 1.3
+------------------------------------------------------------------ 
+cabal update
+cabal install OpenGLRaw  (current version is 3.3.1.0)
+OpenGLRaw is a raw Haskell binding for the OpenGL 4.6 graphics system and lots of OpenGL extensions. 
+It is basically a 1:1 mapping of OpenGL's C API, intended as a basis for a nicer interface.
 ------------------------------------------------------------------ 
