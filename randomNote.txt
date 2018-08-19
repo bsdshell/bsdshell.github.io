@@ -70,4 +70,46 @@ cabal update
 cabal install OpenGLRaw  (current version is 3.3.1.0)
 OpenGLRaw is a raw Haskell binding for the OpenGL 4.6 graphics system and lots of OpenGL extensions. 
 It is basically a 1:1 mapping of OpenGL's C API, intended as a basis for a nicer interface.
+==================================================================  
+Sat Aug 18 11:16:09 2018 
+------------------------------------------------------------------ 
+type FilePath = String Source#
+
+File and directory names are values of type String, whose precise meaning is operating system dependent. Files can be opened, yielding a handle which can then be used to operate on the contents of that file.
+
+readFile :: FilePath -> IO String Source#
+
+The readFile function reads a file and returns the contents of the file as a string. The file is read lazily, on demand, as with getContents.
+
+writeFile :: FilePath -> String -> IO () Source#
+
+The computation writeFile file str function writes the string str, to the file file.
+
+appendFile :: FilePath -> String -> IO () Source#
+
+The computation appendFile file str function appends the string str, to the file file.
+
+Note that writeFile and appendFile write a literal string to a file. To write a value of any printable type, as with print, use the show function to convert the value to a string first.
+
+main = appendFile "squares" (show [(x,x*x) | x <- [0,0.1..2]])
+readIO :: Read a => String -> IO a Source#
+
+The readIO function is similar to read except that it signals parse failure to the IO monad instead of terminating the program.
+
+readLn :: Read a => IO a Source#
+
+The readLn function combines getLine and readIO.
+
+Exception handling in the I/O monad
+type IOError = IOException Source#
+
+The Haskell 2010 type for exceptions in the IO monad. Any I/O operation may raise an IOError instead of returning a result. For a more general type of exception, including also those that arise in pure code, see Exception.
+
+In Haskell 2010, this is an opaque type.
+
+ioError :: IOError -> IO a Source#
+
+Raise an IOError in the IO monad.
+
+userError :: String -> IOError Source#
 ------------------------------------------------------------------ 
