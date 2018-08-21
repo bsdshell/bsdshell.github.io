@@ -33,7 +33,7 @@
 
 <div class="myclass">
 <div class="mytitle">
-Understand <span id="red">foldr</span> and <span id="red">foldl</span> with examples.
+Understand <span id="red">foldr</span> and <span id="red">foldl</span> with examples in Haskell
 </div>
 <pre class="prettyprint">
 1. foldr(-) 4 [1, 2, 3]
@@ -41,13 +41,13 @@ Understand <span id="red">foldr</span> and <span id="red">foldl</span> with exam
 2. (1) is equavalent to following:
    foldr(\x -> x - 4) [1, 2, 3] 
 
-3. fold[r] => what does [r] mean here? 
-   It means "The list is folded from RIGHT side"
+3. foldr => what does 'r' mean here? 
+   It means: The list is folded from Right side
 
 4. The order of x and 4 are important.
    (x - 4) it NOT equal (4 - x) 
 
-5. Remember "The list is folded from RIGHT side"
+5. Remember "The list is folded from Right side"
    foldr(\x -> x - 4) [1, 2, 3] 
    = (1 - (2 - (3 - 4)))  -- x = 3 
    = (1 - (2 - (-1)))     -- x = 2 
@@ -71,6 +71,7 @@ Understand <span id="red">foldr</span> and <span id="red">foldl</span> with exam
 4. Please confirm inside your GHCi
 </pre> 
 </div>
+<br>
 <div class="mytitle">
 Picture is worth a thousand words 
 </div>
