@@ -221,11 +221,10 @@
                     </div> 
 
                     <div class="mytext">
-                    <span id="red">View Matrix</span> can be constructed by gluLookAt[eyex, eyey, eyez, atx, aty, atz, upx, upy, upz]
-                    Specify the eye poistion, lookat position, and up Vector.
-                    Cartesian Coordinate System is used Right-Hand System, it means as following<br><br>
+                    <span id="red">View Matrix</span> can be constructed with gluLookAt in OpenGL
+                    Specify the eye poistion, lookat position, and up Vector.<br><br>
                     </div>
-                    <pre class="prettyprint">
+                    <pre class="prettyprint smallfont">
                     gluLookAt(
                     Eyex
                     Eyey
@@ -237,9 +236,12 @@
 
                     Upx
                     Upy
-                    Upz
-                    )
-
+                    Upz)
+                    </pre><br>
+                    For example, if you want to change the eye position to $(0, 0, -2)$, two units away from the screen.
+                    <pre class="prettyprint smallfont">
+                    loadIdentity()
+                    gluLookAt(0 0 -2, ...)
                     </pre>
 
                     <div class="mytext">
