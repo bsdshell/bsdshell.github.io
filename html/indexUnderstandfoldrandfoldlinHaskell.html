@@ -35,10 +35,10 @@
 <div class="mytitle">
 Understand <span id="red">foldr</span> and <span id="red">foldl</span> with examples in Haskell
 </div>
-<pre class="prettyprint">
+<pre class="cc">
 1. foldr(-) 4 [1, 2, 3]
 
-2. (1) is equavalent to following:
+2. [1] is equavalent to following:
    foldr(\x -> x - 4) [1, 2, 3] 
 
 3. foldr => what does 'r' mean here? 
@@ -53,9 +53,8 @@ Understand <span id="red">foldr</span> and <span id="red">foldl</span> with exam
    = (1 - (2 - (-1)))     -- x = 2 
    = (1 - 3)              -- x = 1
    = -2
-
-7. Please confirm inside your GHCi
-----------------------------------------------------------------------
+</pre> 
+<pre class="cc">
 1. foldl(-) 4 [1, 2, 3]
 
 2. (1) is equavalent to following: 
@@ -68,7 +67,16 @@ Understand <span id="red">foldr</span> and <span id="red">foldl</span> with exam
    = ((-5) - 3)          -- x = 3
    = -8
 
-4. Please confirm inside your GHCi
+</pre>
+<div class="mytitle">
+Fun fact about <span id="red">foldl, foldr</span>
+</div>
+<pre class="cc">
+reverse = foldl(\x y -> y:x) [] ["a", "b", "c"] 
+        = ["c", "b", "a"]
+
+reverse = foldr(\x y -> y ++ [x]) [] ["a", "b", "c"]
+        = ["c", "b", "a"]
 </pre> 
 </div>
 <br>

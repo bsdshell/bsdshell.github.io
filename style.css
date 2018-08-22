@@ -242,7 +242,8 @@ pre.cc{
     font-family: "Courier New", monospace;
     padding-left: 0px;
     margin-left: -115px;
-    background: #ffffff;
+    /*background: #ffffff;*/
+    background: #f3d49f33;
     color: #060a10;
 }
 
@@ -515,6 +516,14 @@ pre.cc{
 
 #red {
     color: red;
+    font-family: monospace;
+    font-weight:bold;
+}
+
+#blue {
+    color: blue;
+    font-family: monospace;
+    font-weight:bold;
 }
 
 #square {
