@@ -112,4 +112,11 @@ ioError :: IOError -> IO a Source#
 Raise an IOError in the IO monad.
 
 userError :: String -> IOError Source#
+==================================================================  
+Wed Aug 22 11:15:59 2018 
+OpenGL push and pop matrix, changed to preservingMatrix in Haskell
+
+preservingMatrix :: IO a -> IO a Source#
+
+Push the current matrix stack down by one, duplicating the current matrix, excute the given action, and pop the current matrix stack, replacing the current matrix with the one below it on the stack (i.e. restoring it to its previous state). The returned value is that of the given action. Note that a round-trip to the server is probably required. For a more efficient version, see unsafePreservingMatrix.
 ------------------------------------------------------------------ 
