@@ -119,4 +119,50 @@ OpenGL push and pop matrix, changed to preservingMatrix in Haskell
 preservingMatrix :: IO a -> IO a Source#
 
 Push the current matrix stack down by one, duplicating the current matrix, excute the given action, and pop the current matrix stack, replacing the current matrix with the one below it on the stack (i.e. restoring it to its previous state). The returned value is that of the given action. Note that a round-trip to the server is probably required. For a more efficient version, see unsafePreservingMatrix.
+==================================================================  
+Wed Aug 22 22:09:40 2018 
+Set, find the powerset, insert, delete element etc. 
+http://hackage.haskell.org/package/containers-0.6.0.1/docs/Data-Set.html
+------------------------------------------------------------------ 
+Vim set search ignorecase  noignorecase
+:set noignorecase
+------------------------------------------------------------------ 
+==================================================================  
+Thu Aug 23 11:37:33 2018 
+package linear, Linear is the linear algebra library for basic linear algebra operation,
+I just try to play around with the library, and it seems to me it is pretty "easy to use" library,
+
+1. Install the package
+   cabal update
+   cabal install linear (my current version is linear-1.20.8)
+
+2. import the module
+   import Linear
+http://hackage.haskell.org/package/linear-1.20.8/docs/Linear-Matrix.html
+------------------------------------------------------------------ 
+current Haskell version on my system
+/Library/Frameworks/GHC.framework/Versions
+7.10.2-x86_64
+7.10.3-x86_64
+8.4.3-x86_64
+Current
+------------------------------------------------------------------ 
+#Many GHC versions can cause trouble on your MacOS
+After install the haddock with 
+cabal unregister haddock-api
+cabal unregister haddock-library
+and sound some strangle issue with old version GHC-7.10.x sth, need to manually remove it, and run cabal install haddock-xxx again
+close the shell and reopen the shell again, 
+and use 'which' command to find the haddock to verify the haddock it works
+
+It seems to me there are issues when I have many versions of GHC in my MacOS,(three versions now..) 
+7.10.2-x86_64
+7.10.3-x86_64
+8.4.3-x86_64
+it causes the haddock does't work initially
+==================================================================  
+Fri Aug 24 17:21:26 2018 
+here-string here string is crazy awesome
+Here is how to run GHCi in your command line
+ghci -v0 <<< ':r map'
 ------------------------------------------------------------------ 
