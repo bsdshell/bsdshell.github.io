@@ -106,9 +106,7 @@ The morphism for Vector Space is linear transformation. <br>
 The morphism for Topology Space is Continuous functions. <br>
 </p>
 
-<p class="art">
-How can we use Monoid definition to understand Monad?<br>
-<h3>We need to clarify the definition of Category</h3>
+<h3>Informal defintion for Category</h3>
 Categories is defined as following: <br>
 1. Objects - it likes integer in $\mathbf{N}$ <br>
 2. Arrows -  it likes function that we are already known <br> 
@@ -118,12 +116,16 @@ Categories is defined as following: <br>
 
 Concrete example: <br>
 Vector Space $\mathscr{V}$ with a set of linear maps $\mathscr{L}$ is a Category<br>
-1. Objects - vectors in $\vec{V}$ <br>
+1. Objects - vectors in $\mathscr{V}$ <br>
 2. Arrows - matrices in $\mathscr{L}$ <br>
-3. Each pair of vectors, we can find a matrix such as $A \vec{u} = \vec{v}$<br>
-4. Each vector, we can find an identity matrix to transform the vector to its self. $A \vec{I} = \vec{I} A = A$ <br>
-5. Matrix composition(multiplicaiton) is associative<br> <br> 
+3. Each pair of vectors, we can find a matrix such as $A u = v$<br>
+4. Each vector, we can find an identity matrix $I$ to transform the vector $v$ to its self. $I v = v I = v$ <br>
+5. Each matrix, we can find an identity matrix $I$ to transform the matrix $A$ to its self. $A I = I A = A$ <br>
+6. Matrix composition(multiplicaiton) is associative. $A B C = A (B C)$<br> <br> 
 
+<div class="cen">
+<img src="../image/vector_space_to_category.jpg" width="50%" height="50%" /><br>
+</div> 
 
 <h3>What is Functor</h3>
 <strong>Functor</strong> is mapping both objects to objects and morphisms to morphisms in Categories.<br>
@@ -202,10 +204,9 @@ In Haskell
 >>= is used for functor composition <br>
 <strong>return</strong> is used for identity functor <br><br>
 
-Functor is modelled with <strong>Type Constructor</strong> in Haskell
-
-$T$ is functor or some nerds call it endofunctor<br> 
-endofunctor - $F : \mathcal{C} \rightarrow \mathcal{C}$, the domain and image are the same <strong>Category</strong>
+Functor is modelled with <strong>Type Constructor</strong> in Haskell,
+$T$ is functor or some nerds call it endofunctor[Yep, nerds try to make simple sth more complicated]<br> 
+Endofunctor - $F : \mathcal{C} \rightarrow \mathcal{C}$, the domain and image are the same <strong>Category</strong>
 \begin{align*}
     \mu &: T \times T \rightarrow T  \quad \text{ where } T \text{ is endofunctor}     \\ 
     \mu T &: (T \times T) \times T \rightarrow T^2  \\
