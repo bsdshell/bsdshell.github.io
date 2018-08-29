@@ -108,13 +108,13 @@ The morphism for Topology Space is Continuous functions. <br>
 
 <p class="art">
 How can we use Monoid definition to understand Monad?<br>
-<h3>we need to clarify the definition of Category</h3>
+<h3>We need to clarify the definition of Category</h3>
 Categories is defined as following: <br>
 1. Objects - it likes integer in $\mathbf{N}$ <br>
 2. Arrows -  it likes function that we are already known <br> 
-3. There is Arrow between any two Objects. <br>
-4. Each Object has Arrow to its self. (like identity function)<br>
-5. The composition of Arrows are associative<br> <br> 
+3. There is <strong>Morphisms/Arrow</strong> between any two Objects. <br>
+4. Each Object has <strong>Morphism/Arrow</strong> to its self. (like identity function)<br>
+5. The composition of <strong>Morphisms/Arrows</strong> are associative<br><br> 
 
 Concrete example: <br>
 Vector Space $\mathscr{V}$ with a set of linear maps $\mathscr{L}$ is a Category<br>
@@ -144,7 +144,7 @@ Example: Given two groups  $G(+, \Re), H(\times, \Re)$ and function $\phi(x) = e
 \begin{align*} 
     \text{Let } x, y &\in \Re  \\        
     \phi(x + y) &= e^{x + y} \\
-    \phi(x) \times \phi(y) &= e^x \times \phi(y) = e^{x + y} \\
+    \phi(x) \times \phi(y) &= e^x \times e^y = e^{x + y} \\
     \implies \phi(x + y) &= \phi(x) \times \phi(y) 
 \end{align*}
  
