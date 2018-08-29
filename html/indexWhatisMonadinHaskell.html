@@ -183,12 +183,37 @@ For each map $f \in C$, there is associatived map $F(f) \in D$ <br><br>
 \end{align*}
 
 Build on top of the definitions above, we can define what is <strong>Monad</strong><br>
-If you understand (+ $\Re$) is a <strong>Group</strong>, then Monad is just a Monoid and the elements are functors. <br>
+If you understand (+ $\Re$) is a <strong>Group</strong>, then Monad is just a Monoid and the elements are functors. <br><br>
+
+$(+, \Re)$ is => <strong>Group</strong>, the <strong>operation</strong> is $+$, the elements are real numbers <br>
+Monad      is => <strong>Monoid</strong>, the <strong>operation</strong> is Functor composition, the elements are just Functors<br>
+
 Monad is analogic to (+ $\Re$), Monoid has two axioms: (1) (2) from definition. <br>
+Monad is Monoid so it need to satisfy two axioms: Associativity and Identity 
+
+\begin{align*}
+    \forall a, b, c &\in S \\
+    (a \otimes b) \otimes c                   &= a \otimes (b \otimes c) \tag{1} \\
+    \exists I, I \otimes a                    &= a \otimes I = a          \tag{2} \\
+\end{align*}
+
+Now $S$ is the set of functors, $a, b, c$ are functors, $\otimes$ is functor composition<br><br>
+In Haskell
+>>= is used for functor composition <br>
+<strong>return</strong> is used for identity functor <br><br>
+
+Functor is modelled with <strong>Type Constructor</strong> in Haskell
+
 $T$ is functor or some nerds call it endofunctor<br> 
 endofunctor - $F : \mathcal{C} \rightarrow \mathcal{C}$, the domain and image are the same <strong>Category</strong>
 \begin{align*}
     \mu &: T \times T \rightarrow T  \quad \text{ where } T \text{ is endofunctor}     \\ 
+    \mu T &: (T \times T) \times T \rightarrow T^2  \\
+    T \mu &: T \times (T \times T) \rightarrow T^2  \quad \text{Associativity law in Monoid}\\
+    \mu T &= T \mu  \quad \text{from commutative diagram} \\
+    T \mu \mu   &= T \\
+    \mu T \mu &= T \\
+    T \mu \mu &= \mu T \mu \\
     \eta &: I  \rightarrow T              \\ 
     \mu_a &: T \times T a \rightarrow T a \\ 
     \eta_a &: I a \rightarrow T a     \quad \text{ where } I \text{ identity endofunctor }    \\ 
