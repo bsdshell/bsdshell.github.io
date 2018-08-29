@@ -166,3 +166,8 @@ here-string here string is crazy awesome
 Here is how to run GHCi in your command line
 ghci -v0 <<< ':r map'
 ------------------------------------------------------------------ 
+==================================================================  
+Wed Aug 29 16:26:38 2018 
+arrow with text above for function above
+https://tex.stackexchange.com/questions/103988/rightarrow-with-text-above-it
+------------------------------------------------------------------ 
