@@ -35,10 +35,12 @@
 Haskell Functor laws for Maybe
 </div>
 <pre class="prettyprint smallfont">
+data Mabye a = Nothing | Just a
+
 class Functor f where
     fmap::(a -> b) -> f a -> f b
 
-instance of Functor need to satisfy two laws
+instance of Functor need to satisfy two laws.
 
 instance Functor Maybe where
     fmap f Nothing = Nothing -- f is function, it is NOT a functor

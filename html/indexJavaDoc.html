@@ -32,45 +32,10 @@
 </script>
 <div class="myclass">
 <div class="mytitle">
-Haskell Functor laws for Maybe
+add content here
 </div>
-<pre class="prettyprint smallfont">
-data Mabye a = Nothing | Just a
-
-class Functor f where
-    fmap::(a -> b) -> f a -> f b
-
-instance of Functor need to satisfy two laws.
-
-instance Functor Maybe where
-    fmap f Nothing = Nothing -- f is function, it is NOT a functor
-    fmap f (Just a) = Just (f a)
-
--- Show Fucntor: Maybe satisfies the two laws:
-fmap id = id
-fmap (f . g) = (fmap f) . (fmap g)  
-
-Proof:
-fmap id Nothing = Nothing -- by defintion
-id Nothing = Nothing      -- by definition of identity function
-
-fmap id (Just a) = Just a  -- by defintion of fmap
-id (Just a)      = Just a  -- by defintion of identity function
-
-=> fmap id = id                                          [1]
-
-fmap (f . g) (Just a) = Just ((f . g) a)   -- by defintion of fmap
-                      = Just (f(g a))      -- by function composition
-((fmap f) . (fmap g)) (Just a) = (fmap f) ( fmap g (Just a))                       
-                               = (fmap f) (Just (g a)) -- defintion of fmap
-                               = Just f(g a) -- defintion of fmap
-
-=> fmap (f . g) (Just a) = (fmap f) . (fmap g) (Just a)  [2]
-
-[1],[2] => Maybe is a Functor
-
+<pre class="prettyprint">
 </pre> 
 </div>
 </body>
 </html>
-

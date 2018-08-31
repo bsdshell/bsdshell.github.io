@@ -1,5 +1,29 @@
 Wed Aug 15 17:14:22 2018 
 Get error start mysql server on MacOS, mysql 5.7 and mysql 8.0
+/**
+ * detect file types from file extensions: image(.png, .jpeg, .jpg) and PDF(.pdf)
+ *
+ * @param fName is name of file.
+ * @return image file: "IMG" or pdf file: "PDF", empty otherwise
+ *
+ */
+ static String fileType(String fName){
+    String type = "";
+    Pattern pdfPattern = Pattern.compile("\\.pdf$", Pattern.CASE_INSENSITIVE);
+    Matcher pdfMatcher = pdfPattern.matcher(fName);
+
+    Pattern pattern = Pattern.compile("\\.png|\\.jpeg|\\.jpg$", Pattern.CASE_INSENSITIVE);
+    Matcher matcher = pattern.matcher(fName);
+
+    if(matcher.find()){
+        Print.pbl("fName=" + fName);
+        type = "IMG";
+    }else if(pdfMatcher.find()){
+        Print.pbl("fName=" + fName);
+        type = "PDF";
+    }
+    return type;
+}
 ==================================================================  
 Remove all versions of MySQL (I had 5.7.21, 5.7.22, and 8.0.11) : brew uninstall --force mysql
 
@@ -170,4 +194,89 @@ ghci -v0 <<< ':r map'
 Wed Aug 29 16:26:38 2018 
 arrow with text above for function above
 https://tex.stackexchange.com/questions/103988/rightarrow-with-text-above-it
+------------------------------------------------------------------ 
+Julia redirect output to file
+
+You can use the @capture_out macro from Suppressor.jl 7, then write it to a file:
+
+using Suppressor
+
+output = @capture_out run(`ls`)
+
+open("/var/log/myprogram.txt", "w") do io
+    write(io, output)
+end
+==================================================================  
+Thu Aug 30 17:53:00 2018 
+file image file, png file, detect file type, filetype 
+    /**
+     * detect file types from file extensions: image(.png, .jpeg, .jpg) and PDF(.pdf)
+     *
+     * @param fName is name of file.
+     * @return image file: "IMG" or pdf file: "PDF", empty otherwise
+     *
+     */
+     static String fileType(String fName){
+        String type = "";
+        Pattern pdfPattern = Pattern.compile("\\.pdf$", Pattern.CASE_INSENSITIVE);
+        Matcher pdfMatcher = pdfPattern.matcher(fName);
+
+        Pattern pattern = Pattern.compile("\\.png|\\.jpeg|\\.jpg$", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(fName);
+
+        if(matcher.find()){
+            Print.pbl("fName=" + fName);
+            type = "IMG";
+        }else if(pdfMatcher.find()){
+            Print.pbl("fName=" + fName);
+            type = "PDF";
+        }
+        return type;
+    }
+==================================================================  
+Fri Aug 31 13:33:30 2018, javadoc, generate javadoc, gene javadoc
+prefix_map.java  $tt/jdoc && cd $tt/jdoc && javadoc prefix_map.java
+prefix_map.java  $tt/jdoc && cd $tt/jdoc && javadoc -Dshow=private prefix_map.java
+prefix_map.java  $tt/jdoc && cd $tt/jdoc && javadoc -Dshow=private prefix_map.java
+prefix_map.java  $tt/jdoc && cd $tt/jdoc && javadoc -private prefix_map.java
+prefix_map.java  $tt/jdoc && cd $tt/jdoc && javadoc -private prefix_map.java
+prefix_map.java  $tt/jdoc && cd $tt/jdoc && javadoc -private prefix_map.java
+------------------------------------------------------------------ 
+   /** 
+    <pre>
+    {@literal
+        str = "vi cmd, vi help";
+        [key =v]
+        [key =vi]
+        [key =c]
+        [key =cm]
+        [key =cmd]
+        vi -> [vi cmd]
+        c -> [cmd]
+        v -> [vi cmd]
+        cm -> [cmd]
+        cmd -> [cmd]
+        [key =v]
+        [key =vi]
+        [key =h]
+        [key =he]
+        [key =hel]
+        [key =help]
+        help -> [help]
+        vi -> [vi help, vi cmd]
+        c -> [cmd]
+        v -> [vi help, vi cmd]
+        h -> [help]
+        cm -> [cmd]
+        cmd -> [cmd]
+        he -> [help]
+        hel -> [help]
+    }
+    {@code 
+        List<String> list = new ArrayList<>(Arrays.asList("vi cmd, vi help"));
+        Map<String, Set<String>> map = new HashMap<>();
+        prefixStringMap(list, map);
+    }
+    </pre>
+    */
 ------------------------------------------------------------------ 
