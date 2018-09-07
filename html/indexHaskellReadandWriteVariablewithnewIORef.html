@@ -41,6 +41,16 @@ print x
 writeIORef var 100
 x1 <- readIORef var
 print x1
+-------------------------------------------------------------------
+import Data.IORef
+ref <- newIORef 0
+replicateM_ 4 $ modifyIORef ref (+5)
+readIORef ref >>= print  -- output 20
+
+ref <- newIORef 1 
+replicateM_ 4 $ modifyIORef ref (+5)
+readIORef ref >>= print  -- output 21
+
 </pre> 
 </div>
 </body>

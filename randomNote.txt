@@ -279,4 +279,20 @@ prefix_map.java  $tt/jdoc && cd $tt/jdoc && javadoc -private prefix_map.java
     }
     </pre>
     */
+==================================================================  
+Tue Sep  4 16:37:18 2018 
 ------------------------------------------------------------------ 
+run shell script on spotlight
+chmod +x ShowProcesses.command
+You can also leave out the usual #!/bin/sh part on the first line.
+
+Now, when someone double-clicks your script in the Mac Finder, the script will open a new Mac Terminal window, and then run the script inside that window. When it’s finished, the Terminal will display a “Process Completed” message, and the user can close the Terminal.
+
+I did this recently for one of my sisters. She has an HP printer attached to her Mac, and from time to time the printer goes nuts and decides to eat the CPU. I run a top command in a script so she can confirm that this is the problem.
+
+Simple example
+As a simple example of this, create a file named Test.command somewhere on your Mac OS X filesystem, such as the Desktop, or a temp folder somewhere. Put some simple commands in the file, like this:
+
+ls -al
+pwd
+
