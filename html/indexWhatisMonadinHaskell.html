@@ -127,7 +127,20 @@ Vector Space $\mathscr{V}$ with a set of linear maps $\mathscr{L}$ is a Category
 </div> 
 
 <h3>What is Functor</h3>
-<strong>Functor</strong> is mapping both objects to objects and morphisms to morphisms in Categories.<br>
+<strong>Functor</strong> is mapping both objects to objects and morphisms to morphisms in Categories.<br><br>
+Abstractly defined, a <strong>functor</strong> is a homomorphism between two categories: 
+Given two Categories $A, B$, 
+a functor $F: A \rightarrow B$ consists two mapppings:<br>
+<strong>one maps objects to objects,</strong>
+<strong>the other maps arrows to arrows.</strong><br>
+Both maps are not always though denoted by the same letter $F$<br>
+
+The two components mappings of a functor $F$ are required to satisfy the property<br>
+    \[ F(f) : F(A)\rightarrow F(B) \text{ whenever } f: A \rightarrow B \] <br>
+They are also to required to preserve identities and composition: <br>
+    \[ F(id_{A}) = id_{F(A)} \text{ and } F(f \circ g) = F(f) \circ F(g) \] <br> 
+
+
 The definition of Functor can be confusing without some abstract algebra concept such as homomorphism or isomorphism.<br>
 In abstract algebra, if two groups are homomorphic, then two group need to satisfy the following conditions: <br>   
 Given two groups: 
