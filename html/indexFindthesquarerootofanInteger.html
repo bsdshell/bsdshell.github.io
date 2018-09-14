@@ -93,31 +93,54 @@ func squareRoot(n:Int)->Double{
     return m
 }
 </pre> 
-</div>
 
 <div class="mytitle">
 Other method to find the square root of n is Newton method.
 </div><br>
+1. Choose any point $(x_0, f(x_0))$ on the curve<br>
+2. Compute the epsilon $\varepsilon = \left|x_0^2 - n \right|$<br>
+3. If $\varepsilon$ satified the boundary condition, $\left|x_0^2 - n \right| < \varepsilon$, e.g. $\varepsilon = 0.001$<br>
+$\quad$ 3.1 Terminate the code<br>
+4. Otherwise, find the tangent line at the point $(x_0, f(x_0))$ for the curve<br>
+5. Find the intersection $(x_1, 0)$ of the tangent line and x-axis<br>
+6. Go back to 1. and use point $x_1$ instead of $x_0$ to continue<br><br>
+
 Here is the derivation on Newton's method <br>
 Newton method approximation for polynomial $f(x) = x^2 - n$ <br>
 \begin{align*}
     f(x) &= x^2 - n \\
     f'(x) &= 2x \\
     f'(x_0) &= 2x_0 \\
-    f'(x_0) &= \frac{f(x_0)}{x_0} \\
-    f'(x_0) &= \frac{y - y_0}{x - x_0}  \\
-    2x_0 &= \frac{y - y_0}{x - x_0} \\
-    x - x_0 &= \frac{y - y_0}{2x_0} \\
-    x &= \frac{y - y_0}{2x_0} + x_0 \quad \text{ where } y = 0 \\
-    x &= x_0 - \frac{y_0}{2x_0} \\
-    x &= x_0 - \frac{f(x_0)}{2x_0} \quad \text{ where } f(x_0) = y_0 \\
+    f'(x_0) &= \frac{y_1 - y_0}{x_1 - x_0}  \quad \text{ where } f'(x_0) = 2x_0 \\
+    2x_0 &= \frac{y_1 - y_0}{x_1 - x_0} \\
+    x_1 - x_0 &= \frac{y_1 - y_0}{2x_0} \\
+    x_1 &= \frac{y_1 - y_0}{2x_0} + x_0 \quad \text{ where } y_1 = 0 \\
+    x_1 &= x_0 - \frac{y_0}{2x_0} \\
+    x_1 &= x_0 - \frac{f(x_0)}{2x_0} \quad \text{ where } f(x_0) = y_0 \\
     x_1 &= x_0 - \frac{f(x_0)}{2x_0} 
 \end{align*} 
-Line tangents to $f(x) = x^2 - n$  at point $(x_0, f(x_0))$ 
+Line tangents to $f(x) = x^2 - n$  at point $(x_0, f(x_0))$ is $f'(x) = \frac{y - y_0}{x - x_0}$
 
 <div class="cen">
 <img src="../image/newton_method.svg" width="60%" height="60%" /><br>
 </div> 
+
+<pre class="prettyprint">
+double newton_method(int n){
+    double x0 = 1;
+    double x1 = 1;
+    double epsilon = 0.001;
+    double delta = abs(x0*x0 - n);
+    while (delta > epsilon){ 
+        x1 = x0 - (x0*x0 - n)/(2.0*x0);
+        delta = abs(x1*x1 - n);
+        x0 = x1;
+    }
+    return x1;
+}
+</pre><br>
+
+</div>
 
 
 </body>
