@@ -130,7 +130,6 @@
                 \[ a \otimes b  \otimes c = a \otimes (b \otimes c)   \]
                 \[ a \otimes \overline{1} = \overline{1} \otimes a =  a  \]
             </div><br>
-
             <div class="mathdef_box2">
 <pre class="prettyprint">
 abstract class SemiGroup[A]{
@@ -570,6 +569,21 @@ object MyMonoid extends App{
             f(g(x + \varepsilon x')) &= f(g(x)) + \varepsilon f'(g(x)) g'(x)x'   \\
             \end{align*}
             </div>
+
+
+            <div class="cen">
+            Mean Value Theorem in Calculus<br>
+            </div>
+            <div class="mathdef_box2">
+            If $f$ is continuous on closed interval $[a, b]$ and differential on open interval $(a, b)$, then there exists point $c$ such that
+            \begin{align*}
+                f'(c) = \frac{f(b) - f(a)}{b - a} 
+            \end{align*}
+            </div>
+            
+            <div class="cen">
+            <img src="../image/mean_value_theorem.svg" width="60%" height="60%" /><br>
+            </div> 
 
 
         <!-- Column 1 end -->
