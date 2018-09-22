@@ -69,11 +69,6 @@ Here are the steps to install SpaceEmacs on MacOS and cofig evil-mode
    (evil-mode 1)
 
 6. Start your Emacs now and  you should be in evil-mode 
-   Switch back to Normal Emacs Mode with C-z, C-z back to evil-mod
-
-
-
-
 
 </pre> 
 </div>

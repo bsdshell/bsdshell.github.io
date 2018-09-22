@@ -570,23 +570,127 @@ object MyMonoid extends App{
             \end{align*}
             </div>
 
-
+            <div class="mathdef_box2">
             <div class="cen">
             Mean Value Theorem in Calculus<br>
             </div>
-            <div class="mathdef_box2">
             If $f$ is continuous on closed interval $[a, b]$ and differential on open interval $(a, b)$, then there exists point $c$ such that
             \begin{align*}
                 f'(c) = \frac{f(b) - f(a)}{b - a} 
             \end{align*}
-            </div>
-            
+
             <div class="cen">
             <img src="../image/mean_value_theorem.svg" width="60%" height="60%" /><br>
             </div> 
+            </div>
+            
 
 
-        <!-- Column 1 end -->
+            <div class="mathdef_box2">
+            <div class="cen">
+            What is Algebra<br>
+            </div>
+            We all talk about Algebra from high school to University, but we hardly were given any defintion of Algebra.<br>
+            This is the defintion from Hopf Lecture Notes<br><br>
+            An algebra $A$ can be defined as triple $A=(V, *, I)$ where $V$ is Vector Space, $*$ is multiplication and $I$ is identity<br>
+            Given Vector Space $V$ over the field $K$, e.g. $K = \mathbb{C}$, <strong>Algebra</strong> satisfies following properties:<br>
+            \begin{align*}
+                &a, b, c \in V \\
+                &*: V \times V \rightarrow V \quad \text{Bilinearity} \tag{1}\\
+                &a * b * c = a * (b * c) \quad \text{Associativity}  \\
+                &1*a = a*1               \quad \text{Unitality} \\
+            \end{align*}<br>
+
+            Example: <strong>n dimension matrix</strong> over the field $K = \mathbb{C}$ <br>
+            It is easy to show all the matrices form a <strong>Vector Space</strong> since it satisfied all the Vector Space properties<br>
+            \begin{align*}
+            &\forall m_1, m_2, m_3 \in V \\
+            &m_1 + m_2 + m_3 = m_1 + (m_2 + m_3) \\
+            &m_1 + 0 = 0 + m_1 \\
+            &m_1 + m_2 = 0 \\
+            &... \\
+            &\text{ What is the basics of a Vector Space in two dimensions, e.g.} \\
+
+            &A= \begin{bmatrix}
+            1 & 2 \\
+            3 & 4 \\
+            \end{bmatrix} \\
+            &\text{ The following is the basics of for two dimensions matrix } \\
+            &\left\{
+                e_1= \begin{bmatrix}
+                1 & 0 \\
+                0 & 0 \\
+                \end{bmatrix},
+
+                e_2= \begin{bmatrix}
+                0 & 1 \\
+                0 & 0 \\
+                \end{bmatrix},
+
+                e_3= \begin{bmatrix}
+                0 & 0 \\
+                1 & 0 \\
+                \end{bmatrix},
+
+                e_4= \begin{bmatrix}
+                0 & 0 \\
+                0 & 1 \\
+                \end{bmatrix} 
+            \right\} \\
+            &\text{Any 2x2 matrix can be written in linear combination of } \left\{e_1, e_2, e_3, e_4 \right\} \\
+            &A = 1e_1 + 2e_2 + 3e_3 + 4e_4 \\
+            \end{align*}
+
+            Once we have a Vector Space, We can define the <strong>multiplication</strong>$(*)$ from $*: A \times A \rightarrow A$ <br><br> 
+            We know Inner Product is Bilinearity, let's see the meaning of Bilinearity for Inner Product<br>
+            \begin{align*}
+                &\forall u, v, w \in V, \alpha \in F, \text{ e.g. } F = \mathbb{R} \\
+                &\left< , \right> : V \times V \rightarrow \mathbb{R} \quad \text{ definition of Inner Product} \\
+                &\left< u, v \right> = u^{T}v \\ 
+                &\left< u + v, w \right> = \left< u, w \right> + \left< v, w \right> \quad \text{ linear on the left} \\
+                &\left< u, v + w \right> = \left< u, v \right> + \left< u, w \right> \quad \text{ linear on the right} \\
+            \end{align*} 
+            It is very similar to distributive law, e.g. $a(b + c) = ab + ac = (b + c)a$ <br>
+            The <strong>multiplication</strong> can be defined as matrix multiplication <br>
+            \begin{align*}
+            &*: V \times V \rightarrow V \\
+            &*: M \times M \rightarrow M \quad \text{ where } V = M\\
+            &*:(M, M) \rightarrow M \quad \text{Prefix notation}\\
+            &M*M \rightarrow M      \quad \text{Infix notation} \\ 
+            &\forall A, B, C \in M, \alpha \in \mathbb{F} \\
+            &\text{Check the Associativity} \\
+            &A * B * C = A * (B * C) \\
+            &\text{Check the Bilinearity} \\
+            &A(B + C) = A B + A C = (B + C)A \\
+            &\text{Check Unitarity} \\
+            &I A = A I \quad \text{ where $I$ is identity matrix}\\
+            & \alpha A B = \alpha (AB) = A (\alpha B) = 
+            \end{align*}
+We did not need to check the multiplication of scalar and M since it is the property of Vector Space, not the Bilinear property <br><br>
+Definition of Bilinear form on a <strong>Vector Space</strong> $V$ over the field $\mathbb{F}$ is a map
+\[ 
+    H: V \times V \rightarrow \mathbb{F}  \\
+\] 
+The map satifieds following properties: <br>
+            \begin{align*}
+                &\forall u, v, w \in V, \alpha \in \mathbb{F} \\
+                &H(u + v, w) = H(u, w) + H(v, w) \\
+                &H(u, v + w) = H(u, v) + H(u, w) \\
+                &H( \alpha u, v) = \alpha H(u, v) \\
+                &H( u, \alpha v) = \alpha H(u, v) \\
+            \end{align*}
+A bilinear form is call symmetric form if ... <br>
+A bilinear form is call skew symmetric form if ... <br>
+
+matrix bilinear form ... <br>
+quadratic form <br>
+inner product<br>
+cross product<br>
+determinant function<br>
+http://localhost/pdf/bilinearforms1.pdf
+
+            </div><br>
+        <!--Column 1 end -->
 		</div>
 		<div class="col2">
 
