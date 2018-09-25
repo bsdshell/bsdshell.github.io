@@ -30,53 +30,38 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+
 <div class="myclass">
+
 <div class="mytitle">
-Emacs Evil Mode for Vim Users
+C++ and C Build and Compile Option 
 </div>
-<pre class="prettyprint smallfont">
-The main reason that I did not use Emacs is the Default Key Bindings are hard to press.
-For Example, you need to hold the CTRL key all the time when you are 
-moving around such as Up, Down, Left, Right. On the other hand, Vim can be switched to 
-'Insert Mode' and you just press k => Up, j => Down, h => Right, l => Left. 
-But we all know Emacs can do almost anything, it means Emacs can emulate Vim[sorts of]
-Yep, There is evil-mode that you can install as package to emulate Vim.  
 
-Here are the steps to install SpaceEmacs on MacOS and config evil-mode
-1. Your Emacs most likely is out of date on your MacOS.
-   SpaceEmacs needs at least 2.4 version. I only have 2.2 Emacs on 
-   my MacOS High Sierra when I'm writing. 
-   You can check your Emacs version with 'emacs --version' on command line
+<pre class="prettyprint">
+// Compile C Source to Object
+gcc -Wall -c  myfile.c
 
-2. Update Your Emacs to 2.4 with homebrew as following
-   brew install emacs-plus --HEAD --with-natural-title-bars
-
-3. Check your Emacs version with 'emacs --version' again after you finish step 2.
-   Make sure it is 2.4 or up.
-   Here is mine: GNU Emacs 24.5.1
-
-3. Install packages for evil-mode, put the following code to your .emacs file
-    (require 'package)
-    (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-    (package-initialize)
-    
-4. Star up your Emacs to install evil-mode package                
-   M-x package-refresh-contents ENTER 
-   M-x package-install ENTER evil
-
-5. Enable evil-mode, add the following code to your .emacs file  
-   (require 'evil)
-   (evil-mode 1)
-
-6. Start your Emacs now and  you should be in evil-mode 
-   Switch back to Normal Emacs Mode with C-z, C-z back to evil-mod
-
-
-
-
-
+// Cpp compile with library
+g++ -std=c++14 -I/path/mylib   -o myfile myfile.cpp
+g++ -std=c++11 -I/path/mylib   -o myfile myfile.cpp
 </pre> 
 </div>
+
+<div class="mytitle">
+Add C++ Standard Library and Language Dialect in Xcode
+</div>
+<div class="cen">
+<img src="../image/cppstd.png" width="80%" height="80%" /><br>
+</div><br> 
+
+<div class="mytitle">
+Add Search Path to Xcode for C++ development
+</div><br>
+
+<div class="cen">
+<img src="../image/xcode_header_add_path.png" width="90%" height="90%" /><br>
+</div> 
+
 </body>
 </html>
 

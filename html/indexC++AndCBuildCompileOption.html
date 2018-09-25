@@ -30,12 +30,37 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+
 <div class="myclass">
+
 <div class="mytitle">
-add content here
+C++ and C Build and Compile Option 
 </div>
+
 <pre class="prettyprint">
+// Compile C Source to Object
+gcc -Wall -c  myfile.c
+
+// Cpp compile with library
+g++ -std=c++14 -I/path/mylib   -o myfile myfile.cpp
+g++ -std=c++11 -I/path/mylib   -o myfile myfile.cpp
 </pre> 
 </div>
+
+<div class="mytitle">
+Add C++ Standard Library and Language Dialect in Xcode
+</div>
+<div class="cen">
+<img src="../image/cppstd.png" width="80%" height="80%" /><br>
+</div><br> 
+
+<div class="mytitle">
+Add Search Path to Xcode for C++ development
+</div><br>
+
+<div class="cen">
+<img src="../image/xcode_header_add_path.png" width="90%" height="90%" /><br>
+</div> 
+
 </body>
 </html>
