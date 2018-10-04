@@ -31,66 +31,17 @@
   ga('send', 'pageview');
 </script>
 
-
 <div class="myclass">
-
 <div class="mytitle">
-Type Constructor and Data Constructor in Haskell
+Tmux Command Tricks and Tips
 </div>
 <pre class="prettyprint">
-data Color = Red | Green | Blue 
-</pre> 
-<pre class="prettyprint">
-The data Constructor is Red, Green, Blue
-:t Red => Red::Color    = function with return type Color
-:t Green => Green::Color = function with return type Color
-:t Color => Error, Color has no type
-:kind Color => Color::*  -- Color is a kind 
-</pre> 
-
-<div class="mytitle">
-Type Constructor and Data Constructor in Haskell
-</div>
-<pre class="prettyprint">
-data Color = RGB Int Int Int
-</pre> 
-<pre class="prettyprint">
-RGB is data Constructor
-RGB is a function RGB::Int->Int->Int
-:kind Color - Color is kind
-</pre> 
-
-<div class="mytitle">
-Type Constructor
-</div>
-<pre class="prettyprint">
-data Color a = Red a | Green a
-</pre> 
-<pre class="prettyprint">
-Color is type Constructor
-</pre> 
-
-<div class="mytitle">
-Recursive Data Type
-</div>
-<pre class="prettyprint">
--- list
-Data List a = [] | a:[a]
-
--- Binary Tree
-Data Tree a = Empty | Node a (Tree a) (Tree a)
-
--- Java Binary Tree
-Node {
-    int a
-    Node left;
-    Node right;
-}
+prefix C => new window
+prefix ? => help window
 
 </pre> 
-
-
 </div>
 
 </body>
 </html>
+

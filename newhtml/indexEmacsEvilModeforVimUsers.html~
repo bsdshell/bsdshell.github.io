@@ -70,6 +70,22 @@ Here are the steps to install SpaceEmacs on MacOS and cofig evil-mode
 
 6. Start your Emacs now and  you should be in evil-mode 
 
+7. Fri Sep 28 15:58:25 2018 
+ The Evil mode is nice for some extensions, but it is easy to lose where you are
+ e.g. which mode you are in
+
+8. I finally give up the Evil mode, 
+  Instead, I remap many basic keybinding for Emacs such as left, right, up and down.
+9. Also, I just found out there is something call sticky key for MacOS 
+   e.g. press CTRL twice and release it, the system will assume your hold the CTRL key.
+
+10. Other issue in Emacs is the backspace key is different that what you expect
+  You need to REMAP it as follow
+  (global-set-key [(control ?h)] 'delete-backward-char)
+  It seems to me it maps to Help, WTF?
+
+11. I wish I can remap the Shift key to CTRL, Do not know how to do it for now. 
+
 </pre> 
 </div>
 </body>

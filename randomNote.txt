@@ -295,4 +295,21 @@ As a simple example of this, create a file named Test.command somewhere on your 
 
 ls -al
 pwd
+-------------------------------------------------------------------------------- 
+Fri Sep 28 17:40:50 2018 
+haskell useful command 
+ghc-pkg find-module  the module belongs to which packages 
+-------------------------------------------------------------------------------- 
+Sun Sep 30 15:20:33 2018 
+install Pure Script, purescript
+    printc 200 "[vimrc] Backup vimrc and bashrc to github "                 RN deprecated bower@1.8.4: We don't recommend using Bower for new projects. Please consider Yarn and Webpack or Parcel. You can read how to migrate legacy project here: https://bower.io/blog/2017/how-to-migrate-away-from-bower/
+    /usr/local/bin/bower -> /usr/local/lib/node_modules/bower/bin/bower
+    /usr/local/bin/pulp -> /usr/local/lib/node_modules/pulp/index.js
 
+    > fsevents@1.2.4 install /usr/local/lib/node_modules/pulp/node_modules/fsevents
+    > node install
+
+    [fsevents] Success: "/usr/local/lib/node_modules/pulp/node_modules/fsevents/lib/binding/Release/node-v48-darwin-x64/fse.node" already installed
+    Pass --update-binary to reinstall or --build-from-source to recompile
+    /usr/local/lib
+-------------------------------------------------------------------------------- 

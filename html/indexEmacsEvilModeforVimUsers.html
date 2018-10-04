@@ -30,6 +30,7 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+
 <div class="myclass">
 <div class="mytitle">
 Emacs Evil Mode for Vim Users
@@ -70,12 +71,72 @@ Here are the steps to install SpaceEmacs on MacOS and config evil-mode
 
 6. Start your Emacs now and  you should be in evil-mode 
    Switch back to Normal Emacs Mode with C-z, C-z back to evil-mod
+</pre><br>
 
-
-
-
-
-</pre> 
+<div class="mytitle">
+Emacs Meta Key on MacBookPro Setting
 </div>
+<pre class="prettyprint smallfont">
+Why most people DO NOT use Emacs?
+It is painful to use the OLD IDE, yep, it is really OLD IDE.
+I use MacBook, first you need to manually map the Meta Key to Option(ALT) on Mac keyboard.
+so you can get somethign call M-x
+Well, after you map the Meta key to Opiton, then you will encounter anyone stupid problem:
+It is impossible to press Option and other key at the same time with one hand.
+Yep, you can use left hand to press the Option key but it is not convenient.
+
+Try to figure out how to lighlight the text and copy/paste almost impossible.
+1. Press C-x Space C-x Space  => highlight the text, Yep, You need to press SIX keys to 
+   select the text, I'm sure there is better way to do it for some Emacs Haskers
+
+
+2. I'm still have no idea what is "Rectangle Mark disable and enable"
+
+</pre>
+
+
+<div class="mytitle">
+Emacs Meta Key on MacBookPro Setting
+</div>
+<div class="cen">
+<img src="../image/macbookpro_meta_key.png" width="80%" height="80%" /><br>
+</div> 
+
+<div class="mytitle">
+Emacs shortcut keys 
+</div>
+<pre class="prettyprint smallfont">
+C-z     // exit Emacs
+C-x 2   // split window horizonally
+C-x 3   // split window vertically
+C-x 0   // close current buffer
+C-x 1   // maximize current buffer
+C-z     // goto background fg => back to foreground
+C-u M-! // shell_command => Vim:ls
+M-x shell // run shell within Emacs
+C-v M-v // page up, page down
+C-a C-e // move cursor to begin and end of line
+C-n C-p // move line down, line up
+C-f M-f // move cursor character/word forward
+C-b M-b // move cursor character/word backward
+C-k M-k // kill all word to end of line or end of sentence
+C-_     // undo
+C-x C-f // find file
+C-x C-s // save file 
+C-x b   // switch buffer
+C-x C-b // list buffer
+C-x 1   // remove buffer list
+C-x 2   // split two windows (horizonal)
+C-x o   // move to other window
+C-x C   // exit Emacs 
+C-x e   // evaluate lisp
+C-h     // help command
+M-x package-list-packages  i // select package to install
+</pre>
+
+</div>
+
+
+
 </body>
 </html>

@@ -70,6 +70,26 @@ data Color a = Red a | Green a
 Color is type Constructor
 </pre> 
 
+<div class="mytitle">
+Recursive Data Type
+</div>
+<pre class="prettyprint">
+-- list
+Data List a = [] | a:[a]
+
+-- Binary Tree
+Data Tree a = Empty | Node a (Tree a) (Tree a)
+
+-- Java Binary Tree
+Node {
+    int a
+    Node left;
+    Node right;
+}
+
+</pre> 
+
+
 </div>
 
 </body>
