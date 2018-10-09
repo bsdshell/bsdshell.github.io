@@ -57,9 +57,9 @@
         <pre class="prettyprint">
         let act1 = SKAction.move(...)
         let act2 = SKAction.move(...)
-        let sequence = SKAction.group([act1, act2], ...)
-        node.run(sequence, completion:{
-            print("act1, act2 => completion")
+        let group = SKAction.group([act1, act2], ...)
+        node.run(group, completion:{
+            print("act1 and act2 run as the SAME time")
         })
         </pre>
         <pre class="prettyprint">
@@ -286,14 +286,28 @@
         let array2d = [[1, 2], [3, 4]]
         let collect = array2d.flatMap{ $0 } // [1, 2, 3, 4]
         </pre>
+
+        <div class="mytitle">
+        Map Iteration
+        </div>
+        <pre class="prettyprint">
+        let map = [1:[1, 2, 3]]
+        for m in map{
+            for ar in m.value {
+                print(ar)
+            }
+        }
+        </pre>
+
         <div class="mytitle">
         Partition array with Set, Map and Filter 
         </div>
-        <pre>
+        <pre class="prettyprint">
         let array = [2, 2, 3, 4, 3, 4]
         let group = Set(array).map{ v in return array.filter{$0 == v} }
         print("group=\(group)") // [[2, 2], [3, 3], [4, 4]]
         </pre>
+
         <div class="mytitle">
         🍑 Map, compute $
         x \left[ \begin{array}{c} 
@@ -332,6 +346,12 @@
         let v1 = [1, 2, 3]
         let v2 = [2, 3, 4]
         let c3 = zip(v1, v2).flatMap{[$0.0 + $0.1]}.reduce(0, +) // 15
+
+        // dot product
+        func dot(v1:[Int], v2:[Int])->Int{
+            return zip(v1, v2).flatMap([$0.0 + $0.1]}.reduce(0, +) // 15 
+        }
+
         </pre>
 
 

@@ -650,7 +650,13 @@ object MyMonoid extends App{
                 &\left< u + v, w \right> = \left< u, w \right> + \left< v, w \right> \quad \text{ linear on the left} \\
                 &\left< u, v + w \right> = \left< u, v \right> + \left< u, w \right> \quad \text{ linear on the right} \\
             \end{align*} 
-            It is very similar to distributive law, e.g. $a(b + c) = ab + ac = (b + c)a$ <br>
+            It is very similar to distributive law, e.g. <br>
+            \begin{align*}
+            a(b + c) &= ab + ac = (b + c)a \\ 
+            \left< a, b + c \right> &= \left< a, b \right> + \left< a, c \right> \\
+            \end{align*}
+            
+
             The <strong>multiplication</strong> can be defined as matrix multiplication <br>
             \begin{align*}
             &*: V \times V \rightarrow V \\
@@ -667,6 +673,10 @@ object MyMonoid extends App{
             & \alpha A B = \alpha (AB) = A (\alpha B) = 
             \end{align*}
 We did not need to check the multiplication of scalar and M since it is the property of Vector Space, not the Bilinear property <br><br>
+
+            <div class="cen">
+            Bilinear Form<br>
+            </div>
 Definition of Bilinear form on a <strong>Vector Space</strong> $V$ over the field $\mathbb{F}$ is a map
 \[ 
     H: V \times V \rightarrow \mathbb{F}  \\
@@ -679,6 +689,69 @@ The map satifieds following properties: <br>
                 &H( \alpha u, v) = \alpha H(u, v) \\
                 &H( u, \alpha v) = \alpha H(u, v) \\
             \end{align*}
+            <div class="cen">
+            Matrix bilinear form<br>
+            </div>
+Definition:
+Let $g$ be a bilinear form on space $V$, and let $\mathcal{\beta} = \{b_1, b_2, ... , b_n \}$
+be a basis of $V$. Then the Matrix $G = (g_{i,j}) = g(b_i, b_j)$ is called the matrix of bilinear form $g$
+with respect to the basis $\beta$, we will call matrix $G$ a Gram matrix of $g$ <br><br>
+let $v, w \in V$ are represented in $\beta$ as
+\begin{align*}
+\left[ v \right]_{\beta} &= \left[ \begin{array}{c}
+                            \alpha_1 \\
+                            \alpha_2 \\
+                            \vdots \\
+                            \alpha_3 
+                           \end{array} \right] \quad 
+\left[ w \right]_{\beta} = \left[ \begin{array}{c}
+                            \sigma_1 \\
+                            \sigma_2 \\
+                            \vdots \\
+                            \sigma_3 
+                           \end{array} \right] \\ 
+                         v &= \left[ \alpha_1, \alpha_2, \dots \alpha_n \right] 
+                              \left[ b_1, b_2, \dots b_n \right] \\
+                         v &= \alpha_1 b_1 + \alpha_2 b_2 + \dots + \alpha_n b_n  \tag{1}\\
+                         w &= \sigma_1 b_1 + \sigma_2 b_2 + \dots + \sigma_n b_n  \tag{2}
+\end{align*} then bilinearity
+By Linearity
+\begin{align*}
+    g(v, w) &= g(\sum_{i=1}^{n} \alpha_i b_i, \sum_{j=1}^{n} \sigma_j b_j) \\
+    g(v, w) &= g(\alpha_1 b_1 + \dots + \alpha_n b_n, \sum_{j=1}^{n} \sigma_j b_j) \\
+    g(v, w) &= g(\alpha_1 b_1, \sum_{j=1}^{n} \sigma_j b_j) + \dots + g(\alpha_n b_n, \sum_{j=1}^{n} \sigma_j b_j)\\
+    g(v, w) &= \sum_{i=1}^{n} g(\alpha_i b_i, \sum_{j=1}^{n} \sigma_j b_j)\\
+    g(v, w) &= \sum_{i=1}^{n} g(\alpha_i b_i, \sigma_1 b_1 + \dots + \sigma_n b_n)\\
+    g(v, w) &= \sum_{i=1}^{n} g(\alpha_i b_i, \sigma_1 b_1) + \dots + \sum_{i=1}^{n} g(\alpha_i b_i, \sigma_n b_n)\\
+    g(v, w) &= \sum_{i=1}^{n} \sum_{j=1}^{n} g(\alpha_i b_i, \sigma_j b_j) \\
+    g(v, w) &= \sum_{i=1}^{n} \sum_{j=1}^{n} \alpha_i \sigma_j g(b_i, b_j) \\
+\text{From} (1) (2) \\
+    g(v, w) &= \left[ v \right]_{\beta}^{T} G \left[ w \right]_{\beta} \\
+\end{align*}
+Concrete example:<br>
+\begin{align*}
+    G &= \begin{bmatrix}
+        1 & 0\\
+        0 & 1
+        \end{bmatrix} \\
+    g(v, w) &= \left[ x_1, y_1 \right] G \left[ \begin{array}{c}
+                                                x_2 \\ 
+                                                y_2
+                                                 \end{array} \right] \\
+    g(v, w) &= \left< v, w \right> = x_1 x_2 + y_1 y_2 \\ \\
+    G &= \begin{bmatrix}
+        0  & 1\\
+        -1 & 0 
+        \end{bmatrix} \\
+    g(v, w) &= \det \left( \begin{bmatrix}
+                      x_1 & x_2 \\
+                      y_1 & y_2
+                     \end{bmatrix}
+                   \right) = x_1 y_2 - x_2 y_1 \\
+
+\end{align*}
+
+
 A bilinear form is call symmetric form if ... <br>
 A bilinear form is call skew symmetric form if ... <br>
 
@@ -703,6 +776,23 @@ http://localhost/pdf/bilinearforms1.pdf
                 &\text{If in additional, for every } a, b \in A \\
                 &a \leq b \text{ or } b \leq a \\
                 &\text{ then } \leq \text{ is total order on } A \\
+            \end{align*}
+            </div>
+
+            <div class="mathdef_box2">
+            <div class="cen">
+            Project Matrix for eigenvector            
+            </div>
+            \begin{align*}
+            \left< u, v \right>   =  |\vec{u}| | \vec{v}| \cos{\phi} \\
+            \cos \phi =  \frac{\left < u , v \right >}{|u||v| } \\
+            \vec{u} \text{ project on } \vec{v}	 \\	
+            |u| \cos \phi \frac{v}{|v|}   =| u| \frac{ \left < u, v \right>}{|u||v|}  \frac{v}{|v|}\\	
+            |u|  \frac{v}{|v|} \cos \phi = \frac{ \left < u, v \right>}{ \left < v, v \right> }  v \\	
+            proj_v = \frac{\left < u, v \right>}{ \left < v, v \right> }  v  =  v \frac{\left< v, u \right>}{\left< v, v \right>}  =  \frac{v (v^{T} u)}{v^T v} = \frac{(v v^{T}) u}{v^{T}v} \\
+            \text{ if } \quad || v || = 1 \\
+            \implies proj_v = v v^{T} u \\
+            v v^{T} \text{ is project matrix from u onto v} \\
             \end{align*}
             </div>
 
