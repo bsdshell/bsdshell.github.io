@@ -313,3 +313,37 @@ install Pure Script, purescript
     Pass --update-binary to reinstall or --build-from-source to recompile
     /usr/local/lib
 -------------------------------------------------------------------------------- 
+Mon Oct 15 17:28:46 2018 
+Install Agda stuff, it might be usefull in the future?
+cabal install Agda failed...:)
+stack install Agda-exe.. failed:)
+home brew works...:(
+==> Pouring agda-2.5.4.1.high_sierra.bottle.tar.gz
+==> Caveats
+To use the Agda standard library by default:
+  mkdir -p ~/.agda
+  echo /usr/local/lib/agda/standard-library.agda-lib >>~/.agda/libraries
+  echo standard-library >>~/.agda/defaults
+
+Emacs Lisp files have been installed to:
+  /usr/local/share/emacs/site-lisp/agda
+==> Summary
+🍺  /usr/local/Cellar/agda/2.5.4.1: 1,369 files, 120MB
+==> Caveats
+==> emacs
+Please try the Cask for a better-supported Cocoa version:
+  brew cask install emacs
+
+To have launchd start emacs now and restart at login:
+  brew services start emacs
+Or, if you don't want/need a background service you can just run:
+  emacs
+==> agda
+To use the Agda standard library by default:
+  mkdir -p ~/.agda
+  echo /usr/local/lib/agda/standard-library.agda-lib >>~/.agda/libraries
+  echo standard-library >>~/.agda/defaults
+
+Emacs Lisp files have been installed to:
+  /usr/local/share/emacs/site-lisp/agda
+-------------------------------------------------------------------------------- 

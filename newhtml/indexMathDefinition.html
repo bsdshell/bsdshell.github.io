@@ -34,10 +34,6 @@
 
 <div id="header">
 </div>
-<div class="colmask rightmenu">
-	<div class="colleft">
-		<div class="col1">
-			<!-- Column 1 start -->
             <div class="mathdef_box2">
                 \[\textbf{Ring}\]
                 $\text{Let a, b, c } \in \mathbf{R}$
@@ -236,7 +232,7 @@ object MyMonoid extends App{
 
             <div class="mathdef_box2">
                 \[\textbf{Euclidean Space}\]
-                Let $V \in \mathbb{R}^n$ is vector space and an inner product is a function $V \times V \rightarrow \mathbb{R}$, that is 
+                Let $V \in \mathbb{R}^n$ is vector space and an inner product is a function $ \left< , \right>: V \times V \rightarrow \mathbb{R}$, that is 
                 $(x, y) \rightarrow \left< x \,, y \right>$ for $x, y \in V$, which satisfied following axioms:
                 \begin{equation}
                 \begin{aligned}
@@ -248,7 +244,7 @@ object MyMonoid extends App{
                     \langle x \,, x \rangle &> 0 \quad x \neq 0 \quad \text{positive definite}\\
                 \end{aligned}
                 \end{equation}
-                If the inner product is defined as dot product, we have Euclidean Structure
+                If the inner product is defined as $ \left< u, v \right> = u^{T}v $    , we have Euclidean Structure $(\mathbb{R}^{n}, u^{T}v)$ or $(\mathbb{R}^{n}, \circ)$
             </div>
             <br>
 
@@ -380,98 +376,6 @@ object MyMonoid extends App{
             </div>
             </div>
             
-            <div class="mathdef_box2">
-                \[ \textbf{Inner Product} \]
-                \[ \text{Positivity} \]
-                \[ \langle\mathbf{v}, \mathbf{v}\rangle \geq 0 \]
-                \[ \langle \mathbf{v} , \mathbf{v} \rangle = \mathbf{0} \iff \mathbf{v} = \mathbf{0}\]
-
-                \[ \text{Linearity in the first component} \]
-
-                \[ \langle c_{1}\mathbf{v_1} \,, \mathbf{v_2}\rangle = c_{1}\langle \mathbf{v_1}, \mathbf{v_2}\rangle \]
-                \[ \langle \mathbf{v_1} + \mathbf{v_2} \,,  \mathbf{v_3} \rangle = \langle \mathbf{v_1} \,, \mathbf{v_3}\rangle  + \langle \mathbf{v_2} \,, \mathbf{v_3}\rangle\]
-
-                \[ \langle c_{1}\mathbf{v_1} + c_{2}\mathbf{v_2}, \mathbf{v_3}\rangle = c_{1}\langle \mathbf{v_1}, \mathbf{v_3}\rangle + c_{2}\langle\mathbf{v_2}, \mathbf{v_3} \rangle \]
-
-                \[ \text{Conjugate Symmetic}\]
-                \[ \langle \mathbf{v_1}, \mathbf{v_2} \rangle = \overline{\langle \mathbf{v_2}, \mathbf{v_1} \rangle}\]
-
-                \[ \text{Properties of Inner product}\]
-                \[ \langle \mathbf{v_1} \,, \lambda \mathbf{v_2} \rangle =  \overline{\langle \lambda\mathbf{v_2} \,, \mathbf{v_1} \rangle} =  
-                    \overline{\lambda} \overline{\langle \mathbf{v_2} \,, \mathbf{v_1} \rangle} = \overline{\lambda} \langle \mathbf{v_1} \,, \mathbf{v_2} \rangle 
-                \] 
-                <br>
-
-                \[ \textbf{Outer Product} \]
-                The outer product $\vec{u} \oplus \vec{v}$ is equivalent to $u v^{T}$, for instance 
-                \[ 
-                    u \otimes v = 
-                    u v^{T} =
-                    \left[ \begin{array}{c}
-                    u_1 \\
-                    u_2 \\
-                    u_3 
-                    \end{array} \right] 
-                    \left[ \begin{array}{cccc}
-                    v_1 & v_2 & v_3 & v_4
-                    \end{array} \right] =
-                    \begin{bmatrix}
-                    u_0 v_1 & u_0 v_2  & u_0 v_3 & u_0 v_4 \\
-                    u_2 v_1 & u_2 v_2  & u_2 v_3 & u_2 v_4 \\
-                    u_3 v_1 & u_3 v_2  & u_3 v_3 & u_3 v_4 \\
-                    \end{bmatrix}
-                \]
-                \[ \textbf{Matrix Multiplication definited as Outer Product} \]
-                \[
-                    \begin{bmatrix}
-                    a_{11} & a_{12} \\
-                    a_{21} & a_{22} \\
-                    \end{bmatrix} 
-                    \begin{bmatrix}
-                    b_{11} & b_{12} \\
-                    b_{21} & b_{22} \\
-                    \end{bmatrix} = 
-
-                    \begin{bmatrix}
-                    a_{11} \\
-                    a_{21} 
-                    \end{bmatrix} \otimes
-                    \begin{bmatrix}
-                    b_{11} \\
-                    b_{12}
-                    \end{bmatrix} 
-                    +
-                    \begin{bmatrix}
-                    a_{12} \\
-                    a_{22} 
-                    \end{bmatrix} \otimes
-                    \begin{bmatrix}
-                    b_{21} \\
-                    b_{22}
-                    \end{bmatrix} 
-                    =
-                    \begin{bmatrix}
-                    a_{11} \\
-                    a_{21} 
-                    \end{bmatrix} 
-                    \begin{bmatrix}
-                    b_{11} & b_{12}
-                    \end{bmatrix}
-                    +
-                    \begin{bmatrix}
-                    a_{12} \\
-                    a_{22} 
-                    \end{bmatrix} 
-                    \begin{bmatrix}
-                    b_{21} & b_{22}
-                    \end{bmatrix}
-                \]
-
-                
-                
-                
-            </div>
-
             <div class="mathdef_box2">
             \[\textbf{Chart}\]
             A $\textbf{Chart}$ on a set $M$ is a pair $(\phi, U)$ where $U$ is an open subset of $M$ and $\phi: U \rightarrow \phi(U)$ is bijection from $U$ to an open subset $\phi(U)$ in $\mathbb{R}^{m}$
@@ -689,6 +593,20 @@ The map satifieds following properties: <br>
                 &H( \alpha u, v) = \alpha H(u, v) \\
                 &H( u, \alpha v) = \alpha H(u, v) \\
             \end{align*}
+The $H$ is similar like $\times$ multiplication that we have known <br>
+\begin{align*}
+    H(w, u + v) &= H(w, u) + H(w, v) \\
+    \times(w, u + v) &= \times(w, u) + \times(w, v) \\
+    w \times (u + v) &= w \times u + w \times v \\ 
+\end{align*}
+What we have familiarized is Inner Product, but Inner Product is more specific<br>
+\begin{align*}
+    \left< u, u \right > \geq 0 \Leftrightarrow u = 0 \\
+\end{align*}
+
+
+
+
             <div class="cen">
             Matrix bilinear form<br>
             </div>
@@ -765,6 +683,96 @@ http://localhost/pdf/bilinearforms1.pdf
             </div><br>
 
             <div class="mathdef_box2">
+                \[ \textbf{Inner Product} \]
+                \[ \text{Positivity} \]
+                \[ \langle\mathbf{v}, \mathbf{v}\rangle \geq 0 \]
+                \[ \langle \mathbf{v} , \mathbf{v} \rangle = \mathbf{0} \iff \mathbf{v} = \mathbf{0}\]
+
+                \[ \text{Linearity in the first component} \]
+
+                \[ \langle c_{1}\mathbf{v_1} \,, \mathbf{v_2}\rangle = c_{1}\langle \mathbf{v_1}, \mathbf{v_2}\rangle \]
+                \[ \langle \mathbf{v_1} + \mathbf{v_2} \,,  \mathbf{v_3} \rangle = \langle \mathbf{v_1} \,, \mathbf{v_3}\rangle  + \langle \mathbf{v_2} \,, \mathbf{v_3}\rangle\]
+
+                \[ \langle c_{1}\mathbf{v_1} + c_{2}\mathbf{v_2}, \mathbf{v_3}\rangle = c_{1}\langle \mathbf{v_1}, \mathbf{v_3}\rangle + c_{2}\langle\mathbf{v_2}, \mathbf{v_3} \rangle \]
+
+                \[ \text{Conjugate Symmetic}\]
+                \[ \langle \mathbf{v_1}, \mathbf{v_2} \rangle = \overline{\langle \mathbf{v_2}, \mathbf{v_1} \rangle}\]
+
+                \[ \text{Properties of Inner product}\]
+                \[ \langle \mathbf{v_1} \,, \lambda \mathbf{v_2} \rangle =  \overline{\langle \lambda\mathbf{v_2} \,, \mathbf{v_1} \rangle} =  
+                    \overline{\lambda} \overline{\langle \mathbf{v_2} \,, \mathbf{v_1} \rangle} = \overline{\lambda} \langle \mathbf{v_1} \,, \mathbf{v_2} \rangle 
+                \] 
+                <br>
+
+                \[ \textbf{Outer Product} \]
+                The outer product $\vec{u} \times \vec{v}$ is equivalent to $u v^{T}$, for instance 
+                \[ 
+                    u \otimes v = 
+                    u v^{T} =
+                    \left[ \begin{array}{c}
+                    u_1 \\
+                    u_2 \\
+                    u_3 
+                    \end{array} \right] 
+                    \left[ \begin{array}{cccc}
+                    v_1 & v_2 & v_3 & v_4
+                    \end{array} \right] =
+                    \begin{bmatrix}
+                    u_0 v_1 & u_0 v_2  & u_0 v_3 & u_0 v_4 \\
+                    u_2 v_1 & u_2 v_2  & u_2 v_3 & u_2 v_4 \\
+                    u_3 v_1 & u_3 v_2  & u_3 v_3 & u_3 v_4 \\
+                    \end{bmatrix}
+                \]
+                \[ \textbf{Matrix Multiplication definited as Outer Product} \]
+                \[
+                    \begin{bmatrix}
+                    a_{11} & a_{12} \\
+                    a_{21} & a_{22} \\
+                    \end{bmatrix} 
+                    \begin{bmatrix}
+                    b_{11} & b_{12} \\
+                    b_{21} & b_{22} \\
+                    \end{bmatrix} = 
+
+                    \begin{bmatrix}
+                    a_{11} \\
+                    a_{21} 
+                    \end{bmatrix} \otimes
+                    \begin{bmatrix}
+                    b_{11} \\
+                    b_{12}
+                    \end{bmatrix} 
+                    +
+                    \begin{bmatrix}
+                    a_{12} \\
+                    a_{22} 
+                    \end{bmatrix} \otimes
+                    \begin{bmatrix}
+                    b_{21} \\
+                    b_{22}
+                    \end{bmatrix} 
+                    =
+                    \begin{bmatrix}
+                    a_{11} \\
+                    a_{21} 
+                    \end{bmatrix} 
+                    \begin{bmatrix}
+                    b_{11} & b_{12}
+                    \end{bmatrix}
+                    +
+                    \begin{bmatrix}
+                    a_{12} \\
+                    a_{22} 
+                    \end{bmatrix} 
+                    \begin{bmatrix}
+                    b_{21} & b_{22}
+                    \end{bmatrix}
+                \]
+            </div>
+
+
+
+            <div class="mathdef_box2">
             <div class="cen">
             Partial Order on Set 
             </div>
@@ -781,7 +789,7 @@ http://localhost/pdf/bilinearforms1.pdf
 
             <div class="mathdef_box2">
             <div class="cen">
-            Project Matrix for eigenvector            
+            Projection Matrix            
             </div>
             \begin{align*}
             \left< u, v \right>   =  |\vec{u}| | \vec{v}| \cos{\phi} \\
@@ -792,20 +800,129 @@ http://localhost/pdf/bilinearforms1.pdf
             proj_v = \frac{\left < u, v \right>}{ \left < v, v \right> }  v  =  v \frac{\left< v, u \right>}{\left< v, v \right>}  =  \frac{v (v^{T} u)}{v^T v} = \frac{(v v^{T}) u}{v^{T}v} \\
             \text{ if } \quad || v || = 1 \\
             \implies proj_v = v v^{T} u \\
-            v v^{T} \text{ is project matrix from u onto v} \\
+            v v^{T} \text{ is projection matrix from u onto v} \\
             \end{align*}
             </div>
 
+            <div class="mathdef_box2">
+            <div class="cen">
+            Projection Matrix 2            
+            </div>
+            Given $u, v$,  $u$ projects onto v, $p = \sigma v$ where $\sigma$ is the scala <br>
+            we have $v \perp (p - u)$ <br> 
+            \begin{align*}
+            \implies v \perp (\sigma v - u)  \\
+            \implies v^{T} (\sigma v - u)  = 0  \\
+            \implies \sigma v^{T} v - v^{T} u  \\
+            \implies \sigma v^{T} v = v^{T} u  \\
+            \implies \sigma = \frac{v^{T}u}{v^{T}v}  \\
+            \implies \sigma v  = v\frac{v^{T} u}{v^{T}v}   \\
+            \implies \sigma v = \frac{ v v^{T} u } {v^{T} v}  \\
+            \implies \sigma v = \frac{1}{v^{T} v} v v^{T} u  \\
+            \implies \sigma v = \frac{u u^{T}}{v^{T} v} u  \\
+            P  = \frac{v v^{T}}{ v^{T} v } \\
+            \text{ Show } P^{2} = P \\
+            P^{2} = \frac{v v^{T}}{v^{T} v} \frac{v v^{T}}{ v^{T} v}  \\
+            P^{2} = \frac{v (v^{T} v) v^{T}}{v^{T} v v^{T} v}  \\
+            P^{2} = \frac{ v v^T} { v^T v} = P 
+            \end{align*}  
 
-        <!--Column 1 end -->
-		</div>
+            Given $u, v$,  $u$ projects onto $v$,
+            $w = \sigma v$ where $\sigma$ is the scala 
+            we have $v \perp (w - u)$ <br> 
+            \begin{align*}
+                v \perp (\sigma v - u)                  \\ 
+                v^{T} (\sigma v - u)  = 0               \\ 
+                \sigma v^{T} v - v^{T} u = 0                \\ 
+               \sigma v^{T} v = v^{T} u                \\ 
+                \sigma = \frac{v^{T}u}{v^{T}v}          \\  \\
+               \sigma  v=  \frac{ v v^{T} u } {v^{T} v} \\ 
+                \sigma v =  \frac{ v v^{T}} {v^{T} v} u \\   
+            \end{align*}
+            $vv^T$ is the projection matrix which projects $u$ onto $v$ <br> 
 
-		<div class="col2">
+            Concret Example:
+            Let's project $ 
+            u = \left[ \begin{array}{c}
+            1 \\
+            1
+            \end{array} \right]$ onto 
+            $ v = \left[ \begin{array}{c}
+            0 \\
+            1
+            \end{array} \right]$ \\ 
+            $ vv^{T} = 
+            \left[ \begin{array}{c}
+            0 \\
+            1
+            \end{array} \right] 
+            \left[ \begin{array}{cc}
+            0 & 1 
+            \end{array} \right] 
+            = \begin{bmatrix}
+            0 & 0\\
+            0 & 1 
+            \end{bmatrix} <br> 
+            Proj_v = 
+            \begin{bmatrix}
+            0 & 0\\
+            0 & 1 
+            \end{bmatrix}
+            \left[ \begin{array}{c}
+            1 \\
+            1
+            \end{array} \right] 
+            =
+            \left[ \begin{array}{c}
+            0 \\
+            1
+            \end{array} \right] 
+            $
 
-		</div>
-	</div>
-</div>
-</body>
-</html>
+            <div class="cen">
+                <img src="../image/projection_vector.svg" width="80%" height="80%" /><br>  
+            </div>
+            </div>
 
+	       <div class="mathdef_box2">                                                         
+	       <div class="cen">                                                                  
+	       Inner Product is NOT Bilinear Form over the Complex $\mathbb{C}$                                              
+	       </div>                                                                             
+  What is Bilinear Form: given vector space $V$ and a field $\mathbb{F} = \mathbb{C}$
+  $H: V \times V \rightarrow \mathbb{F}$ <br> 
+  let $u, v, w \in V, \sigma \in \mathbb{F}$, it satisifed following properties:<br>
+   $H(u + v, w) = H(u, w) + H(v, w)$ <br>  
+   $H(u, v + w) = H(u, v) + H(u, w)$ <br>  
+   $\color{red}{H(\sigma u, v) = \sigma H(u, v)}$ <br>  
+   $\color{red}{H(u, \sigma v) = \sigma H(u, v)}$ <br><br>  
+  Inner Product: given vector space $V$ and a field $\mathbb{F}$ over the Complex Number $\mathbb{C}$,
+  let $u, v, w \in V, \text{ and } \sigma \in \mathbb{F}$ <br>
+  $\left<,\right >: V \times V \rightarrow \mathbb{F}$, it satisfied following properties:<br>
+  $\left< u + v, w \right > = \left< u, w \right > + \left< v, w \right >$ <br>
+  $\color{red}{\left< \sigma u, w \right > = \sigma^{*} \left< u, w \right >} $ <br>
+  $\color{red}{\left< u, \sigma v \right > = \sigma \left< u, v \right >} $ <br>
+  $\left< u, v \right > = \overline{\left< v, u \right >}$ <br>
+  $\left< u, u \right > \geq 0 $ <br>
+  $\left< u, u \right > = 0 \Leftrightarrow u = 0 $ <br><br>
+\begin{align*}
+&\text{Inner Product over the real $\mathbb{R}$ and complex $\mathbb{C}$} \\ 
+&\left<\sigma u, v \right > = \overline{\sigma} \left< u, v \right > \quad \because \sigma = \overline{\sigma} \quad \sigma \in \mathbb{R} \\
+&\left<\sigma u, v \right > \neq \overline{\sigma} \left< u, v \right > \quad \because \sigma \neq \overline{\sigma} \quad \sigma \in \mathbb{C} \\
+\end{align*}
+  </div>
+
+	       <div class="mathdef_box2">                                                         
+	       <div class="cen">                                                                  
+	       Sesquilinear Form and Bilinear Form                                             
+	       </div>                                                                             
+           Given $ \left< , \right> : V \times V \rightarrow \mathbb{F}$
+           \begin{align*} 
+            &\left< u + v, w \right> = \left< u, w \right> + \left< v, w \right> \\
+            &\left< u , v + w \right> = \left< u, v \right> + \left< u, w \right> \\
+            &\left< \sigma u, v \right> = \overline{\sigma} \left< u, v \right> \\
+            &\left< u, \sigma v \right> = \sigma \left< u, v \right> \\
+           \end{align*} 
+           </div>
+
+</body>					
 

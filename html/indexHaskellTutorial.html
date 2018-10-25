@@ -139,9 +139,6 @@
             <img src="../image/monadpic.png" width="40%" height="40%" /><br>
             </div> 
 
-
-
-
             <div class="mytitle">
             Not everything is Functor
             </div>
@@ -149,7 +146,7 @@
             MyMaybe is not a Functor since it does't satify the SECOND rule given from above<br>
             </div>
             <pre class="mycode">
-            <pre class="cc">
+            <pre class="prettyprint">
             data MyMaybe a = MNothing | MyJust Int a deriving(Show)
 
             instance Functor MyMaybe where
@@ -211,7 +208,7 @@
             print::String->IO ()
 
             <span class="bo">Chain readFile to print with</span> >>=  
-            readFile >>=\contents -> print contents
+            readFile filePath >>=\file -> print file 
 
             <span class="bo">What you can come up a picture about IO monad</span>
             <div class="cen">
@@ -259,8 +256,18 @@
                         putStrLn x
                         putStrLn x
                         )
+            
 
-            <pre class="cc">
+            <span class="bo">Similarly </span>
+            forM::(Traversable t, Monad m)=> t a -> (a -> m b) -> t(m b)
+
+            let s = ["dog", "cat"]
+            forM s $ \x -> print x
+            dog 
+            cat
+            [(), ()]
+
+            <pre class="prettyprint">
             -- get two Chars
             getTwoChars::IO (Char, Char) 
             getTwoChars   = getChar >>= \c1-> 
@@ -356,6 +363,54 @@
             main =  do 
                     print (roots 3 9 1)
             </pre>
+
+            <div class="mytitle">Haskell Binary Tree</div>
+<pre class="prettyprint smallfont">
+-- binary tree in Haskell
+data Tree a = Empty 
+            | Node a (Tree a) (Tree a) deriving (Show)
+
+binsert::Tree Integer->Tree Integer->Tree Integer 
+binsert Empty (Node a Empty Empty) = (Node a Empty Empty)
+binsert (Node a l r) (Node b Empty Empty) = if b < a 
+                                    then Node a (binsert l (Node b Empty Empty)) r 
+                                    else Node a l (binsert r (Node b Empty Empty))   
+
+
+-- build Binary Tree from preorder and inorder
+buildTree::[Char]->[Char]->Tree Char 
+buildTree _ [] = Empty
+buildTree [] _ = Empty
+buildTree preorder inorder = Node h  (buildTree leftPre leftIn) (buildTree rightPre  rightIn) 
+                            where
+                                h = head preorder
+                                leftIn  = filter(\x->x < h) inorder
+                                rightIn = filter(\x->x > h) inorder
+                                leftPre = take (length rightIn) $ tail preorder 
+                                rightPre = subList preorder (length leftIn) $ length preorder
+
+-- In order traversal in Binary Tree
+inorder::Tree a->[a]
+inorder Empty = []
+inorder (Node a l r) = (inorder l) ++ [a] ++ (inorder r) 
+
+-- check whether a Binary Tree is symmetric 
+sym::Tree a ->Bool
+sym Empty = True
+sym (Node a Empty Empty) = True
+sym (Node a l Empty) = False 
+sym (Node a Empty r) = False 
+sym (Node a l r) = sym l && sym r 
+
+-- find the maximum number of nodes in a Binary Tree
+maxlen::Tree a->Integer
+maxlen Empty = 0 
+maxlen (Node a l r) = 1 + max (maxlen l) (maxlen r)
+
+-- find the maximu height of a Binary Tree
+maxheight = maxlen - 1
+
+</pre>
 
 
             <div class="mytitle">What is do statement in Haskell</div>
