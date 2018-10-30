@@ -46,15 +46,28 @@
                     <div class="mytitle">
                     Allocate and Deallocate functions in C++
                     </div>
-                    <div class="highlight"><pre><span class="kt">int</span><span class="o">*</span> <span class="nf">allocate</span><span class="p">(</span><span class="kt">int</span> <span class="n">size</span><span class="p">){</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="n">size</span><span class="p">];</span>
-<span class="p">}</span>
+                    <pre class="prettyprint">
+                    int* allocate(int size){
+                            return new int[size];
+                    }
 
-<span class="kt">void</span> <span class="nf">deallocate</span><span class="p">(</span><span class="kt">int</span><span class="o">*&amp;</span> <span class="n">pt</span><span class="p">){</span>
-    <span class="k">delete</span><span class="p">[]</span> <span class="n">pt</span><span class="p">;</span>
-    <span class="n">pt</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
+                    void deallocate(int*& pt){
+                            delete[] pt;
+                                pt = NULL;
+                    }
+                    </pre>
+
+                    <div class="mytitle">
+                    Why You can NOT find the length of array if you allocate memory dynamically 
+                    </div>
+                    <pre class="prettyprint">
+                    int* arr = new int[10];
+                    int len = sizeof(arr)/sizeof(int); // not equal 10
+
+                    int arr[10];
+                    int len = sizeof(arr)/sizeof(int); // => equal 10
+
+                    </pre>
  
                     <div class="mytitle">
                     Dynamically allocate two dimension array in C 
