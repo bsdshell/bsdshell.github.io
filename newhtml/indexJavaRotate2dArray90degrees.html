@@ -31,11 +31,36 @@
   ga('send', 'pageview');
 </script>
 <div class="myclass">
+
 <div class="mytitle">
-add content here
+Java Rotate 2d Array 90 degrees
 </div>
 <pre class="prettyprint">
+    public static void rotate90(int[][] arr){
+        if(arr != null){
+            int len = arr.length;
+            for(int k=0; k < len/2; k++){
+                for(int i=k; i < len-1-k; i++){
+                    int tmp = arr[k][i];
+                    arr[k][i] = arr[len-1-i][k];
+                    arr[len-1-i][k] = arr[len-1-k][len-1-i];
+                    arr[len-1-k][len-1-i] = arr[i][len-1-k];
+                    arr[i][len-1-k] = tmp;
+                }
+            }
+        }
+    }
+    --------------------
+    [1][2][3]
+    [4][5][6]
+    [7][8][9]
+    --------------------
+    [7][4][1]
+    [8][5][2]
+    [9][6][3]
+    --------------------
 </pre> 
+
 </div>
 </body>
 </html>
