@@ -30,43 +30,12 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
-
 <div class="myclass">
 <div class="mytitle">
-Java Least Common Ancestor
+add content here
 </div>
 <pre class="prettyprint">
-    // Find the least common ancestor or lca()
-    public static Node lca(Node n1, Node n2, Node r){
-        if (r != null){
-            if (r.data == n1.data || r.data == n2.data){
-                return r;
-            }else {
-                Node left = lca(n1, n2, r.left);
-                Node right= lca(n1, n2, r.right);
-                if (left != null && right != null){
-                    return r;
-                }else if(left != null && right == null){
-                    return left;
-                }else if(left == null && right != null){
-                    return right;
-                }
-            }
-        }
-        return null;
-    }
 </pre> 
-Least Common Ancestor:<br>
-5 is the LCA of 1 and 9<br>
-5 is the LCA of 5 and 1<br>
-10 is the LCA of 9 and 15<br>
-
-<div class="cen">
-<img src="../image/lma.svg" width="40%" height="40%" /><br>
-</div> 
-
-
 </div>
-
 </body>
 </html>
