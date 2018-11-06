@@ -32,127 +32,44 @@
       ga('send', 'pageview');
     </script>
 
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-            <!-- Column 1 start -->
 
             <div class="mytitle">
             C++ Copy Constructor, Assignment Operator, Default Constructor 
             </div>
-            <pre class="cc">
+            <pre class="prettyprint">
+// C++ is pretty complex programming language out there. There are C99, C++11, C++14 and C++17, 
+// I'm still struggle to understand the difference amount them. 
+// Many new features are added in recent years such as functional style programming and memory management.
+// But Copy Constructor, Assignment Operator and Default Constructor are very confusing concept for beginner
+
             class MyStuff{
                 public:
-                MyStuff(MyStuff& other){
-                    pp("call Copy Constructor\n");
-                }
                 MyStuff(){
                     pp("call Empty Constructor\n");
                 }
-                MyStuff& operator=(MyStuff& rhs){
+                MyStuff(const MyStuff& other){
+                    pp("call Copy Constructor\n");
+                }
+                MyStuff& operator=(const MyStuff& rhs){
                     pp("call Assignment Operator\n");
                     return *this;
                 }
             };
 
-            MyStuff a;      // Empty Constructor
-            MyStuff b = a;  // Copy Constructor
-            a = b;          // Assignment Operator
+            MyStuff a;      // Call Empty Constructor
+            MyStuff b = a;  // Call Copy Constructor
+            a = b;          // Call Assignment Operator
 
+            MyStuff fun(MyStuff stuff){
+                MyStuff s = stuff;
+                return s;
+            }
+
+            // function passing by value, call "Copy Constructor"
+
+            // function return by value, call "Copy Constructor"
             </pre>
             
-
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-
     </body>
     </html>
     
