@@ -282,9 +282,9 @@ pre.cc{
 .mytext{
     margin:auto;
     /* width:80%; */
-    color: rgb(0, 0, 0);
+    color: rgba(255, 217, 126, 0.98);
     /* font-size:18px; */
-    background: #f3f3f3;
+    background: #14304a;
     margin-left: 0px;
     /* text-indent: 10px; */
     padding-left: 40px;
@@ -295,6 +295,7 @@ pre.cc{
     display: block;
     font-style: normal;
 }
+
 
 .mysubtitle{
    margin:auto;

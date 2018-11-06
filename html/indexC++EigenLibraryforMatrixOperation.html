@@ -32,10 +32,45 @@
 </script>
 <div class="myclass">
 <div class="mytitle">
-add content here
+C++ matrix operation library: Eigen
 </div>
-<pre class="prettyprint">
-</pre> 
+
+<pre class="mytext">
+1. Installation:
+    Git pull the Eigen library:
+    git clone https://github.com/eigenteam/eigen-git-mirror
+2. Copy the Eigen Folder to your lib directory
+   cp -rf Eigen  /yourcpplib/
+3. Compile
+   g++ -I /yourcpplib/ hello.cpp -o hello 
+4. Example:
+</pre>
+    <pre class="prettyprint">
+    #include < iostream>
+    #include < Eigen/Dense>
+
+    using namespace std;
+    using namespace Eigen;
+
+    int main() {
+      MatrixXi m = MatrixXi::Random(10,10); 
+      cout << "m =\n" << m*m << endl;
+    }
+
+    // -------------------------------------------------------------------------------- 
+    #include < iostream>
+    #include < Eigen/Dense>
+    using Eigen::MatrixXd;
+    int main()
+    {
+      MatrixXd m(2,2);
+      m(0,0) = 3;
+      m(1,0) = 2.5;
+      m(0,1) = -1;
+      m(1,1) = m(1,0) + m(0,1);
+      std::cout << m << std::endl;
+    }
+    </pre> 
 </div>
 </body>
 </html>

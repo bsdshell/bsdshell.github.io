@@ -30,29 +30,15 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
-
 <div class="myclass">
 <div class="mytitle">
-Why Haskell Monad IO is useful
+add content here
 </div>
 <pre class="mytext">
-If you want to sequence your computation in Haskel, IO Monad can save your life. 
-Assume we have $m$ blocks of data and partition it to $n$ small chunks,<br> 
-e.g [1, 2, 3, 4, 5, 6] => [[1,2], [3, 4], [5, 6]]<br> 
-and we want to compute those chunks: [1, 2] => [3, 4] => [5, 6] in this order.
-we can write something like Loop to process them.
+My text here
 </pre>
 <pre class="prettyprint">
-iterateList::[a]->(a -> IO ()) -> IO ()
-iterateList [] f = return ()
-iterateList (x:xs) f = f x >> iterateList xs f
-
--- how to use it
-iterateList bigBlocks(\chunk -> do
-            compute chunk
-            )
 </pre> 
 </div>
-
 </body>
 </html>
