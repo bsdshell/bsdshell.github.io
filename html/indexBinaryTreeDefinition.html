@@ -46,47 +46,48 @@
             1. Maximum of left subtree is less than the root node<br>
             2. Minimum of right subtree is greater than the root node<br>
             </div>
-            <div class="highlight"><pre><span class="c1">//</span>
-    <span class="c1">// precondition node != null</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">max</span><span class="o">(</span><span class="n">Node</span> <span class="n">node</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">right</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
-            <span class="k">return</span> <span class="n">max</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
-        <span class="k">else</span>
-            <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="na">data</span><span class="o">;</span>
-    <span class="o">}</span>
 
-    <span class="c1">// precondition node != null</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">min</span><span class="o">(</span><span class="n">Node</span> <span class="n">node</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">left</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
-            <span class="k">return</span> <span class="n">min</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
-        <span class="k">else</span>
-            <span class="k">return</span> <span class="n">node</span><span class="o">.</span><span class="na">data</span><span class="o">;</span>
-    <span class="o">}</span>
+            <pre class="prettyprint">
+            //
+            // precondition node != null
+            public static int max(Node node) {
+                if(node.right != null)
+                    return max(node.right);
+                else
+                    return node.data;
+            }
 
-    <span class="c1">// BST definition</span>
-    <span class="c1">// 1) left subtree is BST</span>
-    <span class="c1">// 2) right subtree is BST</span>
-    <span class="c1">// 3) max(left substree) &lt; parent.data &amp;&amp; min(right subtree) &gt; parent.data</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isBSTDef</span><span class="o">(</span><span class="n">Node</span> <span class="n">node</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">node</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
-            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-        <span class="k">else</span> <span class="o">{</span>
-            <span class="k">if</span><span class="o">(!</span><span class="n">isBSTDef</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">left</span><span class="o">))</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+            // precondition node != null
+            public static int min(Node node) {
+                if(node.left != null)
+                    return min(node.left);
+                else
+                    return node.data;
+            }
 
-            <span class="k">if</span><span class="o">((</span><span class="n">node</span><span class="o">.</span><span class="na">left</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">max</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">left</span><span class="o">)</span> <span class="o">&gt;=</span> <span class="n">node</span><span class="o">.</span><span class="na">data</span><span class="o">))</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">right</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">node</span><span class="o">.</span><span class="na">data</span> <span class="o">&gt;=</span> <span class="n">min</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">right</span><span class="o">))</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+            // BST definition
+            // 1) left subtree is BST
+            // 2) right subtree is BST
+            // 3) max(left substree) < parent.data && min(right subtree) > parent.data
+            public static boolean isBSTDef(Node node) {
+                if(node == null)
+                    return true;
+                else {
+                    if(!isBSTDef(node.left))
+                        return false;
 
-            <span class="k">if</span><span class="o">(!</span><span class="n">isBSTDef</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">right</span><span class="o">))</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-            
-            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-</pre></div>
- 
+                    if((node.left != null && max(node.left) >= node.data))
+                        return false;
+                    if(node.right != null && node.data >= min(node.right))
+                        return false;
+
+                    if(!isBSTDef(node.right))
+                        return false;
+                    
+                    return true;
+                }
+            } 
+            </pre>
 
             <div class="mytext">
             <span class="wbold">Use Backtrack to store the previous node</span><br> 
@@ -94,19 +95,19 @@
             1. Use inorder traveral to compare previous and current node<br>
             2. Return false if previous node is greater than the current node<br>
             </div>
-            <div class="highlight"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isBST</span><span class="o">(</span><span class="n">Node</span> <span class="n">root</span><span class="o">,</span> <span class="n">Node</span> <span class="n">prev</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span> <span class="n">root</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">if</span><span class="o">(!</span><span class="n">isBST</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">left</span><span class="o">,</span> <span class="n">prev</span><span class="o">))</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">prev</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">prev</span><span class="o">.</span><span class="na">data</span> <span class="o">&gt;=</span> <span class="n">root</span><span class="o">.</span><span class="na">data</span><span class="o">)</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-            <span class="k">if</span><span class="o">(!</span><span class="n">isBST</span><span class="o">(</span><span class="n">root</span><span class="o">.</span><span class="na">right</span><span class="o">,</span> <span class="n">root</span><span class="o">))</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="o">}</span>
-</pre></div>
- 
+            <pre class="prettyprint">
+            public static boolean isBST(Node root, Node prev) {
+                if( root != null) {
+                    if(!isBST(root.left, prev))
+                        return false;
+                    if(prev != null && prev.data >= root.data)
+                        return false;
+                    if(!isBST(root.right, root))
+                        return false;
+                }
+                return true;
+            }
+            </pre>
 
             <div class="mytext">
             <span class="wbold">Use static variable to store the previous node</span><br> 
@@ -114,21 +115,21 @@
             1. Use inorder traveral to compare previous and current node<br>
             2. Return false if previous node is greater than the current node<br>
             </div>
-            <div class="highlight"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="n">Node</span> <span class="n">prev</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isBST</span><span class="o">(</span><span class="n">Node</span> <span class="n">r</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">r</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">if</span><span class="o">(!</span><span class="n">isBST</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">left</span><span class="o">))</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">prev</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">prev</span><span class="o">.</span><span class="na">data</span> <span class="o">&gt;=</span> <span class="n">r</span><span class="o">.</span><span class="na">data</span><span class="o">)</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-            <span class="n">prev</span> <span class="o">=</span> <span class="n">r</span><span class="o">;</span>
-            <span class="k">if</span><span class="o">(!</span><span class="n">isBST</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="na">right</span><span class="o">))</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="o">}</span>
-</pre></div>
- 
+            <pre class="prettyprint">
+            public static Node prev = null;
+            public static boolean isBST(Node r) {
+                if(r != null) {
+                    if(!isBST(r.left))
+                        return false;
+                    if(prev != null && prev.data >= r.data)
+                        return false;
+                    prev = r;
+                    if(!isBST(r.right))
+                        return false;
+                }
+                return true;
+            }
+            </pre>
 
 
             <div class="cen">

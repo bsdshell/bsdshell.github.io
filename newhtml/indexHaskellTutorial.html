@@ -99,10 +99,10 @@
             <div class="cen">
                 <img src="../image/functor1.png" width="40%" height="40%" />
             </div>
-            <div class="mytext">
+            <div style="font-size:150%;" class="mytext">
             Functor is like a box contains something inside such as Maybe or [1, 2]<br> 
-            with a function call fmap which take a function and map the stuff inside the box,<br> 
-            then return a new box with new stuff<br><br>
+            with a function call fmap which take a function and map the stuff<br> 
+            inside the box, then return a new box with new stuff<br><br>
             
             Functor can be formally defined by a pair of functions $f_1 \mbox{ and } f_0$<br> 
             so that $f_0:Ob(Hask) \rightarrow Ob(Hask)$ and $f_1:Hom(Hask) \rightarrow Hom(Hask)$<br>
@@ -411,7 +411,114 @@ maxlen (Node a l r) = 1 + max (maxlen l) (maxlen r)
 maxheight = maxlen - 1
 
 </pre>
+<div class="mytitle">
+How to create Haskell Record and show Record
+</div>
+<pre class="mytext">
+Haskell record is similar to Java Class without methods.
+You can not have function inside record in Haskell.
+-- | If you are Java or C++ guys, you might do something like that:
+-- | There are lots of typing without doing anything useful here:)
+Java needs 23 lines of code
+Haskell needs 4 lines of code
+Of couse there are Setter and Getter generator like Lombok to do that work in Java
+but you need to import the libraries and manage the dependency.
+</pre>
+<pre class="prettyprint">
 
+public class{
+    String firstName;
+    String lastName;
+    Int    age;
+    public String getFirstName(){
+        return firstName;
+    }
+    public String getLastName(){
+        return lastName;
+    }
+    public Int getAge(){
+        return age;
+    }
+    public void setFirstName(String firstName){
+        this.firstName = firstName;
+    }
+    public void setLastName(String lastName){
+        this.lastName = lastName;
+    }
+    public void setAge(Int age){
+        this.age = age;
+    }
+}
+
+
+-- | /Users/cat/myfile/bitbucket/haskell/Record.hs
+-- 
+-- | create record called Person with three fields:
+-- | firstName, lastName and age
+data Person = Person {
+    firstName::String, 
+    lastName::String, 
+    age::Int} deriving (Eq)
+
+-- | Set some values for the Person, it is very simple, 
+-- | You do not need Setter.
+-- | -------------------------------------------------------------------------------- 
+let person = Person{firstName = "Jonathan", lastName = "Michell", age = 20}
+let animal = Person{firstName = "Nonhuman", lastName = "Michell", age = 20}
+
+-- | How to access the fields, there are Getters for us by default 
+-- | -------------------------------------------------------------------------------- 
+pp $ "firstName=" ++ firstName person  -- Jonathan
+pp $ "lastName =" ++ lastName person   -- Michell 
+pp $ "age      =" ++ show(age person)  -- 20 
+-- | -------------------------------------------------------------------------------- 
+</pre>
+<pre class="mytitle">
+Haskell Record with IORef
+</pre>
+<pre class="mytext">
+IORef is tricky to use initially if you are from Java or C++, If you combine Record with IORef
+then it is harder to figure out how the syntax work
+1. We want to create a Counter with two fields, both fields are Int type, nothing is revolutionary 
+2. Increate each fields by certain number
+3. Show the certain field
+</pre><br>
+<div style="font-size:120%;" class="mytext">
+Create Record with two fields:<br>
+    1. Pos::IORef Int => $Pos \in \{IORef Int\}$<br>
+    2. Up::IORef Int => $Up \in \{IORef Int\}$<br>
+</div>
+<pre class="prettyprint">
+data Count = Count{
+    pos :: IORef Int,
+    up :: IORef Int
+    }
+</pre>
+<pre class="mytext">
+1. Create Counter 
+2. Create incremental functions 
+3. Create the show function
+</pre>
+<pre class="prettyprint">
+    makeCounter::Int->Int-> IO Count
+    makeCounter c u = do 
+            c' <- newIORef c  
+            u' <- newIORef u  
+            return (Count c' u')  
+
+    intPosCounter::Int->Count->IO() 
+    intPosCounter n (Count c _) = modifyIORef c (+n) 
+
+    intUpCounter::Int->Count->IO() 
+    intUpCounter n (Count _ u) = modifyIORef u (+n) 
+
+    showCounter::Count->IO()
+    showCounter (Count c u) = do   
+                         c' <- readIORef c
+                         u' <- readIORef u 
+                         pp (show c' ++ " " ++ show u') 
+
+</pre>
 
             <div class="mytitle">What is do statement in Haskell</div>
             <div class="highlight"><pre><span class="nf">nameDo</span><span class="ow">::</span><span class="kt">IO</span> <span class="kt">String</span>
@@ -633,37 +740,6 @@ maxheight = maxlen - 1
 <span class="nl">postorderTraversal:</span><span class="o">:</span><span class="n">Tree</span> <span class="n">a</span> <span class="o">-&gt;[</span><span class="n">a</span><span class="o">]</span>
 <span class="n">postorderTraversal</span> <span class="n">Empty</span> <span class="o">=</span> <span class="o">[]</span> 
 <span class="n">postorderTraversal</span><span class="o">(</span><span class="n">Node</span> <span class="n">a</span> <span class="n">l</span> <span class="n">r</span><span class="o">)</span> <span class="o">=</span> <span class="o">(</span><span class="n">postorderTraversal</span> <span class="n">l</span><span class="o">)</span> <span class="o">++</span> <span class="o">(</span><span class="n">postorderTraversal</span> <span class="n">r</span><span class="o">)</span> <span class="o">++</span> <span class="o">[</span><span class="n">a</span><span class="o">]</span>
-</pre></div>
-            <div class="mytitle">Typeclass Record in Haskell</div>
-            <div class="highlight"><pre><span class="c1">-- /Users/cat/myfile/github/haskell/Record.hs</span>
-<span class="c1">-- ref: http://learnyouahaskell.com/making-our-own-types-and-typeclasses </span>
-<span class="c1">-- -------------------------------------------------------------------------------- </span>
-<span class="c1">-- 1. how to create record</span>
-<span class="c1">-- 2. how to access field from typeclass, e.g. person.lastName in java</span>
-<span class="c1">-- 3. how to override == without doing anything with deriving(Eq)</span>
-<span class="c1">-- -------------------------------------------------------------------------------- </span>
-<span class="kr">data</span> <span class="kt">Person</span> <span class="ow">=</span> <span class="kt">Person</span> <span class="p">{</span><span class="n">firstName</span><span class="ow">::</span><span class="kt">String</span><span class="p">,</span> <span class="n">lastName</span><span class="ow">::</span><span class="kt">String</span><span class="p">,</span> <span class="n">age</span><span class="ow">::</span><span class="kt">Int</span><span class="p">}</span> <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Eq</span><span class="p">)</span>
-
-<span class="c1">-- Person derives from Eq, Haskell generates (==) and (/=) for us automatically,</span>
-<span class="c1">-- the catch is String and Int also have to be part of (Eq) typeclass </span>
-<span class="c1">-- access field from typeclass with record</span>
-<span class="nf">showPerson</span><span class="ow">::</span><span class="kt">Person</span><span class="ow">-&gt;</span><span class="kt">String</span>
-<span class="nf">showPerson</span> <span class="kt">Person</span><span class="p">{</span><span class="n">firstName</span> <span class="ow">=</span> <span class="n">firstName</span><span class="p">,</span> <span class="n">lastName</span> <span class="ow">=</span> <span class="n">lastName</span><span class="p">,</span> <span class="n">age</span> <span class="ow">=</span> <span class="n">age</span><span class="p">}</span> 
-                        <span class="ow">=</span> <span class="s">&quot;[&quot;</span> <span class="o">++</span> <span class="n">firstName</span> <span class="o">++</span> <span class="s">&quot; &quot;</span> <span class="o">++</span> <span class="n">lastName</span> <span class="o">++</span> <span class="s">&quot; &quot;</span> <span class="o">++</span> <span class="n">show</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">++</span> <span class="s">&quot;]&quot;</span>
-
-<span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span> 
-        <span class="kr">let</span> <span class="n">person</span> <span class="ow">=</span> <span class="kt">Person</span><span class="p">{</span><span class="n">firstName</span> <span class="ow">=</span> <span class="s">&quot;Jonathan&quot;</span><span class="p">,</span> <span class="n">lastName</span> <span class="ow">=</span> <span class="s">&quot;Michell&quot;</span><span class="p">,</span> <span class="n">age</span> <span class="ow">=</span> <span class="mi">20</span><span class="p">}</span>
-        <span class="kr">let</span> <span class="n">animal</span> <span class="ow">=</span> <span class="kt">Person</span><span class="p">{</span><span class="n">firstName</span> <span class="ow">=</span> <span class="s">&quot;Nonhuman&quot;</span><span class="p">,</span> <span class="n">lastName</span> <span class="ow">=</span> <span class="s">&quot;Michell&quot;</span><span class="p">,</span> <span class="n">age</span> <span class="ow">=</span> <span class="mi">20</span><span class="p">}</span>
-        <span class="n">print</span> <span class="o">$</span> <span class="n">showPerson</span> <span class="n">person</span>
-        <span class="n">print</span> <span class="o">$</span> <span class="n">showPerson</span> <span class="p">(</span><span class="kt">Person</span> <span class="s">&quot;Steven&quot;</span> <span class="s">&quot;Jobs&quot;</span> <span class="mi">30</span><span class="p">)</span>
-        <span class="n">print</span> <span class="o">$</span> <span class="n">person</span> <span class="o">==</span> <span class="n">person</span>  <span class="c1">-- True</span>
-        <span class="n">print</span> <span class="o">$</span> <span class="n">person</span> <span class="o">==</span> <span class="n">animal</span>  <span class="c1">-- False </span>
-        <span class="n">print</span> <span class="o">$</span> <span class="n">person</span> <span class="o">/=</span> <span class="n">animal</span>  <span class="c1">-- True </span>
-        <span class="n">fl</span>
-        <span class="c1">-- person.firstName in java</span>
-        <span class="n">print</span> <span class="o">$</span> <span class="s">&quot;firstName=&quot;</span> <span class="o">++</span> <span class="n">firstName</span> <span class="n">person</span>  <span class="c1">-- Jonathan</span>
-        <span class="n">print</span> <span class="o">$</span> <span class="s">&quot;lastName =&quot;</span> <span class="o">++</span> <span class="n">lastName</span> <span class="n">person</span>   <span class="c1">-- Michell </span>
-        <span class="n">print</span> <span class="o">$</span> <span class="s">&quot;age      =&quot;</span> <span class="o">++</span> <span class="n">show</span><span class="p">(</span><span class="n">age</span> <span class="n">person</span><span class="p">)</span>  <span class="c1">-- 20</span>
 </pre></div>
 
             <div class="mytitle">Typeclass 1 in Haskell</div>

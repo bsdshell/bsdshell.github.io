@@ -34,6 +34,17 @@
 <div class="mytitle">
 Haskell newIORef readIORef writeIORef
 </div>
+<pre class="mytext">
+Mutable variables are not often in Haskell, but there is time that you need to to 
+use mutable variable in your code. There are many ways to create mutable variables and 
+I will show one of them here with newIORef.
+
+The idea is very simple:
+1. Create a mutable variable
+2. Modify or write the variable 
+3. Read the variable whatever the new value is inside.
+
+</pre>
 <pre class="prettyprint">
 var <- newIORef 2
 x <- readIORef var
@@ -50,6 +61,11 @@ readIORef ref >>= print  -- output 20
 ref <- newIORef 1 
 replicateM_ 4 $ modifyIORef ref (+5)
 readIORef ref >>= print  -- output 21
+
+-- modify (Set Int)
+set <- newIORef Set.empty 
+modifyIORef (Set.insert 2) 
+set <- readIORef set 
 
 </pre> 
 </div>

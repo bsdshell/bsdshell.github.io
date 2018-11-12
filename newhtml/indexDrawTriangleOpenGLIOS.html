@@ -31,13 +31,8 @@
       ga('create', 'UA-66282017-2', 'auto');
       ga('send', 'pageview');
     </script>
-
     <div id="header">
     </div>
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-                <!-- Column 1 start -->
                 <div class="mytextbox">
                     <pre style="color:rgba(0, 185, 5, 0.91); background:#444;">
                             Draw your first Triangle in IOS OpenGL
@@ -258,8 +253,8 @@
                     <div class="cen">
                     <img src="../image/mapcoor.png" width="40%" height="40%" /><br>
                     </div> 
-                    <div class="mytext">
-                    Once $\text{side} = \vec{s}, \text{up}=\vec{u}, \text{forward}=$\vec{f}$ are known, the <span id="red">View Matrix</span> can be constructed<br>
+                    <div style="font-size:130%;" class="mytext">
+                    Once $\text{side} = \vec{s}, \text{up}=\vec{u}, \text{forward}=\vec{f}$ are known, the <span id="red">View Matrix</span> can be constructed<br>
                     We use the above example, and compute the <span id="red">View Matrix</span>.<br>
                     $\vec{up} = (0, 1, 0)$<br>
                     the vector from eye to center is $\vec{f} = (0, 0, 0) - (0, 2, 3) = (0, -2, -3) $<br>
@@ -439,6 +434,7 @@
                     <div class="mytitle">
                     If column vectors are orthonormal, then they can form a rotation matrix. Why? let prove it
                     </div>
+                    <div style="font-size:130%;" class="mytext">
                     let matrix $A$ and two columns are orthonormal.
                     \[                     
                         A= \begin{bmatrix}
@@ -486,30 +482,30 @@
                 <div class="mytitle">
                 Projection Matrix in OpenGL. 
                 </div>
+                <div class="mytext">
                 What is Projection Matrix in OpenGL.<br>
                 There are two type of Projection Matrix in OpenGL.<br>
                 Perspective Projection and Orthogonal Projection<br> 
                 We will derived Perspective Projection.<br>
                 What does Perspective Projection do in OpenGL.<br>
                 It projects points in eye/camera space to Normal Device Coordinates[NDC]<br>
+                </div>
 
                 <div class="cen">
                 <img src="../image/ndc.png" width="50%" height="50%" /><br>
                 <img src="../image/similartri.png" width="50%" height="50%" /><br>
                 </div> 
+                <div style="font-size:140%;" class="mytext">
                     \begin{align*}
-                    \begin{split}
-
-                    \frac{x_p}{x_e} = \frac{-n}{z_e} \Rightarrow  x_p = \frac{nx_e}{-z_e} \\
-                    \frac{y_p}{y_e} = \frac{-n}{z_e} \Rightarrow  y_p = \frac{ny_e}{-z_e} \\
-
-                   \left[ \begin{array}{c} 
+                    \frac{x_p}{x_e} &= \frac{-n}{z_e} \Rightarrow  x_p = \frac{nx_e}{-z_e} \\
+                    \frac{y_p}{y_e} &= \frac{-n}{z_e} \Rightarrow  y_p = \frac{ny_e}{-z_e} \\
+                    \left[ \begin{array}{c} 
                     x_p \\ 
                     y_p \\
                     z_p \\
                     w_p \\
                     \end{array} \right] 
-                    = \begin{bmatrix} 
+                    &= \begin{bmatrix} 
                     n & 0  & 0 & 0 \\ 
                     0 & n  & 0 & 0 \\
                     0 & 0  & A & B \\
@@ -521,10 +517,10 @@
                     z_e \\
                     w_e \\
                     \end{array} \right] \\
-
+                    %
                     z_p &= Az_e + B w_e \\
                     \frac{z_p}{-z_e} &= -A + \frac{B w_e}{-z_e} \\
-                    \text{Since we want to have something }  \\ 
+                    &\text{Since we want to have something like following form}  \\ 
                     z_p &= \frac{\sigma}{-z_e} \\
                     -z_p z_e &= \sigma \\
                     \sigma &= A z_e + B w_e \\
@@ -544,7 +540,7 @@
                     z_p \\
                     w_p \\
                     \end{array} \right] 
-                    = \begin{bmatrix} 
+                    &= \begin{bmatrix} 
                     n & 0 & 0   & 0 \\
                     0 & n & 0   & 0 \\
                     0 & 0 & n+f & nf \\
@@ -556,10 +552,9 @@
                     z_e \\
                     w_e \\
                     \end{array} \right] \\
-                    \text{Map A} [x_p, y_p, z_p, w_p] [x_n, y_n, z_n, w_n]
-                    \end{split}
+                    &\text{Map A} [x_p, y_p, z_p, w_p] [x_n, y_n, z_n, w_n]
                     \end{align*}
-
+                    </div>
                     <div class="cen">
                     <img src="../image/projection_to_ndc.png" width="40%" height="40%" /><br>
                     </div> 
@@ -567,6 +562,7 @@
                     <div class="cen">
                     <img src="../image/xe_to_ndc.png" width="40%" height="40%" /><br>
                     </div> 
+                    <div style="font-size:140%;" class="mytext">
                     \begin{align*}
                     \begin{split}
                     
@@ -581,11 +577,13 @@
 
                     \end{split}
                     \end{align*}
+                    </div>
 
                     <div class="cen">
                     <img src="../image/yeyn.png" width="40%" height="40%" /><br>
                     </div> 
 
+                    <div style="font-size:140%;" class="mytext">
                     \begin{align*}
                     \begin{split}
                     y_n &= \frac{1-(-1)}{t - b} y_p + \beta \\
@@ -598,10 +596,12 @@
 
                     \end{split}
                     \end{align*}
+                    </div>
 
                     <div class="cen">
                     <img src="../image/zezn.png" width="40%" height="40%" /><br>
                     </div> 
+                    <div style="font-size:140%;" class="mytext">
                     \begin{align*}
                     \begin{split}
 
@@ -619,11 +619,13 @@
                    z_n    &= \frac{\frac{n+f}{n-f}z_e}{-z_e} + \frac{ \frac{2nf}{n-f}}{-z_e} \\
                     \end{split}
                     \end{align*}
+                    </div>
 
                     <div class="cen">
                     <img src="../image/mapforumtondc.png" width="40%" height="40%" /><br>
                     </div> 
 
+                    <div style="font-size:140%;" class="mytext">
                     \begin{align*}
                     \begin{split}
 
@@ -648,7 +650,7 @@
 
                     \end{split}
                     \end{align*}
-
+                    </div>
                     <div class="mytitle">
                     Orthogonal Matrix 
                     </div>
@@ -711,98 +713,6 @@
                     <div class="cen">
                     <img src="../image/blender.png" width="40%" height="40%" /><br>
                     </div> 
-
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-
 
     </body>
     </html>
