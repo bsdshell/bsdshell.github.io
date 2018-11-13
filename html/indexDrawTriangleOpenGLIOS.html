@@ -34,8 +34,8 @@
     <div id="header">
     </div>
                 <div class="mytextbox">
-                    <pre style="color:rgba(0, 185, 5, 0.91); background:#444;">
-                            Draw your first Triangle in IOS OpenGL
+                    <pre class="mytitle">
+        Draw your first Triangle in IOS OpenGL
                     </pre>
                     <p>
                     <span style="color:red;">OpenGL</span> is low level computer graphic API, it powers most of graphic intensive games and softwares in this universe.<br>
@@ -51,28 +51,27 @@
                     </p>
 
                     <img src="../image/triangle.svg" width="100%" height="100%" /><br> 
+                    <pre class="mytext">
                     1. Create an array with three vertices p=[x, y, z]
-                    <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                    </pre>
+                    <pre class="prettyprint">
                     static const GLfloat triangle[] = {
                         0, 0, 0,
                         1, 0, 0,
                         0, 1, 0,
                     };
-                    </pre>
+                    
+                    glVertexAttribPointer     - define an array of generic vertex attribute data
+                    glEnableVertexAttribArray - enable a generic vertex attribute array
+                    glDiableVertexAttribArray - diable a generic vertex attribute array
+                    glDrawArrays              - render primitive from array data
 
-                    <pre style="color:rgba(63, 185, 5, 0.91); background:#434;">
-    glVertexAttribPointer     - define an array of generic vertex attribute data
-    glEnableVertexAttribArray - enable a generic vertex attribute array
-    glDiableVertexAttribArray - diable a generic vertex attribute array
-    glDrawArrays              - render primitive from array data
-                    </pre>
-                    <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
                     glVertexAttribPointer(ATTRIB_VERTEX, 3, GL_FLOAT, 0, 0, triangle);
                     glEnableVertexAttribArray(ATTRIB_VERTEX);
                     glDrawArrays(<span style="color:red;">GL_TRIANGLE_STRIP</span>, 0, 3);
                     </pre>
                     <div style="text-align:center"><img src="../image/triangle.png" width="20%" height="20%" /><br></div> 
-                    <p>
+                    <div class="mytext"> 
                     This is the three functions that you need to call to draw a triangle in OpenGL<br> 
                     When a triangle is drawn, there are three options can be used<br>
                     <span style="color:rgba(63, 185, 5, 0.91);">GL_TRIANGLE_STRIP GL_TRIANGLE_FAN GL_TRIANGLES</span><br><br>
@@ -89,21 +88,18 @@
                     What is <span style="color:rgba(63, 185, 5, 0.91);">GL_TRIANGLES</span><br>  
                     GL_TRIANGLES treats each triple of vertices as independent triangle.<br>
                     If there are 3*n vertices, then there are n triangle can be drawn<br>
-                    </p>
+                    </div>
                     <img src="../image/triangle_strip_fan.svg" width="100%" height="100%" /><br> 
-                    <p>
+                    <pre class="mytext">
                     Let draw some real stuff!
-                    </p>
-                    <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
+                    </pre>
+                    <pre class="prettyprint">
                     static const GLfloat triangle[] = {
                         0, 0, 0,
                         1, 0, 0,
                         1, 1, 0,
                         0, 1, 0,
                     };
-                    </pre>
-
-                    <pre style="color:rgba(63, 185, 5, 0.91); background:#000;">
                     glVertexAttribPointer(ATTRIB_VERTEX, 3, GL_FLOAT, 0, 0, triangle);
                     glEnableVertexAttribArray(ATTRIB_VERTEX);
                     glDrawArrays(<span style="color:red;">GL_TRIANGLE_STRIP</span>, 0, 4);
