@@ -669,7 +669,6 @@ Concrete example:<br>
 
 \end{align*}
 
-
 A bilinear form is call symmetric form if ... <br>
 A bilinear form is call skew symmetric form if ... <br>
 
@@ -808,37 +807,28 @@ http://localhost/pdf/bilinearforms1.pdf
             <div class="cen">
             Projection Matrix 2            
             </div>
-            Given $u, v$,  $u$ projects onto v, $p = \sigma v$ where $\sigma$ is the scala <br>
-            we have $v \perp (p - u)$ <br> 
+            <div style="font-size:140%;">
+            Given $u, v$,  $u$ projects onto v, $p = \sigma v$ where $\sigma$ is the scalar <br>
+            we have<br> 
+            \[
+                v \perp (p - u)
+            \]
             \begin{align*}
-            \implies v \perp (\sigma v - u)  \\
-            \implies v^{T} (\sigma v - u)  = 0  \\
-            \implies \sigma v^{T} v - v^{T} u  \\
-            \implies \sigma v^{T} v = v^{T} u  \\
-            \implies \sigma = \frac{v^{T}u}{v^{T}v}  \\
-            \implies \sigma v  = v\frac{v^{T} u}{v^{T}v}   \\
-            \implies \sigma v = \frac{ v v^{T} u } {v^{T} v}  \\
-            \implies \sigma v = \frac{1}{v^{T} v} v v^{T} u  \\
-            \implies \sigma v = \frac{u u^{T}}{v^{T} v} u  \\
-            P  = \frac{v v^{T}}{ v^{T} v } \\
+            v^{T} (\sigma v - u)  &= 0  \\
+            \sigma v^{T} v - v^{T} u &= 0 \\
+            \sigma v^{T} v &= v^{T} u  \\
+            \sigma &= \frac{v^{T}u}{v^{T}v}  \\
+            \sigma v  &= v\frac{v^{T} u}{v^{T}v}   \\
+            \sigma v &= \frac{ v v^{T} u } {v^{T} v}  \\
+            \sigma v &= \frac{1}{v^{T} v} v v^{T} u  \\
+            \sigma v &= \frac{v v^{T}}{v^{T} v} u  \\
+            P  &= \frac{v v^{T}}{ v^{T} v } \\
             \text{ Show } P^{2} = P \\
-            P^{2} = \frac{v v^{T}}{v^{T} v} \frac{v v^{T}}{ v^{T} v}  \\
-            P^{2} = \frac{v (v^{T} v) v^{T}}{v^{T} v v^{T} v}  \\
-            P^{2} = \frac{ v v^T} { v^T v} = P 
+            P^{2} &= \frac{v v^{T}}{v^{T} v} \frac{v v^{T}}{ v^{T} v}  \\
+            P^{2} &= \frac{v (v^{T} v) v^{T}}{v^{T} v v^{T} v}  \\
+            P^{2} &= \frac{ v v^T} { v^T v} = P 
             \end{align*}  
 
-            Given $u, v$,  $u$ projects onto $v$,
-            $w = \sigma v$ where $\sigma$ is the scala 
-            we have $v \perp (w - u)$ <br> 
-            \begin{align*}
-                v \perp (\sigma v - u)                  \\ 
-                v^{T} (\sigma v - u)  = 0               \\ 
-                \sigma v^{T} v - v^{T} u = 0                \\ 
-               \sigma v^{T} v = v^{T} u                \\ 
-                \sigma = \frac{v^{T}u}{v^{T}v}          \\  \\
-               \sigma  v=  \frac{ v v^{T} u } {v^{T} v} \\ 
-                \sigma v =  \frac{ v v^{T}} {v^{T} v} u \\   
-            \end{align*}
             $vv^T$ is the projection matrix which projects $u$ onto $v$ <br> 
 
             Concret Example:
@@ -850,7 +840,7 @@ http://localhost/pdf/bilinearforms1.pdf
             $ v = \left[ \begin{array}{c}
             0 \\
             1
-            \end{array} \right]$ \\ 
+            \end{array} \right]$ <br> 
             $ vv^{T} = 
             \left[ \begin{array}{c}
             0 \\

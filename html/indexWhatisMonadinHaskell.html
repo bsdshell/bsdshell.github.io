@@ -107,6 +107,7 @@ The morphism for Topology Space is Continuous functions. <br>
 </p>
 
 <h3>Informal definition of Category</h3>
+<div style="font-size:130%">
 Categories is defined as following: <br>
 1. Objects - it likes integer in $\mathbf{N}$ <br>
 2. Arrows -  it likes function that we are already known <br> 
@@ -121,12 +122,14 @@ Vector Space $\mathscr{V}$ with a set of linear maps $\mathscr{L}$ is a Category
 3. Each pair of vectors, $u, v$ we can find a matrix such as $A u = v$<br>
 4. Each vector, we can find an identity matrix to transform the vector to its self. $I v = I A = v$ <br>
 5. Matrix composition(multiplicaiton) is associative, e.g. $A B C = A (B C)$<br> <br> 
+</div>
 
 <div class="cen">
 <img src="../image/vector_space_to_category.jpg" width="50%" height="50%" /><br>
 </div> 
 
 <h3>What is Functor</h3>
+<div style="font-size:130%">
 <strong>Functor</strong> is mapping both objects to objects and morphisms to morphisms in Categories.<br><br>
 Abstractly defined, a <strong>functor</strong> is a homomorphism between two categories: 
 Given two Categories $A, B$, 
@@ -171,7 +174,7 @@ Let the inverse of $\phi(x) = e^x$ is $\phi^{-1}(x) = \log x$ <br>
     \phi^{-1}(x) + \phi^{-1}(y) & = \log x + \log y \\
     \implies \phi^{-1}(x*y)     & = \phi^{-1}(x) + \phi^{-1}(y) \\
 \end{align*}
-
+</div>
 
 <strong>Identical Morphism</strong><br>
 For every object $X \in \mathcal{C}$, there is identity morphism $1_X : X \rightarrow X$ by definition of Category. It satisfies:
@@ -211,7 +214,7 @@ For each map $f \in C$, there is associatived map $F(f) \in D$ <br><br>
 &\text{If } f \in C(X, Y), g \in D(Z, Y), \text{ then }, f \circ g \in C \text{ and } F (f \circ g) = F(f) \circ F(g) \in D \\ 
 \end{align*}
 
-Build on top of the definitions above, we can define what is <strong>Monad</strong><br>
+Build on top of the definitions of Monoid and Functor above, we can define what is <strong>Monad</strong><br>
 If you understand (+ $\Re$) is a <strong>Group</strong>, then Monad is just a Monoid and the elements are functors. <br><br>
 
 $(+, \Re)$ is => <strong>Group</strong>, the <strong>operation</strong> is $+$, the elements are real numbers <br>
@@ -231,7 +234,7 @@ In Haskell
 >>= is used for functor composition <br>
 <strong>return</strong> is used for identity functor <br><br>
 
-Functor is modelled with <strong>Type Constructor</strong> in Haskell
+<strong>Functor</strong> is modelled with <strong>Type Constructor</strong> in Haskell
 
 $T$ is functor or some nerds call it endofunctor<br> 
 endofunctor - $F : \mathcal{C} \rightarrow \mathcal{C}$, the domain and image are the same <strong>Category</strong>

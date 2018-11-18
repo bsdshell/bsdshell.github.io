@@ -42,6 +42,8 @@ foldr::(a -> b -> b) -> b -> [a] -> b
 foldr(++) "kk" ["dog", "cat"] // here is how to use foldr 
 
 1. (a -> b -> b) is function with two arguments, e.g. ++:("dog" "kk") -> "dogkk"
+   int f(int a, int b)                           // function in Java
+   [](auto a, auto b) { return a + b;}           // lambda function in C++
 2. b is the second argument,                     e.g. b = "kk"
 3. [a] is the third argument,                    e.g. ["dog", "cat"]
 4. last b is the output,                         e.g. "dotcatkk"
