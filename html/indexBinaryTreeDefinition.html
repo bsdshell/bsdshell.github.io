@@ -32,19 +32,16 @@
       ga('send', 'pageview');
     </script>
 
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-            <!-- Column 1 start -->
-
             <div class="mytitle">
-            Definition of Binary Search Tree 
+            Check whether a Binary Tree is a Binary Search Tree with BST Definition 
             </div>
             <div class="mytext">
             <span class="wbold">Binary Search Tree is Binary Tree and have following properties</span><br> 
-            0. Null is Binary Search Tree<br>
-            1. Maximum of left subtree is less than the root node<br>
-            2. Minimum of right subtree is greater than the root node<br>
+            0. null is Binary Search Tree<br>
+            1. Left subtree is BST<br>
+            2. Right subtree is BST<br>
+            3. Maximum of left subtree is less than the root node<br>
+            4. Minimum of right subtree is greater than the root node<br>
             </div>
 
             <pre class="prettyprint">
@@ -131,102 +128,123 @@
             }
             </pre>
 
+            <div class="mytitle">
+            Generic Version isBST
+            </div>
+            <div class="mytext">
+            0. null is BST<br>
+            1. Left subtree is BST<br>
+            2. Right subtree is BST<br>
+            3. Max value of left subtree is less than the parent<br>
+            4. Min value of right subtree is greater than the parent<br>
+
+            </div>
+            <pre class="prettyprint">
+            /*
+            We use something called BiFunction in Java
+            BiFunction<Integer, Integer, Boolean> f = (a, b) -> a < b;
+            f.apply(a, b) 
+            
+            Also there is something called Function
+            Function<Integer, Integer> f = x -> x + 1;
+            f.apply(3)
+
+            How can I pass three parameters to a function?
+            There is no TriFunction in Java, but there is way to do it..
+
+            In Haskell..
+            f = \x -> x + 1
+            f = \x y -> x < y
+            f = \x y z -> x + y + z
+
+            */
+
+            class MyNode<T>{
+                MyNode<T> left;
+                MyNode<T> right;
+                T data;
+                public MyNode(T data){
+                    this.data = data;
+                }
+            }
+
+            public static <T> void insert(MyNode<T> r, T t, BiFunction<T, T, Boolean> f){
+                if(r == null){
+                    r = new MyNode<T>(t); 
+                }else{
+                    if(f.apply(t, r.data)){
+                        if(r.left == null)
+                            r.left = new MyNode<T>(t);
+                        else
+                            insert(r.left, t, f);
+                    }else{
+                        if(r.right == null)
+                            r.right = new MyNode<T>(t);
+                        else
+                            insert(r.right, t, f);
+                    }
+                }
+            }
+
+            public static <T> MyNode leftSub(MyNode<T> r){
+                if (r.right != null){
+                   return leftSub(r.right); 
+                }else{
+                    return r;
+                }
+            }
+            public static <T> MyNode rightSub(MyNode<T> r){
+                if(r.left != null){
+                    return rightSub(r.left);
+                }else{
+                    return r;
+                }
+            }
+
+
+            /*
+                1. null is BST
+                2. left subtree is BST
+                3. right subtree is BST
+                4. max(left substree) < parent.data
+                5. min(right subtree) > parent.data
+            */
+            public static <T> Boolean isBST(MyNode<T> r, BiFunction<T, T, Boolean> f){
+                if (r != null){
+                    if (!isBST(r.left, f))
+                        return false;
+                    
+                    if (r.left != null){
+                        MyNode<T> lmax = leftSub(r.left);
+                        if(!f.apply(lmax.data, r.data))
+                            return false; 
+                    }
+                    if (r.right != null){
+                        MyNode<T> rmin = rightSub(r.right);
+                        if(!f.apply(r.data, rmin.data))
+                            return false; 
+                    }
+
+                    if (!isBST(r.right, f)) 
+                        return false;
+                }
+                return true;
+            }
+
+            MyNode<Integer> r = new MyNode<Integer>(1);
+            BiFunction<Integer, Integer, Boolean> f = (x, y) -> x < y;
+            insert(r, 3, f);
+            insert(r, 2, f);
+            insert(r, 5, f);
+            inorder(r);
+
+            Print.p(isBST(r, f));
+
+            </pre>
 
             <div class="cen">
             <a href="https://github.com/bsdshell/java/tree/master/isBST.java">Source Code</a>
             </div>
-
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-
 
     </body>
     </html>
