@@ -32,13 +32,44 @@
       ga('send', 'pageview');
     </script>
 
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-            <!-- Column 1 start -->
+            <div class="mytitle">
+            Get Maximum Value from Stack Implementation in Haskell 
+            </div> 
+            <pre class="prettyprint">
+    -------------------------------------------------------------------------------- 
+    -- Tue Nov 20 21:24:09 2018 
+    -- Get maximum value in constant time 
+    -- push() and pop(), getMax(), top(), isEmpty()
+    -------------------------------------------------------------------------------- 
+    newtype Stack a   = Stk a deriving (Show)
+
+    empty_            = Stk []
+    push_ x (Stk xs)  = Stk (x:xs)
+    pop_ (Stk (x:xs)) = Stk xs
+    top_ (Stk (x:xs)) = x
+    isEmpty_ (Stk xs) = null xs
+    get (Stk xs)      = xs
+
+    getMax::Stack [Int] -> Int 
+    getMax (Stk []) = 0 
+    getMax (Stk (x:cx))  = x 
+
+    xpush::Int->Stack [Int]->Stack [Int]->(Stack [Int], Stack [Int])
+    xpush n (Stk xs) (Stk ys) = if isEmpty_ (Stk ys) || (top_ (Stk ys)) < n 
+                                then (push_ n (Stk xs), push_ n (Stk ys)) 
+                                else (push_ n (Stk xs), Stk ys)
+
+    xpop::Stack[Int]->Stack[Int]->(Stack[Int], Stack[Int])
+    xpop (Stk (x:cx)) (Stk (y:cy)) = if x == y 
+                                     then ((Stk cx), (Stk cy)) 
+                                     else ((Stk cx), (Stk (y:cy)))
+
+            </pre>
+
             <div class="mytitle">
             Get Minimum in constant time from Stack
             </div> 
+
             <div class="highlight"><pre><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">StackMin</span><span class="p">{</span>
     <span class="k">public</span><span class="o">:</span>
@@ -87,98 +118,6 @@
             <div class="cen">
             <img src="../image/getminstack.png" width="50%" height="50%" /><br>
             </div>
-
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-
 
     </body>
     </html>
