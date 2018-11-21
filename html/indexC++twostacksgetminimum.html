@@ -33,95 +33,81 @@
     </script>
 
             <div class="mytitle">
-            Get Maximum Value from Stack Implementation in Haskell 
+            Get Minimum Value from Stack in constant time
             </div> 
-            <pre class="prettyprint">
-    -------------------------------------------------------------------------------- 
-    -- Tue Nov 20 21:24:09 2018 
-    -- Get maximum value in constant time 
-    -- push() and pop(), getMax(), top(), isEmpty()
-    -------------------------------------------------------------------------------- 
-    newtype Stack a   = Stk a deriving (Show)
-
-    empty_            = Stk []
-    push_ x (Stk xs)  = Stk (x:xs)
-    pop_ (Stk (x:xs)) = Stk xs
-    top_ (Stk (x:xs)) = x
-    isEmpty_ (Stk xs) = null xs
-    get (Stk xs)      = xs
-
-    getMax::Stack [Int] -> Int 
-    getMax (Stk []) = 0 
-    getMax (Stk (x:cx))  = x 
-
-    xpush::Int->Stack [Int]->Stack [Int]->(Stack [Int], Stack [Int])
-    xpush n (Stk xs) (Stk ys) = if isEmpty_ (Stk ys) || (top_ (Stk ys)) < n 
-                                then (push_ n (Stk xs), push_ n (Stk ys)) 
-                                else (push_ n (Stk xs), Stk ys)
-
-    xpop::Stack[Int]->Stack[Int]->(Stack[Int], Stack[Int])
-    xpop (Stk (x:cx)) (Stk (y:cy)) = if x == y 
-                                     then ((Stk cx), (Stk cy)) 
-                                     else ((Stk cx), (Stk (y:cy)))
-
+            <pre class="mytext">
+            1. Use Two Stacks
+               One stack stores values which have been push.
+               Other stack storethe values in increasing order.
+            2. Push implementation: 
+               When a value is push, check whether the value is greater or 
+               equal the current top value in the maximum Stack
+               If the value is greater or equal the top value in the maximu Stack
+               then 
+                    push the value to "normal Stack" and "top Stack"
+               else 
+                    Just push the value to "normal Stack"
+            
+            3. Pop Implementation:
+               If the top value of "normal Stack" is equal to the top value of "top Stack"
+               then 
+                    pop both values from "normal Stack" and "top Stack"
+               else 
+                    Just pop the value from "normal Stack"
             </pre>
+            <pre class="prettyprint">
+            template < class T>
+            class StackMin{
+                public:
+                stack<T> st;
+                stack<T> minstack;
+                StackMin(){
+                }
+                public:
+                T getMin(){
+                    if(minstack.size() > 0)
+                        return minstack.top();
+                    return -1;
+                }
+                void push(T n){
+                    if(minstack.size() == 0)
+                        minstack.push(n);
+                    else{
+                        if(n < minstack.top()){
+                            minstack.push(n);
+                        }
+                    }
 
-            <div class="mytitle">
-            Get Minimum in constant time from Stack
-            </div> 
+                    st.push(n);
+                }
+                T pop(){
+                    if(st.size() > 0){
+                        if(minstack.top() == st.top()){
+                            minstack.pop();
+                            T n = st.top();
+                            st.pop();
 
-            <div class="highlight"><pre><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
-<span class="k">class</span> <span class="nc">StackMin</span><span class="p">{</span>
-    <span class="k">public</span><span class="o">:</span>
-    <span class="n">stack</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">st</span><span class="p">;</span>
-    <span class="n">stack</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">minstack</span><span class="p">;</span>
-    <span class="n">StackMin</span><span class="p">(){</span>
-    <span class="p">}</span>
-    <span class="k">public</span><span class="o">:</span>
-    <span class="n">T</span> <span class="n">getMin</span><span class="p">(){</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">minstack</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">minstack</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="kt">void</span> <span class="n">push</span><span class="p">(</span><span class="n">T</span> <span class="n">n</span><span class="p">){</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">minstack</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-            <span class="n">minstack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-        <span class="k">else</span><span class="p">{</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="n">minstack</span><span class="p">.</span><span class="n">top</span><span class="p">()){</span>
-                <span class="n">minstack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-
-        <span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="n">T</span> <span class="n">pop</span><span class="p">(){</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">minstack</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">==</span> <span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">()){</span>
-                <span class="n">minstack</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-                <span class="n">T</span> <span class="n">n</span> <span class="o">=</span> <span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-                <span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-
-                <span class="k">return</span> <span class="n">n</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="k">else</span><span class="p">{</span>
-                <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
-                <span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
-                <span class="k">return</span> <span class="n">n</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-<span class="p">};</span>
-</pre></div>
+                            return n;
+                        }
+                        else{
+                            int n = st.top();
+                            st.pop();
+                            return n;
+                        }
+                    }
+                    return -1;
+                }
+                
+            };
+            </pre>
  
             <div class="cen">
             <img src="../image/getminstack.png" width="50%" height="50%" /><br>
             </div>
 
-    </body>
-    </html>
-    
+</body>
+</html>
+
 
 
 
