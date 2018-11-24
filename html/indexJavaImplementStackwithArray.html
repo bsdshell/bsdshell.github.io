@@ -30,15 +30,115 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+
 <div class="myclass">
 <div class="mytitle">
-add content here
+Implement Stack with Array 
 </div>
 <pre class="mytext">
-My text here
+1. push(), pop(), isEmpty(), top(), size()
+2. Add customized exception: EmptyStack for pop() and top()
+3. Add Exception message
+4. throws EmptyStack exception
+5. try and catch the EmptyStack exception
 </pre>
 <pre class="prettyprint">
+/*
+/Users/cat/myfile/bitbucket/java/try_stack.java
+
+1. Implement stack with array
+   functionarity: push(), pop(), isEmpty(), size()
+   reallocate memory when the array is full
+   copy the all current elements to a new array
+2. Add customized Exception
+   if the stack is empty, then throw exception when pop() and top() are called
+
+customized or unchecked exception
+
+class MyException extends Exception{..}
+
+void fun() throws MyException{
+    throw new MyException();
+}    
+
+    try{
+    }catch(MyException e){
+        System.out.println(e.getMessage);
+    }
+    or rethrow the MyException
+    try{
+    }catch(MyException e){
+        throw e;
+    }
+
+*/
+
+class EmptyStack extends Exception{
+    String msg;
+    public EmptyStack(String msg){
+        super(msg);
+        this.msg = msg;
+    }
+}
+
+class MyStack{
+    int[] arr;
+    int count = 0;
+    int num = 2;
+    public MyStack(){
+        arr = new int[num]; 
+    }
+    public void push(int n){
+        if(arr != null){
+            if(count < num){
+                arr[count] = n;
+                count++;
+            }else{
+                int[] tmp = new int[num];
+                for(int i=0; i<num; i++){
+                    tmp[i] = arr[i];
+                }
+                int oldNum = num;
+                num = 2*num;
+                arr = new int[num];
+                for(int i=0; i<oldNum; i++){
+                    arr[i] = tmp[i];
+                }
+                arr[count] = n;
+                count++;
+            }
+        }
+    }
+    public int pop() throws EmptyStack {
+        if(count > 0){
+            int inx = count - 1;
+            count--;
+            return arr[inx];
+        }
+        else
+            throw new EmptyStack("Stack is empty.");
+    }
+    public int top() throws EmptyStack {
+        if(!isEmpty())
+            return arr[count - 1];
+        else 
+            throw new EmptyStack("Stack is empty.");
+    }
+    public Boolean isEmpty(){
+        return count == 0;
+    }
+    public int size(){
+        return count;
+    }
+    public void print(){
+        for(int i=0; i < size(); i++){
+            Print.p(arr[i]);
+        } 
+    }
+}
+
 </pre> 
-</div>
+</div> 
+
 </body>
 </html>

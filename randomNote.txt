@@ -1,3 +1,15 @@
+-------------------------------------------------------------------------------- 
+Fri Nov 23 10:44:34 2018 
+-------------------------------------------------------------------------------- 
+install opencv(3.4x) on My MacOS
+brew install opencv
+use pkg-config to retrieve lib info 
+e.g: pkg-config --cflags --libs opencv
+retrieve opencv lib info, it seems to be very useful
+
+you can compile your cpp code with pkg-config,e.g.
+g++ $(pkg-config --cflags --libs opencv) -std=c++11  yourFile.cpp -o yourFileProgram
+-------------------------------------------------------------------------------- 
 Wed Aug 15 17:14:22 2018 
 Get error start mysql server on MacOS, mysql 5.7 and mysql 8.0
 /**
