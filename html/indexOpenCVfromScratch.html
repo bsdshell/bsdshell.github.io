@@ -32,13 +32,41 @@
 </script>
 <div class="myclass">
 <div class="mytitle">
-add content here
+OpenCV From Scratch
 </div>
 <pre class="mytext">
-My text here
+Install OpenCV on MacOS
+</pre>
+<pre class="mytext">
+Here are the steps to install OpenCV on MacOS
+0. If you do not have XCode, you should install XCode first.
+
+1. brew install opencv
+
+If you don't have pkg-config on your MacOS, you need to install it
+2. brew install pkg-config
+
+If you are lucky, then you can compile your first opencv code.
+
+3. copy the following code save it as first.cpp
 </pre>
 <pre class="prettyprint">
-</pre> 
+#include <opencv2/opencv.hpp> 
+using namespace cv;
+ 
+int main(int argc, char** argv) { 
+ // Read the image file 
+ Mat image = imread("/path/image.png"); 
+ return 0; 
+}
+</pre>
+<pre class="mytext">
+4. Compile it with following command line:
+    <span style="color:red;">g++ -std=c++11 $(pkg-config --cflags --libs opencv) first.cpp -o first</span>
+5. If you are lucky, then you should get a binary file called first.
+6. You can run it: ./first
+</pre>
+
 </div>
 </body>
 </html>
