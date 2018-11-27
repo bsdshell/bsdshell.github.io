@@ -31,31 +31,44 @@
       ga('create', 'UA-66282017-2', 'auto');
       ga('send', 'pageview');
     </script>
+    <div class="mytitle">
+    Print all children k distance from given node in C++
+    </div>
+    <div class="mytext">
+    1. How we can translate a graph from two dimentional array or vice versa.<br>
+    The idea is simple: <br> 
+       The Graph is formed by nodes and edges <br>
+       Each edge is decided by two nodes <br>
+       It means we can use $[x, y]$ to define an edge <br>
+       Edge is just a weight<br>
+       Graph can be translated to two dimentional array from about idea.<br>
 
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-            <!-- Column 1 start -->
+    </div> 
+    <pre class="prettyprint">
+    void kdistGraph(int** arr, int k, int h, int w){
+        if(k == 0){
+            std::cout<<"["<<h<<"]"<<std::endl;
+        }else if(k > 0){
+            for(int i=0; i< w; i++){
+                if(h != i && arr[h][i]){
+                    if(k - 1 == 0)
+                        std::cout<< "[" << i << "]" << std::endl;
+                    else if(k > 0)
+                        kdistGraph(arr, k-1, i, w);
+                }
+            }
+        }
+        
+    }
+    </pre>
+
+    <div class="cen">
+    <img src="../image/graph_to_array.svg" width="10%" height="10%" /><br>
+    </div>
 
             <div class="mytitle">
             Print all children K distance from a Node in a Graph 
             </div>
-            <div class="highlight"><pre><span class="kt">void</span> <span class="nf">kdistGraph</span><span class="p">(</span><span class="kt">int</span><span class="o">**</span> <span class="n">arr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">,</span> <span class="kt">int</span> <span class="n">h</span><span class="p">,</span> <span class="kt">int</span> <span class="n">w</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;[&quot;</span><span class="o">&lt;&lt;</span><span class="n">h</span><span class="o">&lt;&lt;</span><span class="s">&quot;]&quot;</span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">k</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
-        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">w</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">h</span> <span class="o">!=</span> <span class="n">i</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="p">[</span><span class="n">h</span><span class="p">][</span><span class="n">i</span><span class="p">]){</span>
-                <span class="k">if</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-                    <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;[&quot;</span><span class="o">&lt;&lt;</span><span class="n">i</span><span class="o">&lt;&lt;</span><span class="s">&quot;]&quot;</span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-                <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">k</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
-                    <span class="n">kdistGraph</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">w</span><span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-<span class="p">}</span>
-</pre></div>
  
             <div class="cen">
             <img src="../image/kdistgraph.png" width="50%" height="50%" /><br>
@@ -64,98 +77,6 @@
             <div class="cen">
             <img src="../image/maxweight.png" width="50%" height="50%" /><br>
             </div>
-
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-
 
     </body>
     </html>

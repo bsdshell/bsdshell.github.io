@@ -32,11 +32,64 @@
 </script>
 <div class="myclass">
 <div class="mytitle">
-add content here
+OpenCV Linear Interpolation
 </div>
-<pre class="mytext">
-My text here
-</pre>
+<div style="font-size:140%">
+Resize image<br>
+Linear interpolation uses linear function to find the a weight of point between given two points.
+Given two point $A = (x_1, y_2)$ and $B = (x_2, y_2)$
+Find a weight of a point between $A$ and $B$
+    \begin{equation}
+    \begin{aligned}
+            x' &= (1 - t)x_1 + t x_2 \\
+            y' &= (1 - t)y_1 + t y_2  \quad \text{ where } 0 \leq t \leq 1 \\
+    \end{aligned}
+    \end{equation} 
+
+Given point: $(p_{0}, p_{1}, p_{2}, p_{3})$
+from $p_0$ to $p_1$ compute $p_{01}$
+    \begin{equation}
+    \begin{aligned}
+            x_{01} = (1 - t)x_0 + t x_1 \\
+            y_{01} = (1 - t)y_0 + t y_1  \\
+    \end{aligned}
+    \end{equation} 
+from $p_2$ to $p_3$ compute $p_{23}$
+    \begin{equation}
+    \begin{aligned}
+            x_{23} = (1 - t)x_2 + t x_3 \\
+            y_{23} = (1 - t)y_2 + t y_3  \\
+    \end{aligned}
+    \end{equation} 
+from $p_{01}, p_{23}$ compute $p_{0123}$ 
+    \begin{equation}
+    \begin{aligned}
+            x_{0123} = (1 - t)x_{01} + t x_{23} \\
+            y_{0123} = (1 - t)y_{01} + t y_{23}  \\
+    \end{aligned}
+    \end{equation} 
+<div class="mytext">
+Let's enlarge an image three times the original size<br>
+Given four points $A, B, C, D$ from the figure below, they can be interpolated it with various $t$<br>
+1. Interpolate $A, B$<br>
+<center>
+    $A = (1-t)A + tB$ where $t = 0$<br>
+    $E = (1-t)A + tB$ where $t = \frac{1}{3}$<br>
+    $F = (1-t)A + tB$ where $t = \frac{2}{3}$<br>
+    $B = (1-t)A + tB$ where $t = 1 $<br>
+</center>
+2. Interpolate $C, D$<br>
+    similar to 1<br>
+3. Interpolate $A, C$<br>
+    similar to 1<br>
+4. Interpolate $B, D$<br>
+    similar to 1<br>
+</div>
+</div>
+<div class="cen">
+<img src="../image/interpolation_image.svg" width="80%" height="80%" /><br>
+</div> 
+
 <pre class="prettyprint">
 </pre> 
 </div>
