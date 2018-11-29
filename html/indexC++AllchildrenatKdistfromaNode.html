@@ -43,6 +43,7 @@
        Edge is just a weight<br>
        Graph can be translated to two dimentional array from about idea.<br>
 
+    TODO: there is error on this code when k = 0 
     </div> 
     <pre class="prettyprint">
     void kdistGraph(int** arr, int k, int h, int w){
@@ -66,17 +67,85 @@
     <img src="../image/graph_to_array.svg" width="10%" height="10%" /><br>
     </div>
 
-            <div class="mytitle">
-            Print all children K distance from a Node in a Graph 
-            </div>
- 
-            <div class="cen">
-            <img src="../image/kdistgraph.png" width="50%" height="50%" /><br>
-            <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
-            </div>
-            <div class="cen">
-            <img src="../image/maxweight.png" width="50%" height="50%" /><br>
-            </div>
+    <div class="mytitle">
+    Print all children K distance from a Node in a Graph 
+    </div>
+
+    <div class="cen">
+    <img src="../image/kdistgraph.png" width="50%" height="50%" /><br>
+    <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
+    </div>
+    <div class="cen">
+    <img src="../image/maxweight.png" width="50%" height="50%" /><br>
+    </div>
+
+    <div class="mytitle">
+    Correct version in Java it handles when k is zero
+    </div>
+    <pre class="mytext">
+    When k = 0, it handles it separately if printPath()
+    </pre>
+    <pre class="prettyprint">
+     // /Users/cat/myfile/bitbucket/java/MinimumPath.java
+    // The method handles k = 0
+    public static void printPath(int[][] arr2d, int h, int w, int k){
+        if(arr2d[h][w] > 0){
+            if(k == 0)
+                Print.pl("[" + h + "][" + w + "]=" + arr2d[h][w]);
+            else {
+                allPaths(arr2d, w, k - 1);
+            }
+        }
+    }
+    // find all the paths that have length k
+    // if k == 0, then print the root node, if node has loop 
+    // if node has loop, it is trick => you can loop forever 
+    // (0) - 1 > (1) => [1][2] = 1
+    public static void allPaths(int[][] arr, int h, int k){
+        if(arr != null){
+            int height = arr.length;
+            int width  = arr[0].length;
+            for(int w = 0; w < width; w++){
+                if(h != w && arr[h][w] > 0){
+                    if(k == 0){
+                        Print.pl("[" + h + "][" + w + "]=" + arr[h][w]);
+                    }else{
+                        allPaths(arr, w, k - 1); 
+                    }
+                }
+            }
+        }
+    }
+    </pre>
+    <div class="mytitle">
+    Find the maximum weight path in k distances from a graph
+    </div>
+    <pre class="mytext">
+    The problem is similar to previous problem:
+    <strong>We need to find the maximum weight of all children when the distance is k</strong>
+
+    <span style="color:red; font-size:20px;">Algorithm:</span>
+    If the distance is equal to zero, 
+        then return maximum weight between current max weight and the weight of current node
+    else if the distance is less than k, 
+        recure each child for the current node with k - 1
+
+    <span style="color:red; font-size:20px;">Skeleton code:</span>
+    maxPath(int[][] arr, int h, int k)
+        int currMax = 0;
+        for(int r = 0; r < len; r++)
+            if(h != r && arr[h][r] > 0)
+                if( k == 0)
+                    return max(currMax, arr[h][r])
+                else
+                    return maxPath(arr, r, k - 1) 
+                
+            
+        return currMax;
+    </pre>
+    <pre class="prettyprint">
+
+    </pre>
 
     </body>
     </html>

@@ -31,152 +31,50 @@
   ga('send', 'pageview');
 </script>
 
+        <div class="mytitle">
+        Binary search: eliminate one quandrant in each step
+        </div>
+        <pre class="prettyprint">
+        // Binary search: eliminate one quandrant in each step
+        // Complexity O(lg(m)+lg(n)) ? need to verify that
+        public static boolean BinSearch2D(int[][] array, int collo, int rowlo, 
+                                                         int colhi, int rowhi, int key) {
+            if(array != null) {
+                int colm = (collo + colhi)/2;
+                int rowm = (rowlo + rowhi)/2;
+                if(collo <= colhi && rowlo <= rowhi) {
+                    if(key < array[colm][rowm]) {
+                        boolean b1 = false, b2 = false, b3 = false;
+                        b1 = BinSearch2D(array, collo, rowlo,
+                                                      colm-1, rowm-1, key);
 
-<div id="header">
+                        b2 = BinSearch2D(array, collo, rowm,
+                                                      colm-1,rowhi, key);
+                        b3 = BinSearch2D(array, colm, rowlo,
+                                                      colhi, rowm-1, key);
+                        return b1 || b2 || b3;
+                    }
+                    else if(key > array[colm][rowm]) {
+                        boolean b1 = false, b2 = false, b3 = false;
+                        b1 = BinSearch2D(array, colm+1, rowm+1,
+                                                      colhi,  rowhi, key);
+                        b2 = BinSearch2D(array, collo, rowm+1,
+                                                      colm,  rowhi, key);
+                        b3 = BinSearch2D(array, colm+1, rowlo,
+                                                      colhi,  rowm, key);
+                        return b1 || b2 || b3;
+                    }
+                    else
+                        return true;
+                }
+            }
+            return false;
+        } 
+        </pre>
+<div class="cen">
+    <img src="../image/BinarySearch2D.svg" width="50%" height="50%" />
 </div>
-<div class="colmask rightmenu">
-	<div class="colleft">
-		<div class="col1">
-			<!-- Column 1 start -->
-            <div>
-                <h3><div class="highlight"><pre>    <span class="c1">//Binary search: eliminate one quandrant in each step</span>
-    <span class="c1">//Complexity O(lg(m)+lg(n))</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">BinSearch2D</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">array</span><span class="o">,</span> <span class="kt">int</span> <span class="n">collo</span><span class="o">,</span> <span class="kt">int</span> <span class="n">rowlo</span><span class="o">,</span> 
-                                                     <span class="kt">int</span> <span class="n">colhi</span><span class="o">,</span> <span class="kt">int</span> <span class="n">rowhi</span><span class="o">,</span> <span class="kt">int</span> <span class="n">key</span><span class="o">)</span>
-    <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">array</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
-        <span class="o">{</span>
-            <span class="kt">int</span> <span class="n">colm</span> <span class="o">=</span> <span class="o">(</span><span class="n">collo</span> <span class="o">+</span> <span class="n">colhi</span><span class="o">)/</span><span class="mi">2</span><span class="o">;</span>
-            <span class="kt">int</span> <span class="n">rowm</span> <span class="o">=</span> <span class="o">(</span><span class="n">rowlo</span> <span class="o">+</span> <span class="n">rowhi</span><span class="o">)/</span><span class="mi">2</span><span class="o">;</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">collo</span> <span class="o">&lt;=</span> <span class="n">colhi</span> <span class="o">&amp;&amp;</span> <span class="n">rowlo</span> <span class="o">&lt;=</span> <span class="n">rowhi</span><span class="o">)</span>
-            <span class="o">{</span>
-                <span class="k">if</span><span class="o">(</span><span class="n">key</span> <span class="o">&lt;</span> <span class="n">array</span><span class="o">[</span><span class="n">colm</span><span class="o">][</span><span class="n">rowm</span><span class="o">])</span>
-                <span class="o">{</span>
-                    <span class="kt">boolean</span> <span class="n">b1</span> <span class="o">=</span> <span class="kc">false</span><span class="o">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="kc">false</span><span class="o">,</span> <span class="n">b3</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-                    <span class="n">b1</span> <span class="o">=</span> <span class="n">BinSearch2D</span><span class="o">(</span><span class="n">array</span><span class="o">,</span> <span class="n">collo</span><span class="o">,</span> <span class="n">rowlo</span><span class="o">,</span>
-                                                  <span class="n">colm</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="n">rowm</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="n">key</span><span class="o">);</span>
-
-                    <span class="n">b2</span> <span class="o">=</span> <span class="n">BinSearch2D</span><span class="o">(</span><span class="n">array</span><span class="o">,</span> <span class="n">collo</span><span class="o">,</span> <span class="n">rowm</span><span class="o">,</span>
-                                                  <span class="n">colm</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span><span class="n">rowhi</span><span class="o">,</span> <span class="n">key</span><span class="o">);</span>
-                    <span class="n">b3</span> <span class="o">=</span> <span class="n">BinSearch2D</span><span class="o">(</span><span class="n">array</span><span class="o">,</span> <span class="n">colm</span><span class="o">,</span> <span class="n">rowlo</span><span class="o">,</span>
-                                                  <span class="n">colhi</span><span class="o">,</span> <span class="n">rowm</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="n">key</span><span class="o">);</span>
-                    <span class="k">return</span> <span class="n">b1</span> <span class="o">||</span> <span class="n">b2</span> <span class="o">||</span> <span class="n">b3</span><span class="o">;</span>
-                <span class="o">}</span>
-                <span class="k">else</span> <span class="nf">if</span><span class="o">(</span><span class="n">key</span> <span class="o">&gt;</span> <span class="n">array</span><span class="o">[</span><span class="n">colm</span><span class="o">][</span><span class="n">rowm</span><span class="o">])</span>
-                <span class="o">{</span>
-                    <span class="kt">boolean</span> <span class="n">b1</span> <span class="o">=</span> <span class="kc">false</span><span class="o">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="kc">false</span><span class="o">,</span> <span class="n">b3</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-                    <span class="n">b1</span> <span class="o">=</span> <span class="n">BinSearch2D</span><span class="o">(</span><span class="n">array</span><span class="o">,</span> <span class="n">colm</span><span class="o">+</span><span class="mi">1</span><span class="o">,</span> <span class="n">rowm</span><span class="o">+</span><span class="mi">1</span><span class="o">,</span>
-                                                  <span class="n">colhi</span><span class="o">,</span>  <span class="n">rowhi</span><span class="o">,</span> <span class="n">key</span><span class="o">);</span>
-                    <span class="n">b2</span> <span class="o">=</span> <span class="n">BinSearch2D</span><span class="o">(</span><span class="n">array</span><span class="o">,</span> <span class="n">collo</span><span class="o">,</span> <span class="n">rowm</span><span class="o">+</span><span class="mi">1</span><span class="o">,</span>
-                                                  <span class="n">colm</span><span class="o">,</span>  <span class="n">rowhi</span><span class="o">,</span> <span class="n">key</span><span class="o">);</span>
-                    <span class="n">b3</span> <span class="o">=</span> <span class="n">BinSearch2D</span><span class="o">(</span><span class="n">array</span><span class="o">,</span> <span class="n">colm</span><span class="o">+</span><span class="mi">1</span><span class="o">,</span> <span class="n">rowlo</span><span class="o">,</span>
-                                                  <span class="n">colhi</span><span class="o">,</span>  <span class="n">rowm</span><span class="o">,</span> <span class="n">key</span><span class="o">);</span>
-                    <span class="k">return</span> <span class="n">b1</span> <span class="o">||</span> <span class="n">b2</span> <span class="o">||</span> <span class="n">b3</span><span class="o">;</span>
-                <span class="o">}</span>
-                <span class="k">else</span>
-                    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span> 
-</pre></div>
-</h3>
-            </div>
-            <div class="cen">
-                <img src="../image/BinarySearch2D.svg" width="50%" height="50%" />
-            </div>
-        <!-- Column 1 end -->
-		</div>
-
-		<div class="col2">
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		</div>
-	</div>
-</div>
-
 </div>
 </body>
 </html>

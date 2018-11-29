@@ -45,7 +45,6 @@ gcc -Wall -c  myfile.c
 g++ -std=c++14 -I/path/mylib   -o myfile myfile.cpp
 g++ -std=c++11 -I/path/mylib   -o myfile myfile.cpp
 </pre> 
-</div>
 
 <div class="mytitle">
 Add C++ Standard Library and Language Dialect in Xcode
@@ -61,6 +60,35 @@ Add Search Path to Xcode for C++ development
 <div class="cen">
 <img src="../image/xcode_header_add_path.png" width="90%" height="90%" /><br>
 </div> 
+
+<div class="mytitle">
+C++ build OpenGL
+</div>
+<pre class="prettyprint">
+// Both g++ and clang
+clang -framework GLUT -framework OpenGL -framework Cocoa check_opengl.cpp -o check_opengl 
+g++   -framework GLUT -framework OpenGL -framework Cocoa check_opengl.cpp -o check_opengl 
+</pre>
+
+<div class="mytitle">
+C++ build OpenCV 
+</div>
+
+<pre class="prettyprint">
+g++ -std=c++14 -I$b/cpplib $(pkg-config --cflags --libs opencv) file.cpp -o file 
+</pre>
+
+<div class="mytitle">
+Build OpenGL and OpenCV
+</div>
+
+<pre class="prettyprint">
+// Just combine them
+g++ -framework GLUT -framework OpenGL -framework Cocoa check_opengl.cpp -o check_opengl 
+g++ -std=c++14 -I$b/cpplib $(pkg-config --cflags --libs opencv) file.cpp -o file 
+</pre>
+
+</div>
 
 </body>
 </html>
