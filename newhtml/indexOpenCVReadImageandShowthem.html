@@ -30,24 +30,60 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
-<div class="myclass">
-<div class="mytitle">
-Convert image to grayscale image
-</div>
-<div class="mytext">
-The simple way is to compute the average of RGB colors values
 
-\begin{equation}
-\begin{aligned}
-    r = \alpha r + \beta \\ 
-    g = \alpha g + \beta \\ 
-    b = \alpha b + \beta \\
-\end{aligned}
-\end{equation} 
+<div class="myclass">
+
+<div class="mytitle">
+Read Image and Show them in OpenCV, nothing else
 </div>
+<pre class="mytext">
+OpenCV API is very easy to manipulate image.
+1. Read image from image file
+2. Show the image in a window
+- We use inread() to read an image to matrix which is called Mat in OpenCV
+  Mat mat = inread()
+- Use inshow() to show image in OpenCV  
+</pre>
 <pre class="prettyprint">
-code here
+/*
+/Users/cat/myfile/bitbucket/opencv/loadimage.cpp
+-------------------------------------------------------------------------------- 
+Wed Nov 28 16:03:20 2018 
+-------------------------------------------------------------------------------- 
+open an image only
+-------------------------------------------------------------------------------- 
+Compile: runopencv loadimage.cpp  => loadimage
+Script:  $b/runopencv.sh
+-------------------------------------------------------------------------------- [
+*/
+int main(int argc, char** argv) {
+ // Read the image file
+ String path = "/Users/cat/myfile/bitbucket/image/dog1.jpeg";
+ Mat image = imread(path);
+
+ // Check for failure
+ if (image.empty()) {
+  cout << "Could not open or find the image" << endl;
+  cout << "Image path=" << path << endl;
+  cin.get(); //wait for any key press
+  return -1;
+ }
+
+ String imageTitle = "Big dog"; //Name of the window
+
+ namedWindow(imageTitle); // Create a window
+
+ imshow(imageTitle, image); // Show our image inside the created window.
+
+ waitKey(0); // Wait for any keystroke in the window
+
+ destroyWindow(imageTitle); //destroy the created window
+
+ return 0;
+}
+</pre> 
 </pre> 
 </div>
 </body>
 </html>
+
