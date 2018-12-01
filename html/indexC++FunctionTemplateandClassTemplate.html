@@ -32,13 +32,37 @@
 </script>
 <div class="myclass">
 <div class="mytitle">
-add content here
+C++ Function Template
 </div>
 <pre class="mytext">
-My text here
+Template is powerful in C++, you can do all sort of crazy thing
 </pre>
 <pre class="prettyprint">
+template<typename T> 
+T fun(T a, T b){
+    return a + b;
+}
+// You can use default argument too
+template<typename T = int> 
+T fun(T a, T b = 0){
+    return a + b;
+}
 </pre> 
+
+<pre class="mytext">
+C++ class template
+</pre>
+<pre class="prettyprint">
+template<class T=int>
+class MyClass{ 
+    public:
+        MyClass(T a, T b=0){
+        }
+};
+
+
+</pre>
+
 </div>
 </body>
 </html>
