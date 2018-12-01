@@ -67,18 +67,30 @@ insert::Tree a -> Tree a -> Tree a
 insert Empty (Node a l r) = (Node a l r)
 insert _  _        = Empty
 
-class Node<T>{
+class Node< T>{
     T data;
     Node left;
     Node right;
 }
 
-template<class T>
+template< class T>
 class Node{
     T data;
     Node<T> left;
     Node<T> right;
 };
+
+    enum Color{
+        red,
+        green,
+        blue
+    };
+    Color color = red;
+    switch(color){
+        case red: cout<<"red"; break;
+        case green: cout<<"green"; break;
+        case blue: cout<<"blue"; break;
+    }
 
 </pre>
 </div>

@@ -412,8 +412,27 @@ maxheight = maxlen - 1
 
 </pre>
 <div class="mytitle">
-How to create Haskell Record and show Record
+Why Haskell Record is so BAD 
 </div>
+<pre class="prettyprint">
+data Person = Person{
+        name::Text,
+        age::Int
+        }
+
+data Dog = Dog{
+        name::Text,
+        age:Int
+        }
+</pre>
+<div class="mytitle">
+You will get compiler error with two differnet records
+</div>
+<pre class="mytext">
+How to create Haskell Record and show Record
+In Haskell, name is just a function, it is global. 
+This is why you can NOT have the same name and type with different records. 
+</pre><br>
 <pre class="mytext">
 Haskell record is similar to Java Class without methods.
 You can not have function inside record in Haskell.
