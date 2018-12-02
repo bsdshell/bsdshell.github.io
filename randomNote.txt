@@ -1,4 +1,13 @@
 -------------------------------------------------------------------------------- 
+Sun Dec  2 00:36:06 2018 
+1. Create new index Page  => localhost/indexNew.html
+2. Add the code to genehtml.hs file
+3. not add url links to indexNew.html yet
+4. Need to fix the table layout
+5. more..
+
+TODO: ...
+------------------------------------------------------------------------------- 
 // find string from a given string, c++ find string, search string, search str, find str 
 // string::find
 #include <iostream>       // std::cout
