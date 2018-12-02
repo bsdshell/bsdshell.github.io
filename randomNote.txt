@@ -1,4 +1,9 @@
 -------------------------------------------------------------------------------- 
+Sun Dec  2 14:26:34 2018 
+1. fix table layout
+2. the new index is working so far. 
+3. indexNew.html => all the links seems to be OK,
+-------------------------------------------------------------------------------- 
 Sun Dec  2 00:36:06 2018 
 1. Create new index Page  => localhost/indexNew.html
 2. Add the code to genehtml.hs file
