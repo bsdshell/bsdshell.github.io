@@ -412,7 +412,7 @@ maxheight = maxlen - 1
 
 </pre>
 <div class="mytitle">
-Why Haskell Record is so BAD 
+Why Haskell <span style="color:red;">Record</span> is so BAD 
 </div>
 <pre class="prettyprint">
 data Person = Person{
@@ -493,7 +493,7 @@ pp $ "age      =" ++ show(age person)  -- 20
 -- | -------------------------------------------------------------------------------- 
 </pre>
 <pre class="mytitle">
-Haskell Record with IORef
+Haskell Record with <span style="color:red;">IORef</span>
 </pre>
 <pre class="mytext">
 IORef is tricky to use initially if you are from Java or C++, If you combine Record with IORef
@@ -539,7 +539,7 @@ data Count = Count{
 
 </pre>
 <pre class="mytitle">
-What does do-statement do in Haskell
+What does <span style="color:red;">do-statement</span> do in Haskell
 </pre>
 <pre class="mytext">
 do-statement is syntax sugar for Monad Computation??
@@ -569,6 +569,32 @@ do-statement is syntax sugar for Monad Computation??
         name <- nameDo
         print name
 </pre>
+<pre class="mytitle">
+How <span style="color:red;">liftM</span> can help you to simplify your IO code
+</pre>
+<pre class="mytext">
+liftM defintion:
+liftM::(Monad m)=>(a -> b) -> m a -> m b
+
+not::Bool -> Bool
+not true = false
+not false = true
+
+liftM not
+liftM::(Monad m)=>(Bool -> Bool) -> m Bool -> m Bool
+
+</pre>
+<pre class="prettyprint">
+-- find all the file that does not exist from a list
+filterM(\x -> doesFileExist x >>= \y -> return y == false) ["list files"]
+
+-- if we find all the files DOES exist in the list, it is easy
+filterM(doesFileExist) ["list files"]
+
+-- better way to do with liftM
+filterM((liftM not) . doesFileExist) ["list files"]
+</pre>
+
 
             <div class="mytitle">Regular Expression in Haskell</div>
             <div class="highlight"><pre><span class="nf">re1</span> <span class="ow">=</span> <span class="s">&quot;my food&quot;</span>         <span class="o">=~</span> <span class="s">&quot;foo&quot;</span><span class="ow">::</span><span class="kt">Bool</span>                      <span class="c1">-- True</span>
