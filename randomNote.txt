@@ -1,4 +1,9 @@
 -------------------------------------------------------------------------------- 
+Mon Dec  3 14:38:14 2018 
+Add record to genehtml.hs
+make the code looks nice, I guess
+
+-------------------------------------------------------------------------------- 
 Sun Dec  2 14:26:34 2018 
 1. fix table layout
 2. the new index is working so far. 
