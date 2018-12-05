@@ -58,7 +58,7 @@ table.fixed {
     word-break:break-all;
 }
 table td, th{
-    border: 1px solid black;
+    border: 1px solid #efe9e9;
 }
 
 
@@ -271,9 +271,9 @@ pre.cc{
 .mytext{
     margin:auto;
     /* width:80%; */
-    color: rgba(255, 217, 126, 0.98);
+    color: rgba(210, 174, 30, 0.98);
     /* font-size:18px; */
-    background: #14304a;
+    background: #373f46;
     margin-left: 0px;
     /* text-indent: 10px; */
     padding-left: 40px;

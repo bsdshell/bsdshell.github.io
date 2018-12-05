@@ -78,6 +78,27 @@ reverse = foldl(\x y -> y:x) [] ["a", "b", "c"]
 reverse = foldr(\x y -> y ++ [x]) [] ["a", "b", "c"]
         = ["c", "b", "a"]
 </pre> 
+<div class="mytitle">
+Make your own foldL and foldR
+</div>
+<pre class="prettyprint">
+foldR::(a -> a -> a) -> a -> [a] -> a
+foldR f z [] = z
+foldR f z (x:cx) = f z (fold f z cx)
+
+-- TODO check it
+
+foldL::(a -> a -> a) -> a -> [a] -> a
+foldL f z [] = z
+foldL f z cx = f x' (fold f z cx')
+            where
+                x' = last cx
+                cx' = init cx
+
+-- TODO check it
+
+</pre> 
+
 </div>
 <br>
 <div class="mytitle">

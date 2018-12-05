@@ -1,0 +1,76 @@
+pre{
+    /*margin: 0px 1px;*/
+    white-space: pre;
+    /* background: rgba(57, 128, 144, 0.9); */
+    /*background: rgb(253, 253, 251);*/
+    font-size:14pt;
+    /* box-shadow: 2px 2px 2px 1px rgba(14, 15, 16, 0.2); */
+    font-family:"Lucida Console", Courier, monospace;
+    /*font-family: "Miller Display Roman",georgia,serif;*/
+    line-height:1.1em;
+    letter-spacing:0.05em;
+    border-radius:0px;
+    /*padding:1em;*/
+    /*padding-left: 40px;*/
+    margin-top:0px;
+    margin-bottom:0px;
+    margin-left:0px;
+    margin-right:0px;
+    font-weight:500;
+}
+
+pre.prettyprint.prettyprinted {
+    /*! border: 0px; */
+    font-size: 20px;
+    background: #fdfcf8;
+}
+
+
+pre.prettyprint.prettylatex {
+    /*! border: 0px; */
+    font-size: 20px;
+    background: #fffcf1;
+    text-align:left;
+    margin: 0px 1px;
+}
+
+pre.prettyprint.bigfont {
+    /*! border: 0px; */
+    font-size: 80px;
+    background: #fffcf1;
+    text-align:left;
+    margin: 0px 1px;
+}
+
+pre.prettyprint.smallfont {
+    /*! border: 0px; */
+    font-size: 14px;
+    background: #fffcf1;
+    text-align:left;
+    margin: 0px 1px;
+}
+
+pre.prettyprint.ssfont {
+    /*! border: 0px; */
+    font-size: 12px;
+    background: #fffcf1;
+    text-align:left;
+    margin: 0px 1px;
+}
+
+pre.prettyprint.mfont {
+    /*! border: 0px; */
+    font-size: 50px;
+    background: #fffcf1;
+    text-align:left;
+    margin: 0px 1px;
+}
+
+pre.prettyprint.myfont {
+    /*! border: 0px; */
+    font-size: 20px;
+    font-size: 3.0vw;
+    background: #fffcf1;
+    text-align:left;
+    margin: 1px 1px;
+}

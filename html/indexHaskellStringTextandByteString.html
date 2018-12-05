@@ -30,15 +30,40 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+
 <div class="myclass">
 <div class="mytitle">
-add content here
+Haskell String Text and ByteString
 </div>
 <pre class="mytext">
-My text here
+Why Haskell have String Text and ByteString, what the hell is going on here?
+
+String: What is that?
+Why String is bad for you?
+it implemented in single linked list
+String is list of chars
+"dog" = ['d', 'o', 'g']
+when String is modified, Haskell allocates memory for it.
+Also, since String is linked list, its memory locality is not good.
+
+Text: What is Text?
+Why Text is bad or good for you?
+Text is array-based string representation.
+Text is use something called fusion. 
+
+ByteString: What is ByteString?
+Why ByteString is bad or good for you?
+
+How do we convert them in each other?
+pack
+unpack
+toString
+...
+
 </pre>
 <pre class="prettyprint">
 </pre> 
+
 </div>
 </body>
 </html>

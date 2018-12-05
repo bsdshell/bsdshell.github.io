@@ -7,8 +7,8 @@ body {
     min-width:600px;        /* Minimum width of layout - remove line if not required */
 }
 
-a {color: #000000;}
-a:visited { color:gray; }
+a {color: #a78484;}
+a:visited {color: #b9a5a5;}
 a:hover { color:green; }
 
 /*

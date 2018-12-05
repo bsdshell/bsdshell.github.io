@@ -594,6 +594,32 @@ filterM(doesFileExist) ["list files"]
 -- better way to do with liftM
 filterM((liftM not) . doesFileExist) ["list files"]
 </pre>
+<div class="mytitle">
+Simple Typeclass in Haskell
+</div>
+<pre class="mytext">
+1. define a typeclass Shape with two constructors
+ <span style="color:red;">Shape</span> a is type
+ <span style="color:green;">Circle Float Float Float</span> is one constructor with three floats
+ <span style="color:pink;">Rectangle Float Float Float Float</span> is other constructor with four floats
+</pre>
+<pre class="prettyprint">
+-- Typeclass in Haskell
+-- Shape is similar to interface in Java
+-- Circle and Rectangle are similar to class in Java
+
+data Shape = Circle Float Float Float | Rectangle Float Float Float Float deriving (Show)
+
+area::Shape->Float
+area(Circle _ _ r) = pi*r^2
+area(Rectangle topx topy bottomx bottomy) = abs(bottomy - topy)*abs(bottomx - topx)
+
+main = do 
+        print("Typeclass in Haskell")
+        print(area $ Circle 3 4 5)
+        print(area $ Rectangle 3 4 5 8)
+</pre>
+
 
 
             <div class="mytitle">Regular Expression in Haskell</div>
@@ -798,23 +824,6 @@ filterM((liftM not) . doesFileExist) ["list files"]
 <span class="nl">postorderTraversal:</span><span class="o">:</span><span class="n">Tree</span> <span class="n">a</span> <span class="o">-&gt;[</span><span class="n">a</span><span class="o">]</span>
 <span class="n">postorderTraversal</span> <span class="n">Empty</span> <span class="o">=</span> <span class="o">[]</span> 
 <span class="n">postorderTraversal</span><span class="o">(</span><span class="n">Node</span> <span class="n">a</span> <span class="n">l</span> <span class="n">r</span><span class="o">)</span> <span class="o">=</span> <span class="o">(</span><span class="n">postorderTraversal</span> <span class="n">l</span><span class="o">)</span> <span class="o">++</span> <span class="o">(</span><span class="n">postorderTraversal</span> <span class="n">r</span><span class="o">)</span> <span class="o">++</span> <span class="o">[</span><span class="n">a</span><span class="o">]</span>
-</pre></div>
-
-            <div class="mytitle">Typeclass 1 in Haskell</div>
-            <div class="highlight"><pre><span class="c1">-- Typeclass in Haskell</span>
-<span class="c1">-- Shape is similar to interface in Java</span>
-<span class="c1">-- Circle and Rectangle are similar to class in Java</span>
-
-<span class="kr">data</span> <span class="kt">Shape</span> <span class="ow">=</span> <span class="kt">Circle</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="o">|</span> <span class="kt">Rectangle</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kt">Float</span> <span class="kr">deriving</span> <span class="p">(</span><span class="kt">Show</span><span class="p">)</span>
-
-<span class="nf">area</span><span class="ow">::</span><span class="kt">Shape</span><span class="ow">-&gt;</span><span class="kt">Float</span>
-<span class="nf">area</span><span class="p">(</span><span class="kt">Circle</span> <span class="kr">_</span> <span class="kr">_</span> <span class="n">r</span><span class="p">)</span> <span class="ow">=</span> <span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">^</span><span class="mi">2</span>
-<span class="nf">area</span><span class="p">(</span><span class="kt">Rectangle</span> <span class="n">topx</span> <span class="n">topy</span> <span class="n">bottomx</span> <span class="n">bottomy</span><span class="p">)</span> <span class="ow">=</span> <span class="n">abs</span><span class="p">(</span><span class="n">bottomy</span> <span class="o">-</span> <span class="n">topy</span><span class="p">)</span><span class="o">*</span><span class="n">abs</span><span class="p">(</span><span class="n">bottomx</span> <span class="o">-</span> <span class="n">topx</span><span class="p">)</span>
-
-<span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span> 
-        <span class="n">print</span><span class="p">(</span><span class="s">&quot;Typeclass in Haskell&quot;</span><span class="p">)</span>
-        <span class="n">print</span><span class="p">(</span><span class="n">area</span> <span class="o">$</span> <span class="kt">Circle</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">)</span>
-        <span class="n">print</span><span class="p">(</span><span class="n">area</span> <span class="o">$</span> <span class="kt">Rectangle</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">8</span><span class="p">)</span>
 </pre></div>
 
             <div class="mytitle">More Typeclass 2 in Haskell</div>

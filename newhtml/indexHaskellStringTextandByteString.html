@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
 <head>
-    <title>What is foldr and foldl in Haskell, foldr and foldl example, foldr and foldl tutorial</title>
+    <title>$title</title>
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
     <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
     <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -33,80 +33,38 @@
 
 <div class="myclass">
 <div class="mytitle">
-Understand <span id="red">foldr</span> and <span id="red">foldl</span> with examples in Haskell
+Haskell String Text and ByteString
 </div>
-<pre class="prettyprint">
-1. foldr(-) 4 [1, 2, 3]
+<pre class="mytext">
+Why Haskell have String Text and ByteString, what the hell is going on here?
 
-2. [1] is equavalent to following:
-   foldr(\x -> x - 4) [1, 2, 3] 
+String: What is that?
+Why String is bad for you?
+it implemented in single linked list
+String is list of chars
+"dog" = ['d', 'o', 'g']
+when String is modified, Haskell allocates memory for it.
+Also, since String is linked list, its memory locality is not good.
 
-3. foldr => what does 'r' mean here? 
-   It means: The list is folded from Right side
+Text: What is Text?
+Why Text is bad or good for you?
+Text is array-based string representation.
+Text is use something called fusion. 
 
-4. The order of x and 4 are important.
-   (x - 4) it NOT equal (4 - x) 
+ByteString: What is ByteString?
+Why ByteString is bad or good for you?
 
-5. Remember "The list is folded from Right side"
-   foldr(\x -> x - 4) [1, 2, 3] 
-   = (1 - (2 - (3 - 4)))  -- x = 3 
-   = (1 - (2 - (-1)))     -- x = 2 
-   = (1 - 3)              -- x = 1
-   = -2
-</pre> 
-<pre class="prettyprint">
-1. foldl(-) 4 [1, 2, 3]
-
-2. (1) is equavalent to following: 
-   foldl(\x -> 4 - x) 4 [1, 2, 3]
-
-3. Remember "The list is folded from LEFT side, fold[l]"
-   foldl(\x -> 4 - x) 4 [1, 2, 3]
-   = (((1 - 4) - 2) - 3) -- x = 1
-   = ((-3 - 2) - 3)      -- x = 2
-   = ((-5) - 3)          -- x = 3
-   = -8
+How do we convert them in each other?
+pack
+unpack
+toString
+...
 
 </pre>
-<div class="mytitle">
-Fun fact about <span id="red">foldl, foldr</span>
-</div>
 <pre class="prettyprint">
-reverse = foldl(\x y -> y:x) [] ["a", "b", "c"] 
-        = ["c", "b", "a"]
-
-reverse = foldr(\x y -> y ++ [x]) [] ["a", "b", "c"]
-        = ["c", "b", "a"]
-</pre> 
-<div class="mytitle">
-Make your own foldL and foldR
-</div>
-<pre class="prettyprint">
-foldR::(a -> a -> a) -> a -> [a] -> a
-foldR f z [] = z
-foldR f z (x:cx) = f z (fold f z cx)
-
--- TODO check it
-
-foldL::(a -> a -> a) -> a -> [a] -> a
-foldL f z [] = z
-foldL f z cx = f x' (fold f z cx')
-            where
-                x' = last cx
-                cx' = init cx
-
--- TODO check it
-
 </pre> 
 
 </div>
-<br>
-<div class="mytitle">
-Picture is worth a thousand words 
-</div>
-<div class="cen">
-<img src="../image/fold2.svg" width="50%" height="50%" /><br> 
-</div>
-
 </body>
 </html>
+
