@@ -271,18 +271,19 @@ pre.cc{
 .mytext{
     margin:auto;
     /* width:80%; */
-    color: rgba(210, 174, 30, 0.98);
+    color: rgba(33, 30, 20, 0.98);
     /* font-size:18px; */
-    background: #373f46;
+    background: #e2f1e2;
     margin-left: 0px;
     /* text-indent: 10px; */
     padding-left: 40px;
     font-family: 'Courier New', Courier, Fixed;
     line-height: 20px;
-    /*padding: 4px 4px 4px 4px;*/
+    padding: 4px 4px 4px 4px;
     border-radius: 3px;
     display: block;
     font-style: normal;
+    border-left: red;
 }
 
 

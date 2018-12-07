@@ -410,7 +410,71 @@ maxlen (Node a l r) = 1 + max (maxlen l) (maxlen r)
 -- find the maximum height of a Binary Tree
 maxheight = maxlen - 1
 
-</pre>
+</pre><br>
+
+<div class="mytitle">
+What is difference between <span style="color:red;">Expr</span> and <span style="color:red;">Expr a</span>
+</div>
+<pre class="mytext">
+It is hard to figure out the difference between Expr and Expr a in Haskell
+data Expr is type Int only
+data Expr a can be any type as 'a' 
+</pre> 
+
+<pre class="prettyprint">
+data Expr = Expr Int 
+            | Add Expr Expr
+            | Mul Expr Expr
+data Expr a = Con a 
+            | Add (Expr a) (Expr a)
+            | Mul (Expr a) (Expr a)
+</pre><br>
+    
+    <div class="mytitle">
+    If you implement Monoid in the modern GHC, you need to implement Semigroup
+    </div>
+    <div style="font-size:130%;" class="mytext">
+    Semigroup $(\otimes, S)$: 
+    let $a, b, c, d \in S$
+        \[ 
+            a \otimes b \otimes c = a \otimes (b \otimes c) \in S
+        \] 
+    <br>
+    Monoid $(\otimes, S, I)$: 
+    let $a, b, c \in S$
+        \begin{equation}
+        \begin{aligned}
+            a \otimes b \otimes c &= a \otimes (b \otimes c) \in S \\
+            I \otimes a &= a \otimes I
+        \end{aligned}
+        \end{equation} 
+    Group $(\otimes, S, I)$
+    let $a, b, c \in S$
+        \begin{equation}
+        \begin{aligned}
+            a \otimes b \otimes c &= a \otimes (b \otimes c) \in S \\
+            I \otimes a &= a \otimes I \\
+            \forall a \in S, \exists a^{-1} \mid a \otimes a^{-1} &= I \\
+        \end{aligned}
+        \end{equation} 
+    </div>
+    <pre class="prettyprint">
+    newtype Sum = Sum{getSum::Int} where deriving (Show)
+    
+    class Semigroup a where
+        (<>):: a -> a -> a
+
+    instance Semigroup Sum where
+        (<>)::(Sum x) (Sum y) = Sum (x + y)
+
+    instance Monoid Sum where
+        mappend = (<>)
+        mempty = Sum 0
+
+    foldr((<>)) (Sum 0) [(Sum 1), (Sum 2)] => Sum{getSum = 3}
+
+    </pre><br>
+
 <div class="mytitle">
 Why Haskell <span style="color:red;">Record</span> is so BAD 
 </div>
@@ -429,9 +493,10 @@ data Dog = Dog{
 You will get compiler error with two differnet records
 </div>
 <pre class="mytext">
-How to create Haskell Record and show Record
+From above two records: Person and Dog.
+They both have name::Text 
 In Haskell, name is just a function, it is global. 
-This is why you can NOT have the same name and type with different records. 
+This is why you can NOT have the same name and in different records. 
 </pre><br>
 <pre class="mytext">
 Haskell record is similar to Java Class without methods.
@@ -772,7 +837,7 @@ main = do
 <span class="c1">-- ax^2 + bx + c = 0</span>
 <span class="c1">-- Find the root of the quadratic equation</span>
 <span class="nf">roots</span> <span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="ow">=</span>
-        <span class="kr">let</span> <span class="n">discriminant</span><span class="ow">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">b</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">)</span>
+        <span class="kr">let</span> <span class="n">discriminane</span><span class="ow">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">b</span><span class="o">^</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">)</span>
         <span class="kr">in</span> <span class="p">(</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">discriminant</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">discriminant</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">))</span>
 
 <span class="nf">main</span> <span class="ow">=</span>  <span class="kr">do</span> 
