@@ -658,7 +658,57 @@ filterM(doesFileExist) ["list files"]
 
 -- better way to do with liftM
 filterM((liftM not) . doesFileExist) ["list files"]
+</pre><br>
+
+<div class="mytitle">
+How to exit Haskell program 
+</div>
+<pre class="prettyprint">
+Single Thread:
+
+main = do 
+    print "start"
+    exitFailure
+    print "nothing to show"
+
+That code will set exit code to 0
+e.g. echo $? => 0 
+
+main = do 
+    print "start"
+    exitWith(ExitFailure 3)
+    print "nothing to show"
+
+e.g. echo $? => 3
+You can use exitWith(...) to set exit code whatever you want
+
+Multiple Thread is different story.
+
+import Control.Exception.Safe
+import System.Exit
+import Control.Concurrent
+
+main = do 
+    print "start"
+    forkIO(exitWith(ExitFailure 3))
+    print "nothing to show"
+
+echo $? => 0
+You do not get 3 now, 
+plz take a look at exitWith::ExitCode -> IO a
+forkIO creates worker thread, and 
+the exit code does not propagate to the parent thread
+
+main = do 
+    print "start"
+    concurrently (exitWith(ExitFailure 3)) $ do
+    print "nothing to show"
+
+echo $? => 0
+The exit code propagates to parent thread with concurrently, 
+
 </pre>
+
 <div class="mytitle">
 Simple Typeclass in Haskell
 </div>
