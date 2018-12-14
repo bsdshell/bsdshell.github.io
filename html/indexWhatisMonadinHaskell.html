@@ -70,18 +70,15 @@ Given a $S = \{0, 1, 2, \dots \}$ and let $a = 1,  b = 2, c = 3, \quad I = 0, a'
 </p>
 
 
-
-
-<p class="art">
+<div style="font-size:130%">
 What is Monoid? <br>
 Monoid is a group without the third condition (3), it means each element does not need to have inverse in Monoid.
-</p>
 \begin{align*}
     \forall a, b, c &\in S \\
     (a \otimes b) \otimes c                   &= a \otimes (b \otimes c) \tag{1} \\
     \exists I, I \otimes a                    &= a \otimes I = a          \tag{2} \\
 \end{align*}
-<h3>Concret example: List concatenation can be defined as Monoid</h3>
+<h3>Example 1: List concatenation can be defined as Monoid</h3>
 What are the elements in Monoid?<br>
 If we define $\Sigma = \{a, b, c, \dots , z\}$ all the strings in $\Sigma^{*}$ are elements. <br> <br> 
 What is the operation? <br>  
@@ -96,6 +93,21 @@ The <strong>identity</strong> can be defined as empty string, e.g. [] in <strong
     => a \text{ ++ } b \text{ ++ } c  &= a \text{ ++ } (b \text{ ++ } c)  \quad   \text{ Associativity } (1) \\ 
     [] \text{ ++ } [a]       &= [a] \text{ ++ } []           = [a]      \quad   \text{ Identity } (2) \\ 
 \end{align*}
+<h3>Example 2: $\gcd(,)$ is a Monoid</h3>
+What is the operator?<br>
+The operation is $\gcd(, )$<br>
+
+What is the identity?<br>
+The identity is $0$ since $\gcd(0, x) = x$ assume $x \neq 0$<br>
+
+Associtivity:<br>
+$\gcd(\gcd(a, b), c) = \gcd(a, \gcd(b, c))$<br>
+
+In Haskell: Use the Monoid properties: <br>
+find the gcd of list of Integer in Haskell<br>
+foldr(gcd) 0 [10, 8, 20] = 2 
+
+</div>
 
 <p class="art">What is morphism?<br>
 Morphism is preserving structure in mathematic objects such as Set, Group, Ring, Vector Space, Topology Space an so on.<br>

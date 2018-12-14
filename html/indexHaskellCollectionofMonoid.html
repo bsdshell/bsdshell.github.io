@@ -31,52 +31,14 @@
   ga('send', 'pageview');
 </script>
 <div class="myclass">
-
 <div class="mytitle">
-Some difference between struct and union
+add content here
 </div>
 <pre class="mytext">
-In modern programming, C language is less likely for most of companies,
-
-but it is worth learning some nasty features in C
+My text here
 </pre>
 <pre class="prettyprint">
-#include <stdio.h>
-#include <stdlib.h>
-
-    union fox{
-        int num;
-        char ch;
-    };
-
-    union foo{
-        int num;
-        int age;
-    };
-
-    struct Point{
-        int x;
-        int y;
-    } point;
-
-    int main () {
-        union foo f = {2, 200};
-        printf("f.num=%d\n", f.num); // => 2
-        printf("f.age=%d\n", f.age); // => 2
-
-        union fox fo = {'a', 'z'};
-        printf("fo.num=%d\n", fo.num); // => 97
-        printf("fo.ch=%c\n", fo.ch);   // => 'a'
-
-        struct Point point = {1, 2};
-
-        printf("point.x=%d\n", point.x); // => 1
-        printf("point.y=%d\n", point.y); // => 2
-
-       return(0);
-    }
 </pre> 
 </div>
-
 </body>
 </html>
