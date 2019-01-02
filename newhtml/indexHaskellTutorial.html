@@ -649,6 +649,9 @@ liftM not
 liftM::(Monad m)=>(Bool -> Bool) -> m Bool -> m Bool
 
 </pre>
+<pre class="mytitle">
+Real world example with <span style="color:red;">liftM</span>
+</pre>
 <pre class="prettyprint">
 -- find all the file that does not exist from a list
 filterM(\x -> doesFileExist x >>= \y -> return y == false) ["list files"]

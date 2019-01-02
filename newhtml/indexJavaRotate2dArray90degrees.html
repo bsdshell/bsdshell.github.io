@@ -61,6 +61,63 @@ Java Rotate 2d Array 90 degrees
     --------------------
 </pre> 
 
+<div class="mytitle">
+Rotate 2d array 90 degrees with geometry technic 
+</div>
+
+<div class="mytext">
+How to find a vector that is perpendicular to $v$  
+1. find the reflection of $v$ about the line $y = x$ 
+2. flip the reflection point about $x$-Axis 
+
+1. Given a vector $v$
+2. $w$ is the reflection about $y=x$
+3. $w_{1}$ is the flip of reflection point about $x$-Axis
+4. we have: $w_{1} \perp v$
+5. we can apply above processes to roate 2d array in 90 degrees clockwise
+Note: if we want to rotate 2d array 90 degrees counter-clockwise 
+      we need to flip the reflection point about $y$-Axis
+</div>
+
+<div class="cen">
+<img src="../image/rotate_array_90_degrees.svg" width="80%" height="80%" /><br>
+</div> 
+
+<pre class="prettyprint">
+    /**
+    * Rotate 2d array 90 degrees in counter-clockwise 
+    * 
+    * 1. swap x, y. e.g. (x, y) -> (y, x)
+    * 2. swap elements: [k][i], [k][len-1-i]. 
+    *    e.g tmp = arr[k][i], 
+    *    arr[k][i] = arr[k][len - 1 - i], arr[k][len-1-i] = tmp
+    */
+    public static void rotateArr90(int[][] arr){
+        if(arr != null){
+            // assume the lengths of row and column are the same
+            int len = arr.length;
+
+            // (x, y) -> (y, x)
+            for(int i=0; i < len; i++){
+                for(int j=i; j < len; j++){
+                    int tmp = arr[i][j];
+                    arr[i][j] = arr[j][i];
+                    arr[j][i] = tmp;
+                }
+            }
+
+            // flip all rows
+            for(int i=0; i < len; i++){
+                for(int j=0; j < len/2; j++){
+                    int tmp = arr[i][j];
+                    arr[i][j] = arr[i][len - 1 - j];
+                    arr[i][len - 1 - j] = tmp;
+                }
+            }
+        }
+    }
+</pre> 
+
 </div>
 </body>
 </html>

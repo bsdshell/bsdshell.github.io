@@ -39,30 +39,30 @@
             Derive Torus Parameter Equation 
             </div>
             <div style="font-size:140%" class="mytext">
-            We can use two circles with two parameter equations, Torus parameter equations can be dervied<br><br>
+            We can use two circles with two parameter equations, Torus parameter equations can be dervied<br>
             We want to derive the Parametric Equation of the red torus in the picture below. The vertical line is z-axis<br>
             On the $xy$-plane, the radius of small circle is $r$ and the radius of big circle is $R$<br>
             There is circle on the $xy$-plane, the distance between the center of pink circle and center of $xy$-plane is $R$.
             The circle can be parametrized with following steps:<br>
             1. Parameterize the circle centered at origin $(x=0, y=0)$<br>
             2. Shift the circle to right side alone x-Axis by $R$
-            </div>
             
             \begin{align*} 
                 x' &= r\cos{\alpha} + R \\
                 y' &= r\sin{\alpha} \\
             \end{align*}
+            </div>
             <div style="font-size:140%" class="mytext">
             The line segment $OD'$ can be rotated in angle $\theta$ on the $xy$-plane, and $OD'$ is equal to $R + r\cos{\alpha}$
             So the big circle with radius $OD' = R + r\cos{\alpha}$ can be parametrized with following equation:<br>
-            </div>
             \begin{align*}
                x &= OD'cos{\theta} \\
                y &= OD'sin{\theta} \\ \\
                x &= (R + r\cos{\alpha})cos{\theta} \\
                y &= (R + r\cos{\alpha})sin{\theta} \\
-               z &= r\sin{\theta} \quad \text{ where z is only affected by $\theta$} \\
+               z &= r\sin{\theta} \quad \text{ where z is only affected by $\theta$} 
             \end{align*}
+            </div>
 
             <div class="cen">
             <img src="../image/torus_parameterized.svg" width="60%" height="60%" /><br>
@@ -155,28 +155,50 @@
             Sphere Equation<br>
             </div>
             <div class="cen">
-            <img src="../image/circle_parameter1.svg" width="40%" height="40%" /><br>
-            <img src="../image/sphere_equation.png" width="40%" height="40%" /><br>
+            <img src="../image/circle_parameter1.svg" width="60%" height="60%" /><br>
+            <img src="../image/sphere_equation.png" width="60%" height="60%" /><br>
+            <img src="../image/sphere_coordinates.png" width="60%" height="60%" />
+            <img src="../image/sphere_polar.svg" width="60%" height="60%" /><br>
             </div> 
             <div style="font-size:140%" class="mytext">
             Derived Sphere Parametric Equation<br> 
-            We slices the sphere to different slices according to hight<br>  
+            We give a horizontal[xy-plane] cut to a sphere
             e.g. $z = 0, z = 0.2, z = 0.5$<br>
              
             \begin{align*}
-            \begin{split}
-            r'&= r\cos(\theta) \\
-            r'&= \sin(\beta) \\
-            x &= r\cos(\theta)\cos(\beta) \\
-            y &= r\cos(\theta)\sin(\beta) \\
-            z &= r\sin(\theta) \\
-            
-            \end{split}
+            r'&= r\cos(\alpha) \quad \text{r' is the radius of small circle} \\ \\
+            x &= r\cos(\alpha)\cos(\beta) \\
+            y &= r\cos(\alpha)\sin(\beta) \\
+            z &= r\sin(\alpha) \\
             \end{align*}
             </div>
 
             <div class="cen">
             <img src="../image/sphere_coordinate.svg" width="60%" height="60%" /><br>
+            </div> 
+
+            <div class="mytitle">
+            Conic Parameter Equation 
+            </div>
+
+            <div style="font-size:140%" class="mytext">
+            Conic Equation is similar to Sphere Equation, 
+            The only difference is the radius of cross section,
+            For Sphere, the radius is changing according to $r \cos{\alpha}$
+            For Conic,  the radius is changing according to $r f(x)$ where $f(x)$ is linear function
+            
+            \begin{equation}
+            \begin{aligned}
+            x &= r f(x) \cos{\beta} \\
+            y &= r f(x) \sin{\beta} \\
+            z &= f(x) \\
+            f(x) &= x \in [1..0]
+            \end{aligned}
+            \end{equation} 
+
+            </div>
+            <div class="cen">
+            <img src="../image/conic_parameter_equation.svg" width="60%" height="60%" /><br>
             </div> 
 
     </body>
