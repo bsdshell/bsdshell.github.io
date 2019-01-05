@@ -35,11 +35,97 @@
 <div class="mytitle">
 Here are the many interesting Monoids
 </div>
+
+<div class="mytitle">
+String concatenation
+</div>
 <pre class="mytext">
-My text here
+The identity: empty string  
+The operation: concatenation
 </pre>
 <pre class="prettyprint">
+("dog" ++ "cat") ++ "pig" = "dog" ++ ("cat" ++ "pig")  
+"" ++ "dog" = "dog" ++ "" = "dog"
 </pre> 
+
+<div class="mytitle">
+Addition, subtraction, multiplication on Integer
+</div>
+<pre class="mytext">
+The identity: 0  
+The operation: Add 
+</pre>
+<pre class="prettyprint">
+1 + 2 + 3 = 1 + (2 + 3)
+0 + 1 = 1 + 0 = 1
+</pre> 
+
+<div class="mytitle">
+Maximum(, ) and Minimum(, )
+</div>
+<pre class="mytext">
+The identity: Mininum, Maximum  
+The operation: Maximum( , ), Minimum( , ) 
+</pre>
+<pre class="prettyprint">
+Max(Max(a, b), c) = Max(a, Max(b, c))
+Max(Min, a) = a
+
+Min(Min(a, b), c) = Min(a, Min(b, c))
+Min(Max, a) = a
+</pre> 
+
+
+<div class="mytitle">
+Boolean operations: Or and And
+</div>
+<pre class="mytext">
+Identity: True
+Operation: Or
+
+Identity: False
+Operation: And
+</pre>
+<pre class="prettyprint">
+True || False = False || True = False
+False && True = True && False = False
+
+</pre> 
+
+<div class="mytitle">
+Length Operation is monoid
+</div>
+<pre class="mytext">
+Identity: [], empty list
+Operation: length
+</pre>
+<pre class="prettyprint">
+length [] + length [1] = length [1] + length []
+length [1, 2] + length [3, 4] + length [5] = length [1, 2] + (length [3, 4] + length [5]) 
+</pre> 
+
+<div class="mytitle">
+Merge sorted list is monoid
+</div>
+<pre class="mytext">
+Identity: []
+Operation: merge 
+</pre>
+<pre class="prettyprint">
+(+++:)::(Ord a)=>[a]->[a]->[a]
+(+++:) xs [] = xs 
+(+++:) [] ys = ys 
+(+++:) (x:xs) (y:ys) = if x <= y then x:(xs +++: (y:ys)) else y:((x:xs) +++: ys)
+
+main = do 
+        pp $ [] +++: [1] == [1]  -- left identity
+        pp $ [2] +++: [] == [2]  -- right identity
+        pp $ [2] +++: [1] == [1, 2] -- a, b \in S, then a `op` b \in S  
+        pp $ [1, 2] +++: [0, 1, 9, 10] == [0, 1, 1, 2, 9, 10] 
+        -- associativity
+        pp $ ([1, 2] +++: [0, 1] +++: [4, 5]) == ([1, 2] +++: ([0, 1] +++: [4, 5]))
+</pre> 
+
 
 </div>
 </body>

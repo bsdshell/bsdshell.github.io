@@ -475,9 +475,11 @@ object MyMonoid extends App{
             </div>
 
             <div class="mathdef_box2">
-            <div class="cen">
+
+            <div class="mytitle">
             Mean Value Theorem in Calculus<br>
-            </div>
+	        </div>                                                                             
+
             If $f$ is continuous on closed interval $[a, b]$ and differential on open interval $(a, b)$, then there exists point $c$ such that
             \begin{align*}
                 f'(c) = \frac{f(b) - f(a)}{b - a} 
@@ -489,11 +491,11 @@ object MyMonoid extends App{
             </div>
             
 
-
             <div class="mathdef_box2">
-            <div class="cen">
+            <div class="mytitle">
             What is Algebra<br>
-            </div>
+	        </div>                                                                             
+
             We all talk about Algebra from high school to University, but we hardly were given any defintion of Algebra.<br>
             This is the defintion from Hopf Lecture Notes<br><br>
             An algebra $A$ can be defined as triple $A=(V, *, I)$ where $V$ is Vector Space, $*$ is multiplication and $I$ is identity<br>
@@ -578,9 +580,10 @@ object MyMonoid extends App{
             \end{align*}
 We did not need to check the multiplication of scalar and M since it is the property of Vector Space, not the Bilinear property <br><br>
 
-            <div class="cen">
+           <div class="mytitle">
             Bilinear Form<br>
-            </div>
+	       </div>                                                                             
+
 Definition of Bilinear form on a <strong>Vector Space</strong> $V$ over the field $\mathbb{F}$ is a map
 \[ 
     H: V \times V \rightarrow \mathbb{F}  \\
@@ -606,10 +609,10 @@ What we have familiarized is Inner Product, but Inner Product is more specific<b
 
 
 
-
-            <div class="cen">
+           <div class="mytitle">
             Matrix bilinear form<br>
-            </div>
+	       </div>                                                                             
+
 Definition:
 Let $g$ be a bilinear form on space $V$, and let $\mathcal{\beta} = \{b_1, b_2, ... , b_n \}$
 be a basis of $V$. Then the Matrix $G = (g_{i,j}) = g(b_i, b_j)$ is called the matrix of bilinear form $g$
@@ -772,9 +775,11 @@ http://localhost/pdf/bilinearforms1.pdf
 
 
             <div class="mathdef_box2">
-            <div class="cen">
+
+           <div class="mytitle">
             Partial Order on Set 
-            </div>
+	       </div>                                                                             
+
             An binary relation $\leq$ defined on Set $A$ is called $\textbf{partial order}$ on set $A$ if following conditions are hold identifically on set $A$
             \begin{align*}
                 &a \leq a \\
@@ -790,23 +795,27 @@ http://localhost/pdf/bilinearforms1.pdf
             <div class="cen">
             Projection Matrix            
             </div>
-            \begin{align*}
-            \left< u, v \right>   =  |\vec{u}| | \vec{v}| \cos{\phi} \\
-            \cos \phi =  \frac{\left < u , v \right >}{|u||v| } \\
+            \begin{equation}
+            \begin{aligned}
+
+            \left< u, v \right>   &=  |\vec{u}| | \vec{v}| \cos{\phi} \\
+            \cos \phi &=  \frac{\left < u , v \right >}{|u||v| } \\
             \vec{u} \text{ project on } \vec{v}	 \\	
-            |u| \cos \phi \frac{v}{|v|}   =| u| \frac{ \left < u, v \right>}{|u||v|}  \frac{v}{|v|}\\	
-            |u|  \frac{v}{|v|} \cos \phi = \frac{ \left < u, v \right>}{ \left < v, v \right> }  v \\	
-            proj_v = \frac{\left < u, v \right>}{ \left < v, v \right> }  v  =  v \frac{\left< v, u \right>}{\left< v, v \right>}  =  \frac{v (v^{T} u)}{v^T v} = \frac{(v v^{T}) u}{v^{T}v} \\
-            \text{ if } \quad || v || = 1 \\
-            \implies proj_v = v v^{T} u \\
-            v v^{T} \text{ is projection matrix from u onto v} \\
-            \end{align*}
+            |u| \cos \phi \frac{v}{|v|}   &=| u| \frac{ \left < u, v \right>}{|u||v|}  \frac{v}{|v|}\\	
+            |u|  \frac{v}{|v|} \cos \phi &= \frac{ \left < u, v \right>}{ \left < v, v \right> }  v \\	
+            proj_v &= \frac{\left < u, v \right>}{ \left < v, v \right> }  v  =  v \frac{\left< v, u \right>}{\left< v, v \right>}  =  \frac{v (v^{T} u)}{v^T v} = \frac{(v v^{T}) u}{v^{T}v} \\
+            \implies proj_v &= v v^{T} u  \text{ where } |v| = 1\\
+            v v^{T} &\text{ is projection matrix from u onto v} \text{ where } |v| = 1\\
+
+            \end{aligned}
+            \end{equation} 
             </div>
 
             <div class="mathdef_box2">
-            <div class="cen">
+            <div class="mytitle">
             Projection Matrix 2            
-            </div>
+            </div>                                                                             
+
             <div style="font-size:140%;">
             Given $u, v$,  $u$ projects onto v, $p = \sigma v$ where $\sigma$ is the scalar <br>
             we have<br> 
@@ -829,7 +838,7 @@ http://localhost/pdf/bilinearforms1.pdf
             P^{2} &= \frac{ v v^T} { v^T v} = P 
             \end{align*}  
 
-            $vv^T$ is the projection matrix which projects $u$ onto $v$ <br> 
+            $vv^T$ is the projection matrix which projects $u$ onto $v$ where $|v| = 1$<br> 
 
             Concret Example:
             Let's project $ 
@@ -875,9 +884,12 @@ http://localhost/pdf/bilinearforms1.pdf
             </div>
 
 	       <div class="mathdef_box2">                                                         
-	       <div class="cen">                                                                  
+
+           <div class="mytitle">
 	       Inner Product is NOT Bilinear Form over the Complex $\mathbb{C}$                                              
+	       Sesquilinear Form and Bilinear Form                                             
 	       </div>                                                                             
+
   What is Bilinear Form: given vector space $V$ and a field $\mathbb{F} = \mathbb{C}$
   $H: V \times V \rightarrow \mathbb{F}$ <br> 
   let $u, v, w \in V, \sigma \in \mathbb{F}$, it satisifed following properties:<br>
@@ -902,9 +914,11 @@ http://localhost/pdf/bilinearforms1.pdf
   </div>
 
 	       <div class="mathdef_box2">                                                         
-	       <div class="cen">                                                                  
+           
+           <div class="mytitle">
 	       Sesquilinear Form and Bilinear Form                                             
 	       </div>                                                                             
+
            Given $ \left< , \right> : V \times V \rightarrow \mathbb{F}$
            \begin{align*} 
             &\left< u + v, w \right> = \left< u, w \right> + \left< v, w \right> \\
@@ -912,6 +926,46 @@ http://localhost/pdf/bilinearforms1.pdf
             &\left< \sigma u, v \right> = \overline{\sigma} \left< u, v \right> \\
             &\left< u, \sigma v \right> = \sigma \left< u, v \right> \\
            \end{align*} 
+           </div>
+           </div>
+           </div>
+
+	       <div class="mathdef_box2">                                                         
+           
+           <div class="mytitle">
+	       Jordan Curve Theorem                                 
+	       </div>                                                                             
+
+           <div>
+           Every simple closed plane curve divides the plane into two components
+           </div>
+           The above theorem is so obvious.
+           </div>
+
+	       <div class="mathdef_box2">                                                         
+           <div class="mytitle">
+	       Collinear points     
+	       </div>                                                                             
+
+           <div>
+           Three or more points are said to be collinear if they lie on a single straigh line 
+           </div>
+           <div class="cen">
+           <img src="../image/threepts_collinear.svg" width="100%" height="100%" /><br>  
+           </div>
+           </div>
+
+	       <div class="mathdef_box2">                                                         
+           <div class="mytitle">
+           Eulid's three postulates  
+           </div>
+           1. A straigh line segment can be drawn joining any two points<br>
+           2. A straigh line segment can be extended indefinitely to a straigh line<br>
+           3. Given any straigh line segment, a straigh line segment can be drawn having the segment as radius and one endpoint as center<br>
+
+           <div class="cen">
+           <img src="../image/euclid_three_postulates.svg" width="100%" height="100%" /><br>  
+           </div>
            </div>
 
 </body>					
