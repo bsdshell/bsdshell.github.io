@@ -31,14 +31,95 @@
   ga('send', 'pageview');
 </script>
 <div class="myclass">
+
+
 <div class="mytitle">
-add content here
+Check whether three points are clockwise or counter clockwise
 </div>
-<pre class="mytext">
-My text here
-</pre>
-<pre class="prettyprint">
-</pre> 
+<div class="cen">
+<img src="../image/determinant_sign.svg" width="60%" height="60%" /><br>
+</div> 
+We have three points: $ACB$ in <span class="wbold">clockwise</span> order
+Or Vector
+\[
+    \vec{CA} =
+    \begin{bmatrix}
+    1 \\
+    0
+    \end{bmatrix} \quad 
+    %
+    \vec{CB} =
+    \begin{bmatrix}
+    0 \\
+    1
+    \end{bmatrix}
+%
+\]
+We can use the sign of determinant to check the order of three points:
+\[
+    M = \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{bmatrix} \\
+    \det M = 1 > 0 \\
+\]
+
+If we check points: $A, C, B'$ in counter clockwise then we have following two vectors:
+\[
+    \vec{CA} =
+    \begin{bmatrix}
+    1 \\
+    0
+    \end{bmatrix} \quad
+    %
+    \vec{CB'} =
+    \begin{bmatrix}
+    0 \\
+    -1
+    \end{bmatrix}
+\]
+we can form a matrix:
+\[
+    M' = \begin{bmatrix}
+    1 & 0 \\
+    0 & -1 
+    \end{bmatrix} \\
+    \det M' = -1 < 0
+\]
+
+We can conclude the following:<br>
+If the determinant is less than 0 then the three points are counter clockwise or CCW <br>
+If the determinant is greater than 0 then the three points are clockwise or CW <br>
+	       
+<br>
+<div class="mytitle">
+Check whether a point is inside a triangle
+</div>
+<div class="cen">
+<img src="../image/point_inside_triangle.svg" width="80%" height="80%" /><br>
+</div> 
+
+From above picture:<br>
+We can come up some intuition guessing:<br>
+$\angle D\color{red}{F}B + \angle A\color{red}{F}D + \angle A\color{red}{F}B > 360$ <br>
+$\angle C\color{red}{D}B + \angle A\color{red}{D}C + \angle B\color{red}{D}A = 360$ <br>
+$\angle C\color{red}{E}B + \angle A\color{red}{E}C + \angle A\color{red}{E}B = 360$ <br>
+
+Note: if the point $E$ is inside $A, B, C$, then there is problem <br>
+1. Check $E$ is diffed from $A, B, C$ <br>
+2. Check if they are collinear with segments: $\overline{AB}, \overline{BC}, \overline{AB}$ <br>
+3. Compute the angles with dot product. <br>
+
+\begin{equation}
+\begin{aligned}
+    \cos \angle CDB &= \frac{\vec{DC} \circ \vec{DB}}{ | \vec{DC} | | \vec{DB}|}  \\
+    \cos \angle ADC &= \frac{\vec{DA} \circ \vec{DC}}{ | \vec{DA} | | \vec{DC}|}  \\
+    \cos \angle BDA &= \frac{\vec{DB} \circ \vec{DA}}{ | \vec{DB} | | \vec{DA}|}  \\
+    2\pi &= \cos \angle CDB + \cos \angle ADC + \cos \angle BDA \\
+\end{aligned}
+\end{equation} 
+
+
 </div>
 </body>
 </html>
