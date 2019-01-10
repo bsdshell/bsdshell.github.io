@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+    <title>$title</title>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
+    <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../highlight.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+          });
+    </script>
+    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+</head>
+<body>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66282017-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<div class="myclass">
+
+
+<div class="mytitle">
+Check whether three points are clockwise or counter clockwise
+</div>
+<div class="cen">
+<img src="../image/determinant_sign.svg" width="60%" height="60%" /><br>
+</div> 
+We have three points: $ACB$ in <span class="wbold">clockwise</span> order
+Or Vector
+\[
+    \vec{CA} =
+    \begin{bmatrix}
+    1 \\
+    0
+    \end{bmatrix} \quad 
+    %
+    \vec{CB} =
+    \begin{bmatrix}
+    0 \\
+    1
+    \end{bmatrix}
+%
+\]
+We can use the sign of determinant to check the order of three points:
+\[
+    M = \begin{bmatrix}
+        1 & 0 \\
+        0 & 1
+    \end{bmatrix} \\
+    \det M = 1 > 0 \\
+\]
+
+If we check points: $A, C, B'$ in counter clockwise then we have following two vectors:
+\[
+    \vec{CA} =
+    \begin{bmatrix}
+    1 \\
+    0
+    \end{bmatrix} \quad
+    %
+    \vec{CB'} =
+    \begin{bmatrix}
+    0 \\
+    -1
+    \end{bmatrix}
+\]
+we can form a matrix:
+\[
+    M' = \begin{bmatrix}
+    1 & 0 \\
+    0 & -1 
+    \end{bmatrix} \\
+    \det M' = -1 < 0
+\]
+
+We can conclude the following:<br>
+If the determinant is less than 0 then the three points are counter clockwise or CCW <br>
+If the determinant is greater than 0 then the three points are clockwise or CW <br>
+	       
+<br>
+<div class="mytitle">
+Check whether a point is inside a triangle
+</div>
+<div class="cen">
+<img src="../image/point_inside_triangle.svg" width="80%" height="80%" /><br>
+</div> 
+
+From above picture:<br>
+We can come up some intuition guessing:<br>
+$\angle D\color{red}{F}B + \angle A\color{red}{F}D + \angle A\color{red}{F}B > 360$ <br>
+$\angle C\color{red}{D}B + \angle A\color{red}{D}C + \angle B\color{red}{D}A = 360$ <br>
+$\angle C\color{red}{E}B + \angle A\color{red}{E}C + \angle A\color{red}{E}B = 360$ <br>
+
+Note: if the point $E$ is inside $A, B, C$, then there is problem <br>
+1. Check $E$ is diffed from $A, B, C$ <br>
+2. Check if they are collinear with segments: $\overline{AB}, \overline{BC}, \overline{AB}$ <br>
+3. Compute the angles with dot product. <br>
+
+\begin{equation}
+\begin{aligned}
+    \cos \angle CDB &= \frac{\vec{DC} \circ \vec{DB}}{ | \vec{DC} | | \vec{DB}|}  \\
+    \cos \angle ADC &= \frac{\vec{DA} \circ \vec{DC}}{ | \vec{DA} | | \vec{DC}|}  \\
+    \cos \angle BDA &= \frac{\vec{DB} \circ \vec{DA}}{ | \vec{DB} | | \vec{DA}|}  \\
+    2\pi &= \cos \angle CDB + \cos \angle ADC + \cos \angle BDA \\
+\end{aligned}
+\end{equation} 
+
+
+</div>
+</body>
+</html>
+

@@ -158,9 +158,7 @@ object MyMonoid extends App{
             </div><br>
 
             <div class="mathdef_box2">
-               <div class="mytitle">
-               Definition of Group
-               </div>
+                \[\textbf{Group}\]
                 $\text{Let a, b, c} \in \mathbf{G}$<br>
                 There is binary operation * and satisfy<br>
                 Closure Law<br>
@@ -171,35 +169,9 @@ object MyMonoid extends App{
                 $\exists \mathit{e} \in \mathbf{G} \text{ such that } \mathit{e}*a = a*\mathit{e} \in \mathbf{G}$<br>
                 Inverse<br>
                 $ \text{If a } \in \mathbf{G}, \exists a^{-1} \in \mathbf{G} \text{ such that } a*a^{-1} = e $<br>
-            </div>
-            <div class="mathdef_box2">
-               <div class="mytitle">
-               Definition of SubGroup
-               </div>
-                Given a group $(G, \otimes)$ <br>
-                1. $H$ is the subset of $G$ <br>
-                2. $H$ forms a group under the same binary operation as $G$ <br> 
-                
-                $(\mathbb{Z}, +)$<br>
-                $(\mathbb{2Z}, +)$<br>
-           </div>
-            <div class="mathdef_box2">
-               <div class="mytitle">
-               Coset of a Group 
-               </div>
-               Coming soon
-           </div>
-            <div class="mathdef_box2">
-               <div class="mytitle">
-               Normal Subgroup
-               </div>
-               Coming soon
-           </div>
 
-            <div class="mathdef_box2">
-            <div class="mytitle">
-            Group homomorphism(operation preserving)
-            </div>
+
+                \[\textbf{Group homomorphism(operation preserving)}\]
                 Given group $(G, \oplus)$ and $(H, \otimes)$,for all $a, b \in G$<br>
                 If there is function $\phi : G \rightarrow H$ <br>
                 If $\phi(a \oplus b) = \phi(a) \otimes \phi(b)$, then $\phi$ is group homomorphism from $(G, \oplus)$ to $(H, \otimes)$<br><br>
@@ -820,21 +792,20 @@ http://localhost/pdf/bilinearforms1.pdf
             </div>
 
             <div class="mathdef_box2">
-            <div class="mytitle">
-            Projection Matrix
+            <div class="cen">
+            Projection Matrix            
             </div>
             \begin{equation}
             \begin{aligned}
 
-            \left< u, v \right>   &=  \|\vec{u}\| \| \vec{v}\| \cos{\phi} \\
-            \cos \phi &=  \frac{\left < u , v \right >}{\|u\|\|v\| } \\
+            \left< u, v \right>   &=  |\vec{u}| | \vec{v}| \cos{\phi} \\
+            \cos \phi &=  \frac{\left < u , v \right >}{|u||v| } \\
             \vec{u} \text{ project on } \vec{v}	 \\	
-            \|u\| \cos \phi \frac{v}{\|v\|}   &= \|u\| \frac{ \left < u, v \right>}{\|u\|\|v\|}  \frac{v}{\|v\|}\\	
-            \|u\|  \frac{v}{\|v\|} \cos \phi &= \frac{ \left < u, v \right>}{ \left < v, v \right> }  v \\	
-            proj_v &= \frac{\left < u, v \right>}{ \left < v, v \right> }  v  =  v \frac{\left< v, u \right>}{\left< v, v \right>}  =  \frac{v (v^{T} u)}{v^T v} = \frac{(v v^{T}) u}{v^{T}v} \\ \\
-            \implies proj_v &= \left < u, v \right> v  \quad \text{ where } \|v\| = 1\\
-            \implies proj_v &= v v^{T} u  \quad \text{ where } \|v\| = 1\\
-            v v^{T} &\text{ is projection matrix from u onto v} \text{ where } \|v\| = 1\\
+            |u| \cos \phi \frac{v}{|v|}   &=| u| \frac{ \left < u, v \right>}{|u||v|}  \frac{v}{|v|}\\	
+            |u|  \frac{v}{|v|} \cos \phi &= \frac{ \left < u, v \right>}{ \left < v, v \right> }  v \\	
+            proj_v &= \frac{\left < u, v \right>}{ \left < v, v \right> }  v  =  v \frac{\left< v, u \right>}{\left< v, v \right>}  =  \frac{v (v^{T} u)}{v^T v} = \frac{(v v^{T}) u}{v^{T}v} \\
+            \implies proj_v &= v v^{T} u  \text{ where } |v| = 1\\
+            v v^{T} &\text{ is projection matrix from u onto v} \text{ where } |v| = 1\\
 
             \end{aligned}
             \end{equation} 
@@ -846,9 +817,7 @@ http://localhost/pdf/bilinearforms1.pdf
             </div>                                                                             
 
             <div style="font-size:140%;">
-            Given vectors: $u, v$.<br>
-            Project u onto v, let $p = \sigma v$ where $\sigma$ is a scalar <br>
-            <br>
+            Given $u, v$,  $u$ projects onto v, $p = \sigma v$ where $\sigma$ is the scalar <br>
             we have<br> 
             \[
                 v \perp (p - u)
@@ -863,10 +832,7 @@ http://localhost/pdf/bilinearforms1.pdf
             \sigma v &= \frac{1}{v^{T} v} v v^{T} u  \\
             \sigma v &= \frac{v v^{T}}{v^{T} v} u  \\
             P  &= \frac{v v^{T}}{ v^{T} v } \\
-            \end{align*}  
-
-Show $P^{2} = P$, $P$ is idenpotent.<br>
-            \begin{align*}
+            \text{ Show } P^{2} = P \\
             P^{2} &= \frac{v v^{T}}{v^{T} v} \frac{v v^{T}}{ v^{T} v}  \\
             P^{2} &= \frac{v (v^{T} v) v^{T}}{v^{T} v v^{T} v}  \\
             P^{2} &= \frac{ v v^T} { v^T v} = P 
@@ -989,87 +955,18 @@ Show $P^{2} = P$, $P$ is idenpotent.<br>
            </div>
            </div>
 
-	   <div class="mathdef_box2">                                                         
+	       <div class="mathdef_box2">                                                         
            <div class="mytitle">
-           Euclid's three postulates  
+           Eulid's three postulates  
            </div>
            1. A straigh line segment can be drawn joining any two points<br>
            2. A straigh line segment can be extended indefinitely to a straigh line<br>
            3. Given any straigh line segment, a straigh line segment can be drawn having the segment as radius and one endpoint as center<br>
+
            <div class="cen">
            <img src="../image/euclid_three_postulates.svg" width="100%" height="100%" /><br>  
            </div>
            </div>
 
-           <div class="mathdef_box2">                                                                                                           
-           <div class="mytitle">                                                                                                                
-           Cross Product                                                                                                             
-           </div>
-           Given vectors $u = (b_1, b_2, b_3), v = (c_1, c_2, c_3)$, the cross product of $u, v$ is the following: <br>
-
-        \begin{equation}
-        \begin{aligned}
-        u \times v &= w = \begin{bmatrix} 
-            i & j & k \\ 
-            b_1 & b_2 & b_3 \\ 
-            c_1 & c_2 & c_3  
-            \end{bmatrix}  \\
-        \det{A}&=i (-1)^{1 + 1} 
-                \begin{vmatrix} 
-                b_2 & b_3 \\ 
-                c_2 & c_3  
-                \end{vmatrix} + j (-1)^{2 + 1} 
-                \begin{vmatrix} 
-                a_2 & a_3 \\
-                c_2 & c_3  
-                \end{vmatrix} + k (-1)^{3 + 1} 
-                \begin{vmatrix}
-                a_2 & a_3 \\
-                b_2 & b_3 \\
-                \end{vmatrix}
-        \end{aligned}
-        \end{equation} 
-	   
-	The direction of cross product can be determinated by the Right Hand Rule <br>
-	The magnitude can be computed as following: <br>
-	\[  u \times v = \|u\| \|v\| \sin{\alpha} \vec{n} \quad \text{ where } \vec{n} \text{ is the unit vector that is perpendicular to the plane which contains } \vec{u} \vec{v} \]  <br>
-        The magnitude of cross product is just the volumn of parallelepiped $\vec{u}, \vec{v}, \vec{w}$<br>
-		   
-           <div class="cen">                                                                
-           <img src="../image/cross_product.svg" width="100%" height="100%" /><br>	
-           </div>                                                                           	
-
-	   <div class="mathdef_box2">                                                         
-           <div class="mytitle">
-           Prove the determinant of matrix is equal to the determinant of the transpose matrix  
-           </div>
-       </div>
-       Proof 1:<br>
-       Given an n by n matrix $m$, prove $\det m = \det m^{T}$ <br>
-       From the $QR$ decomposition, any square matrix can be decomposed into $Q$ is upper triangle matrix and
-       $R$ is orthgonal matrix
-       
-       \begin{equation}
-       \begin{aligned}
-       m &= QR \\
-       m^{T} &= (QR)^{T} \\
-       \det m^{T} &= \det (QR)^{T} \\
-       \det m^{T} &= \det R^{T} \det Q^{T} \\
-       \det m^{T} &= \det R^{-1} \det Q  \quad \text{ where } \det Q = \det Q^{T} \because Q \text{ is upper triangle matrix} \\
-       R^{T} &= R^{-1} \because R \text{ is othgonal matrix} \\ 
-       \det m^{T} &= \frac{\det Q}{\det R} \\
-       \det m^{T} &= \det Q  \quad \text{ where } \det R = 1 \because R \text{ is orthgonal matrix} \\ 
-       \Rightarrow \det m &= \det (QR) = \det R \det Q = \det Q = \det m^{T} \quad \square \\ 
-       \end{aligned}
-       \end{equation}
-       <br>
-       Proof 2: Using co-factor expansion and induction on the dimension $n$.<br>
-       coming soon
-       </div>
-
-
-
-
-
-</body>
+</body>					
 
