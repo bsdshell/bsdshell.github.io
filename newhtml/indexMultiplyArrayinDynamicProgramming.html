@@ -20,202 +20,56 @@
               });
             </script>
         <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
     </head>
-    <body>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-    <div id="header">
-    </div>
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-                <!-- Column 1 start -->
-                <div class="mytext">
-                Let's understand the question first<br>
-                Given an array [2, 3, 4], and you need to product an array [3*4, 2*4, 2*3] => [12, 8, 6]<br>
-                In other words, current element is removed and multiply the rest of elements.<br>
-                
-                It is easy to use two loops to solve the problem, but the runtime is <span class="wbold">$\mathcal{O}(n^2)$</span><br>  
-                How to solve the problem with runtime <span class="wbold">$\mathcal{O}(n)$</span>, but you can allow to use space <span class="wbold">$\mathcal{O}(n)$</span><br><br>  
-                <span class="wbold">Here is the trick with dynamic programming.</span><br>
-                </div> 
-                <div class="mytextbox">
-                    <h3 class="haskellc">Product of all elements in array without the current element<h3>
-                    <div class="cen">
-                    <img src="../image/MultiArray.svg" width="40%" height="40%" /><br>
-                    </div>
-                    <div class="highlight"><pre><span class="cm">/**</span>
-<span class="cm">    * Multiple all the integers except the current one</span>
-<span class="cm">    * No Division is allowed</span>
-<span class="cm">    * Runtime is O(n)</span>
-<span class="cm">    * [2, 3, 4] =&gt; [3*4, 2*4, 2*3] =&gt; [12, 8, 6]</span>
-<span class="cm">    */</span> 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">multiple</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">){</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">arr</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="o">(</span><span class="s">&quot;arr must not be null.&quot;</span><span class="o">);</span>
-        <span class="o">}</span><span class="k">else</span><span class="o">{</span>
-            <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
-            <span class="kt">int</span><span class="o">[]</span> <span class="n">arr1</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">len</span><span class="o">];</span>
-            <span class="kt">int</span><span class="o">[]</span> <span class="n">arr2</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">len</span><span class="o">];</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">len</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">){</span>
-                <span class="n">arr1</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">arr2</span><span class="o">[</span><span class="n">len</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
-                <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">len</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
-                    <span class="n">arr1</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">]*</span><span class="n">arr1</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">];</span>
-                    <span class="n">arr2</span><span class="o">[</span><span class="n">len</span><span class="o">-</span><span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">len</span><span class="o">-</span><span class="n">i</span><span class="o">]*</span><span class="n">arr2</span><span class="o">[</span><span class="n">len</span><span class="o">-</span><span class="n">i</span><span class="o">];</span>
-                <span class="o">}</span>
-                <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">len</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>
-                <span class="n">arr1</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">arr1</span><span class="o">[</span><span class="n">i</span><span class="o">]*</span><span class="n">arr2</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
-            <span class="o">}</span>
-            <span class="k">return</span> <span class="n">arr1</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-</pre></div>
-                </div>
-
-                <div class="cen">
-                <a href="https://github.com/bsdshell/java/tree/master/MultiplyArrayInteger.java">Source Code</a>
-                </div>
-
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-
+<body>
+
+<div class="mytitle">
+Product of all elements without current one in an array
+</div>
+<div class="mytext">
+Let's understand the question first<br>
+Given an array [2, 3, 4], and you need to product an array [3*4, 2*4, 2*3] => [12, 8, 6]<br>
+In other words, current element is removed and multiply the rest of elements.<br>
+It is easy to use two loops to solve the problem, but the runtime is <span class="wbold">$\mathcal{O}(n^2)$</span><br>  
+How to solve the problem with runtime <span class="wbold">$\mathcal{O}(n)$</span>, but you can allow to use space <span class="wbold">$\mathcal{O}(n)$</span><br><br>  
+<span class="wbold">Here is the trick with dynamic programming.</span><br>
+<div class="cen">
+<img src="../image/MultiArray.svg" width="50%" height="50%" /><br>
+</div> 
+
+<pre class="prettyprint">
+/**
+* Multiple all the integers except the current one
+* No Division is allowed
+* Runtime is O(n)
+* [2, 3, 4] => [3*4, 2*4, 2*3] => [12, 8, 6]
+*/ 
+public static int[] multiple(int[] arr){
+    if (arr == null){
+        throw new IllegalArgumentException("arr must not be null.");
+    }else{
+        int len = arr.length;
+        int[] arr1 = new int[len];
+        int[] arr2 = new int[len];
+        if(len > 1){
+            arr1[0] = arr2[len-1] = 1;
+            for(int i=1; i < len; i++){
+                arr1[i] = arr[i-1]*arr1[i-1];
+                arr2[len-1 - i] = arr[len-i]*arr2[len-i];
+            }
+            for(int i=0; i < len; i++)
+            arr1[i] = arr1[i]*arr2[i];
+        }
+        return arr1;
+    }
+}
+</pre>
+<div class="cen">
+<a href="https://github.com/bsdshell/java/tree/master/MultiplyArrayInteger.java">Source Code</a>
+</div>
 
     </body>
     </html>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
