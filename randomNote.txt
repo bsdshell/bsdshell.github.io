@@ -1,4 +1,27 @@
 -------------------------------------------------------------------------------- 
+Thu Jan 10 11:47:43 2019 
+Given the lengths of edges of a triangle ABc, we can compute the area of the triangle
+t: Given any square matrix M, there exits a pair of unitary matrix and upper triangle matrix such that
+m:                            M = QR
+
+mat:  
+   3 4 5
+   7 9 9
+   6 3 5
+
+mat:
+   sin(beta) 3 4 3
+   cos(alpha) 4 9 3
+   3 4  3 5
+
+eq:
+    f'(x) = x^2 + x + 4
+
+
+m: 
+  lim x -> 0  (f(x + h) - f(x)) / h
+
+-------------------------------------------------------------------------------- 
 Mon Dec 17 10:11:20 2018 
 I have Vectorx class and I want to overload "dot product"
 with operator (*:) in Num class
