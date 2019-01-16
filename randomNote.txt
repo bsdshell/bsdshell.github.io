@@ -1,4 +1,10 @@
 -------------------------------------------------------------------------------- 
+Tue Jan 15 17:24:53 2019 
+latex color, text color, textcolor, background color
+\textcolor{declared-color}{text} 
+{\color{declared-color}some text}
+\colorbox{declared-color}{text}
+-------------------------------------------------------------------------------- 
 Thu Jan 10 11:47:43 2019 
 Given the lengths of edges of a triangle ABc, we can compute the area of the triangle
 t: Given any square matrix M, there exits a pair of unitary matrix and upper triangle matrix such that
