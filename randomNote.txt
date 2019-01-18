@@ -1,4 +1,14 @@
 -------------------------------------------------------------------------------- 
+Thu Jan 17 10:53:10 2019 
+haskell regex
+matchTest (mkRegex "^a") "abc" -- True
+matchTest "mkRegex "^a"  "bac" -- False
+
+Haskell literal programming
+pandoc converts lhs file to Html file 
+
+pandoc -f markdown+lhs -t html5 --smart myfile.lhs
+-------------------------------------------------------------------------------- 
 Tue Jan 15 17:24:53 2019 
 latex color, text color, textcolor, background color
 \textcolor{declared-color}{text} 

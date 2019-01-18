@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-pragma">{-# LANGUAGE QuasiQuotes #-}</span><span>
+</span><a name="line-2"></a><span>
+</span><a name="line-3"></a><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">AronTry</span><span> </span><span class="hs-keyword">where</span><span>
+</span><a name="line-4"></a><span>
+</span><a name="line-5"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Control.Monad</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">when</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">forM_</span><span class="hs-special">)</span><span>
+</span><a name="line-6"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Control.Exception</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">bracket</span><span class="hs-special">)</span><span>
+</span><a name="line-7"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Data.Bits</span><span>
+</span><a name="line-8"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Foreign</span><span> </span><span class="hs-comment">-- includes many sub-modules</span><span>
+</span><a name="line-9"></a><span class="hs-keyword">import</span><span> </span><span class="hs-identifier">Foreign.C.String</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">withCAStringLen</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-var">newCString</span><span class="hs-special">)</span><span>
+</span><a name="line-10"></a><span class="hs-keyword">import</span><span> </span><a href="AronModule.html"><span class="hs-identifier">AronModule</span></a><span>
+</span><a name="line-11"></a><span>
+</span><a name="line-12"></a><span>
+</span><a name="line-13"></a><span class="hs-comment">--              [a33]  [x3] [b3]</span><span>
+</span><a name="line-14"></a><span class="hs-comment">--        [a22] [a23]  [x2] [b2]</span><span>
+</span><a name="line-15"></a><span class="hs-comment">--  [a11] [a12] [a13]  [x1] [b1]</span><span>
+</span><a name="line-16"></a><span class="hs-comment">--       </span><span>
+</span><a name="line-17"></a><span>
+</span><a name="line-18"></a><span class="hs-comment">--backsub []      _ = []</span><span>
+</span><a name="line-19"></a><span class="hs-comment">--backsub (r:ca) x (b:cb)     = backsub a' x b' </span><span>
+</span><a name="line-20"></a><span class="hs-comment">--backsub (r:ca) x (b:cb) = backsub ca x' cb</span><span>
+</span><a name="line-21"></a><span class="hs-comment">--    where</span><span>
+</span><a name="line-22"></a><span class="hs-comment">--        a' = reverse a</span><span>
+</span><a name="line-23"></a><span class="hs-comment">--        b' = reverse b</span><span>
+</span><a name="line-24"></a><span class="hs-comment">--        tm = utri (r:ca) </span><span>
+</span><a name="line-25"></a><span class="hs-comment">--        ha = head r </span><span>
+</span><a name="line-26"></a><span class="hs-comment">--        hb = head b</span><span>
+</span><a name="line-27"></a><span class="hs-comment">--        s  = (+) &lt;$&gt; ca &lt;*&gt; x </span><span>
+</span><a name="line-28"></a><span class="hs-comment">--        x'  = [(hb - s)/ha]</span><span>
+</span><a name="line-29"></a><span>
+</span><a name="line-30"></a><span class="hs-comment">{-| 
+    === try it
+-}</span><span>
+</span><a name="line-33"></a><a name="f"><a href="AronTry.html#f"><span class="hs-identifier">f</span></a></a><span> </span><a name="local-6989586621679158428"><a href="#local-6989586621679158428"><span class="hs-identifier">x</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><a href="#local-6989586621679158428"><span class="hs-identifier hs-var">x</span></a><span> </span><span class="hs-operator hs-var">+</span><span> </span><span class="hs-number">1</span><span>
+</span><a name="line-34"></a><span>
+</span><a name="line-35"></a><a name="main"><a href="AronTry.html#main"><span class="hs-identifier">main</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><a name="line-36"></a><span>    </span><a href="AronModule.html#pp"><span class="hs-identifier hs-var">pp</span></a><span> </span><span class="hs-string">&quot;do&quot;</span><span>
+</span><a name="line-37"></a></pre></body></html>
