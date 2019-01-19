@@ -32,58 +32,13 @@
 </script>
 <div class="myclass">
 <div class="mytitle">
-Haskell newIORef readIORef writeIORef
+add content here
 </div>
 <pre class="mytext">
-Mutable variables are not used often in Haskell, but there is time that you need to 
-use mutable variables in your code. There are many ways to create mutable variables.
-
-The idea is very simple:
-1. Create a mutable variable
-2. Modify or write the variable 
-3. Read the variable whatever the new value is inside.
-
+My text here
 </pre>
 <pre class="prettyprint">
-var <- newIORef 2
-x <- readIORef var
-print x 
-writeIORef var 100
-x1 <- readIORef var
-print x1
--------------------------------------------------------------------
-import Data.IORef
-ref <- newIORef 0
-replicateM_ 4 $ modifyIORef ref (+5)
-readIORef ref >>= print  -- output 20
-
-ref <- newIORef 1 
-replicateM_ 4 $ modifyIORef ref (+5)
-readIORef ref >>= print  -- output 21
-
--- modify (Set Int)
-set <- newIORef Set.empty 
-modifyIORef (Set.insert 2) 
-set <- readIORef set 
 </pre> 
-
-<div class="mytitle">
-Haskell Mutable Loop, it is wrong way to do thing
-</div>
-<pre class="prettyprint">
-total <- newIORef 0
-let loop i = 
-        if i > 100
-            then do 
-                 readIORef total
-            else do
-                 modifyIORef total (+1)
-                 pp $ "i=" <<< i
-                 loop (i + 1)
-
-loop 1
-</pre> 
-
 </div>
 </body>
 </html>

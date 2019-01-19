@@ -1,17 +1,8 @@
-My note -*- mode: org -*-
-\( \sqrt{3} \)
-#+TAGS: {@HOME(o) @OFFICE(h)} COMPUTER(c) PHONE(p) READER(r)
-<2019-01-17 Thu>
-*TODO*
-1. cat
-2. pig
-* file
-** file
-HOME
-*** cat
-**** fox
-***** pig
-
+-------------------------------------------------------------------------------- 
+Thu Jan 17 10:53:10 2019 
+haskell regex
+matchTest (mkRegex "^a") "abc" -- True
+matchTest "mkRegex "^a"  "bac" -- False
 
 Haskell literal programming
 pandoc converts lhs file to Html file 
