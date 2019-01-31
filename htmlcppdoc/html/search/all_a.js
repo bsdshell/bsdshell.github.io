@@ -19,6 +19,7 @@ var searchData=
   ['matchexpr',['MatchExpr',['../class_catch_1_1_match_expr.html',1,'Catch']]],
   ['matchnotof',['MatchNotOf',['../struct_catch_1_1_matchers_1_1_impl_1_1_match_not_of.html',1,'Catch::Matchers::Impl']]],
   ['matrix4',['Matrix4',['../class_space_matrix4_1_1_matrix4.html',1,'SpaceMatrix4']]],
+  ['matrixvector',['MatrixVector',['../namespace_matrix_vector.html',1,'']]],
   ['messagebuilder',['MessageBuilder',['../struct_catch_1_1_message_builder.html',1,'Catch']]],
   ['messageinfo',['MessageInfo',['../struct_catch_1_1_message_info.html',1,'Catch']]],
   ['messagestream',['MessageStream',['../struct_catch_1_1_message_stream.html',1,'Catch']]]

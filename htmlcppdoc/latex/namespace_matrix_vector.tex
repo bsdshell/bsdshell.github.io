@@ -1,0 +1,115 @@
+\hypertarget{namespace_matrix_vector}{}\section{Matrix\+Vector Namespace Reference}
+\label{namespace_matrix_vector}\index{Matrix\+Vector@{Matrix\+Vector}}
+
+
+Two dimensional array represents matrix, column and row vector.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_matrix_vector_1_1mat}{mat}}
+\item 
+class \mbox{\hyperlink{class_matrix_vector_1_1row}{row}}
+\item 
+class \mbox{\hyperlink{class_matrix_vector_1_1vec}{vec}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$$\ast$ \mbox{\hyperlink{namespace_matrix_vector_af94d7bf32de597487458905d7f703d65}{allocate\+Temp}} (int ncol, int nrow)
+\begin{DoxyCompactList}\small\item\em Allocate ncol, nrow two dimension array for any type, return a pointer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$$\ast$ \mbox{\hyperlink{namespace_matrix_vector_a26820b913b9a7cc4ef30f3bf085a1560}{allocate}} (int ncol, int nrow)
+\item 
+\mbox{\Hypertarget{namespace_matrix_vector_a98c25441f82a0ccac439135b3c20b9ef}\label{namespace_matrix_vector_a98c25441f82a0ccac439135b3c20b9ef}} 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$$\ast$ {\bfseries vec\+Vec\+To\+Arr\+Arr} (vector$<$ vector$<$ T $>$$>$ vv)
+\item 
+\mbox{\Hypertarget{namespace_matrix_vector_a7f927bdfcf1f88f1e33588c9f3c2b861}\label{namespace_matrix_vector_a7f927bdfcf1f88f1e33588c9f3c2b861}} 
+{\footnotesize template$<$typename T $>$ }\\vector$<$ vector$<$ T $>$ $>$ {\bfseries arr\+Arr\+To\+Vec\+Vec} (T $\ast$$\ast$arr, int ncol, int nrow)
+\item 
+\mbox{\Hypertarget{namespace_matrix_vector_ace5f4beedee016c9d35225d8e3785bd3}\label{namespace_matrix_vector_ace5f4beedee016c9d35225d8e3785bd3}} 
+\mbox{\hyperlink{class_matrix_vector_1_1mat}{mat}} {\bfseries concat} (\mbox{\hyperlink{class_matrix_vector_1_1mat}{mat}} m1, \mbox{\hyperlink{class_matrix_vector_1_1mat}{mat}} m2)
+\item 
+\mbox{\Hypertarget{namespace_matrix_vector_af8b4ba38ebf013918af987da1b583b78}\label{namespace_matrix_vector_af8b4ba38ebf013918af987da1b583b78}} 
+\mbox{\hyperlink{class_matrix_vector_1_1mat}{mat}} {\bfseries identity} (int n)
+\item 
+\mbox{\hyperlink{class_matrix_vector_1_1vec}{vec}} \mbox{\hyperlink{namespace_matrix_vector_a41c576d98e33eb3f60bc286ede16df87}{backward\+Substitute}} (\mbox{\hyperlink{class_matrix_vector_1_1mat}{mat}} a, \mbox{\hyperlink{class_matrix_vector_1_1vec}{vec}} b)
+\item 
+\mbox{\hyperlink{class_matrix_vector_1_1mat}{mat}} \mbox{\hyperlink{namespace_matrix_vector_af11ba87c88a70108422ac52c75f4e60f}{ltri}} (\mbox{\hyperlink{class_matrix_vector_1_1mat}{mat}} m, int index)
+\item 
+std\+::pair$<$ \mbox{\hyperlink{class_matrix_vector_1_1mat}{mat}}, \mbox{\hyperlink{class_matrix_vector_1_1mat}{mat}} $>$ \mbox{\hyperlink{namespace_matrix_vector_a21f46727b11ebce5213b7338153274c2}{utri}} (\mbox{\hyperlink{class_matrix_vector_1_1mat}{mat}} m)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Two dimensional array represents matrix, column and row vector. 
+
+
+\begin{DoxyEnumerate}
+\item Good\+: column vector can be represented as arr\mbox{[}n\mbox{]}\mbox{[}0\mbox{]} row vector can be represented as arr\mbox{[}0\mbox{]}\mbox{[}n\mbox{]} matrix can be represented as arr\mbox{[}n\mbox{]}\mbox{[}m\mbox{]} 
+\end{DoxyEnumerate}
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespace_matrix_vector_a26820b913b9a7cc4ef30f3bf085a1560}\label{namespace_matrix_vector_a26820b913b9a7cc4ef30f3bf085a1560}} 
+\index{Matrix\+Vector@{Matrix\+Vector}!allocate@{allocate}}
+\index{allocate@{allocate}!Matrix\+Vector@{Matrix\+Vector}}
+\subsubsection{\texorpdfstring{allocate()}{allocate()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T$\ast$$\ast$ Matrix\+Vector\+::allocate (\begin{DoxyParamCaption}\item[{int}]{ncol,  }\item[{int}]{nrow }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ncol} & is number of column \\
+\hline
+{\em nrow} & is number of row \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespace_matrix_vector_af94d7bf32de597487458905d7f703d65}\label{namespace_matrix_vector_af94d7bf32de597487458905d7f703d65}} 
+\index{Matrix\+Vector@{Matrix\+Vector}!allocate\+Temp@{allocate\+Temp}}
+\index{allocate\+Temp@{allocate\+Temp}!Matrix\+Vector@{Matrix\+Vector}}
+\subsubsection{\texorpdfstring{allocate\+Temp()}{allocateTemp()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T$\ast$$\ast$ Matrix\+Vector\+::allocate\+Temp (\begin{DoxyParamCaption}\item[{int}]{ncol,  }\item[{int}]{nrow }\end{DoxyParamCaption})}
+
+
+
+Allocate ncol, nrow two dimension array for any type, return a pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ncol} & is number of column \\
+\hline
+{\em nrow} & is number of row \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespace_matrix_vector_a41c576d98e33eb3f60bc286ede16df87}\label{namespace_matrix_vector_a41c576d98e33eb3f60bc286ede16df87}} 
+\index{Matrix\+Vector@{Matrix\+Vector}!backward\+Substitute@{backward\+Substitute}}
+\index{backward\+Substitute@{backward\+Substitute}!Matrix\+Vector@{Matrix\+Vector}}
+\subsubsection{\texorpdfstring{backward\+Substitute()}{backwardSubstitute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix_vector_1_1vec}{vec}} Matrix\+Vector\+::backward\+Substitute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix_vector_1_1mat}{mat}}}]{a,  }\item[{\mbox{\hyperlink{class_matrix_vector_1_1vec}{vec}}}]{b }\end{DoxyParamCaption})}
+
+Backward Substitute 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & -\/ upper triangle \\
+\hline
+\mbox{\tt in}  & {\em b} & -\/ column vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+column vector x
+\end{DoxyReturn}
+\[ Ax = b \]
+
+a11 a12 a13 x\mbox{[}0\mbox{]} = b\mbox{[}0\mbox{]} a22 a23 x\mbox{[}1\mbox{]} = b\mbox{[}1\mbox{]} a33 x\mbox{[}2\mbox{]} = b\mbox{[}2\mbox{]} \mbox{\Hypertarget{namespace_matrix_vector_af11ba87c88a70108422ac52c75f4e60f}\label{namespace_matrix_vector_af11ba87c88a70108422ac52c75f4e60f}} 
+\index{Matrix\+Vector@{Matrix\+Vector}!ltri@{ltri}}
+\index{ltri@{ltri}!Matrix\+Vector@{Matrix\+Vector}}
+\subsubsection{\texorpdfstring{ltri()}{ltri()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix_vector_1_1mat}{mat}} Matrix\+Vector\+::ltri (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix_vector_1_1mat}{mat}}}]{m,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+get the L triangle from a matrix \[ \begin{equation} \begin{aligned} &v_k = \begin{bmatrix} 0 \\ \vdots \\ 0 \\ l_{k+1,k} \\ l_{k+2,k} \\ \vdots \\ l_{m,k} \\ \end{bmatrix} \\ &v_k e_{k}^{*} = \begin{bmatrix} 0 & & & & \\ & \ddots & & & \\ & & 0 & & \\ & & l_{k+1,k} & & \\ & & \vdots & \ddots & \\ & & l_{m,k} & & 0 \\ \end{bmatrix} \\ \end{aligned} \end{equation} \] \href{http://localhost/pdf/lu_derive_triangle_matrix.pdf}{\tt Ref} \mbox{\Hypertarget{namespace_matrix_vector_a21f46727b11ebce5213b7338153274c2}\label{namespace_matrix_vector_a21f46727b11ebce5213b7338153274c2}} 
+\index{Matrix\+Vector@{Matrix\+Vector}!utri@{utri}}
+\index{utri@{utri}!Matrix\+Vector@{Matrix\+Vector}}
+\subsubsection{\texorpdfstring{utri()}{utri()}}
+{\footnotesize\ttfamily std\+::pair$<$\mbox{\hyperlink{class_matrix_vector_1_1mat}{mat}}, \mbox{\hyperlink{class_matrix_vector_1_1mat}{mat}}$>$ Matrix\+Vector\+::utri (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_matrix_vector_1_1mat}{mat}}}]{m }\end{DoxyParamCaption})}
+
+Assume the diagonal entries are not zero Compute the U triangle matrix Lk..(L2 (L1 A))= U T\+O\+DO\+: fix the code if a\+\_\+\{ii\} = 0 

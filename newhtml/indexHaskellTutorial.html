@@ -34,7 +34,28 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+
             <div class="myclass">
+
+            <div class="mytitle">
+            Hello World in Haskell 
+            </div>
+            <pre class="prettyprint">
+            main = print "Hello World"
+            </pre>
+
+            <div class="mytitle">
+            Factorial Function in Haskell 
+            </div>
+            <pre class="prettyprint">
+            fac::Integer -> Integer
+            fac 0 = 1
+            fac n = n * fac (n - 1)
+
+            fac n = if n == 0 then 1 else n*fac (n - 1)
+            </pre>
+
+
             <div class="mytitle">
             Find all prime number in Haskell
             </div>
@@ -717,20 +738,27 @@ Simple Typeclass in Haskell
 </div>
 <pre class="mytext">
 1. define a typeclass Shape with two constructors
- <span style="color:red;">Shape</span> a is type
- <span style="color:green;">Circle Float Float Float</span> is one constructor with three floats
- <span style="color:pink;">Rectangle Float Float Float Float</span> is other constructor with four floats
+Shape a is type class or type constructor
+Circle Float Float Float is one constructor with three floats or value constructor
+Rectangle Float Float Float Float is value constructor with four floats
 </pre>
 <pre class="prettyprint">
 -- Typeclass in Haskell
--- Shape is similar to interface in Java
+-- Shape is similar to interface in Java(but it is different)
 -- Circle and Rectangle are similar to class in Java
 
+-- sum type
 data Shape = Circle Float Float Float | Rectangle Float Float Float Float deriving (Show)
 
 area::Shape->Float
 area(Circle _ _ r) = pi*r^2
 area(Rectangle topx topy bottomx bottomy) = abs(bottomy - topy)*abs(bottomx - topx)
+
+-- or
+data Shape a = Circle a a a | Rectangle a a a a deriving (Show)
+area::Shape Float -> Float
+area (Circle _ _ r) = pi*r^2
+area (Rectangle topx topy bottomx bottomy) = abs(bottomy - topy)*abs(bottomx - topx)
 
 main = do 
         print("Typeclass in Haskell")
@@ -817,15 +845,6 @@ main = do
         
         <span class="kr">let</span> <span class="n">bo</span> <span class="ow">=</span> <span class="n">matchTest</span> <span class="n">r8</span> <span class="s">&quot;Sunnyvale&quot;</span>
         <span class="n">putStrLn</span> <span class="o">$</span> <span class="s">&quot;Is matched = &quot;</span> <span class="o">++</span> <span class="n">show</span> <span class="n">bo</span> <span class="c1">-- return False</span>
-</pre></div>
-            <div class="mytitle">Hello World in Haskell</div>
-            <div class="highlight"><pre><span class="n">main</span> <span class="o">=</span> <span class="n">print</span><span class="o">(</span><span class="s">&quot;Hello World&quot;</span><span class="o">)</span>
-</pre></div>
-            <div class="mytitle">Factorial function in Haskell</div>
-            <div class="highlight"><pre><span class="c1">--Factorial function</span>
-<span class="nf">factorial</span><span class="ow">::</span><span class="kt">Int</span><span class="ow">-&gt;</span><span class="kt">Int</span>
-<span class="nf">factorial</span> <span class="mi">0</span> <span class="ow">=</span> <span class="mi">1</span>
-<span class="nf">factorial</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
             <div class="mytitle">Sum all integers in a list in Haskell</div>
