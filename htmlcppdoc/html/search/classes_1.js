@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['approx',['Approx',['../class_catch_1_1_detail_1_1_approx.html',1,'Catch::Detail']]],
-  ['assertionhandler',['AssertionHandler',['../class_catch_1_1_assertion_handler.html',1,'Catch']]],
-  ['assertioninfo',['AssertionInfo',['../struct_catch_1_1_assertion_info.html',1,'Catch']]],
-  ['assertionreaction',['AssertionReaction',['../struct_catch_1_1_assertion_reaction.html',1,'Catch']]],
-  ['autoreg',['AutoReg',['../struct_catch_1_1_auto_reg.html',1,'Catch']]]
+  ['beziersurfacebatch',['BezierSurfaceBatch',['../class_bezier_surface_batch.html',1,'']]],
+  ['bitmap_5fimage',['bitmap_image',['../classbitmap__image.html',1,'']]],
+  ['bst',['BST',['../class_b_s_t.html',1,'']]]
 ];

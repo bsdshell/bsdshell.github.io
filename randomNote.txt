@@ -1,4 +1,18 @@
 -------------------------------------------------------------------------------- 
+Thu Feb  7 22:56:53 2019 
+
+https://libigl.github.io/#libigl-example-project 
+
+Libigl seems to be good library for Geometry Processing,
+git clone and build, it seems to me that I can build all the tutorials so far.
+It is hard to image to build C/C++ code on my system, most of time it is failed
+Libigl also depends on many libs/tools such as CMake, CGAL, and Eigen
+
+For C++ project, there is always some issues?.. to build..
+
+If you try to read cmake script, then it will make you fall in sleep right away.
+I never understand make file, maybe..
+-------------------------------------------------------------------------------- 
 Thu Jan 31 11:17:01 2019 
 opengl keypress, keypress example, keyboard example
 /Users/cat/myfile/bitbucket/haskell/keyboardpress_simple.hs

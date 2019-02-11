@@ -58,7 +58,7 @@ table.fixed {
     word-break:break-all;
 }
 table td, th{
-    border: 1px solid #efe9e9;
+    border: 2px solid #ab9eca;
 }
 
 
@@ -270,24 +270,20 @@ pre.cc{
     font-weight: 600;
 }
 
-
-
 .mytext{
     margin:auto;
     /* width:80%; */
     color: rgba(33, 30, 20, 0.98);
-    /* font-size:18px; */
-    background: #e2f1e2;
+    font-size: 23px;
+    background: #fffffb;
     margin-left: 0px;
     /* text-indent: 10px; */
-    padding-left: 40px;
-    font-family: 'Courier New', Courier, Fixed;
-    line-height: 20px;
-    padding: 4px 4px 4px 4px;
-    border-radius: 3px;
+    padding-left: 9px;
+    font-family: monospace;
+    /* border-radius: 3px; */
     display: block;
     font-style: normal;
-    border-left: red;
+    border-left: #674b4b;
     /* 
     Sat Dec  8 21:40:35 2018 
     Try to wrap the text if it is outside of div?
@@ -298,6 +294,33 @@ pre.cc{
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;
 }
+
+/* .mytext{ */
+/* margin:auto; */
+/* /* width:80%; */ */
+/* color: rgba(33, 30, 20, 0.98); */
+/* /* font-size:18px; */ */
+/* background: #e2f1e2; */
+/* margin-left: 0px; */
+/* /* text-indent: 10px; */ */
+/* padding-left: 40px; */
+/* font-family: 'Courier New', Courier, Fixed; */
+/* line-height: 20px; */
+/* padding: 4px 4px 4px 4px; */
+/* border-radius: 3px; */
+/* display: block; */
+/* font-style: normal; */
+/* border-left: red; */
+/* /*  */
+/* Sat Dec  8 21:40:35 2018  */
+/* Try to wrap the text if it is outside of div? */
+/* */ */
+/* white-space: pre-wrap;       /* Since CSS 2.1 */ */
+/* white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */ */
+/* white-space: -pre-wrap;      /* Opera 4-6 */ */
+/* white-space: -o-pre-wrap;    /* Opera 7 */ */
+/* word-wrap: break-word; */
+/* } */
 
 
 .mysubtitle{
@@ -410,7 +433,7 @@ pre.cc{
 }
 
 .mytextbox{
-    border: 0px solid #E8E0E0;
+    border: 1px solid #E8E0E0;
     padding:1px;
     margin-top:1px;
     margin-bottom:1px;
