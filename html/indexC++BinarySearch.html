@@ -32,125 +32,27 @@
       ga('send', 'pageview');
     </script>
 
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-            <!-- Column 1 start -->
-
             <div class="mytitle">
             Binary Search in C++ 
             </div>
-            <div class="highlight"><pre><span class="kt">bool</span> <span class="nf">BinarySearch</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">array</span><span class="p">,</span> <span class="kt">int</span> <span class="n">lo</span><span class="p">,</span> <span class="kt">int</span> <span class="n">hi</span><span class="p">,</span> <span class="kt">int</span> <span class="n">key</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">array</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">lo</span> <span class="o">&lt;=</span> <span class="n">hi</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">lo</span><span class="o">+</span><span class="n">hi</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">key</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">[</span><span class="n">mid</span><span class="p">])</span>
-            <span class="k">return</span> <span class="n">BinarySearch</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">mid</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">key</span><span class="p">);</span>
-        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">key</span> <span class="o">&gt;</span> <span class="n">array</span><span class="p">[</span><span class="n">mid</span><span class="p">])</span>
-            <span class="k">return</span> <span class="n">BinarySearch</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">hi</span><span class="p">,</span> <span class="n">key</span><span class="p">);</span>
-        <span class="k">else</span>
-            <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
+            <pre class="prettyprint">
+            bool BinarySearch(int* array, int lo, int hi, int key) {
+                if(array != NULL && lo <= hi) {
+                    int mid = (lo+hi)/2;
+                    if(key < array[mid])
+                        return BinarySearch(array, lo, mid-1, key);
+                    else if(key > array[mid])
+                        return BinarySearch(array, mid+1, hi, key);
+                    else
+                        return true;
+                }
+                return false;
+            }
+            </pre>
  
             <div class="cen">
             <a href="https://github.com/bsdshell/cpp/tree/master/BinarySearch.cpp#L3">Source Code</a>
             </div>
-
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-
 
     </body>
     </html>

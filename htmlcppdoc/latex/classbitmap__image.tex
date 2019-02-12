@@ -1,0 +1,263 @@
+\hypertarget{classbitmap__image}{}\section{bitmap\+\_\+image Class Reference}
+\label{classbitmap__image}\index{bitmap\+\_\+image@{bitmap\+\_\+image}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbitmap__image_1_1rgb__t}{rgb\+\_\+t}}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbitmap__image_a859fd4659dd04951ea9d5857ce1f3bb3}\label{classbitmap__image_a859fd4659dd04951ea9d5857ce1f3bb3}} 
+enum {\bfseries channel\+\_\+mode} \{ {\bfseries rgb\+\_\+mode} = 0, 
+{\bfseries bgr\+\_\+mode} = 1
+ \}
+\item 
+\mbox{\Hypertarget{classbitmap__image_a87a9c6eeed645f246848d76988926b50}\label{classbitmap__image_a87a9c6eeed645f246848d76988926b50}} 
+enum {\bfseries color\+\_\+plane} \{ {\bfseries blue\+\_\+plane} = 0, 
+{\bfseries green\+\_\+plane} = 1, 
+{\bfseries red\+\_\+plane} = 2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classbitmap__image_a168c463ffaea6fb532a410464bd2f318}\label{classbitmap__image_a168c463ffaea6fb532a410464bd2f318}} 
+{\bfseries bitmap\+\_\+image} (const std\+::string \&filename)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a0665d93e7a4d164d6b996c47a451daee}\label{classbitmap__image_a0665d93e7a4d164d6b996c47a451daee}} 
+{\bfseries bitmap\+\_\+image} (const unsigned int width, const unsigned int height)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a1553282d988ad7d772334dedd29da40b}\label{classbitmap__image_a1553282d988ad7d772334dedd29da40b}} 
+{\bfseries bitmap\+\_\+image} (const \mbox{\hyperlink{classbitmap__image}{bitmap\+\_\+image}} \&image)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a6311703e1ee80f6204979cf0a1004ccf}\label{classbitmap__image_a6311703e1ee80f6204979cf0a1004ccf}} 
+\mbox{\hyperlink{classbitmap__image}{bitmap\+\_\+image}} \& {\bfseries operator=} (const \mbox{\hyperlink{classbitmap__image}{bitmap\+\_\+image}} \&image)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a5d6bcc7fa64fa5dfbd2f39d29a2bbd82}\label{classbitmap__image_a5d6bcc7fa64fa5dfbd2f39d29a2bbd82}} 
+bool {\bfseries operator!} ()
+\item 
+\mbox{\Hypertarget{classbitmap__image_a55caa75a5088e56d5e788148635d1838}\label{classbitmap__image_a55caa75a5088e56d5e788148635d1838}} 
+void {\bfseries clear} (const unsigned char v=0x00)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a4364c0d5eeab276e180544797b2d401c}\label{classbitmap__image_a4364c0d5eeab276e180544797b2d401c}} 
+unsigned char {\bfseries red\+\_\+channel} (const unsigned int x, const unsigned int y) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_abbe8e1f55d1fa31a5b65169e127b92a2}\label{classbitmap__image_abbe8e1f55d1fa31a5b65169e127b92a2}} 
+unsigned char {\bfseries green\+\_\+channel} (const unsigned int x, const unsigned int y) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_ab96f66847c718c70f5da10657ff376f8}\label{classbitmap__image_ab96f66847c718c70f5da10657ff376f8}} 
+unsigned char {\bfseries blue\+\_\+channel} (const unsigned int x, const unsigned int y) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_ae378b56f21032c20a3f074a4dd1feb99}\label{classbitmap__image_ae378b56f21032c20a3f074a4dd1feb99}} 
+void {\bfseries red\+\_\+channel} (const unsigned int x, const unsigned int y, const unsigned char value)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a917420778ba0054443cf81a3465ae14d}\label{classbitmap__image_a917420778ba0054443cf81a3465ae14d}} 
+void {\bfseries green\+\_\+channel} (const unsigned int x, const unsigned int y, const unsigned char value)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a68cd71e3a6e0572df11d21e4f472d681}\label{classbitmap__image_a68cd71e3a6e0572df11d21e4f472d681}} 
+void {\bfseries blue\+\_\+channel} (const unsigned int x, const unsigned int y, const unsigned char value)
+\item 
+\mbox{\Hypertarget{classbitmap__image_ae38b5bf454e794dcdbdb9dc9526f0a60}\label{classbitmap__image_ae38b5bf454e794dcdbdb9dc9526f0a60}} 
+unsigned char $\ast$ {\bfseries row} (unsigned int row\+\_\+index) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_a369f00e83ecf5e14bca0ab98992ed25a}\label{classbitmap__image_a369f00e83ecf5e14bca0ab98992ed25a}} 
+void {\bfseries get\+\_\+pixel} (const unsigned int x, const unsigned int y, unsigned char \&red, unsigned char \&green, unsigned char \&blue) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_a6a13c9cfc451fd8ebe024db286005db8}\label{classbitmap__image_a6a13c9cfc451fd8ebe024db286005db8}} 
+{\footnotesize template$<$typename R\+GB $>$ }\\void {\bfseries get\+\_\+pixel} (const unsigned int x, const unsigned int y, R\+GB \&colour) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_a2ae8b2974edcee2d0069f4a59604af0a}\label{classbitmap__image_a2ae8b2974edcee2d0069f4a59604af0a}} 
+\mbox{\hyperlink{structbitmap__image_1_1rgb__t}{rgb\+\_\+t}} {\bfseries get\+\_\+pixel} (const unsigned int x, const unsigned int y) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_aa17cf2d9f33c32bd7d9b4f5969c2f48a}\label{classbitmap__image_aa17cf2d9f33c32bd7d9b4f5969c2f48a}} 
+void {\bfseries set\+\_\+pixel} (const unsigned int x, const unsigned int y, const unsigned char red, const unsigned char green, const unsigned char blue)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a56405ac0c7c07492c45d818a645f2f8a}\label{classbitmap__image_a56405ac0c7c07492c45d818a645f2f8a}} 
+{\footnotesize template$<$typename R\+GB $>$ }\\void {\bfseries set\+\_\+pixel} (const unsigned int x, const unsigned int y, const R\+GB \&colour)
+\item 
+\mbox{\Hypertarget{classbitmap__image_ab3420ee9edc96bef02d68364ae121361}\label{classbitmap__image_ab3420ee9edc96bef02d68364ae121361}} 
+bool {\bfseries copy\+\_\+from} (const \mbox{\hyperlink{classbitmap__image}{bitmap\+\_\+image}} \&image)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a1ea432d59b84bedf41b2d07dbcb2e010}\label{classbitmap__image_a1ea432d59b84bedf41b2d07dbcb2e010}} 
+bool {\bfseries copy\+\_\+from} (const \mbox{\hyperlink{classbitmap__image}{bitmap\+\_\+image}} \&source\+\_\+image, const unsigned int \&x\+\_\+offset, const unsigned int \&y\+\_\+offset)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a8598106aa98fa79b89843a31f09fc9a1}\label{classbitmap__image_a8598106aa98fa79b89843a31f09fc9a1}} 
+bool {\bfseries region} (const unsigned int \&x, const unsigned int \&y, const unsigned int \&width, const unsigned int \&height, \mbox{\hyperlink{classbitmap__image}{bitmap\+\_\+image}} \&dest\+\_\+image) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_abf307f8a4a889e293de00a2ae8bdaabc}\label{classbitmap__image_abf307f8a4a889e293de00a2ae8bdaabc}} 
+bool {\bfseries roi\+\_\+from\+\_\+center} (const unsigned int \&cx, const unsigned int \&cy, const unsigned int \&width, const unsigned int \&height, \mbox{\hyperlink{classbitmap__image}{bitmap\+\_\+image}} \&dest\+\_\+image) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_ac541eb6e1fe26f9d63a3b452c8f7c6cc}\label{classbitmap__image_ac541eb6e1fe26f9d63a3b452c8f7c6cc}} 
+bool {\bfseries set\+\_\+region} (const unsigned int \&x, const unsigned int \&y, const unsigned int \&width, const unsigned int \&height, const unsigned char \&value)
+\item 
+\mbox{\Hypertarget{classbitmap__image_af929bd2c9cfa45ce6fa4adf2803730b8}\label{classbitmap__image_af929bd2c9cfa45ce6fa4adf2803730b8}} 
+bool {\bfseries set\+\_\+region} (const unsigned int \&x, const unsigned int \&y, const unsigned int \&width, const unsigned int \&height, const color\+\_\+plane color, const unsigned char \&value)
+\item 
+\mbox{\Hypertarget{classbitmap__image_ad5d5ffa6346a08edc4142a182d4d5d9e}\label{classbitmap__image_ad5d5ffa6346a08edc4142a182d4d5d9e}} 
+bool {\bfseries set\+\_\+region} (const unsigned int \&x, const unsigned int \&y, const unsigned int \&width, const unsigned int \&height, const unsigned char \&red, const unsigned char \&green, const unsigned char \&blue)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a425b8c77d5e1efa8ffb74e5b060d40f2}\label{classbitmap__image_a425b8c77d5e1efa8ffb74e5b060d40f2}} 
+void {\bfseries reflective\+\_\+image} (\mbox{\hyperlink{classbitmap__image}{bitmap\+\_\+image}} \&image, const bool include\+\_\+diagnols=false)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a5b35164912c2442e0af3273d547fbce4}\label{classbitmap__image_a5b35164912c2442e0af3273d547fbce4}} 
+unsigned int {\bfseries width} () const
+\item 
+\mbox{\Hypertarget{classbitmap__image_a73fc78b71c064db2f6cd49622af50e6c}\label{classbitmap__image_a73fc78b71c064db2f6cd49622af50e6c}} 
+unsigned int {\bfseries height} () const
+\item 
+\mbox{\Hypertarget{classbitmap__image_a46f66c4f0ecc0212e9de2df0637cfb07}\label{classbitmap__image_a46f66c4f0ecc0212e9de2df0637cfb07}} 
+unsigned int {\bfseries bytes\+\_\+per\+\_\+pixel} () const
+\item 
+\mbox{\Hypertarget{classbitmap__image_a1eba5dd44c94cd071292517b329a5cc9}\label{classbitmap__image_a1eba5dd44c94cd071292517b329a5cc9}} 
+unsigned int {\bfseries pixel\+\_\+count} () const
+\item 
+\mbox{\Hypertarget{classbitmap__image_a834dde15b9d109cf8a34e11e998c781b}\label{classbitmap__image_a834dde15b9d109cf8a34e11e998c781b}} 
+void {\bfseries setwidth\+\_\+height} (const unsigned int width, const unsigned int height, const bool clear=false)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a91a6d527bf256efb81ba20432c20ce95}\label{classbitmap__image_a91a6d527bf256efb81ba20432c20ce95}} 
+void {\bfseries save\+\_\+image} (const std\+::string \&file\+\_\+name) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_ac9b633118f27d7b959f0a6f90e501008}\label{classbitmap__image_ac9b633118f27d7b959f0a6f90e501008}} 
+void {\bfseries set\+\_\+all\+\_\+ith\+\_\+bits\+\_\+low} (const unsigned int bitr\+\_\+index)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a318b8c1529ce668932dc5090e2798ffd}\label{classbitmap__image_a318b8c1529ce668932dc5090e2798ffd}} 
+void {\bfseries set\+\_\+all\+\_\+ith\+\_\+bits\+\_\+high} (const unsigned int bitr\+\_\+index)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a63836752e8e146ccde2e478b4d5290cd}\label{classbitmap__image_a63836752e8e146ccde2e478b4d5290cd}} 
+void {\bfseries set\+\_\+all\+\_\+ith\+\_\+channels} (const unsigned int \&channel, const unsigned char \&value)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a8a5a5a6f019fdc20efb08f21daa2aa19}\label{classbitmap__image_a8a5a5a6f019fdc20efb08f21daa2aa19}} 
+void {\bfseries set\+\_\+channel} (const color\+\_\+plane color, const unsigned char \&value)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a309a91712d535dc8301aff51bfa673cb}\label{classbitmap__image_a309a91712d535dc8301aff51bfa673cb}} 
+void {\bfseries ror\+\_\+channel} (const color\+\_\+plane color, const unsigned int \&ror)
+\item 
+\mbox{\Hypertarget{classbitmap__image_adff057f9cbb161002b148c4466f230d2}\label{classbitmap__image_adff057f9cbb161002b148c4466f230d2}} 
+void {\bfseries set\+\_\+all\+\_\+channels} (const unsigned char \&value)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a402033cb5e6a68cc443930fc18663258}\label{classbitmap__image_a402033cb5e6a68cc443930fc18663258}} 
+void {\bfseries set\+\_\+all\+\_\+channels} (const unsigned char \&r\+\_\+value, const unsigned char \&g\+\_\+value, const unsigned char \&b\+\_\+value)
+\item 
+\mbox{\Hypertarget{classbitmap__image_aada8401fe2b162bfe24f9b5c6e5c7662}\label{classbitmap__image_aada8401fe2b162bfe24f9b5c6e5c7662}} 
+void {\bfseries invert\+\_\+color\+\_\+planes} ()
+\item 
+\mbox{\Hypertarget{classbitmap__image_a8c48685a56144f7ce9d4b92f960241ff}\label{classbitmap__image_a8c48685a56144f7ce9d4b92f960241ff}} 
+void {\bfseries add\+\_\+to\+\_\+color\+\_\+plane} (const color\+\_\+plane color, const unsigned char \&value)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a6aedae0246a1ebb01be64e79e6411a9f}\label{classbitmap__image_a6aedae0246a1ebb01be64e79e6411a9f}} 
+void {\bfseries convert\+\_\+to\+\_\+grayscale} ()
+\item 
+\mbox{\Hypertarget{classbitmap__image_a464b43d70f88e60694442e2a6e387c55}\label{classbitmap__image_a464b43d70f88e60694442e2a6e387c55}} 
+const unsigned char $\ast$ {\bfseries data} () const
+\item 
+\mbox{\Hypertarget{classbitmap__image_a5fe5541d64430f27a9719f87d102d8f5}\label{classbitmap__image_a5fe5541d64430f27a9719f87d102d8f5}} 
+unsigned char $\ast$ {\bfseries data} ()
+\item 
+\mbox{\Hypertarget{classbitmap__image_a07c97f8dce057ebc7d83d19cca16fcc8}\label{classbitmap__image_a07c97f8dce057ebc7d83d19cca16fcc8}} 
+void {\bfseries bgr\+\_\+to\+\_\+rgb} ()
+\item 
+\mbox{\Hypertarget{classbitmap__image_a7fdb2abbe49997ae46a874b211a0b04d}\label{classbitmap__image_a7fdb2abbe49997ae46a874b211a0b04d}} 
+void {\bfseries rgb\+\_\+to\+\_\+bgr} ()
+\item 
+\mbox{\Hypertarget{classbitmap__image_a59b4a498dba88a13a564c3ec6d47b92a}\label{classbitmap__image_a59b4a498dba88a13a564c3ec6d47b92a}} 
+void {\bfseries reverse} ()
+\item 
+\mbox{\Hypertarget{classbitmap__image_a1aac6ed9e42764154e3f487c51ed38ea}\label{classbitmap__image_a1aac6ed9e42764154e3f487c51ed38ea}} 
+void {\bfseries horizontal\+\_\+flip} ()
+\item 
+\mbox{\Hypertarget{classbitmap__image_a54d5d7c91351f8b6c77f7a68118259fe}\label{classbitmap__image_a54d5d7c91351f8b6c77f7a68118259fe}} 
+void {\bfseries vertical\+\_\+flip} ()
+\item 
+\mbox{\Hypertarget{classbitmap__image_a9bfafd98534e757abbd37d89442c9971}\label{classbitmap__image_a9bfafd98534e757abbd37d89442c9971}} 
+void {\bfseries export\+\_\+color\+\_\+plane} (const color\+\_\+plane color, unsigned char $\ast$image)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a2648afc1b163ecd5e6c0217ec2f6f3bd}\label{classbitmap__image_a2648afc1b163ecd5e6c0217ec2f6f3bd}} 
+void {\bfseries export\+\_\+color\+\_\+plane} (const color\+\_\+plane color, \mbox{\hyperlink{classbitmap__image}{bitmap\+\_\+image}} \&image)
+\item 
+\mbox{\Hypertarget{classbitmap__image_ad19a6ec3a27f89c06346157cc668cb26}\label{classbitmap__image_ad19a6ec3a27f89c06346157cc668cb26}} 
+void {\bfseries export\+\_\+response\+\_\+image} (const color\+\_\+plane color, double $\ast$\mbox{\hyperlink{classresponse__image}{response\+\_\+image}})
+\item 
+\mbox{\Hypertarget{classbitmap__image_afc49c7cc5403ab81fef138c562ee3124}\label{classbitmap__image_afc49c7cc5403ab81fef138c562ee3124}} 
+void {\bfseries export\+\_\+gray\+\_\+scale\+\_\+response\+\_\+image} (double $\ast$\mbox{\hyperlink{classresponse__image}{response\+\_\+image}}) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_a8a4445e1474bcfde41cc49159bd9f0d1}\label{classbitmap__image_a8a4445e1474bcfde41cc49159bd9f0d1}} 
+void {\bfseries export\+\_\+rgb} (double $\ast$red, double $\ast$green, double $\ast$blue) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_afceda9b406c031b7585ccfa939aad8af}\label{classbitmap__image_afceda9b406c031b7585ccfa939aad8af}} 
+void {\bfseries export\+\_\+rgb} (float $\ast$red, float $\ast$green, float $\ast$blue) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_a12267e033fc2803374b720ab3197c8ab}\label{classbitmap__image_a12267e033fc2803374b720ab3197c8ab}} 
+void {\bfseries export\+\_\+rgb} (unsigned char $\ast$red, unsigned char $\ast$green, unsigned char $\ast$blue) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_a8f436285b6db0c31ca97fc7930b9be54}\label{classbitmap__image_a8f436285b6db0c31ca97fc7930b9be54}} 
+void {\bfseries export\+\_\+ycbcr} (double $\ast$y, double $\ast$cb, double $\ast$cr) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_a4b29506ac6a559aec5d65c44e4b11cd4}\label{classbitmap__image_a4b29506ac6a559aec5d65c44e4b11cd4}} 
+void {\bfseries export\+\_\+rgb\+\_\+normal} (double $\ast$red, double $\ast$green, double $\ast$blue) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_a7fe5e72288c9de691b23f07201ecefad}\label{classbitmap__image_a7fe5e72288c9de691b23f07201ecefad}} 
+void {\bfseries export\+\_\+rgb\+\_\+normal} (float $\ast$red, float $\ast$green, float $\ast$blue) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_a908b73c5b9ae5c000c18884dd007830b}\label{classbitmap__image_a908b73c5b9ae5c000c18884dd007830b}} 
+void {\bfseries import\+\_\+rgb} (double $\ast$red, double $\ast$green, double $\ast$blue)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a315ba5ea699b805de594ae555409b168}\label{classbitmap__image_a315ba5ea699b805de594ae555409b168}} 
+void {\bfseries import\+\_\+rgb} (float $\ast$red, float $\ast$green, float $\ast$blue)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a2dddd93965c31509104f89284e26b010}\label{classbitmap__image_a2dddd93965c31509104f89284e26b010}} 
+void {\bfseries import\+\_\+rgb} (unsigned char $\ast$red, unsigned char $\ast$green, unsigned char $\ast$blue)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a8f46f8a19f71e3432f447c9fb558cd5f}\label{classbitmap__image_a8f46f8a19f71e3432f447c9fb558cd5f}} 
+void {\bfseries import\+\_\+ycbcr} (double $\ast$y, double $\ast$cb, double $\ast$cr)
+\item 
+\mbox{\Hypertarget{classbitmap__image_aa7765f0a1fcba6a88f40bfeb51c8efce}\label{classbitmap__image_aa7765f0a1fcba6a88f40bfeb51c8efce}} 
+void {\bfseries import\+\_\+gray\+\_\+scale\+\_\+clamped} (double $\ast$gray)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a8409131d9ab6a1e3a46637a95efc21aa}\label{classbitmap__image_a8409131d9ab6a1e3a46637a95efc21aa}} 
+void {\bfseries import\+\_\+rgb\+\_\+clamped} (double $\ast$red, double $\ast$green, double $\ast$blue)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a72f4d251c74bbc90db5db100712e0010}\label{classbitmap__image_a72f4d251c74bbc90db5db100712e0010}} 
+void {\bfseries import\+\_\+rgb\+\_\+clamped} (float $\ast$red, float $\ast$green, float $\ast$blue)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a436c773d02db0a40f7eee6d6ce4b2f63}\label{classbitmap__image_a436c773d02db0a40f7eee6d6ce4b2f63}} 
+void {\bfseries import\+\_\+rgb\+\_\+normal} (double $\ast$red, double $\ast$green, double $\ast$blue)
+\item 
+\mbox{\Hypertarget{classbitmap__image_abb63e9287fe3643f5714ed8a21d693d8}\label{classbitmap__image_abb63e9287fe3643f5714ed8a21d693d8}} 
+void {\bfseries import\+\_\+rgb\+\_\+normal} (float $\ast$red, float $\ast$green, float $\ast$blue)
+\item 
+\mbox{\Hypertarget{classbitmap__image_ae696a8c23f2740d57e79099eabf2b5f2}\label{classbitmap__image_ae696a8c23f2740d57e79099eabf2b5f2}} 
+void {\bfseries subsample} (\mbox{\hyperlink{classbitmap__image}{bitmap\+\_\+image}} \&dest) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_a740924a5e9a2c3ac4db49471c8354745}\label{classbitmap__image_a740924a5e9a2c3ac4db49471c8354745}} 
+void {\bfseries upsample} (\mbox{\hyperlink{classbitmap__image}{bitmap\+\_\+image}} \&dest) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_a92b25517c4d5bd6be9c7617881476bc4}\label{classbitmap__image_a92b25517c4d5bd6be9c7617881476bc4}} 
+void {\bfseries alpha\+\_\+blend} (const double \&alpha, const \mbox{\hyperlink{classbitmap__image}{bitmap\+\_\+image}} \&image)
+\item 
+\mbox{\Hypertarget{classbitmap__image_af3cfd1f854f21163045ffe0f7a8d4d73}\label{classbitmap__image_af3cfd1f854f21163045ffe0f7a8d4d73}} 
+double {\bfseries psnr} (const \mbox{\hyperlink{classbitmap__image}{bitmap\+\_\+image}} \&image)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a0ffa272029dc2ccd5d82dbb6fdd2e63f}\label{classbitmap__image_a0ffa272029dc2ccd5d82dbb6fdd2e63f}} 
+double {\bfseries psnr} (const unsigned int \&x, const unsigned int \&y, const \mbox{\hyperlink{classbitmap__image}{bitmap\+\_\+image}} \&image)
+\item 
+\mbox{\Hypertarget{classbitmap__image_a3f83be040ae572ec83a10f84c4d80912}\label{classbitmap__image_a3f83be040ae572ec83a10f84c4d80912}} 
+void {\bfseries histogram} (const color\+\_\+plane color, double hist\mbox{[}256\mbox{]}) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_a65642b49c0ec89f9a466b2fb674da390}\label{classbitmap__image_a65642b49c0ec89f9a466b2fb674da390}} 
+void {\bfseries histogram\+\_\+normalized} (const color\+\_\+plane color, double hist\mbox{[}256\mbox{]}) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_ae10a8247b828dcc3b26e75d8cbbab646}\label{classbitmap__image_ae10a8247b828dcc3b26e75d8cbbab646}} 
+unsigned int {\bfseries offset} (const color\+\_\+plane color) const
+\item 
+\mbox{\Hypertarget{classbitmap__image_a082eca47acefef7a6cf5b6d89b10cd90}\label{classbitmap__image_a082eca47acefef7a6cf5b6d89b10cd90}} 
+void {\bfseries incremental} ()
+\item 
+\mbox{\Hypertarget{classbitmap__image_a493ed1dd1877f8ee5c9af1f363a70d39}\label{classbitmap__image_a493ed1dd1877f8ee5c9af1f363a70d39}} 
+void {\bfseries reverse\+\_\+channels} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+bitmap\+\_\+image.\+hpp\end{DoxyCompactItemize}
