@@ -439,6 +439,12 @@ object MyMonoid extends App{
                 2. If $U_1 \in T, U_2 \in T$, then $U_1 \cap U_2 \in T$ $\textbf{ finite}$<br>
                 3. If $U_i \in T$ then $\bigcup_{i \in I} U_i \in T$ $\textbf{ finite or infinite}$<br><br>
 
+                \[ 
+                    X = \{1, 2\} \\
+                    T = \{ \emptyset, \{1\}, \{2\}, \{1, 2\}\}
+                \]
+                $(X, T)$ is topological space becase it satisfied three axioms <br><br> 
+
                 The elements of $T$ is called open sets,<br>
                 Property 2 implies any $\mathbf{finite}$ intersection of open sets is open<br>
                 Property 3 implies union of any open sets is open<br>
@@ -452,10 +458,17 @@ object MyMonoid extends App{
                 <div class="cen">
                 <img src="../image/topologicspace.png" width="50%" height="50%" /><br> 
                 </div>
-                \[\textbf{Homeomorphism}\]
+            </div>
+            <div class="mathdef_box2">
+                <div class="mytitle">
+                Homeomorphism - deformation, stretches, push around, shrink, enlarge without rips
+                </div>
+                
                 A function $f:X \rightarrow Y$ between two topological spaces $(X, T_x)$ and $(Y, T_y)$ is called $\textbf{Homeomorphism}$ if it has the following properties:<br>
                 1. $f$ is bijective<br>
                 2. $f$ and $f^{-1}$ are both continuous<br>
+                
+                Take the donus to coffee cup, you can stretch and push around without rips
                 <div class="cen">
                 <img src="../image/homeomorphism1.png" width="50%" height="50%" /><br> 
                 </div>
@@ -475,6 +488,7 @@ object MyMonoid extends App{
                 the equavalence extends to the structures of the spaces
 
             </div>
+
             <div class="mathdef_box2">
                 <div class="cen">
                 <img src="../image/morphic.svg" width="80%" height="80%" /><br> 
@@ -1092,7 +1106,18 @@ Show $P^{2} = P$, $P$ is idenpotent.<br>
        coming soon
        </div></a>
 
-
+	   <div class="mathdef_box2">                                                         
+           <div class="mytitle">
+           Unit Circle and Group Law 
+           </div>
+           <div class="cen">                                                                
+           <img src="../image/circle_group_law.svg" width="100%" height="100%" /><br>	
+           </div>                                                                           	
+         Draw line parallel to $\overline{P_1 P_2}$ and pass $O$
+        \[ 
+            P_1 \oplus P_2 = P_3
+        \]
+       </div>
 
 </body>
 
