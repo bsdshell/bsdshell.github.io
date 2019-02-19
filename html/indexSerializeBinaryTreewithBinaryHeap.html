@@ -32,33 +32,13 @@
 </script>
 <div class="myclass">
 <div class="mytitle">
-BufferedReader and BufferedWriter with FileReader and FileWriter
+add content here
 </div>
-
+<pre class="mytext">
+My text here
+</pre>
 <pre class="prettyprint">
-        // read from file
-        try{
-            BufferedReader bf = new BufferedReader(new FileReader(fname));
-            String s;
-            while((s = bf.readLine()) != null){
-                Print.p(s);
-            }
-            bf.close();
-        }catch(IOException e){
-        }
-
-        // write to file
-        String fname =  "/tmp/bst.txt";
-        try{
-            BufferedWriter bw = new BufferedWriter(new FileWriter(fname));
-            bw.write("123\n");
-            bw.close();
-
-        }catch(IOException io){
-            Print.p("Ex" + io.getMessage());
-        }
 </pre> 
-
 </div>
 </body>
 </html>
