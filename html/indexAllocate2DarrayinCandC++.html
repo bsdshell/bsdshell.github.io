@@ -37,12 +37,23 @@
   ga('send', 'pageview');
 </script>
 
-    <div id="header">
-    </div>
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-                <!-- Column 1 start -->
+
+                    <div class="mytitle">
+                    Cpp new and delete in 2D
+                    </div>
+                    <pre class="prettyprint">
+                    // two dimension array
+                    int** arr = (int**) new int*[ncol];    
+                    // allocate row
+                    for(int j=0; j < 2; j++){
+                        arr[j] = (int*) new int[nrow];
+                    }
+                    //
+                    for(int i=0; i < ncol; i++) 
+                        delete[] arr[i];
+                    delete[] arr;
+                    </pre>
+
                     <div class="mytitle">
                     Allocate and Deallocate functions in C++
                     </div>
@@ -69,10 +80,11 @@
 
                     </pre>
  
+
                     <div class="mytitle">
                     Dynamically allocate two dimension array in C 
                     </div>
-                    <pre class="codebg">
+                    <pre class="prettyprint">
                     int height = 3;
                     int width  = 4;
                     int* pt = (int*)malloc(sizeof(int)*width);
@@ -94,98 +106,7 @@
 
                     <code data-gist-id="7bf30da08b6bd7317222"></code>
                     <code data-gist-id="92821d63ad970e0c88cd"></code>
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-
-
+           
     </body>
     </html>
     
