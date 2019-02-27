@@ -1,4 +1,36 @@
 -------------------------------------------------------------------------------- 
+    /**
+        1. arr = {1}, 
+        2. 2 1
+             mid = arr[0]
+        3. 1 2
+             mid = arr[0]
+
+           2 3 4 1  (lo=0, hi=3)
+                mid = 1
+                    (lo=1, hi =3) -> 3 4 1
+                        mid = 2
+                            (lo=2, hi=3) -> 4 1
+                                mid = 2
+                                    arr[2] < arr[2]
+                                    max(arr, lo=2, hi=2)  => 4
+                            
+
+        rotate sorted string
+    */
+    public static int max(int[] arr, int lo, int hi){
+        if(arr[lo] <= arr[hi]){
+            return arr[hi];
+        }else{
+            int mid = (lo + hi)/2;
+            if(arr[lo] < arr[mid]){
+                return max(arr, mid, hi);
+            }else{
+                return max(arr, lo, mid);
+            }
+        }
+    }
+-------------------------------------------------------------------------------- 
 // better version: http://localhost/html/indexTriesDataStructure.html
 // another tries data structure again!
 // add: count all the longest paths

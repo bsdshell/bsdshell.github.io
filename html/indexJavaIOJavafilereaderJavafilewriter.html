@@ -31,14 +31,42 @@
   ga('send', 'pageview');
 </script>
 <div class="myclass">
+
 <div class="mytitle">
-add content here
+Java read file, Java write to file
+
 </div>
-<pre class="mytext">
-My text here
-</pre>
+
 <pre class="prettyprint">
+    public static void writeToFile(String name, ArrayList<String> list){
+        if(name != null && list != null){
+            try{
+                BufferedWriter bw = new BufferedWriter(new FileWriter(name));
+                for(String s : list){
+                    bw.write(s + "\n");
+                }
+                bw.close();
+            }catch(IOException io){
+                io.printStackTrace();
+            }
+        }
+    }
+
+    public static void readFile(String name, ArrayList<String> list){
+        try{
+            if(name != null && list != null){
+                BufferedReader br = new BufferedReader(new FileReader(name));        
+                String line = null;
+                while( (line = br.readLine()) != null){
+                    list.add(line);
+                }
+            }
+        }catch(IOException io){
+            io.printStackTrace();
+        }
+    }
 </pre> 
 </div>
+
 </body>
 </html>
