@@ -31,59 +31,43 @@
   ga('send', 'pageview');
 </script>
 <div class="myclass">
+
 <div class="mytitle">
-Why is so hard to deal with Number in Haskell
+Java read file, Java write to file
+
 </div>
-<pre class="mytext">
-Division will never work in Haskell:) <br>
-If you have two Integer a, b
 
-a/b gets error
+<pre class="prettyprint">
+    public static void writeToFile(String name, ArrayList<String> list){
+        if(name != null && list != null){
+            try{
+                BufferedWriter bw = new BufferedWriter(new FileWriter(name));
+                for(String s : list){
+                    bw.write(s + "\n");
+                }
+                bw.close();
+            }catch(IOException io){
+                io.printStackTrace();
+            }
+        }
+    }
 
-It works only if you do that:
-(fromIntegral a) / (fromInteger b)
-
-because / is defined under Fractional
-
--- convert from Integral to Integer
-class (Real a, Enum a)=> Integral a where
-toInteger:: a -> Integer
-
--- convert from Integer to Num a
-class (Num a)=> a where
-    fromInteger:: Integer -> a
-</pre>
-<pre class="prettyprint midfont">
--- converts from Integer to polymorphic type: Num
-let a = 3::Integer
-let b = 2::Integer
-
-a/b gets error
-
-class (Num a)=>Fractional a where
- (/):: a -> a -> a
-
-(fromIntegral a) / (fromInteger b)
-
-fromIntegral::(Integral a, Num b)=> a -> b
-fromIntegral = fromInteger . toInteger
-
-toInteger::(Real a, Enum a)=> a -> Integer
-fromIntegral::(Num a)=>Integer -> a
-
--- (Real a, Enum a) -> (Num b)
-fromIntegral . toInteger::(Real a, Enum a, Num b)=> a -> b
-
-(Num a)          => Fractional a
-(Num a, Ord a)   => Real
-(Real a, Enum a) => Integral
-(Num a, Orda a, Enum a) => Integral
-
-(Real a, Enum b) => Integral 
-fromIntegral . toInteger::(Integral a, Num b)=> a -> b
-
+    public static void readFile(String name, ArrayList<String> list){
+        try{
+            if(name != null && list != null){
+                BufferedReader br = new BufferedReader(new FileReader(name));        
+                String line = null;
+                while( (line = br.readLine()) != null){
+                    list.add(line);
+                }
+            }
+        }catch(IOException io){
+            io.printStackTrace();
+        }
+    }
 </pre> 
 </div>
+
 </body>
 </html>
 

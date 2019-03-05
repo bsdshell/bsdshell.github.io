@@ -43,6 +43,7 @@ a/b gets error
 It works only if you do that:
 (fromIntegral a) / (fromInteger b)
 
+because / is defined under Fractional
 
 -- convert from Integral to Integer
 class (Real a, Enum a)=> Integral a where
