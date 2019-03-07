@@ -32,52 +32,13 @@
 </script>
 <div class="myclass">
 <div class="mytitle">
-Intersection of two sorted lists
+add content here
 </div>
 <pre class="mytext">
-1. Iterate from the small elems to large elems
-2. If compare each elem on each list,
-    If element a is smaller than the element b,
-        then increase the index of list contains the 'a' element
-        else if two elements are the same
-            then add the element to a list if the element is not equal to the last 'intersected element'
+My text here
 </pre>
 <pre class="prettyprint">
-    public static List<Integer> intersect(Integer[] a1, Integer[] a2){
-        List<Integer> list = new ArrayList<>();
-        if(a1 != null && a2 != null){
-            int len1 = a1.length;
-            int len2 = a2.length;
-            int i=0, j=0;
-            Integer prev = null;
-            while(i < len1 && j < len2){
-                if(a1[i] < a2[j]){
-                    i++;
-                }else if(a1[i] > a2[j]){
-                    j++;
-                }else{
-                    if(prev == null){
-                        list.add(a1[i]);
-                    }else{
-                        if(prev != a1[i]){
-                            list.add(a1[i]);
-                        }
-                    }
-                    prev = a1[i];
-                    i++;
-                    j++;
-                }
-            }
-        }
-        return list;
-    }
 </pre> 
-
-<div class="cen">
-<img src="../image/intersection_sorted_list.jpg" width="80%" height="80%" /><br>
-</div> 
-
-
 </div>
 </body>
 </html>
