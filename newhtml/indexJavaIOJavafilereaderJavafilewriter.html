@@ -33,10 +33,13 @@
 <div class="myclass">
 
 <div class="mytitle">
-Java read file, Java write to file
-
+Character Stream, read file Character by Character 
 </div>
-
+<div class="mytext">
+BufferedWriter is inherited from Writer  
+BufferedReader is inherited from Reader
+Both are good for reading Character by Character
+</div>
 <pre class="prettyprint">
     public static void writeToFile(String name, ArrayList<String> list){
         if(name != null && list != null){
@@ -51,7 +54,9 @@ Java read file, Java write to file
             }
         }
     }
-
+</pre><br>
+    
+<pre class="prettyprint">
     public static void readFile(String name, ArrayList<String> list){
         try{
             if(name != null && list != null){
@@ -65,7 +70,46 @@ Java read file, Java write to file
             io.printStackTrace();
         }
     }
+</pre>
+<div class="mytext">
+FileInputStream is herited from InputStream 
+FileOutputStream is herited from OutputStream 
+Both are good for reading raw or binary files.
+</div>
+<pre class="prettyprint">
+    public static void readWriteFileStream(String fromFile, String toFile){
+        if(fromFile != null && toFile != null){
+            try{
+                FileInputStream inStream = new FileInputStream(fromFile);
+                FileOutputStream outStream = new FileOutputStream(toFile);
+                int byteChar = -1;
+                while((byteChar = inStream.read()) != -1){
+                    outStream.write(byteChar); 
+                }
+                if(outStream != null)
+                    outStream.close();
+                if(inStream != null)
+                    inStream.close();
+
+            }catch(IOException io){
+                io.printStackTrace();
+            }
+        }
+    }
 </pre> 
+
+
+<div class="mytitle">
+Java Stream class structure
+</div>
+<div class="mytext">
+The picture shows a bit of the hirerarchy structure of Stream class in Java
+</div><br>
+<div class="cen">
+<img src="../image/JavaStream.svg" width="80%" height="80%" /><br>
+</div> 
+
+
 </div>
 
 </body>

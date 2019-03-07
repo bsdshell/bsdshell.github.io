@@ -32,197 +32,113 @@
       ga('send', 'pageview');
     </script>
 
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-            <!-- Column 1 start -->
-
             <div class="mytitle">
             Implement HashMap with array 
             </div>
             <div class="mytext">
-            1. Implement Put and Delete for Hashmap<br>
-            2. Use Array to store each Entry<br>
-            3. Use chain linkedlist to handle collision<br>  
-            <span class="wbold">TODO:</span> add contains method, increase the size of array if the number of elements is greater than the max value.<br>
+            1. Implement Put and Delete for Hashmap
+            2. Use Array to store each Entry
+            3. Use chain linkedlist to handle collision  
+
+            Insert Node:
+            If arr contains null, then insert the new key and data, increase count
+            If arr contains some nodes, then check whether the new key is in the list
+                If the key is in the list, update the data, done
+                If the key is Not in the list, goto the last node, 
+                    insert the key and data to the end of the list
+
+            TODO: add contains method, increase the size of array if the number of elements is 
+            greater than the max value.
             </div>
-            <div class="highlight"><pre><span class="kd">class</span> <span class="nc">Entry</span><span class="o">{</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="n">key</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="n">Object</span> <span class="n">value</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="n">Entry</span> <span class="n">next</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="nf">Entry</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">Object</span> <span class="n">value</span><span class="o">){</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+            <pre class="prettyprint">
+            class Entry{
+                public String key;
+                public Object value;
+                public Entry next;
+                public Entry(String key, Object value){
+                    this.key = key;
+                    this.value = value;
+                }
+            }
 
-<span class="kd">class</span> <span class="nc">Hash</span><span class="o">{</span>
-    <span class="kd">public</span> <span class="n">Entry</span><span class="o">[]</span> <span class="n">arr</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="n">max</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="nf">Hash</span><span class="o">(</span><span class="kt">int</span> <span class="n">max</span><span class="o">){</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">max</span> <span class="o">=</span> <span class="n">max</span><span class="o">;</span>
-        <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Entry</span><span class="o">[</span><span class="n">max</span><span class="o">];</span>
-    <span class="o">}</span>
+            class Hash{
+                public Entry[] arr;
+                public int max;
+                public int count = 0;
+                public Hash(int max){
+                    this.max = max;
+                    arr = new Entry[max];
+                }
 
-    <span class="kd">public</span> <span class="n">Node</span> <span class="nf">get</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">){</span>
-        <span class="kt">int</span> <span class="n">hash</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="na">hashCode</span><span class="o">()</span> <span class="o">%</span> <span class="n">max</span><span class="o">;</span>
-        <span class="k">return</span> <span class="o">(</span><span class="n">Node</span><span class="o">)</span><span class="n">arr</span><span class="o">[</span><span class="n">hash</span><span class="o">].</span><span class="na">value</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">delete</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">){</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">key</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
-            <span class="kt">int</span> <span class="n">hash</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="na">hashCode</span><span class="o">()</span> <span class="o">%</span> <span class="n">max</span><span class="o">;</span>
-            <span class="n">Entry</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">hash</span><span class="o">];</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
-                <span class="n">Entry</span> <span class="n">prev</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-                <span class="k">while</span><span class="o">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
-                    <span class="k">if</span><span class="o">(</span><span class="n">curr</span><span class="o">.</span><span class="na">key</span> <span class="o">==</span> <span class="n">key</span><span class="o">)</span>
-                        <span class="k">break</span><span class="o">;</span>
-                    <span class="k">else</span><span class="o">{</span>
-                        <span class="n">prev</span> <span class="o">=</span> <span class="n">curr</span><span class="o">;</span>
-                        <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
-                    <span class="o">}</span>
-                <span class="o">}</span>
-                <span class="k">if</span><span class="o">(</span><span class="n">prev</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
-                    <span class="n">arr</span><span class="o">[</span><span class="n">hash</span><span class="o">]</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
-                    <span class="n">count</span><span class="o">--;</span>
-                <span class="o">}</span><span class="k">else</span><span class="o">{</span>
-                    <span class="k">if</span><span class="o">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
-                        <span class="n">prev</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
-                        <span class="n">count</span><span class="o">--;</span>
-                    <span class="o">}</span>
-                <span class="o">}</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">put</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">Node</span> <span class="n">node</span><span class="o">){</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">count</span> <span class="o">&lt;</span> <span class="n">max</span><span class="o">){</span>
-            <span class="kt">int</span> <span class="n">hash</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="na">hashCode</span><span class="o">()</span> <span class="o">%</span> <span class="n">max</span><span class="o">;</span>
-            <span class="n">Entry</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">hash</span><span class="o">];</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">curr</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
-                <span class="n">arr</span><span class="o">[</span><span class="n">hash</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Entry</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">node</span><span class="o">);</span>
-                <span class="n">count</span><span class="o">++;</span>
-            <span class="o">}</span>
-            <span class="k">else</span><span class="o">{</span>
-                <span class="n">Entry</span> <span class="n">prev</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-                <span class="k">while</span><span class="o">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
-                    <span class="k">if</span><span class="o">(</span><span class="n">curr</span><span class="o">.</span><span class="na">key</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">key</span><span class="o">)){</span>
-                        <span class="c1">// Replace with new value</span>
-                        <span class="n">curr</span><span class="o">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">node</span><span class="o">;</span>
-                        <span class="k">break</span><span class="o">;</span>
-                    <span class="o">}</span>
-                    <span class="k">else</span><span class="o">{</span>
-                        <span class="n">prev</span> <span class="o">=</span> <span class="n">curr</span><span class="o">;</span>
-                        <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
-                    <span class="o">}</span>
-                <span class="o">}</span>
-                <span class="c1">// No key is found</span>
-                <span class="k">if</span><span class="o">(</span><span class="n">curr</span> <span class="o">==</span> <span class="kc">null</span><span class="o">){</span>
-                    <span class="n">prev</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Entry</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">node</span><span class="o">);</span>
-                    <span class="n">count</span><span class="o">++;</span>
-                <span class="o">}</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-        
-    <span class="o">}</span>
-<span class="o">}</span>
-</pre></div>
- 
+                public Node get(String key){
+                    int hash = key.hashCode() % max;
+                    return (Node)arr[hash].value;
+                }
+                public void delete(String key){
+                    if(key != null){
+                        int hash = key.hashCode() % max;
+                        Entry curr = arr[hash];
+                        if(curr != null){
+                            Entry prev = null;
+                            while(curr != null){
+                                if(curr.key == key)
+                                    break;
+                                else{
+                                    prev = curr;
+                                    curr = curr.next;
+                                }
+                            }
+                            if(prev == null){
+                                arr[hash] = curr.next;
+                                count--;
+                            }else{
+                                if(curr != null){
+                                    prev.next = curr.next;
+                                    count--;
+                                }
+                            }
+                        }
+                    }
+                }
+                public void put(String key, Node node){
+                    if(count < max){
+                        int hash = key.hashCode() % max;
+                        Entry curr = arr[hash];
+                        if(curr == null){
+                            arr[hash] = new Entry(key, node);
+                            count++;
+                        }
+                        else{
+                            Entry prev = null;
+                            while(curr != null){
+                                if(curr.key.equals(key)){
+                                    // Replace with new value
+                                    curr.value = node;
+                                    break;
+                                }
+                                else{
+                                    prev = curr;
+                                    curr = curr.next;
+                                }
+                            }
+                            // No key is found
+                            if(curr == null){
+                                prev.next = new Entry(key, node);
+                                count++;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+
+            </pre>
+
+     
             <div class="cen">
-            <img src="../image/cppstd.png" width="40%" height="40%" /><br>
+            <img src="../image/java_hashmap.jpg" width="80%" height="80%" /><br>
             <a class="codebox" href="https://github.com/bsdshell/java/tree/master/MyHash.java">Source Code</a>
             </div>
-
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
 
 
     </body>
