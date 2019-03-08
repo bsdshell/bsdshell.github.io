@@ -32,25 +32,13 @@
 </script>
 <div class="myclass">
 <div class="mytitle">
-Replace and Search word in boundary
+add content here
 </div>
-
 <pre class="mytext">
-Haskell Regex.POSIX is not supported 'word boundary'
-use package: Text.RE.TDFA.String instead
+My text here
 </pre>
-
 <pre class="prettyprint">
---{-# LANGUAGE QuasiQuotes                      #-}
---import Text.RE.TDFA.String
-main = do 
-        -- replace word boundary, replace one, and replace all
-        let s1 = "mydog dog dog (dog)" ?=~/ [ed|${adr}(\<dog\>):?///< div class="dog">${adr}< /div> |]
-        let s2 = "mydog dog dog (dog)" *=~/ [ed|${adr}(\<dog\>):?///< div class="dog">${adr}< /div> |]
-        putStrLn $ "replace one: =>[" ++ s1 ++ "]"
-        putStrLn $ "replace all: =>[" ++ s2 ++ "]"
 </pre> 
-
 </div>
 </body>
 </html>
