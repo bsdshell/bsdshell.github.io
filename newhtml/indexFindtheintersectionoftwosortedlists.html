@@ -49,21 +49,18 @@ Intersection of two sorted lists
             int len1 = a1.length;
             int len2 = a2.length;
             int i=0, j=0;
-            Integer prev = null;
             while(i < len1 && j < len2){
                 if(a1[i] < a2[j]){
                     i++;
                 }else if(a1[i] > a2[j]){
                     j++;
                 }else{
-                    if(prev == null){
+                    if(list.size() == 0){
                         list.add(a1[i]);
                     }else{
-                        if(prev != a1[i]){
+                        if(list.get(lise.size() - 1) != a1[i])
                             list.add(a1[i]);
-                        }
                     }
-                    prev = a1[i];
                     i++;
                     j++;
                 }
