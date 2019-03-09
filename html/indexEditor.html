@@ -20,10 +20,28 @@
 }</div>
     
 <script src="../ace/build/src/ace.js" type="text/javascript" charset="utf-8"></script>
+
 <script>
-    var editor = ace.edit("editor");
+    // var editor = ace.edit('editor');
+    var editor = ace.edit("editor", {
+        theme: "ace/theme/tomorrow_night_blue",
+        mode: "ace/mode/java",
+        autoScrollEditorIntoView: true,
+        maxLines: 40,
+        minLines: 40 
+    });
+
+    document.getElementById('editor').style.fontSize='14px';
     editor.setTheme("ace/theme/xcode");
     editor.session.setMode("ace/mode/javascript");
+    
+    var tmpCode = editor.getValue();
+    // alert(editor.getValue());
+
+    window.onload = function(){
+        document.getElementById('tmpCode').innerHTML = tmpCode;
+    }
 </script>
+
 </body>
 </html>
