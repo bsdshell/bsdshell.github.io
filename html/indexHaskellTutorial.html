@@ -34,12 +34,22 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
-
-            <div class="myclass">
+            <div class="mytitle">
+            Haskell Array 
+            </div>
+            <div class="mytext">
+                import Data.Array
+                import Data.Text.TDFA
+            </div>
+            <pre class="prettyprint">
+                let ar = array(0, 10) [(i, i*i) | i <- [0..10]]
+            ar ! 1 => 1
+            </pre>
 
             <div class="mytitle">
             Hello World in Haskell 
             </div>
+
             <pre class="prettyprint">
             main = print "Hello World"
             </pre>
@@ -51,7 +61,6 @@
             fac::Integer -> Integer
             fac 0 = 1
             fac n = n * fac (n - 1)
-
             fac n = if n == 0 then 1 else n*fac (n - 1)
             </pre>
 
@@ -68,10 +77,7 @@
             --        2:3:sieve([5])
             --            2:3:5:sieve([])
             </pre> 
-            </div>
-            </div>
 
-            <div class="myclass">
             <div class="mytitle">
             Split String in Haskell 
             </div>
@@ -166,7 +172,6 @@
             <div class="mytext">
             MyMaybe is not a Functor since it does't satify the SECOND rule given from above<br>
             </div>
-            <pre class="mycode">
             <pre class="prettyprint">
             data MyMaybe a = MNothing | MyJust Int a deriving(Show)
 
@@ -184,7 +189,6 @@
                     -- fmap id (MyJust 0 2) != id (MyJust 0 2)
                     -- MyMaybe is not a Functor
             </pre>
-            </pre>
 
             <div class="mytitle">Haskell IO action</div>
             <div class="mytext">
@@ -192,14 +196,16 @@
             by encoding those side effects as values of a particular type. 
             Specifically, a values of type [IO a] is an action, which if executed would product a value type of a
             </div>
-            <!-- <pre class="prettyprint lang-haskell"> -->
-            <pre class="mycode">
-            <span class="bo">[IO a] is an action</span>
+
+            <div class="mytitle">[IO a] is an action</div>
+            <pre class="prettyprint">
             getLine::IO String
             putStrLn::String-> IO()
             randomRIO::(Random a) => (a, a) -> IO a
+            </pre>
 
-            <span class="bo">Some IO goodness</span>   
+            <div class="mytext">Some IO goodness</div>   
+            <pre class="prettyprint">
             -- define a function to print out "Hello World"
             fun::IO()
             fun = putStrLn "Hello World"
@@ -208,30 +214,36 @@
             putStrLn::String->IO ()  -- input is String, output is IO()
             
             fun::String->String      -- input is String, output is String
+            </pre>
 
-            <span class="bo">Chain the IO actions</span>
+            <div class="mytitle">Chain the IO actions</div>
+            <pre class="prettyprint">
             (>>)::IO a -> IO b -> IO b
             where if x and y are IO actions, then (x >> y) is the action performs x, dropping the result
             and then performs y and return its result. Great, we can now write programs which do multiple things
 
             main = putStrLn "Hello" >> putStrLn "World"
+            </pre>
 
-            <span class="bo">How to use the result of first action</span>
+            <div class="mytitle">How to use the result of first action</div>
+            <pre class="prettyprint">
             (>>=)::IO a -> (a -> IO b) -> IO b
             Now, (x >>= y) is the action first perform x, and capture its result, passing the result to f, 
             which then computes a second actions to be performed. The action is then carried out, 
             and its result is the result of overall computation.
-
+            </pre>
             It does seem to make sense, but what is the concrete example
             
-            <span class="bo">The definition of readFile and print are as following</span>
+            <div class="mytitle">The definition of readFile and print are as following</div>
+            <pre class="prettyprint">
             readFile::FilePath->IO String
             print::String->IO ()
-
-            <span class="bo">Chain readFile to print with</span> >>=  
+            -- Chain readFile to print with >>=  
             readFile filePath >>=\file -> print file 
+            </pre>
 
-            <span class="bo">What you can come up a picture about IO monad</span>
+            <div class="mytitle">What you can come up a picture about IO monad</div>
+
             <div class="cen">
             <img src="../image/monadpic3.png" width="40%" height="40%" /><br>
             </div> 
@@ -734,6 +746,17 @@ The exit code propagates to parent thread with concurrently,
 </pre>
 
 <div class="mytitle">
+zip and unzip in Haskell
+</div>
+<pre class="prettyprint">
+zip ["dog", "cat"] [1, 2] => [("dog", 1"), ("cat", 2)]
+unzip [("dog", 1"), ("cat", 2)] => ["dog", "cat"] [1, 2]
+</pre>
+<div class="cen">
+<img src="../image/zip_unzip.jpg" width="80%" height="80%" />
+</div> 
+
+<div class="mytitle">
 Simple Typeclass in Haskell
 </div>
 <pre class="mytext">
@@ -765,87 +788,6 @@ main = do
         print(area $ Circle 3 4 5)
         print(area $ Rectangle 3 4 5 8)
 </pre>
-
-
-
-            <div class="mytitle">Regular Expression in Haskell</div>
-            <div class="highlight"><pre><span class="nf">re1</span> <span class="ow">=</span> <span class="s">&quot;my food&quot;</span>         <span class="o">=~</span> <span class="s">&quot;foo&quot;</span><span class="ow">::</span><span class="kt">Bool</span>                      <span class="c1">-- True</span>
-<span class="nf">re2</span> <span class="ow">=</span> <span class="s">&quot;my food foo&quot;</span>     <span class="o">=~</span> <span class="s">&quot;foo&quot;</span><span class="ow">::</span><span class="kt">String</span>                    <span class="c1">-- &quot;foo&quot;</span>
-<span class="nf">re3</span> <span class="ow">=</span> <span class="s">&quot;my foolish fool&quot;</span> <span class="o">=~</span> <span class="s">&quot;foo.&quot;</span><span class="ow">::</span><span class="p">[[</span><span class="kt">String</span><span class="p">]]</span>               <span class="c1">-- [[&quot;fool&quot;],[&quot;fool&quot;]]</span>
-<span class="nf">re4</span> <span class="ow">=</span> <span class="s">&quot;my foolish fool&quot;</span> <span class="o">=~</span> <span class="s">&quot;foo.&quot;</span><span class="ow">::</span><span class="p">(</span><span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">String</span><span class="p">)</span> <span class="c1">-- (&quot;my &quot;,&quot;fool&quot;,&quot;ish fool&quot;)</span>
-
-<span class="nf">main</span> <span class="ow">=</span> <span class="kr">do</span>
-        <span class="c1">-- /Users/cat/myfile/github/haskell/regexExample.hs </span>
-        <span class="c1">-- </span>
-        <span class="c1">-- replace pattern </span>
-        <span class="c1">--</span>
-        <span class="c1">-- pattern = mkRegex &quot;pattern&quot;</span>
-        <span class="c1">--</span>
-        <span class="c1">-- subRegex pattern inputString replaceString =&gt; output text </span>
-        <span class="c1">--</span>
-        <span class="c1">-- </span>
-        <span class="c1">-- gx http://hackage.haskell.org/package/regex-compat-0.95.1/docs/Text-Regex.html#t:Regex</span>
-        <span class="c1">-- </span>
-        <span class="kr">let</span> <span class="n">r1</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;google&quot;</span>
-        <span class="kr">let</span> <span class="n">input</span> <span class="ow">=</span> <span class="s">&quot;http://google.com&quot;</span>
-        <span class="kr">let</span> <span class="n">replace1</span> <span class="ow">=</span> <span class="s">&quot;[</span><span class="se">\\</span><span class="s">0]&quot;</span>
-        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r1</span> <span class="n">input</span> <span class="n">replace1</span>            <span class="c1">-- http://[google].com</span>
-
-        <span class="kr">let</span> <span class="n">r3</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;(na)*&quot;</span>
-        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r3</span> <span class="s">&quot;banana&quot;</span> <span class="s">&quot;[</span><span class="se">\\</span><span class="s">0] {</span><span class="se">\\</span><span class="s">1}&quot;</span>    <span class="c1">-- [] {}b5. [] {}a5. [nana] {na}</span>
-
-        <span class="kr">let</span> <span class="n">r4</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;(void)+&quot;</span>
-        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r4</span> <span class="s">&quot;voidvoid&quot;</span> <span class="s">&quot;[</span><span class="se">\\</span><span class="s">0] {</span><span class="se">\\</span><span class="s">1}&quot;</span>  <span class="c1">-- [voidvoid] {void}</span>
-
-                                                         <span class="c1">-- use POSIX regex  &quot;/pat/i&quot; ignore case</span>
-        <span class="kr">let</span> <span class="n">r5</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;.*</span><span class="se">\\</span><span class="s">.pdf&quot;</span>
-        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r5</span> <span class="s">&quot;http://file.pdf&quot;</span> <span class="s">&quot;[</span><span class="se">\\</span><span class="s">0]&quot;</span> <span class="c1">-- [http://file.PDF]</span>
-
-        <span class="c1">-- capture group, capture email address</span>
-        <span class="kr">let</span> <span class="n">r6</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;([A-Za-z._-]+)+@(([a-z])+</span><span class="se">\\</span><span class="s">.([a-z]{2,4}))&quot;</span>
-        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">r6</span> <span class="s">&quot;root_admin.last-name@gmail.com&quot;</span>   <span class="s">&quot;7. [</span><span class="se">\\</span><span class="s">0] {</span><span class="se">\\</span><span class="s">1}{</span><span class="se">\\</span><span class="s">2}&quot;</span>
-
-        <span class="c1">-- capture phone number</span>
-        <span class="kr">let</span> <span class="n">p1</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;[0-9]{3}[ -]?[0-9]{3}[ -]?[0-9]{4}&quot;</span> 
-
-        <span class="c1">-- https://hackage.haskell.org/package/regex-compat-0.95.1/docs/Text-Regex.html</span>
-        <span class="kr">let</span> <span class="n">r7</span> <span class="ow">=</span> <span class="n">mkRegexWithOpts</span> <span class="s">&quot;(</span><span class="se">\\</span><span class="s">.pdf)&quot;</span> <span class="kt">True</span> <span class="kt">False</span>
-        <span class="kr">let</span> <span class="n">input</span> <span class="ow">=</span> <span class="s">&quot;/home/user/file/mybook.PDF&quot;</span>
-        <span class="kr">let</span> <span class="n">callMeMaybe</span> <span class="ow">=</span> <span class="n">matchRegex</span> <span class="n">r7</span> <span class="n">input</span>
-        <span class="n">print</span> <span class="o">$</span> <span class="n">show</span><span class="p">(</span><span class="n">callMeMaybe</span><span class="p">)</span>
-
-        <span class="c1">-- replace string</span>
-        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">p1</span> <span class="s">&quot;416-123-4483&quot;</span>  <span class="s">&quot;[</span><span class="se">\\</span><span class="s">0]&quot;</span>    <span class="c1">-- [416-123-4483]</span>
-
-        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">p1</span> <span class="s">&quot;4161234483&quot;</span>    <span class="s">&quot;[</span><span class="se">\\</span><span class="s">0]&quot;</span>    <span class="c1">-- [4161234483]</span>
-
-        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">p1</span> <span class="s">&quot;416 123 4483&quot;</span>  <span class="s">&quot;[</span><span class="se">\\</span><span class="s">0]&quot;</span>    <span class="c1">-- [416 123 4483]</span>
-        
-        <span class="n">print</span> <span class="o">$</span> <span class="n">splitRegex</span><span class="p">(</span><span class="n">mkRegex</span> <span class="s">&quot;:&quot;</span><span class="p">)</span> <span class="s">&quot;PaloAlto:MountainView&quot;</span> <span class="c1">-- [&quot;PaloAlto&quot;,&quot;MountainView&quot;]</span>
-
-        <span class="c1">-- capture function in ObjectiveC</span>
-        <span class="kr">let</span> <span class="n">me</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;(-|</span><span class="se">\\</span><span class="s">+)[[:space:]]*</span><span class="se">\\</span><span class="s">([[:space:]]*[[:print:]]+[[:space:]]*</span><span class="se">\\</span><span class="s">)[[:space:]]*[[:graph:]]+</span><span class="se">\</span>
-<span class="se">        \</span><span class="s">[[:space:]]*:?[[:space:]]*([[:space:]]*[[:graph:]]+[[:space:]]*:[[:space:]]*[[:graph:]]+[[:space:]]*)*&quot;</span>
-
-        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">me</span> <span class="s">&quot;- (NSstring*) swap :&quot;</span> <span class="s">&quot;[</span><span class="se">\\</span><span class="s">0]&quot;</span> <span class="c1">-- [- (NSstring*) swap :]</span>
-
-        <span class="n">putStrLn</span> <span class="o">$</span> <span class="n">subRegex</span> <span class="n">me</span> <span class="s">&quot;- (NSstring*) method:(Integer)num width:(Integer)width</span><span class="se">\ </span>
-<span class="se">        \</span><span class="s"> height:(NSString*)str&quot;</span> <span class="s">&quot;12. [</span><span class="se">\\</span><span class="s">0]&quot;</span>
-        <span class="c1">-- [- (NSstring*) method:(Integer)num width:(Integer)width  height:(NSString*)str]</span>
-
-        <span class="c1">-- https://hackage.haskell.org/package/regex-base-0.93.2/docs/Text-Regex-Base-RegexLike.html#t:RegexLike</span>
-        <span class="kr">let</span> <span class="n">r7</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;([A-Za-z]+)&quot;</span> 
-        <span class="kr">let</span> <span class="n">count</span> <span class="ow">=</span> <span class="n">matchCount</span> <span class="n">r7</span> <span class="s">&quot;haskell java C++ ObejctiveC aa#&quot;</span> 
-        <span class="n">putStrLn</span> <span class="o">$</span> <span class="s">&quot;count = &quot;</span> <span class="o">++</span> <span class="n">show</span> <span class="n">count</span>
-
-        <span class="c1">-- https://hackage.haskell.org/package/regex-base-0.93.2/docs/Text-Regex-Base-RegexLike.html#t:RegexLike</span>
-        <span class="kr">let</span> <span class="n">r8</span> <span class="ow">=</span> <span class="n">mkRegex</span> <span class="s">&quot;[a-z]+&quot;</span>
-        <span class="kr">let</span> <span class="n">bo</span> <span class="ow">=</span> <span class="n">matchTest</span> <span class="n">r8</span> <span class="s">&quot;22323&quot;</span>
-        <span class="n">putStrLn</span> <span class="o">$</span> <span class="s">&quot;Is matched = &quot;</span> <span class="o">++</span> <span class="n">show</span> <span class="n">bo</span> <span class="c1">-- return True</span>
-        
-        <span class="kr">let</span> <span class="n">bo</span> <span class="ow">=</span> <span class="n">matchTest</span> <span class="n">r8</span> <span class="s">&quot;Sunnyvale&quot;</span>
-        <span class="n">putStrLn</span> <span class="o">$</span> <span class="s">&quot;Is matched = &quot;</span> <span class="o">++</span> <span class="n">show</span> <span class="n">bo</span> <span class="c1">-- return False</span>
-</pre></div>
 
             <div class="mytitle">Sum all integers in a list in Haskell</div>
             <div class="highlight"><pre><span class="c1">-- Sum all the integer in a list</span>

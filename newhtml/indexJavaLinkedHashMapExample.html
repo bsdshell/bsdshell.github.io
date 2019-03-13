@@ -51,6 +51,32 @@ LinkedHashMap use map and DoubleLinkedList to implement it.
     }
 </pre> 
 
+<div class="mytext">
+TreeMap in Java, $\log(n)$ contains, insert, implements in Red-Black tree
+</div>
+
+<pre class="prettyprint">
+    class Student{
+        String name;
+        Integer age;
+        public Student(String name, Integer age){
+            this.name = name;
+            this.age = age;
+        }
+    }
+
+    class CompareTree implements Comparator<Student>{
+        public int compare(Student s1, Student s2){
+            return s1.name.compareTo(s2.name);
+        }
+    }
+
+    TreeMap<Student, String> map = new TreeMap<>(new CompareTree());
+    map.put(new Student("David", 3), "good");
+    map.put(new Student("Michael", 4), "bad");
+</pre> 
+
+
 </div>
 
 </body>

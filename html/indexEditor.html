@@ -27,12 +27,13 @@
         theme: "ace/theme/tomorrow_night_blue",
         mode: "ace/mode/java",
         autoScrollEditorIntoView: true,
-        maxLines: 40,
-        minLines: 40 
+        maxLines: 100,
+        minLines: 100 
     });
 
-    document.getElementById('editor').style.fontSize='14px';
-    editor.setTheme("ace/theme/xcode");
+    document.getElementById('editor').style.fontSize='16px';
+    editor.setTheme("ace/theme/monokai");
+    //editor.setTheme("ace/theme/solarized_dark");
     editor.session.setMode("ace/mode/javascript");
     
     var tmpCode = editor.getValue();

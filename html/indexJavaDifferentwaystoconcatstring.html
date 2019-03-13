@@ -30,54 +30,15 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
-
 <div class="myclass">
 <div class="mytitle">
-Java LinkedHashMap Example
+add content here
 </div>
 <pre class="mytext">
-LinkedHashMap keeps the order-intersection
-LinkedHashMap use map and DoubleLinkedList to implement it.
+My text here
 </pre>
-
 <pre class="prettyprint">
-    LinkedHashMap<Integer, String> map = new LinkedHashMap();
-    map.put(1, "dog"); 
-    map.put(2, "cat"); 
-    map.put(3, "cow"); 
-    Set<Integer> set = map.keySet();
-    for(Integer k : set){
-        Print.p(map.get(k));
-    }
 </pre> 
-
-<div class="mytext">
-TreeMap in Java, $\log(n)$ contains, insert, implements in Red-Black tree
 </div>
-
-<pre class="prettyprint">
-    class Student{
-        String name;
-        Integer age;
-        public Student(String name, Integer age){
-            this.name = name;
-            this.age = age;
-        }
-    }
-
-    class CompareTree implements Comparator<Student>{
-        public int compare(Student s1, Student s2){
-            return s1.name.compareTo(s2.name);
-        }
-    }
-
-    TreeMap<Student, String> map = new TreeMap<>(new CompareTree());
-    map.put(new Student("David", 3), "good");
-    map.put(new Student("Michael", 4), "bad");
-</pre> 
-
-
-</div>
-
 </body>
 </html>
