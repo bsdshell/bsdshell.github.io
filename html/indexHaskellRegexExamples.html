@@ -38,6 +38,8 @@ Replace and Search word in boundary
 <pre class="mytext">
 Haskell Regex.POSIX is not supported 'word boundary'
 use package: Text.RE.TDFA.String instead
+
+-- /Users/cat/myfile/bitbucket/haskell/regexExample.hs 
 </pre>
 
 <pre class="prettyprint">
@@ -60,79 +62,107 @@ re2 = "my food foo"     =~ "foo"::String                    -- "foo"
 re3 = "my foolish fool" =~ "foo."::[[String]]               -- [["fool"],["fool"]]
 re4 = "my foolish fool" =~ "foo."::(String, String, String) -- ("my ","fool","ish fool")
 </pre> 
-
-<pre class="prettyprint">
-main = do
-        -- /Users/cat/myfile/github/haskell/regexExample.hs 
-        -- 
-        -- replace pattern 
-        --
-        -- pattern = mkRegex "pattern"
-        --
-        -- subRegex pattern inputString replaceString => output text 
-        --
-        -- 
-        -- gx http://hackage.haskell.org/package/regex-compat-0.95.1/docs/Text-Regex.html#t:Regex
-        -- 
+<div class="mytext">
+        "http://google.com" => http://[google].com
+</div>
+<pre class="prettyprint tinyfont">
         let r1 = mkRegex "google"
         let input = "http://google.com"
         let replace1 = "[\\0]"
         putStrLn $ subRegex r1 input replace1            -- http://[google].com
+</pre>
 
-        let r3 = mkRegex "(na)*"
-        putStrLn $ subRegex r3 "banana" "[\\0] {\\1}"    -- [] {}b5. [] {}a5. [nana] {na}
+<div class="mytext">
+        banana => ba[nana] {na} 
+</div>
+<pre class="prettyprint tinyfont">
+        let r3 = mkRegex "(na)+"
+        putStrLn $ subRegex r3 "banana" "[\\0] {\\1}"
+</pre>
 
-        let r4 = mkRegex "(void)+"
-        putStrLn $ subRegex r4 "voidvoid" "[\\0] {\\1}"  -- [voidvoid] {void}
-
-                                                         -- use POSIX regex  "/pat/i" ignore case
+<div class="mytext">
+        "http://file.pdf" => [http://file.PDF]
+</div>
+<pre class="prettyprint tinyfont">
         let r5 = mkRegex ".*\\.pdf"
         putStrLn $ subRegex r5 "http://file.pdf" "[\\0]" -- [http://file.PDF]
+</pre>
 
+<div class="mytext">
+        "root_admin.last-name@gmail.com" => [root_admin.last-name@gmail.com] {root_admin.last-name} {gmail.com}
+</div>
+<pre class="prettyprint tinyfont">
         -- capture group, capture email address
         let r6 = mkRegex "([A-Za-z._-]+)+@(([a-z])+\\.([a-z]{2,4}))"
         putStrLn $ subRegex r6 "root_admin.last-name@gmail.com"   "7. [\\0] {\\1}{\\2}"
-
-        -- capture phone number
-        let p1 = mkRegex "[0-9]{3}[ -]?[0-9]{3}[ -]?[0-9]{4}" 
-
-        -- https://hackage.haskell.org/package/regex-compat-0.95.1/docs/Text-Regex.html
+</pre>
+<div class="mytext">
+        "/home/user/file/mybook.PDF" => "/home/user/file/mybook.PDF" 
+</div>
+<pre class="prettyprint tinyfont">
+        let r7 = mkRegexWithOpts "(.*\\.pdf)" True False
+        let input = "/home/user/file/mybook.PDF"
+        let callMeMaybe = matchRegex r7 input
+</pre>
+<div class="mytext">
+        "/home/user/file/mybook.PDF" => ".PDF" 
+</div>
+<pre class="prettyprint tinyfont">
         let r7 = mkRegexWithOpts "(\\.pdf)" True False
         let input = "/home/user/file/mybook.PDF"
         let callMeMaybe = matchRegex r7 input
-        print $ show(callMeMaybe)
+</pre>
 
+<div class="mytext">
+        "779-123-4483" => "[416-123-4483]"
+</div>
+<pre class="prettyprint tinyfont">
+        -- capture phone number
+        let p1 = mkRegex "[0-9]{3}[ -]?[0-9]{3}[ -]?[0-9]{4}" 
         -- replace string
-        putStrLn $ subRegex p1 "416-123-4483"  "[\\0]"    -- [416-123-4483]
-
-        putStrLn $ subRegex p1 "4161234483"    "[\\0]"    -- [4161234483]
-
-        putStrLn $ subRegex p1 "416 123 4483"  "[\\0]"    -- [416 123 4483]
-        
+        putStrLn $ subRegex p1 "779-123-4483"  "[\\0]"    -- [416-123-4483]
+</pre>
+<div class="mytext">
+        "PaloAlto:MountainView" => ["PaloAlto","MountainView"]
+</div>
+<pre class="prettyprint tinyfont">
         print $ splitRegex(mkRegex ":") "PaloAlto:MountainView" -- ["PaloAlto","MountainView"]
+</pre>
 
+<div class="mytext">
+        -- capture function in ObjectiveC
+</div>
+<pre class="prettyprint tinyfont">
         -- capture function in ObjectiveC
         let me = mkRegex "(-|\\+)[[:space:]]*\\([[:space:]]*[[:print:]]+[[:space:]]*\\)[[:space:]]*[[:graph:]]+\
         \[[:space:]]*:?[[:space:]]*([[:space:]]*[[:graph:]]+[[:space:]]*:[[:space:]]*[[:graph:]]+[[:space:]]*)*"
 
         putStrLn $ subRegex me "- (NSstring*) swap :" "[\\0]" -- [- (NSstring*) swap :]
+</pre>
 
+<div class="mytext">
+        -- capture function in ObjectiveC
+</div>
+<pre class="prettyprint tinyfont">
         putStrLn $ subRegex me "- (NSstring*) method:(Integer)num width:(Integer)width\ 
         \ height:(NSString*)str" "12. [\\0]"
         -- [- (NSstring*) method:(Integer)num width:(Integer)width  height:(NSString*)str]
-
-        -- https://hackage.haskell.org/package/regex-base-0.93.2/docs/Text-Regex-Base-RegexLike.html#t:RegexLike
+</pre>
+<div class="mytext">
+        match count 
+</div>
+<pre class="prettyprint tinyfont">
         let r7 = mkRegex "([A-Za-z]+)" 
         let count = matchCount r7 "haskell java C++ ObejctiveC aa#" 
         putStrLn $ "count = " ++ show count
-
-        -- https://hackage.haskell.org/package/regex-base-0.93.2/docs/Text-Regex-Base-RegexLike.html#t:RegexLike
+</pre>
+<div class="mytext">
+        match test 
+</div>
+<pre class="prettyprint tinyfont">
         let r8 = mkRegex "[a-z]+"
         let bo = matchTest r8 "22323"
         putStrLn $ "Is matched = " ++ show bo -- return True
-        
-        let bo = matchTest r8 "Sunnyvale"
-        putStrLn $ "Is matched = " ++ show bo -- return False
 </pre>
 
 </div>
