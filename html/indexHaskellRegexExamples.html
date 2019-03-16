@@ -62,6 +62,15 @@ re2 = "my food foo"     =~ "foo"::String                    -- "foo"
 re3 = "my foolish fool" =~ "foo."::[[String]]               -- [["fool"],["fool"]]
 re4 = "my foolish fool" =~ "foo."::(String, String, String) -- ("my ","fool","ish fool")
 </pre> 
+
+<div class="mytext">
+        -- word boundary, search word and replace
+        "mydog dog-- dog pig cat dog fox" => "mydog [dog]-- [dog] pig cat [dog] fox"
+</div>
+<pre class="prettyprint tinyfont">
+        let s = "mydog dog-- dog pig cat dog fox"
+        searchReplace s word "[\\0]"
+</pre>
 <div class="mytext">
         "http://google.com" => http://[google].com
 </div>

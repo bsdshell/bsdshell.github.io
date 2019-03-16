@@ -61,6 +61,11 @@ concatMap(map(toUpper)) ["dog", "cat"] => "DOGCAT"
 => "DOG" ++ ("CAT" ++ [])
 => "DOGCAT"
 
+or
+=>foldr(++) [] $ (map . map) toUpper ["dog", "cat"]
+=>foldr(++) [] ["DOG", "CAT"]
+=> "DOGCAT"
+
 </pre> 
 </div>
 </body>
