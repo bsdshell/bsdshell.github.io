@@ -48,6 +48,15 @@ Monad can be understood in three steps:
 </p>
 
 <p class="art">
+What is semigroup <br>
+Semigroup is like a group without inverse and identity. It is Associativity only.
+</p>
+\begin{align*}
+\forall a, b, c &\in S \\
+a \otimes b \otimes c &= a \otimes b \otimes c \\
+\end{align*}
+
+<p class="art">
 What is Group?<br>
 Here is the informal definition of Group:<br>
 Given a set $S$, all the elements are closed under a binary operation denoted as $\otimes$ and  
@@ -73,6 +82,11 @@ Given a $S = \{0, 1, 2, \dots \}$ and let $a = 1,  b = 2, c = 3, \quad I = 0, a'
 <div style="font-size:130%">
 What is Monoid? <br>
 Monoid is a group without the third condition (3), it means each element does not need to have inverse in Monoid.
+
+</div><br>
+<img src="../image/semigroup_group.jpg" width="100%" height="100%" /><br>
+</div> 
+
 \begin{align*}
     \forall a, b, c &\in S \\
     (a \otimes b) \otimes c                   &= a \otimes (b \otimes c) \tag{1} \\
@@ -93,6 +107,7 @@ The <strong>identity</strong> can be defined as empty string, e.g. [] in <strong
     => a \text{ ++ } b \text{ ++ } c  &= a \text{ ++ } (b \text{ ++ } c)  \quad   \text{ Associativity } (1) \\ 
     [] \text{ ++ } [a]       &= [a] \text{ ++ } []           = [a]      \quad   \text{ Identity } (2) \\ 
 \end{align*}
+
 <h3>Example 2: $\gcd(,)$ is a Monoid</h3>
 What is the operator?<br>
 The operation is $\gcd(, )$<br>
@@ -230,6 +245,20 @@ For each map $f \in C$, there is associatived map $F(f) \in D$ <br><br>
 
 Build on top of the definitions of Monoid and Functor above, we can define what is <strong>Monad</strong><br>
 If you understand (+ $\Re$) is a <strong>Group</strong>, then Monad is just a Monoid and the elements are functors. <br><br>
+
+Formal definition of Monad that No one understand:
+Monad is endofunctor equipped two nature transformation $\eta$ and $\mu$
+\begin{align*}
+    \eta : I & \rightarrow T \\
+    \mu : T . T & \rightarrow T \\
+\end{align*}
+translate above definition to Haskell: <br>
+nature transformation is just Polymorphic Function in Haskell <br>
+functor is just Type Constructor, e.g. ([]):: a -> [a], input type a and return new type [a] <br>
+\begin{align*}
+    return :: a &\rightarrow m \, a \\
+    join T . T &\rightarrow T  \\
+\end{align*}
 
 $(+, \Re)$ is => <strong>Group</strong>, the <strong>operation</strong> is $+$, the elements are real numbers <br>
 Monad      is => <strong>Monoid</strong>, the <strong>operation</strong> is Functor composition, the elements are just Functors<br>

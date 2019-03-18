@@ -31,80 +31,14 @@
   ga('send', 'pageview');
 </script>
 <div class="myclass">
-
 <div class="mytitle">
-Java Comparable and Comparator 
+add content here
 </div>
-
 <pre class="mytext">
-Comparable Interface
-If you want to sort some user defined Objects, then you need to implement interface Comparable or Comparator
+My text here
 </pre>
 <pre class="prettyprint">
-    class Student implements Comparable<Student>{
-        public String name;
-        public int compareTo(Student other){
-            // 3 2 1
-            return  - name.compareTo(other.name);
-        }
-        
-        public Student(String name){
-            this.name = name;
-        }
-        public void print(){
-            Print.p("name=" + name);
-        }
-    }
 </pre> 
-
-<pre class="mytext">
-Comparator Interface
-</pre>
-<pre class="prettyprint">
-    class Person{
-        public String name;
-        public Person(String name){
-            this. name = name;
-        }
-        public void print(){
-            Print.p("name=" + name);
-        }
-    }
-
-    class ComPerson implements Comparator<Person>{
-        public int compare(Person s1, Person s2){
-            return s1.name.compareTo(s2.name); 
-        }
-    }
-
-</pre>
-<pre class="prettyprint">
-
-        {
-            List<Student> list = new ArrayList<>();
-            list.add(new Student("David"));
-            list.add(new Student("Michael"));
-            Collections.sort(list);
-
-            for(Student s : list){
-                s.print();
-            }
-        }
-        {
-            List<Person> list = new ArrayList<>();
-            list.add(new Person("David"));
-            list.add(new Person("Michelle"));
-            list.add(new Person("Joyce"));
-            Collections.sort(list, new ComPerson());
-            Print.fl();
-
-            for(Person s : list){
-                s.print();
-            }
-        }
-
-</pre>
-
 </div>
 </body>
 </html>
