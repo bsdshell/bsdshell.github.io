@@ -64,10 +64,10 @@ re4 = "my foolish fool" =~ "foo."::(String, String, String) -- ("my ","fool","is
 </pre> 
 
 <div class="mytext">
-        -- word boundary, search word and replace
         "mydog dog-- dog pig cat dog fox" => "mydog [dog]-- [dog] pig cat [dog] fox"
 </div>
 <pre class="prettyprint tinyfont">
+        -- word boundary, search word and replace
         let s = "mydog dog-- dog pig cat dog fox"
         searchReplace s word "[\\0]"
 </pre>
@@ -82,7 +82,7 @@ re4 = "my foolish fool" =~ "foo."::(String, String, String) -- ("my ","fool","is
 </pre>
 
 <div class="mytext">
-        banana => ba[nana] {na} 
+        "banana" => ba[nana] {na} 
 </div>
 <pre class="prettyprint tinyfont">
         let r3 = mkRegex "(na)+"
@@ -135,11 +135,12 @@ re4 = "my foolish fool" =~ "foo."::(String, String, String) -- ("my ","fool","is
         "PaloAlto:MountainView" => ["PaloAlto","MountainView"]
 </div>
 <pre class="prettyprint tinyfont">
+        -- split Regex
         print $ splitRegex(mkRegex ":") "PaloAlto:MountainView" -- ["PaloAlto","MountainView"]
 </pre>
 
 <div class="mytext">
-        -- capture function in ObjectiveC
+        capture function in ObjectiveC
 </div>
 <pre class="prettyprint tinyfont">
         -- capture function in ObjectiveC
@@ -150,7 +151,7 @@ re4 = "my foolish fool" =~ "foo."::(String, String, String) -- ("my ","fool","is
 </pre>
 
 <div class="mytext">
-        -- capture function in ObjectiveC
+        capture function in ObjectiveC
 </div>
 <pre class="prettyprint tinyfont">
         putStrLn $ subRegex me "- (NSstring*) method:(Integer)num width:(Integer)width\ 
