@@ -32,30 +32,12 @@
 </script>
 <div class="myclass">
 <div class="mytitle">
-Implement an Dictionary in Haskell in 4 lines
+add content here
 </div>
 <pre class="mytext">
-The fastest way to implement an Dictionary in Haskell
+My text here
 </pre>
 <pre class="prettyprint">
--- Similar in Java, Function<T1, Maybe T2> f = a -> Maybe b
--- type is just synosym for b -> Maybe b
-type Dict a b = a -> Maybe b
-
-insertDict::(Eq k) => k -> v -> Dict k v -> Dict k v
-insertDict k v dict = \k' -> k' == k then Just v else dict k'
-
-emptyDict::Dict k v
-emptyDict = \_ -> Nothing
-
--- create empty Dictionary
-let dict = emptyDict
-
--- insert elements to our Dictionary, we can chain them
-insertDict 1 "v1" $ insertDict 2 "v2" dict 
-print 1 dict => "v1"
-print 2 dict => "v2"
-
 </pre> 
 </div>
 </body>
