@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------- 
+bash profiling, bash profiling, shell profiling, shell profile
+
+time bash -c "cat test | wc -l"
+-------------------------------------------------------------------------------- 
 Mon Mar  4 18:40:37 2019 
 add int[] long integer, long integer  
 
@@ -36,7 +40,7 @@ read csv file with Opencsv jar file, opencsv-4.0.jar, csv file, write to csv fil
 Sat Mar  2 21:42:02 2019 
 runhaskell with profile, haskell profile, haskell profiling
 
-let hpro =  ' +RTS -H32m -S -p -RTS ' 
+./Main +RTS -p
 -------------------------------------------------------------------------------- 
 Sat Mar  2 14:11:57 2019 
 Install Tensor Flow in Python,
