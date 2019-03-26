@@ -30,20 +30,40 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
-<div class="colmask rightmenu">
-    <div class="colleft">
-        <div class="col1">
-        <!-- Column 1 start -->
-        <pre class="mycode"> 
-        <span class="bo">Java Synchronize method 1: keyword synchronized</span>
-            <pre class="cc">
+        
+        <div class="mytitle">Java Simple Thread</div>
+        <pre class="prettyprint">
+        public class HelloThread implements Runnable{
+            public int num;
+            public HelloThread(int num){
+                this.num = num;
+            }
+            public void run(){
+                for(int i=0; i<10; i++){
+                    this.num += 1;
+                    System.out.println("num=[" + num + "]");
+                }
+            }
+
+            public static void main(String[] args) {
+                Thread[] array = new Thread[10];
+                for(int i=0; i<10; i++){
+                    array[i] = new Thread(new HelloThread(1)); 
+                    array[i].start();
+                }
+            }
+        }
+        </pre>
+
+        <div class="mytitle">Java Synchronize method 1: keyword synchronized</div>
+            <pre class="prettyprint">
             synchronized void fun(){
                 count++;
                 queue.add(count);
             }
             </pre>
-        <span class="bo">Java Synchronize method 2: lock the current this object</span>
-            <pre class="cc">
+        <div class="mytitle">Java Synchronize method 2: lock the current this object</div>
+            <pre class="prettyprint">
             void fun(){
                 synchronized(this){
                     count++;
@@ -51,8 +71,8 @@
                 }
             }
             </pre>
-        <span class="bo">Java Synchronize method 3: create locked object</span>
-            <pre class="cc">
+        <div class="mytitle">Java Synchronize method 3: create locked object</div>
+            <pre class="prettyprint">
             private Object lock1 = new Object();
             private Object lock2 = new Object();
             private long c1;
@@ -70,7 +90,7 @@
         <span class="bo">Java Create simple thread</span>
         <span class="bo">1: synchronized the method</span>
         <span class="bo">2: implements Runnable interface, and override run()</span>
-            <pre class="cc">
+            <pre class="prettyprint">
             class Account{
                 int sum = 0;
                 Queue<Integer> q;
@@ -100,8 +120,8 @@
                 t.start();
             }
             </pre>
-        <span class="bo">sleep(), wait(), notify() and notifyall() in Java</span>
-            <pre class="cc">
+        <div class="mytitle">sleep(), wait(), notify() and notifyall() in Java</div>
+            <pre class="prettyprint">
             sleep() - is static method, it can be used in the current thread.
                     - a sleeping thread can be awaked by interrupt or time expires 
             wait()  - each object has wait() method, and wait() can be used in synchronized block only.
@@ -110,8 +130,8 @@
             notify()- each object has notify/notify, and it can be used in synchronized block only.
             </pre>
 
-        <span class="bo">Conditional variables, Condition(), await(), signal() in Java</span>
-            <pre class="cc">
+        <div class="mytitle">Conditional variables, Condition(), await(), signal() in Java</div>
+            <pre class="prettyprint">
             await() - 1. notFull.await(), release the lock associated with notFull, 
                       2. disable the current thread. 
 
@@ -147,93 +167,6 @@
             </pre>
             <span class="bo">CountDownLatch() in Java</span>
         
-
-        <!-- Column 1 end -->
-        </div>
-        <div class="col2">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         </div>
     </div>

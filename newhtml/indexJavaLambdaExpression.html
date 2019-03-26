@@ -32,155 +32,98 @@
       ga('send', 'pageview');
     </script>
 
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-            <!-- Column 1 start -->
+            <div class="mytitle">
+            Convert IntStream to List< Integer > in Java 
+            </div>
+            <pre class="prettyprint">
+    List< Integer > list = IntStream.range(0, 10).boxed().collect(Collectors.toList());
+            </pre>
 
             <div class="mytitle">
-            Java 8 Lambda Expression, List, HashMap, sum, filter, stream
+            map in Java 
             </div>
-            <div class="mytext">
-            Lambda Expression in Java 8<br>
+            <pre class="prettyprint">
+    List<Integer> list = Arrays.asList(1, 4, 5);
+    List<Integer> ls = IntStream.range(0, list.size()).mapToObj(i -> 2*list.get(i)).collect(Collectors.toList());
+
+    List<Integer> list = Arrays.asList(1, 4, 5);
+    List<Integer> ls = list.stream().map(i -> 2*i).collect(Collectors.toList());
+
+    // Though it is not as elegant as Haskell
+    // map (*2) [1, 4, 5]
+            </pre>
+
+            <div class="mytitle">
+            reduce in Java 
             </div>
-            <div class="highlight"><pre><span class="c1">// list sum</span>
+            <pre class="prettyprint">
+    List<Integer> list = Arrays.toList(1, 2, 3);
+    Optional<Integer> sum = list.stream().reduce((x, y) -> x + y);
+    sum.ifPresent(System.out::println);
+    
+    Integer sum = list.stream().reduce(0, (x, y) -> x + y);
 
-        <span class="n">Optional</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">reduce</span><span class="o">(</span><span class="n">Double</span><span class="o">::</span><span class="n">sum</span><span class="o">);</span>
-        <span class="n">sum</span><span class="o">.</span><span class="na">ifPresent</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+            </pre>
 
-        <span class="n">Integer</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">};</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">listInt</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">array</span><span class="o">);</span>
-
-        <span class="c1">// list filter</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">leftList</span> <span class="o">=</span> <span class="n">listInt</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">filter</span><span class="o">(</span><span class="n">x</span><span class="o">-&gt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="o">).</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">rightList</span> <span class="o">=</span> <span class="n">listInt</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">filter</span><span class="o">(</span><span class="n">x</span><span class="o">-&gt;</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="o">).</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
-
-        <span class="n">Aron</span><span class="o">.</span><span class="na">printList</span><span class="o">(</span><span class="n">leftList</span><span class="o">);</span>
-        <span class="n">Aron</span><span class="o">.</span><span class="na">printList</span><span class="o">(</span><span class="n">rightList</span><span class="o">);</span>
-
-        <span class="c1">// list forEach</span>
-        <span class="n">leftList</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
-        <span class="n">leftList</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">x</span><span class="o">-&gt;</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">x</span><span class="o">));</span>
-
-        <span class="c1">// HashMap filter</span>
-        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;();</span>
-        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">4</span><span class="o">);</span>
-        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
-        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="mi">7</span><span class="o">);</span>
-
-        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">newMap1</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">entrySet</span><span class="o">().</span><span class="na">parallelStream</span><span class="o">()</span>
-                                                    <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">.</span><span class="na">getValue</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">)</span>
-                                                    <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toMap</span><span class="o">(</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">.</span><span class="na">getKey</span><span class="o">(),</span> <span class="n">e</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">.</span><span class="na">getValue</span><span class="o">()));</span>
-
-        <span class="n">Aron</span><span class="o">.</span><span class="na">printMap</span><span class="o">(</span><span class="n">newMap1</span><span class="o">);</span>
-
-        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">newMap2</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">entrySet</span><span class="o">().</span><span class="na">stream</span><span class="o">()</span>
-                                                     <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">.</span><span class="na">getValue</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">)</span>
-                                                     <span class="o">.</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toMap</span><span class="o">(</span><span class="n">e</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">.</span><span class="na">getKey</span><span class="o">(),</span> <span class="n">e</span><span class="o">-&gt;</span><span class="n">e</span><span class="o">.</span><span class="na">getValue</span><span class="o">()));</span>
-        <span class="n">Aron</span><span class="o">.</span><span class="na">printMap</span><span class="o">(</span><span class="n">newMap2</span><span class="o">);</span>
-
-        <span class="c1">// list of String to list of Integer</span>
-        <span class="n">String</span><span class="o">[]</span> <span class="n">arrStr</span> <span class="o">=</span> <span class="o">{</span><span class="s">&quot;0&quot;</span><span class="o">,</span> <span class="s">&quot;1&quot;</span><span class="o">,</span> <span class="s">&quot;2&quot;</span><span class="o">,</span> <span class="s">&quot;3&quot;</span><span class="o">};</span> 
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list1</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">arrStr</span><span class="o">);</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">strIntList</span> <span class="o">=</span> <span class="n">list1</span><span class="o">.</span><span class="na">stream</span><span class="o">().</span><span class="na">map</span><span class="o">(</span><span class="n">Integer</span><span class="o">::</span><span class="n">parseInt</span><span class="o">).</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
-        <span class="n">Aron</span><span class="o">.</span><span class="na">printList</span><span class="o">(</span><span class="n">strIntList</span><span class="o">);</span>
-</pre></div>
- 
-            <div class="cen">
-            <img src="../image/cppstd.png" width="40%" height="40%" /><br>
-            <a href="https://github.com/bsdshell/java/tree/master/lambdaExample/src/Main.java">Source Code</a>
+            <div class="mytitle">
+            filter in Java
             </div>
+    <pre class="prettyprint">
+    List<String> ls = Arrays.asList("file.htmlkk", "file.html", "kk.html_33", ".html", "html");
+    List<String> fls = ls.stream().filter( s -> FileType.isHtml(s) ).collect(Collectors.toList());
 
-            <!-- Column 1 end -->
+    List<Integer> ls3 = Arrays.asList(1, 2, 3, 4);
+    Set<Integer> set = ls3.stream().filter(i -> i >= 2).collect(Collectors.toSet());
+    p(set);
+    </pre>
+
+
+
+
+            <div class="mytitle">
+            More are coming
             </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
+    <pre class="prettyprint">
+    Optional<Double> sum = list.stream().reduce(Double::sum);
+    sum.ifPresent(System.out::println);
+
+    Integer[] array = {1, 2, 3, 4};
+    List<Integer> listInt = Arrays.asList(array);
+
+    // list filter
+    List< Integer> leftList = listInt.stream().filter(x-> x < 3).collect(Collectors.toList());
+    List< Integer> rightList = listInt.stream().filter(x-> x > 3).collect(Collectors.toList());
+
+    Aron.printList(leftList);
+    Aron.printList(rightList);
+
+    // list forEach
+    leftList.forEach(System.out::println);
+    leftList.forEach(x->System.out.println(x));
+
+    // HashMap filter
+    Map< Integer, Integer> map = new HashMap< Integer, Integer>();
+    map.put(1, 4);
+    map.put(2, 5);
+    map.put(3, 7);
+
+    Map< Integer, Integer> newMap1 = map.entrySet().parallelStream()
+                                                .filter(e->e.getValue() > 1)
+                                                .collect(Collectors.toMap(e->e.getKey(), e->e.getValue()));
+
+    Aron.printMap(newMap1);
+
+    Map< Integer, Integer> newMap2 = map.entrySet().stream()
+                                                 .filter(e->e.getValue() > 1)
+                                                 .collect(Collectors.toMap(e->e.getKey(), e->e.getValue()));
+    Aron.printMap(newMap2);
+
+    // list of String to list of Integer
+    String[] arrStr = {"0", "1", "2", "3"}; 
+    List< String> list1 = Arrays.asList(arrStr);
+    List< Integer> strIntList = list1.stream().map(Integer::parseInt).collect(Collectors.toList());
+    Aron.printList(strIntList);
+    </pre>
 
 
     </body>
