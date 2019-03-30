@@ -290,17 +290,17 @@
 </span><a name="line-290"></a><span>
 </span><a name="line-291"></a><span class="hs-comment">{-| 
     === Search replace word, the code is based on 'matchAllText' in package: Text.Regex.TDFA as TD
-    === Text.Regex =&gt; subRegex does not support word boundary
+
+    &gt;let s = &quot;mydog dog-- dog pig cat dog fox&quot;
+    &gt;searchReplace s &quot;dog&quot; &quot;[\\0]&quot;
+    &gt;&quot;mydog [dog]-- [dog] pig cat [dog] fox&quot;
+
+    Text.Regex =&gt; subRegex does not support word boundary
 
     &gt;r  = makeRegex (&quot;\\&lt;&quot; ++ word ++ &quot;\\&gt;&quot;)::TD.Regex -- word boundary
 
     Regex is from TDFA, NOT Text.Regex
-
     &gt;word =&gt; &quot;[[:alpha:]]+&quot;
-
-    &gt;let s = &quot;mydog dog-- dog pig cat dog fox&quot;
-    &gt;searchReplace s word &quot;[\\0]&quot;
-    &gt;&quot;mydog [dog]-- [dog] pig cat [dog] fox&quot;
 
     NOTE: support ONE word only, e.g. searchReplace s &quot;dog&quot;  &quot;[\\0]&quot;
 
@@ -319,7 +319,7 @@
 </span><a name="line-319"></a><span>
 </span><a name="line-320"></a><span>                </span><span class="hs-comment">-- input Str -&gt; word to be replaced -&gt; return</span><span>
 </span><a name="line-321"></a><span>                </span><span class="hs-identifier">searchSplit</span><span class="hs-glyph">::</span><span class="hs-identifier hs-type">String</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-identifier hs-type">String</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="hs-identifier hs-type">String</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-type">String</span><span class="hs-special">,</span><span> </span><span class="hs-identifier hs-type">String</span><span class="hs-special">)</span><span class="hs-special">]</span><span>
-</span><a name="line-322"></a><span>                </span><a name="local-6989586621679042531"><a href="#local-6989586621679042531"><span class="hs-identifier">searchSplit</span></a></a><span> </span><a name="local-6989586621679042544"><a href="#local-6989586621679042544"><span class="hs-identifier">s</span></a></a><span> </span><a name="local-6989586621679042545"><a href="#local-6989586621679042545"><span class="hs-identifier">word</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">map</span><span class="hs-special">(</span><span class="hs-glyph">\</span><a name="local-6989586621679044270"><a href="#local-6989586621679044270"><span class="hs-identifier">x</span></a></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">let</span><span> </span><a name="local-6989586621679044271"><a href="#local-6989586621679044271"><span class="hs-identifier">t1</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">fst</span><span> </span><a href="#local-6989586621679044270"><span class="hs-identifier hs-var">x</span></a><span class="hs-special">;</span><span> </span><span class="hs-comment">-- </span><span>
+</span><a name="line-322"></a><span>                </span><a name="local-6989586621679042531"><a href="#local-6989586621679042531"><span class="hs-identifier">searchSplit</span></a></a><span> </span><a name="local-6989586621679042544"><a href="#local-6989586621679042544"><span class="hs-identifier">s</span></a></a><span> </span><a name="local-6989586621679042545"><a href="#local-6989586621679042545"><span class="hs-identifier">word</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">map</span><span class="hs-special">(</span><span class="hs-glyph">\</span><a name="local-6989586621679044270"><a href="#local-6989586621679044270"><span class="hs-identifier">x</span></a></a><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">let</span><span> </span><a name="local-6989586621679044271"><a href="#local-6989586621679044271"><span class="hs-identifier">t1</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">fst</span><span> </span><a href="#local-6989586621679044270"><span class="hs-identifier hs-var">x</span></a><span class="hs-special">;</span><span>
 </span><a name="line-323"></a><span>                                                   </span><a name="local-6989586621679044272"><a href="#local-6989586621679044272"><span class="hs-identifier">t2</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">snd</span><span> </span><a href="#local-6989586621679044270"><span class="hs-identifier hs-var">x</span></a><span class="hs-special">;</span><span>
 </span><a name="line-324"></a><span>                                                   </span><a name="local-6989586621679044273"><a href="#local-6989586621679044273"><span class="hs-identifier">c</span></a></a><span>  </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">fst</span><span> </span><a href="#local-6989586621679044271"><span class="hs-identifier hs-var">t1</span></a><span class="hs-special">)</span><span> </span><span class="hs-operator hs-var">+</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">snd</span><span> </span><a href="#local-6989586621679044271"><span class="hs-identifier hs-var">t1</span></a><span class="hs-special">)</span><span> </span><span class="hs-comment">-- 0</span><span>
 </span><a name="line-325"></a><span>                                                   </span><a name="local-6989586621679044274"><a href="#local-6989586621679044274"><span class="hs-identifier">fs</span></a></a><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-identifier hs-var">fst</span><span> </span><span class="hs-special">(</span><span class="hs-identifier hs-var">snd</span><span> </span><a href="#local-6989586621679044270"><span class="hs-identifier hs-var">x</span></a><span class="hs-special">)</span><span> </span><span class="hs-comment">-- 6 </span><span>

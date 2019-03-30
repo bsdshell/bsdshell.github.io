@@ -32,6 +32,9 @@
       ga('send', 'pageview');
     </script>
 
+            <div class="cen">
+            <img src="../image/continuous_sum_proof.jpg" width="80%" height="80%" /><br>
+            </div> 
             <div class="mytitle">
             Maximum Continuous without start and end indexes 
             </div>
@@ -110,15 +113,19 @@
             2. All the elements maybe be negative<br> 
             </div>
             <pre class="prettyprint">
-            public static int maxConsecutiveNegative(int[] arr) {
-                    int max_so_far = arr[0], currMax = arr[0];
-                    if(arr != null) {
-                        for(int i=1; i< arr.length; i++) {
-                            max_so_far = Math.max(arr[i], currMax + arr[i]);
-                            currMax = Math.max(currMax, max_so_far);
-                        }
+            // Test file: /Users/cat/myfile/bitbucket/javalib/Aron.java
+            public static int negativeContinuousSum(int[] arr){
+                if(arr != null && arr.length > 0){
+                    int len = arr.length;
+                    int currmax = arr[0]; 
+                    int maxsofar = arr[0];
+                    for(int i=1; i< len; i++){
+                        maxsofar = Math.max(arr[i], maxsofar + arr[i]);
+                        currmax = Math.max(currmax, maxsofar);
                     }
-                    return currMax;
+                    return currmax;
+                }
+                throw new IllegalArgumentException("Argument is not valid.");
             }
             </pre>
             

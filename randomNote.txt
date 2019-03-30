@@ -1,4 +1,44 @@
 -------------------------------------------------------------------------------- 
+Fri Mar 29 12:13:56 2019 
+Some thought about J programming language.
+
+I hear J program language when I was in University. But I never try it and dig into it.
+Until recently, I want to try something new and play around with J. 
+If you are from C/C++/Java background, ofcouse you will ask WTF...
+But after you play and google around a bit, you will find it is interesting language.
+
+I compare J and Haskell and we can see the difference/same between them
+J is an Array oriented language, I did not know what does it mean actually, plz Google it. 
+J is also a Functional language, you can compose function with function composition operator @:
+In J, function composition operator is called conjunction, it seems to me the Author liked 
+to use English grammar term. 
+
+People like to use BIG words that no one can understand what does it mean, but the meaning is very simple.
+In J, all verbs in J takes one or two arguments on the left and the right. Single argument is called monads.
+Monads in J has nothing to do with Monad in Haskell.
+two argument is call dyads. Those big words that no one understand, it makes J is harder to learn
+
+    list=: i.5 NB. create list = 0 1 2 3 4 5
+    -- Haskell equivalent
+    list = [0..5]
+
+    list=: i:5 NB. create list = -5 -4 -3 -2 -1 0 1 2 3 4 5 
+    -- Haskell equivalent
+    list = [-5..5]
+
+    l =: i. 3 4  NB. 3x4 matrix from 0 to 3*4-1
+    -- Haskell equivalent
+    l = chunksOf 3 [0.. (3*4)-1]
+
+    find the sum of maximum rows in a matrix
+    m =: i. 3 3
+    +/ (>./"1 m) NB => 15
+    -- Haskell equivalent
+    let m = chunksOf 3 [0..(3*3-1)]
+    sum $ map(\r -> foldr max 0 r)  -- => 15
+
+
+-------------------------------------------------------------------------------- 
 bash profiling, bash profiling, shell profiling, shell profile
 
 time bash -c "cat test | wc -l"
