@@ -64,7 +64,28 @@
         }
         return ret;
     }
-    
+    </pre>
+
+    <div class="mytitle">
+    PriorityQueue Uses Lambda in Java 
+    </div>
+    <pre class="prettyprint">
+    class Person{
+        Integer age;
+        public Person(Integer age){
+            this.age = age;
+        }
+    }
+
+    PiorityQueue<Person> Queue = new PiorityQueue<>((a, b) -> a.age - b.age); 
+    queue.add(new Person(1));
+    queue.add(new Person(2));
+    queue.add(new Person(0));
+    while(0 < queue.size()){
+        Person pe = queue.remove();
+        p(pe.age); 
+    }
+
     </pre>
 
     <div class="cen">
