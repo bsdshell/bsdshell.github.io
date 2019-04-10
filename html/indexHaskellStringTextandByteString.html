@@ -37,6 +37,7 @@ Haskell String Text and ByteString
 </div>
 <pre class="mytext">
 Why Haskell have String Text and ByteString, what the hell is going on here?
+There are 16 functions that convert among of them
 
 String: What is that?
 Why String is bad for you?
@@ -46,18 +47,64 @@ String is list of chars
 when String is modified, Haskell allocates memory for it.
 Also, since String is linked list, its memory locality is not good.
 
+There are three type of string in Haskell:
+String is slow one
+Text is better performance
+ByteString is for binary data
+
+If you try to send serialize JSON, most likely you will use Aeson to encode and decode JSON, then you need to convert String to ByteString
+and ByteString to String, and there are Strict and Lazy. You need conver
+between Strict and Lazy. It is pain of the ass
+
+Here are the functions that you need to use do conversion.
+<pre class="prettyprint">
+    import Data.ByteString.Lazy as BL
+    import Data.ByteString as BS
+    import Data.Text as TS
+    import Data.Text.Lazy as TL
+    import Data.ByteString.Lazy.UTF8 as BLU
+    import Data.ByteString.UTF8 as BSU
+    import Data.Text.Encoding as TSE
+    import Data.Text.Lazy.Encoding as TLE
+    -- String <-> ByteString
+    BLU.toString   :: BL.ByteString -> String
+    BLU.fromString :: String -> BL.ByteString
+    BSU.toString   :: BS.ByteString -> String
+    BSU.fromString :: String -> BS.ByteString
+    -- String <-> Text
+    TL.unpack :: TL.Text -> String
+    TL.pack   :: String -> TL.Text
+    TS.unpack :: TS.Text -> String
+    TS.pack   :: String -> TS.Text
+    -- ByteString <-> Text
+    TLE.encodeUtf8 :: TL.Text -> BL.ByteString
+    TLE.decodeUtf8 :: BL.ByteString -> TL.Text
+    TSE.encodeUtf8 :: TS.Text -> BS.ByteString
+    TSE.decodeUtf8 :: BS.ByteString -> TS.Text
+    -- Lazy <-> Strict
+    BL.fromStrict :: BS.ByteString -> BL.ByteString
+    BL.toStrict   :: BL.ByteString -> BS.ByteString
+    TL.fromStrict :: TS.Text -> TL.Text
+    TL.toStrict   :: TL.Text -> TS.Text
+</pre>
+
 Text: What is Text?
-Why Text is bad or good for you?
+Why Text is bad or good for you?, it is slow for large String processing.
 Text is array-based string representation.
 Text is use something called fusion. 
+When you convert Text and String, you will use pack and unpack, and there are Strict and Lazy of Text too.
+So Lazy Text and Strict Text are different.
+
 
 ByteString: What is ByteString?
 Why ByteString is bad or good for you?
+It is for binary data.
 
 How do we convert them in each other?
 pack
 unpack
 toString
+toStrict
 ...
 
 </pre>
