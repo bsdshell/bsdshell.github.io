@@ -32,12 +32,62 @@
 </script>
 <div class="myclass">
 <div class="mytitle">
-add content here
+Add long Integers
 </div>
 <pre class="mytext">
-My text here
 </pre>
+
+
+<div class="cen">
+<img src="../image/addinteger.JPG" width="40%" height="40%" /><br>
+<img src="../image/addlonginteger.jpg" width="80%" height="80%" /><br>
+</div> 
+
+
 <pre class="prettyprint">
+    public static int[] addInteger(int[] a, int[] b){
+       if(a != null && a != null){
+           int lena = a.length;
+           int lenb = b.length; 
+           int maxlen = Math.max(lena, lenb);
+           int[] aa = new int[maxlen + 1];
+           int[] bb = new int[maxlen + 1];
+           int[] c  = new int[maxlen + 1];
+
+           int ai = 0;
+           int bi = 0;
+           for(int i=0; i< maxlen + 1; i++){
+               if(i < (maxlen + 1 - lena))
+                  aa[i] = 0;     
+               else{
+                  aa[i] = a[ai];
+                  ai++;
+               }
+                
+               if(i < (maxlen + 1 - lenb))
+                  bb[i] = 0;
+               else{
+                  bb[i] = b[bi];
+                  bi++;
+               }
+           }
+           
+           /**
+            09
+            09
+            18
+           */
+           int carry = 0;
+           for(int i=maxlen; i >= 0; i--){
+               int s = carry + aa[i] + bb[i]; 
+               c[i] = s % 10;
+               carry = s/10;
+           }
+           return c;
+       }
+       throw new IllegalArgumentException("Arguments can not be null.");
+    }
+
 </pre> 
 </div>
 </body>
