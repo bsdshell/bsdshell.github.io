@@ -35,23 +35,37 @@
   ga('send', 'pageview');
 </script>
             <div class="mytitle">
-            Haskell Array 
-            </div>
-            <div class="mytext">
-                import Data.Array
-                import Data.Text.TDFA
+            The difference among of data, type and newtype 
             </div>
             <pre class="prettyprint">
-                let ar = array(0, 10) [(i, i*i) | i <- [0..10]]
-            ar ! 1 => 1
+            data MyClass = Type1 | Type2 String | Type3 Int
+
+            class MyClass{
+                public Type1(){}
+                public Type2(String s){}
+                public Type3(Integer s){}
+            }
+
+            type Str = String
+
+            typedef Str String; // typedef in C
+
+
+            There is not type alias unfortunately
+
+            newtype NewType a = NewType{name::String -> a}
             </pre>
 
             <div class="mytitle">
-            Hello World in Haskell 
+            Haskell Array 
             </div>
 
             <pre class="prettyprint">
-            main = print "Hello World"
+            import Data.Array
+            import Data.Text.TDFA
+
+            let ar = array(0, 10) [(i, i*i) | i <- [0..10]]
+            ar ! 1 => 1
             </pre>
 
             <div class="mytitle">
@@ -247,59 +261,60 @@
             <div class="cen">
             <img src="../image/monadpic3.png" width="40%" height="40%" /><br>
             </div> 
+            <pre class="prettyprint">
+    <span class="bo">Definition of const</span> 
+    const::a -> b -> a  [keep the first argument and throw away the second argument]
+    It does't look that good from outside but some inside and be surprised [surprisedly]
 
-            <span class="bo">Definition of const</span> 
-            const::a -> b -> a  [keep the first argument and throw away the second argument]
-            It does't look that good from outside but some inside and be surprised [surprisedly]
+    const 3 4 -- output 3
 
-            const 3 4 -- output 3
+    >> <span class="bo">can be defined in term of</span> >>=
+    x >> y == x >>= const y 
+    or
+    x >> y == x >>= \_ -> y
 
-            >> <span class="bo">can be defined in term of</span> >>=
-            x >> y == x >>= const y 
-            or
-            x >> y == x >>= \_ -> y
+    How to turn a value to an IO action which do nothing
+    return:: a -> IO a
 
-            How to turn a value to an IO action which do nothing
-            return:: a -> IO a
+    <span class="bo">Use IO in function</span>
+    myReadFile::FilePath->IO String
+    myReadFile f = readFile f >>=\contents -> return(contents)
 
-            <span class="bo">Use IO in function</span>
-            myReadFile::FilePath->IO String
-            myReadFile f = readFile f >>=\contents -> return(contents)
+    <span class="bo">How to use myReadFile ?</span>
+    contents <- myReadFile "file.txt" 
+    print contents
 
-            <span class="bo">How to use myReadFile ?</span>
-            contents <- myReadFile "file.txt" 
-            print contents
+    <span class="bo">IO are first class</span>
+    create control structure with IO
+    
+    repeat'::Int->IO () -> IO ()
+    repeat' n a = a >> repeat'(n-1) a
 
-            <span class="bo">IO are first class</span>
-            create control structure with IO
-            
-            repeat'::Int->IO () -> IO ()
-            repeat' n a = a >> repeat'(n-1) a
+    repeat' 3 putStr('x')   -- output xxx
 
-            repeat' 3 putStr('x')   -- output xxx
+    <span class="bo">create for loop</span>
+    for::[a]->(a -> IO()) -> IO ()
+    for [] f = return ()
+    for (x:xs) f = f x >> for xs f
 
-            <span class="bo">create for loop</span>
-            for::[a]->(a -> IO()) -> IO ()
-            for [] f = return ()
-            for (x:xs) f = f x >> for xs f
+    for [1..10] (\x -> putStrLn x)
+    
+    for [1..10] (\x -> do
+                putStrLn x
+                putStrLn x
+                )
+    
 
-            for [1..10] (\x -> putStrLn x)
-            
-            for [1..10] (\x -> do
-                        putStrLn x
-                        putStrLn x
-                        )
-            
+    <span class="bo">Similarly </span>
+    forM::(Traversable t, Monad m)=> t a -> (a -> m b) -> t(m b)
 
-            <span class="bo">Similarly </span>
-            forM::(Traversable t, Monad m)=> t a -> (a -> m b) -> t(m b)
+    let s = ["dog", "cat"]
+    forM s $ \x -> print x
+    dog 
+    cat
+    [(), ()]
 
-            let s = ["dog", "cat"]
-            forM s $ \x -> print x
-            dog 
-            cat
-            [(), ()]
-
+        </pre>
             <pre class="prettyprint">
             -- get two Chars
             getTwoChars::IO (Char, Char) 

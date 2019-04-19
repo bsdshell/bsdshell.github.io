@@ -1,26 +1,20 @@
 -------------------------------------------------------------------------------- 
+Wed Apr 17 130052 2019 
+Java connects to mysql mysql database java database java mysql
+
+See File UserscatmyfilebitbucketjavaSqlExamplesrcMainjava
+
+Java connect to mysql it is always painful processing 
+1 The old Java Connector Driver is not working any more 
+so I need to download NEW Java Connection Driver mysql-connector-java-8015jar the old mysql connector is not longer working in the current MySql 8012  Check version mysql -u root
+2 The new Java Connector needs SSL by default so you need to explicitly specify "useSSL=false"
+3 The new Java Connector needs timezone for the connector string eg  "Timezone=UTC"
+
+Finally SqlExample can make a conneciton to my local SqlServer on My MacOS 10134
+-------------------------------------------------------------------------------- 
 Fri Apr 12 23:22:46 2019 
 vim check complete path
 :echo &complete
--------------------------------------------------------------------------------- 
-Wed Apr 10 14:31:04 2019 
-
-Reddis is memcache key-value datastore
-Reddis run as server and you can make the connection.
-do operations such as:
-    set key value
-    get key
-
-In Haskell, how easy to use Reddis?
-1. It is easy to make the connection:)
-2. It is easy to set single key-value in the datastore
-3. It Reddis API is hard to understand if you dont read any examples.
-4. You need to use module Aeson to serialize/deserialize JSON
-5. It is painful to convert Stirng to ByteString, Text, Strict and Lazy:O
-    There are 16 functions that you need to use:O
-
-In Java, I did not try the API yet, but I think it would be easier to use than Haskell.
-You can use Reddis on Spring with following Bean instance
 -------------------------------------------------------------------------------- 
 Thu Apr  4 12:45:40 2019 
 Haskell ByteString and String, String OverloadedStrings
@@ -87,115 +81,6 @@ Ready to use: Now the bean is ready to use by the application
 
 Destroy: If the bean implements DisposableBean, it will call the destroy() method
 -------------------------------------------------------------------------------- 
-Tue Apr  2 18:09:27 2019 
-Install Redis on MacOS
-
-brew install redis
-redis-server /usr/local/etc/redis.conf
-redis-cli ping
-
-If it replies “PONG”, then it’s good to go!
--------------------------------------------------------------------------------- 
-Fri Mar 29 12:13:56 2019 
-Some thought about J programming language. j language, jlang
-
-I hear J program language when I was in University. But I never try it and dig into it.
-Until recently, I want to try something new and play around with J. 
-If you are from C/C++/Java background, ofcouse you will ask WTF...
-But after you play and google around a bit, you will find it is interesting language.
-
-I compare J and Haskell and we can see the difference/same between them
-J is an Array oriented language, I did not know what does it mean actually, plz Google it. 
-J is also a Functional language, you can compose function with function composition operator @:
-In J, function composition operator is called conjunction, it seems to me the Author liked 
-to use English grammar term. 
-
-People like to use BIG words that no one can understand what does it mean, but the meaning is very simple.
-In J, all verbs in J takes one or two arguments on the left and the right. Single argument is called monads.
-Monads in J has nothing to do with Monad in Haskell.
-two argument is call dyads. Those big words that no one understand, it makes J is harder to learn
-
-    start j or jterm if you like Qt editor
-    J has its package manager and you can install package in one click
-    
-    c =. 3 4 NB. c is local variable
-    c =: 3 4 NB. c is global variable
-    
-    !3 NB. factorial
-
-    {. list NB. => Haskell, head list
-    }. list NB. => Haskell, drop 1 list
-    
-    list=: i.5 NB. create list = 0 1 2 3 4 5
-     Haskell equivalent
-    list = [0..5]
-    
-    list=: i:5 NB. create list = -5 -4 -3 -2 -1 0 1 2 3 4 5 
-     Haskell equivalent
-    list = [-5..5]
-    
-    l =: i. 3 4  NB. 3x4 matrix from 0 to 3*4-1
-     Haskell equivalent
-    l = chunksOf 3 [0.. (3*4)-1]
-
-    m =. i. 3 4 
-    ,m          NB. flat the matrix m
-    join m      NB. Haskell
-
-    +/+/m       NB. sum the matrix
-    sum $ foldr(+) 0 m    NB. Haskell
-    
-    find the sum of maximum rows in a matrix
-    m =: i. 3 3
-    +/ (>./"1 m) NB => 15
-     Haskell equivalent
-    let m = chunksOf 3 [0..(3*3-1)]
-    sum $ map(\r -> foldr max 0 r)   => 15
-    
-    add two lists
-    c =. 1 2 3
-    d =. 3 4 5
-    c + d 
-    4 6 8
-     Haskell equivalent
-    zipWith(\c' d' -> c' + d') c d
-    
-    mean =. +/ % # NB. The mean of a list numbers
-    mean 1 2 3 4   NB. => 2.4
-    let ls = [1, 2, 3, 4] in sum ls / len ls  NB. In Haskell 
-    
-    p. 1 0 1 NB. polynomial p = 1x^0 + 0x^1 + x^2 = 0 => roots: 0j1, 0j_1
-    NB. Haskell does't has build-in function to solve polynomial.
-    
-    ? 3 3 $ 10 NB. generate 3x3 random matrix from [0, 10) 
-     In Haskell
-    rl 0 = return []; rl n = do r <- randomRIO(0, 10); rs <- rl(n-1); return (r:rs)
-    rm <- mapM(rl) replicate 3 3 
-    
-    (}. list) - (}: list)   NB. Subtraction of adjacent items of list
-    zipWith(\x y -> x - y) (tail list) (init list)  Haskell
-    
-    s1 =. i. 3 NB. concat two lists
-    s2 =. i. 2
-    s1,s2
-    
-    0 1         0 1 NB. concate 2d list
-    0 3 ,8 9 => 0 3
-                8 9
-    [1] ++ [2] BN. Haskell
-    
-    NB. command list
-    jconsole -js a=.24 b=.34 "echo a*b" "exit''"
-    j -js a=.24 b=.34 "echo a*b" "exit''"
-
-    readFile =. 1!:1
-    writeFile =. 1!:2
-    fn =. < '/tmp/ff.x'
-    '1 2 3' writeFile fn
-
-    %. m  NB. inverse matrix, no Haskell equivalence
-
---------------------------------------------------------------------------------
     list what scripts are loaded.
     >4!:3''
     C:\Users\Eric\j807\bin\profile.ijs
@@ -319,25 +204,6 @@ c[0] = c;
 
 it is trick problem actually, 
 /Users/cat/myfile/bitbucket/java/AddLongIntegerNum.java
--------------------------------------------------------------------------------- 
-Mon Mar  4 18:38:09 2019 
-read csv file with Opencsv jar file, opencsv-4.0.jar, csv file, write to csv file,
-
-/Users/cat/myfile/bitbucket/java/OpenCSVExample/src/Main.java
--------------------------------------------------------------------------------- 
-Sat Mar  2 21:42:02 2019 
-runhaskell with profile, haskell profile, haskell profiling
-
-./Main +RTS -p
--------------------------------------------------------------------------------- 
-Sat Mar  2 14:11:57 2019 
-Install Tensor Flow in Python,
-
-Yep, it is pain of ass
-1. I have old version of Python 2.7.0
-2. Yep, you need to install Python 3.0, /usr/local/bin/python3
-3. You need to set environment variables to point to Python lib
-4. You need to install other lib such as 
 -------------------------------------------------------------------------------- 
 Thu Feb 28 13:12:36 2019 
 merge list, merge sorted list, merge array, merge stuff

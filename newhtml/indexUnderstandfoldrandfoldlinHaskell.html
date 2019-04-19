@@ -35,6 +35,27 @@
 <div class="mytitle">
 Understand <span id="red">foldr</span> and <span id="red">foldl</span> with examples in Haskell
 </div>
+
+<pre class="prettyprint">
+dropWhileEnd::(a -> Bool) -> [a] -> [a]
+dropWhileEnd f = foldr(\x sx -> f x && null sx then [] else x:sx) []
+</pre>
+<div class="cen">
+<img src="../image/thepoweroffold.jpg" width="80%" height="80%" /><br>
+</div> 
+
+<div class="mytext">
+Remove whitespace at the beginning of string
+</div>
+<pre class="prettyprint">
+dropW::(a -> Bool) -> [a] -> [a]
+dropW f cx = reverse $ foldl(\xs x -> if (null xs && f x) then [] else x:xs) [] cx
+</pre>
+
+<div class="cen">
+<img src="../image/leftfold.jpg" width="80%" height="80%" /><br>
+</div> 
+
 <pre class="prettyprint">
 1. foldr(-) 4 [1, 2, 3]
 
