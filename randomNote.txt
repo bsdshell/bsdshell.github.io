@@ -1,4 +1,46 @@
 -------------------------------------------------------------------------------- 
+http://hackage.haskell.org/package/extra-1.6.14/docs/src/Data.List.Extra.html#groupOn
+
+-- | A version of 'group' where the equality is done on some extracted value.
+groupOn :: Eq b => (a -> b) -> [a] -> [[a]]
+groupOn f = groupBy ((==) `on2` f)
+    -- redefine on so we avoid duplicate computation for most values.
+    where (.*.) `on2` f = \x -> let fx = f x in \y -> fx .*. f y
+
+
+It is always fascinate how haskell code are so concise and elegant but it is "hard" to grab/understand the idea. 
+
+I try to understand the groupOn function, 
+
+I hope someone can explain to me what is going on above code.
+
+Here is my own understanding:
+
+on the where cause:
+  it seems to me the author tried to define Three functions:
+  1. (.*.), prefix operator
+  2. `on2`,  infix notation
+  3. f    , just ordinary function 
+
+groupBy just groups all the consective items in a list 
+e.g.
+groupBy(\x y -> x == y) ["a", "a", "b", "c", "c"] => [["a", "a"], ["b"], ["c", "c"]]
+
+I assume groupOn try to change groupBy as following:
+
+    groupBy(\x y -> x == y) list
+    groupBy(\x y -> f x == f y) list where f = \x -> f x
+    groupBy(\x y -> (==) (f x) (f y)) list
+    groupOn f = groupBy((==) `on2` f) 
+        where (.*.) `on2` f = let fx = \x -> f x in \y -> fx .*. f y -- f x == f y
+    
+    (==) replaces (.*.) in groupOn
+
+My Question is: 
+What `on2` here?
+
+-------------------------------------------------------------------------------- 
+
 Wed Apr 17 130052 2019 
 Java connects to mysql mysql database java database java mysql
 

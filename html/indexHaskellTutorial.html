@@ -48,10 +48,18 @@
 
             type Str = String
 
-            typedef Str String; // typedef in C
+            // typedef in C
+            typedef Str String; 
 
+            // typedef in C
+            typedef struct Persons{
+                char[] name;
+                int age;
+            } Person;
 
-            There is not type alias unfortunately
+            Person p;
+
+            There is not type alias in Java unfortunately
 
             newtype NewType a = NewType{name::String -> a}
             </pre>
