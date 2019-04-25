@@ -30,30 +30,81 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
-
 <div class="myclass">
 
 <div class="mytitle">
-Java Spring Framework and Hibernate, Database driver and ORM
+Connect to MySql Server from command line
 </div>
+<pre class="prettyprint">
+-- login with user
+mysql -u user 
 
-<div class="mytext">
-Hibernate is framework to map Java class/Object to database table
-ORM - Object Rational Mapping
-
-String is the framework for web service?
-</div>
-
-
-<img src="../image/spring_hibernate.jpg" width="80%" height="80%" /><br>
-
-
-<pre class="mytext">
-My text here
+-- login with user and password
+mysql -u user -p
 </pre>
+
+<div class="mytitle">
+Show database, show tables
+</div>
+<pre class="prettyprint">
+-- show database
+show databases;
+
+-- show tables
+show tables;
+
+-- use specific database
+use database_name;
+
+-- source sql script
+source mysql.sql
+</pre>
+
+<div class="mytitle">
+Create table
+</div>
+<pre class="prettyprint">
+-- Create a simple table with auto increment primary key
+CREAT TABLE person
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    name VARCHAR(20),
+    email VARCHAR(50),
+    PRIMARY KEY(id)
+);
+
+</pre>
+
+<div class="mytitle">
+Database SELECT, INSERT, DELETE, UPDATE
+</div>
+<pre class="prettyprint">
+-- select from table
+SELECT * FROM Table1;
+
+-- select three columns from table
+SELECT name, age, email FROM table1;
+
+-- select three columns from table with predicate or where clause
+SELECT name, age, email FROM table1 WHERE name = 'David'
+
+-- inner join two tables: person and contact
+SELECT person.name, person.email, contact.name FROM person INNER JOIN contact ON person.name = contact.name;
+</pre>
+
+<div class="mytitle">
+SQL JOIN in Picture
+</div>
+
+<div class="cen">
+<img src="../image/sql_inner_join.jpg" width="80%" height="80%" /><br>
+<img src="../image/sql_left_join.jpg" width="80%" height="80%" /><br>
+<img src="../image/sql_outer_join.jpg" width="80%" height="80%" /><br>
+</div> 
+
 <pre class="prettyprint">
 </pre> 
 </div>
-
 </body>
 </html>
+
