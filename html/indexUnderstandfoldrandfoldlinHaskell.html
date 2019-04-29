@@ -98,6 +98,11 @@ reverse = foldl(\x y -> y:x) [] ["a", "b", "c"]
 
 reverse = foldr(\x y -> y ++ [x]) [] ["a", "b", "c"]
         = ["c", "b", "a"]
+
+-- remove tailing space 
+-- "ab " => "ab" 
+foldr(\x y -> if x == ' ' then [] else x:y) [] "ab " => "ab"
+
 </pre> 
 <div class="mytitle">
 Make your own foldL and foldR
@@ -127,6 +132,10 @@ Picture is worth a thousand words
 </div>
 <div class="cen">
 <img src="../image/fold2.svg" width="50%" height="50%" /><br> 
+</div>
+
+<div class="cen">
+<img src="../image/foldonpic.png" width="80%" height="80%" /><br> 
 </div>
 
 </body>

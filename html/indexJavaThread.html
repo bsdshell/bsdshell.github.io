@@ -30,6 +30,36 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+
+        <div class="mytitle">Java ExecutorService</div>
+        <div class="mytext">
+        1. implements Callable interface
+        2. override public T call()
+        3. create a fixed thread pool
+        4. create task with Future
+        5. submit the task with executor.submit(task)
+        6. check whether the task is done with isDone()
+        </div>
+        <pre class="prettyprint">
+        class MyTask implements Callable<Integer>{
+            String fname;
+            public MyTask(String fname){
+                this.fname = fname;
+            }
+            public Integer call(){
+                return wordCount(fname);
+            }
+        }
+
+        ExecutorService executor = ExecutorService.newFixedThreadPool(10);
+        for(String fname : ls){
+            Future<Integer> future = executor.submit(() -> wordCount(fname));
+            if(future.isDone()){
+                p("wordCount=" + future.get());
+            }
+        }
+        </pre>
+
         <div class="mytitle">Java Simple Thread</div>
         <div class="mytext">
         A simple thread can be implemented Runnable interface and override run() method 
@@ -208,55 +238,7 @@
             }
             </pre>
             <span class="bo">CountDownLatch() in Java</span>
-        
 
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

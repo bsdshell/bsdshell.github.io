@@ -1,4 +1,37 @@
 -------------------------------------------------------------------------------- 
+Sun Apr 28 11:48:47 2019 
+Java jshell fron openJDK 12
+The first thing that I need from jshell is to load external classes, e.g. my own libraries.
+
+After you install the jshell, you need to specify the class path to your jar files.
+
+jshell --class-path /Users/cat/myfile/bitbucket/javalib/AronLib.jar
+>import static classfile.Aron.*;
+-------------------------------------------------------------------------------- 
+Sat Apr 27 22:46:14 2019 
+Install Java OpenJDk 12
+brew install java 
+
+Old Java 8 all comamnds or bin 
+
+/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands
+
+java -version
+java version "1.8.0_45"
+Java(TM) SE Runtime Environment (build 1.8.0_45-b14)
+Java HotSpot(TM) 64-Bit Server VM (build 25.45-b02, mixed mode)
+
+There are three JDK so far:
+/Library/Java/JavaVirtualMachines:
+jdk1.8.0_121.jdk
+jdk1.8.0_45.jdk
+openjdk-12.0.1.jdk
+
+New JDK path, openJDK 12, jshell
+create symlink to jshell in /usr/bin
+/usr/bin/jshell -> 
+/Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home/bin
+-------------------------------------------------------------------------------- 
 http://hackage.haskell.org/package/extra-1.6.14/docs/src/Data.List.Extra.html#groupOn
 
 -- | A version of 'group' where the equality is done on some extracted value.
