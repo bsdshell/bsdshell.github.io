@@ -31,185 +31,77 @@
       ga('create', 'UA-66282017-2', 'auto');
       ga('send', 'pageview');
     </script>
+    <div class="myclass">
 
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-            <!-- Column 1 start -->
-            <div class="mytitle">
-            Create Jar file in Java 
-            </div>
             <div class="mytext">
-           jar cvf myjar.jar *.class 
-            </div>
-            <div class="mytitle">
-            Understand Java Package CLASSPATH Hell 
-            </div>
-            <div class="mytext">
-            <div class="mysubtitle">
-            Package Naming Covention 
-            </div>
-            A package name is made up of the reverse of Internet Domain Name and plus your origanizaton's project name, separated by '.' Package are in lowercase. For example, suppose your Internet Domain Name is "xfido.com" and you can name your package as "com.zsurface.project.subproject".
-            <div class="mysubtitle">
-            Create Packages 
-            </div>
-            To make the class as part of a package, you have to include the package statement as the first statement in your source file.
-            <div class="mysubtitle">
-            Example 1
-            </div>
-            We shall create a class called MyClass in package com.zsurface. It is a good practice to store the source codes and classes in different directories, to facilitate the distribution of classes without source codes. Suppose that we save the source file as /home/PackageTutorial/src/com/zsurface, and the compiled classes as /home/PackageTutorial/classes/com/xfido.com/MyClass.class. Let write the source as follows:
-            <pre class="codebg">
-            package com.zsurface;
-            public class MyClass{
-                void print(){
-                    System.out.println("MyClass");
-                }
-            }
-            </pre>
-            </div>
+Create Jar file in Java 
+-------------------------------------------------------------------------------- 
 
-            <div class="mytitle">
-            Java Compile, Class, Jar, Package 
-            </div>
-            <div class="mytext">
-            Specify where to put classes file<br>
-            javac <span class="wbold">-d /home/classfile</span>   Hello.java<br> 
-            Specify where the class or jar files<br>
-            javac <span class="wbold">-cp /home/lib.jar:.</span> hello [MacOS or Linux only]<br>
-            </div><br>
+jar cvf myjar.jar *.class 
 
-            <div class="mytitle">
-            Java Generate dir from package name 
-            </div>
-            <div class="mytext">
-            Assume Hello.java is in /myfile/Hello.java<br>
-            If <span class="wbold">package com.zsurface</span> inside the Hello.java file<br>
-            <span class="wbold">javac -d . Hello.java</span><br>
-            Generate a directory and all classes file are in <span class="wbold">com/zsurface</span><br>
-            </div>
+Understand Java Package CLASSPATH Hell 
+-------------------------------------------------------------------------------- 
 
-            <div class="mytitle">
-            Hello.java uses Java Jar files from other directory 
-            </div>
-            <div class="mytext">
-            Jar Path: /Users/cat/myfile/github/JavaLib/Aron.jar<br>
-            Class Path:  /Users/cat/myfile/github/JavaLib/classfile<br>
-            Aron.jar includes <span class="wbold">package classpath</span><br>
-            Hello.java need to include <span class="wbold">import classfile.*;</span><br>
-            </div><br>
-            
-            <div class="mytitle">
-            Gradle setup 
-            </div>
-            <div class="mytext">
-            Install in MacOSX<br>
-            <span class="wbold">brew install gradle</span><br>
-            gradle will be installed in /usr/loca/Cellar/gradle<br>
-            Run gradle from command line<br>
-            <span class="wbold">gradle</span><br>
-            </div><br>
+Package Naming Covention 
+-------------------------------------------------------------------------------- 
+A package name is made up of the reverse of Internet Domain Name and plus your origanizaton's project name, 
+separated by '.' Package are in lowercase. For example, suppose your Internet Domain Name is "xfido.com" 
+and you can name your package as "com.zsurface.project.subproject".
 
-            <div class="mytitle">
-            Add gradle to Intellij on MacOSX, Gradle Home in Intellij 
-            </div>
+Create Packages 
+-------------------------------------------------------------------------------- 
+To make the class as part of a package, you have to include the package statement as the first statement in your source file.
+
+Example 1
+-------------------------------------------------------------------------------- 
+We shall create a class called MyClass in package com.zsurface. It is a good practice to store the source codes and classes in different directories, to facilitate the distribution of classes without source codes. Suppose that we save the source file as /home/PackageTutorial/src/com/zsurface, and the compiled classes as /home/PackageTutorial/classes/com/xfido.com/MyClass.class. Let write the source as follows:
+    <pre class="prettyprint">
+    package com.zsurface;
+    public class MyClass{
+        void print(){
+            System.out.println("MyClass");
+        }
+    }
+    </pre>
+
+Java Compile, Class, Jar, Package 
+-------------------------------------------------------------------------------- 
+Specify where to put classes file
+javac -d /home/classfile Hello.java 
+Specify where the class or jar files
+javac -cp /home/lib.jar:. hello [MacOS or Linux only]
+
+Java Generate dir from package name 
+-------------------------------------------------------------------------------- 
+Assume Hello.java is in /myfile/Hello.java
+If package com.zsurface inside the Hello.java file
+javac -d . Hello.java
+Generate a directory and all classes file are in com/zsurface
+
+Hello.java uses Java Jar files from other directory 
+-------------------------------------------------------------------------------- 
+Jar Path: /Users/cat/myfile/github/JavaLib/Aron.jar
+Class Path:  /Users/cat/myfile/github/JavaLib/classfile
+Aron.jar includes package classpath
+Hello.java need to include import classfile.*;
+
+Gradle setup 
+-------------------------------------------------------------------------------- 
+Install in MacOSX
+brew install gradle
+gradle will be installed in /usr/loca/Cellar/gradle
+Run gradle from command line
+gradle
+
+Add gradle to Intellij on MacOSX, Gradle Home in Intellij 
             <div class="cen">
             <img src="../image/gradle.png" width="100%" height="100%" />
             </div> 
             <div class="cen">
             <a href="https://github.com/bsdshell/GradleHello">Gradle Hello</a>
             </div> 
-                
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
     </div>
-
+</div>
 
     </body>
     </html>

@@ -237,8 +237,35 @@
                 }
             }
             </pre>
-            <span class="bo">CountDownLatch() in Java</span>
+    <div class="mytext">
+    CountDownLatch() in Java
+    </div>
+    <pre class="prettyprint">
+    </pre>
+
+
+    <div class="mytext">
+    Lock, Compare And Swap
+    </div>
+
+    <pre class="prettyprint">
+    class MyLock{
+        private boolean isLocked = false;
+        public synchronized boolean lock(){
+            if(!isLocked){
+                isLocked = true;
+                return isLocked;
+            }
+            return false;
+        }
+        public synchronized void unlock(){
+            isLocked = false;
+            notify();
+        }
+    }
+    </pre>
 
         </div>
+
     </div>
 </div>
