@@ -1,4 +1,51 @@
 -------------------------------------------------------------------------------- 
+Mon Apr 29 17:03:18 2019 
+KEY: groovy, groovy example
+
+Just play round with Groovy, it seems to be very awesome languages
+Its syntax is simple and it is dynamic type and lese typing,
+It seems to me you can use any java classes and import any java packages
+
+list and map syntax are simple, 
+
+def list = ["dog", "cat]
+def map = ["dog":1, "cat":3]
+
+def map = new HashMap<String, Integer>();
+map.put("cat", 1)
+
+-------------------------------------------------------------------------------- 
+Mon Apr 29 15:15:39 2019
+KEY: Java runtime version, jre, java version
+
+Background
+Here is a table of the JVM versions mapped to the corresponding major version:
+
+JVM	Major Version (decimal)
+Java 1.4	48
+Java 5	49
+Java 6	50
+Java 7	51
+Java 8	52
+Java 9	53
+This major version number is stored in the header of the .class file, at byte 7.
+
+Determining major version
+If you have a JDK (Java Development Kit) installed on your machine, then you can use ‘javap’ to look into the class file.  Note that a JRE (runtime) will not have this utility available.
+
+Linux:
+
+$ javap -verbose MyClass | grep "major"
+Windows:
+
+> javap -verbose MyClass | findstr "major"
+-------------------------------------------------------------------------------- 
+Mon Apr 29 14:36:37 2019 
+install groovy with home 
+brew install groovy 
+/usr/local/Cellar/groovy/2.5.6/libexec
+
+-------------------------------------------------------------------------------- 
 Sun Apr 28 11:48:47 2019 
 Java jshell fron openJDK 12
 The first thing that I need from jshell is to load external classes, e.g. my own libraries.
