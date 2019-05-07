@@ -32,34 +32,43 @@
       ga('send', 'pageview');
     </script>
 
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-            <!-- Column 1 start -->
-                   <div class="mytitle">
-                   Here is my note about Haskell on my Mac OSX[EL Capitan]<br>
-                   Mac OS X El Capitan broke my Haskell GHCi [7.10.2]<br>
-                   </div>
+   <div class="mytitle">
+   Just install Ghci 8.6.x 
+   </div>
+   <div class="mytext">
+   Sat May  4 12:25:14 2019 
+   brew install ghc, ghc 8.6x in /usr/local/Cellar/ghc/8.6.5/bin/ghc
+   All my Haskell is using 8.4.x in /usr/local/bin  
+   </div>
+
+   <div class="mytitle">
+   Here is my note about Haskell on my Mac OSX[EL Capitan]<br>
+   Mac OS X El Capitan broke my Haskell GHCi [7.10.2]<br>
+   </div>
+
                    <div class="mytext">
-                   Sat May 14 13:57:22 PDT 2016<br>
-                   Today I try to test De Casteliau's algorithm in Haskell and run GHCi, and start up GHCi on command line<br>
-                   I got a strangle error from GHCi "can't open /tmp/ghci.log" file when I run a simple expression such as 1 + 2 in GHCi<br>
-                   I never have the problem before I update my Mac OS to El capitan. Good Job Apple!<br>
-                   I downloaded new version GHCi 7.10.3 and install it. Run the GHCi in command, the same error pops up again!<br>
-                   Update: Apple change some permission for Clang something that causes the error<br>
-                   <span style="color:blue;">Location for GHCi and HaskellFrame</span> when Haskell is installed in Mac OSX[EL Capitan or Yosemite or Mavericks]<br>  
-                   <span style="color:red;">/Library/Frameworks/GHC.framework</span><br> 
-                   <span style="color:red;">/Library/Haskell</span><br>
-                   Uninstaller Location[At least on my Mac OSX El Capitan]<br>
-                   <span style="color:red;">/usr/local/bin/uninstall-hs</span><br>
+   Sat May 14 13:57:22 PDT 2016
+   Today I try to test De Casteliau's algorithm in Haskell and run GHCi, and start up GHCi on command line
+   I got a strangle error from GHCi "can't open /tmp/ghci.log" file 
+   when I run a simple expression such as 1 + 2 in GHCi
+   I never have the problem before I update my Mac OS to El capitan. Good Job Apple!
+   I downloaded new version GHCi 7.10.3 and install it. Run the GHCi in command, the same error pops up again!
+   Update: Apple change some permission for Clang something that causes the error
+   <span style="color:blue;">Location for GHCi and HaskellFrame</span> 
+   when Haskell is installed in Mac OSX[EL Capitan or Yosemite or Mavericks]  
+   <span style="color:red;">/Library/Frameworks/GHC.framework</span> 
+   <span style="color:red;">/Library/Haskell</span>
+   Uninstaller Location[At least on my Mac OSX El Capitan]
+   <span style="color:red;">/usr/local/bin/uninstall-hs</span>
                    </div>
+
                    <div class="mytitle">
                    How to clear up GHCi from your Mac OSX
                    </div>
                    <div class="mytext">
-                    If you run /usr/local/bin/uninstall-hs, it only clean up some stuff, but not all<br>
+                    If you run /usr/local/bin/uninstall-hs, it only clean up some stuff, but not all
                     </div>
-                   <pre class="codebg">
+                   <pre class="prettyprint">
                     sudo rm -rf /Library/Frameworks/GHC.framework
                     sudo rm -rf /Library/Frameworks/HaskellPlatform.framework
                     sudo rm -rf /Library/Haskell
@@ -75,170 +84,29 @@
                 </pre>
                 
                <div class="mytitle">
-               Remove all Cabal, CHGi, GHC framework from my Mac OSX and reinstall Haskell 7.10.3<br> 
+               Remove all Cabal, CHGi, GHC framework from my Mac OSX and reinstall Haskell 7.10.3 
                </div>
-               <div class="mytext">
-               I spend many hours on the issue with Apple EL Capitan updategrade.<br>
-               I don't realize Apple push a shity OSX out, even though they know there are shitload of bugs<br> 
-               </div>
-
-               <div class="mytitle">
-               New version of directory module in Haskell<br> 
-               </div>
-               <div class="mytext">
-               import Sytem.Directory<br> 
-               listDirectory shows "Not in scope:" error message<br> 
-               
-               list all the packages<br>
-               ghc-pkg list shows the directory package is old [directory-1.2.2.0]<br>
-               listDirectory is in [1.2.5.0]<br>
-               run: cabal install cabal-install [update cabal]<br> 
-               run: cabal install directory-1.2.5.0<br>
-               it works after install the directory-1.2.5.0<br>
-
-               </div>
-
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-
-
-    </body>
-    </html>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   <div class="mytext">
+   I spend many hours on the issue with Apple EL Capitan updategrade.
+   I don't realize Apple push a shity OSX out, even though they know there are shitload of bugs 
+   </div>
+
+   <div class="mytitle">
+   New version of directory module in Haskell 
+   </div>
+   <div class="mytext">
+   import Sytem.Directory 
+   listDirectory shows "Not in scope:" error message 
+   
+   list all the packages
+   ghc-pkg list shows the directory package is old [directory-1.2.2.0]
+   listDirectory is in [1.2.5.0]
+   run: cabal install cabal-install [update cabal] 
+   run: cabal install directory-1.2.5.0
+   it works after install the directory-1.2.5.0
+
+   </div>
+
+</body>
+</html>
 
