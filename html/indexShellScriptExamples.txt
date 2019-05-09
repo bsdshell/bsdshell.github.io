@@ -1,0 +1,100 @@
+cat
+
+
+Table of Contents
+_________________
+
+1 Shell Script Examples
+2 Grep Examples
+
+
+1 Shell Script Examples
+=======================
+
+  Shell script is powerful if you could remember all the weird syntax.
+  Here is the example to show how to use Array in Shell script.  Note:
+  readarray only works in Bash 4.x, check your version: bash --version
+  1. Array in Shell script 1
+     ,----
+     | string='Paris, France, Europe';
+     | echo $string
+     | readarray -td, array <<<"$string"; declare -p array;
+     | ## declare -a array=([0]="Paris" [1]=" France" [2]=$' Europe\n')
+     | 
+     | country='Paris/Frence/Europe/Sweden/Croatia';
+     | echo $country
+     | readarray -td/ array <<<"$country"; declare -p array;
+     | for item in "${array[@]}" 
+     | do
+     |   echo "$item" 
+     | done      
+     `----
+
+  2. count number of argument
+     ,----
+     | echo "$#"
+     | var="string"
+     `----
+
+  3. array in bash
+     ,----
+     | arr=(                            
+     | "dog"                            
+     | "cat"                            
+     | "rat"                            
+     | )                                
+     | for var in ${arr[*]}             
+     | do                               
+     | echo "var=$var"                  
+     | done                             
+     `----
+
+  4. if statement
+     ,----
+     | var="$#"                                                                        
+     | if [ "$var" -eq 2 ]; then echo "two arguments"; else echo "not two argument"; fi
+     `----
+
+  5. Iterate all files
+     ,----
+     | for name in $(ls *); do echo $name; done
+     `----
+  6. String matches
+     ,----
+     | for name in $(ls *); do if [[ $name == *"txt"* ]]; then echo $name; else echo ""; fi 
+     `----
+  7. Use regex match =~
+     ,----
+     | if [[ $name =~ "txt" ]]; then echo $name; else echo ""; fi
+     `----
+  8. grep string that contains "txt"
+     ,----
+     | if echo $name | grep -q "txt"; then echo $name; else echo ""; fi
+     `----
+  9. grep string its suffix is "txt", e.g. "file.txt"
+     ,----
+     | if echo $name | grep -q "txt$" then echo $name; else echo ""; fi
+     `----
+  10. grep string its prefix is "file", e.g. "file.txt"
+      ,----
+      | # grep -q => no output
+      | if echo $name | grep -q "^file" then echo $name; echo echo ""; fi
+      `----
+
+
+2 Grep Examples
+===============
+
+  1. grep content of file with specified file name extension, show full
+     file name
+     ,----
+     | grep --include="*.java" -Hnris pattern $PWD
+     `----
+  2. cat and grep
+     ,----
+     | cat /tmp/file.txt | grep string
+     `----
+  3. grep with color
+     ,----
+     | cat /tmp/file.txt | grep --color string  
+     `----

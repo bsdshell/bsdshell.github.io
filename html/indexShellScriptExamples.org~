@@ -1,0 +1,83 @@
+** Shell Script Examples
+   Shell script is powerful if you could remember all the weird syntax. 
+   Here is the example to show how to use Array in Shell script.
+   Note: readarray only works in Bash 4.x, check your version: bash --version   
+   0. Array in Shell script 1
+      #+BEGIN_SRC bash
+      string='Paris, France, Europe';
+      echo $string
+      readarray -td, array <<<"$string"; declare -p array;
+      ## declare -a array=([0]="Paris" [1]=" France" [2]=$' Europe\n')
+
+      country='Paris/Frence/Europe/Sweden/Croatia';
+      echo $country
+      readarray -td/ array <<<"$country"; declare -p array;
+      for item in "${array[@]}" 
+      do
+        echo "$item" 
+      done      
+      #+END_SRC
+   
+   1. count number of argument
+      #+BEGIN_SRC bash
+      echo "$#"
+      var="string"
+      #+END_SRC
+      
+   2. array in bash                    
+      #+BEGIN_SRC bash                 
+      arr=(                            
+      "dog"                            
+      "cat"                            
+      "rat"                            
+      )                                
+      for var in ${arr[*]}             
+      do                               
+      echo "var=$var"                  
+      done                             
+      #+END_SRC                        
+   
+   3. if statement                                                                    
+      #+BEGIN_SRC bash                                                                
+      var="$#"                                                                        
+      if [ "$var" -eq 2 ]; then echo "two arguments"; else echo "not two argument"; fi
+      #+END_SRC                                                                       
+
+   3. Iterate all files
+      #+BEGIN_SRC bash
+      for name in $(ls *); do echo $name; done
+      #+END_SRC
+   4. String matches
+      #+BEGIN_SRC bash
+      for name in $(ls *); do if [[ $name == *"txt"* ]]; then echo $name; else echo ""; fi 
+      #+END_SRC
+   5. Use regex match =~
+      #+BEGIN_SRC bash
+      if [[ $name =~ "txt" ]]; then echo $name; else echo ""; fi
+      #+END_SRC
+   6. grep string that contains "txt"
+      #+BEGIN_SRC bash
+      if echo $name | grep -q "txt"; then echo $name; else echo ""; fi
+      #+END_SRC
+   7. grep string its suffix is "txt", e.g. "file.txt"
+      #+BEGIN_SRC bash
+      if echo $name | grep -q "txt$" then echo $name; else echo ""; fi
+      #+END_SRC
+   8. grep string its prefix is "file", e.g. "file.txt"
+      #+BEGIN_SRC bash
+      # grep -q => no output
+      if echo $name | grep -q "^file" then echo $name; echo echo ""; fi
+      #+END_SRC
+** Grep Examples
+   0. grep content of file with specified file name extension, show full file name
+      #+BEGIN_SRC bash
+      grep --include="*.java" -Hnris pattern $PWD
+      #+END_SRC
+   1. cat and grep
+      #+BEGIN_SRC bash
+      cat /tmp/file.txt | grep string
+      #+END_SRC
+   2. grep with color
+      #+BEGIN_SRC bash                       
+      cat /tmp/file.txt | grep --color string  
+      #+END_SRC                        
