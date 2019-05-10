@@ -30,207 +30,67 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
- 
+
 
 <div class="myclass">
+
 <div class="mytitle">
-How to write code to find the square root of Integer
+Type Constructor and Data Constructor in Haskell
 </div>
-<div style="font-size: 160%;">
-Find a square root of Integer,  it means to solve a polynomial $f(x) = x^2 - n = 0$
-\begin{align*}
-    f(x) &= x^2 -n \\
-    0 &= x^2 -n  \\
-    n &= x^2  \\
-    \sqrt{n} &= x \\
-\end{align*}
-The above equations DO NOT really tell you how to find the square root of $n$ <br>
-Let assume me try to find the square root of 4, then we have:
-\begin{align*}
-    x^2 - 4 &= 0 \\
-\end{align*}
-The graph of $x^2 - 4 = 0$ is below <br>
-</div>
-
-<div class="cen">
-<img src="../image/squareroot.svg" width="80%" height="80%" /><br>
-</div>
-<div style="font-size: 160%;">
-From the picture above, we can guess a number on x-Axis right hand side of $\color{red}E$ e.g. choose point $C$ as on the picture. <br> 
-and find the middle point $m$ from $A$ to $C$,  <br> 
-\[
-    m = m' = \frac{A + C}{2} \\
-    \Rightarrow y = m^2 - 4  \\
-\]
-If $y < 0$ then $m$ will be left hand side of true value $\color{red}E$, otherwise $m$ will be right hand side of true value $\color{red}E$.<br> 
-If $m^2 < 0$ then the true value of $\sqrt{n}$ must be between $m$ and $C$<br>
-If $m'^2 \ge 0 $ then the true value of $\sqrt{n}$ must be between $A$ and $m'$<br>
-</div>
-<div class="cen">
-<img src="../image/squareroot_interval.svg" width="80%" height="80%" /><br>
-</div><br>
-     
-Let write some code in Swift<br>
 <pre class="prettyprint">
-Note: 1. we want to keep the approximate value close to 
-         the true value not less than epsilon,[0.00001]<br>
-      2. If n = 1 then we can just return 1
-
-func squareRoot(n:Int)->Double{
-    // x^2 - n = 0 
-    var a:Double = 1
-    var dn = Double(n) 
-    var b:Double = Double(n) 
-    var m:Double = (a + b)/2.0
-    // initial 
-    let epsilon = 0.00001
-    if n == 1{
-        return 1
-    }else{
-        while m < epsilon{
-            m = (a + b)/2.0
-            if m*m - dn < 0{
-                a = m
-            }else{
-                b = m
-            }
-        }
-    }
-    return m
-}
+data Color = Red | Green | Blue 
+</pre> 
+<pre class="prettyprint">
+The data Constructor is Red, Green, Blue
+:t Red => Red::Color    = function with return type Color
+:t Green => Green::Color = function with return type Color
+:t Color => Error, Color has no type
+:kind Color => Color::*  -- Color is a kind 
 </pre> 
 
 <div class="mytitle">
-Other method to find the square root of n is Newton method.
-</div><br>
-<div style="font-size: 160%;">
-1. Choose any point $(x_0, f(x_0))$ on the curve<br>
-2. Compute the epsilon $\varepsilon = \left|x_0^2 - n \right|$<br>
-3. If $\varepsilon$ satified the boundary condition: $\left|x_0^2 - n \right| < \varepsilon$, e.g. $\varepsilon = 0.001$<br>
-$\quad$ 3.1 Terminate the code<br>
-4. Otherwise, find the tangent line at the point $(x_0, f(x_0))$<br>
-5. Find the intersection $(x_1, 0)$ of tangent line and x-Axis<br>
-6. Go back to 1. and use point $x_1$ instead of $x_0$ to continue<br><br>
-
-Here is the derivation on Newton's method <br>
+Type Constructor and Data Constructor in Haskell
 </div>
-<div style="font-size: 160%;">
-\begin{align*}
-    f'(x_0) &= \frac{y_1 - y_0}{x_1 - x_0} \\
-    x_1 - x_0 &= \frac{y_1 - y_0}{f'(x_0)} \\
-    x_1 &= x_0 - \frac{y_0}{f'(x_0)} \\ \\
-    x_1 &= x_0 - \frac{f(x_0)}{f'(x_0)} \quad \text{ where } \quad f(x_0) = y_0 \\ \\ 
-    \text{ If } f(x) &= x^2 - n \\
-    x_1 &= x_0 - \frac{f(x_0)}{2x_0} \quad \text{ where } \quad f'(x_0) = 2x_0 \\
-\end{align*} 
-</div>
-Line tangents to $f(x) = x^2 - n$  at point $(x_0, f(x_0))$ is $f'(x) = \frac{y - y_0}{x - x_0}$
-
-<div class="cen">
-<img src="../image/newton_method.svg" width="60%" height="60%" /><br>
-</div> 
-
 <pre class="prettyprint">
-// In C++
-double newton_method(int n){
-    double x0 = 1;
-    double x1 = 1;
-    double epsilon = 0.001;
-    double delta = abs(x0*x0 - n);
-    while (delta > epsilon){ 
-        x1 = x0 - (x0*x0 - n)/(2.0*x0);
-        delta = abs(x1*x1 - n);
-        x0 = x1;
-    }
-    return x1;
+data Color = RGB Int Int Int
+</pre> 
+<pre class="prettyprint">
+RGB is data Constructor
+RGB is a function RGB::Int->Int->Int
+:kind Color - Color is kind
+</pre> 
+
+<div class="mytitle">
+Type Constructor
+</div>
+<pre class="prettyprint">
+data Color a = Red a | Green a
+</pre> 
+<pre class="prettyprint">
+Color is type Constructor
+</pre> 
+
+<div class="mytitle">
+Recursive Data Type
+</div>
+<pre class="prettyprint">
+-- list
+Data List a = [] | a:[a]
+
+-- Binary Tree
+Data Tree a = Empty | Node a (Tree a) (Tree a)
+
+-- Java Binary Tree
+Node {
+    int a
+    Node left;
+    Node right;
 }
-</pre><br>
 
-<div class="mytitle">
-How to find the root of polynomial equations 
-</div><br>
-<h3>Find the root of quadratic equation is pretty easy since we learn a quadratic formula in high school.</h3>
-<div style="font-size: 160%;">
-    \begin{align*}
-        &y = ax^2 + bx + c = 0 \\
-        &x = \frac{- b \pm \sqrt{b^2 - 4ac}}{2a} \\
-    \end{align*}
-    Let derive the formula
-    \begin{align*}
-        &y = ax^2 + bx + c \\ 
-        &y = x^2 + \frac{b}{a} x + \frac{c}{a} \\
-        &y = x^2 + 2 \frac{b}{2a} x + \frac{c}{a} \\
-        &y = x^2 + 2 \frac{b}{2a} x + (\frac{b}{2a})^{2} - (\frac{b}{2a})^{2} + \frac{c}{a} \\
-        &0 = (x + \frac{b}{2a})^2 - (\frac{b}{2a})^{2} + \frac{c}{a} \quad \text{ where } y = 0 \\
-        &(x + \frac{b}{2a})^2 =  (\frac{b}{2a})^{2} - \frac{c}{a} \\
-        &(x + \frac{b}{2a})^2 =  \frac{b^2}{4a^2} - \frac{4ac}{4a^2} \\
-        &(x + \frac{b}{2a})^2 =  \frac{b^2 - 4ac}{4a^2} \\
-        &x + \frac{b}{2a} = \frac{\pm \sqrt{b^2 - 4ac}}{2a} \\
-        &x = \frac{\pm \sqrt{b^2 - 4ac}}{2a} - \frac{b}{2a} \\
-        &x =  \frac{- b \pm \sqrt{b^2 - 4ac}}{2a}  \\
-    \end{align*}
-Find the root for quadratic equation is easy because we have formula for it.
-</div><br>
-<div class="mytitle">
-How to find [all] root of any equations 
-</div><br><br>
-<div style="font-size: 160%;">
-Technically, it is hard problem in mathematics. But if we can restrict ourself in certain interval,<br>
-it might be easier to find all the roots from them.<br>
-Actually, there are formula to compuate the upper and lower boundary for all the real roots in any degree of polynomial.
-
-\begin{align*}
-y &= (x-1)(x-4)x 
-\end{align*} 
-
-First, we look at the a single interval $[A, C]$ which contais $E$<br>
-</div>
-<div class="cen">
-<img src="../image/findroot_interval.svg" width="80%" height="80%" /><br>
-</div><br>
-
-<div style="font-size: 160%;">
-Second, we divide the large interval: $[-2, 6]$ to small intervals: $[F, G) [G, H) \dots [E, C]$<br>
-</div><br>
-<div class="cen">
-<img src="../image/findroot_interval1.svg" width="80%" height="80%" />
-</div><br> 
-
-<div style="font-size: 160%;">
-Third, we can compute all the small intervals to find all the roots in $[-2, 6]$<br>
-</div>
-<div class="cen">
-<img src="../image/findroot_interval2.svg" width="80%" height="80%" /><br>
-</div><br>
-<div style="font-size: 160%;">
-Algorithm:<br>
-0. Given interval: 
-\[
-    [a_0, a_n]
-\]
-1. Divide a given interval to $n$ smaller intervals<br>
-\[
-   \delta = \frac{a_n - a_0}{n} \\
-   \text{ where } a_0 = \delta_0 \quad a_n = \delta_n \\
-   \alpha_1 = [\delta_0, \delta_1) \\
-   \alpha_2 = (\delta_1, \delta_2] \\
-   \vdots \\
-   \alpha_n = (\delta_{n-1}, \delta_n] \\
-\]
-
-2 Iterate each interval:<br>
-       If one root is found,<br>
-       then Add the root to list<br>
-       Go back to 2<br>
-</div>
-
-<pre class="prettyprint">
-
-</pre>
+</pre> 
 
 
 </div>
-
 
 </body>
 </html>

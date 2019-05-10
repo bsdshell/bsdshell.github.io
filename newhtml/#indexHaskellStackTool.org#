@@ -1,0 +1,62 @@
+** Haskell Stack Tool
+   1. Home brew it on your MacOS
+      #+BEGIN_SRC bash
+	brew update
+	brew install haskell-stack
+	# you might need to relink the stack symbol links
+	rm /usr/local/bin/stack
+	brew link --overwrite haskell-stack
+      #+END_SRC
+   2. Find out the location of stack and check your stack version
+      #+BEGIN_SRC bash
+	which stack
+	# /usr/local/bin/stack
+	stack --version
+	# /usr/local/Cellar/haskell-stack/1.9.3:
+      #+END_SRC
+   
+   3. Create new project with Stack called myproject
+      #+BEGIN_SRC bash
+	stack new myproject simple
+      #+END_SRC
+   4. Download GHC for your project, it will take a while to download and it will not interfere your local GHC.
+      #+BEGIN_SRC bash
+	stack setup
+      #+END_SRC
+   5. Build Your Hello World
+      #+BEGIN_SRC bash
+	stack build
+      #+END_SRC
+   6. Run your project
+      #+BEGIN_SRC bash
+	stack exec myproject
+      #+END_SRC
+   7. Add [[http://hackage.haskell.org/package/time][time]] package to your build
+      #+BEGIN_SRC bash
+	executable myproj
+	hs-source-dirs:      src
+	main-is:             Main.hs
+	default-language:    Haskell2010
+	build-depends:       base >= 4.7 && < 5,
+			     time
+      #+END_SRC
+   8. Now we can use functions(e.g. getCurrentTime) from time package
+      #+BEGIN_SRC haskell
+	import Data.Time
+  
+	main::()
+	main = do
+	     time <- getCurrentTime
+	     putStrLn (show time)
+      #+END_SRC
+   9. Try to figure out how to use your own module on Stack
+      #+BEGIN_SRC haskell
+      add more code here
+      #+END_SRC
+   10. Use different resolver [[https://www.stackage.org/lts-12.13][Long Term Supported 12.13]]  
+       #+BEGIN_SRC haskell  
+       -- ghc 8.4.
+       stack new myproject --resolver=12.13 simple
+       -- check your stack.yaml   				  
+       #+END_SRC            
+   

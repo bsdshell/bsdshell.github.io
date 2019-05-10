@@ -2,10 +2,10 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Binary Tree Generate Graphviz file</title>
+        <title>C++ Print nodes at K distance from Root</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
-        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
@@ -37,49 +37,29 @@
             <div class="col1">
             <!-- Column 1 start -->
             <div class="mytitle">
-            Generate Graphviz file from Inorder traversal 
+            print all nodes K distance from root 
             </div>
             <div class="mytext">
-            Input Node:<br>
-            15 12 14 17 19 130 16 10 20 18<br> 
+            1. Similar question K distance from given node<br>
+            2. Similar quetison K distance from given node in a Graph<br>
             </div>
-            <pre class="codebg">
-            public static void Inorder(Node root, int level) {
-                if(root != null) {
-                    System.out.println(root.data);
-                    if(root.left != null){
-                        System.out.print("" + root.data + "->");
-                    }
-                    Inorder(root.left, level+1);
-
-                    if(root.right != null){
-                        System.out.print("" + root.data + "->");
-                    }
-                    Inorder(root.right, level+1);
-                }
-            }
-            </pre>
-            <div class="mytitle">
-            Graphviz file 
-            </div>
-           <pre class="codebg">
-                                        digraph G{
-                                            15
-                                            15->12
-                                            12->10
-                                            12->14
-                                            15->17
-                                            17->16
-                                            17->19
-                                            19->18
-                                            19->130
-                                            130->20
-                                        }
-            </pre>
-            <div class="cen">
-            <img src="../image/first.svg" width="30%" height="30%" /><br>
-            </div>
+            <div class="highlight"><pre><span class="kt">void</span> <span class="nf">kdistance</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">root</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;[&quot;</span><span class="o">&lt;&lt;</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="o">&lt;&lt;</span><span class="s">&quot;]&quot;</span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">k</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+            <span class="n">kdistance</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+            <span class="n">kdistance</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
  
+            <div class="cen">
+            <img src="../image/kdist.png" width="40%" height="40%" /><br>
+            <a href="https://github.com/bsdshell/cpp/tree/master/Algorithm.cpp">Source Code</a>
+            </div>
+
             <!-- Column 1 end -->
             </div>
             <div class="col2">

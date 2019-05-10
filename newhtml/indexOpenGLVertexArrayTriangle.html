@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>OpenGL Vertex Array Triangle</title>
+        <title>C++ Merge two sorted arrays</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
         <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -38,19 +38,46 @@
             <!-- Column 1 start -->
 
             <div class="mytitle">
-            Simple Vertex Array 
+            Merge Two sorted lists 
             </div>
-            <div class="mytext">
-            Simple Vertex Array 
-            </div>
-            <div class="cen">
-            <img src="../image/simple_vertex_array.png" width="40%" height="40%" /><br>
-            </div>
+            <div class="highlight"><pre><span class="c1">// Merge two sorted arrays</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">merge</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vec1</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vec2</span><span class="p">){</span>
+    <span class="kt">int</span> <span class="n">len1</span> <span class="o">=</span> <span class="n">vec1</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="kt">int</span> <span class="n">len2</span> <span class="o">=</span> <span class="n">vec2</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vec</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
 
+    <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">len1</span> <span class="o">||</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">len2</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="n">len1</span><span class="p">){</span>
+            <span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">vec2</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+            <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">len2</span><span class="p">){</span>
+            <span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">vec1</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+            <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span><span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">vec1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">vec2</span><span class="p">[</span><span class="n">j</span><span class="p">]){</span>
+                <span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">vec1</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+                <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">vec1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">vec2</span><span class="p">[</span><span class="n">j</span><span class="p">]){</span>
+                <span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">vec1</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+                <span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">vec2</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+                <span class="n">i</span><span class="o">++</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">vec2</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+                <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">vec</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+ 
             <div class="cen">
-            <a href="https://github.com/bsdshell/opengl/tree/master/simple_vertex_array.c">Source Code</a>
-            </div> 
-
+            <a href="https://github.com/bsdshell/cpp/tree/master/MergeSortedList.cpp#L9">Source Code</a>
+            </div>
 
             <!-- Column 1 end -->
             </div>
@@ -142,6 +169,7 @@
             </div>
         </div>
     </div>
+
 
     </body>
     </html>

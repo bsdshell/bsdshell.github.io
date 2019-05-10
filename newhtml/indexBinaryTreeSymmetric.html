@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Binary Tree Symmetric</title>
+        <title>IOS Click Inside Circle or Rectangle</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
         <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
@@ -18,7 +18,7 @@
                 jax: ["input/TeX","output/HTML-CSS"],
                 tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
               });
-        </script>
+            </script>
         <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
     </head>
     <body>
@@ -32,32 +32,21 @@
       ga('send', 'pageview');
     </script>
 
+    <div id="header">
+    </div>
     <div class="colmask rightmenu">
         <div class="colleft">
             <div class="col1">
-            <!-- Column 1 start -->
-            <div class="mytitle">
-            Check if a Binary Tree is Symmetric<br>
-            </div><br>
-            <pre class="codebg">
-                boolean isSymmetric(Node r1, Node r2){
-                    if(r1 == null && r2 == null){
-                        return true;
-                    }else{
-                        if(r1 != null && r2 != null && r1.data == r2.data){
-                            return isSymmetric(r1.left, r2.right) && isSymmetric(r1.right, r2.left);
-                        }
-                    }
-                    return false;
-                }
-                boolean check(Node r){
-                    if(r == null)
-                        return true;
-                    else
-                       return isSymmetric(r.left, r.right);
-                }
-            </pre>
-    
+                <!-- Column 1 start -->
+                <div class="mytextbox highlight">
+                    <div class="cen">
+                        Check Click is inside the Circle or Rectangle
+                    </div>
+                    <div class="cen">
+                    <img src="../image/clickincircle.png" width="20%" height="20%" /><br>
+                    <a href="https://github.com/bsdshell/xcode/tree/master/OneTestPointInsideRectangle">Source Code</a>
+                    </div> 
+                </div>
             <!-- Column 1 end -->
             </div>
             <div class="col2">

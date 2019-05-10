@@ -1,53 +1,226 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
-<head>
-    <title>"Vim Substitude, Vim Search and Replace</title>
-    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
-    <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../highlight.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-            jax: ["input/TeX","output/HTML-CSS"],
-            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
-          });
-    </script>
-    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
-</head>
-<body>
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+    <head>
+        <title>Binary Tree Generate Graphviz file</title>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="robots" content="index, follow" />
+        <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../highlight.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/x-mathjax-config">
+              MathJax.Hub.Config({
+                extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+                jax: ["input/TeX","output/HTML-CSS"],
+                tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
+              });
+        </script>
+        <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+    </head>
+    <body>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-66282017-2', 'auto');
-  ga('send', 'pageview');
-</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-66282017-2', 'auto');
+      ga('send', 'pageview');
+    </script>
 
-<div class="myclass">
-<div class="mytitle">Vim Substitude, Vim Search and Replace</div>
-<pre class="prettyprint bigfont">
-:%s/oldStr/newStr/gc
-</pre>
-<pre class="prettyprint">
-" : => command mode 
-" % => replace the WHOLE file in current buffer
-" s => substitude
-" g => global
-" c => confirm before replacement
-" oldStr => string that you want to be replaced 
-" newStr => string that you want to replace 
-</pre>
+    <div class="colmask rightmenu">
+        <div class="colleft">
+            <div class="col1">
+            <!-- Column 1 start -->
+            <div class="mytitle">
+            Generate Graphviz file from Inorder traversal 
+            </div>
+            <div class="mytext">
+            Input Node:<br>
+            15 12 14 17 19 130 16 10 20 18<br> 
+            </div>
+            <pre class="codebg">
+            public static void Inorder(Node root, int level) {
+                if(root != null) {
+                    System.out.println(root.data);
+                    if(root.left != null){
+                        System.out.print("" + root.data + "->");
+                    }
+                    Inorder(root.left, level+1);
 
-</div>
+                    if(root.right != null){
+                        System.out.print("" + root.data + "->");
+                    }
+                    Inorder(root.right, level+1);
+                }
+            }
+            </pre>
+            <div class="mytitle">
+            Graphviz file 
+            </div>
+           <pre class="codebg">
+                                        digraph G{
+                                            15
+                                            15->12
+                                            12->10
+                                            12->14
+                                            15->17
+                                            17->16
+                                            17->19
+                                            19->18
+                                            19->130
+                                            130->20
+                                        }
+            </pre>
+            <div class="cen">
+            <img src="../image/first.svg" width="30%" height="30%" /><br>
+            </div>
+ 
+            <!-- Column 1 end -->
+            </div>
+            <div class="col2">
+            
 
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    </body>
+    </html>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -2,10 +2,10 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Clone Skip List One pass or NO Extra Space</title>
+        <title>Count Number of Way for Coin Change</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
+        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
@@ -36,54 +36,33 @@
         <div class="colleft">
             <div class="col1">
             <!-- Column 1 start -->
-
             <div class="mytitle">
-            Double Linked List with Smart Pointers
+            Given a number and a set of coins, count the number of way to add up to the number.
             </div>
-            <div class="mytext">
-            Reimplement Double Linked List With Smart Pointers<br>
-            </div>
-            <div class="highlight"><pre><span class="k">class</span> <span class="nc">Stack</span><span class="p">{</span>
-    <span class="k">public</span><span class="o">:</span>
-        <span class="kt">int</span> <span class="n">maxLen</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
-        <span class="kt">char</span><span class="o">*</span> <span class="n">array</span><span class="p">;</span>
-    <span class="k">public</span><span class="o">:</span>
-        <span class="n">Stack</span><span class="p">(</span><span class="kt">int</span> <span class="n">max</span><span class="p">){</span>
-            <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-            <span class="n">maxLen</span> <span class="o">=</span> <span class="n">max</span><span class="p">;</span>
-            <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="n">maxLen</span><span class="p">];</span>
-        <span class="p">}</span>
-        <span class="kt">void</span> <span class="n">push</span><span class="p">(</span><span class="kt">char</span> <span class="n">ch</span><span class="p">){</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">count</span> <span class="o">&lt;</span> <span class="n">maxLen</span><span class="p">){</span>
-                <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">ch</span><span class="p">;</span>
-                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="kt">char</span> <span class="n">pop</span><span class="p">(){</span>
-            <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
-                <span class="n">ch</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
-                <span class="n">count</span><span class="o">--</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="k">return</span> <span class="n">ch</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="kt">bool</span> <span class="n">isEmpty</span><span class="p">(){</span>
-            <span class="k">return</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="kt">int</span> <span class="n">size</span><span class="p">(){</span>
-            <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="o">~</span><span class="n">Stack</span><span class="p">(){</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
-                <span class="k">delete</span><span class="p">[]</span> <span class="n">array</span><span class="p">;</span>
-        <span class="p">}</span>
-<span class="p">};</span>
-</pre></div>
- 
+            <pre class="codebg">
+                            // Recursive algo is different from Binomial Identity
+                            // Given coins[k] = {2, 3, 4} and change s = 9 
+                            // Count the number of way for coin change 
+                            // coins[k] is in the each change
+                            // coins[k] is not in the each change 
+                            // count(coins, k, s) = count(coins, k-1, s) + count(coins, k, s-coins[k]) 
+                            public static int count(int[] coin, int s, int k) {
+                                if( s < 0)
+                                    return 0;
+                                else if( s == 0 ) 
+                                    return 1;
+                                else if( s > 0 && k > 0) {
+                                    int left = count(coin, s, k-1);
+                                    int right= count(coin, s-coin[k-1], k);
+                                    return left + right;
+                                }
+                                else 
+                                    return 0;
+                            }
+            </pre>
             <div class="cen">
-            <img src="../image/cppstd.png" width="40%" height="40%" /><br>
-            <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
+            <img src="../image/coinformula.png" width="50%" height="50%" /><br>
+            <img src="../image/countcoin.svg" width="50%" height="50%" /><br>
             </div>
 
             <!-- Column 1 end -->

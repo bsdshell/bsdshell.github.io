@@ -2,10 +2,10 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Touches Event in iOS</title>
+        <title>OpenGL Vertex Array</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
-        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
@@ -18,7 +18,7 @@
                 jax: ["input/TeX","output/HTML-CSS"],
                 tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
               });
-            </script>
+        </script>
         <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
     </head>
     <body>
@@ -32,73 +32,26 @@
       ga('send', 'pageview');
     </script>
 
-    <div id="header">
-    </div>
     <div class="colmask rightmenu">
         <div class="colleft">
             <div class="col1">
-                <!-- Column 1 start -->
-                <div class="mytextbox highlight">
-                    <p>
-                    <span style="color:red;">This</span> is tutorial how to drag the circle on screen with iOS touch API<br> 
-                    iOS has very powerful Touch API, and you can do lots of cool stuff with them.<br> 
-                    1. How to setup Touch API in your View<br>
-                    2. How to use <span style="color:blue;">touchesMoved</span> method to move circle around the view<br><br>
-                    </p>
-                    <p>
-                    Let's jump into it.<br>
-                    In order to get the touches events, you need to override two methods in your View:<br>
-                    <span style="color:blue;">touchesBegan</span><br> 
-                    <span style="color:blue;">touchesMoved</span><br><br> 
+            <!-- Column 1 start -->
 
-                    <span style="color:blue;">touchesBegan</span> is called when your finger touches the screen initially<br>
-                    <span style="color:blue;">touchesMoved</span> is called when your finger is moving across the screen<br><br>
-                    
-                    <span style="color:red;">when</span> you touch location [1, 2] and move your finger to [3, 5]<br>
-                    1. <span style="color:blue;">touchesBegan</span> is called at <span style="color:green;">CGPoint</span> [1, 2]<br>
-                    2. <span style="color:blue;">touchesMoved</span> is called at <span style="color:green;">CGPoint</span> [3, 5]<br>
-                    Note: <span style="color:blue;">touchesMoved</span> will be called many times after <span style="color:blue;">touchesBegan<span><br>
+            <div class="mytitle">
+            OpenGl Vertex Array 
+            </div>
+            <div class="mytext">
+            How to use Vertex Array to triangle 
+            </div>
+            <div class="cen">
+            <img src="../image/vertexarray1.png" width="40%" height="40%" /><br>
+            </div>
 
-                    </p>
-                    <img src="../image/touches.svg" width="60%" height="60%" /><br> 
-                    <pre style="background:#DDD;">
-                    - (void)<span style="color:blue;">touchesBegan</span>:(NSSet *)touches withEvent:(UIEvent *)event{
-                        NSLog(@"%s", __PRETTY_FUNCTION__);
-                        UITouch* touch = [touches anyObject];
-                        if(touch != nil){
-                            _initXY = [touch locationInView:touch.view];
-                        }
-                    }
-                    </pre>
-                    <p>
-                    From above code in <span style="color:blue;">touchesBegan</span>, <span style="color:green;">CGPoint</span> _initXY will be [1, 2]
-                    </p>
-                    <pre style="background:#DDD;">
-                    - (void)<span style="color:blue;">touchesMoved</span>:(NSSet *)touches withEvent:(UIEvent *)event{
-                        UITouch* touch = [touches anyObject];
-                        if(touch != nil){
-                            <span style="color:green;">CGPoint</span> currXY = [touch locationInView:touch.view];
-                            _center.x = _center.x + (currXY.x - _initXY.x); 
-                            _center.y = _center.y + (currXY.y - _initXY.y); 
-                            _initXY = currXY;
-                        }
-                    }
-                    </pre>
-                    <p>
-                    When <span style="color:blue;">touchesMoved</span> is called, <span style="color:green;">CGPoint</span> currXY will be [3, 5].<br>
-                    So we add the differences to the center of circle: <span style="color:green;">CGPoint</span> _center<br>
-                    Finally we update the _initXY to currXY: _initXY = currXY<br>
-                    so when the next <span style="color:blue;">touchesMoved</span> is called, _initXY will be the previous <span style="color:blue;">touchesMoved</span> location<br>
+            <div class="cen">
+            <a href="https://github.com/bsdshell/opengl/tree/master/draw_vertex_array.c">Source Code</a>
+            </div> 
 
-                    </p>
-                    <div class="cen">
-                        <a href="https://github.com/bsdshell/xcode/tree/master/TouchTutorial">full source code</a>
-                    </div>
-                    <div class="cen">
-                        <iframe width="600" height="500" src="https://www.youtube.com/embed/2dWRi7beTfc" frameborder="0" allowfullscreen></iframe>
-                    </div>
-
-                </div>
+            
             <!-- Column 1 end -->
             </div>
             <div class="col2">
@@ -189,7 +142,6 @@
             </div>
         </div>
     </div>
-
 
     </body>
     </html>

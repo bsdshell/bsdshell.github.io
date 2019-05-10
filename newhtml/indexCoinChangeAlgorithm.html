@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
 <head>
-	<title>Coin Change Algorithm, Minimum Coin change Problem</title>
-	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-	<meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
-	<meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
-	<meta name="robots" content="index, follow" />
-	<link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
-	<link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+    <title>$title</title>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
+    <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="../highlight.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,265 +17,165 @@
             jax: ["input/TeX","output/HTML-CSS"],
             tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
           });
-        </script>
+    </script>
     <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
 </head>
 <body>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66282017-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<div class="myclass">
+<div class="mytitle">
+Replace and Search word in boundary
+</div>
+
+<pre class="mytext">
+Haskell Regex.POSIX is not supported 'word boundary'
+use package: Text.RE.TDFA.String instead
+
+-- /Users/cat/myfile/bitbucket/haskell/regexExample.hs 
+</pre>
+
+<pre class="prettyprint">
+--{-# LANGUAGE QuasiQuotes                      #-}
+--import Text.RE.TDFA.String
+main = do 
+        -- replace word boundary, replace one, and replace all
+        let s1 = "mydog dog dog (dog)" ?=~/ [ed|${adr}(\<dog\>):?///< div class="dog">${adr}< /div> |]
+        let s2 = "mydog dog dog (dog)" *=~/ [ed|${adr}(\<dog\>):?///< div class="dog">${adr}< /div> |]
+        putStrLn $ "replace one: =>[" ++ s1 ++ "]"
+        putStrLn $ "replace all: =>[" ++ s2 ++ "]"
+</pre> 
+
+<div class="mytitle">
+Use =~
+</div>
+<pre class="prettyprint">
+re1 = "my food"         =~ "foo"::Bool                      -- True
+re2 = "my food foo"     =~ "foo"::String                    -- "foo"
+re3 = "my foolish fool" =~ "foo."::[[String]]               -- [["fool"],["fool"]]
+re4 = "my foolish fool" =~ "foo."::(String, String, String) -- ("my ","fool","ish fool")
+</pre> 
+
+<div class="mytext">
+        "mydog dog-- dog pig cat dog fox" => "mydog [dog]-- [dog] pig cat [dog] fox"
+</div>
+<pre class="prettyprint tinyfont">
+        -- word boundary, search word and replace
+        let s = "mydog dog-- dog pig cat dog fox"
+        searchReplace s word "[\\0]"
+</pre>
+<div class="mytext">
+        "http://google.com" => http://[google].com
+</div>
+<pre class="prettyprint tinyfont">
+        let r1 = mkRegex "google"
+        let input = "http://google.com"
+        let replace1 = "[\\0]"
+        putStrLn $ subRegex r1 input replace1            -- http://[google].com
+</pre>
+
+<div class="mytext">
+        "banana" => ba[nana] {na} 
+</div>
+<pre class="prettyprint tinyfont">
+        let r3 = mkRegex "(na)+"
+        putStrLn $ subRegex r3 "banana" "[\\0] {\\1}"
+</pre>
+
+<div class="mytext">
+        "http://file.pdf" => [http://file.PDF]
+</div>
+<pre class="prettyprint tinyfont">
+        let r5 = mkRegex ".*\\.pdf"
+        putStrLn $ subRegex r5 "http://file.pdf" "[\\0]" -- [http://file.PDF]
+</pre>
+
+<div class="mytext">
+        "root_admin.last-name@gmail.com" => [root_admin.last-name@gmail.com] {root_admin.last-name} {gmail.com}
+</div>
+<pre class="prettyprint tinyfont">
+        -- capture group, capture email address
+        let r6 = mkRegex "([A-Za-z._-]+)+@(([a-z])+\\.([a-z]{2,4}))"
+        putStrLn $ subRegex r6 "root_admin.last-name@gmail.com"   "7. [\\0] {\\1}{\\2}"
+</pre>
+<div class="mytext">
+        "/home/user/file/mybook.PDF" => "/home/user/file/mybook.PDF" 
+</div>
+<pre class="prettyprint tinyfont">
+        let r7 = mkRegexWithOpts "(.*\\.pdf)" True False
+        let input = "/home/user/file/mybook.PDF"
+        let callMeMaybe = matchRegex r7 input
+</pre>
+<div class="mytext">
+        "/home/user/file/mybook.PDF" => ".PDF" 
+</div>
+<pre class="prettyprint tinyfont">
+        let r7 = mkRegexWithOpts "(\\.pdf)" True False
+        let input = "/home/user/file/mybook.PDF"
+        let callMeMaybe = matchRegex r7 input
+</pre>
+
+<div class="mytext">
+        "779-123-4483" => "[416-123-4483]"
+</div>
+<pre class="prettyprint tinyfont">
+        -- capture phone number
+        let p1 = mkRegex "[0-9]{3}[ -]?[0-9]{3}[ -]?[0-9]{4}" 
+        -- replace string
+        putStrLn $ subRegex p1 "779-123-4483"  "[\\0]"    -- [416-123-4483]
+</pre>
+<div class="mytext">
+        "PaloAlto:MountainView" => ["PaloAlto","MountainView"]
+</div>
+<pre class="prettyprint tinyfont">
+        -- split Regex
+        print $ splitRegex(mkRegex ":") "PaloAlto:MountainView" -- ["PaloAlto","MountainView"]
+</pre>
+
+<div class="mytext">
+        capture function in ObjectiveC
+</div>
+<pre class="prettyprint tinyfont">
+        -- capture function in ObjectiveC
+        let me = mkRegex "(-|\\+)[[:space:]]*\\([[:space:]]*[[:print:]]+[[:space:]]*\\)[[:space:]]*[[:graph:]]+\
+        \[[:space:]]*:?[[:space:]]*([[:space:]]*[[:graph:]]+[[:space:]]*:[[:space:]]*[[:graph:]]+[[:space:]]*)*"
+
+        putStrLn $ subRegex me "- (NSstring*) swap :" "[\\0]" -- [- (NSstring*) swap :]
+</pre>
+
+<div class="mytext">
+        capture function in ObjectiveC
+</div>
+<pre class="prettyprint tinyfont">
+        putStrLn $ subRegex me "- (NSstring*) method:(Integer)num width:(Integer)width\ 
+        \ height:(NSString*)str" "12. [\\0]"
+        -- [- (NSstring*) method:(Integer)num width:(Integer)width  height:(NSString*)str]
+</pre>
+<div class="mytext">
+        match count 
+</div>
+<pre class="prettyprint tinyfont">
+        let r7 = mkRegex "([A-Za-z]+)" 
+        let count = matchCount r7 "haskell java C++ ObejctiveC aa#" 
+        putStrLn $ "count = " ++ show count
+</pre>
+<div class="mytext">
+        match test 
+</div>
+<pre class="prettyprint tinyfont">
+        let r8 = mkRegex "[a-z]+"
+        let bo = matchTest r8 "22323"
+        putStrLn $ "Is matched = " ++ show bo -- return True
+</pre>
 
-                        <h3>Given change C and <font color="red">$S=\{S_{1}, S_{2}, ... ,S_{k}  \}$</font>, find the mininum numbers of coins that adds up to C
-                            <br>let the numbers of coins to be $\varphi$ 
-                        </h3>
-                        <h3><font color="blue">Example 1. </font> Given change C = 6 and <font color="red">$S=\{2, 3, 4\}$</font>, find the mininum number of coins adds up to 6</h3>
-                        <h3>C = 6 = 2 + 2 + 2 $\Rightarrow \varphi =3$</h3>
-                        <h3>C = 6 = 2 + 4 $\Rightarrow \varphi =2$</h3>
-                        <h3>C = 6 = 4 + 2 $\Rightarrow \varphi =2$</h3>
-                        <h3>C = 6 = 3 + 3 $\Rightarrow \varphi =2$</h3>
-                        <h3>$\Rightarrow \varphi=2$</h3>
-                    </div>
-
-                    <div class="mathbox">
-                        <h3><font color="#F2940F">Mathematic Concept</font></h3>
-                        <h3>Given C and find the linear combination of $S=\{S_{1}, S_{2}, ... ,S_{k}  \} \Rightarrow C = \sum_{i=1}^{k} x_{i}S_{i}$ </h3>
-                        <h3><font color="red">$C = 6\quad S=\{2, 3, 4\}$</font></h3>
-                        <h3>$6 = 1*2 + 1*2 + 1*2 \Rightarrow x_{1}=1\quad x_{2}=1\quad x_{3}=1 \Rightarrow \varphi = 1 + 1 + 1 = 3 \textbf{ coins}$</h3>
-                        <h3>$6 = 1*2 + 1*4 \Rightarrow x_{1}=1\quad x_{2}=1 \Rightarrow \varphi = 1 + 1 = 2 \textbf{ coins}$</h3>
-                        <h3>$6 = 1*4 + 1*2 \Rightarrow x_{1}=1\quad x_{2}=1 \Rightarrow \varphi = 1 + 1 = 2 \textbf{ coins}$ </h3>
-                        <h3>$6 = 1*3 + 1*3 \Rightarrow x_{1}=1\quad x_{2}=1 \Rightarrow \varphi = 1 + 1 = 2 \textbf{ coins}$</h3>
-                    </div>
-
-                    <br>
-                    <h3><font color="blue">Example 2. </font> Given change C = 0 and <font color="red">$S=\{2, 3, 4\}$</font>, find the mininum number of coins adds up to 0</h3>
-                    <h3>Since C = 0, zero coin adds up to C = 0. Therefore, the solution is zero coin</h3>
-                    <h3>C = 0 = 0 $\Rightarrow \varphi =0$</h3>
-
-                    <div class="mathbox">
-                        <h3><font color="#F2940F">Mathematic Concept</font></h3>
-                        <h3>$C = 0 = 0*2 + 0*3 + 0*4 \Rightarrow x_{1}=0\quad x_{2}=0\quad x_{3}=0 \Rightarrow \varphi = 0 + 0 + 0 = 0 \textbf{ coin}$</h3>
-                    </div>
-
-                    <br>
-                    <h3><font color="blue">Example 3. </font> Given change C = -2 and <font color="red">$S=\{2, 3, 4\}$</font>(has no coin), find the mininum number of coins adds up to 6</h3>
-                    <h3>There is no solution, since C is negative [ $\because$ we can't have negative number of coins ]</h3>
-                    <h3>If C < 0, then we can  let $\varphi =\infty$ </h3>
-                    <h3>Ok, you might ask why is $\varphi =\infty$, why not is $\varphi =0$</h3>
-                    <h3>Well, $\varphi =0$ is the solution for C = 0. But I still don't understand why $\varphi$ has to be $\infty$</h3>
-
-                    <div class="mathbox">
-                        <h3><font color="#F2940F">Real reason behind that why $\varphi$ has to be $\infty$</font></h3>
-                        <h3>$\infty$ acts as identity for min( , ) operation</h3>
-                        <h3><font color="blue">E.g.</font> $0$ is the identity for + since $0 + a = a, a \in \mathbb{N}$</h3>
-                        <h3><font color="blue">E.g.</font> $1$ is the identity for * since $1*a = a, a\in \mathbb{N}$</h3>
-                        <h3>Similarly, $\infty$ is the identity for $min( , )$ since $min(\infty, a) = a, a \in \mathbb{N}$</h3>
-
-                        <h3>min(,) is called monoid with Math.MAX_VALUE as identity</h3>
-                    </div>
-
-                    <h3>Ok, make sence, but why do we need the $\infty$ as identity for the [ coin change problem ]</h3>
-                    <h3>Let's look at the following graph for $\text{coin } = \{2, 3, 4\}, S = 6$</h3>
-                    <h3><font color="red">The value of each node $=$ the value of parent node $-$ weight of the edge [ except the root node ]</font></h3>
-                    <h3>Some leaf nodes are $\infty$ since the value of parent node $<$ the weight of edge</h3>
-                    <h3>Why we set the value of the node = $\infty$ ? since we know the path contains $\infty$ can't be a solution</h3>
-                    <h3>The only path might be a solution is the value of leaf node has to be zero [ which is the red node ]</h3>
-                    <h3>Since we are looking for the minimum number of coins, then the solution(s) has/have to be the shortest path from the root</h3>
-                    <div>
-                        <img src="../image/CoinChangeGraph.svg" width="100%" height="50%" />
-                    </div>
-                    
-                    <pre class="prettyprint">
-                    // /Users/cat/myfile/bitbucket/java/CoinChange.java
-                    //CoinChange.java
-                    //Given coin{2, 3, 4} and s = 6
-                    //Find the minimum number of coins sums up to s
-                    public static int minCount(int[] coin, int s, int k) {
-                        int min = Integer.MAX_VALUE;
-                        if(s == 0)
-                            min = 0;
-                        else if(s > 0) {
-                            // min(s) = min(s-coin[k]) + 1
-                            for(int i=0; i < k; i++) {
-                                int childMin = minCount(coin, s-coin[i], k);
-                                if(childMin != Integer.MAX_VALUE)
-                                    min = Math.min(min, childMin + 1);
-                            }
-                        }
-                        return min;
-                    }
-                    </pre>
-
-                    <div class="mytitle">
-                    Coin Change, 2018 version in Java
-                    </div>
-                    <pre class="prettyprint">
-                /* 
-                    (4) -> (4 - 2) -> (2 - 2)
-                    {2} s = 4
-                    [ s=4
-                            [ s=2
-                                    [ s = 0
-                                      
-
-                                  0 <-]
-                          1 <-]
-                 2 <-]
-                */
-                public static int minCoins(List<Integer> list, int s){
-                    int min = Integer.MAX_VALUE;
-                    if( list != null){
-                        if (s < 0){
-                            return Integer.MAX_VALUE;
-                        }
-                        else if( s == 0){
-                            return 0;
-                        }else{
-                            for(Integer n : list){
-                                min = Math.min(min, minCoins(list, s - n));
-                            }
-                        }
-                    }
-                    return min + 1;
-                }
-                    </pre>
-
-                
-
-
-                </div>
-			
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		</div>
-	</div>
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

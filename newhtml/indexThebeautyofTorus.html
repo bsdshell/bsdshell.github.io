@@ -1,210 +1,288 @@
-
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
-    <head>
-        <title>The beauty of Torus</title>
-        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
-        <meta name="robots" content="index, follow" />
-        <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
-        <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="../highlight.css">
-        <link rel="stylesheet" type="text/css" href="../style.css">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <script type="text/x-mathjax-config">
-              MathJax.Hub.Config({
-                extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-                jax: ["input/TeX","output/HTML-CSS"],
-                tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
-              });
-        </script>
-        <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
-    </head>
-    <body>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-66282017-2', 'auto');
-      ga('send', 'pageview');
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+    <title>Xfido.com</title>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
+    <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../highlight.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+          });
     </script>
+    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+</head>
+<body>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66282017-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<div class="colmask rightmenu">
+    <div class="colleft">
+        <div class="col1">
+        <!-- Column 1 start -->
+        <pre class="mycode">
+        <span class="bo">Install ffmpeg on Mac OSX</span>
+        1. brew unistall ffmpeg
+        2. brew install ffmpeg --with-fdk-aac --with-ffplay --with-freetype --with-libass --with-libquvi --with-libvorbis --with-libvpx --with-opus --with-x265
 
-            <div class="cen">
-            <img src="../image/torusred.png" width="60%" height="60%" /><br>
-            </div> 
-            <div class="mytitle">
-            Derive Torus Parameter Equation 
-            </div>
-            <div style="font-size:140%" class="mytext">
-            We can use two circles with two parameter equations, Torus parameter equations can be dervied<br>
-            We want to derive the Parametric Equation of the red torus in the picture below. The vertical line is z-axis<br>
-            On the $xy$-plane, the radius of small circle is $r$ and the radius of big circle is $R$<br>
-            There is circle on the $xy$-plane, the distance between the center of pink circle and center of $xy$-plane is $R$.
-            The circle can be parametrized with following steps:<br>
-            1. Parameterize the circle centered at origin $(x=0, y=0)$<br>
-            2. Shift the circle to right side alone x-Axis by $R$
-            
-            \begin{align*} 
-                x' &= r\cos{\alpha} + R \\
-                y' &= r\sin{\alpha} \\
-            \end{align*}
-            </div>
-            <div style="font-size:140%" class="mytext">
-            The line segment $OD'$ can be rotated in angle $\theta$ on the $xy$-plane, and $OD'$ is equal to $R + r\cos{\alpha}$
-            So the big circle with radius $OD' = R + r\cos{\alpha}$ can be parametrized with following equation:<br>
-            \begin{align*}
-               x &= OD'cos{\theta} \\
-               y &= OD'sin{\theta} \\ \\
-               x &= (R + r\cos{\alpha})cos{\theta} \\
-               y &= (R + r\cos{\alpha})sin{\theta} \\
-               z &= r\sin{\theta} \quad \text{ where z is only affected by $\theta$} 
-            \end{align*}
-            </div>
+        <span class="bo">Draw text on video with ffmpeg</span>
+        check github/youtubescript/run.sh file
 
-            <div class="cen">
-            <img src="../image/torus_parameterized.svg" width="60%" height="60%" /><br>
-            </div> 
+        <span class="bo">Extract frames from a movie </span>
+        This example extracts the first 2 seconds of a movie in video21.wmv into individual image files. The files will be called img-0001.png, img-0002.png, img-0003.png, etc. It is best to do this in a separate directory. 
+        ffmpeg -i video21.wmv -r 30 -t 2 -f image2 img-%04d.png
 
-            <div class="mytext">
-            Derive Close form Equation for Torus
-            </div>
-            <div class="cen">
-            <img src="../image/two_circle_torus.svg" width="60%" height="60%" /><br>
-            </div> 
-            <div style="font-size:140%" class="mytext">
-            From above picture, we define two parametric equations:<br>
-            1. $(x + 6)^2 + y^2 - 1 = 0$ [left circle]<br>
-            2. $(x - 6)^2 + y^2 - 1 = 0$ [right circle]<br><br>
-            We can multiply two equations[polynomials] in both sides:<br>
-            $c(x)= [(x + 6)^2 + y^2 - 1] [(x - 6)^2 + y^2 - 1] = 0$<br>
-            The equation will be two circles in the $xz-plane$<br><br>
-            why $c(x)$ is the equation for two circles?<br><br>
-            That can be proved informally as following<br>
-            </div>
-            
-            
-            <div class="mytitle">
-            Polynomial Ring
-            </div>
+        For wmv files it's sometimes necessary to specify the frame rate, in this case 30 (-r 30). The parameter '-f image2' means the input movie is in "image2" format; normally it's not necessary to specify it, but if it's not automatically detected, or if the extension is wrong, it may be needed.
 
-            <div style="font-size:140%" class="mytext">
-            Polynomial Ring $\mathbf{R}[X]$ in $x$ over the Ring $\mathbf{R}$ is defined as following
-            \[
-                p(x) = \sum_{i=0}^{n} a_i x^i
-            \]
-            where $a_0, a_1, \dots a_n$ are coefficients, $x^0, x^1, \dots x^n$ are symbols<br>
-            In our case, $\mathbf{R} = \Re, \mathbf{X} = x$<br>
-            There is Lemma:
-            If Polynomial Ring is over the Integral domain $\mathbf{R}$, then the following is hold.<br>
-            \[
-                f(x)g(x) = 0 \Leftrightarrow f(x) = 0 \text{ or } g(x) = 0
-            \]
-            Above Lemma can be proved by contradiction. Given two leading coefficients $a_m, b_n$ are both not zero<br>
-            \begin{align*}
-                f(x) &= a_m x^m \dots \\
-                g(x) &= b_n x^n \dots \\
-                f(x) g(x) &= a_m b_n x^{m + n} \dots \\
-                \implies a_m b_n &\neq 0 \quad \because a_m, b_n \text{ are in Integral Domain } \mathbf{R} = \Re  \\
-                \implies f(x) g(x) &\neq  0 
-            \end{align*}
-            <br>
-            From above Lemma:<br>
-            Let $f(x) = (x + 6)^2 + y^2 - 1, \quad g(x) = (x - 6)^2 + y^2 - 1 \implies f(x) = 0 \text{ or } g(x) = 0$
-            which is two circles on the $xz$-plane from above picture.<br><br>
-            </div>
-            <div class="cen">
-            <img src="../image/xy_plane.svg" width="60%" height="60%" /><br>
-            </div> 
+        <span class="bo">Combine individual frames into a movie </span>
+        Create an MP4 movie from JPEG files with filenames 001.jpg, 002.jpg, etc. This example creates an mp4 with 10 frames per second and 1800 kbps. 
+        ffmpeg -r 10 -b 1800 -i %03d.jpg test.mp4 
+        The %3d is 'C' language notation for a 3-digit integer. Don't put a percent sign or a 'd' in the filename.
 
-            <div class="mytitle">
-            $x$ and $y$ in $xy$-plane
-            </div>
+        <span class="bo">This example creates an mpeg at the default rate (25 fps, 200 kbps). </span>
+        ffmpeg -i %03d.jpg test.mpeg 
+        Sometimes you have to set the bitrate to get a good quality movie. 
+        ffmpeg -b 4000 -i frame-%5d.jpg test.mpeg
 
-            <div style="font-size:140%" class="mytext">
-            We can investigate how the y-Axis is changed relative to x-Axis and z-Axis on $xy$-plane<br>
-            If two circles are rotated around the z-Axis, then $z$ is not changed at all.<br>
-            The relationship between $x$ and $y$ is $r = \sqrt{x^2 + y^2}$ on the $xy$-plane <br>
-            For equation $c(x)$ from above, the $y$ is zero since $c(x)$ on the $xz$-plane <br>
-            For $r = \sqrt{x^2 + y^2}$, $y$ can be any value alone a circle with radius $r$ and centered at origin, <br>
-            So $x$ can be replaced with $r = \sqrt{x^2 + y^2}$ in $c(x)$ <br>
-            \begin{align*} 
-                c(x) &= [(x + 6)^2 + y^2 - 1] [(x - 6)^2 + y^2 - 1] = 0 \\
-                r &= \sqrt{x^2 + y^2} \\
-                c(x) &= [(r + 6)^2 + y^2 - 1] [(r - 6)^2 + y^2 - 1] = 0 \\
-            \end{align*} 
-            </div>
-            <div class="mytitle">
-            The Close Form Equation for Torus
-            </div>
-            \begin{align}
-            &[(r + 6)^2 + y^2 - 1] [(r - 6)^2 + y^2 - 1] = 0 \\
-            &r = \sqrt{x^2 + y^2} 
-            \end{align}
+        <span class="bo">Changing image file format </span>
+        Sometimes you want to convert the files into JPEGs first. This script will do the conversion and change the extension of each file from .png to .jpg. 
+        for f in *png ; do convert -quality 100 $f `basename $f png`jpg; done 
 
-            <div class="cen">
-            <img src="../image/torus_rotate.jpeg" width="60%" height="60%" /><br>
-            </div> 
+        <span class="bo">Find what file formats are supported </span>
 
-            <div class="mytitle">
-            Sphere Parametric Equation 
-            </div>
-            <div class="mytext">
-            Sphere Equation<br>
-            </div>
-            <div class="cen">
-            <img src="../image/circle_parameter1.svg" width="60%" height="60%" /><br>
-            <img src="../image/sphere_equation.png" width="60%" height="60%" /><br>
-            <img src="../image/sphere_coordinates.png" width="60%" height="60%" />
-            <img src="../image/sphere_polar.svg" width="60%" height="60%" /><br>
-            </div> 
-            <div style="font-size:140%" class="mytext">
-            Derived Sphere Parametric Equation<br> 
-            We give a horizontal[xy-plane] cut to a sphere
-            e.g. $z = 0, z = 0.2, z = 0.5$<br>
-             
-            \begin{align*}
-            r'&= r\cos(\alpha) \quad \text{r' is the radius of small circle} \\ \\
-            x &= r\cos(\alpha)\cos(\beta) \\
-            y &= r\cos(\alpha)\sin(\beta) \\
-            z &= r\sin(\alpha) \\
-            \end{align*}
-            </div>
+        ffmpeg -formats
 
-            <div class="cen">
-            <img src="../image/sphere_coordinate.svg" width="60%" height="60%" /><br>
-            </div> 
+        <span class="bo">Get help </span>
 
-            <div class="mytitle">
-            Conic Parameter Equation 
-            </div>
+        ffmpeg -h
 
-            <div style="font-size:140%" class="mytext">
-            Conic Equation is similar to Sphere Equation, 
-            The only difference is the radius of cross section,
-            For Sphere, the radius is changing according to $r \cos{\alpha}$
-            For Conic,  the radius is changing according to $r f(x)$ where $f(x)$ is linear function
-            
-            \begin{equation}
-            \begin{aligned}
-            x &= r f(x) \cos{\beta} \\
-            y &= r f(x) \sin{\beta} \\
-            z &= f(x) \\
-            f(x) &= x \in [1..0]
-            \end{aligned}
-            \end{equation} 
+        <span class="bo">Convert movie from WMV to mp4 format</span>
+        Ffmpeg determines what file format you want by the extension. If your input file doesn't have the right extension, bad things will happen. 
+        ffmpeg -i video04.wmv -f mp4 -strict -2 -t 5 a.mp4 
+        ffmpeg -i output2.avi -strict -2 test.mp4
 
-            </div>
-            <div class="cen">
-            <img src="../image/conic_parameter_equation.svg" width="60%" height="60%" /><br>
-            </div> 
+        <span class="bo">Resize a movie </span>
+        Resize a movie input.avi to 640 x 480 pixels. An AVI file titled output.avi is produced. 
+        ffmpeg -i input.avi -vf scale=640:480 output.avi
 
-    </body>
-    </html>
-    
+        <span class="bo">Crop a movie </span>
 
+        ffmpeg -i input.avi -vf crop=100:110:200:80 output.avi 
+        ffmpeg -i input.avi -vf crop=in_w:in_h/2:in_w:in_h/2 output.avi 
+
+        The parameters are x:y:width:height in pixels. The first command tries to create a 200x80 image, but ffmpeg will change this to the correct movie aspect ratio. The second command saves only the bottom half of your movie.
+
+        <span class="bo">Cut a section from a movie </span>
+        Cut a section out of the movie, saving only the five seconds between 70 and 75. 
+
+        ffmpeg -i input.avi -ss 00:01:10 -t 00:00:05 -c:v copy -c:a copy output.avi 
+
+        The -c:v copy -c:a copy option makes it faster by copying the video and audio instead of decoding and re-encoding them. You could also use -vf trim=70:75, but this doesn't re-set the time stamp, so viewers will just see a black screen for the first 70 seconds. Supposedly the setpts filter can fix this, but I couldn't get it to work.
+
+        <span class="bo">Retrieving metadata from a movie </span>
+        Reads metadata and prints it on the screen. As with all ffmpeg commands, there are many options (man ffprobe). ExifTool gives a lot more information. 
+        ffprobe DSC_6881.MOV Metadata:
+        major_brand : qt 
+        minor_version : 537331968
+        compatible_brands: qt niko
+        creation_time : 2015-06-09 01:10:21
+        Duration: 00:01:41.35, start: 0.000000, bitrate: 18896 kb/s
+        Stream #0:0(eng): Video: h264 (High) (avc1 / 0x31637661), yuvj420p(pc, bt470bg/unknown/bt470m), 1920x1080 [SAR 1:1 DAR 16:9], 17339 kb/s, 23.98 fps, 23.98 tbr, 24k tbn, 47.95 tbc (default)
+        Metadata:
+        creation_time : 2015-06-09 01:10:21
+        Stream #0:1(eng): Audio: pcm_s16le (sowt / 0x74776F73), 48000 Hz, 2 channels, s16, 1536 kb/s (default)
+        Metadata:
+        creation_time : 2015-06-09 01:10:21
+        Filtering a movie 
+        It is possible to split a movie into frames, process each individual frame in an image analysis program, and then re-assemble it into a movie. But this gets tedious after the first few hundred thousand frames.
+
+        <span class="bo">Brightening, changing the gamma, inverting, and many other functions are available in ffmpeg through the filter option. They can be very simple:</span>
+        Filtering uses the -vf option followed by a series of commands. 
+
+        <span class="bo">To resize a movie to 320 x 240 pixels: </span>
+        ffmpeg -i input.avi -vf scale=320:240 output.avi 
+
+        <span class="bo">To invert the colors in a movie: </span>
+        ffmpeg -i output2.avi -vf lutrgb="r=negval:g=negval:b=negval" output3.avi 
+
+        <span class="bo">To increase brightness by a factor of four: </span>
+        ffmpeg -i output2.avi -vf lutyuv=y=val*4 output3.avi 
+
+        <span class="bo">To increase red by a factor of two: </span>
+        ffmpeg -i output2.avi -vf lutrgb=r=val*2 output3.avi 
+
+        <span class="bo">To increase gamma by factor of 5: </span>
+        ffmpeg -i output2.avi -vf 'lutyuv=y=gammaval(0.2)' output3.avi 
+        The quotes are needed to prevent the shell from messing with the command. 
+
+        <span class="bo">To rotate a movie by 45 degrees: </span>
+        ffmpeg -i output2.avi -vf rotate=45 output3.avi 
+
+        <span class="bo">The sharpen, blur, or sharpen a movie: </span>
+        ffmpeg -i output2.avi -vf unsharp output3.avi 
+        ffmpeg -i output2.avi -vf unsharp=7:7:-2:7:7:-2 output3.avi 
+        ffmpeg -i output2.avi -vf unsharp=5:5:1.5:5:5:0.0 output3.avi 
+
+        <span class="bo">The defaults for unsharp are 5:5:1.0:5:5:0.0.</span>
+        1st = kernel of luma filter x size (odd 3 to 63)
+        2nd = kernel of luma filter y size (odd 3 to 63)
+        3rd = amount of luma filtering (-1.5 to 1.5 but can be any number); negative=blur, positive=sharpen
+        4th = kernel of chroma filter x size (odd 3 to 63)
+        5th = kernel of chroma filter y size (odd 3 to 63)
+        6th = amount of chroma filtering (-1.5 to 1.5 but can be any number); negative=blur, positive=sharpen
+
+        <span class="bo">To draw a box or grid on the movie: </span>
+        ffmpeg -i output2.avi -vf drawbox=x=10:y=20:w=200:h=60:color=red@0.5 output3.avi 
+
+        ffmpeg -i output2.avi -vf drawgrid=width=100:height=100:thickness=2:color=red@0.5 output3.avi 
+
+        <span class="bo">More complex filters </span>
+        Filters can also be very complex. Many seemingly simple operations require splitting the processing stream. This example crops and flips half of the image. This information is from the man page (man ffmpeg-filters).
+
+        The input is split into two streams. One stream goes through the crop filter and the vflip filter, and is then merged back with the other stream by overlaying it on top. The start and end of each path require labels enclosed in square brackets. All these commands go on a single line, not broken up as shown here.
+
+        ffmpeg -i inputmovie -vf "split [main][tmp]; [tmp] crop=iw:ih/2:0:0, vflip [flip]; [main][flip] overlay=0:H/2" outputmovie 
+
+        Here are some examples of filtering. The first one uses the YUV look-up table filter to multiply the luminance by a factor of 5, which can be useful for making extremely dark images brighter. There are also commands for changing the gamma and contrast.
+
+        ffmpeg -i DSC_6881.MOV -vf "split [main][tmp]; [tmp] lutyuv="y=val*5" [tmp2]; [main][tmp2] overlay" output.avi
+
+        This example raises the gamma. In ffmpeg, a value less than 1.0 makes dark areas lighter and a value above 1.0 makes them darker, which is the opposite of what you'd expect: 
+        ffmpeg -i DSC_6881.MOV -vf "split [main][tmp]; [tmp] lutyuv=y=gammaval(0.6) [tmp2]; [main][tmp2] overlay" output.avi
+
+        The RGB look-up table filter is similar, and allows you to do stuff to the red, green, and blue channels separately. In this case we invert them to make a negative image.
+
+        ffmpeg -i DSC_6887.MOV -vf "split [main][tmp]; [tmp] lutrgb="r=negval:g=negval:b=negval" [tmp2]; [main][tmp2] overlay" output.avi
+
+        <span class="bo">This example denoises an AVI file. This helps reduce those rectangular compression artifacts. </span>
+        ffmpeg -i output2.avi -vf "split [main][tmp]; [tmp] dctdnoiz=4.5 [tmp2]; [main][tmp2] overlay" output3.avi
+
+        There are numerous other options, such as deshake, delogo, drawtext, fade, lens correction, rotate, subtitles, and fft filter. Some I could get to work and some, like drawtext, I couldn't, and some take a very long time to run.
+
+        <span class="bo">Combining filters </span>
+        You can put many filters together in the same command. The following rules apply:
+
+        If the filter takes more than one parameter, separate parameters by colons. Ex: unsharp=7:7:-2:7:7:-2
+        To put two or more filters together, separate them by commas. But watch out: spaces are not allowed. If you use spaces, the whole thing has to be inside quotes. 
+
+        <span class="bo">Bad:</span>
+        ffmpeg -i input.mov -vf scale=480:270, lutyuv=y=val*4, lutyuv=y=gammaval'(2.0)' output2.avi 
+
+        <span class="bo">Good: </span>
+        ffmpeg -i input.mov -vf "scale=480:270, lutyuv=y=val*4, lutyuv=y=gammaval(2.0)" output2.avi 
+
+        <span class="bo">Good: </span>
+        ffmpeg -i input.mov -vf scale=480:270,lutyuv=y=val*4,lutyuv=y=gammaval'(2.0)' output2.avi
+        If a filter contains '(', ')', ';' or some other command that's used by the shell, you have to enclose it in single or double quotes.
+        If you use the wrong syntax, it will print an error message. Pay no attention to what it says-it is often wrong.
+
+        </pre>
+
+        <!-- Column 1 end -->
+        </div>
+
+        <div class="col2">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
 
 
 

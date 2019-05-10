@@ -2,10 +2,10 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>C++ Reverse Byte</title>
+        <title>Check Square Number in Java</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
+        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
@@ -37,24 +37,32 @@
             <div class="col1">
             <!-- Column 1 start -->
             <div class="mytitle">
-            Fast Reverse Byte in C++ 
+            Check if a number is Square Number or not<br>
             </div>
-            <div class="highlight"><pre><span class="kt">int</span> <span class="nf">reverseBit</span><span class="p">(</span><span class="kt">int</span> <span class="n">b</span><span class="p">){</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mh">0xF0</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span> <span class="o">|</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mh">0x0F</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">;</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;b=[%x]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mh">0xCC</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span> <span class="o">|</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mh">0x33</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;b=[%x]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mh">0xAA</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span> <span class="o">|</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mh">0x55</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;b=[%x]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">b</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
- 
-            <div class="cen">
-            <img src="../image/cppstd.png" width="40%" height="40%" /><br>
-            <a href="https://github.com/bsdshell/cpp/tree/master/ReverseBitOrder.cpp">Source Code</a>
+            <div class="mysubtitle">
+            We use the following basic fact about square number $\textbf{M}$<br>
             </div>
+            \[
+                \textbf{M} = \textbf{p}_1^{2k_1} \times \textbf{p}_2^{2k_2} \times \dots \times \textbf{P}_n^{2k_n}  \quad k_i \in \mathbf{N}\\
+            \]
+            <pre class="codebg">
+                            public static boolean squareNumber(int n){
+                                int num = (int)Math.sqrt(n);
+                                List<Integer> list = Aron.allPrimes(num);
 
+                                for (int i = 0; i < list.size(); i++) {
+                                    Integer p = list.get(i);
+                                    if (n % (p * p) == 0)
+                                        n = n / (p * p);
+                                }
+                                if(n == 1)
+                                    return true;
+                                else
+                                    return false;
+                            }
+            </pre>
+            
+                
             <!-- Column 1 end -->
             </div>
             <div class="col2">

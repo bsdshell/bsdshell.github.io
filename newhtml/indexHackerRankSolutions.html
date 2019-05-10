@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>HackerRank Solutions</title>
+        <title>IOS Remove CAShapeLayer</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
         <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
@@ -38,69 +38,14 @@
         <div class="colleft">
             <div class="col1">
                 <!-- Column 1 start -->
-                <div class="mytextbox highlight">
-                    <p>
-                    Write a function that determines whether a two-dimensional integer array contains duplicate values within k indices of each other [manhattan distance]
-                    </p>
-                    <div class="cen">
-                    <img src="../image/manhattan_explanation.png" width="50%" height="50%" /><br> 
-                    </div>
-                    <h3 class="haskellc">Manhattan distance Solution<h3>
-                    <h3><div class="highlight"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">manhattan</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">arr</span><span class="o">,</span> <span class="kt">int</span> <span class="n">h</span><span class="o">,</span> <span class="kt">int</span> <span class="n">w</span><span class="o">,</span> <span class="kt">int</span> <span class="n">k</span><span class="o">,</span> <span class="kt">int</span> <span class="n">num</span><span class="o">){</span>
-        <span class="kd">final</span> <span class="kt">int</span> <span class="n">visited</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1000</span><span class="o">;</span> 
-        <span class="kt">boolean</span> <span class="n">ret0</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="kt">boolean</span> <span class="n">ret1</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="kt">boolean</span> <span class="n">ret2</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="kt">boolean</span> <span class="n">ret3</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="kt">boolean</span> <span class="n">ret4</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">width</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span>
+                <div class="mytitle">
+                Remove CAShapeLayer or hide CAShapeLayer 
+                </div><br>
+                <div class="cen">
+                <img src="../image/removelayer.png" width="30%" height="30%" /><br> 
+                <a href="https://github.com/bsdshell/xcode/blob/master/RemoveCAShaperLayer/EmptyApplication/AppDelegate.m#L124">Source Code</a>
+                </div> 
 
-        <span class="k">if</span><span class="o">(</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="o">){</span>
-            <span class="n">ret0</span> <span class="o">=</span> <span class="n">num</span> <span class="o">==</span> <span class="n">arr</span><span class="o">[</span><span class="n">h</span><span class="o">][</span><span class="n">w</span><span class="o">];</span>
-        <span class="o">}</span><span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">h</span><span class="o">][</span><span class="n">w</span><span class="o">]</span> <span class="o">!=</span> <span class="n">visited</span><span class="o">){</span>
-            <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">h</span><span class="o">][</span><span class="n">w</span><span class="o">];</span>
-            <span class="n">arr</span><span class="o">[</span><span class="n">h</span><span class="o">][</span><span class="n">w</span><span class="o">]</span> <span class="o">=</span>  <span class="n">visited</span><span class="o">;</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">w</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">width</span><span class="o">){</span>
-                 <span class="n">arr</span><span class="o">[</span><span class="n">h</span><span class="o">][</span><span class="n">w</span><span class="o">]</span> <span class="o">=</span> <span class="n">visited</span><span class="o">;</span>
-                 <span class="n">ret1</span> <span class="o">=</span> <span class="n">manhattan</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="n">h</span><span class="o">,</span> <span class="n">w</span><span class="o">+</span><span class="mi">1</span><span class="o">,</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="n">num</span><span class="o">);</span>
-                 <span class="n">arr</span><span class="o">[</span><span class="n">h</span><span class="o">][</span><span class="n">w</span><span class="o">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">;</span>
-                 <span class="k">if</span><span class="o">(</span><span class="n">ret1</span><span class="o">)</span>
-                     <span class="k">return</span> <span class="n">ret1</span><span class="o">;</span>
-             <span class="o">}</span>
-
-            <span class="k">if</span><span class="o">(</span><span class="n">w</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">){</span>
-                 <span class="n">arr</span><span class="o">[</span><span class="n">h</span><span class="o">][</span><span class="n">w</span><span class="o">]</span> <span class="o">=</span> <span class="n">visited</span><span class="o">;</span>
-                 <span class="n">ret2</span> <span class="o">=</span> <span class="n">manhattan</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span>  <span class="n">h</span><span class="o">,</span> <span class="n">w</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="n">num</span><span class="o">);</span>
-                 <span class="n">arr</span><span class="o">[</span><span class="n">h</span><span class="o">][</span><span class="n">w</span><span class="o">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">;</span>
-                 <span class="k">if</span><span class="o">(</span><span class="n">ret2</span><span class="o">)</span>
-                     <span class="k">return</span> <span class="n">ret2</span><span class="o">;</span>
-             <span class="o">}</span>
-
-            <span class="k">if</span><span class="o">(</span><span class="n">h</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">){</span>
-                 <span class="n">ret3</span> <span class="o">=</span> <span class="n">manhattan</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span>  <span class="n">h</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="n">w</span><span class="o">,</span> <span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="n">num</span><span class="o">);</span>
-                 <span class="n">arr</span><span class="o">[</span><span class="n">h</span><span class="o">][</span><span class="n">w</span><span class="o">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">;</span>
-                 <span class="k">if</span><span class="o">(</span><span class="n">ret3</span><span class="o">)</span>
-                     <span class="k">return</span> <span class="n">ret3</span><span class="o">;</span>
-             <span class="o">}</span>
-
-             <span class="k">if</span><span class="o">(</span><span class="n">h</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">height</span><span class="o">){</span>
-                 <span class="n">ret4</span> <span class="o">=</span> <span class="n">manhattan</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="n">h</span><span class="o">+</span><span class="mi">1</span><span class="o">,</span> <span class="n">w</span><span class="o">,</span> <span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="n">num</span><span class="o">);</span>
-                 <span class="n">arr</span><span class="o">[</span><span class="n">h</span><span class="o">][</span><span class="n">w</span><span class="o">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">;</span>
-                 <span class="k">if</span><span class="o">(</span><span class="n">ret4</span><span class="o">)</span>
-                     <span class="k">return</span> <span class="n">ret4</span><span class="o">;</span>
-             <span class="o">}</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">ret0</span> <span class="o">||</span> <span class="n">ret1</span> <span class="o">||</span> <span class="n">ret2</span> <span class="o">||</span> <span class="n">ret3</span> <span class="o">||</span> <span class="n">ret4</span><span class="o">;</span>
-    <span class="o">}</span>
-</pre></div>
-</h3>
-                    <div class="cen"> 
-                        <img src="../image/manhattan.png" width="50%" height="50%" /><br> 
-                    </div> 
-
-
-                </div>
             <!-- Column 1 end -->
             </div>
             <div class="col2">

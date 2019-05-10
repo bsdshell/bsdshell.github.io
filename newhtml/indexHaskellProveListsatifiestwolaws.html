@@ -1,82 +1,128 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
-<head>
-    <title>$title</title>
-    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
-    <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../highlight.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-            jax: ["input/TeX","output/HTML-CSS"],
-            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
-          });
-    </script>
-    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
-</head>
-<body>
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+    <head>
+        <title>C++ Copy Constructor</title>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
+        <meta name="robots" content="index, follow" />
+        <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../highlight.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/x-mathjax-config">
+              MathJax.Hub.Config({
+                extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+                jax: ["input/TeX","output/HTML-CSS"],
+                tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
+              });
+        </script>
+        <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+    </head>
+    <body>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-66282017-2', 'auto');
-  ga('send', 'pageview');
-</script>
-<div class="myclass">
-<div class="mytitle">
-Haskell prove List satisfies two Functor laws
-</div>
-<pre class="mytext">
-    Show Functor List or [] that satisfied two Functor laws:
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-66282017-2', 'auto');
+      ga('send', 'pageview');
+    </script>
 
-    class Functor f where
-        fmap:: (a -> b) -> f a -> f b
 
-    instance Functor [] where
-        fmap g [] = []   -- g = (a -> b),  [] = f a
-        fmap g (x:cx) = (g x):(fmap g cx)
+            <div class="mytitle">
+            C++ Copy Constructor, Assignment Operator, Default Constructor 
+            </div>
+            <pre class="mytext">
+     C++ is pretty complex programming language out there. There are C99, C++11, C++14 and C++17 
+     I'm still struggle to understand the difference amount of them. 
+     Many new features are added in recent years such as functional style programming 
+     and memory management. But Copy Constructor, Assignment Operator and Default Constructor 
+     are very confusing concept for beginner
+            </pre>
+            <pre class="prettyprint">
+            // /Users/cat/myfile/bitbucket/cpp/default_constructor.cpp
+            class MyStuff {
+            public:
+                MyStuff() {
+                    pl("call Empty Constructor");
+                }
+                MyStuff(const MyStuff& other) {
+                    pl("call Copy Constructor");
+                }
+                MyStuff& operator=(const MyStuff& rhs) {
+                    pl("call Assignment Operator");
+                    return *this;
+                }
+            };
+            MyStuff fun(MyStuff stuff) {
+                MyStuff s = stuff;
+                return s;
+            }
 
-    Two Functor laws:
-    1. fmap id = id
-    2. fmap (f . g) = (fmap f).(fmap g)
+            int main() {
+                MyStuff a;      // Call Empty Constructor
+                MyStuff b = a;  // Call Copy Constructor
+                a = b;          // Call Assignment Operator
+            }
 
-    Prove:
-    1. fmap id = id
-       fmap id [] = [] (from def. of fmap)
-       id []      = [] (from def. of identity function)
-    => fmap id [] = id []
-    => fmap id    = id
+            // function passing by value, call "Copy Constructor"
 
-       fmap id (x:cx) = (id x):(fmap id cx)
-               (x:cx) = (x:cx)
+            // function return by value, call "Copy Constructor"
+            </pre>
+            
+    </body>
+    </html>
+    
 
-    => fmap id = id
 
-    2. fmap(f . g) = (fmap f).(fmap g) 
 
-        fmap(f . g) (x:cx) = (fmap f) . (fmap g) (x:cx)
-                             (fmap f)(fmap g x:cx)
-                             (fmap f)((g x:fmap g cx))
-                              (f g x): (fmap f (fmap g cx))
-                              (f (g x)):(fmap f (fmpa g cx))
-                              fmap f (g x : fmap g cx) = (f g x): (fmap f (fmap g cx))
-                              fmap f (fmap g x:cx)
-                              (fmap f) . (fmap g) (c:cx)
-    => fmap (f . g) = (fmap f).(fmap g)
 
-    1. 2. => List or [] is Functor
-</pre>
-<pre class="prettyprint">
-</pre> 
-</div>
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

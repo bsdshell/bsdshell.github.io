@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Implement HashMap with array</title>
+        <title>Nearest Common Ancessor Binary Tree</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
         <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -32,113 +32,159 @@
       ga('send', 'pageview');
     </script>
 
+    <div class="colmask rightmenu">
+        <div class="colleft">
+            <div class="col1">
+            <!-- Column 1 start -->
+
             <div class="mytitle">
-            Implement HashMap with array 
+            Find the Least Common Ancestor Node from a Binary Tree with two given nodes 
             </div>
             <div class="mytext">
-            1. Implement Put and Delete for Hashmap
-            2. Use Array to store each Entry
-            3. Use chain linkedlist to handle collision  
+            <span class="wbold">What is Least Common Ancestor or [LCA] in a Binary Tree?</span><br>
+            From the Binary Tree below.<br>
+            LCA[12, 17] = 15<br>
+            LCA[16, 70] = 17<br>
+            LCA[8, 10] = 10<br>
 
-            Insert Node:
-            If arr contains null, then insert the new key and data, increase count
-            If arr contains some nodes, then check whether the new key is in the list
-                If the key is in the list, update the data, done
-                If the key is Not in the list, goto the last node, 
-                    insert the key and data to the end of the list
+            If the Binary Tree have only two nodes such as [1] ->[2], then [1] is the LCA
 
-            TODO: add contains method, increase the size of array if the number of elements is 
-            greater than the max value.
             </div>
-            <pre class="prettyprint">
-            class Entry{
-                public String key;
-                public Object value;
-                public Entry next;
-                public Entry(String key, Object value){
-                    this.key = key;
-                    this.value = value;
-                }
-            }
-
-            class Hash{
-                public Entry[] arr;
-                public int max;
-                public int count = 0;
-                public Hash(int max){
-                    this.max = max;
-                    arr = new Entry[max];
-                }
-
-                public Node get(String key){
-                    int hash = key.hashCode() % max;
-                    return (Node)arr[hash].value;
-                }
-                public void delete(String key){
-                    if(key != null){
-                        int hash = key.hashCode() % max;
-                        Entry curr = arr[hash];
-                        if(curr != null){
-                            Entry prev = null;
-                            while(curr != null){
-                                if(curr.key == key)
-                                    break;
-                                else{
-                                    prev = curr;
-                                    curr = curr.next;
-                                }
-                            }
-                            if(prev == null){
-                                arr[hash] = curr.next;
-                                count--;
-                            }else{
-                                if(curr != null){
-                                    prev.next = curr.next;
-                                    count--;
-                                }
-                            }
-                        }
-                    }
-                }
-                public void put(String key, Node node){
-                    if(count < max){
-                        int hash = key.hashCode() % max;
-                        Entry curr = arr[hash];
-                        if(curr == null){
-                            arr[hash] = new Entry(key, node);
-                            count++;
-                        }
-                        else{
-                            Entry prev = null;
-                            while(curr != null){
-                                if(curr.key.equals(key)){
-                                    // Replace with new value
-                                    curr.value = node;
-                                    break;
-                                }
-                                else{
-                                    prev = curr;
-                                    curr = curr.next;
-                                }
-                            }
-                            // No key is found
-                            if(curr == null){
-                                prev.next = new Entry(key, node);
-                                count++;
-                            }
-                        }
-                    }
-                    
-                }
-            }
-
-            </pre>
-
-     
             <div class="cen">
-            <img src="../image/java_hashmap.jpg" width="80%" height="80%" /><br>
-            <a class="codebox" href="https://github.com/bsdshell/java/tree/master/MyHash.java">Source Code</a>
+            <img src="../image/bintree1.svg" width="30%" height="30%" /><br>
             </div>
+            <div class="highlight"><pre><span class="k">class</span> <span class="nc">Stack</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="kt">int</span> <span class="n">maxLen</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
+        <span class="kt">char</span><span class="o">*</span> <span class="n">array</span><span class="p">;</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">Stack</span><span class="p">(</span><span class="kt">int</span> <span class="n">max</span><span class="p">){</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">maxLen</span> <span class="o">=</span> <span class="n">max</span><span class="p">;</span>
+            <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="n">maxLen</span><span class="p">];</span>
+        <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">push</span><span class="p">(</span><span class="kt">char</span> <span class="n">ch</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">count</span> <span class="o">&lt;</span> <span class="n">maxLen</span><span class="p">){</span>
+                <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">ch</span><span class="p">;</span>
+                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="kt">char</span> <span class="n">pop</span><span class="p">(){</span>
+            <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+                <span class="n">ch</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+                <span class="n">count</span><span class="o">--</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="n">ch</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">bool</span> <span class="n">isEmpty</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">int</span> <span class="n">size</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="o">~</span><span class="n">Stack</span><span class="p">(){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+                <span class="k">delete</span><span class="p">[]</span> <span class="n">array</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+ 
+            <div class="cen">
+            <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
+            </div>
+
+            <!-- Column 1 end -->
+            </div>
+            <div class="col2">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
 
 
     </body>

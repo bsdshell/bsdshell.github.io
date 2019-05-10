@@ -1,117 +1,75 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
-<head>
-    <title>$title</title>
-    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
-    <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../highlight.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-            jax: ["input/TeX","output/HTML-CSS"],
-            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
-          });
-    </script>
-    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
-</head>
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+    <head>
+        <title>Surface, Curve, Algorithm, Geometry, Algebra</title>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="robots" content="index, follow" />
+        <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../highlight.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/x-mathjax-config">
+              MathJax.Hub.Config({
+                extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+                jax: ["input/TeX","output/HTML-CSS"],
+                tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
+              });
+            </script>
+        <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    </head>
 <body>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-66282017-2', 'auto');
-  ga('send', 'pageview');
-</script>
-<div class="myclass">
 
 <div class="mytitle">
-Character Stream, read file Character by Character 
+Product of all elements without current one in an array
 </div>
 <div class="mytext">
-BufferedWriter is inherited from Writer  
-BufferedReader is inherited from Reader
-Both are good for reading Character by Character
-</div>
-<pre class="prettyprint">
-    public static void writeToFile(String name, ArrayList<String> list){
-        if(name != null && list != null){
-            try{
-                BufferedWriter bw = new BufferedWriter(new FileWriter(name));
-                for(String s : list){
-                    bw.write(s + "\n");
-                }
-                bw.close();
-            }catch(IOException io){
-                io.printStackTrace();
-            }
-        }
-    }
-</pre><br>
-    
-<pre class="prettyprint">
-    public static void readFile(String name, ArrayList<String> list){
-        try{
-            if(name != null && list != null){
-                BufferedReader br = new BufferedReader(new FileReader(name));        
-                String line = null;
-                while( (line = br.readLine()) != null){
-                    list.add(line);
-                }
-            }
-        }catch(IOException io){
-            io.printStackTrace();
-        }
-    }
-</pre>
-<div class="mytext">
-FileInputStream is herited from InputStream 
-FileOutputStream is herited from OutputStream 
-Both are good for reading raw or binary files.
-</div>
-<pre class="prettyprint">
-    public static void readWriteFileStream(String fromFile, String toFile){
-        if(fromFile != null && toFile != null){
-            try{
-                FileInputStream inStream = new FileInputStream(fromFile);
-                FileOutputStream outStream = new FileOutputStream(toFile);
-                int byteChar = -1;
-                while((byteChar = inStream.read()) != -1){
-                    outStream.write(byteChar); 
-                }
-                if(outStream != null)
-                    outStream.close();
-                if(inStream != null)
-                    inStream.close();
-
-            }catch(IOException io){
-                io.printStackTrace();
-            }
-        }
-    }
-</pre> 
-
-
-<div class="mytitle">
-Java Stream class structure
-</div>
-<div class="mytext">
-The picture shows a bit of the hirerarchy structure of Stream class in Java
-</div><br>
+Let's understand the question first<br>
+Given an array [2, 3, 4], and you need to product an array [3*4, 2*4, 2*3] => [12, 8, 6]<br>
+In other words, current element is removed and multiply the rest of elements.<br>
+It is easy to use two loops to solve the problem, but the runtime is <span class="wbold">$\mathcal{O}(n^2)$</span><br>  
+How to solve the problem with runtime <span class="wbold">$\mathcal{O}(n)$</span>, but you can allow to use space <span class="wbold">$\mathcal{O}(n)$</span><br><br>  
+<span class="wbold">Here is the trick with dynamic programming.</span><br>
 <div class="cen">
-<img src="../image/JavaStream.svg" width="80%" height="80%" /><br>
+<img src="../image/MultiArray.svg" width="50%" height="50%" /><br>
 </div> 
 
-
+<pre class="prettyprint">
+/**
+* Multiple all the integers except the current one
+* No Division is allowed
+* Runtime is O(n)
+* [2, 3, 4] => [3*4, 2*4, 2*3] => [12, 8, 6]
+*/ 
+public static int[] multiple(int[] arr){
+    if (arr == null){
+        throw new IllegalArgumentException("arr must not be null.");
+    }else{
+        int len = arr.length;
+        int[] arr1 = new int[len];
+        int[] arr2 = new int[len];
+        if(len > 1){
+            arr1[0] = arr2[len-1] = 1;
+            for(int i=1; i < len; i++){
+                arr1[i] = arr[i-1]*arr1[i-1];
+                arr2[len-1 - i] = arr[len-i]*arr2[len-i];
+            }
+            for(int i=0; i < len; i++)
+            arr1[i] = arr1[i]*arr2[i];
+        }
+        return arr1;
+    }
+}
+</pre>
+<div class="cen">
+<a href="https://github.com/bsdshell/java/tree/master/MultiplyArrayInteger.java">Source Code</a>
 </div>
 
-</body>
-</html>
+    </body>
+    </html>
+
 

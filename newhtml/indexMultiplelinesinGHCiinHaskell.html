@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
 <head>
-    <title>Multiple lines function in GHCi in Haskell</title>
-    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
-    <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+	<title>Coin Change Algorithm, Minimum Coin change Problem</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+	<meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="../highlight.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,59 +17,265 @@
             jax: ["input/TeX","output/HTML-CSS"],
             tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
           });
-    </script>
+        </script>
     <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
 </head>
 <body>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-66282017-2', 'auto');
-  ga('send', 'pageview');
-</script>
 
-<div class="myclass">
-<div class="mytitle">
-How to write multiple lines function in GHCi in Haskell
+                        <h3>Given change C and <font color="red">$S=\{S_{1}, S_{2}, ... ,S_{k}  \}$</font>, find the mininum numbers of coins that adds up to C
+                            <br>let the numbers of coins to be $\varphi$ 
+                        </h3>
+                        <h3><font color="blue">Example 1. </font> Given change C = 6 and <font color="red">$S=\{2, 3, 4\}$</font>, find the mininum number of coins adds up to 6</h3>
+                        <h3>C = 6 = 2 + 2 + 2 $\Rightarrow \varphi =3$</h3>
+                        <h3>C = 6 = 2 + 4 $\Rightarrow \varphi =2$</h3>
+                        <h3>C = 6 = 4 + 2 $\Rightarrow \varphi =2$</h3>
+                        <h3>C = 6 = 3 + 3 $\Rightarrow \varphi =2$</h3>
+                        <h3>$\Rightarrow \varphi=2$</h3>
+                    </div>
+
+                    <div class="mathbox">
+                        <h3><font color="#F2940F">Mathematic Concept</font></h3>
+                        <h3>Given C and find the linear combination of $S=\{S_{1}, S_{2}, ... ,S_{k}  \} \Rightarrow C = \sum_{i=1}^{k} x_{i}S_{i}$ </h3>
+                        <h3><font color="red">$C = 6\quad S=\{2, 3, 4\}$</font></h3>
+                        <h3>$6 = 1*2 + 1*2 + 1*2 \Rightarrow x_{1}=1\quad x_{2}=1\quad x_{3}=1 \Rightarrow \varphi = 1 + 1 + 1 = 3 \textbf{ coins}$</h3>
+                        <h3>$6 = 1*2 + 1*4 \Rightarrow x_{1}=1\quad x_{2}=1 \Rightarrow \varphi = 1 + 1 = 2 \textbf{ coins}$</h3>
+                        <h3>$6 = 1*4 + 1*2 \Rightarrow x_{1}=1\quad x_{2}=1 \Rightarrow \varphi = 1 + 1 = 2 \textbf{ coins}$ </h3>
+                        <h3>$6 = 1*3 + 1*3 \Rightarrow x_{1}=1\quad x_{2}=1 \Rightarrow \varphi = 1 + 1 = 2 \textbf{ coins}$</h3>
+                    </div>
+
+                    <br>
+                    <h3><font color="blue">Example 2. </font> Given change C = 0 and <font color="red">$S=\{2, 3, 4\}$</font>, find the mininum number of coins adds up to 0</h3>
+                    <h3>Since C = 0, zero coin adds up to C = 0. Therefore, the solution is zero coin</h3>
+                    <h3>C = 0 = 0 $\Rightarrow \varphi =0$</h3>
+
+                    <div class="mathbox">
+                        <h3><font color="#F2940F">Mathematic Concept</font></h3>
+                        <h3>$C = 0 = 0*2 + 0*3 + 0*4 \Rightarrow x_{1}=0\quad x_{2}=0\quad x_{3}=0 \Rightarrow \varphi = 0 + 0 + 0 = 0 \textbf{ coin}$</h3>
+                    </div>
+
+                    <br>
+                    <h3><font color="blue">Example 3. </font> Given change C = -2 and <font color="red">$S=\{2, 3, 4\}$</font>(has no coin), find the mininum number of coins adds up to 6</h3>
+                    <h3>There is no solution, since C is negative [ $\because$ we can't have negative number of coins ]</h3>
+                    <h3>If C < 0, then we can  let $\varphi =\infty$ </h3>
+                    <h3>Ok, you might ask why is $\varphi =\infty$, why not is $\varphi =0$</h3>
+                    <h3>Well, $\varphi =0$ is the solution for C = 0. But I still don't understand why $\varphi$ has to be $\infty$</h3>
+
+                    <div class="mathbox">
+                        <h3><font color="#F2940F">Real reason behind that why $\varphi$ has to be $\infty$</font></h3>
+                        <h3>$\infty$ acts as identity for min( , ) operation</h3>
+                        <h3><font color="blue">E.g.</font> $0$ is the identity for + since $0 + a = a, a \in \mathbb{N}$</h3>
+                        <h3><font color="blue">E.g.</font> $1$ is the identity for * since $1*a = a, a\in \mathbb{N}$</h3>
+                        <h3>Similarly, $\infty$ is the identity for $min( , )$ since $min(\infty, a) = a, a \in \mathbb{N}$</h3>
+
+                        <h3>min(,) is called monoid with Math.MAX_VALUE as identity</h3>
+                    </div>
+
+                    <h3>Ok, make sence, but why do we need the $\infty$ as identity for the [ coin change problem ]</h3>
+                    <h3>Let's look at the following graph for $\text{coin } = \{2, 3, 4\}, S = 6$</h3>
+                    <h3><font color="red">The value of each node $=$ the value of parent node $-$ weight of the edge [ except the root node ]</font></h3>
+                    <h3>Some leaf nodes are $\infty$ since the value of parent node $<$ the weight of edge</h3>
+                    <h3>Why we set the value of the node = $\infty$ ? since we know the path contains $\infty$ can't be a solution</h3>
+                    <h3>The only path might be a solution is the value of leaf node has to be zero [ which is the red node ]</h3>
+                    <h3>Since we are looking for the minimum number of coins, then the solution(s) has/have to be the shortest path from the root</h3>
+                    <div>
+                        <img src="../image/CoinChangeGraph.svg" width="100%" height="50%" />
+                    </div>
+                    
+                    <pre class="prettyprint">
+                    // /Users/cat/myfile/bitbucket/java/CoinChange.java
+                    //CoinChange.java
+                    //Given coin{2, 3, 4} and s = 6
+                    //Find the minimum number of coins sums up to s
+                    public static int minCount(int[] coin, int s, int k) {
+                        int min = Integer.MAX_VALUE;
+                        if(s == 0)
+                            min = 0;
+                        else if(s > 0) {
+                            // min(s) = min(s-coin[k]) + 1
+                            for(int i=0; i < k; i++) {
+                                int childMin = minCount(coin, s-coin[i], k);
+                                if(childMin != Integer.MAX_VALUE)
+                                    min = Math.min(min, childMin + 1);
+                            }
+                        }
+                        return min;
+                    }
+                    </pre>
+
+                    <div class="mytitle">
+                    Coin Change, 2018 version in Java
+                    </div>
+                    <pre class="prettyprint">
+                /* 
+                    (4) -> (4 - 2) -> (2 - 2)
+                    {2} s = 4
+                    [ s=4
+                            [ s=2
+                                    [ s = 0
+                                      
+
+                                  0 <-]
+                          1 <-]
+                 2 <-]
+                */
+                public static int minCoins(List<Integer> list, int s){
+                    int min = Integer.MAX_VALUE;
+                    if( list != null){
+                        if (s < 0){
+                            return Integer.MAX_VALUE;
+                        }
+                        else if( s == 0){
+                            return 0;
+                        }else{
+                            for(Integer n : list){
+                                min = Math.min(min, minCoins(list, s - n));
+                            }
+                        }
+                    }
+                    return min + 1;
+                }
+                    </pre>
+
+                
+
+
+                </div>
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+	</div>
 </div>
-<pre class="prettyprint bigfont">
-:set +m
-</pre> 
-<pre class="prettyprint">
-let's define a function called f(x) = x + 1 in multiple lines mode
-
->:set +m
->let 
->f::Int->Int
->f x = x + 1 
->       -- the newline will end defintion of function f
->f 1
-2
-
-Apparently, there is some bug/issue in GHCi 7.10.3 for multiple line mode, e.g.
-:{
-ff::Int -> Int
-ff x = x + 1
-:}
-ff 1, parse error on input ‘=’
-
-GHCi 7.10.3 does not recognize 'prompt2' any more.
-GHCi 8.4.3 use prompt-cont (stand for: prompt continuation)
-
-Download the Haskell Framework (GHC and GHCi 8.4.3) and install it, 
-above error has not gone away
-The problem is the last line need to be EMPTY line. 
-:{
-ff::Int -> Int
-ff x = x + 1
-        <-- empty line here
-:}
-</pre> 
-</div>
-
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

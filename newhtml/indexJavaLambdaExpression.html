@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Java Lambda Expression</title>
+        <title>The beauty of Torus</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
         <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -32,99 +32,174 @@
       ga('send', 'pageview');
     </script>
 
+            <div class="cen">
+            <img src="../image/torusred.png" width="60%" height="60%" /><br>
+            </div> 
             <div class="mytitle">
-            Convert IntStream to List< Integer > in Java 
+            Derive Torus Parameter Equation 
             </div>
-            <pre class="prettyprint">
-    List< Integer > list = IntStream.range(0, 10).boxed().collect(Collectors.toList());
-            </pre>
+            <div style="font-size:140%" class="mytext">
+            We can use two circles with two parameter equations, Torus parameter equations can be dervied<br>
+            We want to derive the Parametric Equation of the red torus in the picture below. The vertical line is z-axis<br>
+            On the $xy$-plane, the radius of small circle is $r$ and the radius of big circle is $R$<br>
+            There is circle on the $xy$-plane, the distance between the center of pink circle and center of $xy$-plane is $R$.
+            The circle can be parametrized with following steps:<br>
+            1. Parameterize the circle centered at origin $(x=0, y=0)$<br>
+            2. Shift the circle to right side alone x-Axis by $R$
+            
+            \begin{align*} 
+                x' &= r\cos{\alpha} + R \\
+                y' &= r\sin{\alpha} \\
+            \end{align*}
+            </div>
+            <div style="font-size:140%" class="mytext">
+            The line segment $OD'$ can be rotated in angle $\theta$ on the $xy$-plane, and $OD'$ is equal to $R + r\cos{\alpha}$
+            So the big circle with radius $OD' = R + r\cos{\alpha}$ can be parametrized with following equation:<br>
+            \begin{align*}
+               x &= OD'cos{\theta} \\
+               y &= OD'sin{\theta} \\ \\
+               x &= (R + r\cos{\alpha})cos{\theta} \\
+               y &= (R + r\cos{\alpha})sin{\theta} \\
+               z &= r\sin{\theta} \quad \text{ where z is only affected by $\theta$} 
+            \end{align*}
+            </div>
+
+            <div class="cen">
+            <img src="../image/torus_parameterized.svg" width="60%" height="60%" /><br>
+            </div> 
+
+            <div class="mytext">
+            Derive Close form Equation for Torus
+            </div>
+            <div class="cen">
+            <img src="../image/two_circle_torus.svg" width="60%" height="60%" /><br>
+            </div> 
+            <div style="font-size:140%" class="mytext">
+            From above picture, we define two parametric equations:<br>
+            1. $(x + 6)^2 + y^2 - 1 = 0$ [left circle]<br>
+            2. $(x - 6)^2 + y^2 - 1 = 0$ [right circle]<br><br>
+            We can multiply two equations[polynomials] in both sides:<br>
+            $c(x)= [(x + 6)^2 + y^2 - 1] [(x - 6)^2 + y^2 - 1] = 0$<br>
+            The equation will be two circles in the $xz-plane$<br><br>
+            why $c(x)$ is the equation for two circles?<br><br>
+            That can be proved informally as following<br>
+            </div>
+            
+            
+            <div class="mytitle">
+            Polynomial Ring
+            </div>
+
+            <div style="font-size:140%" class="mytext">
+            Polynomial Ring $\mathbf{R}[X]$ in $x$ over the Ring $\mathbf{R}$ is defined as following
+            \[
+                p(x) = \sum_{i=0}^{n} a_i x^i
+            \]
+            where $a_0, a_1, \dots a_n$ are coefficients, $x^0, x^1, \dots x^n$ are symbols<br>
+            In our case, $\mathbf{R} = \Re, \mathbf{X} = x$<br>
+            There is Lemma:
+            If Polynomial Ring is over the Integral domain $\mathbf{R}$, then the following is hold.<br>
+            \[
+                f(x)g(x) = 0 \Leftrightarrow f(x) = 0 \text{ or } g(x) = 0
+            \]
+            Above Lemma can be proved by contradiction. Given two leading coefficients $a_m, b_n$ are both not zero<br>
+            \begin{align*}
+                f(x) &= a_m x^m \dots \\
+                g(x) &= b_n x^n \dots \\
+                f(x) g(x) &= a_m b_n x^{m + n} \dots \\
+                \implies a_m b_n &\neq 0 \quad \because a_m, b_n \text{ are in Integral Domain } \mathbf{R} = \Re  \\
+                \implies f(x) g(x) &\neq  0 
+            \end{align*}
+            <br>
+            From above Lemma:<br>
+            Let $f(x) = (x + 6)^2 + y^2 - 1, \quad g(x) = (x - 6)^2 + y^2 - 1 \implies f(x) = 0 \text{ or } g(x) = 0$
+            which is two circles on the $xz$-plane from above picture.<br><br>
+            </div>
+            <div class="cen">
+            <img src="../image/xy_plane.svg" width="60%" height="60%" /><br>
+            </div> 
 
             <div class="mytitle">
-            map in Java 
+            $x$ and $y$ in $xy$-plane
             </div>
-            <pre class="prettyprint">
-    List<Integer> list = Arrays.asList(1, 4, 5);
-    List<Integer> ls = IntStream.range(0, list.size()).mapToObj(i -> 2*list.get(i)).collect(Collectors.toList());
 
-    List<Integer> list = Arrays.asList(1, 4, 5);
-    List<Integer> ls = list.stream().map(i -> 2*i).collect(Collectors.toList());
+            <div style="font-size:140%" class="mytext">
+            We can investigate how the y-Axis is changed relative to x-Axis and z-Axis on $xy$-plane<br>
+            If two circles are rotated around the z-Axis, then $z$ is not changed at all.<br>
+            The relationship between $x$ and $y$ is $r = \sqrt{x^2 + y^2}$ on the $xy$-plane <br>
+            For equation $c(x)$ from above, the $y$ is zero since $c(x)$ on the $xz$-plane <br>
+            For $r = \sqrt{x^2 + y^2}$, $y$ can be any value alone a circle with radius $r$ and centered at origin, <br>
+            So $x$ can be replaced with $r = \sqrt{x^2 + y^2}$ in $c(x)$ <br>
+            \begin{align*} 
+                c(x) &= [(x + 6)^2 + y^2 - 1] [(x - 6)^2 + y^2 - 1] = 0 \\
+                r &= \sqrt{x^2 + y^2} \\
+                c(x) &= [(r + 6)^2 + y^2 - 1] [(r - 6)^2 + y^2 - 1] = 0 \\
+            \end{align*} 
+            </div>
+            <div class="mytitle">
+            The Close Form Equation for Torus
+            </div>
+            \begin{align}
+            &[(r + 6)^2 + y^2 - 1] [(r - 6)^2 + y^2 - 1] = 0 \\
+            &r = \sqrt{x^2 + y^2} 
+            \end{align}
 
-    // Though it is not as elegant as Haskell
-    // map (*2) [1, 4, 5]
-            </pre>
+            <div class="cen">
+            <img src="../image/torus_rotate.jpeg" width="60%" height="60%" /><br>
+            </div> 
 
             <div class="mytitle">
-            reduce in Java 
+            Sphere Parametric Equation 
             </div>
-            <pre class="prettyprint">
-    List<Integer> list = Arrays.toList(1, 2, 3);
-    Optional<Integer> sum = list.stream().reduce((x, y) -> x + y);
-    sum.ifPresent(System.out::println);
-    
-    Integer sum = list.stream().reduce(0, (x, y) -> x + y);
+            <div class="mytext">
+            Sphere Equation<br>
+            </div>
+            <div class="cen">
+            <img src="../image/circle_parameter1.svg" width="60%" height="60%" /><br>
+            <img src="../image/sphere_equation.png" width="60%" height="60%" /><br>
+            <img src="../image/sphere_coordinates.png" width="60%" height="60%" />
+            <img src="../image/sphere_polar.svg" width="60%" height="60%" /><br>
+            </div> 
+            <div style="font-size:140%" class="mytext">
+            Derived Sphere Parametric Equation<br> 
+            We give a horizontal[xy-plane] cut to a sphere
+            e.g. $z = 0, z = 0.2, z = 0.5$<br>
+             
+            \begin{align*}
+            r'&= r\cos(\alpha) \quad \text{r' is the radius of small circle} \\ \\
+            x &= r\cos(\alpha)\cos(\beta) \\
+            y &= r\cos(\alpha)\sin(\beta) \\
+            z &= r\sin(\alpha) \\
+            \end{align*}
+            </div>
 
-            </pre>
+            <div class="cen">
+            <img src="../image/sphere_coordinate.svg" width="60%" height="60%" /><br>
+            </div> 
 
             <div class="mytitle">
-            filter in Java
+            Conic Parameter Equation 
             </div>
-    <pre class="prettyprint">
-    List<String> ls = Arrays.asList("file.htmlkk", "file.html", "kk.html_33", ".html", "html");
-    List<String> fls = ls.stream().filter( s -> FileType.isHtml(s) ).collect(Collectors.toList());
 
-    List<Integer> ls3 = Arrays.asList(1, 2, 3, 4);
-    Set<Integer> set = ls3.stream().filter(i -> i >= 2).collect(Collectors.toSet());
-    p(set);
-    </pre>
+            <div style="font-size:140%" class="mytext">
+            Conic Equation is similar to Sphere Equation, 
+            The only difference is the radius of cross section,
+            For Sphere, the radius is changing according to $r \cos{\alpha}$
+            For Conic,  the radius is changing according to $r f(x)$ where $f(x)$ is linear function
+            
+            \begin{equation}
+            \begin{aligned}
+            x &= r f(x) \cos{\beta} \\
+            y &= r f(x) \sin{\beta} \\
+            z &= f(x) \\
+            f(x) &= x \in [1..0]
+            \end{aligned}
+            \end{equation} 
 
-
-
-
-            <div class="mytitle">
-            More are coming
             </div>
-    <pre class="prettyprint">
-    Optional<Double> sum = list.stream().reduce(Double::sum);
-    sum.ifPresent(System.out::println);
-
-    Integer[] array = {1, 2, 3, 4};
-    List<Integer> listInt = Arrays.asList(array);
-
-    // list filter
-    List< Integer> leftList = listInt.stream().filter(x-> x < 3).collect(Collectors.toList());
-    List< Integer> rightList = listInt.stream().filter(x-> x > 3).collect(Collectors.toList());
-
-    Aron.printList(leftList);
-    Aron.printList(rightList);
-
-    // list forEach
-    leftList.forEach(System.out::println);
-    leftList.forEach(x->System.out.println(x));
-
-    // HashMap filter
-    Map< Integer, Integer> map = new HashMap< Integer, Integer>();
-    map.put(1, 4);
-    map.put(2, 5);
-    map.put(3, 7);
-
-    Map< Integer, Integer> newMap1 = map.entrySet().parallelStream()
-                                                .filter(e->e.getValue() > 1)
-                                                .collect(Collectors.toMap(e->e.getKey(), e->e.getValue()));
-
-    Aron.printMap(newMap1);
-
-    Map< Integer, Integer> newMap2 = map.entrySet().stream()
-                                                 .filter(e->e.getValue() > 1)
-                                                 .collect(Collectors.toMap(e->e.getKey(), e->e.getValue()));
-    Aron.printMap(newMap2);
-
-    // list of String to list of Integer
-    String[] arrStr = {"0", "1", "2", "3"}; 
-    List< String> list1 = Arrays.asList(arrStr);
-    List< Integer> strIntList = list1.stream().map(Integer::parseInt).collect(Collectors.toList());
-    Aron.printList(strIntList);
-    </pre>
-
+            <div class="cen">
+            <img src="../image/conic_parameter_equation.svg" width="60%" height="60%" /><br>
+            </div> 
 
     </body>
     </html>

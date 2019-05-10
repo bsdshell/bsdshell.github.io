@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>OpenGL Vertex Array</title>
+        <title>C++ Least Operation Add one Multiply two</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
         <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -31,27 +31,36 @@
       ga('create', 'UA-66282017-2', 'auto');
       ga('send', 'pageview');
     </script>
-
-    <div class="colmask rightmenu">
+<div class="colmask rightmenu">
         <div class="colleft">
             <div class="col1">
             <!-- Column 1 start -->
-
             <div class="mytitle">
-            OpenGl Vertex Array 
+            Find the least number of operations: Add one and Multiply two 
             </div>
             <div class="mytext">
-            How to use Vertex Array to triangle 
+            1. Interesting trick with binary expansions<br>
             </div>
+            <div class="highlight"><pre><span class="kt">int</span> <span class="nf">leastOperation</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+            <span class="n">n</span> <span class="o">/=</span><span class="mi">2</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span><span class="p">{</span>
+            <span class="n">n</span><span class="o">--</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+ 
             <div class="cen">
-            <img src="../image/vertexarray1.png" width="40%" height="40%" /><br>
+            <img src="../image/leastop.png" width="40%" height="40%" /><br>
+            <a href="https://github.com/bsdshell/cpp/tree/master/LeastOperation.cpp">Source Code</a>
             </div>
 
-            <div class="cen">
-            <a href="https://github.com/bsdshell/opengl/tree/master/draw_vertex_array.c">Source Code</a>
-            </div> 
-
-            
             <!-- Column 1 end -->
             </div>
             <div class="col2">
@@ -142,6 +151,7 @@
             </div>
         </div>
     </div>
+
 
     </body>
     </html>

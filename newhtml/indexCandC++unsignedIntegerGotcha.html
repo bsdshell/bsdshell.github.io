@@ -2,170 +2,191 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>C and C++ unsigned Integer Gotcha</title>
-        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
-        <meta name="robots" content="index, follow" />
-        <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
-        <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="../highlight.css">
-        <link rel="stylesheet" type="text/css" href="../style.css">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <script type="text/x-mathjax-config">
-              MathJax.Hub.Config({
-                extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-                jax: ["input/TeX","output/HTML-CSS"],
-                tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
-              });
-        </script>
-        <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
     </head>
     <body>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-66282017-2', 'auto');
-      ga('send', 'pageview');
-    </script>
-
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-            <!-- Column 1 start -->
-
-            <div class="mytitle">
-            How easy to Create bug with unsigned/NSUInteger in C/C++ and Objective-C 
-            </div>
-            <pre class="codebg">
-                                unsigned num = 10;
-                                int negative = -10;
-                                if(negative < num)
-                                    cout << "Ok"<< endl;
-                                else
-                                    cout << "Bug" << endl;
-            </pre>
-            <pre class="codebg">
-                                unsigned n = 0;
-                                cout << "n-1=" << n-1<< endl;
-                                if(n - 1 < 0)
-                                    cout << "Ok" << endl;
-                                else
-                                    cout << "Bug" << endl;
-            </pre>
-
-             <pre class="codebg">
-                                std::vector < int> v1 = {};
-                                for(unsigned i=0; i < v1.size()-1; i++){
-                                    cout << "v1[" << i << "]=" << v1[i] << endl;
-                                }
-
-                                for(size_t i=0; i < v1.size()-1; i++){
-                                    cout << "v1[" << i << "]=" << v1[i] << endl;
-                                }
-            </pre>
-
-            
-
-                
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-
-
+      <table style="text-align:center;font-size:30px;">
+        <th>Data Encryption iOS App</th>
+        <tr><td>
+        <img src="../image/en1.png" width="20%" height="40%" />  
+        <img src="../image/en2.png" width="20%" height="40%" />  
+        <img src="../image/en3.png" width="20%" height="40%" />  
+        </td></tr>
+        <tr><td>
+        <img src="../image/en6.png" width="20%" height="40%" />  
+        <img src="../image/en22.png" width="20%" height="40%" />  
+        <img src="../image/en33.png" width="20%" height="40%" />  
+        </td></tr>
+
+    </table>
+    <pre style="font-size:18px">
+                                                Encrypt images/texts/files(AES256)<br>
+                                                Encrypt raw image data from camera<br>
+                                                Sync encrypted data with iCloud<br> 
+                                                Sync encrypted data with Dropbox<br> 
+                                                Transfer decrypted/encrypted files to/from iTunes<br>
+                                                Full Texts Search<br>
+
+                                                Technical Details:
+                                                The App is written in Objective C(iOS SDK 8.1)<br>
+                                                Controller/Interface that I use:
+                                                UIViewControler<br>
+                                                UITableViewController<br>
+                                                UITabBarControllerDelegate<br>
+                                                NSURLConnectionDelegate<br>
+                                                UITextFieldDelegate<br>
+                                                UIGestureRecognizerDelegate<br>
+                                                MFMailComposeViewControllerDelegate<br>
+                                                UIActionSheetDelegate<br>
+                                                UISearchDisplayDelegate<br>
+                                                UISearchBarDelegate<br>
+
+                                                AES256: Use Common Cryptographic Algorithm Interface<br>
+                                                Hash: Use Sha1 Hash<br>
+                                                Database: Use Sqlite3<br>
+
+                                                iCloud API<br>
+                                                Dropbox API<br>
+
+    </pre>
     </body>
     </html>
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+    <head>
+    </head>
+    <body>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+      <table style="text-align:center;font-size:30px;">
+        <th>Data Encryption iOS App</th>
+        <tr><td>
+        <img src="../image/en1.png" width="20%" height="40%" />  
+        <img src="../image/en2.png" width="20%" height="40%" />  
+        <img src="../image/en3.png" width="20%" height="40%" />  
+        </td></tr>
+        <tr><td>
+        <img src="../image/en6.png" width="20%" height="40%" />  
+        <img src="../image/en22.png" width="20%" height="40%" />  
+        <img src="../image/en33.png" width="20%" height="40%" />  
+        </td></tr>
+
+    </table>
+    <pre style="font-size:18px">
+                                                Encrypt images/texts/files(AES256)<br>
+                                                Encrypt raw image data from camera<br>
+                                                Sync encrypted data with iCloud<br> 
+                                                Sync encrypted data with Dropbox<br> 
+                                                Transfer decrypted/encrypted files to/from iTunes<br>
+                                                Full Texts Search<br>
+
+                                                Technical Details:
+                                                The App is written in Objective C(iOS SDK 8.1)<br>
+                                                Controller/Interface that I use:
+                                                UIViewControler<br>
+                                                UITableViewController<br>
+                                                UITabBarControllerDelegate<br>
+                                                NSURLConnectionDelegate<br>
+                                                UITextFieldDelegate<br>
+                                                UIGestureRecognizerDelegate<br>
+                                                MFMailComposeViewControllerDelegate<br>
+                                                UIActionSheetDelegate<br>
+                                                UISearchDisplayDelegate<br>
+                                                UISearchBarDelegate<br>
+
+                                                AES256: Use Common Cryptographic Algorithm Interface<br>
+                                                Hash: Use Sha1 Hash<br>
+                                                Database: Use Sqlite3<br>
+
+                                                iCloud API<br>
+                                                Dropbox API<br>
+
+    </pre>
+    </body>
+    </html>
 
 
 

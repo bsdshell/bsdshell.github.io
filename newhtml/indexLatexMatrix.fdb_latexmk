@@ -1,12 +1,188 @@
-# Fdb version 3
-["pdflatex"] 1545165025 "/Library/WebServer/Documents/zsurface/html/indexLatexMatrix.html" "indexLatexMatrix.pdf" "indexLatexMatrix" 1545165037
-  "/Library/WebServer/Documents/zsurface/html/indexLatexMatrix.html" 1545165025 57106 3c2c2d0a0f79ef2e56f13e2b68437f07 ""
-  "/usr/local/texlive/2013/texmf-dist/web2c/texmf.cnf" 1366045088 31707 0953c15448e216a6585e92ee639d2dc2 ""
-  "/usr/local/texlive/2013/texmf-var/web2c/pdftex/pdflatex.fmt" 1369923264 3827029 ad4432546849f432c3154779662c76c8 ""
-  "/usr/local/texlive/2013/texmf.cnf" 1369923207 577 cbc827f6294276973a1952e86e8ad73a ""
-  "indexLatexMatrix.aux" 1545165025 8 a94a2480d3289e625eea47cd1b285758 ""
-  "indexLatexMatrix.html" 1545165025 57106 3c2c2d0a0f79ef2e56f13e2b68437f07 ""
-  (generated)
-  "indexLatexMatrix.log"
-  "indexLatexMatrix.pdf"
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+    <head>
+        <title>IOS Rotate Different CAShapeLayers</title>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="robots" content="index, follow" />
+        <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../highlight.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/x-mathjax-config">
+              MathJax.Hub.Config({
+                extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+                jax: ["input/TeX","output/HTML-CSS"],
+                tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
+              });
+            </script>
+        <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+    </head>
+    <body>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-66282017-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <div id="header">
+    </div>
+    <div class="colmask rightmenu">
+        <div class="colleft">
+            <div class="col1">
+                <!-- Column 1 start -->
+                <div class="cen">
+                <img src="../image/translationlayer.png" width="20%" height="20%" /><br> 
+                <a href="https://github.com/bsdshell/xcode/tree/master/OneSelectTranslation">Source Code</a>
+                </div>
+            <!-- Column 1 end -->
+            </div>
+            <div class="col2">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    </body>
+    </html>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
