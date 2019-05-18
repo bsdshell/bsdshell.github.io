@@ -1,0 +1,55 @@
+** What I did today
+   1. Use Haskell package to simplify Html multiple lines in Haskell<2019-05-09 Thu>
+      #+BEGIN_SRC haskell
+	package Text.RawString.QQ
+
+	multipline = [r| 
+		     <p>"dog"</p>
+                     <p>"cat"</p>
+		     |]
+      #+END_SRC
+      
+   1. Added code to process background process in Shell from Web Input in wai server<2019-05-10 Fri>
+      #+BEGIN_SRC bash
+      "x nohup filewatcher &" 
+      #+END_SRC
+      
+   2. ghci does not load package into Ghci if you use :load myhaskell.hs
+      It causes lots of confusing when you load your code inside ghci
+      
+   3. Added Javascript to edit code block
+      - Added Javascript to listen to onclick event
+      - Generate all html and javscript from Haskell, it is trick
+      - Code Block can be updated,
+      - Each code block can be identified from the original header
+      - We go through each code block and remove the block that is currently editing
+      - Append the edited code block to the list
+	
+** MacOS automatically update screws up *tmux*
+   1. *tmux* can not start up
+      - reinstall tmux:
+	#+BEGIN_SRC bash
+	  brew uninstall --force tmux
+          brew install tmux
+	#+END_SRC
+
+
+
+*`'*  ` `dd vim script to check definition of Haskell function with Timer and ~job_start()~
+   1. Create a timer which calls a function every n seconds, e.g. 0.5 second ~timer_start()~
+   2. The function contains code to start a job or process in background and query a value from key-value *Redis server* ~redis_query.hs~
+      The key is the current *word* under current *cursor*
+   3. The function calls ~systemlist()~ and passes ~$b/redis_query.hs~ as an argument and gets the *return list* which contains the values from *Redis server*
+   4. Use ~echo~ to display the *return list* at the bottom of *Vim*
+
+** Haskell show, print and putStr or putStrLn
+   1. show, print and putStr ~"dog\\"~,
+      #+BEGIN_SRC haskell
+	show "dog\\" -- "\"dog\\\\\""
+	print "dog\\" -- "dog\\"
+	putStr "dog\\" -- dog\
+      #+END_SRC
+
+   
+
+

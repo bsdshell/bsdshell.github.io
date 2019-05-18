@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-05-14 Tue 10:07 -->
+<!-- 2019-05-16 Thu 21:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -233,15 +233,14 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1a29eb4">1. What I did today</a></li>
-<li><a href="#org4419c90">2. MacOS automatically update screws up tmux <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-05-11 Sat&gt;</span></span></a></li>
-<li><a href="#orgb819ac9">3. Add vim script to check definition of Haskell function with Timer and <code>job_start()</code> <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-05-13 Mon&gt;</span></span></a></li>
-<li><a href="#org88a8032">4. Haskell show, print and putStr or putStrLn</a></li>
+<li><a href="#org647e00e">1. What I did today</a></li>
+<li><a href="#org8cf6d8b">2. MacOS automatically update screws up tmux</a></li>
+<li><a href="#org21b25f9">3. Haskell show, print and putStr or putStrLn</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1a29eb4" class="outline-2">
-<h2 id="org1a29eb4"><span class="section-number-2">1</span> What I did today</h2>
+<div id="outline-container-org647e00e" class="outline-2">
+<h2 id="org647e00e"><span class="section-number-2">1</span> What I did today</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li><p>
@@ -281,8 +280,8 @@ It causes lots of confusing when you load your code inside ghci</li>
 </div>
 </div>
 
-<div id="outline-container-org4419c90" class="outline-2">
-<h2 id="org4419c90"><span class="section-number-2">2</span> MacOS automatically update screws up tmux <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-05-11 Sat&gt;</span></span></h2>
+<div id="outline-container-org8cf6d8b" class="outline-2">
+<h2 id="org8cf6d8b"><span class="section-number-2">2</span> MacOS automatically update screws up tmux</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li>tmux can not start up
@@ -297,24 +296,25 @@ brew install tmux
 </div></li>
 </ul></li>
 </ol>
-</div>
-</div>
 
-<div id="outline-container-orgb819ac9" class="outline-2">
-<h2 id="orgb819ac9"><span class="section-number-2">3</span> Add vim script to check definition of Haskell function with Timer and <code>job_start()</code> <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-05-13 Mon&gt;</span></span></h2>
-<div class="outline-text-2" id="text-3">
+
+
+<p>
+<b>`'</b>  ` `dd vim script to check definition of Haskell function with Timer and <code>job_start()</code>
+</p>
 <ol class="org-ol">
-<li>Create a timer which calls a function every n seconds</li>
-<li>The function calls $sym/redis<sub>query</sub> to query value from Redis server</li>
-<li>The value from Redis server is stored in a file <code>/tmp/snippet.x</code></li>
-<li>A new vim function contains the code to display the file <code>/tmp/snippet.x</code></li>
+<li>Create a timer which calls a function every n seconds, e.g. 0.5 second <code>timer_start()</code></li>
+<li>The function contains code to start a job or process in background and query a value from key-value <b>Redis server</b> <code>redis_query.hs</code>
+The key is the current <b>word</b> under current <b>cursor</b></li>
+<li>The function calls <code>systemlist()</code> and passes <code>$b/redis_query.hs</code> as an argument and gets the <b>return list</b> which contains the values from <b>Redis server</b></li>
+<li>Use <code>echo</code> to display the <b>return list</b> at the bottom of <b>Vim</b></li>
 </ol>
 </div>
 </div>
 
-<div id="outline-container-org88a8032" class="outline-2">
-<h2 id="org88a8032"><span class="section-number-2">4</span> Haskell show, print and putStr or putStrLn</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-org21b25f9" class="outline-2">
+<h2 id="org21b25f9"><span class="section-number-2">3</span> Haskell show, print and putStr or putStrLn</h2>
+<div class="outline-text-2" id="text-3">
 <ol class="org-ol">
 <li><p>
 show, print and putStr <code>"dog\\"</code>,
@@ -331,7 +331,7 @@ show, print and putStr <code>"dog\\"</code>,
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-05-14 Tue 10:07</p>
+<p class="date">Created: 2019-05-16 Thu 21:40</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

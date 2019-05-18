@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Merge Sort In Scala</title>
+        <title>Hermitian matrix has real eigenvalue value</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
         <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
@@ -38,11 +38,24 @@
         <div class="colleft">
             <div class="col1">
                 <!-- Column 1 start -->
-                <div class="mytextbox">
-                    <p>
-                    Put your stuff here  
-                    </p>
-                </div>
+                <div class="mathdef_box1">
+                <p class="fs">
+                Proof Hermitian matrix has only real eigenvalues  
+                </p>
+                \[ \textbf{A}^\ast = \textbf{A} \] 
+                let eigenvalue $\lambda \neq \vec{0}$ such as 
+               \[ \textbf{A}\vec{v}  = \lambda\vec{v} \]
+               \[ \Rightarrow (\textbf{A}\vec{v})^\ast = (\lambda\vec{v})^\ast \]
+               \[ \Rightarrow (\vec{v}^\ast\textbf{A}^\ast)=(\lambda^\ast\vec{v}^\ast) \]
+                Multiply both side by \[\vec{v} \Rightarrow (\vec{v}^\ast\textbf{A}^\ast\vec{v})=(\lambda^\ast\vec{v}^\ast\vec{v}) \]
+               \[ \textbf{A}^\ast=\textbf{A} \]
+               \[ \Rightarrow(\vec{v}^\ast\textbf{A}\vec{v})=(\lambda^\ast\vec{v}^\ast\vec{v}) \]
+               \[ \Rightarrow(\vec{v}^\ast\lambda\vec{v}) = (\lambda^\ast\vec{v}^\ast\vec{v}) \]
+               \[ \Rightarrow(\lambda\vec{v}^\ast\vec{v}) =  (\lambda^\ast\vec{v}^\ast\vec{v}) \]
+               \[ \Rightarrow \lambda = \lambda^\ast \]
+               \[ \Rightarrow \lambda\in\mathbf{R} \]
+               </div>
+
             <!-- Column 1 end -->
             </div>
             <div class="col2">

@@ -64,7 +64,7 @@ readIORef ref >>= print  -- output 21
 
 -- modify (Set Int)
 set <- newIORef Set.empty 
-modifyIORef (Set.insert 2) 
+modifyIORef set (Set.insert 2) 
 set <- readIORef set 
 </pre> 
 

@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Reverse a LinkedList in Scala</title>
+        <title>Switch different RootController</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
         <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
@@ -38,10 +38,22 @@
         <div class="colleft">
             <div class="col1">
                 <!-- Column 1 start -->
-                <div class="mytextbox">
+                <div class="mytextbox highlight">
+                    <div class="cen">
+                        Switch different Root Controllers<br>  
+                    </div>
                     <p>
-                    Put your stuff here  
+                    1. Share UIWindow in your AppDelegate<br>
+                    2. In your ViewController, Get the AppDelgate reference with [[UIApplication shareApplication]delegate]<br>
+                    3. Use AppDelegate to access the UIWindow reference<br> 
+                    4. Use UIWindow reference to set the rootViewController<br> 
+                    [appDelegate.window.rootViewController = viewController]<br>
+                    <a href="https://github.com/bsdshell/xcode/tree/master/SwitchRootController">Github Source</a>
                     </p>
+                    <div class="cen">
+                    <img src="../image/controller1.png" width="20%" height="20%" /> 
+                    <img src="../image/controller2.png" width="20%" height="20%" /> 
+                    </div>
                 </div>
             <!-- Column 1 end -->
             </div>

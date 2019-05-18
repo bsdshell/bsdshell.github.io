@@ -801,7 +801,7 @@ Thu Jan 31 11:17:01 2019
 opengl keypress, keypress example, keyboard example
 /Users/cat/myfile/bitbucket/haskell/keyboardpress_simple.hs
 -------------------------------------------------------------------------------- 
-install astyle on MacOS, Vim formater, Sun Jan 27 11:41:12 2019 
+KEY: install astyle on MacOS, Vim formater, code format, code style, code stylish, format code
 
 brew install astyle
 :%!astyle

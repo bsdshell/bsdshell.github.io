@@ -1,0 +1,18 @@
+** What I did today
+   1. Use Haskell package and templateto simplify Html multiple lines <2019-05-09 Thu>
+      #+BEGIN_SRC haskell
+	package Text.RawString.QQ
+
+	multipline = [r| 
+		     <p>"dog"</p>
+                     <p>"cat"</p>
+		     |]
+      #+END_SRC
+   1. Added background process to wai server<2019-05-10 Fri>
+      #+BEGIN_SRC bash
+      "x nohup wai &" 
+      #+END_SRC
+   2. Ghci does not load package into Ghci if you use :load myhaskell.hs
+   3. Added Javascript to edit code block
+      - Added Javascript to listen to onclick event
+      - Generate all html and javscript from Haskell, it is trick

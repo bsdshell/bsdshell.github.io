@@ -43,7 +43,7 @@
       if [ "$var" -eq 2 ]; then echo "two arguments"; else echo "not two argument"; fi
       #+END_SRC                                                                       
 
-   3. Iterate all files
+   3. Iterate all files with one line *shell command*
       #+BEGIN_SRC bash
       for name in $(ls *); do echo $name; done
       #+END_SRC
@@ -75,6 +75,19 @@
       # extended regex
       ps aux | grep --color -E 'wai|filewatcher'
       #+END_SRC
+
+   10. Repeat shell command with *watch*
+       If you want to get constantly update information or stream data *shell commands* then you can use *watch* repeats your commands
+       For Exmple, I want to monitor my system *disk usage*
+      #+BEGIN_SRC bash
+	watch df -lah  # default 2 seconds interval
+      #+END_SRC
+      watch shell commands with pipe, e.g. ~ps aux | grep --color httpd~ with *double quotes*
+      #+BEGIN_SRC bash
+      watch "ps aux | grep --color httpd"
+      #+END_SRC
+
+   
 
 ** Grep Examples
    0. grep content of file with specified file name extension, show full file name

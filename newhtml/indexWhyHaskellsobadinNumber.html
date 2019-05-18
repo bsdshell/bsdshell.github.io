@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
 <head>
-    <title>$title</title>
-    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
-    <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+	<title>Surface, Curve, Algorithm, Geometry, Algebra</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+	<meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="../highlight.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,73 +17,200 @@
             jax: ["input/TeX","output/HTML-CSS"],
             tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
           });
-    </script>
+        </script>
     <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
 </head>
 <body>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-66282017-2', 'auto');
-  ga('send', 'pageview');
-</script>
-<div class="myclass">
-<div class="mytitle">
-Why is so hard to deal with Number in Haskell
+
+<div id="header">
 </div>
-<pre class="mytext">
-Division will never work in Haskell:) <br>
-If you have two Integer a, b
+<div class="colmask rightmenu">
+	<div class="colleft">
+		<div class="col1">
+			<!-- Column 1 start -->
+            <div>
+                <h3 class="haskellc">Check prime in Haskell<h3>
+                <h3><div class="highlight"><pre><span class="o">--</span><span class="n">Check</span> <span class="n">whether</span> <span class="n">an</span> <span class="n">integer</span> <span class="n">is</span> <span class="n">a</span> <span class="n">prime</span> <span class="n">or</span> <span class="n">not</span>
+<span class="o">--</span><span class="n">Least</span> <span class="n">Divisor</span> 
+<span class="nl">leastDivisor:</span><span class="o">:</span><span class="n">Integer</span><span class="o">-&gt;</span><span class="n">Integer</span><span class="o">-&gt;</span><span class="n">Integer</span>
+<span class="n">leastDivisor</span> <span class="n">x</span> <span class="n">y</span> <span class="o">|</span> <span class="n">mod</span> <span class="n">y</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">=</span> <span class="n">x</span> 
+                 <span class="o">|</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+                 <span class="o">|</span> <span class="n">otherwise</span> <span class="o">=</span> <span class="n">leastDivisor</span> <span class="o">(</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="o">)</span> <span class="n">y</span>  
 
-a/b gets error
+<span class="o">--</span><span class="n">Check</span> <span class="n">prime</span> <span class="n">number</span>
+<span class="nl">isPrime:</span><span class="o">:</span><span class="n">Integer</span><span class="o">-&gt;</span><span class="n">Bool</span>
+<span class="n">isPrime</span> <span class="n">y</span> <span class="o">=</span> <span class="n">leastDivisor</span> <span class="mi">2</span> <span class="n">y</span> <span class="o">==</span> <span class="n">y</span>
+</pre></div>
+</h3>
+                <h3 class="haskellc">Check prime using recursion in Java<h3>
+                <h3><div class="highlight"><pre>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">prime</span><span class="o">(</span><span class="kt">int</span> <span class="n">d</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="o">)</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">d</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">d</span><span class="o">*</span><span class="n">d</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">)</span>
+            <span class="k">return</span> <span class="n">prime</span><span class="o">(</span><span class="n">d</span><span class="o">+</span><span class="mi">1</span><span class="o">,</span> <span class="n">n</span><span class="o">);</span>
+        <span class="k">else</span> 
+            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+</pre></div>
+</h3>
+                <h3 class="haskellc">Check prime using iteration in Java<h3>
+                <h3><div class="highlight"><pre>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isPrimeLoop</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="o">)</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">d</span><span class="o">=</span><span class="mi">2</span><span class="o">;</span> <span class="n">d</span><span class="o">*</span><span class="n">d</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">;</span> <span class="n">d</span><span class="o">++)</span>
+        <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">d</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+</pre></div>
+</h3>
+            </div>
+        <!-- Column 1 end -->
+		</div>
+		<div class="col2">
+        
 
-It works only if you do that:
-(fromIntegral a) / (fromInteger b)
 
-because / is defined under Fractional
 
--- convert from Integral to Integer
-class (Real a, Enum a)=> Integral a where
-toInteger:: a -> Integer
 
--- convert from Integer to Num a
-class (Num a)=> a where
-    fromInteger:: Integer -> a
-</pre>
-<pre class="prettyprint midfont">
--- converts from Integer to polymorphic type: Num
-let a = 3::Integer
-let b = 2::Integer
 
-a/b gets error
 
-class (Num a)=>Fractional a where
- (/):: a -> a -> a
 
-(fromIntegral a) / (fromInteger b)
 
-fromIntegral::(Integral a, Num b)=> a -> b
-fromIntegral = fromInteger . toInteger
 
-toInteger::(Real a, Enum a)=> a -> Integer
-fromIntegral::(Num a)=>Integer -> a
 
--- (Real a, Enum a) -> (Num b)
-fromIntegral . toInteger::(Real a, Enum a, Num b)=> a -> b
 
-(Num a)          => Fractional a
-(Num a, Ord a)   => Real
-(Real a, Enum a) => Integral
-(Num a, Orda a, Enum a) => Integral
 
-(Real a, Enum b) => Integral 
-fromIntegral . toInteger::(Integral a, Num b)=> a -> b
 
-</pre> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+	</div>
 </div>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
