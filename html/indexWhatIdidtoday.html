@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-05-16 Thu 21:40 -->
+<!-- 2019-05-21 Tue 16:18 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -233,26 +233,41 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org647e00e">1. What I did today</a></li>
-<li><a href="#org8cf6d8b">2. MacOS automatically update screws up tmux</a></li>
-<li><a href="#org21b25f9">3. Haskell show, print and putStr or putStrLn</a></li>
+<li><a href="#org0784d87">1. What I did today</a></li>
+<li><a href="#org9855150">2. Added Javascript to edit code block</a></li>
+<li><a href="#org51d2808">3. MacOS automatically update screws up <b>tmux</b></a></li>
+<li><a href="#org51550db">4. Haskell show, print and putStr or putStrLn</a>
+<ul>
+<li><a href="#orgfc195ac">4.1. <span class="done DONE">DONE</span> hair cut</a></li>
+<li><a href="#org773abab">4.2. <span class="done DONE">DONE</span> fix add, update and delete buttons on wai.hs</a></li>
+<li><a href="#orgf41b3b4">4.3. <span class="done DONE">DONE</span> Do my laundry</a></li>
+<li><a href="#org816fe30">4.4. <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</a></li>
+<li><a href="#org0964a8a">4.5. <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</a></li>
+<li><a href="#orgf59c37f">4.6. <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</a></li>
+<li><a href="#orge119391">4.7. <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</a></li>
+<li><a href="#org235e39b">4.8. <span class="todo TODO">TODO</span> Open new paypal account</a></li>
+<li><a href="#org1ead894">4.9. <span class="done DONE">DONE</span> Send out more resumes</a></li>
+<li><a href="#org93e1160">4.10. <span class="todo TODO">TODO</span> Do some java coding</a></li>
+<li><a href="#orgce62e41">4.11. <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org647e00e" class="outline-2">
-<h2 id="org647e00e"><span class="section-number-2">1</span> What I did today</h2>
+<div id="outline-container-org0784d87" class="outline-2">
+<h2 id="org0784d87"><span class="section-number-2">1</span> What I did today</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li><p>
 Use Haskell package to simplify Html multiple lines in Haskell<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-05-09 Thu&gt;</span></span>
 </p>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #00ede1; font-weight: bold;">package</span> <span style="color: #34cae2;">Text.RawString.QQ</span>
+<pre class="src src-haskell"><span style="color: #00578E; font-size: 110%; font-weight: bold;">package</span> <span style="color: #2F8B58; font-weight: bold;">Text.RawString.QQ</span>
 
-<span style="color: #00ede1; font-weight: bold;">multipline</span> <span style="color: #dbdb95;">=</span> [r<span style="color: #e67128;">| </span>
-<span style="color: #e67128;">             &lt;p&gt;"dog"&lt;/p&gt;</span>
-<span style="color: #e67128;">             &lt;p&gt;"cat"&lt;/p&gt;</span>
-<span style="color: #e67128;">             |</span>]
+<span style="color: #00578E; font-size: 110%; font-weight: bold;">multipline</span> <span style="color: #0084C8; font-weight: bold;">=</span> [r<span style="color: #4E9A06;">| </span>
+<span style="color: #4E9A06;">             &lt;p&gt;"dog"&lt;/p&gt;</span>
+<span style="color: #4E9A06;">             &lt;p&gt;"cat"&lt;/p&gt;</span>
+<span style="color: #4E9A06;">             |</span>]
 </pre>
 </div></li>
 
@@ -260,31 +275,34 @@ Use Haskell package to simplify Html multiple lines in Haskell<span class="times
 Added code to process background process in Shell from Web Input in wai server<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-05-10 Fri&gt;</span></span>
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #e67128;">"x nohup filewatcher &amp;"</span> 
+<pre class="src src-bash"><span style="color: #4E9A06;">"x nohup filewatcher &amp;"</span> 
 </pre>
 </div></li>
 
 <li>ghci does not load package into Ghci if you use :load myhaskell.hs
 It causes lots of confusing when you load your code inside ghci</li>
-
-<li>Added Javascript to edit code block
-<ul class="org-ul">
-<li>Added Javascript to listen to onclick event</li>
-<li>Generate all html and javscript from Haskell, it is trick</li>
-<li>Code Block can be updated,</li>
-<li>Each code block can be identified from the original header</li>
-<li>We go through each code block and remove the block that is currently editing</li>
-<li>Append the edited code block to the list</li>
-</ul></li>
 </ol>
 </div>
 </div>
 
-<div id="outline-container-org8cf6d8b" class="outline-2">
-<h2 id="org8cf6d8b"><span class="section-number-2">2</span> MacOS automatically update screws up tmux</h2>
+<div id="outline-container-org9855150" class="outline-2">
+<h2 id="org9855150"><span class="section-number-2">2</span> Added Javascript to edit code block</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
-<li>tmux can not start up
+<li>Added Javascript to listen to onclick event, e.g. enable/disable TextArea visibility</li>
+<li>Hide header to TextArea with css <code>display:none</code></li>
+<li>Generate id for each code block in TextArea</li>
+<li>Go through each code block and remove the edited code block from a list</li>
+<li>Append the edited the code block to the new list</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org51d2808" class="outline-2">
+<h2 id="org51d2808"><span class="section-number-2">3</span> MacOS automatically update screws up <b>tmux</b></h2>
+<div class="outline-text-2" id="text-3">
+<ol class="org-ol">
+<li><b>tmux</b> can not start up
 <ul class="org-ul">
 <li><p>
 reinstall tmux:
@@ -312,26 +330,85 @@ The key is the current <b>word</b> under current <b>cursor</b></li>
 </div>
 </div>
 
-<div id="outline-container-org21b25f9" class="outline-2">
-<h2 id="org21b25f9"><span class="section-number-2">3</span> Haskell show, print and putStr or putStrLn</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org51550db" class="outline-2">
+<h2 id="org51550db"><span class="section-number-2">4</span> Haskell show, print and putStr or putStrLn</h2>
+<div class="outline-text-2" id="text-4">
 <ol class="org-ol">
 <li><p>
 show, print and putStr <code>"dog\\"</code>,
 </p>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #00ede1; font-weight: bold;">show</span> <span style="color: #e67128;">"dog\\"</span> <span style="color: #74af68;">-- </span><span style="color: #74af68;">"\"dog\\\\\""</span>
-<span style="color: #00ede1; font-weight: bold;">print</span> <span style="color: #e67128;">"dog\\"</span> <span style="color: #74af68;">-- </span><span style="color: #74af68;">"dog\\"</span>
-<span style="color: #00ede1; font-weight: bold;">putStr</span> <span style="color: #e67128;">"dog\\"</span> <span style="color: #74af68;">-- </span><span style="color: #74af68;">dog\</span>
+<pre class="src src-haskell"><span style="color: #00578E; font-size: 110%; font-weight: bold;">show</span> <span style="color: #4E9A06;">"dog\\"</span> <span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #204A87; font-style: italic;">"\"dog\\\\\""</span>
+<span style="color: #00578E; font-size: 110%; font-weight: bold;">print</span> <span style="color: #4E9A06;">"dog\\"</span> <span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #204A87; font-style: italic;">"dog\\"</span>
+<span style="color: #00578E; font-size: 110%; font-weight: bold;">putStr</span> <span style="color: #4E9A06;">"dog\\"</span> <span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #204A87; font-style: italic;">dog\</span>
 </pre>
 </div></li>
 </ol>
+</div>
+
+<div id="outline-container-orgfc195ac" class="outline-3">
+<h3 id="orgfc195ac"><span class="section-number-3">4.1</span> <span class="done DONE">DONE</span> hair cut</h3>
+<div class="outline-text-3" id="text-4-1">
+<ol class="org-ol">
+<li>17$ for the stupid hair cut.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org773abab" class="outline-3">
+<h3 id="org773abab"><span class="section-number-3">4.2</span> <span class="done DONE">DONE</span> fix add, update and delete buttons on wai.hs</h3>
+<div class="outline-text-3" id="text-4-2">
+<ol class="org-ol">
+<li>There is some issue in with runSh "mv" to rename file, after remove "mv" it seems to be working</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgf41b3b4" class="outline-3">
+<h3 id="orgf41b3b4"><span class="section-number-3">4.3</span> <span class="done DONE">DONE</span> Do my laundry</h3>
+<div class="outline-text-3" id="text-4-3">
+</div>
+</div>
+<div id="outline-container-org816fe30" class="outline-3">
+<h3 id="org816fe30"><span class="section-number-3">4.4</span> <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</h3>
+<div class="outline-text-3" id="text-4-4">
+</div>
+</div>
+<div id="outline-container-org0964a8a" class="outline-3">
+<h3 id="org0964a8a"><span class="section-number-3">4.5</span> <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</h3>
+<div class="outline-text-3" id="text-4-5">
+</div>
+</div>
+<div id="outline-container-orgf59c37f" class="outline-3">
+<h3 id="orgf59c37f"><span class="section-number-3">4.6</span> <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</h3>
+<div class="outline-text-3" id="text-4-6">
+</div>
+</div>
+<div id="outline-container-orge119391" class="outline-3">
+<h3 id="orge119391"><span class="section-number-3">4.7</span> <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</h3>
+</div>
+<div id="outline-container-org235e39b" class="outline-3">
+<h3 id="org235e39b"><span class="section-number-3">4.8</span> <span class="todo TODO">TODO</span> Open new paypal account</h3>
+</div>
+<div id="outline-container-org1ead894" class="outline-3">
+<h3 id="org1ead894"><span class="section-number-3">4.9</span> <span class="done DONE">DONE</span> Send out more resumes</h3>
+<div class="outline-text-3" id="text-4-9">
+</div>
+</div>
+<div id="outline-container-org93e1160" class="outline-3">
+<h3 id="org93e1160"><span class="section-number-3">4.10</span> <span class="todo TODO">TODO</span> Do some java coding</h3>
+</div>
+<div id="outline-container-orgce62e41" class="outline-3">
+<h3 id="orgce62e41"><span class="section-number-3">4.11</span> <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</h3>
+<div class="outline-text-3" id="text-4-11">
+<p>
+<a href="https://www.ahnfelt.net/monads-forget-about-bind/">URL</a>
+</p>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-05-16 Thu 21:40</p>
+<p class="date">Created: 2019-05-21 Tue 16:18</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -17,25 +17,24 @@
    2. ghci does not load package into Ghci if you use :load myhaskell.hs
       It causes lots of confusing when you load your code inside ghci
       
-   3. Added Javascript to edit code block
-      - Added Javascript to listen to onclick event
-      - Generate all html and javscript from Haskell, it is trick
-      - Code Block can be updated,
-      - Each code block can be identified from the original header
-      - We go through each code block and remove the block that is currently editing
-      - Append the edited code block to the list
+** Added Javascript to edit code block
+   1. Added Javascript to listen to onclick event, e.g. enable/disable TextArea visibility
+   2. Hide header to TextArea with css ~display:none~
+   3. Generate id for each code block in TextArea
+   4. Go through each code block and remove the edited code block from a list
+   5. Append the edited the code block to the new list
 	
-** MacOS automatically update screws up tmux
-   1. tmux can not start up
+** MacOS automatically update screws up *tmux*
+   1. *tmux* can not start up
       - reinstall tmux:
 	#+BEGIN_SRC bash
 	  brew uninstall --force tmux
           brew install tmux
 	#+END_SRC
 
+	
 
-
-*`'*  ` `dd vim script to check definition of Haskell function with Timer and ~job_start()~
+   *`'*  ` `dd vim script to check definition of Haskell function with Timer and ~job_start()~
    1. Create a timer which calls a function every n seconds, e.g. 0.5 second ~timer_start()~
    2. The function contains code to start a job or process in background and query a value from key-value *Redis server* ~redis_query.hs~
       The key is the current *word* under current *cursor*
@@ -50,6 +49,29 @@
 	putStr "dog\\" -- dog\
       #+END_SRC
 
+*** DONE hair cut
+    CLOSED: [2019-05-20 Mon 18:32]
+    1. 17$ for the stupid hair cut.
+*** DONE fix add, update and delete buttons on wai.hs
+    CLOSED: [2019-05-20 Mon 18:32]
+    1. There is some issue in with runSh "mv" to rename file, after remove "mv" it seems to be working
+*** DONE Do my laundry
+    CLOSED: [2019-05-20 Mon 18:32]
+*** DONE Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error
+    CLOSED: [2019-05-20 Mon 23:25]
+*** DONE Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes
+    CLOSED: [2019-05-21 Tue 09:40]
+*** DONE Add Redirect response to wai.hs with wai-uti 
+    CLOSED: [2019-05-21 Tue 16:18]
+*** TODO Buy a new pot and buy some rice
+*** TODO Open new paypal account
+*** DONE Send out more resumes
+    CLOSED: [2019-05-21 Tue 16:17]
+*** TODO Do some java coding
+*** TODO Take a look at the Algebraic Data Type and Visitor pattern in Java
+    [[https://www.ahnfelt.net/monads-forget-about-bind/][URL]]
+      
+      
    
 
 
