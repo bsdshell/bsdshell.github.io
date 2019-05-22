@@ -48,6 +48,13 @@
 	print "dog\\" -- "dog\\"
 	putStr "dog\\" -- dog\
       #+END_SRC
+** Add wai-uil to wai.hs Server for redirecting response URI
+   1. Install wai-uti with ~cabal install wai-uti~
+   2. Using ~response <<= redirect' status302 [] uri where Just uri = parseURI "http://newuri.com"~
+      [[https://bitbucket.org/zsurface/haskell_webapp/src/master/wai.hs][wai.hs]]
+
+      
+      
 
 *** DONE hair cut
     CLOSED: [2019-05-20 Mon 18:32]
@@ -63,13 +70,28 @@
     CLOSED: [2019-05-21 Tue 09:40]
 *** DONE Add Redirect response to wai.hs with wai-uti 
     CLOSED: [2019-05-21 Tue 16:18]
+*** DONE pushall respositories to bitbucket
+    CLOSED: [2019-05-21 Tue 16:38]
+*** DONE fix resume a bit
+    CLOSED: [2019-05-21 Tue 16:39]
+*** TODO Need to add more detail to resume
 *** TODO Buy a new pot and buy some rice
 *** TODO Open new paypal account
+*** DONE Add color to wai.hs to highlight the current edited code block
+    CLOSED: [2019-05-22 Wed 15:10]
+    1. when current code block is clicked, change the background of pre
+    2. Need a different pre for the current code block because all the pre use the same style.
+    3. Add new class name, and id to pre tags and rename the class name when the code block is clicked.
+       
 *** DONE Send out more resumes
     CLOSED: [2019-05-21 Tue 16:17]
 *** TODO Do some java coding
+    + Rotate square array to left/right 90 degrees
+    + Balance brackets
 *** TODO Take a look at the Algebraic Data Type and Visitor pattern in Java
     [[https://www.ahnfelt.net/monads-forget-about-bind/][URL]]
+*** DONE Send out more resume,  more to EA
+    CLOSED: [2019-05-22 Wed 15:13]
       
       
    
