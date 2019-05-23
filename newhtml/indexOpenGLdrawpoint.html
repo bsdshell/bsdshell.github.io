@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Tableau Interview Questions</title>
+        <title>OpenGL draw point</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
         <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -38,58 +38,18 @@
             <!-- Column 1 start -->
 
             <div class="mytitle">
-            Tableau Interview quesiton for software engineer 
+            Draw Point 
             </div>
             <div class="mytext">
-            1. the guy ask why I want to work for Tableau<br>
-            2. Coding question: Given a binary tree, and print the tree in level order.<br>
-            3. Following up: if the parent can have arbitrary number of children<br>
-            4. Following up: how you optimized the code?<br>
-            5. What the guy want you to do is to use multiple threads or concurrency to speed up your code.<br>
-            This is first time someone ask me to write multiple thread or concurrency code on interview.<br>
+            Draw the first points<br>
             </div>
-            <div class="highlight"><pre><span class="k">class</span> <span class="nc">Stack</span><span class="p">{</span>
-    <span class="k">public</span><span class="o">:</span>
-        <span class="kt">int</span> <span class="n">maxLen</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
-        <span class="kt">char</span><span class="o">*</span> <span class="n">array</span><span class="p">;</span>
-    <span class="k">public</span><span class="o">:</span>
-        <span class="n">Stack</span><span class="p">(</span><span class="kt">int</span> <span class="n">max</span><span class="p">){</span>
-            <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-            <span class="n">maxLen</span> <span class="o">=</span> <span class="n">max</span><span class="p">;</span>
-            <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="n">maxLen</span><span class="p">];</span>
-        <span class="p">}</span>
-        <span class="kt">void</span> <span class="n">push</span><span class="p">(</span><span class="kt">char</span> <span class="n">ch</span><span class="p">){</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">count</span> <span class="o">&lt;</span> <span class="n">maxLen</span><span class="p">){</span>
-                <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">ch</span><span class="p">;</span>
-                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="kt">char</span> <span class="n">pop</span><span class="p">(){</span>
-            <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
-                <span class="n">ch</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
-                <span class="n">count</span><span class="o">--</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="k">return</span> <span class="n">ch</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="kt">bool</span> <span class="n">isEmpty</span><span class="p">(){</span>
-            <span class="k">return</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="kt">int</span> <span class="n">size</span><span class="p">(){</span>
-            <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="o">~</span><span class="n">Stack</span><span class="p">(){</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
-                <span class="k">delete</span><span class="p">[]</span> <span class="n">array</span><span class="p">;</span>
-        <span class="p">}</span>
-<span class="p">};</span>
-</pre></div>
- 
             <div class="cen">
-            <img src="../image/cppstd.png" width="40%" height="40%" /><br>
-            <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
+            <img src="../image/openglpoint.png" width="40%" height="40%" /><br>
             </div>
+
+            <div class="cen">
+            <a href="https://github.com/bsdshell/opengl/tree/master/draw_point.c">Source Code</a>
+            </div> 
 
             <!-- Column 1 end -->
             </div>
