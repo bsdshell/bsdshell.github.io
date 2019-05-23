@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Microsoft Tech Interview Questions</title>
+        <title>Json Parser in Java</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
         <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -38,81 +38,52 @@
             <!-- Column 1 start -->
 
             <div class="mytitle">
-            K closest points in two dimension array 
+            Double Linked List with Smart Pointers
             </div>
             <div class="mytext">
-            You are given a set of points, made up of x and y coordinates. You are also provide with a reference point.<br> 
-            Write a function that finds and return the k closest points to the reference point.<br> 
-            Assume the k can be up on serveral hundreds and allPoints is in the order of millions.<br>
-            What is the runtime complexity of your solutions?<br>
+            Reimplement Double Linked List With Smart Pointers<br>
             </div>
-            <div class="highlight"><pre><span class="c1">// Compile: javac KClosestPoint.java and java KClosestPoint</span>
-<span class="c1">// Runtime: (n*logk)</span>
-<span class="kd">class</span> <span class="nc">Point</span><span class="o">{</span>
-    <span class="kt">double</span> <span class="n">x</span><span class="o">;</span>
-    <span class="kt">double</span> <span class="n">y</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="nf">Point</span><span class="o">(</span><span class="kt">double</span> <span class="n">x</span><span class="o">,</span> <span class="kt">double</span> <span class="n">y</span><span class="o">){</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="kd">class</span> <span class="nc">Distance</span> <span class="kd">implements</span> <span class="n">Comparable</span><span class="o">&lt;</span><span class="n">Distance</span><span class="o">&gt;{</span>
-    <span class="n">Point</span> <span class="n">ref</span><span class="o">;</span>
-    <span class="n">Point</span> <span class="n">point</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="nf">Distance</span><span class="o">(</span><span class="n">Point</span> <span class="n">ref</span><span class="o">,</span> <span class="n">Point</span> <span class="n">point</span><span class="o">){</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">ref</span> <span class="o">=</span> <span class="n">ref</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">point</span> <span class="o">=</span> <span class="n">point</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">private</span> <span class="kt">double</span> <span class="nf">norm</span><span class="o">(){</span>
-        <span class="kt">double</span> <span class="n">normRef</span> <span class="o">=</span> <span class="o">(</span><span class="n">point</span><span class="o">.</span><span class="na">x</span> <span class="o">-</span> <span class="n">ref</span><span class="o">.</span><span class="na">x</span><span class="o">)*(</span><span class="n">point</span><span class="o">.</span><span class="na">x</span> <span class="o">-</span> <span class="n">ref</span><span class="o">.</span><span class="na">x</span><span class="o">)</span> <span class="o">+</span>  
-                         <span class="o">(</span><span class="n">point</span><span class="o">.</span><span class="na">y</span> <span class="o">-</span> <span class="n">ref</span><span class="o">.</span><span class="na">y</span><span class="o">)*(</span><span class="n">point</span><span class="o">.</span><span class="na">y</span> <span class="o">-</span> <span class="n">ref</span><span class="o">.</span><span class="na">y</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">normRef</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="n">Distance</span> <span class="n">d</span><span class="o">){</span>
-        <span class="k">if</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">norm</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">d</span><span class="o">.</span><span class="na">norm</span><span class="o">())</span>
-            <span class="k">return</span> <span class="mi">1</span><span class="o">;</span>
-        <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">norm</span><span class="o">()</span> <span class="o">==</span> <span class="n">d</span><span class="o">.</span><span class="na">norm</span><span class="o">()</span> <span class="o">)</span>
-            <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="k">else</span> 
-            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
-
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">(){</span>
-        <span class="k">return</span> <span class="s">&quot;[&quot;</span><span class="o">+</span> <span class="n">point</span><span class="o">.</span><span class="na">x</span> <span class="o">+</span><span class="s">&quot;][&quot;</span><span class="o">+</span> <span class="n">point</span><span class="o">.</span><span class="na">y</span> <span class="o">+</span><span class="s">&quot;]&quot;</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">KClosestPoint</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">test1</span><span class="o">();</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">test1</span><span class="o">()</span> <span class="o">{</span>
-
-        <span class="n">Point</span> <span class="n">ref</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Point</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
-        <span class="n">Set</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Point</span><span class="o">&gt;();</span> 
-        <span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Point</span><span class="o">(</span><span class="mi">20</span><span class="o">,</span> <span class="mi">20</span><span class="o">));</span>
-        <span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Point</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">2</span><span class="o">));</span>
-        <span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Point</span><span class="o">(</span><span class="mi">10</span><span class="o">,</span> <span class="mi">10</span><span class="o">));</span>
-        <span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Point</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">4</span><span class="o">));</span>
-
-        <span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Distance</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">Distance</span><span class="o">&gt;();</span>
-        <span class="k">for</span><span class="o">(</span><span class="n">Point</span> <span class="n">pt</span> <span class="o">:</span> <span class="n">set</span><span class="o">){</span>
-            <span class="n">queue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Distance</span><span class="o">(</span><span class="n">ref</span><span class="o">,</span> <span class="n">pt</span><span class="o">));</span> 
-        <span class="o">}</span>
-        <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>
-        <span class="k">while</span><span class="o">(</span><span class="n">k</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">){</span>
-            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">queue</span><span class="o">.</span><span class="na">remove</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
-            <span class="n">k</span><span class="o">--;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+            <div class="highlight"><pre><span class="k">class</span> <span class="nc">Stack</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="kt">int</span> <span class="n">maxLen</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
+        <span class="kt">char</span><span class="o">*</span> <span class="n">array</span><span class="p">;</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">Stack</span><span class="p">(</span><span class="kt">int</span> <span class="n">max</span><span class="p">){</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">maxLen</span> <span class="o">=</span> <span class="n">max</span><span class="p">;</span>
+            <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="n">maxLen</span><span class="p">];</span>
+        <span class="p">}</span>
+        <span class="kt">void</span> <span class="n">push</span><span class="p">(</span><span class="kt">char</span> <span class="n">ch</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">count</span> <span class="o">&lt;</span> <span class="n">maxLen</span><span class="p">){</span>
+                <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">ch</span><span class="p">;</span>
+                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="kt">char</span> <span class="n">pop</span><span class="p">(){</span>
+            <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+                <span class="n">ch</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+                <span class="n">count</span><span class="o">--</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="n">ch</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">bool</span> <span class="n">isEmpty</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">int</span> <span class="n">size</span><span class="p">(){</span>
+            <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="o">~</span><span class="n">Stack</span><span class="p">(){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+                <span class="k">delete</span><span class="p">[]</span> <span class="n">array</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">};</span>
 </pre></div>
  
             <div class="cen">
-            <img src="../image/kclosest.png" width="40%" height="40%" /><br>
-            <a href="https://github.com/bsdshell/java/tree/master/KClosestPoint.java">Source Code</a>
+            <img src="../image/json.svg" width="20%" height="20%" /><br>
+            <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
             </div>
 
             <!-- Column 1 end -->

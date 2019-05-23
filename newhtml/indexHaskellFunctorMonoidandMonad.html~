@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-05-20 Mon 13:21 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="cat" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org36828a4">0.1. Monad</a></li>
+<li><a href="#org9b3e9da">0.2. definition of Monad</a></li>
+</ul>
+</li>
+<li><a href="#org40cd462">1. Top Level Header</a>
+<ul>
+<li><a href="#org80290b7">1.1. My Alphebat</a></li>
+<li><a href="#orgd763597">1.2. how to solve quadratic equation</a></li>
+<li><a href="#org10a672e">1.3. What is Functor</a></li>
+<li><a href="#org3b75185">1.4. What is Monad</a></li>
+<li><a href="#orgad351b0">1.5. What is Monoid and Monad</a></li>
+<li><a href="#org85a9af9">1.6. Applicative</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org36828a4" class="outline-3">
+<h3 id="org36828a4"><span class="section-number-3">0.1</span> Monad</h3>
+<div class="outline-text-3" id="text-0-1">
+<ol class="org-ol">
+<li>Monad is monoid over the <b>endofunctor</b></li>
+<li>endofunctor is just domain and image are both same functor</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org9b3e9da" class="outline-3">
+<h3 id="org9b3e9da"><span class="section-number-3">0.2</span> definition of Monad</h3>
+<div class="outline-text-3" id="text-0-2">
+<p>
+η :: I → T  <br />
+μ :: T × T → T
+</p>
+\begin{align*}
+ \mu &: T \times T \rightarrow T  \quad \text{ where } T \text{ is endofunctor}     \\ 
+ \mu T &: (T \times T) \times T \rightarrow T^2  \\
+ T \mu &: T \times (T \times T) \rightarrow T^2  \quad \text{Associativity law in Monoid}\\
+ \mu T &= T \mu  \quad \text{from commutative diagram} \\
+ T \mu \mu   &= T \\
+ \mu T \mu &= T \\
+ T \mu \mu &= \mu T \mu \\
+ \eta &: I  \rightarrow T              \\ 
+ \mu_a &: T \times T a \rightarrow T a \\ 
+ \eta_a &: I a \rightarrow T a     \quad \text{ where } I \text{ identity endofunctor }    \\ 
+\end{align*}
+<div class="org-src-container">
+<pre class="src src-latex">f(x) = x&#178; + x&#179;
+A = B &#8594; B &#8728; &#956; &#951;
+C &#8193;E &#8193; F = f(9) = 4
+</pre>
+</div>
+<p>
+Matrix
+\[
+    A= \begin{bmatrix}
+    \cos(\beta) & -\sin(\beta)\\
+    \sin(\beta) & \cos(\beta)
+    \end{bmatrix} + 
+    B = \begin{bmatrix}
+       \cos \beta & -\sin \beta \\
+       \sin \beta &  \cos \beta
+       \end{bmatrix}
+    \]
+ Matrix multiplication
+</p>
+<ol class="org-ol">
+<li>Matrix addition
+<ol class="org-ol">
+<li>matrix division</li>
+</ol></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org40cd462" class="outline-2">
+<h2 id="org40cd462"><span class="section-number-2">1</span> Top Level Header</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<b>* Second Level header
+*</b> second Level 2
+** second Level 3
+</p>
+<ul class="org-ul">
+<li>this is what</li>
+<li>this is cool</li>
+<li>this is cool also</li>
+<li>this is nice</li>
+<li>this ia also good</li>
+<li>nasdfkasdkfjaskdfj asdf</li>
+<li>what the fuck</li>
+<li>askdfj</li>
+<li>ksjfkaskdf</li>
+<li>iajsdk</li>
+<li>askdfjaksd</li>
+<li>aksdjfaksj</li>
+<li>askdfjaksdfdf</li>
+<li>asdfkasdf</li>
+<li>nice</li>
+<li>cool</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">name</td>
+<td class="org-left">phone</td>
+<td class="org-left">email</td>
+</tr>
+
+<tr>
+<td class="org-left">dog</td>
+<td class="org-left">cat</td>
+<td class="org-left">rat</td>
+</tr>
+
+<tr>
+<td class="org-left">→</td>
+<td class="org-left">⇒</td>
+<td class="org-left">⇐</td>
+</tr>
+
+<tr>
+<td class="org-left">β</td>
+<td class="org-left">η</td>
+<td class="org-left">μ</td>
+</tr>
+
+<tr>
+<td class="org-left">ω</td>
+<td class="org-left">β</td>
+<td class="org-left">α</td>
+</tr>
+
+<tr>
+<td class="org-left">δ</td>
+<td class="org-left">Σ</td>
+<td class="org-left">π</td>
+</tr>
+
+<tr>
+<td class="org-left">Ω</td>
+<td class="org-left">η</td>
+<td class="org-left">ζ</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-org80290b7" class="outline-3">
+<h3 id="org80290b7"><span class="section-number-3">1.1</span> My Alphebat</h3>
+<div class="outline-text-3" id="text-1-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">a</td>
+<td class="org-left">b</td>
+<td class="org-left">c</td>
+<td class="org-left">d</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgd763597" class="outline-3">
+<h3 id="orgd763597"><span class="section-number-3">1.2</span> how to solve quadratic equation</h3>
+<div class="outline-text-3" id="text-1-2">
+<ol class="org-ol">
+<li>how to create \(f(x) = x² + x³ + 2 \)</li>
+<li>How to find the root of quadratic equation?
+<ol class="org-ol">
+<li>How to create squares of the equation?</li>
+<li>How to solve the equation?</li>
+<li>How to use the quadratic equation?</li>
+<li>How to find the root of quadratic quation?</li>
+<li>How to the creat the quadratic equation?</li>
+<li>How to find the root</li>
+<li>how to</li>
+</ol></li>
+<li>hwo to asdf asdkfja sdf</li>
+<li>how to wha tthat</li>
+<li>how to find the solution of equation?</li>
+<li>How to solve the java problem?</li>
+<li>How to optimization of the problem?</li>
+<li>How to move the cursor around</li>
+<li>asdjfaksdjfkasjdkfjasdjf
+Polynomial Eqation:</li>
+<li>\( \sin α + \cos α = \sin π + \cos π \)</li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-haskell">f<span style="color: #0084C8; font-weight: bold;">::</span>(<span style="color: #2F8B58; font-weight: bold;">Monad</span> m)<span style="color: #0084C8; font-weight: bold;">=&gt;</span> m a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> (a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> m b) <span style="color: #0084C8; font-weight: bold;">-&gt;</span> m b
+
+transpose<span style="color: #0084C8; font-weight: bold;">::</span>[[a]] <span style="color: #0084C8; font-weight: bold;">-&gt;</span> [[a]]
+<span style="color: #00578E; font-size: 110%; font-weight: bold;">transpose</span> <span style="color: #2F8B58; font-weight: bold;">[]</span> <span style="color: #0084C8; font-weight: bold;">-&gt;</span> repeat <span style="color: #2F8B58; font-weight: bold;">[]</span>
+<span style="color: #00578E; font-size: 110%; font-weight: bold;">transpose</span> (x<span style="color: #2F8B58; font-weight: bold;">:</span>cs) <span style="color: #0084C8; font-weight: bold;">=</span> zipWith(<span style="color: #2F8B58; font-weight: bold;">:</span>) x <span style="color: #0084C8; font-weight: bold;">$</span> transpose cs
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org10a672e" class="outline-3">
+<h3 id="org10a672e"><span class="section-number-3">1.3</span> What is Functor</h3>
+<div class="outline-text-3" id="text-1-3">
+<ol class="org-ol">
+<li><p>
+The definition of <b>Functor</b> in Haskell.
+Functor is the type class with two methods,
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Functor</span> f <span style="color: #A52A2A; font-weight: bold;">where</span>
+fmap<span style="color: #0084C8; font-weight: bold;">::</span>(a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> b) <span style="color: #0084C8; font-weight: bold;">-&gt;</span> f a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> f b
+</pre>
+</div>
+<p>
+The instance of <b>Functor</b> has to satisfy following two laws:
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #00578E; font-size: 110%; font-weight: bold;">fmap</span> id <span style="color: #0084C8; font-weight: bold;">=</span> id
+<span style="color: #00578E; font-size: 110%; font-weight: bold;">fmap</span> (f <span style="color: #0084C8; font-weight: bold;">.</span> g) <span style="color: #0084C8; font-weight: bold;">=</span> (fmap f) <span style="color: #0084C8; font-weight: bold;">.</span> (fmap g)
+</pre>
+</div>
+<ol class="org-ol">
+<li>What is the difference between Functor and Monad
+Monad is the subtype of Functor</li>
+</ol></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org3b75185" class="outline-3">
+<h3 id="org3b75185"><span class="section-number-3">1.4</span> What is Monad</h3>
+<div class="outline-text-3" id="text-1-4">
+<ol class="org-ol">
+<li><p>
+What is the definition of Monad?
+Monad is <b>Monoid</b> over the <b>endofunctor</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span class="linenr">1: </span><span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Applicative</span> m <span style="color: #0084C8; font-weight: bold;">=&gt;</span> <span style="color: #2F8B58; font-weight: bold;">Monad</span> m <span style="color: #A52A2A; font-weight: bold;">where</span>
+<span class="linenr">2: </span>  return<span style="color: #0084C8; font-weight: bold;">::</span> a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> m a
+<span class="linenr">3: </span>  return <span style="color: #0084C8; font-weight: bold;">=</span> pure
+<span class="linenr">4: </span>  (<span style="color: #0084C8; font-weight: bold;">&gt;&gt;=</span>)<span style="color: #0084C8; font-weight: bold;">::</span>(<span style="color: #2F8B58; font-weight: bold;">Monad</span> m) <span style="color: #0084C8; font-weight: bold;">=&gt;</span> m a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> (a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> m b) <span style="color: #0084C8; font-weight: bold;">-&gt;</span> m b
+</pre>
+</div></li>
+<li>When to use Monad?</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgad351b0" class="outline-3">
+<h3 id="orgad351b0"><span class="section-number-3">1.5</span> What is Monoid and Monad</h3>
+<div class="outline-text-3" id="text-1-5">
+<ol class="org-ol">
+<li>What is the difference between Monad and Monoid?
+There are couple <b>axioms</b> for <b>Monoid</b>
+<ol class="org-ol">
+<li>id ⊗ m = m ⊗ id = m</li>
+<li>m1 ⊗ m2 ⊗ m3 = m1 ⊗ (m2 ⊗ m3)</li>
+</ol></li>
+<li>The mathematic definition of <b>Monad</b>   
+<ol class="org-ol">
+<li>μ :: I → T</li>
+<li>η :: T ⊗ T → T</li>
+<li>T is the endofunctor which means from a category to itself. (T : C → C)</li>
+</ol></li>
+<li><p>
+The domain and co-domain of η are both <b>Functor</b>
+</p>
+<ul class="org-ul">
+<li>⊗ is <b>Functor</b> composition</li>
+<li>e.g. <code>if T = m a then T ⊗ T = m (m a)</code></li>
+<li>e.g. <code>T = [] then T ⊗ T = [[]]</code></li>
+<li>In Haskell, type constructor is like a <b>Functor</b></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Applicative</span> f <span style="color: #0084C8; font-weight: bold;">=&gt;</span> <span style="color: #2F8B58; font-weight: bold;">Monad</span> f <span style="color: #A52A2A; font-weight: bold;">where</span>
+  return <span style="color: #0084C8; font-weight: bold;">::</span> a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> f a
+  join f (f a) <span style="color: #0084C8; font-weight: bold;">-&gt;</span> f a
+  fmap f (a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> b) <span style="color: #0084C8; font-weight: bold;">-&gt;</span> (f a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> f b) <span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #204A87; font-style: italic;">f = (a -&gt; m b)</span>
+
+<span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #204A87; font-style: italic;">definition in GHC</span>
+<span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Applicative</span> m <span style="color: #0084C8; font-weight: bold;">=&gt;</span> <span style="color: #2F8B58; font-weight: bold;">Monad</span> m <span style="color: #A52A2A; font-weight: bold;">where</span>
+  return <span style="color: #0084C8; font-weight: bold;">::</span> a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> m a
+  (<span style="color: #0084C8; font-weight: bold;">&gt;&gt;=</span>)<span style="color: #0084C8; font-weight: bold;">::</span>m a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> (a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> m b) <span style="color: #0084C8; font-weight: bold;">-&gt;</span> m b
+
+<span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #204A87; font-style: italic;">f = (a -&gt; m b)</span>
+m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> fmap (a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> m b) m b
+m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> fmap f <span style="color: #0084C8; font-weight: bold;">$</span> m b
+m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> m (f b)
+m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> m (m b)
+</pre>
+</div>
+<p>
+Use join and fmap represents <code>(&gt;&gt;=)</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #204A87; font-style: italic;">f = (a -&gt; m b)                          </span>
+m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> fmap f m b       
+m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> fmap f <span style="color: #0084C8; font-weight: bold;">$</span> m b              
+m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> m (f b)                   
+m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> m (m b)                   
+</pre>
+</div>
+<ol class="org-ol">
+<li>Maybe is Monad</li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #A52A2A; font-weight: bold;">instance</span> <span style="color: #2F8B58; font-weight: bold;">Monad</span> <span style="color: #2F8B58; font-weight: bold;">Maybe</span> <span style="color: #A52A2A; font-weight: bold;">where</span>
+  return <span style="color: #2F8B58; font-weight: bold;">Nothing</span> <span style="color: #0084C8; font-weight: bold;">=</span> <span style="color: #2F8B58; font-weight: bold;">Nothing</span>
+  (<span style="color: #0084C8; font-weight: bold;">&gt;&gt;=</span>) (<span style="color: #2F8B58; font-weight: bold;">Just</span> a) f <span style="color: #0084C8; font-weight: bold;">=</span> <span style="color: #2F8B58; font-weight: bold;">Just</span> f a
+
+  addMaybe<span style="color: #0084C8; font-weight: bold;">::</span><span style="color: #2F8B58; font-weight: bold;">Maybe</span> <span style="color: #2F8B58; font-weight: bold;">Int</span> <span style="color: #0084C8; font-weight: bold;">-&gt;</span> <span style="color: #2F8B58; font-weight: bold;">Maybe</span> <span style="color: #2F8B58; font-weight: bold;">Int</span> <span style="color: #0084C8; font-weight: bold;">-&gt;</span> <span style="color: #2F8B58; font-weight: bold;">Maybe</span> <span style="color: #2F8B58; font-weight: bold;">Int</span>
+  addMaybe <span style="color: #2F8B58; font-weight: bold;">Nothing</span> <span style="color: #A52A2A; font-weight: bold;">_</span> <span style="color: #0084C8; font-weight: bold;">=</span> <span style="color: #2F8B58; font-weight: bold;">Nothing</span>
+  addMaybe <span style="color: #A52A2A; font-weight: bold;">_</span> <span style="color: #2F8B58; font-weight: bold;">Nothing</span> <span style="color: #0084C8; font-weight: bold;">=</span> <span style="color: #2F8B58; font-weight: bold;">Nothing</span>
+  addMaybe (<span style="color: #2F8B58; font-weight: bold;">Just</span> a) (<span style="color: #2F8B58; font-weight: bold;">Just</span> b) <span style="color: #0084C8; font-weight: bold;">=</span> <span style="color: #2F8B58; font-weight: bold;">Just</span> (a <span style="color: #0084C8; font-weight: bold;">+</span> b)
+
+  <span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #204A87; font-style: italic;">other implementation</span>
+  addMaybe<span style="color: #0084C8; font-weight: bold;">::</span><span style="color: #2F8B58; font-weight: bold;">Maybe</span> <span style="color: #2F8B58; font-weight: bold;">Int</span> <span style="color: #0084C8; font-weight: bold;">-&gt;</span> <span style="color: #2F8B58; font-weight: bold;">Maybe</span> <span style="color: #2F8B58; font-weight: bold;">Int</span> <span style="color: #0084C8; font-weight: bold;">-&gt;</span> <span style="color: #2F8B58; font-weight: bold;">Maybe</span> <span style="color: #2F8B58; font-weight: bold;">Int</span>
+  addMaybe m1 m2 <span style="color: #0084C8; font-weight: bold;">=</span> <span style="color: #A52A2A; font-weight: bold;">do</span>
+          a <span style="color: #0084C8; font-weight: bold;">&lt;-</span> m1
+          b <span style="color: #0084C8; font-weight: bold;">&lt;-</span> m2
+          return (a <span style="color: #0084C8; font-weight: bold;">+</span> b)
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org85a9af9" class="outline-3">
+<h3 id="org85a9af9"><span class="section-number-3">1.6</span> Applicative</h3>
+<div class="outline-text-3" id="text-1-6">
+<ol class="org-ol">
+<li>How to use Applicative</li>
+<li>What is Applicative</li>
+<li>What is the difference between Monad and Applicative</li>
+</ol>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Functor</span> f <span style="color: #0084C8; font-weight: bold;">=&gt;</span> <span style="color: #2F8B58; font-weight: bold;">Applicative</span> f <span style="color: #A52A2A; font-weight: bold;">where</span>
+  pure<span style="color: #0084C8; font-weight: bold;">::</span> a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> f a
+ (<span style="color: #0084C8; font-weight: bold;">&lt;*&gt;</span>)<span style="color: #0084C8; font-weight: bold;">::</span> f (a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> b) <span style="color: #0084C8; font-weight: bold;">-&gt;</span> f a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> f b
+
+<span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Applicative</span> f <span style="color: #0084C8; font-weight: bold;">=&gt;</span> <span style="color: #2F8B58; font-weight: bold;">Monad</span> f <span style="color: #A52A2A; font-weight: bold;">where</span>
+  return<span style="color: #0084C8; font-weight: bold;">::</span> a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> f a
+  (<span style="color: #0084C8; font-weight: bold;">&gt;&gt;=</span>)<span style="color: #0084C8; font-weight: bold;">::</span>m a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> (a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> m b) <span style="color: #0084C8; font-weight: bold;">-&gt;</span> m b
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: cat</p>
+<p class="date">Created: 2019-05-20 Mon 13:21</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
+

@@ -1,170 +1,496 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-    <title>$title</title>
-    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
-    <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../highlight.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-            jax: ["input/TeX","output/HTML-CSS"],
-            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
-          });
-    </script>
-    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+<!-- 2019-05-23 Thu 11:26 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="cat" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
 </head>
 <body>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-66282017-2', 'auto');
-  ga('send', 'pageview');
-</script>
-
-<div class="myclass">
-<div class="mytitle">
-Review after a few months with Emacs
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org4a4a614">1. What I did today</a></li>
+<li><a href="#orgf034dbb">2. Added Javascript to edit code block</a></li>
+<li><a href="#orgf3798c4">3. MacOS automatically update screws up <b>tmux</b></a></li>
+<li><a href="#orga3118e4">4. Haskell show, print and putStr or putStrLn</a></li>
+<li><a href="#org5e18d64">5. Add wai-uil to wai.hs Server for redirecting response URI</a></li>
+<li><a href="#orgb2d09b7">6. Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.</a>
+<ul>
+<li><a href="#orge9a4e0d">6.1. <span class="done DONE">DONE</span> hair cut</a></li>
+<li><a href="#org9a99b11">6.2. <span class="done DONE">DONE</span> fix add, update and delete buttons on wai.hs</a></li>
+<li><a href="#org6f365b4">6.3. <span class="done DONE">DONE</span> Do my laundry</a></li>
+<li><a href="#orgd1d3e84">6.4. <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</a></li>
+<li><a href="#org4a4605b">6.5. <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</a></li>
+<li><a href="#orgc5aff39">6.6. <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</a></li>
+<li><a href="#org44e2e77">6.7. <span class="done DONE">DONE</span> pushall respositories to bitbucket</a></li>
+<li><a href="#orgf212cc6">6.8. <span class="done DONE">DONE</span> fix resume a bit</a></li>
+<li><a href="#orgefc0a57">6.9. <span class="todo TODO">TODO</span> Need to add more detail to resume</a></li>
+<li><a href="#orgdff3c11">6.10. <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</a></li>
+<li><a href="#org6ec05af">6.11. <span class="todo TODO">TODO</span> Open new paypal account</a></li>
+<li><a href="#org5c22016">6.12. <span class="done DONE">DONE</span> Add color to wai.hs to highlight the current edited code block</a></li>
+<li><a href="#orga95f83e">6.13. <span class="done DONE">DONE</span> Send out more resumes</a></li>
+<li><a href="#orgb6f50cd">6.14. <span class="done DONE">DONE</span> Do some java coding</a></li>
+<li><a href="#orgeef59b3">6.15. <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</a></li>
+<li><a href="#orgc8199b2">6.16. <span class="done DONE">DONE</span> Send out more resume,  more to EA</a></li>
+</ul>
+</li>
+</ul>
 </div>
-<pre class="mytext">
-Good: package management is very good for Emacs if you want to compare to Vim
-Good: document are excellent if you compare to Vim
-      You can search all the functions with C-h? 
-Good: Support almost all languages such as Latex and Agda etc 
-Bad: You need to hold so many keys in order to do thing useful.
-Bad: Shortcut keys are hard to remember, it is long and complicated.
-Bad: The shortcut keys are not that short at all, 
-     copy and past: C-X Space (move your cursor) M-w
-Bad: It is hard for beginner since it is hard to config if you don't know Lisp
-Bad: The GUI version is not very polished such as SpaceEmacs
+</div>
+<div id="outline-container-org4a4a614" class="outline-2">
+<h2 id="org4a4a614"><span class="section-number-2">1</span> What I did today</h2>
+<div class="outline-text-2" id="text-1">
+<ol class="org-ol">
+<li><p>
+Use Haskell package to simplify Html multiple lines in Haskell<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-05-09 Thu&gt;</span></span>
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #00578E; font-size: 110%; font-weight: bold;">package</span> <span style="color: #2F8B58; font-weight: bold;">Text.RawString.QQ</span>
 
-Do I suggest anyone to try it out?
-Yes, Emacs is the monster editor, it is more than just a Vim.
-But Vim is still my favour editor so far. It might be changed in the future.
-
-There are many good thing about Vim:
-1. You do not need to hold the CTRL key when you are moving the cursor around.
-2. The shortcut key is real short
-3. It is easy to start for beginner.
-4. Much easy to config it. 
-5. GUI Vim are good for Window Gvim and MacVim
+<span style="color: #00578E; font-size: 110%; font-weight: bold;">multipline</span> <span style="color: #0084C8; font-weight: bold;">=</span> [r<span style="color: #4E9A06;">| </span>
+<span style="color: #4E9A06;">             &lt;p&gt;"dog"&lt;/p&gt;</span>
+<span style="color: #4E9A06;">             &lt;p&gt;"cat"&lt;/p&gt;</span>
+<span style="color: #4E9A06;">             |</span>]
 </pre>
+</div></li>
 
-<div class="mytitle">
-Emacs Evil Mode for Vim Users
-</div>
-<pre class="prettyprint smallfont">
-The main reason that I did not use Emacs is the Default Key Bindings are hard to press.
-For Example, you need to hold the CTRL key all the time when you are 
-moving around such as Up, Down, Left, Right. On the other hand, Vim can be switched to 
-'Insert Mode' and you just press k => Up, j => Down, h => Right, l => Left. 
-But we all know Emacs can do almost anything, it means Emacs can emulate Vim[sorts of]
-Yep, There is evil-mode that you can install as package to emulate Vim.  
-
-Here are the steps to install SpaceEmacs on MacOS and config evil-mode
-1. Your Emacs most likely is out of date on your MacOS.
-   SpaceEmacs needs at least 2.4 version. I only have 2.2 Emacs on 
-   my MacOS High Sierra when I'm writing. 
-   You can check your Emacs version with 'emacs --version' on command line
-
-2. Update Your Emacs to 2.4 with homebrew as following
-   brew install emacs-plus --HEAD --with-natural-title-bars
-
-3. Check your Emacs version with 'emacs --version' again after you finish step 2.
-   Make sure it is 2.4 or up.
-   Here is mine: GNU Emacs 24.5.1
-
-3. Install packages for evil-mode, put the following code to your .emacs file
-    (require 'package)
-    (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-    (package-initialize)
-    
-4. Star up your Emacs to install evil-mode package                
-   M-x package-refresh-contents ENTER 
-   M-x package-install ENTER evil
-
-5. Enable evil-mode, add the following code to your .emacs file  
-   (require 'evil)
-   (evil-mode 1)
-
-6. Start your Emacs now and  you should be in evil-mode 
-   Switch back to Normal Emacs Mode with C-z, C-z back to evil-mod
-</pre><br>
-
-<div class="mytitle">
-Emacs Meta Key on MacBookPro Setting
-</div>
-<pre class="prettyprint smallfont">
-Why most people DO NOT use Emacs?
-It is painful to use the OLD IDE, yep, it is really OLD IDE.
-I use MacBook, first you need to manually map the Meta Key to Option(ALT) on Mac keyboard.
-so you can get somethign call M-x
-Well, after you map the Meta key to Opiton, then you will encounter anyone stupid problem:
-It is impossible to press Option and other key at the same time with one hand.
-Yep, you can use left hand to press the Option key but it is not convenient.
-
-Try to figure out how to lighlight the text and copy/paste almost impossible.
-1. Press C-x Space C-x Space  => highlight the text, Yep, You need to press SIX keys to 
-   select the text, I'm sure there is better way to do it for some Emacs Haskers
-
-
-2. I'm still have no idea what is "Rectangle Mark disable and enable"
-
+<li><p>
+Added code to process background process in Shell from Web Input in wai server<span class="timestamp-wrapper"><span class="timestamp">&lt;2019-05-10 Fri&gt;</span></span>
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #4E9A06;">"x nohup filewatcher &amp;"</span> 
 </pre>
+</div></li>
 
-
-<div class="mytitle">
-Emacs Meta Key on MacBookPro Setting
+<li>ghci does not load package into Ghci if you use :load myhaskell.hs
+It causes lots of confusing when you load your code inside ghci</li>
+</ol>
 </div>
-<div class="cen">
-<img src="../image/macbookpro_meta_key.png" width="80%" height="80%" /><br>
-</div> 
-
-<div class="mytitle">
-Emacs shortcut keys 
 </div>
-<pre class="prettyprint smallfont">
-C-z     // exit Emacs
-C-x 2   // split window horizonally
-C-x 3   // split window vertically
-C-x 0   // close current buffer
-C-x 1   // maximize current buffer
-C-z     // goto background fg => back to foreground
-C-u M-! // shell_command => Vim:ls
-M-x shell // run shell within Emacs
-C-v M-v // page up, page down
-C-a C-e // move cursor to begin and end of line
-C-n C-p // move line down, line up
-C-f M-f // move cursor character/word forward
-C-b M-b // move cursor character/word backward
-C-k M-k // kill all word to end of line or end of sentence
-C-_     // undo
-C-x C-f // find file
-C-x C-s // save file 
-C-x b   // switch buffer
-C-x C-b // list buffer
-C-x 1   // remove buffer list
-C-x 2   // split two windows (horizonal)
-C-x o   // move to other window
-C-x C   // exit Emacs 
-C-x e   // evaluate lisp
-C-h     // help command
-M-x package-list-packages  i // select package to install
+
+<div id="outline-container-orgf034dbb" class="outline-2">
+<h2 id="orgf034dbb"><span class="section-number-2">2</span> Added Javascript to edit code block</h2>
+<div class="outline-text-2" id="text-2">
+<ol class="org-ol">
+<li>Added Javascript to listen to onclick event, e.g. enable/disable TextArea visibility</li>
+<li>Hide header to TextArea with css <code>display:none</code></li>
+<li>Generate id for each code block in TextArea</li>
+<li>Go through each code block and remove the edited code block from a list</li>
+<li>Append the edited the code block to the new list</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgf3798c4" class="outline-2">
+<h2 id="orgf3798c4"><span class="section-number-2">3</span> MacOS automatically update screws up <b>tmux</b></h2>
+<div class="outline-text-2" id="text-3">
+<ol class="org-ol">
+<li><b>tmux</b> can not start up
+<ul class="org-ul">
+<li><p>
+reinstall tmux:
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">brew uninstall --force tmux
+brew install tmux
 </pre>
+</div></li>
+</ul></li>
+</ol>
 
+
+
+<p>
+<b>`'</b>  ` `dd vim script to check definition of Haskell function with Timer and <code>job_start()</code>
+</p>
+<ol class="org-ol">
+<li>Create a timer which calls a function every n seconds, e.g. 0.5 second <code>timer_start()</code></li>
+<li>The function contains code to start a job or process in background and query a value from key-value <b>Redis server</b> <code>redis_query.hs</code>
+The key is the current <b>word</b> under current <b>cursor</b></li>
+<li>The function calls <code>systemlist()</code> and passes <code>$b/redis_query.hs</code> as an argument and gets the <b>return list</b> which contains the values from <b>Redis server</b></li>
+<li>Use <code>echo</code> to display the <b>return list</b> at the bottom of <b>Vim</b></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orga3118e4" class="outline-2">
+<h2 id="orga3118e4"><span class="section-number-2">4</span> Haskell show, print and putStr or putStrLn</h2>
+<div class="outline-text-2" id="text-4">
+<ol class="org-ol">
+<li><p>
+show, print and putStr <code>"dog\\"</code>,
+</p>
+<div class="org-src-container">
+<pre class="src src-haskell"><span style="color: #00578E; font-size: 110%; font-weight: bold;">show</span> <span style="color: #4E9A06;">"dog\\"</span> <span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #204A87; font-style: italic;">"\"dog\\\\\""</span>
+<span style="color: #00578E; font-size: 110%; font-weight: bold;">print</span> <span style="color: #4E9A06;">"dog\\"</span> <span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #204A87; font-style: italic;">"dog\\"</span>
+<span style="color: #00578E; font-size: 110%; font-weight: bold;">putStr</span> <span style="color: #4E9A06;">"dog\\"</span> <span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #204A87; font-style: italic;">dog\</span>
+</pre>
+</div></li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org5e18d64" class="outline-2">
+<h2 id="org5e18d64"><span class="section-number-2">5</span> Add wai-uil to wai.hs Server for redirecting response URI</h2>
+<div class="outline-text-2" id="text-5">
+<ol class="org-ol">
+<li>Install wai-uti with <code>cabal install wai-uti</code></li>
+<li>Using <code>response &lt;&lt;= redirect' status302 [] uri where Just uri = parseURI "http://newuri.com"</code>
+<a href="https://bitbucket.org/zsurface/haskell_webapp/src/master/wai.hs">wai.hs</a></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgb2d09b7" class="outline-2">
+<h2 id="orgb2d09b7"><span class="section-number-2">6</span> Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>Two ways to solve the problem.
+<ol class="org-ol">
+<li>Use <b>Iteration</b> with <code>while</code>
+<ul class="org-ul">
+<li>Start from the root node as current node.
+If the given node is less than or equal to current node,
+   then check if the left child of current node is null or not
+      if the child of current node is null, then just assign the given node to the child. Done
+      else using <code>tmp = tmp.left</code> to goto next child of current node.
+otherwise repeat the same thing in the right subtree.</li>
+</ul></li>
+<li>Use <b>Recursion</b>, it is almost the same as Iteration as above, but the root needs to be outside of the method.</li>
+</ol></li>
+<li>Use recusion is <b>tricky</b> because if the root node is null, then root node can not be modified inside a method.</li>
+<li>The best way to do is to use <b>Iteration</b></li>
+</ul>
 </div>
 
 
 
+
+<div id="outline-container-orge9a4e0d" class="outline-3">
+<h3 id="orge9a4e0d"><span class="section-number-3">6.1</span> <span class="done DONE">DONE</span> hair cut</h3>
+<div class="outline-text-3" id="text-6-1">
+<ol class="org-ol">
+<li>17$ for the stupid hair cut.</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org9a99b11" class="outline-3">
+<h3 id="org9a99b11"><span class="section-number-3">6.2</span> <span class="done DONE">DONE</span> fix add, update and delete buttons on wai.hs</h3>
+<div class="outline-text-3" id="text-6-2">
+<ol class="org-ol">
+<li>There is some issue in with runSh "mv" to rename file, after remove "mv" it seems to be working</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org6f365b4" class="outline-3">
+<h3 id="org6f365b4"><span class="section-number-3">6.3</span> <span class="done DONE">DONE</span> Do my laundry</h3>
+<div class="outline-text-3" id="text-6-3">
+</div>
+</div>
+<div id="outline-container-orgd1d3e84" class="outline-3">
+<h3 id="orgd1d3e84"><span class="section-number-3">6.4</span> <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</h3>
+<div class="outline-text-3" id="text-6-4">
+</div>
+</div>
+<div id="outline-container-org4a4605b" class="outline-3">
+<h3 id="org4a4605b"><span class="section-number-3">6.5</span> <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</h3>
+<div class="outline-text-3" id="text-6-5">
+</div>
+</div>
+<div id="outline-container-orgc5aff39" class="outline-3">
+<h3 id="orgc5aff39"><span class="section-number-3">6.6</span> <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</h3>
+<div class="outline-text-3" id="text-6-6">
+</div>
+</div>
+<div id="outline-container-org44e2e77" class="outline-3">
+<h3 id="org44e2e77"><span class="section-number-3">6.7</span> <span class="done DONE">DONE</span> pushall respositories to bitbucket</h3>
+<div class="outline-text-3" id="text-6-7">
+</div>
+</div>
+<div id="outline-container-orgf212cc6" class="outline-3">
+<h3 id="orgf212cc6"><span class="section-number-3">6.8</span> <span class="done DONE">DONE</span> fix resume a bit</h3>
+<div class="outline-text-3" id="text-6-8">
+</div>
+</div>
+<div id="outline-container-orgefc0a57" class="outline-3">
+<h3 id="orgefc0a57"><span class="section-number-3">6.9</span> <span class="todo TODO">TODO</span> Need to add more detail to resume</h3>
+</div>
+<div id="outline-container-orgdff3c11" class="outline-3">
+<h3 id="orgdff3c11"><span class="section-number-3">6.10</span> <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</h3>
+</div>
+<div id="outline-container-org6ec05af" class="outline-3">
+<h3 id="org6ec05af"><span class="section-number-3">6.11</span> <span class="todo TODO">TODO</span> Open new paypal account</h3>
+</div>
+<div id="outline-container-org5c22016" class="outline-3">
+<h3 id="org5c22016"><span class="section-number-3">6.12</span> <span class="done DONE">DONE</span> Add color to wai.hs to highlight the current edited code block</h3>
+<div class="outline-text-3" id="text-6-12">
+<ol class="org-ol">
+<li>when current code block is clicked, change the background of pre</li>
+<li>Need a different pre for the current code block because all the pre use the same style.</li>
+<li>Add new class name, and id to pre tags and rename the class name when the code block is clicked.</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orga95f83e" class="outline-3">
+<h3 id="orga95f83e"><span class="section-number-3">6.13</span> <span class="done DONE">DONE</span> Send out more resumes</h3>
+<div class="outline-text-3" id="text-6-13">
+</div>
+</div>
+<div id="outline-container-orgb6f50cd" class="outline-3">
+<h3 id="orgb6f50cd"><span class="section-number-3">6.14</span> <span class="done DONE">DONE</span> Do some java coding</h3>
+<div class="outline-text-3" id="text-6-14">
+<ul class="org-ul">
+<li>Rotate square array to left/right 90 degrees</li>
+<li>Balance brackets</li>
+<li>Rotate spiral rectangle</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgeef59b3" class="outline-3">
+<h3 id="orgeef59b3"><span class="section-number-3">6.15</span> <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</h3>
+<div class="outline-text-3" id="text-6-15">
+<p>
+<a href="https://www.ahnfelt.net/monads-forget-about-bind/">URL</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgc8199b2" class="outline-3">
+<h3 id="orgc8199b2"><span class="section-number-3">6.16</span> <span class="done DONE">DONE</span> Send out more resume,  more to EA</h3>
+<div class="outline-text-3" id="text-6-16">
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: cat</p>
+<p class="date">Created: 2019-05-23 Thu 11:26</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
 </body>
 </html>
 

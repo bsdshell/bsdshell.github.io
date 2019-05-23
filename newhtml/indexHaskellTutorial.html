@@ -34,6 +34,24 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
+
+            <div class="mytitle">
+            Transpose a matrix 
+            </div>
+            <pre class="prettyprint">
+            transpose::[[a]] -> [[a]]
+            transpose [] = repeat []
+            transpose (x:cx) = zipWith(:) x $ transpose cx
+
+            transpose [[1, 2]
+                       [3, 4]]
+
+             zipWith(:) [1, 2] $ transpose [[3, 4]]
+                 [[3],[4] <= zipWith(:) [3, 4] $ transpose [[], []..]
+
+             zipWith(:) [1, 2] [[3], [4]] => [[1, 3], [2, 4]]
+            </pre>
+            
             <div class="mytitle">
             The difference among of data, type and newtype 
             </div>
@@ -710,10 +728,10 @@ Real world example with <span style="color:red;">liftM</span>
 </pre>
 <pre class="prettyprint">
 -- find all the file that does not exist from a list
-filterM(\x -> doesFileExist x >>= \y -> return y == false) ["list files"]
+filterM(\x -> doesFileExist x >>= \y -> return y == false) ["f1.x", "f2.x"]
 
 -- if we find all the files DOES exist in the list, it is easy
-filterM(doesFileExist) ["list files"]
+filterM(doesFileExist) ["f1.x", "f2.x"]
 
 -- better way to do with liftM
 filterM((liftM not) . doesFileExist) ["list files"]

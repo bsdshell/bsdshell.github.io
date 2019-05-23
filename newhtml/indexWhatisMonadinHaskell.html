@@ -85,7 +85,7 @@ Monoid is a group without the third condition (3), it means each element does no
 
 </div><br>
 <img src="../image/semigroup_group.jpg" width="100%" height="100%" /><br>
-</div> 
+ 
 
 \begin{align*}
     \forall a, b, c &\in S \\
@@ -122,7 +122,6 @@ In Haskell: Use the Monoid properties: <br>
 find the gcd of list of Integer in Haskell<br>
 foldr(gcd) 0 [10, 8, 20] = 2 
 
-</div>
 
 <p class="art">What is morphism?<br>
 Morphism is preserving structure in mathematic objects such as Set, Group, Ring, Vector Space, Topology Space an so on.<br>
@@ -275,6 +274,8 @@ Monad is Monoid so it need to satisfy two axioms: Associativity and Identity
 Now $S$ is the set of functors, $a, b, c$ are functors, $\otimes$ is functor composition<br><br>
 In Haskell
 >>= is used for functor composition <br>
+>>=::(Monad m) => m a -> (a $\rightarrow$ m b) -> m b <br>
+[1, 2] >>= \x -> return $ x + 1
 <strong>return</strong> is used for identity functor <br><br>
 
 <strong>Functor</strong> is modelled with <strong>Type Constructor</strong> in Haskell

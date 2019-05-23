@@ -16,7 +16,7 @@
       
    2. ghci does not load package into Ghci if you use :load myhaskell.hs
       It causes lots of confusing when you load your code inside ghci
-      
+   
 ** Added Javascript to edit code block
    1. Added Javascript to listen to onclick event, e.g. enable/disable TextArea visibility
    2. Hide header to TextArea with css ~display:none~
@@ -53,6 +53,19 @@
    2. Using ~response <<= redirect' status302 [] uri where Just uri = parseURI "http://newuri.com"~
       [[https://bitbucket.org/zsurface/haskell_webapp/src/master/wai.hs][wai.hs]]
 
+** Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.
+   + Two ways to solve the problem.
+     1. Use *Iteration* with ~while~
+	+ Start from the root node as current node.
+	  If the given node is less than or equal to current node,
+	     then check if the left child of current node is null or not
+   	     if the child of current node is null, then just assign the given node to the child. Done
+   	     else using ~tmp = tmp.left~ to goto next child of current node.
+	  otherwise repeat the same thing in the right subtree.
+     2. Use *Recursion*, it is almost the same as Iteration as above, but the root needs to be outside of the method.
+   + Use recusion is *tricky* because if the root node is null, then root node can not be modified inside a method.
+   + The best way to do is to use *Iteration*
+   
       
       
 
@@ -86,8 +99,11 @@
 *** DONE Send out more resumes
     CLOSED: [2019-05-21 Tue 16:17]
 *** TODO Do some java coding
-    + Rotate square array to left/right 90 degrees
-    + Balance brackets
+    + Rotate square array to left/right 90 degrees.
+    + Balance brackets.
+    + Rotate spiral rectangle.
+    + Insert a node into a binary tree.
+
 *** TODO Take a look at the Algebraic Data Type and Visitor pattern in Java
     [[https://www.ahnfelt.net/monads-forget-about-bind/][URL]]
 *** DONE Send out more resume,  more to EA

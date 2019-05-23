@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
 <head>
-    <title>$title</title>
+    <title>How to Declare Closure Syntax in Swift</title>
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
     <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
     <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -22,6 +22,7 @@
 </head>
 <body>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -31,20 +32,50 @@
   ga('send', 'pageview');
 </script>
 <div class="myclass">
-
-<div class="mytitle">
-Serialize Binary Tree with Binary Heap
-</div>
-<div class="mytitle">
-Use Binary Heap and Map to serialize Binary Tree
-</div>
-
-<div class="cen">
-<a href="https://bitbucket.org/zsurface/java/raw/ea50ecd70cea4f935ba7b8d590f3422bc8962016/SerializeBinaryTreeWithBinaryHeap.java">Source Code</a>
-</div> 
-
+<div class="bigsyntax">Closure has no parameter, no return type</div>
 <pre class="prettyprint">
-</pre> 
+var closureEmpty:()->() = {
+    print("no parameter, no return")
+}
+print(closureEmpty())
+</pre><br>
+<div class="bigsyntax">Alternative to do the same thing</div>
+<pre class="prettyprint">
+var closeEmpty1:()->Void={
+    print("no parameter, no return")
+}
+closeEmpty1()
+</pre><br>
+ 
+<div class="bigsyntax">Cloesure has no parameter, but return type</div>
+<pre class="prettyprint">
+var clousre:()->String{
+    return "hi"
+}
+</pre><br>
+
+<div class="bigsyntax">Pass closure as parameter in Swift</div>
+<pre class="prettyprint">
+func fun(num:Int, closure:(Int)->(Int)){
+    print(closure(num))
+}
+var closePara:(Int)->(Int)={
+    return $0*20
+}
+fun(num:10, closure:closePara)
+</pre><br>
+
+<div class="bigsyntax">Trailing Closure Syntax in Swift</div>
+<div class="bigsyntax">It means Closure is the last parameter to the function</div>
+<pre class="prettyprint">
+func tailClosure(num:Int, closure:()->()){
+    print("Hello")
+    closure()
+}
+tailClosure(num:3){
+    print("Closure Block code")
+}
+</pre><br>
 
 </div>
 </body>

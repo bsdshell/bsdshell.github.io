@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Json Parser in Java</title>
+        <title>C++ Invert Binary Tree</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
         <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -38,52 +38,39 @@
             <!-- Column 1 start -->
 
             <div class="mytitle">
-            Double Linked List with Smart Pointers
+            Invert binary tree, reverse the inorder list
             </div>
             <div class="mytext">
-            Reimplement Double Linked List With Smart Pointers<br>
+            1. Invert or Mirror Binary Tree<br>
+            2. Reverse inorder list [Nice Property]<br>
             </div>
-            <div class="highlight"><pre><span class="k">class</span> <span class="nc">Stack</span><span class="p">{</span>
-    <span class="k">public</span><span class="o">:</span>
-        <span class="kt">int</span> <span class="n">maxLen</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
-        <span class="kt">char</span><span class="o">*</span> <span class="n">array</span><span class="p">;</span>
-    <span class="k">public</span><span class="o">:</span>
-        <span class="n">Stack</span><span class="p">(</span><span class="kt">int</span> <span class="n">max</span><span class="p">){</span>
-            <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-            <span class="n">maxLen</span> <span class="o">=</span> <span class="n">max</span><span class="p">;</span>
-            <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="n">maxLen</span><span class="p">];</span>
-        <span class="p">}</span>
-        <span class="kt">void</span> <span class="n">push</span><span class="p">(</span><span class="kt">char</span> <span class="n">ch</span><span class="p">){</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">count</span> <span class="o">&lt;</span> <span class="n">maxLen</span><span class="p">){</span>
-                <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">ch</span><span class="p">;</span>
-                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="kt">char</span> <span class="n">pop</span><span class="p">(){</span>
-            <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
-                <span class="n">ch</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
-                <span class="n">count</span><span class="o">--</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="k">return</span> <span class="n">ch</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="kt">bool</span> <span class="n">isEmpty</span><span class="p">(){</span>
-            <span class="k">return</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="kt">int</span> <span class="n">size</span><span class="p">(){</span>
-            <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="o">~</span><span class="n">Stack</span><span class="p">(){</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
-                <span class="k">delete</span><span class="p">[]</span> <span class="n">array</span><span class="p">;</span>
-        <span class="p">}</span>
-<span class="p">};</span>
+            <div class="highlight"><pre><span class="n">Node</span><span class="o">*</span> <span class="nf">invert</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">root</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="p">){</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">right</span> <span class="o">=</span> <span class="n">invert</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">left</span>  <span class="o">=</span> <span class="n">invert</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+        <span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="n">left</span> <span class="p">;</span>
+        <span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">root</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">Node</span><span class="o">*</span> <span class="nf">invert_top_down</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">root</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="p">){</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">left</span> <span class="o">=</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+        <span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+        <span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="n">left</span><span class="p">;</span>
+        <span class="n">invert_top_down</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+        <span class="n">invert_top_down</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">root</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
  
             <div class="cen">
-            <img src="../image/json.svg" width="20%" height="20%" /><br>
-            <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
+            <img src="../image/invertbtree.png" width="40%" height="40%" /><br>
+            <a href="https://github.com/bsdshell/xcode/tree/master/main.cpp">Source Code</a>
             </div>
 
             <!-- Column 1 end -->

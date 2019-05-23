@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-05-21 Tue 16:44 -->
+<!-- 2019-05-23 Thu 11:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -233,34 +233,36 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1c919f6">1. What I did today</a></li>
-<li><a href="#orga0170f9">2. Added Javascript to edit code block</a></li>
-<li><a href="#orga38dddb">3. MacOS automatically update screws up <b>tmux</b></a></li>
-<li><a href="#org3f0ae92">4. Haskell show, print and putStr or putStrLn</a></li>
-<li><a href="#orgaf3c5f8">5. Add wai-uil to wai.hs Server for redirecting response URI</a>
+<li><a href="#org3103a14">1. What I did today</a></li>
+<li><a href="#org839bff9">2. Added Javascript to edit code block</a></li>
+<li><a href="#org1ccbc7a">3. MacOS automatically update screws up <b>tmux</b></a></li>
+<li><a href="#orge5514ed">4. Haskell show, print and putStr or putStrLn</a></li>
+<li><a href="#org23c56d8">5. Add wai-uil to wai.hs Server for redirecting response URI</a></li>
+<li><a href="#orgea7504f">6. Insert Node to Binary Tree, it seems to be easy questions, but it is tricky to get it right on the first try.</a>
 <ul>
-<li><a href="#org21d1628">5.1. <span class="done DONE">DONE</span> hair cut</a></li>
-<li><a href="#org0e6ac18">5.2. <span class="done DONE">DONE</span> fix add, update and delete buttons on wai.hs</a></li>
-<li><a href="#orgea0d53b">5.3. <span class="done DONE">DONE</span> Do my laundry</a></li>
-<li><a href="#orgc2e0dfa">5.4. <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</a></li>
-<li><a href="#org1854f5e">5.5. <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</a></li>
-<li><a href="#orgbff1fb3">5.6. <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</a></li>
-<li><a href="#org0e5dad9">5.7. <span class="done DONE">DONE</span> pushall respositories to bitbucket</a></li>
-<li><a href="#org3db1f32">5.8. <span class="done DONE">DONE</span> fix resume a bit</a></li>
-<li><a href="#org1bccc18">5.9. <span class="todo TODO">TODO</span> Need to add more detail to resume</a></li>
-<li><a href="#orgb648ecd">5.10. <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</a></li>
-<li><a href="#org4e364f9">5.11. <span class="todo TODO">TODO</span> Open new paypal account</a></li>
-<li><a href="#org8395958">5.12. <span class="todo TODO">TODO</span> Add color to wai.hs to highlight the current edited code block</a></li>
-<li><a href="#org136c4c2">5.13. <span class="done DONE">DONE</span> Send out more resumes</a></li>
-<li><a href="#orgc1d9772">5.14. <span class="todo TODO">TODO</span> Do some java coding</a></li>
-<li><a href="#orgc058d40">5.15. <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</a></li>
+<li><a href="#org23071c7">6.1. <span class="done DONE">DONE</span> hair cut</a></li>
+<li><a href="#orgd39333e">6.2. <span class="done DONE">DONE</span> fix add, update and delete buttons on wai.hs</a></li>
+<li><a href="#orga7c9f5c">6.3. <span class="done DONE">DONE</span> Do my laundry</a></li>
+<li><a href="#org99fc0fb">6.4. <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</a></li>
+<li><a href="#org60344f6">6.5. <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</a></li>
+<li><a href="#orgbac4915">6.6. <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</a></li>
+<li><a href="#org6b04719">6.7. <span class="done DONE">DONE</span> pushall respositories to bitbucket</a></li>
+<li><a href="#org0f7121b">6.8. <span class="done DONE">DONE</span> fix resume a bit</a></li>
+<li><a href="#org1c32147">6.9. <span class="todo TODO">TODO</span> Need to add more detail to resume</a></li>
+<li><a href="#org5998093">6.10. <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</a></li>
+<li><a href="#orgd711c72">6.11. <span class="todo TODO">TODO</span> Open new paypal account</a></li>
+<li><a href="#org83e6a24">6.12. <span class="done DONE">DONE</span> Add color to wai.hs to highlight the current edited code block</a></li>
+<li><a href="#orgb9dfdd9">6.13. <span class="done DONE">DONE</span> Send out more resumes</a></li>
+<li><a href="#orge4b995e">6.14. <span class="done DONE">DONE</span> Do some java coding</a></li>
+<li><a href="#org74abed3">6.15. <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</a></li>
+<li><a href="#orgaf70d2b">6.16. <span class="done DONE">DONE</span> Send out more resume,  more to EA</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1c919f6" class="outline-2">
-<h2 id="org1c919f6"><span class="section-number-2">1</span> What I did today</h2>
+<div id="outline-container-org3103a14" class="outline-2">
+<h2 id="org3103a14"><span class="section-number-2">1</span> What I did today</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li><p>
@@ -290,8 +292,8 @@ It causes lots of confusing when you load your code inside ghci</li>
 </div>
 </div>
 
-<div id="outline-container-orga0170f9" class="outline-2">
-<h2 id="orga0170f9"><span class="section-number-2">2</span> Added Javascript to edit code block</h2>
+<div id="outline-container-org839bff9" class="outline-2">
+<h2 id="org839bff9"><span class="section-number-2">2</span> Added Javascript to edit code block</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li>Added Javascript to listen to onclick event, e.g. enable/disable TextArea visibility</li>
@@ -303,8 +305,8 @@ It causes lots of confusing when you load your code inside ghci</li>
 </div>
 </div>
 
-<div id="outline-container-orga38dddb" class="outline-2">
-<h2 id="orga38dddb"><span class="section-number-2">3</span> MacOS automatically update screws up <b>tmux</b></h2>
+<div id="outline-container-org1ccbc7a" class="outline-2">
+<h2 id="org1ccbc7a"><span class="section-number-2">3</span> MacOS automatically update screws up <b>tmux</b></h2>
 <div class="outline-text-2" id="text-3">
 <ol class="org-ol">
 <li><b>tmux</b> can not start up
@@ -335,8 +337,8 @@ The key is the current <b>word</b> under current <b>cursor</b></li>
 </div>
 </div>
 
-<div id="outline-container-org3f0ae92" class="outline-2">
-<h2 id="org3f0ae92"><span class="section-number-2">4</span> Haskell show, print and putStr or putStrLn</h2>
+<div id="outline-container-orge5514ed" class="outline-2">
+<h2 id="orge5514ed"><span class="section-number-2">4</span> Haskell show, print and putStr or putStrLn</h2>
 <div class="outline-text-2" id="text-4">
 <ol class="org-ol">
 <li><p>
@@ -351,8 +353,8 @@ show, print and putStr <code>"dog\\"</code>,
 </ol>
 </div>
 </div>
-<div id="outline-container-orgaf3c5f8" class="outline-2">
-<h2 id="orgaf3c5f8"><span class="section-number-2">5</span> Add wai-uil to wai.hs Server for redirecting response URI</h2>
+<div id="outline-container-org23c56d8" class="outline-2">
+<h2 id="org23c56d8"><span class="section-number-2">5</span> Add wai-uil to wai.hs Server for redirecting response URI</h2>
 <div class="outline-text-2" id="text-5">
 <ol class="org-ol">
 <li>Install wai-uti with <code>cabal install wai-uti</code></li>
@@ -360,95 +362,134 @@ show, print and putStr <code>"dog\\"</code>,
 <a href="https://bitbucket.org/zsurface/haskell_webapp/src/master/wai.hs">wai.hs</a></li>
 </ol>
 </div>
+</div>
+
+
+<div id="outline-container-orgea7504f" class="outline-2">
+<h2 id="orgea7504f"><span class="section-number-2">6</span> Insert Node to Binary Tree, it seems to be easy questions, but it is tricky to get it right on the first try.</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>Two ways to solve the problem.
+<ol class="org-ol">
+<li>Use <b>Iteration</b> with <code>while</code>
+<ul class="org-ul">
+<li>Start from the root node as current node.
+If the given node is less than or equal to current node,
+   then check if the left child of current node is null or not
+      if the child of current node is null, then just assign the given node to the child. Done
+      else using <code>tmp = tmp.left</code> to goto next child of current node.
+otherwise repeat the same thing in the right subtree.</li>
+</ul></li>
+<li>Use <b>Recursion</b>, it is almost the same as Iteration as above, but the root needs to be outside of the method.</li>
+</ol></li>
+<li>Use recusion is <b>tricky</b> because if the root node is null, then root node can not be modified inside a method.</li>
+<li>The best way to do is to use <b>Iteration</b></li>
+</ul>
+</div>
 
 
 
 
-<div id="outline-container-org21d1628" class="outline-3">
-<h3 id="org21d1628"><span class="section-number-3">5.1</span> <span class="done DONE">DONE</span> hair cut</h3>
-<div class="outline-text-3" id="text-5-1">
+<div id="outline-container-org23071c7" class="outline-3">
+<h3 id="org23071c7"><span class="section-number-3">6.1</span> <span class="done DONE">DONE</span> hair cut</h3>
+<div class="outline-text-3" id="text-6-1">
 <ol class="org-ol">
 <li>17$ for the stupid hair cut.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org0e6ac18" class="outline-3">
-<h3 id="org0e6ac18"><span class="section-number-3">5.2</span> <span class="done DONE">DONE</span> fix add, update and delete buttons on wai.hs</h3>
-<div class="outline-text-3" id="text-5-2">
+<div id="outline-container-orgd39333e" class="outline-3">
+<h3 id="orgd39333e"><span class="section-number-3">6.2</span> <span class="done DONE">DONE</span> fix add, update and delete buttons on wai.hs</h3>
+<div class="outline-text-3" id="text-6-2">
 <ol class="org-ol">
 <li>There is some issue in with runSh "mv" to rename file, after remove "mv" it seems to be working</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgea0d53b" class="outline-3">
-<h3 id="orgea0d53b"><span class="section-number-3">5.3</span> <span class="done DONE">DONE</span> Do my laundry</h3>
-<div class="outline-text-3" id="text-5-3">
+<div id="outline-container-orga7c9f5c" class="outline-3">
+<h3 id="orga7c9f5c"><span class="section-number-3">6.3</span> <span class="done DONE">DONE</span> Do my laundry</h3>
+<div class="outline-text-3" id="text-6-3">
 </div>
 </div>
-<div id="outline-container-orgc2e0dfa" class="outline-3">
-<h3 id="orgc2e0dfa"><span class="section-number-3">5.4</span> <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</h3>
-<div class="outline-text-3" id="text-5-4">
+<div id="outline-container-org99fc0fb" class="outline-3">
+<h3 id="org99fc0fb"><span class="section-number-3">6.4</span> <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</h3>
+<div class="outline-text-3" id="text-6-4">
 </div>
 </div>
-<div id="outline-container-org1854f5e" class="outline-3">
-<h3 id="org1854f5e"><span class="section-number-3">5.5</span> <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</h3>
-<div class="outline-text-3" id="text-5-5">
+<div id="outline-container-org60344f6" class="outline-3">
+<h3 id="org60344f6"><span class="section-number-3">6.5</span> <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</h3>
+<div class="outline-text-3" id="text-6-5">
 </div>
 </div>
-<div id="outline-container-orgbff1fb3" class="outline-3">
-<h3 id="orgbff1fb3"><span class="section-number-3">5.6</span> <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</h3>
-<div class="outline-text-3" id="text-5-6">
+<div id="outline-container-orgbac4915" class="outline-3">
+<h3 id="orgbac4915"><span class="section-number-3">6.6</span> <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</h3>
+<div class="outline-text-3" id="text-6-6">
 </div>
 </div>
-<div id="outline-container-org0e5dad9" class="outline-3">
-<h3 id="org0e5dad9"><span class="section-number-3">5.7</span> <span class="done DONE">DONE</span> pushall respositories to bitbucket</h3>
-<div class="outline-text-3" id="text-5-7">
+<div id="outline-container-org6b04719" class="outline-3">
+<h3 id="org6b04719"><span class="section-number-3">6.7</span> <span class="done DONE">DONE</span> pushall respositories to bitbucket</h3>
+<div class="outline-text-3" id="text-6-7">
 </div>
 </div>
-<div id="outline-container-org3db1f32" class="outline-3">
-<h3 id="org3db1f32"><span class="section-number-3">5.8</span> <span class="done DONE">DONE</span> fix resume a bit</h3>
-<div class="outline-text-3" id="text-5-8">
+<div id="outline-container-org0f7121b" class="outline-3">
+<h3 id="org0f7121b"><span class="section-number-3">6.8</span> <span class="done DONE">DONE</span> fix resume a bit</h3>
+<div class="outline-text-3" id="text-6-8">
 </div>
 </div>
-<div id="outline-container-org1bccc18" class="outline-3">
-<h3 id="org1bccc18"><span class="section-number-3">5.9</span> <span class="todo TODO">TODO</span> Need to add more detail to resume</h3>
+<div id="outline-container-org1c32147" class="outline-3">
+<h3 id="org1c32147"><span class="section-number-3">6.9</span> <span class="todo TODO">TODO</span> Need to add more detail to resume</h3>
 </div>
-<div id="outline-container-orgb648ecd" class="outline-3">
-<h3 id="orgb648ecd"><span class="section-number-3">5.10</span> <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</h3>
+<div id="outline-container-org5998093" class="outline-3">
+<h3 id="org5998093"><span class="section-number-3">6.10</span> <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</h3>
 </div>
-<div id="outline-container-org4e364f9" class="outline-3">
-<h3 id="org4e364f9"><span class="section-number-3">5.11</span> <span class="todo TODO">TODO</span> Open new paypal account</h3>
+<div id="outline-container-orgd711c72" class="outline-3">
+<h3 id="orgd711c72"><span class="section-number-3">6.11</span> <span class="todo TODO">TODO</span> Open new paypal account</h3>
 </div>
-<div id="outline-container-org8395958" class="outline-3">
-<h3 id="org8395958"><span class="section-number-3">5.12</span> <span class="todo TODO">TODO</span> Add color to wai.hs to highlight the current edited code block</h3>
-<div class="outline-text-3" id="text-5-12">
+<div id="outline-container-org83e6a24" class="outline-3">
+<h3 id="org83e6a24"><span class="section-number-3">6.12</span> <span class="done DONE">DONE</span> Add color to wai.hs to highlight the current edited code block</h3>
+<div class="outline-text-3" id="text-6-12">
 <ol class="org-ol">
 <li>when current code block is clicked, change the background of pre</li>
 <li>Need a different pre for the current code block because all the pre use the same style.</li>
+<li>Add new class name, and id to pre tags and rename the class name when the code block is clicked.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org136c4c2" class="outline-3">
-<h3 id="org136c4c2"><span class="section-number-3">5.13</span> <span class="done DONE">DONE</span> Send out more resumes</h3>
-<div class="outline-text-3" id="text-5-13">
+
+<div id="outline-container-orgb9dfdd9" class="outline-3">
+<h3 id="orgb9dfdd9"><span class="section-number-3">6.13</span> <span class="done DONE">DONE</span> Send out more resumes</h3>
+<div class="outline-text-3" id="text-6-13">
 </div>
 </div>
-<div id="outline-container-orgc1d9772" class="outline-3">
-<h3 id="orgc1d9772"><span class="section-number-3">5.14</span> <span class="todo TODO">TODO</span> Do some java coding</h3>
+<div id="outline-container-orge4b995e" class="outline-3">
+<h3 id="orge4b995e"><span class="section-number-3">6.14</span> <span class="done DONE">DONE</span> Do some java coding</h3>
+<div class="outline-text-3" id="text-6-14">
+<ul class="org-ul">
+<li>Rotate square array to left/right 90 degrees</li>
+<li>Balance brackets</li>
+<li>Rotate spiral rectangle</li>
+</ul>
 </div>
-<div id="outline-container-orgc058d40" class="outline-3">
-<h3 id="orgc058d40"><span class="section-number-3">5.15</span> <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</h3>
-<div class="outline-text-3" id="text-5-15">
+</div>
+
+<div id="outline-container-org74abed3" class="outline-3">
+<h3 id="org74abed3"><span class="section-number-3">6.15</span> <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</h3>
+<div class="outline-text-3" id="text-6-15">
 <p>
 <a href="https://www.ahnfelt.net/monads-forget-about-bind/">URL</a>
 </p>
+</div>
+</div>
+<div id="outline-container-orgaf70d2b" class="outline-3">
+<h3 id="orgaf70d2b"><span class="section-number-3">6.16</span> <span class="done DONE">DONE</span> Send out more resume,  more to EA</h3>
+<div class="outline-text-3" id="text-6-16">
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-05-21 Tue 16:44</p>
+<p class="date">Created: 2019-05-23 Thu 11:23</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
