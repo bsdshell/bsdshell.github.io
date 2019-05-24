@@ -1,77 +1,260 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
-<head>
-    <title>$title</title>
-    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
-    <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../highlight.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-            jax: ["input/TeX","output/HTML-CSS"],
-            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
-          });
-    </script>
-    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
-</head>
-<body>
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+    <head>
+        <title>C++ Binary Tree Insert</title>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
+        <meta name="robots" content="index, follow" />
+        <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../highlight.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/x-mathjax-config">
+              MathJax.Hub.Config({
+                extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+                jax: ["input/TeX","output/HTML-CSS"],
+                tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
+              });
+        </script>
+        <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+    </head>
+    <body>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-66282017-2', 'auto');
-  ga('send', 'pageview');
-</script>
-<div class="myclass">
-<div class="mytitle">
-Install HDBC.Sqlite3 in Haskell
-</div>
-<pre class="prettyprint smallfont">
-cabal install HDBC-sqlite3 
-cabal install sqlite
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-66282017-2', 'auto');
+      ga('send', 'pageview');
+    </script>
 
--- run ghci
-ghci
+    <div class="colmask rightmenu">
+        <div class="colleft">
+            <div class="col1">
+            <!-- Column 1 start -->
 
--- load module
-ghci>:module Database.HDBC Database.HDBC.Sqlite3
+            <div class="mytitle">
+            Binary Tree Insertion 
+            </div>
+            <div class="mytext">
+            1. Implement Insertion<br> 
+            2. Delete memory with Post Order Traveral[Nice Trick to apply Post Order Traveral]<br>
+            </div> 
+            <div class="highlight"><pre><span class="k">class</span> <span class="nc">Node</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="kt">int</span> <span class="n">data</span><span class="p">;</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">left</span><span class="p">;</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">right</span><span class="p">;</span>
+    <span class="k">public</span><span class="o">:</span>
+    <span class="n">Node</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="n">right</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 
--- create connection
-ghci>conn <- connectSqlite3 "students.db"
--- check the type of connection 
-ghci>:t conn
+<span class="k">class</span> <span class="nc">BinaryTree</span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">root</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">BinaryTree</span><span class="p">(){</span><span class="n">root</span><span class="o">=</span><span class="nb">NULL</span><span class="p">;}</span>
 
--- check the function
-ghci>:t connectSqlite3
+    <span class="kt">void</span> <span class="n">insert</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">root</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">root</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="k">while</span><span class="p">(</span><span class="n">curr</span><span class="p">){</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">){</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
+                        <span class="n">curr</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+                <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
+                        <span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+                        <span class="k">break</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>        
+    <span class="o">~</span><span class="n">BinaryTree</span><span class="p">(){</span>
+        <span class="n">destroyTree</span><span class="p">(</span><span class="n">root</span><span class="p">);</span> 
+    <span class="p">}</span>
 
--- create a table
-ghci>run conn "CREATE TABLE names (id INTEGER NOT NULL, fname VARCHAR(80), lname VARCHAR(80))" []
+    <span class="kt">void</span> <span class="n">destroyTree</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">r</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="p">){</span>
+            <span class="n">destroyTree</span><span class="p">(</span><span class="n">r</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+            <span class="n">destroyTree</span><span class="p">(</span><span class="n">r</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">r</span><span class="p">){</span>
+                <span class="k">delete</span> <span class="n">r</span><span class="p">;</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 
--- check the type of signature of run
-ghci>:run
+<span class="kt">void</span> <span class="nf">inorder</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">root</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">root</span><span class="p">){</span>
+        <span class="n">inorder</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">);</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;[&quot;</span><span class="o">&lt;&lt;</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">data</span><span class="o">&lt;&lt;</span><span class="s">&quot;]&quot;</span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+        <span class="n">inorder</span><span class="p">(</span><span class="n">root</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+ 
+            <div class="cen">
+            <a href="https://github.com/bsdshell/cpp/blob/master/BinaryTree/BinaryTree/main.cpp">Source Code</a>
+            </div>
 
--- insert data to table
-ghci>run conn "INSERT INTO names (id, fname, lname) VALUES(1, 'Edwin', 'Brady')" []
+            <!-- Column 1 end -->
+            </div>
+            <div class="col2">
+            
 
--- commit it
-ghci>commit conn
 
--- query data from table
-ghci> quickQuery conn "SELECT * from names" []
 
--- login to sqlite3 in Command Line if you want to
-sqlite3 students.db
 
-</pre> 
-</div>
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    </body>
+    </html>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

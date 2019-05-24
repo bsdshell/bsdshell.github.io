@@ -1,84 +1,193 @@
-** Shell Script Examples
-   Shell script is powerful if you could remember all the weird syntax. 
-   Here is the example to show how to use Array in Shell script.
-   Note: readarray only works in Bash 4.x, check your version: bash --version   
-   0. Array in Shell script 1
-      #+BEGIN_SRC bash
-      string='Paris, France, Europe';
-      echo $string
-      readarray -td, array <<<"$string"; declare -p array;
-      ## declare -a array=([0]="Paris" [1]=" France" [2]=$' Europe\n')
 
-      country='Paris/Frence/Europe/Sweden/Croatia';
-      echo $country
-      readarray -td/ array <<<"$country"; declare -p array;
-      for item in "${array[@]}" 
-      do
-        echo "$item" 
-      done      
-      #+END_SRC
-   
-   1. count number of argument
-      #+BEGIN_SRC bash
-      echo "$#"
-      var="string"
-      #+END_SRC
-      
-   2. array in bash                    
-      #+BEGIN_SRC bash                 
-      arr=(                            
-      "dog"                            
-      "cat"                            
-      "rat"                            
-      )                                
-      for var in ${arr[*]}             
-      do                               
-      echo "var=$var"                  
-      done                             
-      #+END_SRC                        
-   
-   3. if statement                                                                    
-      #+BEGIN_SRC bash                                                                
-      var="$#"                                                                        
-      if [ "$var" -eq 2 ]; then echo "two arguments"; else echo "not two argument"; fi
-      #+END_SRC                                                                       
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+    <head>
+        <title>IOS CAShaperLayer StrokeColor</title>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="robots" content="index, follow" />
+        <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../highlight.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/x-mathjax-config">
+              MathJax.Hub.Config({
+                extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+                jax: ["input/TeX","output/HTML-CSS"],
+                tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
+              });
+            </script>
+        <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+    </head>
+    <body>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-66282017-2', 'auto');
+      ga('send', 'pageview');
+    </script>
 
-   3. Iterate all files
-      #+BEGIN_SRC bash
-      for name in $(ls *); do echo $name; done
-      #+END_SRC
-   4. String matches
-      #+BEGIN_SRC bash
-      for name in $(ls *); do if [[ $name == *"txt"* ]]; then echo $name; else echo ""; fi 
-      #+END_SRC
-   5. Use regex match =~
-      #+BEGIN_SRC bash
-      if [[ $name =~ "txt" ]]; then echo $name; else echo ""; fi
-      #+END_SRC
-   6. grep string that contains "txt"
-      #+BEGIN_SRC bash
-      if echo $name | grep -q "txt"; then echo $name; else echo ""; fi
-      #+END_SRC
-   7. grep string its suffix is "txt", e.g. "file.txt"
-      #+BEGIN_SRC bash
-      if echo $name | grep -q "txt$" then echo $name; else echo ""; fi
-      #+END_SRC
-   8. grep string its prefix is "file", e.g. "file.txt"
-      #+BEGIN_SRC bash
-      # grep -q => no output
-      if echo $name | grep -q "^file" then echo $name; echo echo ""; fi
-      #+END_SRC
-** Grep Examples
-   0. grep content of file with specified file name extension, show full file name
-      #+BEGIN_SRC bash
-      grep --include="*.java" -Hnris pattern $PWD
-      #+END_SRC
-   1. cat and grep
-      #+BEGIN_SRC bash
-      cat /tmp/file.txt | grep string
-      #+END_SRC
-   2. grep with color
-      #+BEGIN_SRC bash                       
-      cat /tmp/file.txt | grep --color string  
-      #+END_SRC                        
+    <div id="header">
+    </div>
+    <div class="colmask rightmenu">
+        <div class="colleft">
+            <div class="col1">
+                <!-- Column 1 start -->
+                <div class="mytextbox highlight">
+                    <div style="text-align:center">
+                    <pre style="color:rgba(0, 185, 5, 0.91); background:#444;">
+                          CAShaperLayer StrokeColor 
+                    </pre>
+                    <img src="../image/strokecolor.png" width="30%" height="30%" /><br> 
+                    <a href="https://github.com/bsdshell/xcode/tree/master/StrokeColorCAShaperLayer">Source Code</a>
+                    </div>
+                </div>
+            <!-- Column 1 end -->
+            </div>
+            <div class="col2">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    </body>
+    </html>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

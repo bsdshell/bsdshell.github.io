@@ -1,8 +1,7 @@
-
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>C++ Power of Two</title>
+        <title>Polish Notation and Preporder Traveral</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
         <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -38,30 +37,15 @@
             <!-- Column 1 start -->
 
             <div class="mytitle">
-            Power of Two 
+            Polish Notation and Prefix Traveral 
             </div>
             <div class="mytext">
-            1. Apply similar algorithm to convert decimal to binary<br>
-            2. Bitwise trick<br> 
+            Polish Notation and Prefix Traveral<br>
             </div>
-            <div class="highlight"><pre><span class="kt">bool</span> <span class="nf">power2</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">)</span>
-        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="k">else</span><span class="p">{</span> 
-        <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> 
-            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-        <span class="k">else</span>
-            <span class="k">return</span> <span class="n">power2</span><span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
 
-<span class="kt">bool</span> <span class="nf">fastPower2</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
- 
             <div class="cen">
-            <a href="https://github.com/bsdshell/cpp/tree/master/power2.cpp#L8">Source Code</a>
+            <img src="../image/polish_notation.jpeg" width="80%" height="80%" /><br>
+            <img src="../image/evaluate_expr.png" width="80%" height="80%" /><br>
             </div>
 
             <!-- Column 1 end -->
@@ -154,7 +138,6 @@
             </div>
         </div>
     </div>
-
 
     </body>
     </html>

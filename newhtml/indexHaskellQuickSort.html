@@ -2,10 +2,10 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Cycle Array</title>
+        <title>Haskell Quick Sort</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
-        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
@@ -18,7 +18,7 @@
                 jax: ["input/TeX","output/HTML-CSS"],
                 tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
               });
-            </script>
+        </script>
         <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
     </head>
     <body>
@@ -32,20 +32,47 @@
       ga('send', 'pageview');
     </script>
 
-    <div id="header">
-    </div>
     <div class="colmask rightmenu">
         <div class="colleft">
             <div class="col1">
-                <!-- Column 1 start -->
-                <div class="mytextbox highlight">
-                    <p>
-                    Shift[Cycle] the array to right and left  
-                    </p>
-                    <div class="cen">
-                    <img src="../image/cyclearray.svg" width="50%" height="50%" /><br> 
-                    </div>
-                </div>
+            <!-- Column 1 start -->
+
+            <div class="mytitle">
+            Haskell Quick Sort is the hallmark to show the concise and elegant of Haskell code
+            </div>
+            <div class="mytext">
+            This is the first version of Quick Sort in Haskell<br>
+            </div>
+            <pre class="cc">
+                -- good version quick sort
+                quickSort::[Int]->[Int]
+                quickSort [] = []
+                quickSort [x] = [x]
+                quickSort l = quickSort(left) ++ [p] ++ quickSort right 
+                                    where
+                                        left =  [x | x <- init l, x < p]
+                                        right = [x | x <- init l, x >= p]
+                                        p = last l 
+
+                -- shorter version quick sort
+                quickSort'::[Int]->[Int]
+                quickSort' [] = []
+                quickSort' (x:xs) = quickSort' ([ l | l <- xs, l < x]) ++ [x] ++ quickSort' ([ r | r <- xs, r >= x]) 
+
+                -- more general version. 
+                -- e.g. quickSort1 ["b", "a"] -- output ["a", "b"]
+                -- note: quickSort1 [] -- get error
+                -- print quickSort1 ([]::Int)  -- it works
+
+                quickSort1::(Ord a)=>[a]->[a]
+                quickSort1 [] = [] 
+                quickSort1 (x:xs) = quickSort1([ l | l <- xs, l < x ]) ++ [x] ++ quickSort1 ([ r | r <- xs, r >= x])
+            </pre>
+            <div class="mytext">
+            Above code uses list comprehension, where cause, type class: Ord a
+            </div>
+
+
             <!-- Column 1 end -->
             </div>
             <div class="col2">
@@ -136,7 +163,6 @@
             </div>
         </div>
     </div>
-
 
     </body>
     </html>

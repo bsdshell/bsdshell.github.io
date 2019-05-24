@@ -1,193 +1,64 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
-<head>
-	<title>Surface, Curve, Algorithm, Geometry, Algebra</title>
-	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-	<meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
-	<meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
-	<meta name="robots" content="index, follow" />
-	<link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
-	<link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../highlight.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-            jax: ["input/TeX","output/HTML-CSS"],
-            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
-          });
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+    <head>
+        <title>Intellij Import your package</title>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
+        <meta name="robots" content="index, follow" />
+        <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../highlight.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/x-mathjax-config">
+              MathJax.Hub.Config({
+                extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+                jax: ["input/TeX","output/HTML-CSS"],
+                tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
+              });
         </script>
-    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
-</head>
-<body>
+        <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+    </head>
+    <body>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-66282017-2', 'auto');
+      ga('send', 'pageview');
+    </script>
 
-<div id="header">
-</div>
-<div class="colmask rightmenu">
-	<div class="colleft">
-		<div class="col1">
-			<!-- Column 1 start -->
-
-                <div class="mytitle">
-                Given a rotated sorted array, find the index of maximum value of the array in $O(\log{n})$ <br>
-                </div>
-                <div class="mytext">
-                    For example, rotate the array $[1, 2, 3, 4, 5, 6, 7, 8]$ three elements to the left,<br>
-                    we have $[4, 5, 6, 7, 8, 1, 2, 3]$
-                    <img src="../image/rotatedarrayfigure.svg" width="100%" height="100%" /><br>
-                    After the rotation, there are two partial array:[4 5 6 7 8] and [1 2 3],
-                    We can visualize the array as [in figure (3)].<br><br>
-                    We try to use similar <span class="sd">binary search algorithm</span> which is as following<br>
-                    1. divide the array to two even parts,e.g. left and right<br>
-                    2. do a recursive call on one part of the array that contains the key<br><br>
-                    $\square$
-                    Q. How do we know the maximum value is on the left or on right side?<br>
-                    <img src="../image/rotatedarray1.svg" width="100%" height="100%" /><br>
-
-                    <span style="color:#FF0033">1. </span>find the middle element of the array [int mid = (lo + hi)/2]<br>
-                    <span style="color:#FF0033">2. </span>compare arr[lo] and arr[mid]<br><br>
-                    if arr[lo] < arr[mid], we know the maximum value is between [mid] and [hi], [see figure (4)]<br>
-
-                    arr[lo] = 4 and arr[mid] = 7<br>
-                    Otherwise, the maximum value is in the range of [lo] and [mid], [see figure (5)]<br>
-                    arr[lo] = 6 and arr[mid] = 1<br>
-
-                    arr[] = {4, 5, 6, 7, 8, 1, 2, 3}
-                    lo = 0, hi = 7
-                    mid = (lo + hi)/2 = 3;
-
-                    arr[lo] = 4, arr[mid] = 7;
-                    arr[lo] < arr[mid] 
-                    The maximum value is from arr[mid] to arr[hi]
-
-                    <pre style="background:#FFF">
-                        // pseudocode
-                        int findMaxIndex(int[] arr, int lo, int li) {
-                            int mid = (lo + hi)/2;
-                            if(arr[lo] < arr[mid])
-                                return findMaxIndex(arr, mid, hi);
-                            else
-                                return findMaxIndex(arr, lo, mid);
-                        }
-                    </pre>
-
-                    There is <span style="color:#0000FF">one special case</span> that we need to be considered
-                    if the array does not rotated at all, then above code will fail. 
-                    for example, given [1, 2, 3, 4]
-                    However, we can just compare the most left and most right elements in the array<br>
-                    Note: If the array doesn't rotated, then $arr[lo] \lt arr[hi]$, otherwise $arr[lo] \geq arr[hi]$
-                    <pre>
-                        if([lo] < [hi])
-                            the array does not rotate at all, 
-                            the index of maximum value is [hi] 
-                    </pre>
-
-                </div><br>
-
-                <div class="mytitle">
-                Better Code 
-                </div>
-                <pre class="prettyprint">
-                /**
-                    1. arr = {1}, 
-                    2. 2 1
-                         mid = arr[0]
-                    3. 1 2
-                         mid = arr[0]
-
-                       2 3 4 1  (lo=0, hi=3)
-                            mid = 1
-                                (lo=1, hi =3) -> 3 4 1
-                                    mid = 2
-                                        (lo=2, hi=3) -> 4 1
-                                            mid = 2
-                                                arr[2] < arr[2]
-                                                max(arr, lo=2, hi=2)  => 4
-                                        
-
-                    rotate sorted string
-                */
-                public static int max(int[] arr, int lo, int hi){
-                    if(arr[lo] <= arr[hi]){
-                        return arr[hi];
-                    }else{
-                        int mid = (lo + hi)/2;
-                        if(arr[lo] < arr[mid]){
-                            return max(arr, mid, hi);
-                        }else{
-                            return max(arr, lo, mid);
-                        }
-                    }
-                }
-                </pre>
+    <div class="colmask rightmenu">
+        <div class="colleft">
+            <div class="col1">
+            <!-- Column 1 start -->
 
-                <div class="mytitle">
-                Full implementation in Java
-                </div>
-                <pre class="prettyprint">
-            // Find the index of minimum element of an array
-            // Make sure to test the case [2, 1]
-            public static int findMinimumIndex(int[] arr, int lo, int hi){
-                if( arr[lo] <= arr[hi])
-                    return arr[lo];
-                else{
-                    // [2, 1]
-                    // [3, 1, 2]
-                    // =>[3, 1] => [1]
-                    int mid = (lo + hi)/2;
-                    if(arr[lo] < arr[mid])
-                        return findMinimumIndex(arr, mid, hi);
-                    else if(arr[lo] > arr[mid])
-                        return findMinimumIndex(arr, lo, mid);
-                }
-            }
+            <div class="mytitle">
+            Import your package in Intellij project 
+            </div>
+            <div class="mytext">
+            Use your own package in Intellij project<br>
+            If your jar file has <span class="wbold">package classfile;</span>
+            then <span class="cmd">import classfile.*;</span> is required 
+            </div>
+            <div class="cen">
+            <img src="../image/allpackage.png" width="80%" height="80%" /><br>
+            <img src="../image/addlib.png" width="80%" height="80%" /><br>
+            </div>
 
-            public static int findMaximumIndex(int[] arr, int lo, int hi){
-                if(arr[lo] <= arr[hi])
-                    return arr[hi];
-                else{
-                    // [2, 1]
-                    int mid = (lo + hi)/2;
-                    if( arr[lo] < arr[mid])
-                        return findMaximumIndex(arr, mid, hi);
-                    else if(arr[lo] > arr[mid]) 
-                        return findMaximumIndex(arr, lo, mid);
-                }
-            }
-                </pre>
+            <!-- Column 1 end -->
+            </div>
+            <div class="col2">
+            
 
-                <div class="mytitle">
-                Following up Question, find the index of the minimum element from above array 
-                </div>
-                <pre>
-                    // make sure check the case [2 1]
-                    int findIndexMinimum array lo hi
-                        // no rotation
-                        if(array[lo] <= array[hi])
-                            return lo
-                        else
-                            mid = lo + hi/2
-                            if array[lo] < array[mid]
-                                findIndexMinimum array mid+1 hi    // 2 1, 3 1 2
-                            else
-                                findIndexMinimum array lo mid
 
-                </pre>
 
 
-                <div class="cen">
-                <img src="../image/maxnew.png" width="50%" height="50%" /><br>
-                <img src="../image/rotatesorted.png" width="50%" height="50%" /><br>
-                <img src="../image/rotatedarray1.png" width="50%" height="50%" /><br>
-                <img src="../image/findmaxmin.png" width="50%" height="50%" /><br>
-                </div>
 
-        <!-- Column 1 end -->
-		</div>
-		<div class="col2">
-        
 
 
 
@@ -266,17 +137,14 @@
 
 
 
+            </div>
+        </div>
+    </div>
 
 
-
-
-
-		</div>
-	</div>
-</div>
-
-</body>
-</html>
+    </body>
+    </html>
+    
 
 
 

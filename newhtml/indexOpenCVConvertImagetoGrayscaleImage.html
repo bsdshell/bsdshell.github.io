@@ -31,44 +31,23 @@
   ga('send', 'pageview');
 </script>
 <div class="myclass">
-
 <div class="mytitle">
-What is concatMap in Haskell
+Convert image to grayscale image
+</div>
+<div class="mytext">
+The simple way is to compute the average of RGB colors values
+
+\begin{equation}
+\begin{aligned}
+    r = \alpha r + \beta \\ 
+    g = \alpha g + \beta \\ 
+    b = \alpha b + \beta \\
+\end{aligned}
+\end{equation} 
 </div>
 <pre class="prettyprint">
-The signature of Haskell function is confusing and initimite, lets see an example
-If you see the signature of foldr with Java/C++ background, you would say WTF.
-
-foldr::(a -> b -> b) -> b -> [a] -> b
-foldr(++) "kk" ["dog", "cat"] // here is how to use foldr 
-
-1. (a -> b -> b) is function with two arguments, e.g. ++:("dog" "kk") -> "dogkk"
-   int f(int a, int b)                           // function in Java
-   [](auto a, auto b) { return a + b;}           // lambda function in C++
-2. b is the second argument,                     e.g. b = "kk"
-3. [a] is the third argument,                    e.g. ["dog", "cat"]
-4. last b is the output,                         e.g. "dotcatkk"
-
-The signature of concatMap, WTF?
-concatMap::(a -> [b]) -> [a] -> [b]
-concatMap f = foldr((++) . f)) []    // it seems to me concapMap is only for String
-Note: the implementaton of concapMap is not exactly like that in Haskell, but close
-
-concatMap(map(toUpper)) ["dog", "cat"] => "DOGCAT"
-
-=>foldr((++) . map(toUpper)) [] ["dog", "cat"]
-=>foldr((++)) [] [map(toUpper) "dog", map(toUpper) "cat"]
-=>foldr((++)) [] ["DOG", "CAT"]
-=> "DOG" ++ ("CAT" ++ [])
-=> "DOGCAT"
-
-or
-=>foldr(++) [] $ (map . map) toUpper ["dog", "cat"]
-=>foldr(++) [] ["DOG", "CAT"]
-=> "DOGCAT"
-
+code here
 </pre> 
-
 </div>
 </body>
 </html>

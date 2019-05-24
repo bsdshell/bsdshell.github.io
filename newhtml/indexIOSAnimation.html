@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Euler Formula</title>
+        <title>IOS Animation</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
         <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
@@ -18,7 +18,7 @@
                 jax: ["input/TeX","output/HTML-CSS"],
                 tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
               });
-            </script>
+        </script>
         <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
     </head>
     <body>
@@ -32,38 +32,59 @@
       ga('send', 'pageview');
     </script>
 
-    <div id="header">
-    </div>
     <div class="colmask rightmenu">
         <div class="colleft">
             <div class="col1">
-                <!-- Column 1 start -->
-                <div class="latexbox">
-                    \[ \mbox{Euler Formula} \] 
-                    \begin{equation}
-                    \begin{aligned}
-                         \sin\theta &= x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + ... \\
-                         \cos\theta &= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + ... \\
-                         e^z &= 1 + z + \frac{z^2}{2!} + \frac{z^3}{3!} + ... = \sum_{k=0}^{\infty} \frac{z^k}{k!} \\
-                         e^{i\theta} &= 1 + i\theta + \frac{{(i\theta)}^2}{2!} + \frac{{(i\theta)}^3}{3!} + \frac{{(i\theta)}^4}{4!} + \frac{{(i\theta)}^5}{5!} ...  \\
-                         e^{i\theta} &= 1 + i\theta - \frac{{\theta}^2}{2!} - \frac{{i\theta}^3}{3!} + \frac{{\theta}^4}{4!} + \frac{{i\theta}^5}{5!} - \frac{\theta^6}{6!}...\\
-                         e^{i\theta} &= (1 - \frac{{\theta}^2}{2!} + \frac{{\theta}^4}{4!} - \frac{\theta^6}{6!} + ...) + i(\theta  - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - ...)\\
+            <!-- Column 1 start -->
+                <div class="note">
+                    <div class="mytext">
+                        <div class="mytitle">
+                        Layer Provide the Basis for Drawing and Animations
+                        </div>
+                    Layer manages the information of their geometry, content and visual attributes of their surfaces.<br>
+                    Unlike views, layer doesn't define their own appearance.<br>
+                    Layer merely manages the state information surrounding bitmap<br><br>
+                    <div class="cen">
+                    <img src="../../image/layer_animation.png" width="60%" height="60%" /><br><br> 
+                    </div>
 
+                    <div class="mytitle">
+                    Create Animation with UIImageView<br>
+                    </div>
+                    If you want to create a simple animation with ten lines of code, then UIImageView will be good choice.<br><br>
+                    1. Load the images[png file] to an array.<br>
+                    2. Create UIImageView object and set a few properties.<br>
+                    3. Start the animation. Done!<br><br>
+                    <!--<code style="margin-left:auto; margin-right:auto; background:#EEE;"> -->
+                    <pre style="display:block;white-space:pre-wrap;background:#EEE;margin-left:0px;width:100%; text-align:left;">
+            NSArray *imageNames = @[@"dance_0.png",
+                                    @"dance_1.png",
+                                    @"dance_2.png",
+                                    @"dance_3.png",
+                                    @"dance_4.png",
+                                    @"dance_5.png"];
+            NSMutableArray *images = [[NSMutableArray alloc] init];
+            for (int i = 0; i &lt; imageNames.count; i++) {
+                [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
+            }
 
-                         e^{i\theta} &= \sum_{k=0}^{\infty} \frac{\theta^{2k}}{2k!} + \sum_{k=0}^{\infty} \frac{{i\theta}^{2k+1}}{(2k+1)!} \\
-                         e^{i\theta} &= \cos\theta + i\sin\theta \\ 
+            // Normal Animation
+            UIImageView *animationImageView = [[UIImageView alloc] 
+            initWithFrame:CGRectMake(60, 60, 400, 400)];
 
-                         \mbox{Other formula from Euler forumla} \\
-                         e^{i\theta} &= \cos\theta + i\sin\theta \qquad &(1)\\ 
-                         e^{-i\theta} & =\cos\theta - i\sin\theta \quad (\theta = -\theta) \qquad &(2)\\
+            animationImageView.animationImages = images;
+            animationImageView.animationDuration = 0.5;
 
-                         \Rightarrow 2\cos \theta & = e^{i\theta} + e^{-i\theta} \qquad (1) + (2) \\
-                         \Rightarrow \color{red}{\cos \theta} &= \frac{e^{i\theta} + e^{-i\theta}}{2} \\
-                         \Rightarrow 2i\sin \theta & = e^{i\theta} - e^{-i\theta} \qquad (1) - (2) \\
-                         \Rightarrow \color{red}{\sin \theta} & = \frac{e^{i\theta} - e^{-i\theta}}{2i} \\
-                    \end{aligned}
-                    \end{equation}
+            [self.view addSubview:animationImageView];
+            [animationImageView startAnimating];
+                    </pre><br>
+                    <div class="cen">
+                    <img src="../../image/myanimation.png" width="40%" height="40%" /><br><br> 
+                    <a href="https://github.com/bsdshell/xcode/tree/master/SimpleAnimation">Source Code</a>
+                    </div>
                 </div>
+            </div> <!--end note-->
+
             <!-- Column 1 end -->
             </div>
             <div class="col2">

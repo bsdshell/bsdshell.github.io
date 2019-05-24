@@ -2,10 +2,10 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Print Previous element from Binary Tree</title>
+        <title>Binary Maximum Sum Path</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
+        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
@@ -36,54 +36,25 @@
         <div class="colleft">
             <div class="col1">
             <!-- Column 1 start -->
-
             <div class="mytitle">
-            Print previous element from Binary Tree
+            Find the maximum sum of path in a Binary Tree. 
             </div>
             <div class="mytext">
-            Print previous element from Binary Tree<br>
+            1. Use post order traveral or bottom up
             </div>
-            <div class="highlight"><pre><span class="k">class</span> <span class="nc">Stack</span><span class="p">{</span>
-    <span class="k">public</span><span class="o">:</span>
-        <span class="kt">int</span> <span class="n">maxLen</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
-        <span class="kt">char</span><span class="o">*</span> <span class="n">array</span><span class="p">;</span>
-    <span class="k">public</span><span class="o">:</span>
-        <span class="n">Stack</span><span class="p">(</span><span class="kt">int</span> <span class="n">max</span><span class="p">){</span>
-            <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-            <span class="n">maxLen</span> <span class="o">=</span> <span class="n">max</span><span class="p">;</span>
-            <span class="n">array</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="p">[</span><span class="n">maxLen</span><span class="p">];</span>
-        <span class="p">}</span>
-        <span class="kt">void</span> <span class="n">push</span><span class="p">(</span><span class="kt">char</span> <span class="n">ch</span><span class="p">){</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">count</span> <span class="o">&lt;</span> <span class="n">maxLen</span><span class="p">){</span>
-                <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="n">ch</span><span class="p">;</span>
-                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="kt">char</span> <span class="n">pop</span><span class="p">(){</span>
-            <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
-                <span class="n">ch</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
-                <span class="n">count</span><span class="o">--</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="k">return</span> <span class="n">ch</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="kt">bool</span> <span class="n">isEmpty</span><span class="p">(){</span>
-            <span class="k">return</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="kt">int</span> <span class="n">size</span><span class="p">(){</span>
-            <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="o">~</span><span class="n">Stack</span><span class="p">(){</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
-                <span class="k">delete</span><span class="p">[]</span> <span class="n">array</span><span class="p">;</span>
-        <span class="p">}</span>
-<span class="p">};</span>
-</pre></div>
- 
             <div class="cen">
-            <img src="../image/cppstd.png" width="40%" height="40%" /><br>
+            <img src="../image/bottomup.png" width="50%" height="50%" /><br>
             </div>
+            <pre class="codebg">
+                                            int maxSum(Node r){
+                                                if(r != null){
+                                                    int l = maxSum(r.left);
+                                                    int r = maxSum(r.right);
+                                                    return max(l, r) + r.data;
+                                                }
+                                                return 0;
+                                            }
+            </pre>
 
             <!-- Column 1 end -->
             </div>
@@ -175,6 +146,7 @@
             </div>
         </div>
     </div>
+
 
     </body>
     </html>

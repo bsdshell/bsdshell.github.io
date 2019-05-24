@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>IOS Bezier Curve</title>
+        <title>Surface, Curve, Algorithm, Geometry, Algebra</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
         <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
@@ -38,13 +38,191 @@
         <div class="colleft">
             <div class="col1">
                 <!-- Column 1 start -->
-                <div class="cen">
                 <div class="mytitle">
-                iOS Quadratic Bezier Curve
+                Java Data Structure, Map, HashMap, Set, HashSet, List, ArrayList, Arrays.asList  
                 </div>
-                    <img src="../image/bezier4.png" width="30%" height="30%" /><br> 
-                    <a href="https://github.com/bsdshell/xcode/tree/master/BezierCurve">Source Code</a>
+                <div class="cen">
+                <img src="../image/javadatastructure.svg" width="60%" height="60%" /><br> 
                 </div>
+                <div class="highlight"><pre><span class="c1">// map, list, linkedlist, HashMap, HashTable, queue, stack</span>
+        <span class="c1">//</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">array</span>     <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">};</span>
+        <span class="kt">int</span><span class="o">[][]</span>  <span class="n">array2</span> <span class="o">=</span> <span class="o">{{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">},</span>
+            <span class="o">{</span><span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">}</span>
+        <span class="o">};</span>
+        <span class="c1">// ArrayList</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">alist</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">alist</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;dog&quot;</span><span class="o">);</span>
+        <span class="n">alist</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;cat&quot;</span><span class="o">);</span>
+
+        <span class="c1">// list of list, ArrayList 2D</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">list2d</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;();</span>
+        <span class="n">list2d</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">alist</span><span class="o">);</span>
+
+        <span class="c1">// List</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;eloberate&quot;</span><span class="o">);</span>
+        <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;continue&quot;</span><span class="o">);</span>
+        <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;continuous&quot;</span><span class="o">);</span>
+
+        <span class="c1">// Vector is old data structure in Java, use List instead</span>
+        <span class="c1">// Vector is not synchronized</span>
+        <span class="n">Vector</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">vector</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">vector</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;jobs&quot;</span><span class="o">);</span>
+        <span class="n">vector</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;career&quot;</span><span class="o">);</span>
+        <span class="n">vector</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;motivation&quot;</span><span class="o">);</span>
+        <span class="n">vector</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&quot;ambition&quot;</span><span class="o">);</span>
+
+        <span class="c1">// LinkedList</span>
+        <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">linkedList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+        <span class="n">linkedList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+        <span class="n">linkedList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+
+        <span class="c1">// Queue</span>
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+        <span class="n">queue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+        <span class="n">queue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+        <span class="n">queue</span><span class="o">.</span><span class="na">remove</span><span class="o">();</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">queue</span><span class="o">.</span><span class="na">peek</span><span class="o">()</span> <span class="o">==</span> <span class="mi">2</span><span class="o">)</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;top element is :&quot;</span> <span class="o">+</span> <span class="mi">2</span><span class="o">);</span>
+
+        <span class="c1">// LinkedBlockingDeque</span>
+        <span class="c1">// blocking, use lock in the implementation</span>
+        <span class="n">Deque</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">blockingDeque</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedBlockingDeque</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">blockingDeque</span><span class="o">.</span><span class="na">addFirst</span><span class="o">(</span><span class="s">&quot;first&quot;</span><span class="o">);</span>
+        <span class="n">blockingDeque</span><span class="o">.</span><span class="na">addLast</span><span class="o">(</span><span class="s">&quot;last&quot;</span><span class="o">);</span>
+
+        <span class="c1">// ConcurrentLinkedDeque</span>
+        <span class="c1">// non-blocking</span>
+        <span class="n">Deque</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">concurrentDeque</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcurrentLinkedDeque</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">concurrentDeque</span><span class="o">.</span><span class="na">addFirst</span><span class="o">(</span><span class="s">&quot;first&quot;</span><span class="o">);</span>
+        <span class="n">concurrentDeque</span><span class="o">.</span><span class="na">addLast</span><span class="o">(</span><span class="s">&quot;last&quot;</span><span class="o">);</span>
+
+        <span class="c1">// HashMap can have null for [k, v]</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;();</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;cat&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;dog&quot;</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
+
+        <span class="n">String</span> <span class="n">key</span> <span class="o">=</span> <span class="s">&quot;cat&quot;</span><span class="o">;</span>
+        <span class="n">Integer</span> <span class="n">value</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">value</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;key=&quot;</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s">&quot; value=&quot;</span> <span class="o">+</span> <span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="k">if</span><span class="o">(</span><span class="n">map</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">key</span><span class="o">))</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;map contains key=&quot;</span> <span class="o">+</span> <span class="n">key</span><span class="o">);</span>
+
+        <span class="c1">// java, init list, java initialize list, List as Value in HashMap</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">mapList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;();</span>
+        <span class="n">mapList</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;1&quot;</span><span class="o">,</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">&quot;dog&quot;</span><span class="o">,</span> <span class="s">&quot;cat&quot;</span><span class="o">,</span> <span class="s">&quot;cow&quot;</span><span class="o">));</span>
+        <span class="n">mapList</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;2&quot;</span><span class="o">,</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">&quot;C++&quot;</span><span class="o">,</span> <span class="s">&quot;Java&quot;</span><span class="o">,</span> <span class="s">&quot;Haskell&quot;</span><span class="o">));</span>
+        <span class="n">mapList</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;3&quot;</span><span class="o">,</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">&quot;Scala&quot;</span><span class="o">,</span> <span class="s">&quot;Python&quot;</span><span class="o">,</span> <span class="s">&quot;Ruby&quot;</span><span class="o">));</span>
+
+        <span class="k">for</span><span class="o">(</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">entry</span><span class="o">:</span> <span class="n">mapList</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">String</span> <span class="n">myKey</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">();</span>
+            <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">myList</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">();</span>
+            <span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">elem</span><span class="o">:</span> <span class="n">myList</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;myKey=&quot;</span> <span class="o">+</span> <span class="n">myKey</span> <span class="o">+</span> <span class="s">&quot; list=&quot;</span> <span class="o">+</span> <span class="n">elem</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="k">if</span><span class="o">(</span><span class="n">mapList</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="s">&quot;key&quot;</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;contains key&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="c1">// HashTable can&#39;t have [k, v] to be null</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">table</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hashtable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">table</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;key&quot;</span><span class="o">,</span> <span class="s">&quot;value&quot;</span><span class="o">);</span>
+        <span class="n">table</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;nonull&quot;</span><span class="o">,</span> <span class="s">&quot;nonull&quot;</span><span class="o">);</span>
+        <span class="k">for</span><span class="o">(</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">:</span> <span class="n">table</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;[&quot;</span> <span class="o">+</span> <span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;]&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">mylist</span> <span class="o">=</span> <span class="n">mapList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;dog&quot;</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">mapList</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">mapList</span><span class="o">.</span><span class="na">containsValue</span><span class="o">(</span><span class="s">&quot;1&quot;</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;contains value&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span> <span class="o">:</span> <span class="n">mylist</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;str=&quot;</span> <span class="o">+</span> <span class="n">str</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="c1">// iterate set, for set, for hashset, loop set,   HashSet</span>
+        <span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">));</span>
+        <span class="n">Integer</span> <span class="n">item</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">set</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">item</span><span class="o">))</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;set contains element:&quot;</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+
+
+        <span class="k">for</span><span class="o">(</span><span class="n">Integer</span> <span class="n">n</span> <span class="o">:</span> <span class="n">set</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;n=:&quot;</span> <span class="o">+</span> <span class="n">n</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="n">set</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">size1</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;size1 =&quot;</span> <span class="o">+</span> <span class="n">set</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+
+        <span class="c1">// iterate set</span>
+        <span class="k">for</span><span class="o">(</span><span class="n">Integer</span> <span class="n">elem</span><span class="o">:</span> <span class="n">set</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;for elem:=&quot;</span> <span class="o">+</span> <span class="n">elem</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="c1">// set to array</span>
+        <span class="n">Integer</span><span class="o">[]</span> <span class="n">array1</span> <span class="o">=</span> <span class="o">(</span><span class="n">Integer</span><span class="o">[])</span> <span class="n">set</span><span class="o">.</span><span class="na">toArray</span><span class="o">(</span><span class="k">new</span> <span class="n">Integer</span><span class="o">[</span><span class="n">set</span><span class="o">.</span><span class="na">size</span><span class="o">()]);</span>
+        <span class="k">for</span><span class="o">(</span><span class="n">Integer</span> <span class="n">n</span><span class="o">:</span> <span class="n">array1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;n=:&quot;</span> <span class="o">+</span> <span class="n">n</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span> 
+        <span class="n">Integer</span><span class="o">[]</span> <span class="n">array4</span> <span class="o">=</span> <span class="o">(</span><span class="n">Integer</span><span class="o">[])</span> <span class="n">list4</span><span class="o">.</span><span class="na">toArray</span><span class="o">();</span>
+
+        <span class="n">Integer</span><span class="o">[]</span> <span class="n">arr5</span> <span class="o">=</span> <span class="o">{</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">};</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list5</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">arr5</span><span class="o">);</span>
+
+        <span class="c1">// list to iterator</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list8</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+        <span class="n">list8</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+        <span class="n">list8</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+        <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">ite</span> <span class="o">=</span> <span class="n">list8</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">ite</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;[&quot;</span> <span class="o">+</span> <span class="n">ite</span><span class="o">.</span><span class="na">next</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;]&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="c1">// double ended queue, deck</span>
+        <span class="n">Deque</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">queue1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayDeque</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;();</span>
+        <span class="n">queue1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Node</span><span class="o">(</span><span class="mi">1</span><span class="o">));</span>
+        <span class="n">queue1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Node</span><span class="o">(</span><span class="mi">2</span><span class="o">));</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;size[&quot;</span> <span class="o">+</span> <span class="n">queue1</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;]&quot;</span><span class="o">);</span>
+        <span class="n">queue1</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;size[&quot;</span> <span class="o">+</span> <span class="n">queue1</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;]&quot;</span><span class="o">);</span>
+
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list6</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Vector</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">queue2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">queue3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PriorityQueue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">mymap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">mymap1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hashtable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;();</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">mymap2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedHashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;();</span>
+</pre></div>
+ 
+                <div class="mytitle">
+                Map, HashMap, HashTable, LinkedHashMap, TreeMap
+                </div>
+                <div class="mytext">
+                HashMap       [k, v] can be null<br> 
+                HashTable     [k, v] can not be null<br>
+                LinkedHashMap [k, v] keeps the insection ordering<br>
+                TreeMap       [k, v] keeps the {nature ordering}<br>
+                </div>
+                <div class="cen">
+                <img src="../image/javamap.svg" width="40%" height="40%" /><br> 
+                </div>
+
+
             <!-- Column 1 end -->
             </div>
             <div class="col2">

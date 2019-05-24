@@ -2,10 +2,10 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Merge two sorted lists in C++</title>
+        <title>C++ Print All Binary</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
-        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
@@ -18,7 +18,7 @@
                 jax: ["input/TeX","output/HTML-CSS"],
                 tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
               });
-            </script>
+        </script>
         <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
     </head>
     <body>
@@ -32,107 +32,33 @@
       ga('send', 'pageview');
     </script>
 
-    <div id="header">
-    </div>
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-                <!-- Column 1 start -->
-                <div class="mytextbox">
-                    <p>
-                    Put your stuff here  
-                    </p>
-                </div>
-            <!-- Column 1 end -->
+            <div class="mytitle">
+            Print all binary of length n 
             </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <pre class="prettyprint">
+            void printAllBinary(int n){
+                for(int i=0; i < std::pow(2, n); i++){
+                    std:string str;
+                    int num = i;
+                    for(int j=0; j < n; j++){
+                        if(num % 2 == 0)
+                            str = "0" + str;
+                        else
+                            str = "1" + str;
+                        num = num/2;
+                    }
+                    std::cout<< "[" << str << "]" << std::endl;
+                }
+            }
+            </pre>
+
+
+            <div class="cen">
+            <a href="https://github.com/bsdshell/cpp/tree/master/BuildTree.cpp">Source Code</a>
             </div>
-        </div>
-    </div>
+            <div class="cen">
+            <img src="../image/printbinary.png" width="50%" height="50%" /><br>
+            </div>
 
 
     </body>

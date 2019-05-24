@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Surface, Curve, Algorithm, Geometry, Algebra</title>
+        <title>Euler Formula</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
         <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
@@ -38,21 +38,29 @@
         <div class="colleft">
             <div class="col1">
                 <!-- Column 1 start -->
-                <div class="mathdef_box1">
-                    \[ \text{Proof of Binomial Identity} \]<br> 
-                    \[  \binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1} \]<br> 
-                    \[ \binom{n}{0} = 1 \text{ with } 1 \leq k \leq n\]<br> 
+                <div class="latexbox">
+                    \[ \mbox{Euler Formula} \] 
                     \begin{equation}
                     \begin{aligned}
-                        \text{LHS} \quad \binom{n}{k} = \frac{P(n, k)}{k!} = \frac{\frac{n!}{(n-k)!}}{k!} &= \frac{n!}{(n-k)! k!}\\<br>
-                        \text{RHS} \quad \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{P(n-1, k)}{k!} + \frac{P(n-1, k-1)}{(k-1)!}  \\<br>  
-                        \text{RHS} \quad \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{\frac{(n-1)!}{(n-1-k)!}}{k!} + \frac{(n-1)!}{[(n-1)-(k-1)]!(k-1)!}\\<br>    
-                        \text{RHS} \quad \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{(n-1)!}{(n-k-1)!k!} + \frac{(n-1)!}{(n-k)!(k-1)!}\\<br>    
-                        \text{RHS} \quad \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{(n-k)(n-1)!}{(n-k)(n-k-1)!k!} + \frac{k(n-1)!}{k(n-k)!(k-1)!}\\<br>    
-                        \text{RHS} \quad \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{(n-k)(n-1)!}{(n-k)!k!} + \frac{k(n-1)!}{(n-k)!k!}\\<br>    
-                        \text{RHS} \quad \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{(n-1)!(n-k+k)}{(n-k)!k!}\\<br>    
-                        \text{RHS} \quad \binom{n-1}{k} + \binom{n-1}{k-1} &= \frac{n!}{(n-k)!k!} \nonumber \\<br>    
-                        \text{LHS} &= \text{RHS} \quad \square
+                         \sin\theta &= x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + ... \\
+                         \cos\theta &= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + ... \\
+                         e^z &= 1 + z + \frac{z^2}{2!} + \frac{z^3}{3!} + ... = \sum_{k=0}^{\infty} \frac{z^k}{k!} \\
+                         e^{i\theta} &= 1 + i\theta + \frac{{(i\theta)}^2}{2!} + \frac{{(i\theta)}^3}{3!} + \frac{{(i\theta)}^4}{4!} + \frac{{(i\theta)}^5}{5!} ...  \\
+                         e^{i\theta} &= 1 + i\theta - \frac{{\theta}^2}{2!} - \frac{{i\theta}^3}{3!} + \frac{{\theta}^4}{4!} + \frac{{i\theta}^5}{5!} - \frac{\theta^6}{6!}...\\
+                         e^{i\theta} &= (1 - \frac{{\theta}^2}{2!} + \frac{{\theta}^4}{4!} - \frac{\theta^6}{6!} + ...) + i(\theta  - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - ...)\\
+
+
+                         e^{i\theta} &= \sum_{k=0}^{\infty} \frac{\theta^{2k}}{2k!} + \sum_{k=0}^{\infty} \frac{{i\theta}^{2k+1}}{(2k+1)!} \\
+                         e^{i\theta} &= \cos\theta + i\sin\theta \\ 
+
+                         \mbox{Other formula from Euler forumla} \\
+                         e^{i\theta} &= \cos\theta + i\sin\theta \qquad &(1)\\ 
+                         e^{-i\theta} & =\cos\theta - i\sin\theta \quad (\theta = -\theta) \qquad &(2)\\
+
+                         \Rightarrow 2\cos \theta & = e^{i\theta} + e^{-i\theta} \qquad (1) + (2) \\
+                         \Rightarrow \color{red}{\cos \theta} &= \frac{e^{i\theta} + e^{-i\theta}}{2} \\
+                         \Rightarrow 2i\sin \theta & = e^{i\theta} - e^{-i\theta} \qquad (1) - (2) \\
+                         \Rightarrow \color{red}{\sin \theta} & = \frac{e^{i\theta} - e^{-i\theta}}{2i} \\
                     \end{aligned}
                     \end{equation}
                 </div>

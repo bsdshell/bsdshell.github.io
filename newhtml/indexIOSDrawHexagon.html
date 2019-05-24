@@ -1,143 +1,194 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
-<head>
-    <title>What is foldr and foldl in Haskell, foldr and foldl example, foldr and foldl tutorial</title>
-    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
-    <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../highlight.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-            jax: ["input/TeX","output/HTML-CSS"],
-            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
-          });
-    </script>
-    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
-</head>
-<body>
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+    <head>
+        <title>IOS Draw Hexagon</title>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="robots" content="index, follow" />
+        <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="../highlight.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script type="text/x-mathjax-config">
+              MathJax.Hub.Config({
+                extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+                jax: ["input/TeX","output/HTML-CSS"],
+                tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
+              });
+            </script>
+        <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+    </head>
+    <body>
 <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-66282017-2', 'auto');
-  ga('send', 'pageview');
-</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-66282017-2', 'auto');
+      ga('send', 'pageview');
+    </script>
 
-<div class="myclass">
-<div class="mytitle">
-Understand <span id="red">foldr</span> and <span id="red">foldl</span> with examples in Haskell
-</div>
+    <div id="header">
+    </div>
+    <div class="colmask rightmenu">
+        <div class="colleft">
+            <div class="col1">
+                <!-- Column 1 start -->
+                <div class="mytext">
+                CAShapeLayer Draw Hexagon only.<br>
+                Fix the close path issue.<br>
+                UIBezierPath [path closePath]<br>
+                </div><br>
+                <div class="cen">
+                    <img src="../image/hexagon1.png" width="20%" height="20%" />
+                    <img src="../image/hexagon2.png" width="20%" height="20%" /><br>
+                    <a href="https://github.com/bsdshell/xcode/tree/master/DrawHexagon">source code</a>
+                </div>
+            <!-- Column 1 end -->
+            </div>
+            <div class="col2">
+            
 
-<pre class="prettyprint">
-dropWhileEnd::(a -> Bool) -> [a] -> [a]
-dropWhileEnd f = foldr(\x sx -> f x && null sx then [] else x:sx) []
-</pre>
-<div class="cen">
-<img src="../image/thepoweroffold.jpg" width="80%" height="80%" /><br>
-</div> 
 
-<div class="mytext">
-Remove whitespace at the beginning of string
-</div>
-<pre class="prettyprint">
-dropW::(a -> Bool) -> [a] -> [a]
-dropW f cx = reverse $ foldl(\xs x -> if (null xs && f x) then [] else x:xs) [] cx
-</pre>
 
-<div class="cen">
-<img src="../image/leftfold.jpg" width="80%" height="80%" /><br>
-</div> 
 
-<pre class="prettyprint">
-1. foldr(-) 4 [1, 2, 3]
 
-2. [1] is equavalent to following:
-   foldr(\x -> x - 4) [1, 2, 3] 
 
-3. foldr => what does 'r' mean here? 
-   It means: The list is folded from Right side
 
-4. The order of x and 4 are important.
-   (x - 4) it NOT equal (4 - x) 
 
-5. Remember "The list is folded from Right side"
-   foldr(\x -> x - 4) [1, 2, 3] 
-   = (1 - (2 - (3 - 4)))  -- x = 3 
-   = (1 - (2 - (-1)))     -- x = 2 
-   = (1 - 3)              -- x = 1
-   = -2
-</pre> 
-<pre class="prettyprint">
-1. foldl(-) 4 [1, 2, 3]
 
-2. (1) is equavalent to following: 
-   foldl(\x -> 4 - x) 4 [1, 2, 3]
 
-3. Remember "The list is folded from LEFT side, fold[l]"
-   foldl(\x -> 4 - x) 4 [1, 2, 3]
-   = (((1 - 4) - 2) - 3) -- x = 1
-   = ((-3 - 2) - 3)      -- x = 2
-   = ((-5) - 3)          -- x = 3
-   = -8
 
-</pre>
-<div class="mytitle">
-Fun fact about <span id="red">foldl, foldr</span>
-</div>
-<pre class="prettyprint">
-reverse = foldl(\x y -> y:x) [] ["a", "b", "c"] 
-        = ["c", "b", "a"]
 
-reverse = foldr(\x y -> y ++ [x]) [] ["a", "b", "c"]
-        = ["c", "b", "a"]
 
--- remove tailing space 
--- "ab " => "ab" 
-foldr(\x y -> if x == ' ' then [] else x:y) [] "ab " => "ab"
 
-</pre> 
-<div class="mytitle">
-Make your own foldL and foldR
-</div>
-<pre class="prettyprint">
-foldR::(a -> a -> a) -> a -> [a] -> a
-foldR f z [] = z
-foldR f z (x:cx) = f z (fold f z cx)
 
--- TODO check it
 
-foldL::(a -> a -> a) -> a -> [a] -> a
-foldL f z [] = z
-foldL f z cx = f x' (fold f z cx')
-            where
-                x' = last cx
-                cx' = init cx
 
--- TODO check it
 
-</pre> 
 
-</div>
-<br>
-<div class="mytitle">
-Picture is worth a thousand words 
-</div>
-<div class="cen">
-<img src="../image/fold2.svg" width="50%" height="50%" /><br> 
-</div>
 
-<div class="cen">
-<img src="../image/foldonpic.png" width="80%" height="80%" /><br> 
-</div>
 
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    </body>
+    </html>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

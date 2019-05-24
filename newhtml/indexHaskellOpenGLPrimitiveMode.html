@@ -31,103 +31,60 @@
   ga('send', 'pageview');
 </script>
 <div class="myclass">
-<div class="mytitle">
-Convex Hull Algorithm
-</div>
-<div class="cen">
-<a name="convexhull"><img src="../image/convexhull_simple_algorithm.svg" width="80%" height="80%" /></a><br>
-</div> 
 
 <div class="mytitle">
-More than one points which have maximum y-axis value
+Haskell OpenGL Primitive Mode
 </div>
-<div class="cen">
-<a name="top_point"><img src="../image/top_point.svg" width="80%" height="80%" /></a><br>
-</div> 
-
-<div class="mytitle">
-Three points forma an angle
-</div>
-Compute the angle $\angle ABC$ <br>
-1. Compute the vectors: $\vec{BA}, \vec{BC}$ <br> 
-2. Use dot product <br>
-\[
-    \cos{ABC} = \frac{\vec{BA} \, \vec{BC}}{|\vec{BA}| |\vec{BC}|} 
-\]
-
-<div class="cen">
-<a name="three_pts_angle"><img src="../image/three_pts_angle.svg" width="80%" height="80%" /></a><br>
-</div> 
-
-<div class="mytitle">
-Eliminate Points 
-</div>
-<div class="cen">
-<a name="eliminate_points"><img src="../image/eliminate_points.svg" width="80%" height="80%" /></a><br>
-</div> 
-
-<div class="mytitle">
-Point is on the left or right side of a line 
-</div>
-<div class="cen">
-<a name="rotate_dir"><img src="../image/rotate_dir.svg" width="80%" height="80%" /></a><br>
-</div> 
-
-<div class="mytitle">
-N polygon 
-</div>
-<div class="cen">
-<a name="npolygon"><img src="../image/npolygon.svg" width="80%" height="80%" /></a><br>
-</div> 
-
-<div class="mytitle">
-Slow Algorithm for ConvexHull 
-</div>
-<div class="cen">
-<a name="slow_algorithm"><img src="../image/convex_hull_slow_algorithm.svg" width="80%" height="80%" /></a><br>
-</div> 
-
-<div class="mytitle">
-Non Cross Segments 
-</div>
-<div class="cen">
-<a name="non_cross_segment"><img src="../image/non_cross_segment.svg" width="80%" height="80%" /></a><br>
-</div> 
-
-<div class="mytitle">
-Voronoi Diagram in Three Points 
-</div>
-<div class="cen">
-<a name="voronoi_diagram_three_pt"><img src="../image/voronoi_diagram_three_pt.svg" width="80%" height="80%" /></a><br>
-</div> 
-
-<div class="mytitle">
-Cirlce contains no point 
-</div>
-<div class="cen">
-<a name="voronoi_diagram_circle_no_pt"><img src="../image/voronoi_diagram_circle_no_pt.svg" width="80%" height="80%" /></a><br>
-</div> 
-
-<div class="mytitle">
-Non Cross Segment 2 
-</div>
-<div class="cen">
-<a name="non_cross_segment_2"><img src="../image/non_cross_segment_2.svg" width="80%" height="80%" /></a><br>
-</div> 
-
-<div class="mytitle">
-One Point is overlapped in two segments 
-</div>
-<div class="cen">
-<a name="onept_overlapped_segment"><img src="../image/onept_overlapped_segment.svg" width="80%" height="80%" /></a><br>
-</div> 
-
-<div class="mytitle">
-All segments inside Convex Hull 
-</div>
-<div class="cen">
-<a name="convexhull_all_segments"><img src="../image/convexhull_all_segments.svg" width="80%" height="80%" /></a><br>
-</div> 
+<pre class="mytext">
+Haskell OpenGL Primitive Mode
+</pre>
+<pre class="prettyprint">
+data PrimitiveMode =
+     Points
+     -- ^ Treats each vertex as a single point. Vertex /n/ defines point /n/.
+     -- /N/ points are drawn.
+   | Lines
+     -- ^ Treats each pair of vertices as an independent line segment. Vertices
+     -- 2/n/-1 and 2/n/ define line /n/. /N/\/2 lines are drawn.
+   | LineLoop
+     -- ^ Draws a connected group of line segments from the first vertex to the
+     -- last, then back to the first. Vertices /n/ and /n/+1 define line /n/.
+     -- The last line, however, is defined by vertices /N/ and 1. /N/ lines
+     -- are drawn.
+   | LineStrip
+     -- ^ Draws a connected group of line  segments from the first vertex to the
+     -- last. Vertices /n/ and /n/+1 define line /n/. /N/-1 lines are drawn.
+   | Triangles
+     -- ^ Treats each triplet of vertices as an independent triangle. Vertices
+     -- /3n-2/, /3n-1/, and /3n/ define triangle /n/. /N\/3/ triangles are drawn.
+   | TriangleStrip
+     -- ^ Draws a connected group of triangles. One triangle is defined for each
+     -- vertex presented after the first two vertices. For odd /n/, vertices
+     -- /n/, /n/+1, and /n/+2 define triangle /n/. For even /n/, vertices /n/+1,
+     -- /n/, and /n/+2 define triangle /n/. /N/-2 triangles are drawn.
+   | TriangleFan
+     -- ^ Draws a connected group of triangles. One triangle is defined for each
+     -- vertex presented after the first two vertices. Vertices 1, /n/+1, and
+     -- /n/+2 define triangle /n/. /N/-2 triangles are drawn.
+   | Quads
+     -- ^ Treats each group of four vertices as an independent quadrilateral.
+     -- Vertices 4/n/-3, 4/n/-2, 4/n/-1, and 4/n/ define quadrilateral /n/.
+     -- /N/\/4 quadrilaterals are drawn.
+   | QuadStrip
+     -- ^ Draws a connected group of quadrilaterals. One quadrilateral is
+     --defined for each pair of vertices presented after the first pair.
+     -- Vertices 2/n/-1, 2/n/, 2/n/+2, and 2/n/+1 define quadrilateral /n/.
+     -- /N/\/2-1 quadrilaterals are drawn. Note that the order in which vertices
+     -- are used to construct a quadrilateral from strip data is different from
+     -- that used with independent data.
+   | Polygon
+     -- ^ Draws a single, convex polygon. Vertices 1 through /N/ define this
+     -- polygon.
+   | Patches
+     -- ^ Only used in conjunction with tessellation. The number of vertices per
+     -- patch can be set with 'patchVertices'.
+   deriving ( Eq, Ord, Show )
+</pre> 
 
 </div>
 </body>

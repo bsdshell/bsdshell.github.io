@@ -1,0 +1,14 @@
+** Question: Insert a node into a binary tree
+   1. First, What is *Binary Tree*?
+      + If a node is null, then it is a binary tree
+      + otherwise, all the nodes on the left subtree are smaller than the parent.
+      + All the nodes on the right subtree are greater than the parent
+      + And the left subtree and right subtree are both *Binary Tree*
+   2. How to insert a node into a binary tree
+      1. If the node is null, then just assign the new node to the root
+      2. otherwise, compare the new value to the current value of current node.
+	 If the new value is less than or equal to the current value of current node
+	 then *move* to left subtree
+	 otherwise, *move* to right subtree
+	 
+   

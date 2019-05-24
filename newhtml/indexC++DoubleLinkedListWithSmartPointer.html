@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>The power of image</title>
+        <title>C++ Double Linked List With Smart Pointer</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
         <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -38,33 +38,107 @@
             <!-- Column 1 start -->
 
             <div class="mytitle">
-            Rotate 2d array closewise 90 degrees
+            Double Linked List with Smart Pointers
             </div>
             <div class="mytext">
-            Solution 1<br>
-            1. move from top layer to inner layer<br>
-            2. each layer shrinks one element from both ends<br>
+            Reimplement Double Linked List With Smart Pointers<br>
             </div>
+            <div class="highlight"><pre><span class="k">class</span> <span class="nc">Node</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="kt">int</span> <span class="n">data</span><span class="p">;</span>
+        <span class="n">Node</span><span class="p">(</span><span class="kt">int</span> <span class="n">data</span><span class="p">){</span>
+            <span class="k">this</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">prev</span><span class="p">;</span>
+        <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">next</span><span class="p">;</span>
+<span class="p">};</span>
 
-            <div class="mytext">
-            Solution 2:<br>
-            1. transpose the the array<br> 
-            2. reflect the array with the middle of vertical line<br> 
-            </div>
+<span class="k">class</span> <span class="nc">LinkedList</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">head</span><span class="p">;</span>
+        <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">tail</span><span class="p">;</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">LinkedList</span><span class="p">(){}</span>
 
+        <span class="kt">void</span> <span class="n">fun</span><span class="p">(){</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;fun()</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
 
-            <div class="mytitle">
-            Print spiral shape from given rectangle array
-            </div>
+        <span class="kt">void</span> <span class="n">append</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">node</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">head</span><span class="p">){</span>
+                <span class="n">head</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span>
+                <span class="n">tail</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                <span class="n">tail</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span>
+                <span class="n">node</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">=</span> <span class="n">tail</span><span class="p">;</span>
+                <span class="n">tail</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
 
-            <div class="mytext">
-            1. move from top layer to inner layer<br>
-            2. each layer shrinks one element from both ends
-            </div>
+        <span class="c1">// overload ostream </span>
+        <span class="k">friend</span> <span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">out</span><span class="p">,</span> <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">LinkedList</span><span class="o">&gt;</span> <span class="n">list</span><span class="p">){</span>
+           <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span> 
+           <span class="k">while</span><span class="p">(</span><span class="n">curr</span><span class="p">){</span>
+               <span class="n">out</span><span class="o">&lt;&lt;</span><span class="sc">&#39;[&#39;</span><span class="o">&lt;&lt;</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">data</span><span class="o">&lt;&lt;</span><span class="sc">&#39;]&#39;</span><span class="o">&lt;&lt;</span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+               <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+           <span class="p">}</span>
+           <span class="k">return</span> <span class="n">out</span><span class="p">;</span>
+        <span class="p">}</span>
 
+        <span class="kt">void</span> <span class="n">print</span><span class="p">(){</span>
+            <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+            <span class="k">while</span><span class="p">(</span><span class="n">curr</span><span class="p">){</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%d]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
+                <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="kt">bool</span> <span class="n">remove</span><span class="p">(</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">node</span><span class="p">){</span>
+            <span class="kt">bool</span> <span class="n">ret</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">node</span> <span class="o">&amp;&amp;</span> <span class="n">curr</span><span class="p">){</span>
+                <span class="k">while</span><span class="p">(</span><span class="n">curr</span><span class="p">){</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">curr</span> <span class="o">==</span> <span class="n">node</span><span class="p">){</span>
+                        <span class="k">if</span><span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">){</span>
+                            <span class="k">if</span><span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">){</span>
+                                <span class="c1">// [curr] </span>
+                                <span class="n">node</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
+                                <span class="n">head</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
+                                <span class="n">tail</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
+                            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                                <span class="c1">// [curr]-&gt;[] </span>
+                                <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">next</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+                                <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
+                                <span class="n">next</span><span class="o">-&gt;</span><span class="n">prev</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
+                                <span class="n">head</span> <span class="o">=</span> <span class="n">next</span><span class="p">;</span>
+                            <span class="p">}</span>
+                        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                            <span class="k">if</span><span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">){</span>
+                                <span class="c1">// []-&gt;[curr] </span>
+                                <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">prev</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">prev</span><span class="p">;</span>
+                                <span class="n">curr</span><span class="o">-&gt;</span><span class="n">prev</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
+                                <span class="n">prev</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span>
+                                <span class="n">tail</span> <span class="o">=</span> <span class="n">prev</span><span class="p">;</span>
+                            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                                <span class="c1">// []-&gt;[curr]-&gt;[]</span>
+                                <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">next</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+                                <span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">&gt;</span> <span class="n">prev</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">prev</span><span class="p">;</span>
+                                <span class="n">next</span><span class="o">-&gt;</span><span class="n">prev</span> <span class="o">=</span> <span class="n">prev</span><span class="p">;</span>
+                                <span class="n">prev</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">next</span><span class="p">;</span>
+                            <span class="p">}</span>
+                        <span class="p">}</span>
+                        <span class="n">ret</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+ 
             <div class="cen">
-            <img src="../image/rotatearray.png" width="40%" height="40%" /><br>
-            <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
+            <a href="https://github.com/bsdshell/cpp/tree/master/SmartPointer.cpp">Source Code</a>
             </div>
 
             <!-- Column 1 end -->
@@ -157,6 +231,7 @@
             </div>
         </div>
     </div>
+
 
     </body>
     </html>

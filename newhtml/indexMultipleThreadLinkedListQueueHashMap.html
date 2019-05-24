@@ -1,156 +1,137 @@
-
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
-    <head>
-        <title>C++ All children at K dist from a Node</title>
-        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
-        <meta name="robots" content="index, follow" />
-        <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
-        <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="../highlight.css">
-        <link rel="stylesheet" type="text/css" href="../style.css">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <script type="text/x-mathjax-config">
-              MathJax.Hub.Config({
-                extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-                jax: ["input/TeX","output/HTML-CSS"],
-                tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
-              });
-        </script>
-        <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
-    </head>
-    <body>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-66282017-2', 'auto');
-      ga('send', 'pageview');
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+    <title>Xfido.com</title>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
+    <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../highlight.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+          });
     </script>
-    <div class="mytitle">
-    Print all children k distance from given node in C++
-    </div>
-    <div class="mytext">
-    1. How we can translate a graph from two dimentional array or vice versa.<br>
-    The idea is simple: <br> 
-       The Graph is formed by nodes and edges <br>
-       Each edge is decided by two nodes <br>
-       It means we can use $[x, y]$ to define an edge <br>
-       Edge is just a weight<br>
-       Graph can be translated to two dimentional array from about idea.<br>
-
-    TODO: there is error on this code when k = 0 
-    </div> 
-    <pre class="prettyprint">
-    void kdistGraph(int** arr, int k, int h, int w){
-        if(k == 0){
-            std::cout<<"["<<h<<"]"<<std::endl;
-        }else if(k > 0){
-            for(int i=0; i< w; i++){
-                if(h != i && arr[h][i]){
-                    if(k - 1 == 0)
-                        std::cout<< "[" << i << "]" << std::endl;
-                    else if(k > 0)
-                        kdistGraph(arr, k-1, i, w);
-                }
-            }
-        }
+    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+</head>
+<body>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66282017-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<div class="colmask rightmenu">
+    <div class="colleft">
+        <div class="col1">
+        <!-- Column 1 start -->
+        <div class="mytitle">
+        Double Linked List with Smart Pointers
+        </div>
+        <div class="mytext">
+        Reimplement Double Linked List With Smart Pointers<br>
+        <img src="../image/cppstd.png" width="40%" height="40%" /><br>
+        <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
+        </div>
+        <!-- Column 1 end -->
+        </div>
+        <div class="col2">
         
-    }
-    </pre>
 
-    <div class="cen">
-    <img src="../image/graph_to_array.svg" width="10%" height="10%" /><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
     </div>
-
-    <div class="mytitle">
-    Print all children K distance from a Node in a Graph 
-    </div>
-
-    <div class="cen">
-    <img src="../image/kdistgraph.png" width="50%" height="50%" /><br>
-    <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
-    </div>
-    <div class="cen">
-    <img src="../image/maxweight.png" width="50%" height="50%" /><br>
-    </div>
-
-    <div class="mytitle">
-    Correct version in Java it handles when k is zero
-    </div>
-    <pre class="mytext">
-    When k = 0, it handles it separately if printPath()
-    </pre>
-    <pre class="prettyprint">
-     // /Users/cat/myfile/bitbucket/java/MinimumPath.java
-    // The method handles k = 0
-    public static void printPath(int[][] arr2d, int h, int w, int k){
-        if(arr2d[h][w] > 0){
-            if(k == 0)
-                Print.pl("[" + h + "][" + w + "]=" + arr2d[h][w]);
-            else {
-                allPaths(arr2d, w, k - 1);
-            }
-        }
-    }
-    // find all the paths that have length k
-    // if k == 0, then print the root node, if node has loop 
-    // if node has loop, it is trick => you can loop forever 
-    // (0) - 1 > (1) => [1][2] = 1
-    public static void allPaths(int[][] arr, int h, int k){
-        if(arr != null){
-            int height = arr.length;
-            int width  = arr[0].length;
-            for(int w = 0; w < width; w++){
-                if(h != w && arr[h][w] > 0){
-                    if(k == 0){
-                        Print.pl("[" + h + "][" + w + "]=" + arr[h][w]);
-                    }else{
-                        allPaths(arr, w, k - 1); 
-                    }
-                }
-            }
-        }
-    }
-    </pre>
-    <div class="mytitle">
-    Find the maximum weight path in k distances from a graph
-    </div>
-    <pre class="mytext">
-    The problem is similar to previous problem:
-    <strong>We need to find the maximum weight of all children when the distance is k</strong>
-
-    <span style="color:red; font-size:20px;">Algorithm:</span>
-    If the distance is equal to zero, 
-        then return maximum weight between current max weight and the weight of current node
-    else if the distance is less than k, 
-        recure each child for the current node with k - 1
-
-    <span style="color:red; font-size:20px;">Skeleton code:</span>
-    maxPath(int[][] arr, int h, int k)
-        int currMax = 0;
-        for(int r = 0; r < len; r++)
-            if(h != r && arr[h][r] > 0)
-                if( k == 0)
-                    return max(currMax, arr[h][r])
-                else
-                    return maxPath(arr, r, k - 1) 
-                
-            
-        return currMax;
-    </pre>
-    <pre class="prettyprint">
-
-    </pre>
-
-    </body>
-    </html>
-    
-
+</div>
 
 
 

@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>Check Prime Number Algorithm In Java</title>
+        <title>Fix Swap Two nodes in Binary Search Tree</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
         <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -36,35 +36,45 @@
         <div class="colleft">
             <div class="col1">
             <!-- Column 1 start -->
+
             <div class="mytitle">
-            Check Whether an Integer is prime
+            Swap two node in BST, and fix/correct it 
             </div>
             <div class="mytext">
+            1. Given a BST<br> 
+            2. Swap two nodes in the BST<br>
+            3. How to fix the BT to original BST<br>
+            Node: Use similar idea for isBST technic<br>
+            Pass the prev as argument so that prev and curr node can be compared<br>
             </div>
-            <div class="highlight"><pre><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">prime</span><span class="o">(</span><span class="kt">int</span> <span class="n">d</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="o">)</span>
-            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-        <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">d</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">d</span><span class="o">*</span><span class="n">d</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">)</span>
-            <span class="k">return</span> <span class="n">prime</span><span class="o">(</span><span class="n">d</span><span class="o">+</span><span class="mi">1</span><span class="o">,</span> <span class="n">n</span><span class="o">);</span>
-        <span class="k">else</span>
-            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="o">}</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isPrimeLoop</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span><span class="o">(</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="o">)</span>
-            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">d</span><span class="o">=</span><span class="mi">2</span><span class="o">;</span> <span class="n">d</span><span class="o">*</span><span class="n">d</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">;</span> <span class="n">d</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">d</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-    <span class="o">}</span>
+            <div class="highlight"><pre><span class="c1">// prev = NULL, pt = NULL</span>
+<span class="kt">void</span> <span class="nf">fixSwapNode</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">curr</span><span class="p">,</span> <span class="n">Node</span><span class="o">*</span> <span class="n">prev</span><span class="p">,</span> <span class="n">Node</span><span class="o">*</span> <span class="n">pt1</span><span class="p">,</span> <span class="n">Node</span><span class="o">*</span> <span class="n">pt2</span><span class="p">,</span> <span class="n">Node</span><span class="o">*</span> <span class="n">pt</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">pt</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+        <span class="n">pt</span> <span class="o">=</span> <span class="n">curr</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">curr</span><span class="p">){</span>
+        <span class="n">fixSwapNode</span><span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">prev</span><span class="p">,</span> <span class="n">pt1</span><span class="p">,</span> <span class="n">pt2</span><span class="p">,</span> <span class="n">pt</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">prev</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">pt1</span> <span class="o">==</span> <span class="nb">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">pt2</span> <span class="o">==</span> <span class="nb">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">prev</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">&gt;</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">){</span>
+                <span class="n">pt1</span> <span class="o">=</span> <span class="n">prev</span><span class="p">;</span>
+                <span class="n">pt2</span> <span class="o">=</span> <span class="n">curr</span><span class="p">;</span>
+            <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">pt1</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">pt2</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">prev</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">&gt;</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">){</span>
+                <span class="n">pt2</span> <span class="o">=</span> <span class="n">curr</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">fixSwapNode</span><span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">curr</span><span class="p">,</span> <span class="n">pt1</span><span class="p">,</span> <span class="n">pt2</span><span class="p">,</span> <span class="n">pt</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">pt</span> <span class="o">==</span> <span class="n">curr</span><span class="p">){</span>
+        <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">pt1</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+        <span class="n">pt1</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">pt2</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+        <span class="n">pt2</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
  
             <div class="cen">
-            <img src="../image/isprime.png" width="40%" height="40%" /><br>
-            <a href="https://github.com/bsdshell/xcode/tree/master/OneRotateBlockApp">Source Code</a>
+            <img src="../image/swaptwonode.png" width="60%" height="60%" /><br>
+            <img src="../image/swaptwonode2.png" width="60%" height="60%" /><br>
+            <a href="https://github.com/bsdshell/cpp/tree/master/SwapNode.cpp">Source Code</a>
             </div>
 
             <!-- Column 1 end -->

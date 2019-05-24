@@ -2,10 +2,10 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>OpenGL Vertex Array Triangle</title>
+        <title>Check Square Number in Java</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-        <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
+        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
+        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
         <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
@@ -36,22 +36,33 @@
         <div class="colleft">
             <div class="col1">
             <!-- Column 1 start -->
-
             <div class="mytitle">
-            Simple Vertex Array 
+            Check if a number is Square Number or not<br>
             </div>
-            <div class="mytext">
-            Simple Vertex Array 
+            <div class="mysubtitle">
+            We use the following basic fact about square number $\textbf{M}$<br>
             </div>
-            <div class="cen">
-            <img src="../image/simple_vertex_array.png" width="40%" height="40%" /><br>
-            </div>
+            \[
+                \textbf{M} = \textbf{p}_1^{2k_1} \times \textbf{p}_2^{2k_2} \times \dots \times \textbf{P}_n^{2k_n}  \quad k_i \in \mathbf{N}\\
+            \]
+            <pre class="codebg">
+                            public static boolean squareNumber(int n){
+                                int num = (int)Math.sqrt(n);
+                                List<Integer> list = Aron.allPrimes(num);
 
-            <div class="cen">
-            <a href="https://github.com/bsdshell/opengl/tree/master/simple_vertex_array.c">Source Code</a>
-            </div> 
-
-
+                                for (int i = 0; i < list.size(); i++) {
+                                    Integer p = list.get(i);
+                                    if (n % (p * p) == 0)
+                                        n = n / (p * p);
+                                }
+                                if(n == 1)
+                                    return true;
+                                else
+                                    return false;
+                            }
+            </pre>
+            
+                
             <!-- Column 1 end -->
             </div>
             <div class="col2">
@@ -142,6 +153,7 @@
             </div>
         </div>
     </div>
+
 
     </body>
     </html>

@@ -2,7 +2,7 @@
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
     <head>
-        <title>C++ Reverse Byte</title>
+        <title>C++ Single Linked List</title>
         <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
         <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
         <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
@@ -36,23 +36,92 @@
         <div class="colleft">
             <div class="col1">
             <!-- Column 1 start -->
+
             <div class="mytitle">
-            Fast Reverse Byte in C++ 
+            Single Linkded List  in C++
             </div>
-            <div class="highlight"><pre><span class="kt">int</span> <span class="nf">reverseBit</span><span class="p">(</span><span class="kt">int</span> <span class="n">b</span><span class="p">){</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mh">0xF0</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span> <span class="o">|</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mh">0x0F</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">;</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;b=[%x]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mh">0xCC</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span> <span class="o">|</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mh">0x33</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">;</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;b=[%x]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mh">0xAA</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span> <span class="o">|</span> <span class="p">(</span><span class="n">b</span> <span class="o">&amp;</span> <span class="mh">0x55</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;b=[%x]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">b</span><span class="p">;</span>
-<span class="p">}</span>
+            <div class="mytext">
+            1. Print<br>
+            2. Append<br>
+            3. Remove<br>
+            4. Count<br>
+            5. Reverse<br>
+            </div>
+            <div class="highlight"><pre><span class="k">class</span> <span class="nc">SLL</span><span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">head</span><span class="p">;</span>
+        <span class="n">SLL</span><span class="p">(){</span><span class="n">head</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;};</span>
+    <span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">append</span><span class="p">(</span><span class="kt">int</span> <span class="n">data</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">head</span><span class="p">){</span>
+            <span class="n">Node</span><span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+            <span class="k">while</span><span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">){</span>
+                <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">);</span> 
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kt">void</span> <span class="n">append</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">node</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">head</span><span class="p">){</span>
+            <span class="n">Node</span><span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+            <span class="k">while</span><span class="p">(</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">){</span>
+                <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span> 
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kt">void</span> <span class="n">print</span><span class="p">(){</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">curr</span><span class="p">){</span>
+            <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;[&quot;</span><span class="o">&lt;&lt;</span><span class="n">curr</span><span class="o">-&gt;</span><span class="n">data</span><span class="o">&lt;&lt;</span><span class="s">&quot;]&quot;</span><span class="o">&lt;&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+            <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">count</span><span class="p">(){</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">curr</span><span class="p">){</span>
+            <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">void</span> <span class="n">remove</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span> <span class="n">node</span><span class="p">){</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">curr</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">node</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">){</span>
+            <span class="n">Node</span><span class="o">*</span> <span class="n">prev</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+            <span class="n">Node</span><span class="o">*</span> <span class="n">right</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+            <span class="k">while</span><span class="p">(</span><span class="n">curr</span><span class="p">){</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">curr</span> <span class="o">==</span> <span class="n">node</span><span class="p">){</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">prev</span><span class="p">){</span>
+                        <span class="n">prev</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="n">right</span><span class="p">;</span>
+                        <span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+                    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                        <span class="n">head</span> <span class="o">=</span> <span class="n">right</span><span class="p">;</span>
+                        <span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="k">delete</span> <span class="n">curr</span><span class="p">;</span>
+                    <span class="n">curr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+                <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+                    <span class="n">prev</span> <span class="o">=</span> <span class="n">curr</span><span class="p">;</span>
+                    <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">curr</span><span class="p">)</span>
+                        <span class="n">right</span> <span class="o">=</span> <span class="n">curr</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+<span class="p">};</span>
 </pre></div>
  
             <div class="cen">
-            <img src="../image/cppstd.png" width="40%" height="40%" /><br>
-            <a href="https://github.com/bsdshell/cpp/tree/master/ReverseBitOrder.cpp">Source Code</a>
+            <img src="../image/singlelinkedlist.png" width="40%" height="40%" /><br>
+            <a href="https://github.com/bsdshell/cpp/tree/master/SingleLinkedList.cpp">Source Code</a>
             </div>
 
             <!-- Column 1 end -->

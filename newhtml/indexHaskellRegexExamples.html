@@ -1,189 +1,181 @@
-
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
-    <head>
-        <title>Print all Permutation of String Length in Java</title>
-        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-        <meta name="description" content="Surface, Curve, Algorithm, Geometry, Algebra" />
-        <meta name="keywords" content="Surface, Curve, Algorithm, Geometry, Algebra" />
-        <meta name="robots" content="index, follow" />
-        <link rel="shortcut icon" href="/favicon.ico" type="../image/x-icon" />
-        <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
-        <link rel="stylesheet" type="text/css" href="../highlight.css">
-        <link rel="stylesheet" type="text/css" href="../style.css">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <script type="text/x-mathjax-config">
-              MathJax.Hub.Config({
-                extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-                jax: ["input/TeX","output/HTML-CSS"],
-                tex2jax: {inlineMath: [["$","$"],["\(","\)"]]}
-              });
-            </script>
-        <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
-    </head>
-    <body>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-66282017-2', 'auto');
-      ga('send', 'pageview');
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<head>
+    <title>$title</title>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
+    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
+    <meta name="robots" content="index, follow" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../highlight.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+            jax: ["input/TeX","output/HTML-CSS"],
+            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+          });
     </script>
-
-    <div id="header">
-    </div>
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-                <!-- Column 1 start -->
-                <div class="mytextbox">
-                    <p>
-                    Put your stuff here  
-                    </p>
-                </div>
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-        </div>
-    </div>
-
-
-    </body>
-    </html>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+</head>
+<body>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66282017-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<div class="myclass">
+<div class="mytitle">
+Replace and Search word in boundary
+</div>
+
+<pre class="mytext">
+Haskell Regex.POSIX is not supported 'word boundary'
+use package: Text.RE.TDFA.String instead
+
+-- /Users/cat/myfile/bitbucket/haskell/regexExample.hs 
+</pre>
+
+<pre class="prettyprint">
+--{-# LANGUAGE QuasiQuotes                      #-}
+--import Text.RE.TDFA.String
+main = do 
+        -- replace word boundary, replace one, and replace all
+        let s1 = "mydog dog dog (dog)" ?=~/ [ed|${adr}(\<dog\>):?///< div class="dog">${adr}< /div> |]
+        let s2 = "mydog dog dog (dog)" *=~/ [ed|${adr}(\<dog\>):?///< div class="dog">${adr}< /div> |]
+        putStrLn $ "replace one: =>[" ++ s1 ++ "]"
+        putStrLn $ "replace all: =>[" ++ s2 ++ "]"
+</pre> 
+
+<div class="mytitle">
+Use =~
+</div>
+<pre class="prettyprint">
+re1 = "my food"         =~ "foo"::Bool                      -- True
+re2 = "my food foo"     =~ "foo"::String                    -- "foo"
+re3 = "my foolish fool" =~ "foo."::[[String]]               -- [["fool"],["fool"]]
+re4 = "my foolish fool" =~ "foo."::(String, String, String) -- ("my ","fool","ish fool")
+</pre> 
+
+<div class="mytext">
+        "mydog dog-- dog pig cat dog fox" => "mydog [dog]-- [dog] pig cat [dog] fox"
+</div>
+<pre class="prettyprint tinyfont">
+        -- word boundary, search word and replace
+        let s = "mydog dog-- dog pig cat dog fox"
+        searchReplace s word "[\\0]"
+</pre>
+<div class="mytext">
+        "http://google.com" => http://[google].com
+</div>
+<pre class="prettyprint tinyfont">
+        let r1 = mkRegex "google"
+        let input = "http://google.com"
+        let replace1 = "[\\0]"
+        putStrLn $ subRegex r1 input replace1            -- http://[google].com
+</pre>
+
+<div class="mytext">
+        "banana" => ba[nana] {na} 
+</div>
+<pre class="prettyprint tinyfont">
+        let r3 = mkRegex "(na)+"
+        putStrLn $ subRegex r3 "banana" "[\\0] {\\1}"
+</pre>
+
+<div class="mytext">
+        "http://file.pdf" => [http://file.PDF]
+</div>
+<pre class="prettyprint tinyfont">
+        let r5 = mkRegex ".*\\.pdf"
+        putStrLn $ subRegex r5 "http://file.pdf" "[\\0]" -- [http://file.PDF]
+</pre>
+
+<div class="mytext">
+        "root_admin.last-name@gmail.com" => [root_admin.last-name@gmail.com] {root_admin.last-name} {gmail.com}
+</div>
+<pre class="prettyprint tinyfont">
+        -- capture group, capture email address
+        let r6 = mkRegex "([A-Za-z._-]+)+@(([a-z])+\\.([a-z]{2,4}))"
+        putStrLn $ subRegex r6 "root_admin.last-name@gmail.com"   "7. [\\0] {\\1}{\\2}"
+</pre>
+<div class="mytext">
+        "/home/user/file/mybook.PDF" => "/home/user/file/mybook.PDF" 
+</div>
+<pre class="prettyprint tinyfont">
+        let r7 = mkRegexWithOpts "(.*\\.pdf)" True False
+        let input = "/home/user/file/mybook.PDF"
+        let callMeMaybe = matchRegex r7 input
+</pre>
+<div class="mytext">
+        "/home/user/file/mybook.PDF" => ".PDF" 
+</div>
+<pre class="prettyprint tinyfont">
+        let r7 = mkRegexWithOpts "(\\.pdf)" True False
+        let input = "/home/user/file/mybook.PDF"
+        let callMeMaybe = matchRegex r7 input
+</pre>
+
+<div class="mytext">
+        "779-123-4483" => "[416-123-4483]"
+</div>
+<pre class="prettyprint tinyfont">
+        -- capture phone number
+        let p1 = mkRegex "[0-9]{3}[ -]?[0-9]{3}[ -]?[0-9]{4}" 
+        -- replace string
+        putStrLn $ subRegex p1 "779-123-4483"  "[\\0]"    -- [416-123-4483]
+</pre>
+<div class="mytext">
+        "PaloAlto:MountainView" => ["PaloAlto","MountainView"]
+</div>
+<pre class="prettyprint tinyfont">
+        -- split Regex
+        print $ splitRegex(mkRegex ":") "PaloAlto:MountainView" -- ["PaloAlto","MountainView"]
+</pre>
+
+<div class="mytext">
+        capture function in ObjectiveC
+</div>
+<pre class="prettyprint tinyfont">
+        -- capture function in ObjectiveC
+        let me = mkRegex "(-|\\+)[[:space:]]*\\([[:space:]]*[[:print:]]+[[:space:]]*\\)[[:space:]]*[[:graph:]]+\
+        \[[:space:]]*:?[[:space:]]*([[:space:]]*[[:graph:]]+[[:space:]]*:[[:space:]]*[[:graph:]]+[[:space:]]*)*"
+
+        putStrLn $ subRegex me "- (NSstring*) swap :" "[\\0]" -- [- (NSstring*) swap :]
+</pre>
+
+<div class="mytext">
+        capture function in ObjectiveC
+</div>
+<pre class="prettyprint tinyfont">
+        putStrLn $ subRegex me "- (NSstring*) method:(Integer)num width:(Integer)width\ 
+        \ height:(NSString*)str" "12. [\\0]"
+        -- [- (NSstring*) method:(Integer)num width:(Integer)width  height:(NSString*)str]
+</pre>
+<div class="mytext">
+        match count 
+</div>
+<pre class="prettyprint tinyfont">
+        let r7 = mkRegex "([A-Za-z]+)" 
+        let count = matchCount r7 "haskell java C++ ObejctiveC aa#" 
+        putStrLn $ "count = " ++ show count
+</pre>
+<div class="mytext">
+        match test 
+</div>
+<pre class="prettyprint tinyfont">
+        let r8 = mkRegex "[a-z]+"
+        let bo = matchTest r8 "22323"
+        putStrLn $ "Is matched = " ++ show bo -- return True
+</pre>
+
+</div>
+</body>
+</html>
 
