@@ -103,6 +103,10 @@
     + Balance brackets.
     + Rotate spiral rectangle.
     + Insert a node into a binary tree.
+    + Find all the nodes that are distance k from a given node
+    + Check whether a node is in the binary tree or not
+    + Single linked, append, addFront and remove operations, it seems to be working
+
 
 *** TODO Take a look at the Algebraic Data Type and Visitor pattern in Java
     [[https://www.ahnfelt.net/monads-forget-about-bind/][URL]]
