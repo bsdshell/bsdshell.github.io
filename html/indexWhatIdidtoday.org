@@ -65,6 +65,42 @@
      2. Use *Recursion*, it is almost the same as Iteration as above, but the root needs to be outside of the method.
    + Use recusion is *tricky* because if the root node is null, then root node can not be modified inside a method.
    + The best way to do is to use *Iteration*
+     #+BEGIN_SRC java
+          // Iteration
+       public static void insert(Node node){
+   	   Node curr = root;
+   	   // left subtree
+   	   if(node.data <= curr.data){
+   	       if(curr.left == null)
+   		   curr.left = node;
+   	       else
+   		   curr = curr.left;
+   	   }else{
+   	       // right subtree
+   	       if(curr.right == null)
+   		   curr.right = node;
+   	       else
+   		   curr = curr.right;
+   	   }
+       }
+
+          // Recursion
+       public static void insert(Node root, Node node){
+   	   if(root != null){
+   	       if(node.data <= root.data){
+   		   if(root.left == null)
+   		       root.left = node;
+   		   else
+   		       insert(root.left, node);
+   	       }else{
+   		   if(root.right == null)
+   		       root.right = node;
+                   else
+                       insert(root.right, node);
+   	       }
+   	   }
+       }
+     #+END_SRC
    
       
       
@@ -106,7 +142,13 @@
     + Find all the nodes that are distance k from a given node
     + Check whether a node is in the binary tree or not
     + Single linked, append, addFront and remove operations, it seems to be working
-
+    + Added html file filter to genehtml.hs to avoid error when genehtml reads non-html file.
+    + Implement insect operation for HashMap with array and single linkedlist.
+      1. Remember to increase the count if a node is inserted
+      2. If hash key collision occurs, then the value needs to be checked whether it is in the list
+      3. When walking through the list, previous node need to be kept.
+      4. Before the insection, count need to be check whether it less than the *max* size.
+    + Implement HashMap insect operation using binary tree.
 
 *** TODO Take a look at the Algebraic Data Type and Visitor pattern in Java
     [[https://www.ahnfelt.net/monads-forget-about-bind/][URL]]

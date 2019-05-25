@@ -2,7 +2,7 @@
    Shell script is powerful if you could remember all the weird syntax. 
    Here is the example to show how to use Array in Shell script.
    Note: readarray only works in Bash 4.x, check your version: bash --version   
-   0. Array in Shell script 1
+   1. Array in Shell script 1
       #+BEGIN_SRC bash
       string='Paris, France, Europe';
       echo $string
@@ -18,13 +18,13 @@
       done      
       #+END_SRC
    
-   1. count number of argument
+   2. count number of argument
       #+BEGIN_SRC bash
       echo "$#"
       var="string"
       #+END_SRC
       
-   2. array in bash                    
+   3. array in bash                    
       #+BEGIN_SRC bash                 
       arr=(                            
       "dog"                            
@@ -37,46 +37,45 @@
       done                             
       #+END_SRC                        
    
-   3. if statement                                                                    
+   4. if statement                                                                    
       #+BEGIN_SRC bash                                                                
       var="$#"                                                                        
       if [ "$var" -eq 2 ]; then echo "two arguments"; else echo "not two argument"; fi
       #+END_SRC                                                                       
 
-   3. Iterate all files with one line *shell command*
+   5. Iterate all files with one line *shell command*
       #+BEGIN_SRC bash
       for name in $(ls *); do echo $name; done
       #+END_SRC
-   4. String matches
+   6. String matches
       #+BEGIN_SRC bash
       for name in $(ls *); do if [[ $name == *"txt"* ]]; then echo $name; else echo ""; fi 
       #+END_SRC
-   5. Use regex match =~
+   7. Use regex match =~
       #+BEGIN_SRC bash
       if [[ $name =~ "txt" ]]; then echo $name; else echo ""; fi
       #+END_SRC
-   6. grep string that contains "txt"
+   8. grep string that contains "txt"
       #+BEGIN_SRC bash
       if echo $name | grep -q "txt"; then echo $name; else echo ""; fi
       #+END_SRC
-   7. grep string its suffix is "txt", e.g. "file.txt"
+   9. grep string its suffix is "txt", e.g. "file.txt"
       #+BEGIN_SRC bash
       if echo $name | grep -q "txt$" then echo $name; else echo ""; fi
       #+END_SRC
-   8. grep string its prefix is "file", e.g. "file.txt"
-      #+BEGIN_SRC bash
-      # grep -q => no output
-      if echo $name | grep -q "^file" then echo $name; echo echo ""; fi
-      #+END_SRC
-   9. grep in POSIX basic and extended regular expression
-      #+BEGIN_SRC bash
-      # basic regex
-      ps aux | grep --color 'wai\|filewatcher'
-      # extended regex
-      ps aux | grep --color -E 'wai|filewatcher'
-      #+END_SRC
-
-   10. Repeat shell command with *watch*
+   10. grep string its prefix is "file", e.g. "file.txt"
+       #+BEGIN_SRC bash
+       # grep -q => no output
+       if echo $name | grep -q "^file" then echo $name; echo echo ""; fi
+       #+END_SRC
+   11. grep in POSIX basic and extended regular expression
+       #+BEGIN_SRC bash
+       # basic regex
+       ps aux | grep --color 'wai\|filewatcher'
+       # extended regex
+       ps aux | grep --color -E 'wai|filewatcher'
+       #+END_SRC
+   12. Repeat shell command with *watch*
        If you want to get constantly update information or stream data *shell commands* then you can use *watch* repeats your commands
        For Exmple, I want to monitor my system *disk usage*
       #+BEGIN_SRC bash
@@ -86,9 +85,11 @@
       #+BEGIN_SRC bash
       watch "ps aux | grep --color httpd"
       #+END_SRC
-
-   
-
+   13. Grep inversion
+       #+BEGIN_SRC bash
+         # find all non java file
+	 grep -v -E '.java$'
+       #+END_SRC
 ** Grep Examples
    0. grep content of file with specified file name extension, show full file name
       #+BEGIN_SRC bash
