@@ -125,7 +125,8 @@
     CLOSED: [2019-05-21 Tue 16:39]
 *** TODO Need to add more detail to resume
 *** TODO Buy a new pot and buy some rice
-*** TODO Open new paypal account
+*** DONE Open new paypal account
+    CLOSED: [2019-05-27 Mon 12:32]
 *** DONE Add color to wai.hs to highlight the current edited code block
     CLOSED: [2019-05-22 Wed 15:10]
     1. when current code block is clicked, change the background of pre
@@ -148,7 +149,86 @@
       2. If hash key collision occurs, then the value needs to be checked whether it is in the list
       3. When walking through the list, previous node need to be kept.
       4. Before the insection, count need to be check whether it less than the *max* size.
-    + Implement HashMap insect operation using binary tree.
+    + Implement *HashMap* insect operation using binary tree.
+    + Check a binary tree is whether a *BST*.
+      1. Use backtrack.
+      2. Use *BST* definition.
+    + Added PriorityQueue code example, ~java.util.PriorityQueue~, and use lambda for comparatoin,.
+      Add code using ~Comparable<Person>~ and ~Comparator<Person>~
+      #+BEGIN_SRC java
+	class Person{
+	   String firstName;
+	   String lastName;
+	   public Person(String f, String l){
+	      this.firstName = f;
+	      this.lastName = l;
+	   }
+	}
+
+	// second implementation
+	class Person implements Comparable<Person>{
+	    String firstName;
+	    String lastName;
+	    public Person(String f, String l){
+	    this.firstName = f;
+	    this.lastName = l; 
+	   }
+	   public int compareTo(Person other){
+	     return this.firstName.compareTo(other.firstName);
+	   }
+	}
+
+	PriorityQueue queue = new PriorityQueue((\a, b) -> a.firstName.compareTo(b.firstName));
+	queue.add(new Person("David", "lee"));
+	queue.add(new Person("Tommy", "kee"));
+	queue.add(new Person("Jacky", "kuu"));
+	while(!queue.isEmpty()){
+	   Person p = queue.remove();
+	   System.out.print(p.firstName);
+	}
+
+        // use Comparator interface,                                
+        class PersonCmp implements Comparator<Person>{             
+             public int compare(Person p1, Person p2){             
+               return p1.firstName.compareTo(p2.firstName);        
+             }                                                     
+        }                                                          
+        Collections.sort(new PersonCmp());                         
+      #+END_SRC
+    + Added merge two sorted lists.
+    + Added Lease Recent Used code.
+    + Added Double linked List, delete, append and insertFront.
+    + Read file line by line and split them.
+    + Serialize and deserialize binary tree with map.
+      + Use map with \( k=0, 2*k + 1, 2*k + 2, \dots \) to index binary node.
+      + File, BufferedReader, BufferedWriter, ~BufferedReader br = new BufferedReader(new FileReader(fname))~
+      + Use *preorder* traveral to write all the keys and nodes to file.
+	#+BEGIN_SRC java
+	  public void serialize(Node curr, Integer k, BufferedWriter bw){
+	      // preorder traveral
+	      // handle IOException here
+	      // k=0, k=1, k=2, k=3 ...
+	      bw.write(k + " " + curr.data + "\n");
+	      serialize(curr.left, 2*k + 1);
+	      serialize(curr.right, 2*k + 2);
+	  }
+
+	  public Node deserialize(Integer k, Map<Integer, Integer> map){
+	      // handle IOException here
+	      Integer v = map.get(k);
+	      if(v != null){
+		  Node root = new Node(v);
+		  root.left = deserialize(2*k + 1, map);
+		  root.right = deserialize(2*k + 2, map);
+		  return root;
+	      }
+	      return null;
+	  }
+          // other implementation, use iteration for preorder traveral to read node from file, and build the tree
+
+	#+END_SRC
+      + Use *preorder* traveral from map and build a tree *from bottom and up*.
+   						    
 
 *** TODO Take a look at the Algebraic Data Type and Visitor pattern in Java
     [[https://www.ahnfelt.net/monads-forget-about-bind/][URL]]
@@ -159,3 +239,10 @@
    
 
 
+*** DONE Add Applescript to send notification when filewatcher detects some txt file inside password folder.
+    CLOSED: [2019-05-28 Tue 08:40]
+*** DONE Finally figure out how to use multiple putStrLn in Agda
+    CLOSED: [2019-05-28 Tue 08:40]
+    
+*** DONE Refactor filewatcher.hs, remove IORef, clean up useless code
+    CLOSED: [2019-05-28 Tue 15:45]

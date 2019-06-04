@@ -1,0 +1,97 @@
+*** What is Agda?
+    1. Agda is dependent type language.
+    2. You can use almost any unicode as operator.
+    3. Agda is similar to Haskell, but it is fully dependent type.
+    4. If you know a bit of Haskell, then it is easy to get start.
+
+*** The Con of Agda.
+    1. It is painful to install.
+    2. You need Emacs to input those unicode characters.
+    3. You never expect write *Agda* code on your day job.
+    4. *Agda* is painfully slow.
+
+*** The Pro of Agda.
+    1. You learn some the most fundamental stuff from Agda, e.g define your own *Nature* number
+    2. You can use lots of *unicode* characters in your code, make your code looks pretty.
+
+*** Define your own *Nature* number
+    1. Nature number can be defined as 0, (0 + 1), (0 + 1 + 1), ⋯ etc.
+       ∀ a ∈ ℕ ∣ suc a ∈ ℕ
+    2. We can use *Peano numbers* to represent *Nature number*. Peano numbers need only a zero and a successor function to represent it.
+       In Haskell, we can define as following.
+       #+BEGIN_SRC haskell
+	 data Nat = Zero | Suc Nat
+           add Zero b = b
+	   add (Suc a) b = Suc (add a b)
+       #+END_SRC
+    3. In Agda
+       #+BEGIN_SRC agda2
+	 data Nat : Set where
+	   zero : Nat
+	   suc : Nat -> Nat
+
+	   add Nat -> Nat -> Nat
+	   add zero b = b
+	   add (Suc a) b = Suc (add a  b)
+       #+END_SRC
+    4. Define a list in Haskell
+       #+BEGIN_SRC haskell
+	 data List a = Nil | Cons a (List a)
+       #+END_SRC
+       + ~List = []~ is type constructor with ~kind * -> kind *~
+       + ~List a = [a] ~ is type with ~kind *~
+       + ~Nil = []~ is value with polymorphic types ~List a~ and ~[a]~ respectively
+       + ~Cons = :~ is value constructor with ~kind * -> kind *~
+    5. Define a list in Agda
+       #+BEGIN_SRC agda2
+	 data List (A : Set) : Set where
+	 [] : A
+         _::_ : A → List A → List A
+       #+END_SRC
+    6. What does it mean for above the code?
+       + ~Set~ is type of type in *Agda*
+       + ~A : Set~, it means A ∈ Set or A is type of ~Set~
+       + ~List (A : Set) : Set~, it means type constructor *List* needs type A is also a Set
+       + ~_::_~, it means *append* a element ~A~ to a ~List A~ and return a ~List A~
+    7. Let see how to define Maybe in Agda, first, we review *Haskell* Maybe
+       #+BEGIN_SRC haskell
+	 data Maybe a = Nothing | Just a
+       #+END_SRC
+       + ~Maybe~ is just *type constructor* with ~kind * -> kind * ~
+       + ~Noting~ is *value constructor* with type ~kind * ~
+       + ~Just a~ is *value constructor* with type ~kind * -> kind * ~
+       + ~Maybe a~ is type with ~kind *~
+    8. Maybe in Agda
+       #+BEGIN_SRC agda2
+	 data Maybe (A : Set) : Set where
+	   nothing : Maybe A
+           just : A -> Maybe A
+       #+END_SRC
+       + ~Maybe~ is just *type constructor* with ~Set -> Maybe Set~
+    9. *head* function in Haskell
+       #+BEGIN_SRC haskell
+	 head::[a] -> Maybe a
+	 head [] = Nothing
+         head x:cs = Just x
+       #+END_SRC
+    10. *head* function in Agda
+	#+BEGIN_SRC agda2
+	  head : {A : Set} -> List A -> Maybe A
+          head [] = nothing
+          head (x :: cs) = just x
+	#+END_SRC
+    11. *length* function in Agda
+	#+BEGIN_SRC agda2
+	length : {A : Set} -> List A -> ℕ
+        length [] = zero
+        length (x :: cs) = suc (length cs)
+	#+END_SRC
+    12. map function in Agda
+        #+BEGIN_SRC agda2
+	  map {A B : Set} -> (A -> B) -> List A -> List B
+	  map f [] = []
+	  map f (x :: cs) = f x :: map f cs
+	#+END_SRC
+
+    
+

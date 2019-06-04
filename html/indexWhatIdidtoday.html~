@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-05-24 Fri 17:41 -->
+<!-- 2019-05-30 Thu 15:29 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -226,6 +226,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -233,36 +255,39 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgfd24e5e">1. What I did today</a></li>
-<li><a href="#orgea7e565">2. Added Javascript to edit code block</a></li>
-<li><a href="#orgbb89d20">3. MacOS automatically update screws up <b>tmux</b></a></li>
-<li><a href="#org334ca33">4. Haskell show, print and putStr or putStrLn</a></li>
-<li><a href="#org6e94c5f">5. Add wai-uil to wai.hs Server for redirecting response URI</a></li>
-<li><a href="#org7cab0e4">6. Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.</a>
+<li><a href="#org3ca7fc0">1. What I did today</a></li>
+<li><a href="#org40884ee">2. Added Javascript to edit code block</a></li>
+<li><a href="#org620055a">3. MacOS automatically update screws up <b>tmux</b></a></li>
+<li><a href="#org3ea7148">4. Haskell show, print and putStr or putStrLn</a></li>
+<li><a href="#org59344cc">5. Add wai-uil to wai.hs Server for redirecting response URI</a></li>
+<li><a href="#org4a34964">6. Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.</a>
 <ul>
-<li><a href="#org455e66c">6.1. <span class="done DONE">DONE</span> hair cut</a></li>
-<li><a href="#org8cc7c71">6.2. <span class="done DONE">DONE</span> fix add, update and delete buttons on wai.hs</a></li>
-<li><a href="#orgec811a2">6.3. <span class="done DONE">DONE</span> Do my laundry</a></li>
-<li><a href="#org7ea8a39">6.4. <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</a></li>
-<li><a href="#orged13199">6.5. <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</a></li>
-<li><a href="#org6edeba2">6.6. <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</a></li>
-<li><a href="#org2aee04a">6.7. <span class="done DONE">DONE</span> pushall respositories to bitbucket</a></li>
-<li><a href="#org5184376">6.8. <span class="done DONE">DONE</span> fix resume a bit</a></li>
-<li><a href="#orgc8a6e71">6.9. <span class="todo TODO">TODO</span> Need to add more detail to resume</a></li>
-<li><a href="#org22e0506">6.10. <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</a></li>
-<li><a href="#org44005e2">6.11. <span class="todo TODO">TODO</span> Open new paypal account</a></li>
-<li><a href="#orgf9201f2">6.12. <span class="done DONE">DONE</span> Add color to wai.hs to highlight the current edited code block</a></li>
-<li><a href="#orga6e13d6">6.13. <span class="done DONE">DONE</span> Send out more resumes</a></li>
-<li><a href="#org9adb740">6.14. <span class="todo TODO">TODO</span> Do some java coding</a></li>
-<li><a href="#org715e881">6.15. <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</a></li>
-<li><a href="#orgb24462a">6.16. <span class="done DONE">DONE</span> Send out more resume,  more to EA</a></li>
+<li><a href="#org970e333">6.1. <span class="done DONE">DONE</span> hair cut</a></li>
+<li><a href="#orgf4625da">6.2. <span class="done DONE">DONE</span> fix add, update and delete buttons on wai.hs</a></li>
+<li><a href="#org265e20f">6.3. <span class="done DONE">DONE</span> Do my laundry</a></li>
+<li><a href="#org665c373">6.4. <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</a></li>
+<li><a href="#org54b1e63">6.5. <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</a></li>
+<li><a href="#org54d23c6">6.6. <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</a></li>
+<li><a href="#orgbbd1e5f">6.7. <span class="done DONE">DONE</span> pushall respositories to bitbucket</a></li>
+<li><a href="#org062796a">6.8. <span class="done DONE">DONE</span> fix resume a bit</a></li>
+<li><a href="#org0f6a211">6.9. <span class="todo TODO">TODO</span> Need to add more detail to resume</a></li>
+<li><a href="#org5071654">6.10. <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</a></li>
+<li><a href="#org7857867">6.11. <span class="done DONE">DONE</span> Open new paypal account</a></li>
+<li><a href="#orga2dcdb1">6.12. <span class="done DONE">DONE</span> Add color to wai.hs to highlight the current edited code block</a></li>
+<li><a href="#orgc89ab3e">6.13. <span class="done DONE">DONE</span> Send out more resumes</a></li>
+<li><a href="#org151cdba">6.14. <span class="todo TODO">TODO</span> Do some java coding</a></li>
+<li><a href="#org880c243">6.15. <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</a></li>
+<li><a href="#org0f2c414">6.16. <span class="done DONE">DONE</span> Send out more resume,  more to EA</a></li>
+<li><a href="#org10ac092">6.17. <span class="done DONE">DONE</span> Add Applescript to send notification when filewatcher detects some txt file inside password folder.</a></li>
+<li><a href="#orgd9a71c9">6.18. <span class="done DONE">DONE</span> Finally figure out how to use multiple putStrLn in Agda</a></li>
+<li><a href="#org60764e4">6.19. <span class="done DONE">DONE</span> Refactor filewatcher.hs, remove IORef, clean up useless code</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgfd24e5e" class="outline-2">
-<h2 id="orgfd24e5e"><span class="section-number-2">1</span> What I did today</h2>
+<div id="outline-container-org3ca7fc0" class="outline-2">
+<h2 id="org3ca7fc0"><span class="section-number-2">1</span> What I did today</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li><p>
@@ -292,8 +317,8 @@ It causes lots of confusing when you load your code inside ghci</li>
 </div>
 </div>
 
-<div id="outline-container-orgea7e565" class="outline-2">
-<h2 id="orgea7e565"><span class="section-number-2">2</span> Added Javascript to edit code block</h2>
+<div id="outline-container-org40884ee" class="outline-2">
+<h2 id="org40884ee"><span class="section-number-2">2</span> Added Javascript to edit code block</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li>Added Javascript to listen to onclick event, e.g. enable/disable TextArea visibility</li>
@@ -305,8 +330,8 @@ It causes lots of confusing when you load your code inside ghci</li>
 </div>
 </div>
 
-<div id="outline-container-orgbb89d20" class="outline-2">
-<h2 id="orgbb89d20"><span class="section-number-2">3</span> MacOS automatically update screws up <b>tmux</b></h2>
+<div id="outline-container-org620055a" class="outline-2">
+<h2 id="org620055a"><span class="section-number-2">3</span> MacOS automatically update screws up <b>tmux</b></h2>
 <div class="outline-text-2" id="text-3">
 <ol class="org-ol">
 <li><b>tmux</b> can not start up
@@ -337,8 +362,8 @@ The key is the current <b>word</b> under current <b>cursor</b></li>
 </div>
 </div>
 
-<div id="outline-container-org334ca33" class="outline-2">
-<h2 id="org334ca33"><span class="section-number-2">4</span> Haskell show, print and putStr or putStrLn</h2>
+<div id="outline-container-org3ea7148" class="outline-2">
+<h2 id="org3ea7148"><span class="section-number-2">4</span> Haskell show, print and putStr or putStrLn</h2>
 <div class="outline-text-2" id="text-4">
 <ol class="org-ol">
 <li><p>
@@ -353,8 +378,8 @@ show, print and putStr <code>"dog\\"</code>,
 </ol>
 </div>
 </div>
-<div id="outline-container-org6e94c5f" class="outline-2">
-<h2 id="org6e94c5f"><span class="section-number-2">5</span> Add wai-uil to wai.hs Server for redirecting response URI</h2>
+<div id="outline-container-org59344cc" class="outline-2">
+<h2 id="org59344cc"><span class="section-number-2">5</span> Add wai-uil to wai.hs Server for redirecting response URI</h2>
 <div class="outline-text-2" id="text-5">
 <ol class="org-ol">
 <li>Install wai-uti with <code>cabal install wai-uti</code></li>
@@ -364,8 +389,8 @@ show, print and putStr <code>"dog\\"</code>,
 </div>
 </div>
 
-<div id="outline-container-org7cab0e4" class="outline-2">
-<h2 id="org7cab0e4"><span class="section-number-2">6</span> Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.</h2>
+<div id="outline-container-org4a34964" class="outline-2">
+<h2 id="org4a34964"><span class="section-number-2">6</span> Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li>Two ways to solve the problem.
@@ -428,63 +453,65 @@ The best way to do is to use <b>Iteration</b>
 
 
 
-<div id="outline-container-org455e66c" class="outline-3">
-<h3 id="org455e66c"><span class="section-number-3">6.1</span> <span class="done DONE">DONE</span> hair cut</h3>
+<div id="outline-container-org970e333" class="outline-3">
+<h3 id="org970e333"><span class="section-number-3">6.1</span> <span class="done DONE">DONE</span> hair cut</h3>
 <div class="outline-text-3" id="text-6-1">
 <ol class="org-ol">
 <li>17$ for the stupid hair cut.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org8cc7c71" class="outline-3">
-<h3 id="org8cc7c71"><span class="section-number-3">6.2</span> <span class="done DONE">DONE</span> fix add, update and delete buttons on wai.hs</h3>
+<div id="outline-container-orgf4625da" class="outline-3">
+<h3 id="orgf4625da"><span class="section-number-3">6.2</span> <span class="done DONE">DONE</span> fix add, update and delete buttons on wai.hs</h3>
 <div class="outline-text-3" id="text-6-2">
 <ol class="org-ol">
 <li>There is some issue in with runSh "mv" to rename file, after remove "mv" it seems to be working</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgec811a2" class="outline-3">
-<h3 id="orgec811a2"><span class="section-number-3">6.3</span> <span class="done DONE">DONE</span> Do my laundry</h3>
+<div id="outline-container-org265e20f" class="outline-3">
+<h3 id="org265e20f"><span class="section-number-3">6.3</span> <span class="done DONE">DONE</span> Do my laundry</h3>
 <div class="outline-text-3" id="text-6-3">
 </div>
 </div>
-<div id="outline-container-org7ea8a39" class="outline-3">
-<h3 id="org7ea8a39"><span class="section-number-3">6.4</span> <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</h3>
+<div id="outline-container-org665c373" class="outline-3">
+<h3 id="org665c373"><span class="section-number-3">6.4</span> <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</h3>
 <div class="outline-text-3" id="text-6-4">
 </div>
 </div>
-<div id="outline-container-orged13199" class="outline-3">
-<h3 id="orged13199"><span class="section-number-3">6.5</span> <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</h3>
+<div id="outline-container-org54b1e63" class="outline-3">
+<h3 id="org54b1e63"><span class="section-number-3">6.5</span> <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</h3>
 <div class="outline-text-3" id="text-6-5">
 </div>
 </div>
-<div id="outline-container-org6edeba2" class="outline-3">
-<h3 id="org6edeba2"><span class="section-number-3">6.6</span> <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</h3>
+<div id="outline-container-org54d23c6" class="outline-3">
+<h3 id="org54d23c6"><span class="section-number-3">6.6</span> <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</h3>
 <div class="outline-text-3" id="text-6-6">
 </div>
 </div>
-<div id="outline-container-org2aee04a" class="outline-3">
-<h3 id="org2aee04a"><span class="section-number-3">6.7</span> <span class="done DONE">DONE</span> pushall respositories to bitbucket</h3>
+<div id="outline-container-orgbbd1e5f" class="outline-3">
+<h3 id="orgbbd1e5f"><span class="section-number-3">6.7</span> <span class="done DONE">DONE</span> pushall respositories to bitbucket</h3>
 <div class="outline-text-3" id="text-6-7">
 </div>
 </div>
-<div id="outline-container-org5184376" class="outline-3">
-<h3 id="org5184376"><span class="section-number-3">6.8</span> <span class="done DONE">DONE</span> fix resume a bit</h3>
+<div id="outline-container-org062796a" class="outline-3">
+<h3 id="org062796a"><span class="section-number-3">6.8</span> <span class="done DONE">DONE</span> fix resume a bit</h3>
 <div class="outline-text-3" id="text-6-8">
 </div>
 </div>
-<div id="outline-container-orgc8a6e71" class="outline-3">
-<h3 id="orgc8a6e71"><span class="section-number-3">6.9</span> <span class="todo TODO">TODO</span> Need to add more detail to resume</h3>
+<div id="outline-container-org0f6a211" class="outline-3">
+<h3 id="org0f6a211"><span class="section-number-3">6.9</span> <span class="todo TODO">TODO</span> Need to add more detail to resume</h3>
 </div>
-<div id="outline-container-org22e0506" class="outline-3">
-<h3 id="org22e0506"><span class="section-number-3">6.10</span> <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</h3>
+<div id="outline-container-org5071654" class="outline-3">
+<h3 id="org5071654"><span class="section-number-3">6.10</span> <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</h3>
 </div>
-<div id="outline-container-org44005e2" class="outline-3">
-<h3 id="org44005e2"><span class="section-number-3">6.11</span> <span class="todo TODO">TODO</span> Open new paypal account</h3>
+<div id="outline-container-org7857867" class="outline-3">
+<h3 id="org7857867"><span class="section-number-3">6.11</span> <span class="done DONE">DONE</span> Open new paypal account</h3>
+<div class="outline-text-3" id="text-6-11">
 </div>
-<div id="outline-container-orgf9201f2" class="outline-3">
-<h3 id="orgf9201f2"><span class="section-number-3">6.12</span> <span class="done DONE">DONE</span> Add color to wai.hs to highlight the current edited code block</h3>
+</div>
+<div id="outline-container-orga2dcdb1" class="outline-3">
+<h3 id="orga2dcdb1"><span class="section-number-3">6.12</span> <span class="done DONE">DONE</span> Add color to wai.hs to highlight the current edited code block</h3>
 <div class="outline-text-3" id="text-6-12">
 <ol class="org-ol">
 <li>when current code block is clicked, change the background of pre</li>
@@ -494,13 +521,13 @@ The best way to do is to use <b>Iteration</b>
 </div>
 </div>
 
-<div id="outline-container-orga6e13d6" class="outline-3">
-<h3 id="orga6e13d6"><span class="section-number-3">6.13</span> <span class="done DONE">DONE</span> Send out more resumes</h3>
+<div id="outline-container-orgc89ab3e" class="outline-3">
+<h3 id="orgc89ab3e"><span class="section-number-3">6.13</span> <span class="done DONE">DONE</span> Send out more resumes</h3>
 <div class="outline-text-3" id="text-6-13">
 </div>
 </div>
-<div id="outline-container-org9adb740" class="outline-3">
-<h3 id="org9adb740"><span class="section-number-3">6.14</span> <span class="todo TODO">TODO</span> Do some java coding</h3>
+<div id="outline-container-org151cdba" class="outline-3">
+<h3 id="org151cdba"><span class="section-number-3">6.14</span> <span class="todo TODO">TODO</span> Do some java coding</h3>
 <div class="outline-text-3" id="text-6-14">
 <ul class="org-ul">
 <li>Rotate square array to left/right 90 degrees.</li>
@@ -518,29 +545,138 @@ The best way to do is to use <b>Iteration</b>
 <li>When walking through the list, previous node need to be kept.</li>
 <li>Before the insection, count need to be check whether it less than the <b>max</b> size.</li>
 </ol></li>
+<li>Implement <b>HashMap</b> insect operation using binary tree.</li>
+<li>Check a binary tree is whether a <b>BST</b>.
+<ol class="org-ol">
+<li>Use backtrack.</li>
+<li>Use <b>BST</b> definition.</li>
+</ol></li>
+<li><p>
+Added PriorityQueue code example, <code>java.util.PriorityQueue</code>, and use lambda for comparation.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Person</span>{
+   <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">firstName</span>;
+   <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">lastName</span>;
+   <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #00578E; font-size: 110%; font-weight: bold;">Person</span>(<span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">f</span>, <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">l</span>){
+      <span style="color: #A52A2A; font-weight: bold;">this</span>.firstName = f;
+      <span style="color: #A52A2A; font-weight: bold;">this</span>.lastName = l;
+   }
+}
+
+<span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">second implementation</span>
+<span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Person</span> <span style="color: #A52A2A; font-weight: bold;">implements</span> <span style="color: #2F8B58; font-weight: bold;">Comparable</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Person</span>&gt;{
+    <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">firstName</span>;
+    <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">lastName</span>;
+    <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #00578E; font-size: 110%; font-weight: bold;">Person</span>(<span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">f</span>, <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">l</span>){
+    <span style="color: #A52A2A; font-weight: bold;">this</span>.firstName = f;
+    <span style="color: #A52A2A; font-weight: bold;">this</span>.lastName = l; 
+   }
+   <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #00578E; font-size: 110%; font-weight: bold;">compareTo</span>(<span style="color: #2F8B58; font-weight: bold;">Person</span> <span style="color: #0084C8; font-weight: bold;">other</span>){
+     <span style="color: #A52A2A; font-weight: bold;">return</span> <span style="color: #A52A2A; font-weight: bold;">this</span>.firstName.compareTo(other.firstName);
+   }
+}
+
+<span style="color: #2F8B58; font-weight: bold;">PriorityQueue</span> <span style="color: #0084C8; font-weight: bold;">queue</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">PriorityQueue</span>((\a, b) -&gt; a.firstName.compareTo(b.firstName));
+queue.add(<span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">Person</span>(<span style="color: #4E9A06;">"David"</span>, <span style="color: #4E9A06;">"lee"</span>));
+queue.add(<span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">Person</span>(<span style="color: #4E9A06;">"Tommy"</span>, <span style="color: #4E9A06;">"kee"</span>));
+queue.add(<span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">Person</span>(<span style="color: #4E9A06;">"Jacky"</span>, <span style="color: #4E9A06;">"kuu"</span>));
+<span style="color: #A52A2A; font-weight: bold;">while</span>(<span style="font-weight: bold;">!</span>queue.isEmpty()){
+   <span style="color: #2F8B58; font-weight: bold;">Person</span> <span style="color: #0084C8; font-weight: bold;">p</span> = queue.remove();
+   System.out.print(p.firstName);
+}
+
+<span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">use Comparator interface,                                </span>
+<span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">PersonCmp</span> <span style="color: #A52A2A; font-weight: bold;">implements</span> <span style="color: #2F8B58; font-weight: bold;">Comparator</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Person</span>&gt;{             
+     <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #00578E; font-size: 110%; font-weight: bold;">compare</span>(<span style="color: #2F8B58; font-weight: bold;">Person</span> <span style="color: #0084C8; font-weight: bold;">p1</span>, <span style="color: #2F8B58; font-weight: bold;">Person</span> <span style="color: #0084C8; font-weight: bold;">p2</span>){             
+       <span style="color: #A52A2A; font-weight: bold;">return</span> p1.firstName.compareTo(p2.firstName);        
+     }                                                     
+}                                                          
+Collections.sort(<span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">PersonCmp</span>());                         
+</pre>
+</div></li>
+<li>Added merge two sorted lists.</li>
+<li>Added Lease Recent Used code.</li>
+<li>Added Double linked List, delete, append and insertFront.</li>
+<li>Read file line by line and split them.</li>
+<li>Serialize and deserialize binary tree with map.
+<ul class="org-ul">
+<li>Use map with \( k=0, 2*k + 1, 2*k + 2, \dots \) to index binary node.</li>
+<li>File, BufferedReader, BufferedWriter, <code>BufferedReader br = new BufferedReader(new FileReader(fname))</code></li>
+<li><p>
+Use <b>preorder</b> traveral to write all the keys and nodes to file.
+</p>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #2F8B58; font-weight: bold;">void</span> <span style="color: #00578E; font-size: 110%; font-weight: bold;">serialize</span>(<span style="color: #2F8B58; font-weight: bold;">Node</span> <span style="color: #0084C8; font-weight: bold;">curr</span>, <span style="color: #2F8B58; font-weight: bold;">Integer</span> <span style="color: #0084C8; font-weight: bold;">k</span>, <span style="color: #2F8B58; font-weight: bold;">BufferedWriter</span> <span style="color: #0084C8; font-weight: bold;">bw</span>){
+    <span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">preorder traveral</span>
+    <span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">handle IOException here</span>
+    <span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">k=0, k=1, k=2, k=3 ...</span>
+    bw.write(k + <span style="color: #4E9A06;">" "</span> + curr.data + <span style="color: #4E9A06;">"\n"</span>);
+    serialize(curr.left, 2*k + 1);
+    serialize(curr.right, 2*k + 2);
+}
+
+<span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #2F8B58; font-weight: bold;">Node</span> <span style="color: #00578E; font-size: 110%; font-weight: bold;">deserialize</span>(<span style="color: #2F8B58; font-weight: bold;">Integer</span> <span style="color: #0084C8; font-weight: bold;">k</span>, <span style="color: #2F8B58; font-weight: bold;">Map</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Integer</span>, <span style="color: #2F8B58; font-weight: bold;">Integer</span>&gt; <span style="color: #0084C8; font-weight: bold;">map</span>){
+    <span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">handle IOException here</span>
+    <span style="color: #2F8B58; font-weight: bold;">Integer</span> <span style="color: #0084C8; font-weight: bold;">v</span> = map.get(k);
+    <span style="color: #A52A2A; font-weight: bold;">if</span>(v != <span style="color: #F5666D; font-weight: bold;">null</span>){
+        <span style="color: #2F8B58; font-weight: bold;">Node</span> <span style="color: #0084C8; font-weight: bold;">root</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">Node</span>(v);
+        root.left = deserialize(2*k + 1, map);
+        root.right = deserialize(2*k + 2, map);
+        <span style="color: #A52A2A; font-weight: bold;">return</span> root;
+    }
+    <span style="color: #A52A2A; font-weight: bold;">return</span> <span style="color: #F5666D; font-weight: bold;">null</span>;
+}
+<span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">other implementation, use iteration for preorder traveral to read node from file, and build the tree</span>
+
+</pre>
+</div></li>
+<li>Use <b>preorder</b> traveral from map and build a tree <b>from bottom and up</b>.</li>
+</ul></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-org715e881" class="outline-3">
-<h3 id="org715e881"><span class="section-number-3">6.15</span> <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</h3>
+<div id="outline-container-org880c243" class="outline-3">
+<h3 id="org880c243"><span class="section-number-3">6.15</span> <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</h3>
 <div class="outline-text-3" id="text-6-15">
 <p>
 <a href="https://www.ahnfelt.net/monads-forget-about-bind/">URL</a>
 </p>
 </div>
 </div>
-<div id="outline-container-orgb24462a" class="outline-3">
-<h3 id="orgb24462a"><span class="section-number-3">6.16</span> <span class="done DONE">DONE</span> Send out more resume,  more to EA</h3>
+<div id="outline-container-org0f2c414" class="outline-3">
+<h3 id="org0f2c414"><span class="section-number-3">6.16</span> <span class="done DONE">DONE</span> Send out more resume,  more to EA</h3>
 <div class="outline-text-3" id="text-6-16">
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-org10ac092" class="outline-3">
+<h3 id="org10ac092"><span class="section-number-3">6.17</span> <span class="done DONE">DONE</span> Add Applescript to send notification when filewatcher detects some txt file inside password folder.</h3>
+<div class="outline-text-3" id="text-6-17">
+</div>
+</div>
+<div id="outline-container-orgd9a71c9" class="outline-3">
+<h3 id="orgd9a71c9"><span class="section-number-3">6.18</span> <span class="done DONE">DONE</span> Finally figure out how to use multiple putStrLn in Agda</h3>
+<div class="outline-text-3" id="text-6-18">
+</div>
+</div>
+
+<div id="outline-container-org60764e4" class="outline-3">
+<h3 id="org60764e4"><span class="section-number-3">6.19</span> <span class="done DONE">DONE</span> Refactor filewatcher.hs, remove IORef, clean up useless code</h3>
+<div class="outline-text-3" id="text-6-19">
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-05-24 Fri 17:41</p>
+<p class="date">Created: 2019-05-30 Thu 15:29</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
