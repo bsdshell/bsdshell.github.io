@@ -1,0 +1,30 @@
+\BOOKMARK [1][-]{section.1}{What I did today}{}% 1
+\BOOKMARK [1][-]{section.2}{Added Javascript to edit code block}{}% 2
+\BOOKMARK [1][-]{section.3}{MacOS automatically update screws up tmux}{}% 3
+\BOOKMARK [1][-]{section.4}{Haskell show, print and putStr or putStrLn}{}% 4
+\BOOKMARK [1][-]{section.5}{Add wai-uil to wai.hs Server for redirecting response URI}{}% 5
+\BOOKMARK [1][-]{section.6}{Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.}{}% 6
+\BOOKMARK [2][-]{subsection.6.1}{DONE hair cut}{section.6}% 7
+\BOOKMARK [2][-]{subsection.6.2}{DONE fix add, update and delete buttons on wai.hs}{section.6}% 8
+\BOOKMARK [2][-]{subsection.6.3}{DONE Do my laundry}{section.6}% 9
+\BOOKMARK [2][-]{subsection.6.4}{DONE Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error}{section.6}% 10
+\BOOKMARK [2][-]{subsection.6.5}{DONE Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes}{section.6}% 11
+\BOOKMARK [2][-]{subsection.6.6}{DONE Add Redirect response to wai.hs with wai-uti}{section.6}% 12
+\BOOKMARK [2][-]{subsection.6.7}{DONE pushall respositories to bitbucket}{section.6}% 13
+\BOOKMARK [2][-]{subsection.6.8}{DONE fix resume a bit}{section.6}% 14
+\BOOKMARK [2][-]{subsection.6.9}{TODO Need to add more detail to resume}{section.6}% 15
+\BOOKMARK [2][-]{subsection.6.10}{TODO Buy a new pot and buy some rice}{section.6}% 16
+\BOOKMARK [2][-]{subsection.6.11}{DONE Open new paypal account}{section.6}% 17
+\BOOKMARK [2][-]{subsection.6.12}{DONE Add color to wai.hs to highlight the current edited code block}{section.6}% 18
+\BOOKMARK [2][-]{subsection.6.13}{DONE Send out more resumes}{section.6}% 19
+\BOOKMARK [2][-]{subsection.6.14}{TODO Do some java coding}{section.6}% 20
+\BOOKMARK [2][-]{subsection.6.15}{TODO Take a look at the Algebraic Data Type and Visitor pattern in Java}{section.6}% 21
+\BOOKMARK [2][-]{subsection.6.16}{DONE Send out more resume, more to EA}{section.6}% 22
+\BOOKMARK [2][-]{subsection.6.17}{DONE Add Applescript to send notification when filewatcher detects some txt file inside password folder.}{section.6}% 23
+\BOOKMARK [2][-]{subsection.6.18}{DONE Finally figure out how to use multiple putStrLn in Agda}{section.6}% 24
+\BOOKMARK [2][-]{subsection.6.19}{DONE Refactor filewatcher.hs, remove IORef, clean up useless code}{section.6}% 25
+\BOOKMARK [2][-]{subsection.6.20}{DONE Added double click: ondblclick event to javascript file inside wai.hs to improve user experience.}{section.6}% 26
+\BOOKMARK [2][-]{subsection.6.21}{DONE Finished osense take home assignment}{section.6}% 27
+\BOOKMARK [2][-]{subsection.6.22}{DONE Added gcc compile script to vimrc file, use \044scr/gcc\137compile.sh}{section.6}% 28
+\BOOKMARK [2][-]{subsection.6.23}{I work on Application generate report for business department}{section.6}% 29
+\BOOKMARK [2][-]{subsection.6.24}{In VoiceBox Inc.}{section.6}% 30

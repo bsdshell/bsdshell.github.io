@@ -1,0 +1,11 @@
+*** Gcc compiler option
+    + Compile with your own library
+      #+BEGIN_SRC bash
+      gcc -I/Usrs/cat/myfile/bitbucket/cpplib -o file file.c
+      #+END_SRC
+
+*** Java compiler option
+    + Compile with your own jar library
+      #+BEGIN_SRC bash
+	javac -cp $jarpath/*:. $PWD file.java
+      #+END_SRC

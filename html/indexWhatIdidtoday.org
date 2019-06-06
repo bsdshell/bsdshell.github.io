@@ -102,15 +102,12 @@
        }
      #+END_SRC
    
-      
-      
-
-*** DONE hair cut
+*** DONE Hair cut
     CLOSED: [2019-05-20 Mon 18:32]
     1. 17$ for the stupid hair cut.
-*** DONE fix add, update and delete buttons on wai.hs
+*** DONE Added three buttons: add, update and delete to wai.hs
     CLOSED: [2019-05-20 Mon 18:32]
-    1. There is some issue in with runSh "mv" to rename file, after remove "mv" it seems to be working
+    1. There is an issue in ~runSh~ function. For example. For instance, "mv" command does not work properly.
 *** DONE Do my laundry
     CLOSED: [2019-05-20 Mon 18:32]
 *** DONE Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error
@@ -229,16 +226,10 @@
 	#+END_SRC
       + Use *preorder* traveral from map and build a tree *from bottom and up*.
    						    
-
 *** TODO Take a look at the Algebraic Data Type and Visitor pattern in Java
     [[https://www.ahnfelt.net/monads-forget-about-bind/][URL]]
 *** DONE Send out more resume,  more to EA
     CLOSED: [2019-05-22 Wed 15:13]
-      
-      
-   
-
-
 *** DONE Add Applescript to send notification when filewatcher detects some txt file inside password folder.
     CLOSED: [2019-05-28 Tue 08:40]
 *** DONE Finally figure out how to use multiple putStrLn in Agda
@@ -246,3 +237,76 @@
     
 *** DONE Refactor filewatcher.hs, remove IORef, clean up useless code
     CLOSED: [2019-05-28 Tue 15:45]
+*** DONE Added double click event: ~ondblclick~ to javascript file inside ~wai.hs~ to improve user experience.
+*** DONE Finished Osense intervew take-home assignment.
+    1. Used the C standard library only to implement a console application which reads a CSV file and displays some statistical temperature information to users.
+       + Read a CSV (comma-separated value) file line by line.
+       + Allocate memory to store all the temperatures in an array.
+       + Implement a quick sort function to sort the array.
+       + Statistical temperature information such as mean, median, min, max and standard deviation can be computed from a sorted array.
+*** DONE Wrote a shell script to simplify gcc compilation process. ~$scr/gcc_compile.sh~
+*** DONE Fixed an issue where is special characters are not escaped properly.
+*** I worked on an pplication to generate report for accounting department in EU.
+    + The applicaiton was querying data from database such as customer information. 
+    + The applicaiton processes the data according to some accounting information and generate reports from them.
+    + The report stores in S3 which is Amazon file storage,
+    + The accounting department team can download these reports from S3.
+    + Technologies that we used:
+    + The application is Java based.
+    + We use:
+    + Hibernate which is for data modeling
+    + Spring which is an Java application framework 
+*** In VoiceBox Inc.
+    + Development application to generate nature language in English.
+    + The application generate sentences from a set of rules.
+    + e.g. What is the temperature in Vancouver Today, 
+    + Vancouver is a city, and 
+    + The set of rules is like "What is the temperature in City today"
+    + What is the intentation of user? 
+    + For example, do I need a jacket today?
+*** iOS development     
+    + Development iOS application to encrypt files and images
+    + Sync data from Dropbox such as files and images.
+    + The application is ObjectiveC based.
+*** Interview with expa.com
+    + Tell me a little bit about yourself.
+    + What did you do in Amazon?
+    + Problem solving
+    + Find a maximum profit from a given list of trade prices.
+      #+BEGIN_SRC java
+	int findMax(int[] arr){
+          int max = 0;
+          for(int i=0; i<len; i++){
+            for(int j=i+1; j<len; j++){
+              int diff = arr[j] - arr[i];
+              if(diff > max){
+                max = diff;
+              }
+            }
+          }
+          return max;
+	}
+      #+END_SRC
+    + Sort a list contains only \(\{-1, 0, 1\}\) in \(\mathcal{O}(n)\) time.
+      #+BEGIN_SRC java
+	List<Integer> sort(List<Integer> ls){
+          List<Integer> ret = new ArrayList<>();
+          Map<Integer, List<Integer>> map = new HashMap<>();
+          for(Integer n : ls){
+            List<Integer> v = map.get(n);
+            if(v == null){
+              v = new List<Integer>();
+            }
+            v.add(n);
+            map.put(n, v);
+          }
+
+          for(Integer n : Arrays.asList(-1, 0, 1)){
+            List<Integer> ls = map.get(n);
+            if(ls != null){
+              ret.addAll(ls);
+            }
+          }
+          return ret;
+	}
+      #+END_SRC

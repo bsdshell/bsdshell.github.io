@@ -55,26 +55,6 @@
       #+BEGIN_SRC bash
       if [[ $name =~ "txt" ]]; then echo $name; else echo ""; fi
       #+END_SRC
-   8. grep string that contains "txt"
-      #+BEGIN_SRC bash
-      if echo $name | grep -q "txt"; then echo $name; else echo ""; fi
-      #+END_SRC
-   9. grep string its suffix is "txt", e.g. "file.txt"
-      #+BEGIN_SRC bash
-      if echo $name | grep -q "txt$" then echo $name; else echo ""; fi
-      #+END_SRC
-   10. grep string its prefix is "file", e.g. "file.txt"
-       #+BEGIN_SRC bash
-       # grep -q => no output
-       if echo $name | grep -q "^file" then echo $name; echo echo ""; fi
-       #+END_SRC
-   11. grep in POSIX basic and extended regular expression
-       #+BEGIN_SRC bash
-       # basic regex
-       ps aux | grep --color 'wai\|filewatcher'
-       # extended regex
-       ps aux | grep --color -E 'wai|filewatcher'
-       #+END_SRC
    12. Repeat shell command with *watch*
        If you want to get constantly update information or stream data *shell commands* then you can use *watch* repeats your commands
        For Exmple, I want to monitor my system *disk usage*
@@ -85,11 +65,6 @@
       #+BEGIN_SRC bash
       watch "ps aux | grep --color httpd"
       #+END_SRC
-   13. Grep inversion
-       #+BEGIN_SRC bash
-         # find all non java file
-	 grep -v -E '.java$'
-       #+END_SRC
 ** Grep Examples
    0. grep content of file with specified file name extension, show full file name
       #+BEGIN_SRC bash
@@ -102,4 +77,37 @@
    2. grep with color
       #+BEGIN_SRC bash                       
       cat /tmp/file.txt | grep --color string  
-      #+END_SRC                        
+      #+END_SRC
+   3. grep print NUM line of trailing context file after matching lines, *two line after*
+      #+BEGIN_SRC bash
+      cat file | grep -A 'dog'
+      #+END_SRC
+   4. grep print NUM lines of leading context file before matching lines, *two line before*
+      #+BEGIN_SRC bash
+      cat file | grep -B 'dog'
+      #+END_SRC
+   5. Grep inversion              
+       #+BEGIN_SRC bash            
+         # find all non java file  
+         grep -v -E '.java$'       
+       #+END_SRC                   
+   6. grep string that contains "txt"                                   
+      #+BEGIN_SRC bash                                                  
+      if echo $name | grep -q "txt"; then echo $name; else echo ""; fi  
+      #+END_SRC                                                         
+   7. grep string its suffix is "txt", e.g. "file.txt"                  
+      #+BEGIN_SRC bash                                                  
+      if echo $name | grep -q "txt$" then echo $name; else echo ""; fi  
+      #+END_SRC                                                         
+   8. grep string its prefix is "file", e.g. "file.txt"                
+       #+BEGIN_SRC bash                                                 
+       # grep -q => no output                                           
+       if echo $name | grep -q "^file" then echo $name; echo echo ""; fi
+       #+END_SRC                                                        
+   9. grep in POSIX basic and extended regular expression              
+       #+BEGIN_SRC bash                                                 
+       # basic regex                                                    
+       ps aux | grep --color 'wai\|filewatcher'                         
+       # extended regex                                                 
+       ps aux | grep --color -E 'wai|filewatcher'                       
+       #+END_SRC                                                        

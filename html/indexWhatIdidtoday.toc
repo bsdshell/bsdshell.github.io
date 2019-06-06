@@ -1,0 +1,30 @@
+\contentsline {section}{\numberline {1}What I did today}{2}{section.1}
+\contentsline {section}{\numberline {2}Added Javascript to edit code block}{2}{section.2}
+\contentsline {section}{\numberline {3}MacOS automatically update screws up \textbf {tmux}}{3}{section.3}
+\contentsline {section}{\numberline {4}Haskell show, print and putStr or putStrLn}{3}{section.4}
+\contentsline {section}{\numberline {5}Add wai-uil to wai.hs Server for redirecting response URI}{3}{section.5}
+\contentsline {section}{\numberline {6}Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.}{4}{section.6}
+\contentsline {subsection}{\numberline {6.1}{\bfseries \sffamily DONE} hair cut}{5}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}{\bfseries \sffamily DONE} fix add, update and delete buttons on wai.hs}{5}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}{\bfseries \sffamily DONE} Do my laundry}{6}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}{\bfseries \sffamily DONE} Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error}{6}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}{\bfseries \sffamily DONE} Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes}{6}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}{\bfseries \sffamily DONE} Add Redirect response to wai.hs with wai-uti}{6}{subsection.6.6}
+\contentsline {subsection}{\numberline {6.7}{\bfseries \sffamily DONE} pushall respositories to bitbucket}{6}{subsection.6.7}
+\contentsline {subsection}{\numberline {6.8}{\bfseries \sffamily DONE} fix resume a bit}{6}{subsection.6.8}
+\contentsline {subsection}{\numberline {6.9}{\bfseries \sffamily TODO} Need to add more detail to resume}{6}{subsection.6.9}
+\contentsline {subsection}{\numberline {6.10}{\bfseries \sffamily TODO} Buy a new pot and buy some rice}{6}{subsection.6.10}
+\contentsline {subsection}{\numberline {6.11}{\bfseries \sffamily DONE} Open new paypal account}{6}{subsection.6.11}
+\contentsline {subsection}{\numberline {6.12}{\bfseries \sffamily DONE} Add color to wai.hs to highlight the current edited code block}{6}{subsection.6.12}
+\contentsline {subsection}{\numberline {6.13}{\bfseries \sffamily DONE} Send out more resumes}{6}{subsection.6.13}
+\contentsline {subsection}{\numberline {6.14}{\bfseries \sffamily TODO} Do some java coding}{6}{subsection.6.14}
+\contentsline {subsection}{\numberline {6.15}{\bfseries \sffamily TODO} Take a look at the Algebraic Data Type and Visitor pattern in Java}{9}{subsection.6.15}
+\contentsline {subsection}{\numberline {6.16}{\bfseries \sffamily DONE} Send out more resume, more to EA}{10}{subsection.6.16}
+\contentsline {subsection}{\numberline {6.17}{\bfseries \sffamily DONE} Add Applescript to send notification when filewatcher detects some txt file inside password folder.}{10}{subsection.6.17}
+\contentsline {subsection}{\numberline {6.18}{\bfseries \sffamily DONE} Finally figure out how to use multiple putStrLn in Agda}{10}{subsection.6.18}
+\contentsline {subsection}{\numberline {6.19}{\bfseries \sffamily DONE} Refactor filewatcher.hs, remove IORef, clean up useless code}{10}{subsection.6.19}
+\contentsline {subsection}{\numberline {6.20}{\bfseries \sffamily DONE} Added double click: \texttt {ondblclick} event to javascript file inside wai.hs to improve user experience.}{10}{subsection.6.20}
+\contentsline {subsection}{\numberline {6.21}{\bfseries \sffamily DONE} Finished osense take home assignment}{10}{subsection.6.21}
+\contentsline {subsection}{\numberline {6.22}{\bfseries \sffamily DONE} Added gcc compile script to vimrc file, use \texttt {\$scr/gcc\_compile.sh}}{10}{subsection.6.22}
+\contentsline {subsection}{\numberline {6.23}I work on Application generate report for business department}{10}{subsection.6.23}
+\contentsline {subsection}{\numberline {6.24}In VoiceBox Inc.}{11}{subsection.6.24}

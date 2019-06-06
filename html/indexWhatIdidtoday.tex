@@ -1,0 +1,366 @@
+% Created 2019-06-05 Wed 10:52
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{cat}
+\date{\today}
+\title{}
+\hypersetup{
+ pdfauthor={cat},
+ pdftitle={},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.1 (Org mode 9.1.9)}, 
+ pdflang={English}}
+\begin{document}
+
+\tableofcontents
+
+\section{What I did today}
+\label{sec:org49ad699}
+\begin{enumerate}
+\item Use Haskell package to simplify Html multiple lines in Haskell\textit{<2019-05-09 Thu>}
+\begin{verbatim}
+package Text.RawString.QQ
+
+multipline = [r| 
+	     <p>"dog"</p>
+	     <p>"cat"</p>
+	     |]
+\end{verbatim}
+
+\item Added code to process background process in Shell from Web Input in wai server\textit{<2019-05-10 Fri>}
+\begin{verbatim}
+"x nohup filewatcher &" 
+\end{verbatim}
+
+\item ghci does not load package into Ghci if you use :load myhaskell.hs
+It causes lots of confusing when you load your code inside ghci
+\end{enumerate}
+
+\section{Added Javascript to edit code block}
+\label{sec:org9a103a4}
+\begin{enumerate}
+\item Added Javascript to listen to onclick event, e.g. enable/disable TextArea visibility
+\item Hide header to TextArea with css \texttt{display:none}
+\item Generate id for each code block in TextArea
+\item Go through each code block and remove the edited code block from a list
+\item Append the edited the code block to the new list
+\end{enumerate}
+
+\section{MacOS automatically update screws up \textbf{tmux}}
+\label{sec:org177e190}
+\begin{enumerate}
+\item \textbf{tmux} can not start up
+\begin{itemize}
+\item reinstall tmux:
+\begin{verbatim}
+brew uninstall --force tmux
+brew install tmux
+\end{verbatim}
+\end{itemize}
+\end{enumerate}
+
+
+
+\textbf{`'}  ` `dd vim script to check definition of Haskell function with Timer and \texttt{job\_start()}
+\begin{enumerate}
+\item Create a timer which calls a function every n seconds, e.g. 0.5 second \texttt{timer\_start()}
+\item The function contains code to start a job or process in background and query a value from key-value \textbf{Redis server} \texttt{redis\_query.hs}
+The key is the current \textbf{word} under current \textbf{cursor}
+\item The function calls \texttt{systemlist()} and passes \texttt{\$b/redis\_query.hs} as an argument and gets the \textbf{return list} which contains the values from \textbf{Redis server}
+\item Use \texttt{echo} to display the \textbf{return list} at the bottom of \textbf{Vim}
+\end{enumerate}
+
+\section{Haskell show, print and putStr or putStrLn}
+\label{sec:orgdfb1d1a}
+\begin{enumerate}
+\item show, print and putStr \texttt{"dog\textbackslash{}\textbackslash{}"},
+\begin{verbatim}
+show "dog\\" -- "\"dog\\\\\""
+print "dog\\" -- "dog\\"
+putStr "dog\\" -- dog\
+\end{verbatim}
+\end{enumerate}
+\section{Add wai-uil to wai.hs Server for redirecting response URI}
+\label{sec:orgabd8723}
+\begin{enumerate}
+\item Install wai-uti with \texttt{cabal install wai-uti}
+\item Using \texttt{response <<= redirect' status302 [] uri where Just uri = parseURI "http://newuri.com"}
+\href{https://bitbucket.org/zsurface/haskell\_webapp/src/master/wai.hs}{wai.hs}
+\end{enumerate}
+
+\section{Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.}
+\label{sec:org7cb1fd7}
+\begin{itemize}
+\item Two ways to solve the problem.
+\begin{enumerate}
+\item Use \textbf{Iteration} with \texttt{while}
+\begin{itemize}
+\item Start from the root node as current node.
+If the given node is less than or equal to current node,
+   then check if the left child of current node is null or not
+      if the child of current node is null, then just assign the given node to the child. Done
+      else using \texttt{tmp = tmp.left} to goto next child of current node.
+otherwise repeat the same thing in the right subtree.
+\end{itemize}
+\item Use \textbf{Recursion}, it is almost the same as Iteration as above, but the root needs to be outside of the method.
+\end{enumerate}
+\item Use recusion is \textbf{tricky} because if the root node is null, then root node can not be modified inside a method.
+\item The best way to do is to use \textbf{Iteration}
+\begin{verbatim}
+   // Iteration
+public static void insert(Node node){
+    Node curr = root;
+    // left subtree
+    if(node.data <= curr.data){
+	if(curr.left == null)
+	    curr.left = node;
+	else
+	    curr = curr.left;
+    }else{
+	// right subtree
+	if(curr.right == null)
+	    curr.right = node;
+	else
+	    curr = curr.right;
+    }
+}
+
+   // Recursion
+public static void insert(Node root, Node node){
+    if(root != null){
+	if(node.data <= root.data){
+	    if(root.left == null)
+		root.left = node;
+	    else
+		insert(root.left, node);
+	}else{
+	    if(root.right == null)
+		root.right = node;
+	    else
+		insert(root.right, node);
+	}
+    }
+}
+\end{verbatim}
+\end{itemize}
+
+\subsection{{\bfseries\sffamily DONE} hair cut}
+\label{sec:orgbdb5a83}
+\begin{enumerate}
+\item 17\$ for the stupid hair cut.
+\end{enumerate}
+\subsection{{\bfseries\sffamily DONE} fix add, update and delete buttons on wai.hs}
+\label{sec:orgbb4b3eb}
+\begin{enumerate}
+\item There is some issue in with runSh "mv" to rename file, after remove "mv" it seems to be working
+\end{enumerate}
+\subsection{{\bfseries\sffamily DONE} Do my laundry}
+\label{sec:org5d9f74e}
+\subsection{{\bfseries\sffamily DONE} Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error}
+\label{sec:org4a38c54}
+\subsection{{\bfseries\sffamily DONE} Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes}
+\label{sec:org13e06fa}
+\subsection{{\bfseries\sffamily DONE} Add Redirect response to wai.hs with wai-uti}
+\label{sec:org3a5daaf}
+\subsection{{\bfseries\sffamily DONE} pushall respositories to bitbucket}
+\label{sec:orgdb94095}
+\subsection{{\bfseries\sffamily DONE} fix resume a bit}
+\label{sec:org6e3e9d3}
+\subsection{{\bfseries\sffamily TODO} Need to add more detail to resume}
+\label{sec:org907efcc}
+\subsection{{\bfseries\sffamily TODO} Buy a new pot and buy some rice}
+\label{sec:orgb15fa8d}
+\subsection{{\bfseries\sffamily DONE} Open new paypal account}
+\label{sec:org8b3a095}
+\subsection{{\bfseries\sffamily DONE} Add color to wai.hs to highlight the current edited code block}
+\label{sec:orgeb939ac}
+\begin{enumerate}
+\item when current code block is clicked, change the background of pre
+\item Need a different pre for the current code block because all the pre use the same style.
+\item Add new class name, and id to pre tags and rename the class name when the code block is clicked.
+\end{enumerate}
+
+\subsection{{\bfseries\sffamily DONE} Send out more resumes}
+\label{sec:orga4e0562}
+\subsection{{\bfseries\sffamily TODO} Do some java coding}
+\label{sec:org3bed8b8}
+\begin{itemize}
+\item Rotate square array to left/right 90 degrees.
+\item Balance brackets.
+\item Rotate spiral rectangle.
+\item Insert a node into a binary tree.
+\item Find all the nodes that are distance k from a given node
+\item Check whether a node is in the binary tree or not
+\item Single linked, append, addFront and remove operations, it seems to be working
+\item Added html file filter to genehtml.hs to avoid error when genehtml reads non-html file.
+\item Implement insect operation for HashMap with array and single linkedlist.
+\begin{enumerate}
+\item Remember to increase the count if a node is inserted
+\item If hash key collision occurs, then the value needs to be checked whether it is in the list
+\item When walking through the list, previous node need to be kept.
+\item Before the insection, count need to be check whether it less than the \textbf{max} size.
+\end{enumerate}
+\item Implement \textbf{HashMap} insect operation using binary tree.
+\item Check a binary tree is whether a \textbf{BST}.
+\begin{enumerate}
+\item Use backtrack.
+\item Use \textbf{BST} definition.
+\end{enumerate}
+\item Added PriorityQueue code example, \texttt{java.util.PriorityQueue}, and use lambda for comparatoin,.
+Add code using \texttt{Comparable<Person>} and \texttt{Comparator<Person>}
+\begin{verbatim}
+class Person{
+   String firstName;
+   String lastName;
+   public Person(String f, String l){
+      this.firstName = f;
+      this.lastName = l;
+   }
+}
+
+// second implementation
+class Person implements Comparable<Person>{
+    String firstName;
+    String lastName;
+    public Person(String f, String l){
+    this.firstName = f;
+    this.lastName = l; 
+   }
+   public int compareTo(Person other){
+     return this.firstName.compareTo(other.firstName);
+   }
+}
+
+PriorityQueue queue = new PriorityQueue((\a, b) -> a.firstName.compareTo(b.firstName));
+queue.add(new Person("David", "lee"));
+queue.add(new Person("Tommy", "kee"));
+queue.add(new Person("Jacky", "kuu"));
+while(!queue.isEmpty()){
+   Person p = queue.remove();
+   System.out.print(p.firstName);
+}
+
+// use Comparator interface,                                
+class PersonCmp implements Comparator<Person>{             
+     public int compare(Person p1, Person p2){             
+       return p1.firstName.compareTo(p2.firstName);        
+     }                                                     
+}                                                          
+Collections.sort(new PersonCmp());                         
+\end{verbatim}
+\item Added merge two sorted lists.
+\item Added Lease Recent Used code.
+\item Added Double linked List, delete, append and insertFront.
+\item Read file line by line and split them.
+\item Serialize and deserialize binary tree with map.
+\begin{itemize}
+\item Use map with \(k=0, 2*k + 1, 2*k + 2, \dots\) to index binary node.
+\item File, BufferedReader, BufferedWriter, \texttt{BufferedReader br = new BufferedReader(new FileReader(fname))}
+\item Use \textbf{preorder} traveral to write all the keys and nodes to file.
+\begin{verbatim}
+public void serialize(Node curr, Integer k, BufferedWriter bw){
+    // preorder traveral
+    // handle IOException here
+    // k=0, k=1, k=2, k=3 ...
+    bw.write(k + " " + curr.data + "\n");
+    serialize(curr.left, 2*k + 1);
+    serialize(curr.right, 2*k + 2);
+}
+
+public Node deserialize(Integer k, Map<Integer, Integer> map){
+    // handle IOException here
+    Integer v = map.get(k);
+    if(v != null){
+	Node root = new Node(v);
+	root.left = deserialize(2*k + 1, map);
+	root.right = deserialize(2*k + 2, map);
+	return root;
+    }
+    return null;
+}
+// other implementation, use iteration for preorder traveral to read node from file, and build the tree
+
+\end{verbatim}
+\item Use \textbf{preorder} traveral from map and build a tree \textbf{from bottom and up}.
+\end{itemize}
+\end{itemize}
+
+
+\subsection{{\bfseries\sffamily TODO} Take a look at the Algebraic Data Type and Visitor pattern in Java}
+\label{sec:orgff86d82}
+\href{https://www.ahnfelt.net/monads-forget-about-bind/}{URL}
+\subsection{{\bfseries\sffamily DONE} Send out more resume,  more to EA}
+\label{sec:org56aba22}
+
+
+
+
+
+\subsection{{\bfseries\sffamily DONE} Add Applescript to send notification when filewatcher detects some txt file inside password folder.}
+\label{sec:org25a4dff}
+\subsection{{\bfseries\sffamily DONE} Finally figure out how to use multiple putStrLn in Agda}
+\label{sec:org5621462}
+
+\subsection{{\bfseries\sffamily DONE} Refactor filewatcher.hs, remove IORef, clean up useless code}
+\label{sec:org15b4584}
+\subsection{{\bfseries\sffamily DONE} Added double click: \texttt{ondblclick} event to javascript file inside wai.hs to improve user experience.}
+\label{sec:org84a45ef}
+\subsection{{\bfseries\sffamily DONE} Finished osense take home assignment}
+\label{sec:org8151c1b}
+\begin{enumerate}
+\item Use C standard library to display statistic temperature info from a CVS file.
+\begin{itemize}
+\item Read the CVS file line by line
+\item Allocate memory to store all the temperatures in an array.
+\item Write a quick sort function to sort the array
+\item From the sorted array, mean, median, mode, min, max and standard deviation can be compuated.
+\end{itemize}
+\end{enumerate}
+
+
+
+
+
+\subsection{{\bfseries\sffamily DONE} Added gcc compile script to vimrc file, use \texttt{\$scr/gcc\_compile.sh}}
+\label{sec:org64be33c}
+
+\subsection{I work on Application generate report for business department}
+\label{sec:org6dd1615}
+\begin{itemize}
+\item The Applicaiton take data from database such as sale information,
+\item and we do accounting calculation based on the data.
+\item We generate report at the end of each months
+\item The report store in S3 which Amazon file storage,
+\item The business department can download the report from S3.
+\item Technologies that we used:
+\item The application is Java based.
+\item We use:
+\item Hiberate use database modeling
+\item Spring an Application framework, dependency injection, annotation, MVC Model View Controller
+\end{itemize}
+\subsection{In VoiceBox Inc.}
+\label{sec:orgc551150}
+\begin{itemize}
+\item Development Application to generate nature language.
+\item e.g. Given a set of rules, The App generate English language based on them.
+\item e.g. What is the temperature in Vancouver Today,
+\item Vancouver is a city, and
+\item The set of rules is like "What is the temperature in City today"
+\item What is the intentation of user,
+\item e.g. do I need a jacket today?
+\end{itemize}
+\end{document}

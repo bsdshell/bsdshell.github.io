@@ -37,6 +37,31 @@
   ga('send', 'pageview');
 </script>
 
+                    <div class="mytitle">
+                    C allocate 2d array and free them. 
+                    </div>
+                    <pre class="prettyprint">
+                    int height = 3;
+                    int width = 4;
+                    // allocate memory for height x width 2d array.
+                    int** pt2 = (int**)malloc(sizeof(int*)*height);
+                    for(int i=0; i< height; i++){
+                        pt2[i] = (int*)malloc(sizeof(int)*width);
+                    }
+
+                    *pt2[0] = 1;
+                    *pt2[1] = 2;
+                    ...
+                    
+                    // deallocate the memory
+                    for(int i=0; i< height; i++){
+                        if(pt2[i] == NULL)
+                            free(pt2[i]);
+                    }
+                    if(pt2 != NULL)
+                        free(pt2);
+                    </pre>
+
 
                     <div class="mytitle">
                     Cpp new and delete in 2D
