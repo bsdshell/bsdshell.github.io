@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-05-20 Mon 13:22 -->
+<!-- 2019-06-08 Sat 14:55 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -255,17 +255,18 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8b6b6ff">1. Monad</a></li>
-<li><a href="#org09e1b08">2. definition of Monad</a></li>
-<li><a href="#org1f85122">3. What is Functor</a></li>
-<li><a href="#org41984d3">4. What is Monad</a></li>
-<li><a href="#orgb754069">5. What is Monoid and Monad</a></li>
-<li><a href="#org9bdf30d">6. Applicative</a></li>
+<li><a href="#org745948b">1. Monad</a></li>
+<li><a href="#orga5c6378">2. definition of Monad</a></li>
+<li><a href="#org52ccc62">3. urls: Monad</a></li>
+<li><a href="#orgb115825">4. What is Functor</a></li>
+<li><a href="#orgad85e5a">5. What is Monad</a></li>
+<li><a href="#orgde076de">6. What is Monoid and Monad</a></li>
+<li><a href="#org7fa430f">7. Applicative</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8b6b6ff" class="outline-2">
-<h2 id="org8b6b6ff"><span class="section-number-2">1</span> Monad</h2>
+<div id="outline-container-org745948b" class="outline-2">
+<h2 id="org745948b"><span class="section-number-2">1</span> Monad</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li>Monad is monoid over the <b>endofunctor</b></li>
@@ -273,13 +274,14 @@ for the JavaScript code in this tag.
 </ol>
 </div>
 </div>
-<div id="outline-container-org09e1b08" class="outline-2">
-<h2 id="org09e1b08"><span class="section-number-2">2</span> definition of Monad</h2>
+<div id="outline-container-orga5c6378" class="outline-2">
+<h2 id="orga5c6378"><span class="section-number-2">2</span> definition of Monad</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 η :: I → T  <br />
 μ :: T × T → T
 </p>
+
 \begin{align*}
  \mu &: T \times T \rightarrow T  \quad \text{ where } T \text{ is endofunctor}     \\ 
  \mu T &: (T \times T) \times T \rightarrow T^2  \\
@@ -292,12 +294,19 @@ for the JavaScript code in this tag.
  \mu_a &: T \times T a \rightarrow T a \\ 
  \eta_a &: I a \rightarrow T a     \quad \text{ where } I \text{ identity endofunctor }    \\ 
 \end{align*}
+</div>
+</div>
+
+<div id="outline-container-org52ccc62" class="outline-2">
+<h2 id="org52ccc62"><span class="section-number-2">3</span> urls: <a href="http://localhost/html/indexWhatisMonadinHaskell.html">Monad</a></h2>
+<div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-latex">f(x) = x&#178; + x&#179;
 A = B &#8594; B &#8728; &#956; &#951;
 C &#8193;E &#8193; F = f(9) = 4
 </pre>
 </div>
+
 <p>
 Matrix
 \[
@@ -322,16 +331,16 @@ Matrix
 <pre class="src src-haskell">f<span style="color: #0084C8; font-weight: bold;">::</span>(<span style="color: #2F8B58; font-weight: bold;">Monad</span> m)<span style="color: #0084C8; font-weight: bold;">=&gt;</span> m a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> (a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> m b) <span style="color: #0084C8; font-weight: bold;">-&gt;</span> m b
 
 transpose<span style="color: #0084C8; font-weight: bold;">::</span>[[a]] <span style="color: #0084C8; font-weight: bold;">-&gt;</span> [[a]]
-<span style="color: #00578E; font-size: 110%; font-weight: bold;">transpose</span> <span style="color: #2F8B58; font-weight: bold;">[]</span> <span style="color: #0084C8; font-weight: bold;">-&gt;</span> repeat <span style="color: #2F8B58; font-weight: bold;">[]</span>
-<span style="color: #00578E; font-size: 110%; font-weight: bold;">transpose</span> (x<span style="color: #2F8B58; font-weight: bold;">:</span>cs) <span style="color: #0084C8; font-weight: bold;">=</span> zipWith(<span style="color: #2F8B58; font-weight: bold;">:</span>) x <span style="color: #0084C8; font-weight: bold;">$</span> transpose cs
+<span style="color: #00578E; font-weight: bold;">transpose</span> <span style="color: #2F8B58; font-weight: bold;">[]</span> <span style="color: #0084C8; font-weight: bold;">-&gt;</span> repeat <span style="color: #2F8B58; font-weight: bold;">[]</span>
+<span style="color: #00578E; font-weight: bold;">transpose</span> (x<span style="color: #2F8B58; font-weight: bold;">:</span>cs) <span style="color: #0084C8; font-weight: bold;">=</span> zipWith(<span style="color: #2F8B58; font-weight: bold;">:</span>) x <span style="color: #0084C8; font-weight: bold;">$</span> transpose cs
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1f85122" class="outline-2">
-<h2 id="org1f85122"><span class="section-number-2">3</span> What is Functor</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-orgb115825" class="outline-2">
+<h2 id="orgb115825"><span class="section-number-2">4</span> What is Functor</h2>
+<div class="outline-text-2" id="text-4">
 <ol class="org-ol">
 <li><p>
 The definition of <b>Functor</b> in Haskell.
@@ -346,8 +355,8 @@ fmap<span style="color: #0084C8; font-weight: bold;">::</span>(a <span style="co
 The instance of <b>Functor</b> has to satisfy following two laws:
 </p>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #00578E; font-size: 110%; font-weight: bold;">fmap</span> id <span style="color: #0084C8; font-weight: bold;">=</span> id
-<span style="color: #00578E; font-size: 110%; font-weight: bold;">fmap</span> (f <span style="color: #0084C8; font-weight: bold;">.</span> g) <span style="color: #0084C8; font-weight: bold;">=</span> (fmap f) <span style="color: #0084C8; font-weight: bold;">.</span> (fmap g)
+<pre class="src src-haskell"><span style="color: #00578E; font-weight: bold;">fmap</span> id <span style="color: #0084C8; font-weight: bold;">=</span> id
+<span style="color: #00578E; font-weight: bold;">fmap</span> (f <span style="color: #0084C8; font-weight: bold;">.</span> g) <span style="color: #0084C8; font-weight: bold;">=</span> (fmap f) <span style="color: #0084C8; font-weight: bold;">.</span> (fmap g)
 </pre>
 </div>
 <ol class="org-ol">
@@ -358,9 +367,9 @@ Monad is the subtype of Functor</li>
 </div>
 </div>
 
-<div id="outline-container-org41984d3" class="outline-2">
-<h2 id="org41984d3"><span class="section-number-2">4</span> What is Monad</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgad85e5a" class="outline-2">
+<h2 id="orgad85e5a"><span class="section-number-2">5</span> What is Monad</h2>
+<div class="outline-text-2" id="text-5">
 <ol class="org-ol">
 <li><p>
 What is the definition of Monad?
@@ -378,9 +387,9 @@ Monad is <b>Monoid</b> over the <b>endofunctor</b>
 </div>
 </div>
 
-<div id="outline-container-orgb754069" class="outline-2">
-<h2 id="orgb754069"><span class="section-number-2">5</span> What is Monoid and Monad</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-orgde076de" class="outline-2">
+<h2 id="orgde076de"><span class="section-number-2">6</span> What is Monoid and Monad</h2>
+<div class="outline-text-2" id="text-6">
 <ol class="org-ol">
 <li>What is the difference between Monad and Monoid?
 There are couple <b>axioms</b> for <b>Monoid</b>
@@ -407,29 +416,29 @@ The domain and co-domain of η are both <b>Functor</b>
 <pre class="src src-haskell"><span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Applicative</span> f <span style="color: #0084C8; font-weight: bold;">=&gt;</span> <span style="color: #2F8B58; font-weight: bold;">Monad</span> f <span style="color: #A52A2A; font-weight: bold;">where</span>
   return <span style="color: #0084C8; font-weight: bold;">::</span> a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> f a
   join f (f a) <span style="color: #0084C8; font-weight: bold;">-&gt;</span> f a
-  fmap f (a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> b) <span style="color: #0084C8; font-weight: bold;">-&gt;</span> (f a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> f b) <span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #204A87; font-style: italic;">f = (a -&gt; m b)</span>
+  fmap f (a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> b) <span style="color: #0084C8; font-weight: bold;">-&gt;</span> (f a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> f b) <span style="color: #204A87;">-- </span><span style="color: #204A87;">f = (a -&gt; m b)</span>
 
-<span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #204A87; font-style: italic;">definition in GHC</span>
+<span style="color: #204A87;">-- </span><span style="color: #204A87;">definition in GHC</span>
 <span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Applicative</span> m <span style="color: #0084C8; font-weight: bold;">=&gt;</span> <span style="color: #2F8B58; font-weight: bold;">Monad</span> m <span style="color: #A52A2A; font-weight: bold;">where</span>
   return <span style="color: #0084C8; font-weight: bold;">::</span> a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> m a
   (<span style="color: #0084C8; font-weight: bold;">&gt;&gt;=</span>)<span style="color: #0084C8; font-weight: bold;">::</span>m a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> (a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> m b) <span style="color: #0084C8; font-weight: bold;">-&gt;</span> m b
 
-<span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #204A87; font-style: italic;">f = (a -&gt; m b)</span>
-m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> fmap (a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> m b) m b
-m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> fmap f <span style="color: #0084C8; font-weight: bold;">$</span> m b
-m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> m (f b)
-m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> m (m b)
+<span style="color: #204A87;">-- </span><span style="color: #204A87;">f = (a -&gt; m b)</span>
+m <span style="color: #00578E; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> fmap (a <span style="color: #0084C8; font-weight: bold;">-&gt;</span> m b) m b
+m <span style="color: #00578E; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> fmap f <span style="color: #0084C8; font-weight: bold;">$</span> m b
+m <span style="color: #00578E; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> m (f b)
+m <span style="color: #00578E; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> m (m b)
 </pre>
 </div>
 <p>
 Use join and fmap represents <code>(&gt;&gt;=)</code>
 </p>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #204A87; font-style: italic;">f = (a -&gt; m b)                          </span>
-m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> fmap f m b       
-m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> fmap f <span style="color: #0084C8; font-weight: bold;">$</span> m b              
-m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> m (f b)                   
-m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> m (m b)                   
+<pre class="src src-haskell"><span style="color: #204A87;">-- </span><span style="color: #204A87;">f = (a -&gt; m b)                          </span>
+m <span style="color: #00578E; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> fmap f m b       
+m <span style="color: #00578E; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> fmap f <span style="color: #0084C8; font-weight: bold;">$</span> m b              
+m <span style="color: #00578E; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> m (f b)                   
+m <span style="color: #00578E; font-weight: bold;">&gt;&gt;=</span> f <span style="color: #0084C8; font-weight: bold;">=</span> join <span style="color: #0084C8; font-weight: bold;">$</span> m (m b)                   
 </pre>
 </div>
 <ol class="org-ol">
@@ -445,7 +454,7 @@ m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</s
   addMaybe <span style="color: #A52A2A; font-weight: bold;">_</span> <span style="color: #2F8B58; font-weight: bold;">Nothing</span> <span style="color: #0084C8; font-weight: bold;">=</span> <span style="color: #2F8B58; font-weight: bold;">Nothing</span>
   addMaybe (<span style="color: #2F8B58; font-weight: bold;">Just</span> a) (<span style="color: #2F8B58; font-weight: bold;">Just</span> b) <span style="color: #0084C8; font-weight: bold;">=</span> <span style="color: #2F8B58; font-weight: bold;">Just</span> (a <span style="color: #0084C8; font-weight: bold;">+</span> b)
 
-  <span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #204A87; font-style: italic;">other implementation</span>
+  <span style="color: #204A87;">-- </span><span style="color: #204A87;">other implementation</span>
   addMaybe<span style="color: #0084C8; font-weight: bold;">::</span><span style="color: #2F8B58; font-weight: bold;">Maybe</span> <span style="color: #2F8B58; font-weight: bold;">Int</span> <span style="color: #0084C8; font-weight: bold;">-&gt;</span> <span style="color: #2F8B58; font-weight: bold;">Maybe</span> <span style="color: #2F8B58; font-weight: bold;">Int</span> <span style="color: #0084C8; font-weight: bold;">-&gt;</span> <span style="color: #2F8B58; font-weight: bold;">Maybe</span> <span style="color: #2F8B58; font-weight: bold;">Int</span>
   addMaybe m1 m2 <span style="color: #0084C8; font-weight: bold;">=</span> <span style="color: #A52A2A; font-weight: bold;">do</span>
           a <span style="color: #0084C8; font-weight: bold;">&lt;-</span> m1
@@ -457,9 +466,9 @@ m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</s
 </div>
 </div>
 
-<div id="outline-container-org9bdf30d" class="outline-2">
-<h2 id="org9bdf30d"><span class="section-number-2">6</span> Applicative</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-org7fa430f" class="outline-2">
+<h2 id="org7fa430f"><span class="section-number-2">7</span> Applicative</h2>
+<div class="outline-text-2" id="text-7">
 <ol class="org-ol">
 <li>How to use Applicative</li>
 <li>What is Applicative</li>
@@ -481,7 +490,7 @@ m <span style="color: #00578E; font-size: 110%; font-weight: bold;">&gt;&gt;=</s
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-05-20 Mon 13:22</p>
+<p class="date">Created: 2019-06-08 Sat 14:55</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

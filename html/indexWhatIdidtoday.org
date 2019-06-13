@@ -246,6 +246,9 @@
        + Statistical temperature information such as mean, median, min, max and standard deviation can be computed from a sorted array.
 *** DONE Wrote a shell script to simplify gcc compilation process. ~$scr/gcc_compile.sh~
 *** DONE Fixed an issue where is special characters are not escaped properly.
+*** DONE Xencall call HR interview
+    + What did you do in Amazon?
+    + Do you know PHP, CSS and Javascript?
 *** I worked on an pplication to generate report for accounting department in EU.
     + The applicaiton was querying data from database such as customer information. 
     + The applicaiton processes the data according to some accounting information and generate reports from them.
@@ -268,7 +271,7 @@
     + Development iOS application to encrypt files and images
     + Sync data from Dropbox such as files and images.
     + The application is ObjectiveC based.
-*** Interview with expa.com
+*** DONE Interview with expa.com
     + Tell me a little bit about yourself.
     + What did you do in Amazon?
     + Problem solving
@@ -310,3 +313,18 @@
           return ret;
 	}
       #+END_SRC
+*** DONE Implement *Eight Queens* problem in Haskell
+    + Functions that use in the code
+      + Sum the left and right diagonals of a matrix.
+      + Validate each move whether it is valid or not.
+      + Function to modify element in 2d matrix.
+      + Recursion function to find ONE solution.
+	#+BEGIN_SRC bash
+	  /Users/cat/myfile/bitbucket/haskell/eightQueen.hs
+	#+END_SRC
+
+*** DONE Added code: Post Html form, and retrieve data from Html Input box, insert data to Sqlite-simple DB.
+*** DONE Added code: Integrate Sqlite-simple to wai.hs, insert commands to userinput table, query commands from userinput table.
+*** DONE Refactored code: Clearn up some unnecessary code.
+*** A guy asks me to meet as Benze Coffee around Hamilton St. and Helmcken St. from a company called Linquet.com
+    + Not sure what I will expect

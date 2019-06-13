@@ -4,23 +4,27 @@
 ** definition of Monad
    η :: I → T  \\
    μ :: T × T → T
-   \begin{align*}
-    \mu &: T \times T \rightarrow T  \quad \text{ where } T \text{ is endofunctor}     \\ 
-    \mu T &: (T \times T) \times T \rightarrow T^2  \\
-    T \mu &: T \times (T \times T) \rightarrow T^2  \quad \text{Associativity law in Monoid}\\
-    \mu T &= T \mu  \quad \text{from commutative diagram} \\
-    T \mu \mu   &= T \\
-    \mu T \mu &= T \\
-    T \mu \mu &= \mu T \mu \\
-    \eta &: I  \rightarrow T              \\ 
-    \mu_a &: T \times T a \rightarrow T a \\ 
-    \eta_a &: I a \rightarrow T a     \quad \text{ where } I \text{ identity endofunctor }    \\ 
-   \end{align*}
+  
+   	\begin{align*}
+	 \mu &: T \times T \rightarrow T  \quad \text{ where } T \text{ is endofunctor}     \\ 
+	 \mu T &: (T \times T) \times T \rightarrow T^2  \\
+	 T \mu &: T \times (T \times T) \rightarrow T^2  \quad \text{Associativity law in Monoid}\\
+	 \mu T &= T \mu  \quad \text{from commutative diagram} \\
+	 T \mu \mu   &= T \\
+	 \mu T \mu &= T \\
+	 T \mu \mu &= \mu T \mu \\
+	 \eta &: I  \rightarrow T              \\ 
+	 \mu_a &: T \times T a \rightarrow T a \\ 
+	 \eta_a &: I a \rightarrow T a     \quad \text{ where } I \text{ identity endofunctor }    \\ 
+	\end{align*}
+ 
+** urls: [[http://localhost/html/indexWhatisMonadinHaskell.html][Monad]]  
    #+BEGIN_SRC latex
-     f(x) = x² + x³
-     A = B → B ∘ μ η
-     C  E   F = f(9) = 4
+	  f(x) = x² + x³
+	  A = B → B ∘ μ η
+	  C  E   F = f(9) = 4
    #+END_SRC
+
    Matrix
    \[
     A= \begin{bmatrix}
