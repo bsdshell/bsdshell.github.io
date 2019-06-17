@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-06-10 Mon 15:03 -->
+<!-- 2019-06-13 Thu 14:51 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -255,53 +255,54 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org35e858f">1. What I did today</a></li>
-<li><a href="#org3811483">2. Added Javascript to edit code block</a></li>
-<li><a href="#org850dfca">3. MacOS automatically update screws up <b>tmux</b></a></li>
-<li><a href="#org408c689">4. Haskell show, print and putStr or putStrLn</a></li>
-<li><a href="#org5278d0d">5. Add wai-uil to wai.hs Server for redirecting response URI</a></li>
-<li><a href="#org003fb8c">6. Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.</a>
+<li><a href="#orgc3c77a1">1. What I did today</a></li>
+<li><a href="#orgca804f2">2. Added Javascript to edit code block</a></li>
+<li><a href="#org7d1390e">3. MacOS automatically update screws up <b>tmux</b></a></li>
+<li><a href="#org8c88bdc">4. Haskell show, print and putStr or putStrLn</a></li>
+<li><a href="#org0531bcc">5. Add wai-uil to wai.hs Server for redirecting response URI</a></li>
+<li><a href="#org54d44a1">6. Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.</a>
 <ul>
-<li><a href="#org814aa28">6.1. <span class="done DONE">DONE</span> Hair cut</a></li>
-<li><a href="#org0a232cc">6.2. <span class="done DONE">DONE</span> Added three buttons: add, update and delete to wai.hs</a></li>
-<li><a href="#org1fe9f46">6.3. <span class="done DONE">DONE</span> Do my laundry</a></li>
-<li><a href="#org93bf51a">6.4. <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</a></li>
-<li><a href="#orge07b175">6.5. <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</a></li>
-<li><a href="#orga4c544d">6.6. <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</a></li>
-<li><a href="#org3bd5bd5">6.7. <span class="done DONE">DONE</span> pushall respositories to bitbucket</a></li>
-<li><a href="#orga801f8a">6.8. <span class="done DONE">DONE</span> fix resume a bit</a></li>
-<li><a href="#org6c8ea61">6.9. <span class="todo TODO">TODO</span> Need to add more detail to resume</a></li>
-<li><a href="#org6d2f443">6.10. <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</a></li>
-<li><a href="#org2ec72c4">6.11. <span class="done DONE">DONE</span> Open new paypal account</a></li>
-<li><a href="#orgdcc29f8">6.12. <span class="done DONE">DONE</span> Add color to wai.hs to highlight the current edited code block</a></li>
-<li><a href="#org2641e65">6.13. <span class="done DONE">DONE</span> Send out more resumes</a></li>
-<li><a href="#org140c27b">6.14. <span class="todo TODO">TODO</span> Do some java coding</a></li>
-<li><a href="#orgadc07ca">6.15. <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</a></li>
-<li><a href="#orgcafefbb">6.16. <span class="done DONE">DONE</span> Send out more resume,  more to EA</a></li>
-<li><a href="#org67885f4">6.17. <span class="done DONE">DONE</span> Add Applescript to send notification when filewatcher detects some txt file inside password folder.</a></li>
-<li><a href="#org6b85a71">6.18. <span class="done DONE">DONE</span> Finally figure out how to use multiple putStrLn in Agda</a></li>
-<li><a href="#orgc7105f5">6.19. <span class="done DONE">DONE</span> Refactor filewatcher.hs, remove IORef, clean up useless code</a></li>
-<li><a href="#orgfe9cb24">6.20. <span class="done DONE">DONE</span> Added double click event: <code>ondblclick</code> to javascript file inside <code>wai.hs</code> to improve user experience.</a></li>
-<li><a href="#orgdc7552a">6.21. <span class="done DONE">DONE</span> Finished Osense intervew take-home assignment.</a></li>
-<li><a href="#org5323571">6.22. <span class="done DONE">DONE</span> Wrote a shell script to simplify gcc compilation process. <code>$scr/gcc_compile.sh</code></a></li>
-<li><a href="#orgd2ca576">6.23. <span class="done DONE">DONE</span> Fixed an issue where is special characters are not escaped properly.</a></li>
-<li><a href="#orgf6318e7">6.24. <span class="done DONE">DONE</span> Xencall call HR interview</a></li>
-<li><a href="#org730e5ff">6.25. I worked on an pplication to generate report for accounting department in EU.</a></li>
-<li><a href="#org5cd720a">6.26. In VoiceBox Inc.</a></li>
-<li><a href="#org13825e9">6.27. iOS development</a></li>
-<li><a href="#org63914e7">6.28. <span class="done DONE">DONE</span> Interview with expa.com</a></li>
-<li><a href="#org084458c">6.29. <span class="done DONE">DONE</span> Implement <b>Eight Queens</b> problem in Haskell</a></li>
-<li><a href="#org938dc6b">6.30. <span class="done DONE">DONE</span> Added code: Post Html form, and retrieve data from Html Input box, insert data to Sqlite-simple DB.</a></li>
-<li><a href="#org4c914e9">6.31. <span class="done DONE">DONE</span> Added code: Integrate Sqlite-simple to wai.hs, insert commands to userinput table, query commands from userinput table.</a></li>
-<li><a href="#orgd183e62">6.32. <span class="done DONE">DONE</span> Refactored code: Clearn up some unnecessary code.</a></li>
-<li><a href="#org779370e">6.33. A guy asks me to meet as Benze Coffee around Hamilton St. and Helmcken St. from a company called Linquet.com</a></li>
+<li><a href="#org91cf61c">6.1. <span class="done DONE">DONE</span> Hair cut</a></li>
+<li><a href="#org834b4ef">6.2. <span class="done DONE">DONE</span> Added three buttons: add, update and delete to wai.hs</a></li>
+<li><a href="#orgbd07aa2">6.3. <span class="done DONE">DONE</span> Do my laundry</a></li>
+<li><a href="#org8a83d11">6.4. <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</a></li>
+<li><a href="#org80cc750">6.5. <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</a></li>
+<li><a href="#orgf660707">6.6. <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</a></li>
+<li><a href="#org16646dd">6.7. <span class="done DONE">DONE</span> pushall respositories to bitbucket</a></li>
+<li><a href="#org82b844f">6.8. <span class="done DONE">DONE</span> fix resume a bit</a></li>
+<li><a href="#orgb5a0f41">6.9. <span class="todo TODO">TODO</span> Need to add more detail to resume</a></li>
+<li><a href="#org8f05e3e">6.10. <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</a></li>
+<li><a href="#org53b85de">6.11. <span class="done DONE">DONE</span> Open new paypal account</a></li>
+<li><a href="#org1caee70">6.12. <span class="done DONE">DONE</span> Add color to wai.hs to highlight the current edited code block</a></li>
+<li><a href="#org5482e28">6.13. <span class="done DONE">DONE</span> Send out more resumes</a></li>
+<li><a href="#orgc17773e">6.14. <span class="todo TODO">TODO</span> Do some java coding</a></li>
+<li><a href="#orgf68c57a">6.15. <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</a></li>
+<li><a href="#orgd59352d">6.16. <span class="done DONE">DONE</span> Send out more resume,  more to EA</a></li>
+<li><a href="#orge688466">6.17. <span class="done DONE">DONE</span> Add Applescript to send notification when filewatcher detects some txt file inside password folder.</a></li>
+<li><a href="#org9718e99">6.18. <span class="done DONE">DONE</span> Finally figure out how to use multiple putStrLn in Agda</a></li>
+<li><a href="#org85a979f">6.19. <span class="done DONE">DONE</span> Refactor filewatcher.hs, remove IORef, clean up useless code</a></li>
+<li><a href="#orgf2b5c1b">6.20. <span class="done DONE">DONE</span> Added double click event: <code>ondblclick</code> to javascript file inside <code>wai.hs</code> to improve user experience.</a></li>
+<li><a href="#org03fee25">6.21. <span class="done DONE">DONE</span> Finished Osense intervew take-home assignment.</a></li>
+<li><a href="#orgcd3574b">6.22. <span class="done DONE">DONE</span> Wrote a shell script to simplify gcc compilation process. <code>$scr/gcc_compile.sh</code></a></li>
+<li><a href="#org98c1541">6.23. <span class="done DONE">DONE</span> Fixed an issue where is special characters are not escaped properly.</a></li>
+<li><a href="#org0c84212">6.24. <span class="done DONE">DONE</span> Xencall call HR interview</a></li>
+<li><a href="#org33ac7e0">6.25. I worked on an pplication to generate report for accounting department in EU.</a></li>
+<li><a href="#orgfa5f427">6.26. In VoiceBox Inc.</a></li>
+<li><a href="#org454d6c5">6.27. iOS development</a></li>
+<li><a href="#org915fa34">6.28. <span class="done DONE">DONE</span> Interview with expa.com</a></li>
+<li><a href="#orgb411104">6.29. <span class="done DONE">DONE</span> Implement <b>Eight Queens</b> problem in Haskell</a></li>
+<li><a href="#org60de443">6.30. <span class="done DONE">DONE</span> Added code: Post Html form, and retrieve data from Html Input box, insert data to Sqlite-simple DB.</a></li>
+<li><a href="#org125cedc">6.31. <span class="done DONE">DONE</span> Added code: Integrate Sqlite-simple to wai.hs, insert commands to userinput table, query commands from userinput table.</a></li>
+<li><a href="#orgaf25d84">6.32. <span class="done DONE">DONE</span> Refactored code: Clearn up some unnecessary code.</a></li>
+<li><a href="#org44631df">6.33. <span class="done DONE">DONE</span> A guy asks me to meet as Benze Coffee around Hamilton St. and Helmcken St. from a company called Linquet.com</a></li>
+<li><a href="#org224678b">6.34. <span class="done DONE">DONE</span> Integrate Ajax to wai.hs, send Json data to Server, and get response from Server in client side.</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org35e858f" class="outline-2">
-<h2 id="org35e858f"><span class="section-number-2">1</span> What I did today</h2>
+<div id="outline-container-orgc3c77a1" class="outline-2">
+<h2 id="orgc3c77a1"><span class="section-number-2">1</span> What I did today</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li><p>
@@ -331,8 +332,8 @@ It causes lots of confusing when you load your code inside ghci</li>
 </div>
 </div>
 
-<div id="outline-container-org3811483" class="outline-2">
-<h2 id="org3811483"><span class="section-number-2">2</span> Added Javascript to edit code block</h2>
+<div id="outline-container-orgca804f2" class="outline-2">
+<h2 id="orgca804f2"><span class="section-number-2">2</span> Added Javascript to edit code block</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li>Added Javascript to listen to onclick event, e.g. enable/disable TextArea visibility</li>
@@ -344,8 +345,8 @@ It causes lots of confusing when you load your code inside ghci</li>
 </div>
 </div>
 
-<div id="outline-container-org850dfca" class="outline-2">
-<h2 id="org850dfca"><span class="section-number-2">3</span> MacOS automatically update screws up <b>tmux</b></h2>
+<div id="outline-container-org7d1390e" class="outline-2">
+<h2 id="org7d1390e"><span class="section-number-2">3</span> MacOS automatically update screws up <b>tmux</b></h2>
 <div class="outline-text-2" id="text-3">
 <ol class="org-ol">
 <li><b>tmux</b> can not start up
@@ -376,8 +377,8 @@ The key is the current <b>word</b> under current <b>cursor</b></li>
 </div>
 </div>
 
-<div id="outline-container-org408c689" class="outline-2">
-<h2 id="org408c689"><span class="section-number-2">4</span> Haskell show, print and putStr or putStrLn</h2>
+<div id="outline-container-org8c88bdc" class="outline-2">
+<h2 id="org8c88bdc"><span class="section-number-2">4</span> Haskell show, print and putStr or putStrLn</h2>
 <div class="outline-text-2" id="text-4">
 <ol class="org-ol">
 <li><p>
@@ -392,8 +393,8 @@ show, print and putStr <code>"dog\\"</code>,
 </ol>
 </div>
 </div>
-<div id="outline-container-org5278d0d" class="outline-2">
-<h2 id="org5278d0d"><span class="section-number-2">5</span> Add wai-uil to wai.hs Server for redirecting response URI</h2>
+<div id="outline-container-org0531bcc" class="outline-2">
+<h2 id="org0531bcc"><span class="section-number-2">5</span> Add wai-uil to wai.hs Server for redirecting response URI</h2>
 <div class="outline-text-2" id="text-5">
 <ol class="org-ol">
 <li>Install wai-uti with <code>cabal install wai-uti</code></li>
@@ -403,8 +404,8 @@ show, print and putStr <code>"dog\\"</code>,
 </div>
 </div>
 
-<div id="outline-container-org003fb8c" class="outline-2">
-<h2 id="org003fb8c"><span class="section-number-2">6</span> Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.</h2>
+<div id="outline-container-org54d44a1" class="outline-2">
+<h2 id="org54d44a1"><span class="section-number-2">6</span> Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li>Two ways to solve the problem.
@@ -464,65 +465,65 @@ The best way to do is to use <b>Iteration</b>
 </ul>
 </div>
 
-<div id="outline-container-org814aa28" class="outline-3">
-<h3 id="org814aa28"><span class="section-number-3">6.1</span> <span class="done DONE">DONE</span> Hair cut</h3>
+<div id="outline-container-org91cf61c" class="outline-3">
+<h3 id="org91cf61c"><span class="section-number-3">6.1</span> <span class="done DONE">DONE</span> Hair cut</h3>
 <div class="outline-text-3" id="text-6-1">
 <ol class="org-ol">
 <li>17$ for the stupid hair cut.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org0a232cc" class="outline-3">
-<h3 id="org0a232cc"><span class="section-number-3">6.2</span> <span class="done DONE">DONE</span> Added three buttons: add, update and delete to wai.hs</h3>
+<div id="outline-container-org834b4ef" class="outline-3">
+<h3 id="org834b4ef"><span class="section-number-3">6.2</span> <span class="done DONE">DONE</span> Added three buttons: add, update and delete to wai.hs</h3>
 <div class="outline-text-3" id="text-6-2">
 <ol class="org-ol">
 <li>There is an issue in <code>runSh</code> function. For example. For instance, "mv" command does not work properly.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org1fe9f46" class="outline-3">
-<h3 id="org1fe9f46"><span class="section-number-3">6.3</span> <span class="done DONE">DONE</span> Do my laundry</h3>
+<div id="outline-container-orgbd07aa2" class="outline-3">
+<h3 id="orgbd07aa2"><span class="section-number-3">6.3</span> <span class="done DONE">DONE</span> Do my laundry</h3>
 <div class="outline-text-3" id="text-6-3">
 </div>
 </div>
-<div id="outline-container-org93bf51a" class="outline-3">
-<h3 id="org93bf51a"><span class="section-number-3">6.4</span> <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</h3>
+<div id="outline-container-org8a83d11" class="outline-3">
+<h3 id="org8a83d11"><span class="section-number-3">6.4</span> <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</h3>
 <div class="outline-text-3" id="text-6-4">
 </div>
 </div>
-<div id="outline-container-orge07b175" class="outline-3">
-<h3 id="orge07b175"><span class="section-number-3">6.5</span> <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</h3>
+<div id="outline-container-org80cc750" class="outline-3">
+<h3 id="org80cc750"><span class="section-number-3">6.5</span> <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</h3>
 <div class="outline-text-3" id="text-6-5">
 </div>
 </div>
-<div id="outline-container-orga4c544d" class="outline-3">
-<h3 id="orga4c544d"><span class="section-number-3">6.6</span> <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</h3>
+<div id="outline-container-orgf660707" class="outline-3">
+<h3 id="orgf660707"><span class="section-number-3">6.6</span> <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</h3>
 <div class="outline-text-3" id="text-6-6">
 </div>
 </div>
-<div id="outline-container-org3bd5bd5" class="outline-3">
-<h3 id="org3bd5bd5"><span class="section-number-3">6.7</span> <span class="done DONE">DONE</span> pushall respositories to bitbucket</h3>
+<div id="outline-container-org16646dd" class="outline-3">
+<h3 id="org16646dd"><span class="section-number-3">6.7</span> <span class="done DONE">DONE</span> pushall respositories to bitbucket</h3>
 <div class="outline-text-3" id="text-6-7">
 </div>
 </div>
-<div id="outline-container-orga801f8a" class="outline-3">
-<h3 id="orga801f8a"><span class="section-number-3">6.8</span> <span class="done DONE">DONE</span> fix resume a bit</h3>
+<div id="outline-container-org82b844f" class="outline-3">
+<h3 id="org82b844f"><span class="section-number-3">6.8</span> <span class="done DONE">DONE</span> fix resume a bit</h3>
 <div class="outline-text-3" id="text-6-8">
 </div>
 </div>
-<div id="outline-container-org6c8ea61" class="outline-3">
-<h3 id="org6c8ea61"><span class="section-number-3">6.9</span> <span class="todo TODO">TODO</span> Need to add more detail to resume</h3>
+<div id="outline-container-orgb5a0f41" class="outline-3">
+<h3 id="orgb5a0f41"><span class="section-number-3">6.9</span> <span class="todo TODO">TODO</span> Need to add more detail to resume</h3>
 </div>
-<div id="outline-container-org6d2f443" class="outline-3">
-<h3 id="org6d2f443"><span class="section-number-3">6.10</span> <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</h3>
+<div id="outline-container-org8f05e3e" class="outline-3">
+<h3 id="org8f05e3e"><span class="section-number-3">6.10</span> <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</h3>
 </div>
-<div id="outline-container-org2ec72c4" class="outline-3">
-<h3 id="org2ec72c4"><span class="section-number-3">6.11</span> <span class="done DONE">DONE</span> Open new paypal account</h3>
+<div id="outline-container-org53b85de" class="outline-3">
+<h3 id="org53b85de"><span class="section-number-3">6.11</span> <span class="done DONE">DONE</span> Open new paypal account</h3>
 <div class="outline-text-3" id="text-6-11">
 </div>
 </div>
-<div id="outline-container-orgdcc29f8" class="outline-3">
-<h3 id="orgdcc29f8"><span class="section-number-3">6.12</span> <span class="done DONE">DONE</span> Add color to wai.hs to highlight the current edited code block</h3>
+<div id="outline-container-org1caee70" class="outline-3">
+<h3 id="org1caee70"><span class="section-number-3">6.12</span> <span class="done DONE">DONE</span> Add color to wai.hs to highlight the current edited code block</h3>
 <div class="outline-text-3" id="text-6-12">
 <ol class="org-ol">
 <li>when current code block is clicked, change the background of pre</li>
@@ -532,13 +533,13 @@ The best way to do is to use <b>Iteration</b>
 </div>
 </div>
 
-<div id="outline-container-org2641e65" class="outline-3">
-<h3 id="org2641e65"><span class="section-number-3">6.13</span> <span class="done DONE">DONE</span> Send out more resumes</h3>
+<div id="outline-container-org5482e28" class="outline-3">
+<h3 id="org5482e28"><span class="section-number-3">6.13</span> <span class="done DONE">DONE</span> Send out more resumes</h3>
 <div class="outline-text-3" id="text-6-13">
 </div>
 </div>
-<div id="outline-container-org140c27b" class="outline-3">
-<h3 id="org140c27b"><span class="section-number-3">6.14</span> <span class="todo TODO">TODO</span> Do some java coding</h3>
+<div id="outline-container-orgc17773e" class="outline-3">
+<h3 id="orgc17773e"><span class="section-number-3">6.14</span> <span class="todo TODO">TODO</span> Do some java coding</h3>
 <div class="outline-text-3" id="text-6-14">
 <ul class="org-ul">
 <li>Rotate square array to left/right 90 degrees.</li>
@@ -649,40 +650,40 @@ Use <b>preorder</b> traveral to write all the keys and nodes to file.
 </div>
 </div>
 
-<div id="outline-container-orgadc07ca" class="outline-3">
-<h3 id="orgadc07ca"><span class="section-number-3">6.15</span> <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</h3>
+<div id="outline-container-orgf68c57a" class="outline-3">
+<h3 id="orgf68c57a"><span class="section-number-3">6.15</span> <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</h3>
 <div class="outline-text-3" id="text-6-15">
 <p>
 <a href="https://www.ahnfelt.net/monads-forget-about-bind/">URL</a>
 </p>
 </div>
 </div>
-<div id="outline-container-orgcafefbb" class="outline-3">
-<h3 id="orgcafefbb"><span class="section-number-3">6.16</span> <span class="done DONE">DONE</span> Send out more resume,  more to EA</h3>
+<div id="outline-container-orgd59352d" class="outline-3">
+<h3 id="orgd59352d"><span class="section-number-3">6.16</span> <span class="done DONE">DONE</span> Send out more resume,  more to EA</h3>
 <div class="outline-text-3" id="text-6-16">
 </div>
 </div>
-<div id="outline-container-org67885f4" class="outline-3">
-<h3 id="org67885f4"><span class="section-number-3">6.17</span> <span class="done DONE">DONE</span> Add Applescript to send notification when filewatcher detects some txt file inside password folder.</h3>
+<div id="outline-container-orge688466" class="outline-3">
+<h3 id="orge688466"><span class="section-number-3">6.17</span> <span class="done DONE">DONE</span> Add Applescript to send notification when filewatcher detects some txt file inside password folder.</h3>
 <div class="outline-text-3" id="text-6-17">
 </div>
 </div>
-<div id="outline-container-org6b85a71" class="outline-3">
-<h3 id="org6b85a71"><span class="section-number-3">6.18</span> <span class="done DONE">DONE</span> Finally figure out how to use multiple putStrLn in Agda</h3>
+<div id="outline-container-org9718e99" class="outline-3">
+<h3 id="org9718e99"><span class="section-number-3">6.18</span> <span class="done DONE">DONE</span> Finally figure out how to use multiple putStrLn in Agda</h3>
 <div class="outline-text-3" id="text-6-18">
 </div>
 </div>
 
-<div id="outline-container-orgc7105f5" class="outline-3">
-<h3 id="orgc7105f5"><span class="section-number-3">6.19</span> <span class="done DONE">DONE</span> Refactor filewatcher.hs, remove IORef, clean up useless code</h3>
+<div id="outline-container-org85a979f" class="outline-3">
+<h3 id="org85a979f"><span class="section-number-3">6.19</span> <span class="done DONE">DONE</span> Refactor filewatcher.hs, remove IORef, clean up useless code</h3>
 <div class="outline-text-3" id="text-6-19">
 </div>
 </div>
-<div id="outline-container-orgfe9cb24" class="outline-3">
-<h3 id="orgfe9cb24"><span class="section-number-3">6.20</span> <span class="done DONE">DONE</span> Added double click event: <code>ondblclick</code> to javascript file inside <code>wai.hs</code> to improve user experience.</h3>
+<div id="outline-container-orgf2b5c1b" class="outline-3">
+<h3 id="orgf2b5c1b"><span class="section-number-3">6.20</span> <span class="done DONE">DONE</span> Added double click event: <code>ondblclick</code> to javascript file inside <code>wai.hs</code> to improve user experience.</h3>
 </div>
-<div id="outline-container-orgdc7552a" class="outline-3">
-<h3 id="orgdc7552a"><span class="section-number-3">6.21</span> <span class="done DONE">DONE</span> Finished Osense intervew take-home assignment.</h3>
+<div id="outline-container-org03fee25" class="outline-3">
+<h3 id="org03fee25"><span class="section-number-3">6.21</span> <span class="done DONE">DONE</span> Finished Osense intervew take-home assignment.</h3>
 <div class="outline-text-3" id="text-6-21">
 <ol class="org-ol">
 <li>Used the C standard library only to implement a console application which reads a CSV file and displays some statistical temperature information to users.
@@ -695,14 +696,14 @@ Use <b>preorder</b> traveral to write all the keys and nodes to file.
 </ol>
 </div>
 </div>
-<div id="outline-container-org5323571" class="outline-3">
-<h3 id="org5323571"><span class="section-number-3">6.22</span> <span class="done DONE">DONE</span> Wrote a shell script to simplify gcc compilation process. <code>$scr/gcc_compile.sh</code></h3>
+<div id="outline-container-orgcd3574b" class="outline-3">
+<h3 id="orgcd3574b"><span class="section-number-3">6.22</span> <span class="done DONE">DONE</span> Wrote a shell script to simplify gcc compilation process. <code>$scr/gcc_compile.sh</code></h3>
 </div>
-<div id="outline-container-orgd2ca576" class="outline-3">
-<h3 id="orgd2ca576"><span class="section-number-3">6.23</span> <span class="done DONE">DONE</span> Fixed an issue where is special characters are not escaped properly.</h3>
+<div id="outline-container-org98c1541" class="outline-3">
+<h3 id="org98c1541"><span class="section-number-3">6.23</span> <span class="done DONE">DONE</span> Fixed an issue where is special characters are not escaped properly.</h3>
 </div>
-<div id="outline-container-orgf6318e7" class="outline-3">
-<h3 id="orgf6318e7"><span class="section-number-3">6.24</span> <span class="done DONE">DONE</span> Xencall call HR interview</h3>
+<div id="outline-container-org0c84212" class="outline-3">
+<h3 id="org0c84212"><span class="section-number-3">6.24</span> <span class="done DONE">DONE</span> Xencall call HR interview</h3>
 <div class="outline-text-3" id="text-6-24">
 <ul class="org-ul">
 <li>What did you do in Amazon?</li>
@@ -710,8 +711,8 @@ Use <b>preorder</b> traveral to write all the keys and nodes to file.
 </ul>
 </div>
 </div>
-<div id="outline-container-org730e5ff" class="outline-3">
-<h3 id="org730e5ff"><span class="section-number-3">6.25</span> I worked on an pplication to generate report for accounting department in EU.</h3>
+<div id="outline-container-org33ac7e0" class="outline-3">
+<h3 id="org33ac7e0"><span class="section-number-3">6.25</span> I worked on an pplication to generate report for accounting department in EU.</h3>
 <div class="outline-text-3" id="text-6-25">
 <ul class="org-ul">
 <li>The applicaiton was querying data from database such as customer information.</li>
@@ -726,8 +727,8 @@ Use <b>preorder</b> traveral to write all the keys and nodes to file.
 </ul>
 </div>
 </div>
-<div id="outline-container-org5cd720a" class="outline-3">
-<h3 id="org5cd720a"><span class="section-number-3">6.26</span> In VoiceBox Inc.</h3>
+<div id="outline-container-orgfa5f427" class="outline-3">
+<h3 id="orgfa5f427"><span class="section-number-3">6.26</span> In VoiceBox Inc.</h3>
 <div class="outline-text-3" id="text-6-26">
 <ul class="org-ul">
 <li>Development application to generate nature language in English.</li>
@@ -740,8 +741,8 @@ Use <b>preorder</b> traveral to write all the keys and nodes to file.
 </ul>
 </div>
 </div>
-<div id="outline-container-org13825e9" class="outline-3">
-<h3 id="org13825e9"><span class="section-number-3">6.27</span> iOS development</h3>
+<div id="outline-container-org454d6c5" class="outline-3">
+<h3 id="org454d6c5"><span class="section-number-3">6.27</span> iOS development</h3>
 <div class="outline-text-3" id="text-6-27">
 <ul class="org-ul">
 <li>Development iOS application to encrypt files and images</li>
@@ -750,8 +751,8 @@ Use <b>preorder</b> traveral to write all the keys and nodes to file.
 </ul>
 </div>
 </div>
-<div id="outline-container-org63914e7" class="outline-3">
-<h3 id="org63914e7"><span class="section-number-3">6.28</span> <span class="done DONE">DONE</span> Interview with expa.com</h3>
+<div id="outline-container-org915fa34" class="outline-3">
+<h3 id="org915fa34"><span class="section-number-3">6.28</span> <span class="done DONE">DONE</span> Interview with expa.com</h3>
 <div class="outline-text-3" id="text-6-28">
 <ul class="org-ul">
 <li>Tell me a little bit about yourself.</li>
@@ -804,8 +805,8 @@ Sort a list contains only \(\{-1, 0, 1\}\) in \(\mathcal{O}(n)\) time.
 </ul>
 </div>
 </div>
-<div id="outline-container-org084458c" class="outline-3">
-<h3 id="org084458c"><span class="section-number-3">6.29</span> <span class="done DONE">DONE</span> Implement <b>Eight Queens</b> problem in Haskell</h3>
+<div id="outline-container-orgb411104" class="outline-3">
+<h3 id="orgb411104"><span class="section-number-3">6.29</span> <span class="done DONE">DONE</span> Implement <b>Eight Queens</b> problem in Haskell</h3>
 <div class="outline-text-3" id="text-6-29">
 <ul class="org-ul">
 <li>Functions that use in the code
@@ -825,23 +826,31 @@ Recursion function to find ONE solution.
 </div>
 </div>
 
-<div id="outline-container-org938dc6b" class="outline-3">
-<h3 id="org938dc6b"><span class="section-number-3">6.30</span> <span class="done DONE">DONE</span> Added code: Post Html form, and retrieve data from Html Input box, insert data to Sqlite-simple DB.</h3>
+<div id="outline-container-org60de443" class="outline-3">
+<h3 id="org60de443"><span class="section-number-3">6.30</span> <span class="done DONE">DONE</span> Added code: Post Html form, and retrieve data from Html Input box, insert data to Sqlite-simple DB.</h3>
 </div>
-<div id="outline-container-org4c914e9" class="outline-3">
-<h3 id="org4c914e9"><span class="section-number-3">6.31</span> <span class="done DONE">DONE</span> Added code: Integrate Sqlite-simple to wai.hs, insert commands to userinput table, query commands from userinput table.</h3>
+<div id="outline-container-org125cedc" class="outline-3">
+<h3 id="org125cedc"><span class="section-number-3">6.31</span> <span class="done DONE">DONE</span> Added code: Integrate Sqlite-simple to wai.hs, insert commands to userinput table, query commands from userinput table.</h3>
 </div>
-<div id="outline-container-orgd183e62" class="outline-3">
-<h3 id="orgd183e62"><span class="section-number-3">6.32</span> <span class="done DONE">DONE</span> Refactored code: Clearn up some unnecessary code.</h3>
+<div id="outline-container-orgaf25d84" class="outline-3">
+<h3 id="orgaf25d84"><span class="section-number-3">6.32</span> <span class="done DONE">DONE</span> Refactored code: Clearn up some unnecessary code.</h3>
 </div>
-<div id="outline-container-org779370e" class="outline-3">
-<h3 id="org779370e"><span class="section-number-3">6.33</span> A guy asks me to meet as Benze Coffee around Hamilton St. and Helmcken St. from a company called Linquet.com</h3>
+<div id="outline-container-org44631df" class="outline-3">
+<h3 id="org44631df"><span class="section-number-3">6.33</span> <span class="done DONE">DONE</span> A guy asks me to meet as Benze Coffee around Hamilton St. and Helmcken St. from a company called Linquet.com</h3>
+<div class="outline-text-3" id="text-6-33">
+<ul class="org-ul">
+<li>Not sure what I will expect</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org224678b" class="outline-3">
+<h3 id="org224678b"><span class="section-number-3">6.34</span> <span class="done DONE">DONE</span> Integrate Ajax to wai.hs, send Json data to Server, and get response from Server in client side.</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-06-10 Mon 15:03</p>
+<p class="date">Created: 2019-06-13 Thu 14:51</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

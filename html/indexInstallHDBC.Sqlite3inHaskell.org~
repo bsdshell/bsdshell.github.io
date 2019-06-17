@@ -1,0 +1,36 @@
+*** HDBC-sqlite3
+
+cabal install HDBC-sqlite3 
+cabal install sqlite
+
+-- run ghci
+ghci
+
+-- load module
+ghci>:module Database.HDBC Database.HDBC.Sqlite3
+
+-- create connection
+ghci>conn <- connectSqlite3 "students.db"
+-- check the type of connection 
+ghci>:t conn
+
+-- check the function
+ghci>:t connectSqlite3
+
+-- create a table
+ghci>run conn "CREATE TABLE names (id INTEGER NOT NULL, fname VARCHAR(80), lname VARCHAR(80))" []
+
+-- check the type of signature of run
+ghci>:run
+
+-- insert data to table
+ghci>run conn "INSERT INTO names (id, fname, lname) VALUES(1, 'Edwin', 'Brady')" []
+
+-- commit it
+ghci>commit conn
+
+-- query data from table
+ghci> quickQuery conn "SELECT * from names" []
+
+-- login to sqlite3 in Command Line if you want to
+sqlite3 students.db

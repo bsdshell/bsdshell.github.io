@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-06-09 Sun 12:22 -->
+<!-- 2019-06-06 Thu 22:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -233,85 +233,55 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbea7671">1. HDBC-sqlite3</a></li>
-<li><a href="#org6eeffe2">2. sqlite-simple</a></li>
+<li><a href="#org37b4395">0.1. Install Apache Solr, this tutorial is for MacOS but it should work in Linux.</a></li>
 </ul>
+</li>
+<li><a href="#org95ea0ce">1. My current binary solr is in <code>myfile/install</code> directory.</a></div>
 </div>
-</div>
-<div id="outline-container-orgbea7671" class="outline-2">
-<h2 id="orgbea7671"><span class="section-number-2">1</span> HDBC-sqlite3</h2>
-<div class="outline-text-2" id="text-1">
-<div class="org-src-container">
-<pre class="src src-bash">cabal install HDBC-sqlite3 
-cabal install sqlite
--- run ghci
-ghci
-
--- load module
-ghci&gt;:module Database.HDBC Database.HDBC.Sqlite3
-
--- create connection
-ghci&gt;conn &lt;- connectSqlite3 <span style="color: #4E9A06;">"students.db"</span>
--- check the type of connection 
-ghci&gt;:t conn
-
--- check the <span style="color: #A52A2A; font-weight: bold;">function</span>
-ghci&gt;:t connectSqlite3
-
--- create a table
-ghci&gt;run conn <span style="color: #4E9A06;">"CREATE TABLE names (id INTEGER NOT NULL, fname VARCHAR(80), lname VARCHAR(80))"</span> []
-
--- check the type of signature of run
-ghci&gt;:run
-
--- insert data to table
-ghci&gt;run conn <span style="color: #4E9A06;">"INSERT INTO names (id, fname, lname) VALUES(1, 'Edwin', 'Brady')"</span> []
-
--- commit it
-ghci&gt;commit conn
-
--- query data from table
-ghci&gt; quickQuery conn <span style="color: #4E9A06;">"SELECT * from names"</span> []
-
--- login to sqlite3<span style="color: #A52A2A; font-weight: bold;"> in</span> Command Line if you want to
-sqlite3 students.db
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-org6eeffe2" class="outline-2">
-<h2 id="org6eeffe2"><span class="section-number-2">2</span> sqlite-simple</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org37b4395" class="outline-3">
+<h3 id="org37b4395"><span class="section-number-3">0.1</span> Install Apache Solr, this tutorial is for MacOS but it should work in Linux.</h3>
+<div class="outline-text-3" id="text-0-1">
 <ul class="org-ul">
-<li>Install sqlite-simple.</li>
-</ul>
-<div class="org-src-container">
-<pre class="src src-bash">cabal install sqlite-simple
-</pre>
-</div>
+<li>How to install Solr.
 <ul class="org-ul">
-<li>Local file example.</li>
-</ul>
-<div class="org-src-container">
-<pre class="src src-bash">/Users/cat/myfile/bitbucket/haskell/Sqlite.hs
-http://hackage.haskell.org/package/sqlite-simple
-</pre>
-</div>
+<li>download solr from <a href="http://lucene.apache.org/solr/downloads.html">download solr</a> and unzip it.</li>
+</ul></li>
+<li><p>
+How to start solr.
+</p>
 <ul class="org-ul">
-<li>Open connection.</li>
+<li>change directory to solr.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-bash">conn &lt;- open <span style="color: #4E9A06;">"test.db"</span>
+<pre class="src src-bash"><span style="color: #A020F0;">cd</span> solr-8.1.1
+bin/start -p 8983
 </pre>
+</div></li>
+<li><p>
+How to stop solr.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">bin/stop -p 8983
+</pre>
+</div></li>
+<li><p>
+Check your solr running service from your browser.
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">http://localhost:8983/solr/#/
+</pre>
+</div></li>
+</ul>
 </div>
 </div>
+<div id="outline-container-org95ea0ce" class="outline-2">
+<h2 id="org95ea0ce"><span class="section-number-2">1</span> My current binary solr is in <code>myfile/install</code> directory.</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-06-09 Sun 12:22</p>
+<p class="date">Created: 2019-06-06 Thu 22:24</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
-

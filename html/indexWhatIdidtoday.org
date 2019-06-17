@@ -326,5 +326,10 @@
 *** DONE Added code: Post Html form, and retrieve data from Html Input box, insert data to Sqlite-simple DB.
 *** DONE Added code: Integrate Sqlite-simple to wai.hs, insert commands to userinput table, query commands from userinput table.
 *** DONE Refactored code: Clearn up some unnecessary code.
-*** A guy asks me to meet as Benze Coffee around Hamilton St. and Helmcken St. from a company called Linquet.com
+*** DONE A guy asks me to meet as Benze Coffee around Hamilton St. and Helmcken St. from a company called Linquet.com
+    CLOSED: [2019-06-13 Thu 09:42]
     + Not sure what I will expect
+*** DONE Integrate Ajax to wai.hs, send Json data to Server, and get response from Server in client side.
+*** DONE I has an interview with Xencall today. 
+    + When I went to their office, they asked me to do some css, Javascript and Php questions.
+    + I just walked out their office:)
