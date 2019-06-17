@@ -1,3 +1,4 @@
+
 ** What I did today
    1. Use Haskell package to simplify Html multiple lines in Haskell<2019-05-09 Thu>
       #+BEGIN_SRC haskell
@@ -331,5 +332,49 @@
     + Not sure what I will expect
 *** DONE Integrate Ajax to wai.hs, send Json data to Server, and get response from Server in client side.
 *** DONE I has an interview with Xencall today. 
+    + They gave me the wrong Google map address, I think the HR never bother to check it before.
     + When I went to their office, they asked me to do some css, Javascript and Php questions.
     + I just walked out their office:)
+*** DONE Interview with a company called Impact Recruitment last Friday.
+    + When I went to their office, a woman called Grace Mok came out to meet me.
+    + I realized they are just a recruitment company.
+    + She asked me a few questions about my resume. What did you do in this company?
+    + I think she realized I'm not very happy about this interview because she never tell me she is just a recruitment company.
+    + The company web site is not even working propertly. It is just a BS company.
+*** Download Vertex Buffer Object(VBO) and play around it.
+    + I download an example and put it in ~$b/opengl/vboCube~.
+    + After I commented out a few line of code, I can compile it successfully.
+    + There are a few steps to create Vertex Buffer Object in OpenGL.
+      + Generate buffer object's name.
+      + Bind a name buffer object.
+      + Creats and initializes a buffer object's data store.
+      + Delete Buffer.
+      + [[/Users/cat/myfile/bitbucket/opengl/vboCube/src][VBO Example]]
+      [[https://www.khronos.org/registry/OpenGL-Refpages/es2.0/xhtml/glGenBuffers.xml][glGenBuffer]]
+      #+BEGIN_SRC c++
+          glGenBuffer(GLsize n, GLunit* buffers)
+      #+END_SRC
+      + Bind a named buffer object.
+      [[https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glBindBuffer.xhtml][glBindBuffer]]
+      #+BEGIN_SRC c++
+          glBindBuffer(Glenum target, GLunit buffer)
+      #+END_SRC
+      + Creates and initializes a buffer object's data store.
+      [[https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glBufferData.xhtml][glBufferData]]
+      #+BEGIN_SRC c++
+         glBufferData(GLenum target, GLsizept size, const GLvoid* data, GLenum usage)
+      #+END_SRC
+      + Delete Buffer.
+      [[https://www.khronos.org/registry/OpenGL-Refpages/es2.0/xhtml/glDeleteBuffers.xml][glDeleteBuffers]]
+      #+BEGIN_SRC c++
+	glDeleteBuffers(GLsize n, const GLunit* buffers)
+
+        // delete vertex buffer objects before your code exits.
+	GLsize vboId = 0;
+	glDeleteBuffers(1, &vboId);
+        GLsize iboId = 0;
+        glDeleteBuffers(1, &iboId);
+      #+END_SRC
+
+
+    
