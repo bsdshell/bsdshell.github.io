@@ -32,116 +32,40 @@
       ga('send', 'pageview');
     </script>
 
-    <div class="colmask rightmenu">
-        <div class="colleft">
-            <div class="col1">
-            <!-- Column 1 start -->
-
-            <div class="mytitle">
-            OpenGl Vertex Array 
-            </div>
-            <div class="mytext">
-            How to use Vertex Array to triangle 
-            </div>
-            <div class="cen">
-            <img src="../image/vertexarray1.png" width="40%" height="40%" /><br>
-            </div>
-
-            <div class="cen">
-            <a href="https://github.com/bsdshell/opengl/tree/master/draw_vertex_array.c">Source Code</a>
-            </div> 
-
-            
-            <!-- Column 1 end -->
-            </div>
-            <div class="col2">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
+        <div class="mytitle">
+        OpenGl Vertex Array, how to use Vertex Array to draw a triangle 
         </div>
-    </div>
+        <div class="mytext">
+        0. Create vertex array: vertices, normals and colors.
+        1. Enable vertex array.
+        2. Draw vertex array.
+        3. Disable vertex array. 
+        </div>
+        <pre class="prettyprint">
+        glEnableClientState(GL_NORMAL_ARRAY);
+        glEnableClientState(GL_COLOR_ARRAY);
+        glEnableClientState(GL_VERTEX_ARRAY);
+
+        glNormalPointer(GL_FLOAT, 0, normals1);
+        glColorPointer(3, GL_FLOAT, 0, colors1);
+        glVertexPointer(3, GL_FLOAT, 0, vertices1);
+
+        // compute number of vertices 
+        glDrawArrays(GL_TRIANGLES, 0, (sizeof(vertices1)/3)/sizeof(GLfloat));
+
+        glDisableClientState(GL_VERTEX_ARRAY);  // disable vertex arrays
+        glDisableClientState(GL_COLOR_ARRAY);
+        glDisableClientState(GL_NORMAL_ARRAY);
+        </pre>
+
+        <div class="cen">
+        <img src="../image/vertexarray1.png" width="40%" height="40%" /><br>
+        </div>
+
+        <div class="cen">
+        <a href="https://bitbucket.org/zsurface/opengl/src/master/vertexArray/src/main.cpp">Source Code</a>
+        </div> 
+
 
     </body>
     </html>
