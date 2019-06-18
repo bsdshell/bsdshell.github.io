@@ -233,21 +233,21 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org86390ac">1. Get a pointer to <code>std::vector</code></a></li>
-<li><a href="#orga053cd3">2. Get a pointer to <code>std::vector</code> data</a></li>
-<li><a href="#org189496f">3. Convert String to digit.</a></li>
-<li><a href="#org8b173b1">4. Initialize Array in C and C++</a></li>
-<li><a href="#org9c4208a">5. Pointer points to array</a></li>
-<li><a href="#orgbeb2df4">6. C++ print out array</a></li>
-<li><a href="#org87701f1">7. Print out array with pointer.</a></li>
-<li><a href="#orgb66dd9c">8. Allocate memory in C dynamically.</a></li>
-<li><a href="#org7e42b84">9. Allocate memory in C++/Cpp dynamically.</a></li>
-<li><a href="#org161f1bc">10. Allocate memory 2 dimensions in C</a></li>
+<li><a href="#orga4b038c">1. Get a pointer to <code>std::vector</code></a></li>
+<li><a href="#org74dee23">2. Get a pointer to <code>std::vector</code> data</a></li>
+<li><a href="#orgc67eb3a">3. Convert String to digit.</a></li>
+<li><a href="#org8009c82">4. Initialize Array in C and C++</a></li>
+<li><a href="#orgaa5a8fd">5. Pointer points to array</a></li>
+<li><a href="#orgc732d51">6. C++ print out array</a></li>
+<li><a href="#org193da9c">7. Print out array with pointer.</a></li>
+<li><a href="#org9506127">8. Allocate memory in C dynamically.</a></li>
+<li><a href="#org8d37a0d">9. Allocate memory in C++/Cpp dynamically.</a></li>
+<li><a href="#org4516a2d">10. Allocate memory 2 dimensions in C</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org86390ac" class="outline-2">
-<h2 id="org86390ac"><span class="section-number-2">1</span> Get a pointer to <code>std::vector</code></h2>
+<div id="outline-container-orga4b038c" class="outline-2">
+<h2 id="orga4b038c"><span class="section-number-2">1</span> Get a pointer to <code>std::vector</code></h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Pt</span>{
@@ -266,8 +266,8 @@ vect.push_back(<span style="color: #A52A2A; font-weight: bold;">new</span> <span
 </div>
 </div>
 </div>
-<div id="outline-container-orga053cd3" class="outline-2">
-<h2 id="orga053cd3"><span class="section-number-2">2</span> Get a pointer to <code>std::vector</code> data</h2>
+<div id="outline-container-org74dee23" class="outline-2">
+<h2 id="org74dee23"><span class="section-number-2">2</span> Get a pointer to <code>std::vector</code> data</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Get a pointer to the first address of the data.
@@ -305,8 +305,8 @@ REQUIRE(compareArray(ptrToData, expected, 4) == <span style="color: #F5666D;">tr
 </div>
 </div>
 
-<div id="outline-container-org189496f" class="outline-2">
-<h2 id="org189496f"><span class="section-number-2">3</span> Convert String to digit.</h2>
+<div id="outline-container-orgc67eb3a" class="outline-2">
+<h2 id="orgc67eb3a"><span class="section-number-2">3</span> Convert String to digit.</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #A020F0;">#include</span> 
@@ -333,8 +333,8 @@ REQUIRE(compareArray(ptrToData, expected, 4) == <span style="color: #F5666D;">tr
 </div>
 </div>
 </div>
-<div id="outline-container-org8b173b1" class="outline-2">
-<h2 id="org8b173b1"><span class="section-number-2">4</span> Initialize Array in C and C++</h2>
+<div id="outline-container-org8009c82" class="outline-2">
+<h2 id="org8009c82"><span class="section-number-2">4</span> Initialize Array in C and C++</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #204A87;">//</span><span style="color: #204A87;">C and C++ initialize array</span>
@@ -343,8 +343,8 @@ REQUIRE(compareArray(ptrToData, expected, 4) == <span style="color: #F5666D;">tr
 </div>
 </div>
 </div>
-<div id="outline-container-org9c4208a" class="outline-2">
-<h2 id="org9c4208a"><span class="section-number-2">5</span> Pointer points to array</h2>
+<div id="outline-container-orgaa5a8fd" class="outline-2">
+<h2 id="orgaa5a8fd"><span class="section-number-2">5</span> Pointer points to array</h2>
 <div class="outline-text-2" id="text-5">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #204A87;">// </span><span style="color: #204A87;">now pointer pt points to array</span>
@@ -354,8 +354,8 @@ REQUIRE(compareArray(ptrToData, expected, 4) == <span style="color: #F5666D;">tr
 </div>
 </div>
 
-<div id="outline-container-orgbeb2df4" class="outline-2">
-<h2 id="orgbeb2df4"><span class="section-number-2">6</span> C++ print out array</h2>
+<div id="outline-container-orgc732d51" class="outline-2">
+<h2 id="orgc732d51"><span class="section-number-2">6</span> C++ print out array</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #204A87;">// </span><span style="color: #204A87;">print out the array</span>
@@ -366,8 +366,8 @@ REQUIRE(compareArray(ptrToData, expected, 4) == <span style="color: #F5666D;">tr
 </div>
 </div>
 </div>
-<div id="outline-container-org87701f1" class="outline-2">
-<h2 id="org87701f1"><span class="section-number-2">7</span> Print out array with pointer.</h2>
+<div id="outline-container-org193da9c" class="outline-2">
+<h2 id="org193da9c"><span class="section-number-2">7</span> Print out array with pointer.</h2>
 <div class="outline-text-2" id="text-7">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #204A87;">// </span><span style="color: #204A87;">print out using the pointer</span>
@@ -378,8 +378,8 @@ REQUIRE(compareArray(ptrToData, expected, 4) == <span style="color: #F5666D;">tr
 </div>
 </div>
 </div>
-<div id="outline-container-orgb66dd9c" class="outline-2">
-<h2 id="orgb66dd9c"><span class="section-number-2">8</span> Allocate memory in C dynamically.</h2>
+<div id="outline-container-org9506127" class="outline-2">
+<h2 id="org9506127"><span class="section-number-2">8</span> Allocate memory in C dynamically.</h2>
 <div class="outline-text-2" id="text-8">
 <div class="org-src-container">
 <pre class="src src-c"><span style="color: #204A87;">// </span><span style="color: #204A87;">dynamically allocate memory in C</span>
@@ -392,8 +392,8 @@ REQUIRE(compareArray(ptrToData, expected, 4) == <span style="color: #F5666D;">tr
 </div>
 </div>
 </div>
-<div id="outline-container-org7e42b84" class="outline-2">
-<h2 id="org7e42b84"><span class="section-number-2">9</span> Allocate memory in C++/Cpp dynamically.</h2>
+<div id="outline-container-org8d37a0d" class="outline-2">
+<h2 id="org8d37a0d"><span class="section-number-2">9</span> Allocate memory in C++/Cpp dynamically.</h2>
 <div class="outline-text-2" id="text-9">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #204A87;">// </span><span style="color: #204A87;">dynamically allocate memory in C++</span>
@@ -405,8 +405,8 @@ REQUIRE(compareArray(ptrToData, expected, 4) == <span style="color: #F5666D;">tr
 </div>
 </div>
 </div>
-<div id="outline-container-org161f1bc" class="outline-2">
-<h2 id="org161f1bc"><span class="section-number-2">10</span> Allocate memory 2 dimensions in C</h2>
+<div id="outline-container-org4516a2d" class="outline-2">
+<h2 id="org4516a2d"><span class="section-number-2">10</span> Allocate memory 2 dimensions in C</h2>
 <div class="outline-text-2" id="text-10">
 <div class="org-src-container">
 <pre class="src src-c">  <span style="color: #204A87;">// </span><span style="color: #204A87;">allocate two dimension array in C</span>
@@ -426,7 +426,6 @@ REQUIRE(compareArray(ptrToData, expected, 4) == <span style="color: #F5666D;">tr
       }
   }
 
-<span style="color: #204A87;">// </span><span style="color: #204A87;">Deallocate memory 2 dimensions.</span>
 <span style="color: #A52A2A; font-weight: bold;">for</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">j</span>=0; j &lt; col; j++){
     free(ppt[j]);
 }
