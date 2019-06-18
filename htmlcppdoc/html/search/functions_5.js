@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vec',['vec',['../class_matrix_vector_1_1vec.html#ab6e2a9eafc93e30f80fa55c6c535d390',1,'MatrixVector::vec']]]
+  ['utri',['utri',['../namespace_matrix_vector.html#a21f46727b11ebce5213b7338153274c2',1,'MatrixVector']]]
 ];

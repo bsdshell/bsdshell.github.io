@@ -141,12 +141,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const
 <tr class="memitem:af786ab2d8b7bf7b85cf61c9cc76a3cbe"><td class="memItemLeft" align="right" valign="top"><a id="af786ab2d8b7bf7b85cf61c9cc76a3cbe"></a>
 <a class="el" href="class_matrix_vector_1_1mat.html">mat</a>&#160;</td><td class="memItemRight" valign="bottom"><b>vecMultiScala</b> (int index, float f)</td></tr>
 <tr class="separator:af786ab2d8b7bf7b85cf61c9cc76a3cbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8906d4f0766b3bdac3a45e565ce92616"><td class="memItemLeft" align="right" valign="top"><a id="a8906d4f0766b3bdac3a45e565ce92616"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>geneMat</b> (int init)</td></tr>
+<tr class="memitem:a8906d4f0766b3bdac3a45e565ce92616"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_vector_1_1mat.html#a8906d4f0766b3bdac3a45e565ce92616">geneMat</a> (int init)</td></tr>
 <tr class="separator:a8906d4f0766b3bdac3a45e565ce92616"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae18b1579a3eaef088178cff21f3d6a34"><td class="memItemLeft" align="right" valign="top"><a id="ae18b1579a3eaef088178cff21f3d6a34"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> ()</td></tr>
+<tr class="memitem:ae18b1579a3eaef088178cff21f3d6a34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_matrix_vector_1_1mat.html#ae18b1579a3eaef088178cff21f3d6a34">print</a> ()</td></tr>
 <tr class="separator:ae18b1579a3eaef088178cff21f3d6a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d8fafb8d49e850f15ae606d66a16bdd"><td class="memItemLeft" align="right" valign="top"><a id="a1d8fafb8d49e850f15ae606d66a16bdd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>print2</b> ()</td></tr>
+<tr class="separator:a1d8fafb8d49e850f15ae606d66a16bdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b8a448a9e7e296cb686e75626ffb78a"><td class="memItemLeft" align="right" valign="top"><a id="a5b8a448a9e7e296cb686e75626ffb78a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>zero</b> ()</td></tr>
 <tr class="separator:a5b8a448a9e7e296cb686e75626ffb78a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,6 +189,25 @@ float **&#160;</td><td class="memItemRight" valign="bottom"><b>arr</b></td></tr>
 <tr class="separator:a5f1dd191eaa81d863fd0c2a546cf7e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8906d4f0766b3bdac3a45e565ce92616"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8906d4f0766b3bdac3a45e565ce92616">&#9670;&nbsp;</a></span>geneMat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MatrixVector::mat::geneMat </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>init</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>generate matrix from init to ncol*nrow init = 1, ncol = 2, nrow = 3 1 2 3 3 4 5 </p>
+
+</div>
+</div>
 <a id="af971b3b347cdb13e134824d386d2b605"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af971b3b347cdb13e134824d386d2b605">&#9670;&nbsp;</a></span>getVec()</h2>
 
@@ -204,6 +224,24 @@ float **&#160;</td><td class="memItemRight" valign="bottom"><b>arr</b></td></tr>
       </table>
 </div><div class="memdoc">
 <p>get 0 &lt;= n &lt;= nrow vector or column from matrix </p>
+
+</div>
+</div>
+<a id="ae18b1579a3eaef088178cff21f3d6a34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae18b1579a3eaef088178cff21f3d6a34">&#9670;&nbsp;</a></span>print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MatrixVector::mat::print </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>int ncol = 2; int nrow = 3; mat m(ncol, nrow); m.geneMat(1); for(int i=0; i&lt; ncol; i++){ for(int j=0; j&lt; nrow; j++){ int indent = 10; printf("[%*f]", 10, m.arr[i][j]); } printf("\n"); } m.print(); </p>
 
 </div>
 </div>

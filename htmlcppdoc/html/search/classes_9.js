@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['segment',['Segment',['../class_aron_geometry_1_1_segment.html',1,'AronGeometry']]],
-  ['simplecoordinate',['SimpleCoordinate',['../class_simple_coordinate.html',1,'']]],
-  ['sll',['SLL',['../class_s_l_l.html',1,'']]],
-  ['stack',['Stack',['../class_stack.html',1,'']]],
-  ['stopwatch',['StopWatch',['../class_stop_watch.html',1,'']]]
+  ['response_5fimage',['response_image',['../classresponse__image.html',1,'']]],
+  ['rgb_5ft',['rgb_t',['../structbitmap__image_1_1rgb__t.html',1,'bitmap_image']]],
+  ['row',['row',['../class_matrix_vector_1_1row.html',1,'MatrixVector']]]
 ];

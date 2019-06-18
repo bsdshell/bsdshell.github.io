@@ -62,11 +62,12 @@ bool {\bfseries operator==} (const \mbox{\hyperlink{class_matrix_vector_1_1mat}{
 \mbox{\Hypertarget{class_matrix_vector_1_1mat_af786ab2d8b7bf7b85cf61c9cc76a3cbe}\label{class_matrix_vector_1_1mat_af786ab2d8b7bf7b85cf61c9cc76a3cbe}} 
 \mbox{\hyperlink{class_matrix_vector_1_1mat}{mat}} {\bfseries vec\+Multi\+Scala} (int index, float f)
 \item 
-\mbox{\Hypertarget{class_matrix_vector_1_1mat_a8906d4f0766b3bdac3a45e565ce92616}\label{class_matrix_vector_1_1mat_a8906d4f0766b3bdac3a45e565ce92616}} 
-void {\bfseries gene\+Mat} (int init)
+void \mbox{\hyperlink{class_matrix_vector_1_1mat_a8906d4f0766b3bdac3a45e565ce92616}{gene\+Mat}} (int init)
 \item 
-\mbox{\Hypertarget{class_matrix_vector_1_1mat_ae18b1579a3eaef088178cff21f3d6a34}\label{class_matrix_vector_1_1mat_ae18b1579a3eaef088178cff21f3d6a34}} 
-void {\bfseries print} ()
+void \mbox{\hyperlink{class_matrix_vector_1_1mat_ae18b1579a3eaef088178cff21f3d6a34}{print}} ()
+\item 
+\mbox{\Hypertarget{class_matrix_vector_1_1mat_a1d8fafb8d49e850f15ae606d66a16bdd}\label{class_matrix_vector_1_1mat_a1d8fafb8d49e850f15ae606d66a16bdd}} 
+void {\bfseries print2} ()
 \item 
 \mbox{\Hypertarget{class_matrix_vector_1_1mat_a5b8a448a9e7e296cb686e75626ffb78a}\label{class_matrix_vector_1_1mat_a5b8a448a9e7e296cb686e75626ffb78a}} 
 void {\bfseries zero} ()
@@ -110,13 +111,25 @@ float $\ast$$\ast$ {\bfseries arr}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_matrix_vector_1_1mat_af971b3b347cdb13e134824d386d2b605}\label{class_matrix_vector_1_1mat_af971b3b347cdb13e134824d386d2b605}} 
+\mbox{\Hypertarget{class_matrix_vector_1_1mat_a8906d4f0766b3bdac3a45e565ce92616}\label{class_matrix_vector_1_1mat_a8906d4f0766b3bdac3a45e565ce92616}} 
+\index{Matrix\+Vector\+::mat@{Matrix\+Vector\+::mat}!gene\+Mat@{gene\+Mat}}
+\index{gene\+Mat@{gene\+Mat}!Matrix\+Vector\+::mat@{Matrix\+Vector\+::mat}}
+\subsubsection{\texorpdfstring{gene\+Mat()}{geneMat()}}
+{\footnotesize\ttfamily void Matrix\+Vector\+::mat\+::gene\+Mat (\begin{DoxyParamCaption}\item[{int}]{init }\end{DoxyParamCaption})}
+
+generate matrix from init to ncol$\ast$nrow init = 1, ncol = 2, nrow = 3 1 2 3 3 4 5 \mbox{\Hypertarget{class_matrix_vector_1_1mat_af971b3b347cdb13e134824d386d2b605}\label{class_matrix_vector_1_1mat_af971b3b347cdb13e134824d386d2b605}} 
 \index{Matrix\+Vector\+::mat@{Matrix\+Vector\+::mat}!get\+Vec@{get\+Vec}}
 \index{get\+Vec@{get\+Vec}!Matrix\+Vector\+::mat@{Matrix\+Vector\+::mat}}
 \subsubsection{\texorpdfstring{get\+Vec()}{getVec()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_matrix_vector_1_1vec}{vec}} Matrix\+Vector\+::mat\+::get\+Vec (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
 
-get 0 $<$= n $<$= nrow vector or column from matrix 
+get 0 $<$= n $<$= nrow vector or column from matrix \mbox{\Hypertarget{class_matrix_vector_1_1mat_ae18b1579a3eaef088178cff21f3d6a34}\label{class_matrix_vector_1_1mat_ae18b1579a3eaef088178cff21f3d6a34}} 
+\index{Matrix\+Vector\+::mat@{Matrix\+Vector\+::mat}!print@{print}}
+\index{print@{print}!Matrix\+Vector\+::mat@{Matrix\+Vector\+::mat}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Matrix\+Vector\+::mat\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+int ncol = 2; int nrow = 3; mat m(ncol, nrow); m.\+gene\+Mat(1); for(int i=0; i$<$ ncol; i++)\{ for(int j=0; j$<$ nrow; j++)\{ int indent = 10; printf(\char`\"{}\mbox{[}\%$\ast$f\mbox{]}\char`\"{}, 10, m.\+arr\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}); \} printf(\char`\"{}\textbackslash{}n\char`\"{}); \} m.\+print(); 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

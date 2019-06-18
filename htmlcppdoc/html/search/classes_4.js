@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['image_5fdrawer',['image_drawer',['../classimage__drawer.html',1,'']]]
+  ['groupfloat',['GroupFloat',['../struct_group_float.html',1,'']]]
 ];
