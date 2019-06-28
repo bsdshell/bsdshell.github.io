@@ -1,3 +1,21 @@
+*** Reference in C and C++
+    #+BEGIN_SRC c++
+       int num = 3;
+       int* ptr = &num
+       printf("%d", *ptr); // 3
+    #+END_SRC
+*** Function return by reference
+    + Return a reference if a variable is not local to the function.
+    #+BEGIN_SRC c++
+       int num = 3;
+       int& test(){
+         return num;
+       }       
+       test() = 5;
+       printf("%d", num); // num => 5
+    #+END_SRC
+
+    
 *** Get a pointer to ~std::vector~
     #+BEGIN_SRC c++
       class Pt{
@@ -110,7 +128,7 @@
     // dellocate memory in C++
     delete pt2;
     #+END_SRC
-*** Allocate memory 2 dimensions in C
+*** Allocate two dimensions array in C
     #+BEGIN_SRC c
 	// allocate two dimension array in C
 	int col = 4;
@@ -134,4 +152,5 @@
 	  free(ppt[j]);
       }
     #+END_SRC
-				     
+    #+ATTR_HTML: width="100px"
+    [[../image/malloc.svg]]				     

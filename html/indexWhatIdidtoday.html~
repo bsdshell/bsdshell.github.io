@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-06-17 Mon 14:56 -->
+<!-- 2019-06-27 Thu 17:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -255,57 +255,62 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge7b86c6">1. What I did today</a></li>
-<li><a href="#org54970eb">2. Added Javascript to edit code block</a></li>
-<li><a href="#orgf239218">3. MacOS automatically update screws up <b>tmux</b></a></li>
-<li><a href="#org115e245">4. Haskell show, print and putStr or putStrLn</a></li>
-<li><a href="#org0fa6dc0">5. Add wai-uil to wai.hs Server for redirecting response URI</a></li>
-<li><a href="#orgdbf4c0b">6. Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.</a>
+<li><a href="#orgc432352">1. What I did today</a></li>
+<li><a href="#orgc3b1e54">2. Added Javascript to edit code block</a></li>
+<li><a href="#orgebbc821">3. MacOS automatically update screws up <b>tmux</b></a></li>
+<li><a href="#org98efd05">4. Haskell show, print and putStr or putStrLn</a></li>
+<li><a href="#orga91cfc8">5. Add wai-uil to wai.hs Server for redirecting response URI</a></li>
+<li><a href="#orgc963fb1">6. Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.</a>
 <ul>
-<li><a href="#org470fca5">6.1. <span class="done DONE">DONE</span> Hair cut</a></li>
-<li><a href="#org37c26a7">6.2. <span class="done DONE">DONE</span> Added three buttons: add, update and delete to wai.hs</a></li>
-<li><a href="#org4b4947e">6.3. <span class="done DONE">DONE</span> Do my laundry</a></li>
-<li><a href="#org8e80965">6.4. <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</a></li>
-<li><a href="#org9660681">6.5. <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</a></li>
-<li><a href="#orgad9a6c2">6.6. <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</a></li>
-<li><a href="#org60d7e41">6.7. <span class="done DONE">DONE</span> pushall respositories to bitbucket</a></li>
-<li><a href="#org599947d">6.8. <span class="done DONE">DONE</span> fix resume a bit</a></li>
-<li><a href="#org092be7b">6.9. <span class="todo TODO">TODO</span> Need to add more detail to resume</a></li>
-<li><a href="#org74a8ea3">6.10. <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</a></li>
-<li><a href="#org39945d0">6.11. <span class="done DONE">DONE</span> Open new paypal account</a></li>
-<li><a href="#orgf3a7f2f">6.12. <span class="done DONE">DONE</span> Add color to wai.hs to highlight the current edited code block</a></li>
-<li><a href="#orgc0996d9">6.13. <span class="done DONE">DONE</span> Send out more resumes</a></li>
-<li><a href="#org7a7087b">6.14. <span class="todo TODO">TODO</span> Do some java coding</a></li>
-<li><a href="#orgf243745">6.15. <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</a></li>
-<li><a href="#org8dc7cc6">6.16. <span class="done DONE">DONE</span> Send out more resume,  more to EA</a></li>
-<li><a href="#org5978e43">6.17. <span class="done DONE">DONE</span> Add Applescript to send notification when filewatcher detects some txt file inside password folder.</a></li>
-<li><a href="#org1cef511">6.18. <span class="done DONE">DONE</span> Finally figure out how to use multiple putStrLn in Agda</a></li>
-<li><a href="#org7c211b2">6.19. <span class="done DONE">DONE</span> Refactor filewatcher.hs, remove IORef, clean up useless code</a></li>
-<li><a href="#org2e5685d">6.20. <span class="done DONE">DONE</span> Added double click event: <code>ondblclick</code> to javascript file inside <code>wai.hs</code> to improve user experience.</a></li>
-<li><a href="#org43f4be5">6.21. <span class="done DONE">DONE</span> Finished Osense intervew take-home assignment.</a></li>
-<li><a href="#org55e4f43">6.22. <span class="done DONE">DONE</span> Wrote a shell script to simplify gcc compilation process. <code>$scr/gcc_compile.sh</code></a></li>
-<li><a href="#org22198e1">6.23. <span class="done DONE">DONE</span> Fixed an issue where is special characters are not escaped properly.</a></li>
-<li><a href="#org60229d9">6.24. <span class="done DONE">DONE</span> Xencall call HR interview</a></li>
-<li><a href="#org38974bc">6.25. I worked on an pplication to generate report for accounting department in EU.</a></li>
-<li><a href="#orgcc51a6f">6.26. In VoiceBox Inc.</a></li>
-<li><a href="#org6ee93a7">6.27. iOS development</a></li>
-<li><a href="#org9356ff4">6.28. <span class="done DONE">DONE</span> Interview with expa.com</a></li>
-<li><a href="#orgd8d4e6b">6.29. <span class="done DONE">DONE</span> Implement <b>Eight Queens</b> problem in Haskell</a></li>
-<li><a href="#org7f64850">6.30. <span class="done DONE">DONE</span> Added code: Post Html form, and retrieve data from Html Input box, insert data to Sqlite-simple DB.</a></li>
-<li><a href="#org0a8f8c2">6.31. <span class="done DONE">DONE</span> Added code: Integrate Sqlite-simple to wai.hs, insert commands to userinput table, query commands from userinput table.</a></li>
-<li><a href="#org535200f">6.32. <span class="done DONE">DONE</span> Refactored code: Clearn up some unnecessary code.</a></li>
-<li><a href="#orgdab15d5">6.33. <span class="done DONE">DONE</span> A guy asks me to meet as Benze Coffee around Hamilton St. and Helmcken St. from a company called Linquet.com</a></li>
-<li><a href="#org70c3812">6.34. <span class="done DONE">DONE</span> Integrate Ajax to wai.hs, send Json data to Server, and get response from Server in client side.</a></li>
-<li><a href="#orgf2a43b2">6.35. <span class="done DONE">DONE</span> I has an interview with Xencall today.</a></li>
-<li><a href="#org05d3bb1">6.36. <span class="done DONE">DONE</span> Interview with a company called Impact Recruitment last Friday.</a></li>
-<li><a href="#org8341b8e">6.37. Download Vertex Buffer Object(VBO) and play around it.</a></li>
+<li><a href="#orgc4b2185">6.1. <span class="done DONE">DONE</span> Hair cut</a></li>
+<li><a href="#org0e58bfc">6.2. <span class="done DONE">DONE</span> Added three buttons: add, update and delete to wai.hs</a></li>
+<li><a href="#org60dca9e">6.3. <span class="done DONE">DONE</span> Do my laundry</a></li>
+<li><a href="#orgb6bed31">6.4. <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</a></li>
+<li><a href="#org27f0614">6.5. <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</a></li>
+<li><a href="#org76cfbf3">6.6. <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</a></li>
+<li><a href="#org5aae2dc">6.7. <span class="done DONE">DONE</span> pushall respositories to bitbucket</a></li>
+<li><a href="#org3bc7240">6.8. <span class="done DONE">DONE</span> fix resume a bit</a></li>
+<li><a href="#org42f63b4">6.9. <span class="todo TODO">TODO</span> Need to add more detail to resume</a></li>
+<li><a href="#orgb758e4b">6.10. <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</a></li>
+<li><a href="#org26d8044">6.11. <span class="done DONE">DONE</span> Open new paypal account</a></li>
+<li><a href="#orgdab6858">6.12. <span class="done DONE">DONE</span> Add color to wai.hs to highlight the current edited code block</a></li>
+<li><a href="#org95d0213">6.13. <span class="done DONE">DONE</span> Send out more resumes</a></li>
+<li><a href="#org1009ecc">6.14. <span class="todo TODO">TODO</span> Do some java coding</a></li>
+<li><a href="#org74620bd">6.15. <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</a></li>
+<li><a href="#org94a9cd6">6.16. <span class="done DONE">DONE</span> Send out more resume,  more to EA</a></li>
+<li><a href="#orgc67165b">6.17. <span class="done DONE">DONE</span> Add Applescript to send notification when filewatcher detects some txt file inside password folder.</a></li>
+<li><a href="#orgf2feb3f">6.18. <span class="done DONE">DONE</span> Finally figure out how to use multiple putStrLn in Agda</a></li>
+<li><a href="#orgcc66c15">6.19. <span class="done DONE">DONE</span> Refactor filewatcher.hs, remove IORef, clean up useless code</a></li>
+<li><a href="#org751235f">6.20. <span class="done DONE">DONE</span> Added double click event: <code>ondblclick</code> to javascript file inside <code>wai.hs</code> to improve user experience.</a></li>
+<li><a href="#orgf8a5dd4">6.21. <span class="done DONE">DONE</span> Finished Osense intervew take-home assignment.</a></li>
+<li><a href="#org0529b3e">6.22. <span class="done DONE">DONE</span> Wrote a shell script to simplify gcc compilation process. <code>$scr/gcc_compile.sh</code></a></li>
+<li><a href="#org65fc3ea">6.23. <span class="done DONE">DONE</span> Fixed an issue where is special characters are not escaped properly.</a></li>
+<li><a href="#org5fb41ef">6.24. <span class="done DONE">DONE</span> Xencall call HR interview</a></li>
+<li><a href="#org472bf16">6.25. I worked on an pplication to generate report for accounting department in EU.</a></li>
+<li><a href="#org29f90e6">6.26. In VoiceBox Inc.</a></li>
+<li><a href="#org173eb1d">6.27. iOS development</a></li>
+<li><a href="#orgc4e4aa2">6.28. <span class="done DONE">DONE</span> Interview with expa.com</a></li>
+<li><a href="#orgb4288da">6.29. <span class="done DONE">DONE</span> Implement <b>Eight Queens</b> problem in Haskell</a></li>
+<li><a href="#org92b0e79">6.30. <span class="done DONE">DONE</span> Added code: Post Html form, and retrieve data from Html Input box, insert data to Sqlite-simple DB.</a></li>
+<li><a href="#org5500672">6.31. <span class="done DONE">DONE</span> Added code: Integrate Sqlite-simple to wai.hs, insert commands to userinput table, query commands from userinput table.</a></li>
+<li><a href="#orgd185826">6.32. <span class="done DONE">DONE</span> Refactored code: Clearn up some unnecessary code.</a></li>
+<li><a href="#orge5da680">6.33. <span class="done DONE">DONE</span> A guy asks me to meet as Benze Coffee around Hamilton St. and Helmcken St. from a company called Linquet.com</a></li>
+<li><a href="#org6117c36">6.34. <span class="done DONE">DONE</span> Integrate Ajax to wai.hs, send Json data to Server, and get response from Server in client side.</a></li>
+<li><a href="#org66653e1">6.35. <span class="done DONE">DONE</span> I has an interview with Xencall today.</a></li>
+<li><a href="#org0c3d595">6.36. <span class="done DONE">DONE</span> Interview with a company called Impact Recruitment last Friday.</a></li>
+<li><a href="#orgfe88bf3">6.37. Download Vertex Buffer Object(VBO) and play around it.</a></li>
+<li><a href="#orgd4c057c">6.38. <span class="done DONE">DONE</span> Interview with Eletronic Art.</a></li>
+<li><a href="#org5b05498">6.39. <span class="done DONE">DONE</span> Implement Javascript editor with CSS.</a></li>
+<li><a href="#org9f8e77c">6.40. <span class="done DONE">DONE</span> Create new profile in Iterm2</a></li>
+<li><a href="#orgae302c2">6.41. I have onsite interview today with EA, I will meet a technical director Jun Wang and Kelly Tainton and Aron Brown and Chris Olson.</a></li>
+<li><a href="#org5730e9b">6.42. Today, I try to include some or import some functions from Javascript to html file, but it is so tricky I still have no idea how to do it.</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge7b86c6" class="outline-2">
-<h2 id="orge7b86c6"><span class="section-number-2">1</span> What I did today</h2>
+<div id="outline-container-orgc432352" class="outline-2">
+<h2 id="orgc432352"><span class="section-number-2">1</span> What I did today</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li><p>
@@ -314,10 +319,10 @@ Use Haskell package to simplify Html multiple lines in Haskell<span class="times
 <div class="org-src-container">
 <pre class="src src-haskell"><span style="color: #00578E; font-weight: bold;">package</span> <span style="color: #2F8B58; font-weight: bold;">Text.RawString.QQ</span>
 
-<span style="color: #00578E; font-weight: bold;">multipline</span> <span style="color: #0084C8; font-weight: bold;">=</span> [r<span style="color: #4E9A06;">| </span>
-<span style="color: #4E9A06;">             &lt;p&gt;"dog"&lt;/p&gt;</span>
-<span style="color: #4E9A06;">             &lt;p&gt;"cat"&lt;/p&gt;</span>
-<span style="color: #4E9A06;">             |</span>]
+<span style="color: #00578E; font-weight: bold;">multipline</span> <span style="color: #0084C8; font-weight: bold;">=</span> [r|<span style="color: #2E3436; background-color: #EDEDED;"> </span>
+<span style="color: #2E3436; background-color: #EDEDED;">             &lt;p&gt;</span><span style="color: #4E9A06;">"dog"</span><span style="color: #2E3436; background-color: #EDEDED;">&lt;/p&gt;</span>
+<span style="color: #2E3436; background-color: #EDEDED;">             &lt;p&gt;</span><span style="color: #4E9A06;">"cat"</span><span style="color: #2E3436; background-color: #EDEDED;">&lt;/p&gt;</span>
+<span style="color: #2E3436; background-color: #EDEDED;">             |</span>]
 </pre>
 </div></li>
 
@@ -335,8 +340,8 @@ It causes lots of confusing when you load your code inside ghci</li>
 </div>
 </div>
 
-<div id="outline-container-org54970eb" class="outline-2">
-<h2 id="org54970eb"><span class="section-number-2">2</span> Added Javascript to edit code block</h2>
+<div id="outline-container-orgc3b1e54" class="outline-2">
+<h2 id="orgc3b1e54"><span class="section-number-2">2</span> Added Javascript to edit code block</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li>Added Javascript to listen to onclick event, e.g. enable/disable TextArea visibility</li>
@@ -348,8 +353,8 @@ It causes lots of confusing when you load your code inside ghci</li>
 </div>
 </div>
 
-<div id="outline-container-orgf239218" class="outline-2">
-<h2 id="orgf239218"><span class="section-number-2">3</span> MacOS automatically update screws up <b>tmux</b></h2>
+<div id="outline-container-orgebbc821" class="outline-2">
+<h2 id="orgebbc821"><span class="section-number-2">3</span> MacOS automatically update screws up <b>tmux</b></h2>
 <div class="outline-text-2" id="text-3">
 <ol class="org-ol">
 <li><b>tmux</b> can not start up
@@ -380,8 +385,8 @@ The key is the current <b>word</b> under current <b>cursor</b></li>
 </div>
 </div>
 
-<div id="outline-container-org115e245" class="outline-2">
-<h2 id="org115e245"><span class="section-number-2">4</span> Haskell show, print and putStr or putStrLn</h2>
+<div id="outline-container-org98efd05" class="outline-2">
+<h2 id="org98efd05"><span class="section-number-2">4</span> Haskell show, print and putStr or putStrLn</h2>
 <div class="outline-text-2" id="text-4">
 <ol class="org-ol">
 <li><p>
@@ -396,8 +401,8 @@ show, print and putStr <code>"dog\\"</code>,
 </ol>
 </div>
 </div>
-<div id="outline-container-org0fa6dc0" class="outline-2">
-<h2 id="org0fa6dc0"><span class="section-number-2">5</span> Add wai-uil to wai.hs Server for redirecting response URI</h2>
+<div id="outline-container-orga91cfc8" class="outline-2">
+<h2 id="orga91cfc8"><span class="section-number-2">5</span> Add wai-uil to wai.hs Server for redirecting response URI</h2>
 <div class="outline-text-2" id="text-5">
 <ol class="org-ol">
 <li>Install wai-uti with <code>cabal install wai-uti</code></li>
@@ -407,8 +412,8 @@ show, print and putStr <code>"dog\\"</code>,
 </div>
 </div>
 
-<div id="outline-container-orgdbf4c0b" class="outline-2">
-<h2 id="orgdbf4c0b"><span class="section-number-2">6</span> Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.</h2>
+<div id="outline-container-orgc963fb1" class="outline-2">
+<h2 id="orgc963fb1"><span class="section-number-2">6</span> Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li>Two ways to solve the problem.
@@ -417,9 +422,9 @@ show, print and putStr <code>"dog\\"</code>,
 <ul class="org-ul">
 <li>Start from the root node as current node.
 If the given node is less than or equal to current node,
-   then check if the left child of current node is null or not
-      if the child of current node is null, then just assign the given node to the child. Done
-      else using <code>tmp = tmp.left</code> to goto next child of current node.
+then check if the left child of current node is null or not
+   if the child of current node is null, then just assign the given node to the child. Done
+   else using <code>tmp = tmp.left</code> to goto next child of current node.
 otherwise repeat the same thing in the right subtree.</li>
 </ul></li>
 <li>Use <b>Recursion</b>, it is almost the same as Iteration as above, but the root needs to be outside of the method.</li>
@@ -429,7 +434,7 @@ otherwise repeat the same thing in the right subtree.</li>
 The best way to do is to use <b>Iteration</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-java">   <span style="color: #204A87;">// </span><span style="color: #204A87;">Iteration</span>
+<pre class="src src-java"><span style="color: #204A87;">// </span><span style="color: #204A87;">Iteration</span>
 <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">static</span> <span style="color: #2F8B58; font-weight: bold;">void</span> <span style="color: #00578E; font-weight: bold;">insert</span>(<span style="color: #2F8B58; font-weight: bold;">Node</span> <span style="color: #0084C8; font-weight: bold;">node</span>){
     <span style="color: #2F8B58; font-weight: bold;">Node</span> <span style="color: #0084C8; font-weight: bold;">curr</span> = root;
     <span style="color: #204A87;">// </span><span style="color: #204A87;">left subtree</span>
@@ -447,7 +452,7 @@ The best way to do is to use <b>Iteration</b>
     }
 }
 
-   <span style="color: #204A87;">// </span><span style="color: #204A87;">Recursion</span>
+<span style="color: #204A87;">// </span><span style="color: #204A87;">Recursion</span>
 <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #A52A2A; font-weight: bold;">static</span> <span style="color: #2F8B58; font-weight: bold;">void</span> <span style="color: #00578E; font-weight: bold;">insert</span>(<span style="color: #2F8B58; font-weight: bold;">Node</span> <span style="color: #0084C8; font-weight: bold;">root</span>, <span style="color: #2F8B58; font-weight: bold;">Node</span> <span style="color: #0084C8; font-weight: bold;">node</span>){
     <span style="color: #A52A2A; font-weight: bold;">if</span>(root != <span style="color: #F5666D;">null</span>){
         <span style="color: #A52A2A; font-weight: bold;">if</span>(node.data &lt;= root.data){
@@ -468,65 +473,65 @@ The best way to do is to use <b>Iteration</b>
 </ul>
 </div>
 
-<div id="outline-container-org470fca5" class="outline-3">
-<h3 id="org470fca5"><span class="section-number-3">6.1</span> <span class="done DONE">DONE</span> Hair cut</h3>
+<div id="outline-container-orgc4b2185" class="outline-3">
+<h3 id="orgc4b2185"><span class="section-number-3">6.1</span> <span class="done DONE">DONE</span> Hair cut</h3>
 <div class="outline-text-3" id="text-6-1">
 <ol class="org-ol">
 <li>17$ for the stupid hair cut.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org37c26a7" class="outline-3">
-<h3 id="org37c26a7"><span class="section-number-3">6.2</span> <span class="done DONE">DONE</span> Added three buttons: add, update and delete to wai.hs</h3>
+<div id="outline-container-org0e58bfc" class="outline-3">
+<h3 id="org0e58bfc"><span class="section-number-3">6.2</span> <span class="done DONE">DONE</span> Added three buttons: add, update and delete to wai.hs</h3>
 <div class="outline-text-3" id="text-6-2">
 <ol class="org-ol">
 <li>There is an issue in <code>runSh</code> function. For example. For instance, "mv" command does not work properly.</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org4b4947e" class="outline-3">
-<h3 id="org4b4947e"><span class="section-number-3">6.3</span> <span class="done DONE">DONE</span> Do my laundry</h3>
+<div id="outline-container-org60dca9e" class="outline-3">
+<h3 id="org60dca9e"><span class="section-number-3">6.3</span> <span class="done DONE">DONE</span> Do my laundry</h3>
 <div class="outline-text-3" id="text-6-3">
 </div>
 </div>
-<div id="outline-container-org8e80965" class="outline-3">
-<h3 id="org8e80965"><span class="section-number-3">6.4</span> <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</h3>
+<div id="outline-container-orgb6bed31" class="outline-3">
+<h3 id="orgb6bed31"><span class="section-number-3">6.4</span> <span class="done DONE">DONE</span> Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error</h3>
 <div class="outline-text-3" id="text-6-4">
 </div>
 </div>
-<div id="outline-container-org9660681" class="outline-3">
-<h3 id="org9660681"><span class="section-number-3">6.5</span> <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</h3>
+<div id="outline-container-org27f0614" class="outline-3">
+<h3 id="org27f0614"><span class="section-number-3">6.5</span> <span class="done DONE">DONE</span> Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes</h3>
 <div class="outline-text-3" id="text-6-5">
 </div>
 </div>
-<div id="outline-container-orgad9a6c2" class="outline-3">
-<h3 id="orgad9a6c2"><span class="section-number-3">6.6</span> <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</h3>
+<div id="outline-container-org76cfbf3" class="outline-3">
+<h3 id="org76cfbf3"><span class="section-number-3">6.6</span> <span class="done DONE">DONE</span> Add Redirect response to wai.hs with wai-uti</h3>
 <div class="outline-text-3" id="text-6-6">
 </div>
 </div>
-<div id="outline-container-org60d7e41" class="outline-3">
-<h3 id="org60d7e41"><span class="section-number-3">6.7</span> <span class="done DONE">DONE</span> pushall respositories to bitbucket</h3>
+<div id="outline-container-org5aae2dc" class="outline-3">
+<h3 id="org5aae2dc"><span class="section-number-3">6.7</span> <span class="done DONE">DONE</span> pushall respositories to bitbucket</h3>
 <div class="outline-text-3" id="text-6-7">
 </div>
 </div>
-<div id="outline-container-org599947d" class="outline-3">
-<h3 id="org599947d"><span class="section-number-3">6.8</span> <span class="done DONE">DONE</span> fix resume a bit</h3>
+<div id="outline-container-org3bc7240" class="outline-3">
+<h3 id="org3bc7240"><span class="section-number-3">6.8</span> <span class="done DONE">DONE</span> fix resume a bit</h3>
 <div class="outline-text-3" id="text-6-8">
 </div>
 </div>
-<div id="outline-container-org092be7b" class="outline-3">
-<h3 id="org092be7b"><span class="section-number-3">6.9</span> <span class="todo TODO">TODO</span> Need to add more detail to resume</h3>
+<div id="outline-container-org42f63b4" class="outline-3">
+<h3 id="org42f63b4"><span class="section-number-3">6.9</span> <span class="todo TODO">TODO</span> Need to add more detail to resume</h3>
 </div>
-<div id="outline-container-org74a8ea3" class="outline-3">
-<h3 id="org74a8ea3"><span class="section-number-3">6.10</span> <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</h3>
+<div id="outline-container-orgb758e4b" class="outline-3">
+<h3 id="orgb758e4b"><span class="section-number-3">6.10</span> <span class="todo TODO">TODO</span> Buy a new pot and buy some rice</h3>
 </div>
-<div id="outline-container-org39945d0" class="outline-3">
-<h3 id="org39945d0"><span class="section-number-3">6.11</span> <span class="done DONE">DONE</span> Open new paypal account</h3>
+<div id="outline-container-org26d8044" class="outline-3">
+<h3 id="org26d8044"><span class="section-number-3">6.11</span> <span class="done DONE">DONE</span> Open new paypal account</h3>
 <div class="outline-text-3" id="text-6-11">
 </div>
 </div>
-<div id="outline-container-orgf3a7f2f" class="outline-3">
-<h3 id="orgf3a7f2f"><span class="section-number-3">6.12</span> <span class="done DONE">DONE</span> Add color to wai.hs to highlight the current edited code block</h3>
+<div id="outline-container-orgdab6858" class="outline-3">
+<h3 id="orgdab6858"><span class="section-number-3">6.12</span> <span class="done DONE">DONE</span> Add color to wai.hs to highlight the current edited code block</h3>
 <div class="outline-text-3" id="text-6-12">
 <ol class="org-ol">
 <li>when current code block is clicked, change the background of pre</li>
@@ -536,13 +541,13 @@ The best way to do is to use <b>Iteration</b>
 </div>
 </div>
 
-<div id="outline-container-orgc0996d9" class="outline-3">
-<h3 id="orgc0996d9"><span class="section-number-3">6.13</span> <span class="done DONE">DONE</span> Send out more resumes</h3>
+<div id="outline-container-org95d0213" class="outline-3">
+<h3 id="org95d0213"><span class="section-number-3">6.13</span> <span class="done DONE">DONE</span> Send out more resumes</h3>
 <div class="outline-text-3" id="text-6-13">
 </div>
 </div>
-<div id="outline-container-org7a7087b" class="outline-3">
-<h3 id="org7a7087b"><span class="section-number-3">6.14</span> <span class="todo TODO">TODO</span> Do some java coding</h3>
+<div id="outline-container-org1009ecc" class="outline-3">
+<h3 id="org1009ecc"><span class="section-number-3">6.14</span> <span class="todo TODO">TODO</span> Do some java coding</h3>
 <div class="outline-text-3" id="text-6-14">
 <ul class="org-ul">
 <li>Rotate square array to left/right 90 degrees.</li>
@@ -572,12 +577,12 @@ Add code using <code>Comparable&lt;Person&gt;</code> and <code>Comparator&lt;Per
 </p>
 <div class="org-src-container">
 <pre class="src src-java"><span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Person</span>{
-   <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">firstName</span>;
-   <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">lastName</span>;
-   <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #00578E; font-weight: bold;">Person</span>(<span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">f</span>, <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">l</span>){
-      <span style="color: #A52A2A; font-weight: bold;">this</span>.firstName = f;
-      <span style="color: #A52A2A; font-weight: bold;">this</span>.lastName = l;
-   }
+    <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">firstName</span>;
+    <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">lastName</span>;
+    <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #00578E; font-weight: bold;">Person</span>(<span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">f</span>, <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">l</span>){
+        <span style="color: #A52A2A; font-weight: bold;">this</span>.firstName = f;
+        <span style="color: #A52A2A; font-weight: bold;">this</span>.lastName = l;
+    }
 }
 
 <span style="color: #204A87;">// </span><span style="color: #204A87;">second implementation</span>
@@ -585,12 +590,12 @@ Add code using <code>Comparable&lt;Person&gt;</code> and <code>Comparator&lt;Per
     <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">firstName</span>;
     <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">lastName</span>;
     <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #00578E; font-weight: bold;">Person</span>(<span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">f</span>, <span style="color: #2F8B58; font-weight: bold;">String</span> <span style="color: #0084C8; font-weight: bold;">l</span>){
-    <span style="color: #A52A2A; font-weight: bold;">this</span>.firstName = f;
-    <span style="color: #A52A2A; font-weight: bold;">this</span>.lastName = l; 
-   }
-   <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #00578E; font-weight: bold;">compareTo</span>(<span style="color: #2F8B58; font-weight: bold;">Person</span> <span style="color: #0084C8; font-weight: bold;">other</span>){
-     <span style="color: #A52A2A; font-weight: bold;">return</span> <span style="color: #A52A2A; font-weight: bold;">this</span>.firstName.compareTo(other.firstName);
-   }
+        <span style="color: #A52A2A; font-weight: bold;">this</span>.firstName = f;
+        <span style="color: #A52A2A; font-weight: bold;">this</span>.lastName = l; 
+    }
+    <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #00578E; font-weight: bold;">compareTo</span>(<span style="color: #2F8B58; font-weight: bold;">Person</span> <span style="color: #0084C8; font-weight: bold;">other</span>){
+        <span style="color: #A52A2A; font-weight: bold;">return</span> <span style="color: #A52A2A; font-weight: bold;">this</span>.firstName.compareTo(other.firstName);
+    }
 }
 
 <span style="color: #2F8B58; font-weight: bold;">PriorityQueue</span> <span style="color: #0084C8; font-weight: bold;">queue</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">PriorityQueue</span>((\a, b) -&gt; a.firstName.compareTo(b.firstName));
@@ -598,15 +603,15 @@ queue.add(<span style="color: #A52A2A; font-weight: bold;">new</span> <span styl
 queue.add(<span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">Person</span>(<span style="color: #4E9A06;">"Tommy"</span>, <span style="color: #4E9A06;">"kee"</span>));
 queue.add(<span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">Person</span>(<span style="color: #4E9A06;">"Jacky"</span>, <span style="color: #4E9A06;">"kuu"</span>));
 <span style="color: #A52A2A; font-weight: bold;">while</span>(!queue.isEmpty()){
-   <span style="color: #2F8B58; font-weight: bold;">Person</span> <span style="color: #0084C8; font-weight: bold;">p</span> = queue.remove();
-   System.out.print(p.firstName);
+    <span style="color: #2F8B58; font-weight: bold;">Person</span> <span style="color: #0084C8; font-weight: bold;">p</span> = queue.remove();
+    System.out.print(p.firstName);
 }
 
 <span style="color: #204A87;">// </span><span style="color: #204A87;">use Comparator interface,                                </span>
 <span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">PersonCmp</span> <span style="color: #A52A2A; font-weight: bold;">implements</span> <span style="color: #2F8B58; font-weight: bold;">Comparator</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Person</span>&gt;{             
-     <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #00578E; font-weight: bold;">compare</span>(<span style="color: #2F8B58; font-weight: bold;">Person</span> <span style="color: #0084C8; font-weight: bold;">p1</span>, <span style="color: #2F8B58; font-weight: bold;">Person</span> <span style="color: #0084C8; font-weight: bold;">p2</span>){             
-       <span style="color: #A52A2A; font-weight: bold;">return</span> p1.firstName.compareTo(p2.firstName);        
-     }                                                     
+    <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #00578E; font-weight: bold;">compare</span>(<span style="color: #2F8B58; font-weight: bold;">Person</span> <span style="color: #0084C8; font-weight: bold;">p1</span>, <span style="color: #2F8B58; font-weight: bold;">Person</span> <span style="color: #0084C8; font-weight: bold;">p2</span>){             
+        <span style="color: #A52A2A; font-weight: bold;">return</span> p1.firstName.compareTo(p2.firstName);        
+    }                                                     
 }                                                          
 Collections.sort(<span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">PersonCmp</span>());                         
 </pre>
@@ -653,40 +658,40 @@ Use <b>preorder</b> traveral to write all the keys and nodes to file.
 </div>
 </div>
 
-<div id="outline-container-orgf243745" class="outline-3">
-<h3 id="orgf243745"><span class="section-number-3">6.15</span> <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</h3>
+<div id="outline-container-org74620bd" class="outline-3">
+<h3 id="org74620bd"><span class="section-number-3">6.15</span> <span class="todo TODO">TODO</span> Take a look at the Algebraic Data Type and Visitor pattern in Java</h3>
 <div class="outline-text-3" id="text-6-15">
 <p>
 <a href="https://www.ahnfelt.net/monads-forget-about-bind/">URL</a>
 </p>
 </div>
 </div>
-<div id="outline-container-org8dc7cc6" class="outline-3">
-<h3 id="org8dc7cc6"><span class="section-number-3">6.16</span> <span class="done DONE">DONE</span> Send out more resume,  more to EA</h3>
+<div id="outline-container-org94a9cd6" class="outline-3">
+<h3 id="org94a9cd6"><span class="section-number-3">6.16</span> <span class="done DONE">DONE</span> Send out more resume,  more to EA</h3>
 <div class="outline-text-3" id="text-6-16">
 </div>
 </div>
-<div id="outline-container-org5978e43" class="outline-3">
-<h3 id="org5978e43"><span class="section-number-3">6.17</span> <span class="done DONE">DONE</span> Add Applescript to send notification when filewatcher detects some txt file inside password folder.</h3>
+<div id="outline-container-orgc67165b" class="outline-3">
+<h3 id="orgc67165b"><span class="section-number-3">6.17</span> <span class="done DONE">DONE</span> Add Applescript to send notification when filewatcher detects some txt file inside password folder.</h3>
 <div class="outline-text-3" id="text-6-17">
 </div>
 </div>
-<div id="outline-container-org1cef511" class="outline-3">
-<h3 id="org1cef511"><span class="section-number-3">6.18</span> <span class="done DONE">DONE</span> Finally figure out how to use multiple putStrLn in Agda</h3>
+<div id="outline-container-orgf2feb3f" class="outline-3">
+<h3 id="orgf2feb3f"><span class="section-number-3">6.18</span> <span class="done DONE">DONE</span> Finally figure out how to use multiple putStrLn in Agda</h3>
 <div class="outline-text-3" id="text-6-18">
 </div>
 </div>
 
-<div id="outline-container-org7c211b2" class="outline-3">
-<h3 id="org7c211b2"><span class="section-number-3">6.19</span> <span class="done DONE">DONE</span> Refactor filewatcher.hs, remove IORef, clean up useless code</h3>
+<div id="outline-container-orgcc66c15" class="outline-3">
+<h3 id="orgcc66c15"><span class="section-number-3">6.19</span> <span class="done DONE">DONE</span> Refactor filewatcher.hs, remove IORef, clean up useless code</h3>
 <div class="outline-text-3" id="text-6-19">
 </div>
 </div>
-<div id="outline-container-org2e5685d" class="outline-3">
-<h3 id="org2e5685d"><span class="section-number-3">6.20</span> <span class="done DONE">DONE</span> Added double click event: <code>ondblclick</code> to javascript file inside <code>wai.hs</code> to improve user experience.</h3>
+<div id="outline-container-org751235f" class="outline-3">
+<h3 id="org751235f"><span class="section-number-3">6.20</span> <span class="done DONE">DONE</span> Added double click event: <code>ondblclick</code> to javascript file inside <code>wai.hs</code> to improve user experience.</h3>
 </div>
-<div id="outline-container-org43f4be5" class="outline-3">
-<h3 id="org43f4be5"><span class="section-number-3">6.21</span> <span class="done DONE">DONE</span> Finished Osense intervew take-home assignment.</h3>
+<div id="outline-container-orgf8a5dd4" class="outline-3">
+<h3 id="orgf8a5dd4"><span class="section-number-3">6.21</span> <span class="done DONE">DONE</span> Finished Osense intervew take-home assignment.</h3>
 <div class="outline-text-3" id="text-6-21">
 <ol class="org-ol">
 <li>Used the C standard library only to implement a console application which reads a CSV file and displays some statistical temperature information to users.
@@ -699,14 +704,14 @@ Use <b>preorder</b> traveral to write all the keys and nodes to file.
 </ol>
 </div>
 </div>
-<div id="outline-container-org55e4f43" class="outline-3">
-<h3 id="org55e4f43"><span class="section-number-3">6.22</span> <span class="done DONE">DONE</span> Wrote a shell script to simplify gcc compilation process. <code>$scr/gcc_compile.sh</code></h3>
+<div id="outline-container-org0529b3e" class="outline-3">
+<h3 id="org0529b3e"><span class="section-number-3">6.22</span> <span class="done DONE">DONE</span> Wrote a shell script to simplify gcc compilation process. <code>$scr/gcc_compile.sh</code></h3>
 </div>
-<div id="outline-container-org22198e1" class="outline-3">
-<h3 id="org22198e1"><span class="section-number-3">6.23</span> <span class="done DONE">DONE</span> Fixed an issue where is special characters are not escaped properly.</h3>
+<div id="outline-container-org65fc3ea" class="outline-3">
+<h3 id="org65fc3ea"><span class="section-number-3">6.23</span> <span class="done DONE">DONE</span> Fixed an issue where is special characters are not escaped properly.</h3>
 </div>
-<div id="outline-container-org60229d9" class="outline-3">
-<h3 id="org60229d9"><span class="section-number-3">6.24</span> <span class="done DONE">DONE</span> Xencall call HR interview</h3>
+<div id="outline-container-org5fb41ef" class="outline-3">
+<h3 id="org5fb41ef"><span class="section-number-3">6.24</span> <span class="done DONE">DONE</span> Xencall call HR interview</h3>
 <div class="outline-text-3" id="text-6-24">
 <ul class="org-ul">
 <li>What did you do in Amazon?</li>
@@ -714,8 +719,8 @@ Use <b>preorder</b> traveral to write all the keys and nodes to file.
 </ul>
 </div>
 </div>
-<div id="outline-container-org38974bc" class="outline-3">
-<h3 id="org38974bc"><span class="section-number-3">6.25</span> I worked on an pplication to generate report for accounting department in EU.</h3>
+<div id="outline-container-org472bf16" class="outline-3">
+<h3 id="org472bf16"><span class="section-number-3">6.25</span> I worked on an pplication to generate report for accounting department in EU.</h3>
 <div class="outline-text-3" id="text-6-25">
 <ul class="org-ul">
 <li>The applicaiton was querying data from database such as customer information.</li>
@@ -730,8 +735,8 @@ Use <b>preorder</b> traveral to write all the keys and nodes to file.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcc51a6f" class="outline-3">
-<h3 id="orgcc51a6f"><span class="section-number-3">6.26</span> In VoiceBox Inc.</h3>
+<div id="outline-container-org29f90e6" class="outline-3">
+<h3 id="org29f90e6"><span class="section-number-3">6.26</span> In VoiceBox Inc.</h3>
 <div class="outline-text-3" id="text-6-26">
 <ul class="org-ul">
 <li>Development application to generate nature language in English.</li>
@@ -744,8 +749,8 @@ Use <b>preorder</b> traveral to write all the keys and nodes to file.
 </ul>
 </div>
 </div>
-<div id="outline-container-org6ee93a7" class="outline-3">
-<h3 id="org6ee93a7"><span class="section-number-3">6.27</span> iOS development</h3>
+<div id="outline-container-org173eb1d" class="outline-3">
+<h3 id="org173eb1d"><span class="section-number-3">6.27</span> iOS development</h3>
 <div class="outline-text-3" id="text-6-27">
 <ul class="org-ul">
 <li>Development iOS application to encrypt files and images</li>
@@ -754,8 +759,8 @@ Use <b>preorder</b> traveral to write all the keys and nodes to file.
 </ul>
 </div>
 </div>
-<div id="outline-container-org9356ff4" class="outline-3">
-<h3 id="org9356ff4"><span class="section-number-3">6.28</span> <span class="done DONE">DONE</span> Interview with expa.com</h3>
+<div id="outline-container-orgc4e4aa2" class="outline-3">
+<h3 id="orgc4e4aa2"><span class="section-number-3">6.28</span> <span class="done DONE">DONE</span> Interview with expa.com</h3>
 <div class="outline-text-3" id="text-6-28">
 <ul class="org-ul">
 <li>Tell me a little bit about yourself.</li>
@@ -766,16 +771,16 @@ Find a maximum profit from a given list of trade prices.
 </p>
 <div class="org-src-container">
 <pre class="src src-java"><span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #00578E; font-weight: bold;">findMax</span>(<span style="color: #2F8B58; font-weight: bold;">int</span>[] <span style="color: #0084C8; font-weight: bold;">arr</span>){
-  <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">max</span> = 0;
-  <span style="color: #A52A2A; font-weight: bold;">for</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">i</span>=0; i&lt;<span style="color: #2F8B58; font-weight: bold;">len</span>; i++){
-    <span style="color: #A52A2A; font-weight: bold;">for</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">j</span>=i+1; j&lt;<span style="color: #2F8B58; font-weight: bold;">len</span>; j++){
-      <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">diff</span> = arr[j] - arr[i];
-      <span style="color: #A52A2A; font-weight: bold;">if</span>(diff &gt; max){
-        max = diff;
-      }
+    <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">max</span> = 0;
+    <span style="color: #A52A2A; font-weight: bold;">for</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">i</span>=0; i&lt;<span style="color: #2F8B58; font-weight: bold;">len</span>; i++){
+        <span style="color: #A52A2A; font-weight: bold;">for</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">j</span>=i+1; j&lt;<span style="color: #2F8B58; font-weight: bold;">len</span>; j++){
+            <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">diff</span> = arr[j] - arr[i];
+            <span style="color: #A52A2A; font-weight: bold;">if</span>(diff &gt; max){
+                max = diff;
+            }
+        }
     }
-  }
-  <span style="color: #A52A2A; font-weight: bold;">return</span> max;
+    <span style="color: #A52A2A; font-weight: bold;">return</span> max;
 }
 </pre>
 </div></li>
@@ -784,32 +789,34 @@ Sort a list contains only \(\{-1, 0, 1\}\) in \(\mathcal{O}(n)\) time.
 </p>
 <div class="org-src-container">
 <pre class="src src-java"><span style="color: #2F8B58; font-weight: bold;">List</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Integer</span>&gt; <span style="color: #00578E; font-weight: bold;">sort</span>(<span style="color: #2F8B58; font-weight: bold;">List</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Integer</span>&gt; <span style="color: #0084C8; font-weight: bold;">ls</span>){
-  <span style="color: #2F8B58; font-weight: bold;">List</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Integer</span>&gt; <span style="color: #0084C8; font-weight: bold;">ret</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">ArrayList</span>&lt;&gt;();
-  <span style="color: #2F8B58; font-weight: bold;">Map</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Integer</span>, <span style="color: #2F8B58; font-weight: bold;">List</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Integer</span>&gt;&gt; <span style="color: #0084C8; font-weight: bold;">map</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">HashMap</span>&lt;&gt;();
-  <span style="color: #A52A2A; font-weight: bold;">for</span>(<span style="color: #2F8B58; font-weight: bold;">Integer</span> <span style="color: #0084C8; font-weight: bold;">n</span> : ls){
-    <span style="color: #2F8B58; font-weight: bold;">List</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Integer</span>&gt; <span style="color: #0084C8; font-weight: bold;">v</span> = map.get(n);
-    <span style="color: #A52A2A; font-weight: bold;">if</span>(v == <span style="color: #F5666D;">null</span>){
-      v = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">List</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Integer</span>&gt;();
+    <span style="color: #2F8B58; font-weight: bold;">List</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Integer</span>&gt; <span style="color: #0084C8; font-weight: bold;">ret</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">ArrayList</span>&lt;&gt;();
+    <span style="color: #2F8B58; font-weight: bold;">Map</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Integer</span>, <span style="color: #2F8B58; font-weight: bold;">List</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Integer</span>&gt;&gt; <span style="color: #0084C8; font-weight: bold;">map</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">HashMap</span>&lt;&gt;();
+    <span style="color: #A52A2A; font-weight: bold;">for</span>(<span style="color: #2F8B58; font-weight: bold;">Integer</span> <span style="color: #0084C8; font-weight: bold;">n</span> : ls){
+        <span style="color: #2F8B58; font-weight: bold;">List</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Integer</span>&gt; <span style="color: #0084C8; font-weight: bold;">v</span> = map.get(n);
+        <span style="color: #A52A2A; font-weight: bold;">if</span>(v == <span style="color: #F5666D;">null</span>){
+            v = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">List</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Integer</span>&gt;();
+        }
+        v.add(n);
+        map.put(n, v);
     }
-    v.add(n);
-    map.put(n, v);
-  }
 
-  <span style="color: #A52A2A; font-weight: bold;">for</span>(<span style="color: #2F8B58; font-weight: bold;">Integer</span> <span style="color: #00578E; font-weight: bold;">n</span> : Arrays.asList(-1, 0, 1)){
-    <span style="color: #2F8B58; font-weight: bold;">List</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Integer</span>&gt; <span style="color: #0084C8; font-weight: bold;">ls</span> = map.get(n);
-    <span style="color: #A52A2A; font-weight: bold;">if</span>(ls != <span style="color: #F5666D;">null</span>){
-      ret.addAll(ls);
+    <span style="color: #A52A2A; font-weight: bold;">for</span>(<span style="color: #2F8B58; font-weight: bold;">Integer</span> <span style="color: #00578E; font-weight: bold;">n</span> : Arrays.asList(-1, 0, 1)){
+        <span style="color: #2F8B58; font-weight: bold;">List</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Integer</span>&gt; <span style="color: #0084C8; font-weight: bold;">ls</span> = map.get(n);
+        <span style="color: #A52A2A; font-weight: bold;">if</span>(ls != <span style="color: #F5666D;">null</span>){
+            ret.addAll(ls);
+        }
     }
-  }
-  <span style="color: #A52A2A; font-weight: bold;">return</span> ret;
+    <span style="color: #A52A2A; font-weight: bold;">return</span> ret;
 }
 </pre>
 </div></li>
+<li>It turned to be those people in expa.com never response me any interview result, What is the fucking wrong with the company?</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd8d4e6b" class="outline-3">
-<h3 id="orgd8d4e6b"><span class="section-number-3">6.29</span> <span class="done DONE">DONE</span> Implement <b>Eight Queens</b> problem in Haskell</h3>
+
+<div id="outline-container-orgb4288da" class="outline-3">
+<h3 id="orgb4288da"><span class="section-number-3">6.29</span> <span class="done DONE">DONE</span> Implement <b>Eight Queens</b> problem in Haskell</h3>
 <div class="outline-text-3" id="text-6-29">
 <ul class="org-ul">
 <li>Functions that use in the code
@@ -829,28 +836,28 @@ Recursion function to find ONE solution.
 </div>
 </div>
 
-<div id="outline-container-org7f64850" class="outline-3">
-<h3 id="org7f64850"><span class="section-number-3">6.30</span> <span class="done DONE">DONE</span> Added code: Post Html form, and retrieve data from Html Input box, insert data to Sqlite-simple DB.</h3>
+<div id="outline-container-org92b0e79" class="outline-3">
+<h3 id="org92b0e79"><span class="section-number-3">6.30</span> <span class="done DONE">DONE</span> Added code: Post Html form, and retrieve data from Html Input box, insert data to Sqlite-simple DB.</h3>
 </div>
-<div id="outline-container-org0a8f8c2" class="outline-3">
-<h3 id="org0a8f8c2"><span class="section-number-3">6.31</span> <span class="done DONE">DONE</span> Added code: Integrate Sqlite-simple to wai.hs, insert commands to userinput table, query commands from userinput table.</h3>
+<div id="outline-container-org5500672" class="outline-3">
+<h3 id="org5500672"><span class="section-number-3">6.31</span> <span class="done DONE">DONE</span> Added code: Integrate Sqlite-simple to wai.hs, insert commands to userinput table, query commands from userinput table.</h3>
 </div>
-<div id="outline-container-org535200f" class="outline-3">
-<h3 id="org535200f"><span class="section-number-3">6.32</span> <span class="done DONE">DONE</span> Refactored code: Clearn up some unnecessary code.</h3>
+<div id="outline-container-orgd185826" class="outline-3">
+<h3 id="orgd185826"><span class="section-number-3">6.32</span> <span class="done DONE">DONE</span> Refactored code: Clearn up some unnecessary code.</h3>
 </div>
-<div id="outline-container-orgdab15d5" class="outline-3">
-<h3 id="orgdab15d5"><span class="section-number-3">6.33</span> <span class="done DONE">DONE</span> A guy asks me to meet as Benze Coffee around Hamilton St. and Helmcken St. from a company called Linquet.com</h3>
+<div id="outline-container-orge5da680" class="outline-3">
+<h3 id="orge5da680"><span class="section-number-3">6.33</span> <span class="done DONE">DONE</span> A guy asks me to meet as Benze Coffee around Hamilton St. and Helmcken St. from a company called Linquet.com</h3>
 <div class="outline-text-3" id="text-6-33">
 <ul class="org-ul">
 <li>Not sure what I will expect</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org70c3812" class="outline-3">
-<h3 id="org70c3812"><span class="section-number-3">6.34</span> <span class="done DONE">DONE</span> Integrate Ajax to wai.hs, send Json data to Server, and get response from Server in client side.</h3>
+<div id="outline-container-org6117c36" class="outline-3">
+<h3 id="org6117c36"><span class="section-number-3">6.34</span> <span class="done DONE">DONE</span> Integrate Ajax to wai.hs, send Json data to Server, and get response from Server in client side.</h3>
 </div>
-<div id="outline-container-orgf2a43b2" class="outline-3">
-<h3 id="orgf2a43b2"><span class="section-number-3">6.35</span> <span class="done DONE">DONE</span> I has an interview with Xencall today.</h3>
+<div id="outline-container-org66653e1" class="outline-3">
+<h3 id="org66653e1"><span class="section-number-3">6.35</span> <span class="done DONE">DONE</span> I has an interview with Xencall today.</h3>
 <div class="outline-text-3" id="text-6-35">
 <ul class="org-ul">
 <li>They gave me the wrong Google map address, I think the HR never bother to check it before.</li>
@@ -859,8 +866,8 @@ Recursion function to find ONE solution.
 </ul>
 </div>
 </div>
-<div id="outline-container-org05d3bb1" class="outline-3">
-<h3 id="org05d3bb1"><span class="section-number-3">6.36</span> <span class="done DONE">DONE</span> Interview with a company called Impact Recruitment last Friday.</h3>
+<div id="outline-container-org0c3d595" class="outline-3">
+<h3 id="org0c3d595"><span class="section-number-3">6.36</span> <span class="done DONE">DONE</span> Interview with a company called Impact Recruitment last Friday.</h3>
 <div class="outline-text-3" id="text-6-36">
 <ul class="org-ul">
 <li>When I went to their office, a woman called Grace Mok came out to meet me.</li>
@@ -871,8 +878,8 @@ Recursion function to find ONE solution.
 </ul>
 </div>
 </div>
-<div id="outline-container-org8341b8e" class="outline-3">
-<h3 id="org8341b8e"><span class="section-number-3">6.37</span> Download Vertex Buffer Object(VBO) and play around it.</h3>
+<div id="outline-container-orgfe88bf3" class="outline-3">
+<h3 id="orgfe88bf3"><span class="section-number-3">6.37</span> Download Vertex Buffer Object(VBO) and play around it.</h3>
 <div class="outline-text-3" id="text-6-37">
 <ul class="org-ul">
 <li>I download an example and put it in <code>$b/opengl/vboCube</code>.</li>
@@ -923,6 +930,7 @@ There are a few steps to create Vertex Buffer Object in OpenGL.
 <div class="org-src-container">
 <pre class="src src-c++">glDeleteBuffers(<span style="color: #2F8B58; font-weight: bold;">GLsize</span> <span style="color: #0084C8; font-weight: bold;">n</span>, <span style="color: #A52A2A; font-weight: bold;">const</span> <span style="color: #2F8B58; font-weight: bold;">GLunit</span>* <span style="color: #0084C8; font-weight: bold;">buffers</span>)
 
+<span style="color: #204A87;">// </span><span style="color: #204A87;">delete vertex buffer objects before your code exits.</span>
 <span style="color: #2F8B58; font-weight: bold;">GLsize</span> <span style="color: #0084C8; font-weight: bold;">vboId</span> = 0;
 glDeleteBuffers(1, &amp;vboId);
 <span style="color: #2F8B58; font-weight: bold;">GLsize</span> <span style="color: #0084C8; font-weight: bold;">iboId</span> = 0;
@@ -932,11 +940,178 @@ glDeleteBuffers(1, &amp;iboId);
 </ul>
 </div>
 </div>
+
+
+
+<div id="outline-container-orgd4c057c" class="outline-3">
+<h3 id="orgd4c057c"><span class="section-number-3">6.38</span> <span class="done DONE">DONE</span> Interview with Eletronic Art.</h3>
+<div class="outline-text-3" id="text-6-38">
+<ul class="org-ul">
+<li>They did not ask me any technical problem.</li>
+<li>I talked to Aron Brown and Jeremy Coolidge(UFC Software Engineer) from EA yesterday.</li>
+<li>They asked me What did I do in Amazon and VoiceBox Inc.</li>
+<li>How did you solve some hard problems.</li>
+<li>How did you optimize some applicaitons.</li>
+<li>What database did you use?</li>
+<li>Do you play game?</li>
+<li>They described a bit about their team such as the tools they used in EA.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5b05498" class="outline-3">
+<h3 id="org5b05498"><span class="section-number-3">6.39</span> <span class="done DONE">DONE</span> Implement Javascript editor with CSS.</h3>
+<div class="outline-text-3" id="text-6-39">
+<ul class="org-ul">
+<li>It is hard to implement text editor.</li>
+<li>I use TextArea and Pre, and compose both of them so that I can highlight text and keep tracking the cursor movement.</li>
+<li>I changed <code>pre</code> to <code>div</code> for rendering the text today.</li>
+<li>There is still an issue on the <b>cursor</b> or <b>caret</b>. Apparently there is no easy way to change the size of cursor or caret in <b>TextArea</b>.</li>
+<li><p>
+Optimize the rendering code a bit today.
+</p>
+<ul class="org-ul">
+<li>Use <b>Javascript</b> <code>var map = Map()</code> to store all the lines.</li>
+<li>When a user starts to edit the text, the line number will be detected. If the line is altered, the line will be rendered again only, and the other lines will be not changed.</li>
+</ul>
+<p>
+The cursor on the editor is from the bottom of <b>TextArea</b>. The <b>cursor</b> is not very obvious but it can be seen if you look at it carefully.
+</p>
+<ul class="org-ul">
+<li>What did I learn from it today?
+<ul class="org-ul">
+<li>You can <b>overlap</b> two *div*s together.</li>
+<li>You can disable the top layer of <b>div</b> <b>event</b> so that the <b>event</b> can be passed to the bottom of <b>div</b>.</li>
+<li>You can enable <b>div</b> to be editable with <code>contenteditable='true'</code>.</li>
+<li>You can hide <b>div</b> with <code>display:none</code>.</li>
+<li>You can add <b>CSS</b> variables with <code>--myvariable : 100</code> and use it somewhere in your code like <code>var(--myvariable)</code></li>
+<li>Use some <b>event</b> in <b>Javascript</b> such as <code>onkeyup, onkeydown, onclick</code></li>
+</ul></li>
+</ul></li>
+<li>The editor supports <b>C++</b> and <b>Haskell</b> so far.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9f8e77c" class="outline-3">
+<h3 id="org9f8e77c"><span class="section-number-3">6.40</span> <span class="done DONE">DONE</span> Create new profile in Iterm2</h3>
+<div class="outline-text-3" id="text-6-40">
+<ul class="org-ul">
+<li>Goto <b>Reference</b></li>
+<li>Click on <b>Profile</b></li>
+<li>Add a profile name.</li>
+</ul>
+<p>
+<a href="http://localhost/image/Iterm2_profile.png">Iterm2 Profile</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgae302c2" class="outline-3">
+<h3 id="orgae302c2"><span class="section-number-3">6.41</span> I have onsite interview today with EA, I will meet a technical director Jun Wang and Kelly Tainton and Aron Brown and Chris Olson.</h3>
+<div class="outline-text-3" id="text-6-41">
+<ul class="org-ul">
+<li>I have no idea what to expect, whatever.</li>
+<li>Jun Wang asked me lots of C++ questions such as what is <b>Virtual</b> keyboard, what is smart pointer, how does it implement it?
+<ul class="org-ul">
+<li>They guy also asked me many <b>Sql</b> questions:
+<ul class="org-ul">
+<li>What is <b>join</b>, what is <b>left join</b>, what is right <b>right join</b>, what is difference between <b>left join</b> and <b>right join</b>?
+<ul class="org-ul">
+<li>I have no idea what is the difference between <b>left join</b> and <b>right join</b>.</li>
+<li>I think I need to upgrade some <b>Sql</b> note. <a href="http://localhost/html/indexSQL.html">Sql Note</a></li>
+<li>I'm kind of remembering the picture of <b>left join</b> and <b>right join</b></li>
+<li><b>Inner join</b> is like \( a \cap b \) <b>intersection</b> of two tables.</li>
+<li><b>Outer join</b> is like \(a \cup b \) <b>union</b> of two tables.</li>
+<li><b>Left join</b> is like \( a \cup b - (b - a \cap b) \)</li>
+<li><b>Right join</b> is like \( a \cup b - (a - a \cap b) \)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Other two guys Aron Brown and Chris Olson asked some simple C++ questions such as <b>Virtual</b> and <b>Pure Virtual</b> functions.</li>
+<li>Chris Olson also asked one code question which is pretty easy.
+<ul class="org-ul">
+<li>Given a string which contains 0 to 9, write a function return <b>true</b> if the string contains no repeating digit from 1 to 9, otherwise return false.</li>
+<li>For example: <code>"001" =&gt; true</code> because the string contains no repeating digit from 1 to 9.</li>
+<li><p>
+For example: <code>"00101" =&gt; false</code> because the string contains repeating digit: 1.
+</p>
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #2F8B58; font-weight: bold;">bool</span> <span style="color: #00578E; font-weight: bold;">isRepeating</span>(<span style="color: #2F8B58; font-weight: bold;">string</span> <span style="color: #0084C8; font-weight: bold;">s</span>){
+   <span style="color: #2F8B58; font-weight: bold;">bool</span> <span style="color: #0084C8; font-weight: bold;">arr</span>[9];
+   <span style="color: #2F8B58; font-weight: bold;">bool</span> <span style="color: #0084C8; font-weight: bold;">ret</span> = <span style="color: #F5666D;">true</span>;
+   <span style="color: #A52A2A; font-weight: bold;">for</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">i</span>=0; i&lt;s.length &amp;&amp; ret; i++){
+     <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">c</span> = (<span style="color: #2F8B58; font-weight: bold;">int</span>)s[i] - <span style="color: #4E9A06;">'0'</span>;
+     <span style="color: #A52A2A; font-weight: bold;">if</span>(c &gt; 0){
+       <span style="color: #A52A2A; font-weight: bold;">if</span>(!arr[c-1]){
+         arr[c-1] = <span style="color: #F5666D;">true</span>;
+       }<span style="color: #A52A2A; font-weight: bold;">else</span>{
+         ret = <span style="color: #F5666D;">false</span>;
+       }
+     }
+   }
+   <span style="color: #A52A2A; font-weight: bold;">return</span> ret;
+}
+</pre>
+</div></li>
+<li>It seems to me they really care someone who has deep knowledge in C++.</li>
+<li>After a few days, I did not get any response from HR: Lynn Luong.</li>
+<li>They will just ignore your result if you did not get any offer.</li>
+<li>I remember after the interview, they told me they will give me the result ASAP.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5730e9b" class="outline-3">
+<h3 id="org5730e9b"><span class="section-number-3">6.42</span> Today, I try to include some or import some functions from Javascript to html file, but it is so tricky I still have no idea how to do it.</h3>
+<div class="outline-text-3" id="text-6-42">
+<ul class="org-ul">
+<li>Include or import some library to a file, it should be trivial. But in Javascript it is tricky.
+<ul class="org-ul">
+<li><p>
+Actually I just found out I have mistake on my <b>wai.hs</b> code. The following code should work in Html file.
+</p>
+<div class="org-src-container">
+<pre class="src src-html">// aronlib.js 
+// fun(){};
+&lt;<span style="color: #00578E; font-weight: bold;">script</span> <span style="color: #0084C8; font-weight: bold;">src</span>=<span style="color: #4E9A06;">"./aronlib.js"</span>&gt;
+  fun();
+&lt;/<span style="color: #00578E; font-weight: bold;">script</span>&gt;
+</pre>
+</div></li>
+</ul></li>
+<li>If you want to import module from Javascript to Javascript file, then you can find some solution</li>
+<li>But I can not find a solution from <b>Javascript</b> to <b>Html</b></li>
+<li>It turned to be my Haskell server <b>does not</b> send the right MIME type: <code>Content-Type: text/javascript</code>, instead <code>Conent-Type: text/html</code> only</li>
+<li>On <code>$b/haskell_web/wai.hs</code> file, here is the code to cause the javascript error.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-haskell">responseEditor<span style="color: #0084C8; font-weight: bold;">::</span> <span style="color: #2F8B58; font-weight: bold;">Response</span>
+<span style="color: #00578E; font-weight: bold;">responseEditor</span> <span style="color: #0084C8; font-weight: bold;">=</span> responseFile
+    status200
+    [(<span style="color: #4E9A06;">"Content-Type"</span>, <span style="color: #4E9A06;">"text/html"</span>)]
+    <span style="color: #4E9A06;">"compileCode.html"</span>
+    <span style="color: #2F8B58; font-weight: bold;">Nothing</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li><b>Content-Type : text/html</b> \( \rightarrow \) Html file only.</li>
+<li><b>Content-Type : text/javascript</b> \( \rightarrow \) javascript.</li>
+<li>Wai.hs web server does not work for following code:</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #204A87;">// </span><span style="color: #204A87;">aronlib.js </span>
+<span style="color: #A52A2A; font-weight: bold;">function</span> <span style="color: #00578E; font-weight: bold;">fun</span>(){ console.log(<span style="color: #4E9A06;">'hello'</span>);}
+&lt;script scr=<span style="color: #4E9A06;">"./aronlib.js"</span>&gt;
+&lt;/script&gt;
+</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-06-17 Mon 14:56</p>
+<p class="date">Created: 2019-06-27 Thu 17:45</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
