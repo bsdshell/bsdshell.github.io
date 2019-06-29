@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-06-28 Fri 11:08 -->
+<!-- 2019-06-28 Fri 11:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Haskell Wai Tutorial</title>
@@ -234,23 +234,22 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0609657">1. What is Wai Server?</a></li>
-<li><a href="#org3582b3b">2. How to install it?</a></li>
-<li><a href="#org5ef52df">3. First Hello World Example.</a></li>
-<li><a href="#org00724c9">4. How to response a file from your running server.</a></li>
+<li><a href="#org7429a13">1. What is Wai Server?</a></li>
+<li><a href="#orgaef0c55">2. How to install it?</a></li>
+<li><a href="#orgea943a6">3. First Hello World Example.</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0609657" class="outline-2">
-<h2 id="org0609657"><span class="section-number-2">1</span> What is Wai Server?</h2>
+<div id="outline-container-org7429a13" class="outline-2">
+<h2 id="org7429a13"><span class="section-number-2">1</span> What is Wai Server?</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Wai is a common protocol for communication between web application and web server.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3582b3b" class="outline-2">
-<h2 id="org3582b3b"><span class="section-number-2">2</span> How to install it?</h2>
+<div id="outline-container-orgaef0c55" class="outline-2">
+<h2 id="orgaef0c55"><span class="section-number-2">2</span> How to install it?</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-bash">cabal install wai
@@ -258,8 +257,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 </div>
-<div id="outline-container-org5ef52df" class="outline-2">
-<h2 id="org5ef52df"><span class="section-number-2">3</span> First Hello World Example.</h2>
+<div id="outline-container-orgea943a6" class="outline-2">
+<h2 id="orgea943a6"><span class="section-number-2">3</span> First Hello World Example.</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-haskell"><span style="color: #808080;">{-# LANGUAGE OverloadedStrings #-}</span>               
@@ -281,13 +280,10 @@ for the JavaScript code in this tag.
 </div>
 </div>
 </div>
-<div id="outline-container-org00724c9" class="outline-2">
-<h2 id="org00724c9"><span class="section-number-2">4</span> How to response a file from your running server.</h2>
-</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-06-28 Fri 11:08</p>
+<p class="date">Created: 2019-06-28 Fri 11:07</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

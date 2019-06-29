@@ -111,3 +111,12 @@
        # extended regex                                                 
        ps aux | grep --color -E 'wai|filewatcher'                       
        #+END_SRC                                                        
+** Sed Example
+   #+BEGIN_SRC sh
+   // list file from line 3 to 9
+   sed -n 3,9p file.txt 
+   #+END_SRC
+
+   
+
+

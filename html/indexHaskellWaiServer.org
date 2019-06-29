@@ -1,0 +1,29 @@
+#+TITLE: Haskell Wai Tutorial
+*** What is Wai Server?
+    + Wai is a common protocol for communication between web application and web server.
+    + Wai can be used to create RESTful web services.
+*** How to install it?
+    #+BEGIN_SRC bash
+     cabal install wai
+    #+END_SRC
+*** First Hello World Example.
+    #+BEGIN_SRC haskell
+      {-# LANGUAGE OverloadedStrings #-}               
+      import Network.Wai                               
+      import Network.HTTP.Types                        
+      import Network.Wai.Handler.Warp (run)            
+      app :: Application                               
+      app _ respond = do                               
+	  respond $ responseLBS                        
+	      status200                                
+	      [("Content-Type", "text/plain")]         
+	      "Hello, World!"                          
+
+      main :: IO ()                                    
+      main = do                                        
+	  putStrLn $ "http://localhost:8080/"          
+	  run 8080 app                                 
+    #+END_SRC
+*** How to response a file from your running server.
+*** Wai and Database.
+*** Execute shell command on your Wai server.
