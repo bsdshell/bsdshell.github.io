@@ -554,14 +554,23 @@ Why Haskell <span style="color:red;">Record</span> is so BAD
 </div>
 <pre class="prettyprint">
 data Person = Person{
-        name::Text,
+        name::String,
         age::Int
         }
 
 data Dog = Dog{
-        name::Text,
+        name::String,
         age:Int
         }
+
+-- Record is just like function
+name::Person -> String 
+age::Person -> Int
+
+let rec = Person {name ="David", age = 3}
+name rec -- return David
+age rec  -- return 3
+
 </pre>
 <div class="mytitle">
 You will get compiler error with two differnet records
