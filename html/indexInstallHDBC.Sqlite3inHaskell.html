@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-06-09 Sun 12:22 -->
+<!-- 2019-07-08 Mon 09:51 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -233,13 +233,13 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbea7671">1. HDBC-sqlite3</a></li>
-<li><a href="#org6eeffe2">2. sqlite-simple</a></li>
+<li><a href="#org4e234e2">1. HDBC-sqlite3</a></li>
+<li><a href="#orgd3a5173">2. sqlite-simple</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbea7671" class="outline-2">
-<h2 id="orgbea7671"><span class="section-number-2">1</span> HDBC-sqlite3</h2>
+<div id="outline-container-org4e234e2" class="outline-2">
+<h2 id="org4e234e2"><span class="section-number-2">1</span> HDBC-sqlite3</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-bash">cabal install HDBC-sqlite3 
@@ -251,36 +251,36 @@ ghci
 ghci&gt;:module Database.HDBC Database.HDBC.Sqlite3
 
 -- create connection
-ghci&gt;conn &lt;- connectSqlite3 <span style="color: #4E9A06;">"students.db"</span>
+ghci&gt;conn &lt;- connectSqlite3 <span style="color: #008000;">"students.db"</span>
 -- check the type of connection 
 ghci&gt;:t conn
 
--- check the <span style="color: #A52A2A; font-weight: bold;">function</span>
+-- check the <span style="color: #0000FF;">function</span>
 ghci&gt;:t connectSqlite3
 
 -- create a table
-ghci&gt;run conn <span style="color: #4E9A06;">"CREATE TABLE names (id INTEGER NOT NULL, fname VARCHAR(80), lname VARCHAR(80))"</span> []
+ghci&gt;run conn <span style="color: #008000;">"CREATE TABLE names (id INTEGER NOT NULL, fname VARCHAR(80), lname VARCHAR(80))"</span> []
 
 -- check the type of signature of run
 ghci&gt;:run
 
 -- insert data to table
-ghci&gt;run conn <span style="color: #4E9A06;">"INSERT INTO names (id, fname, lname) VALUES(1, 'Edwin', 'Brady')"</span> []
+ghci&gt;run conn <span style="color: #008000;">"INSERT INTO names (id, fname, lname) VALUES(1, 'Edwin', 'Brady')"</span> []
 
 -- commit it
 ghci&gt;commit conn
 
 -- query data from table
-ghci&gt; quickQuery conn <span style="color: #4E9A06;">"SELECT * from names"</span> []
+ghci&gt; quickQuery conn <span style="color: #008000;">"SELECT * from names"</span> []
 
--- login to sqlite3<span style="color: #A52A2A; font-weight: bold;"> in</span> Command Line if you want to
+-- login to sqlite3<span style="color: #0000FF;"> in</span> Command Line if you want to
 sqlite3 students.db
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org6eeffe2" class="outline-2">
-<h2 id="org6eeffe2"><span class="section-number-2">2</span> sqlite-simple</h2>
+<div id="outline-container-orgd3a5173" class="outline-2">
+<h2 id="orgd3a5173"><span class="section-number-2">2</span> sqlite-simple</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Install sqlite-simple.</li>
@@ -298,10 +298,28 @@ http://hackage.haskell.org/package/sqlite-simple
 </pre>
 </div>
 <ul class="org-ul">
+<li>Run sqlite console or from command line.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #8D8D84; font-weight: bold; font-style: italic;"># </span><span style="color: #8D8D84; font-style: italic;">from my MacOS</span>
+sqlite3  /Users/cat/myfile/bitbucket/testfile/test.db
+</pre>
+</div>
+<ul class="org-ul">
+<li>sqlit commands</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #8D8D84; font-weight: bold; font-style: italic;"># </span><span style="color: #8D8D84; font-style: italic;">quit</span>
+.quit
+<span style="color: #8D8D84; font-weight: bold; font-style: italic;"># </span><span style="color: #8D8D84; font-style: italic;">show tables</span>
+.tables
+</pre>
+</div>
+<ul class="org-ul">
 <li>Open connection.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-bash">conn &lt;- open <span style="color: #4E9A06;">"test.db"</span>
+<pre class="src src-bash">conn &lt;- open <span style="color: #008000;">"test.db"</span>
 </pre>
 </div>
 </div>
@@ -309,7 +327,7 @@ http://hackage.haskell.org/package/sqlite-simple
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-06-09 Sun 12:22</p>
+<p class="date">Created: 2019-07-08 Mon 09:51</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
