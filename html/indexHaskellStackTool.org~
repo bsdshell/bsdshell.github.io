@@ -1,44 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
-<head>
-    <title>$title</title>
-    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
-    <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../highlight.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-            jax: ["input/TeX","output/HTML-CSS"],
-            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
-          });
-    </script>
-    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
-</head>
-<body>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-66282017-2', 'auto');
-  ga('send', 'pageview');
-</script>
-<div class="myclass">
-<div class="mytitle">
-add content here
-</div>
-<pre class="mytext">
-My text here
-</pre>
-<pre class="prettyprint">
-</pre> 
-</div>
-</body>
-</html>
+** Haskell Stack Tool
+   1. Home brew it on your MacOS
+      #+BEGIN_SRC bash
+	brew update
+	brew install haskell-stack
+	# you might need to relink the stack symbol links
+	rm /usr/local/bin/stack
+	brew link --overwrite haskell-stack
+      #+END_SRC
+   2. Find out the location of stack and check your stack version
+      #+BEGIN_SRC bash
+	which stack
+	# /usr/local/bin/stack
+	stack --version
+	# /usr/local/Cellar/haskell-stack/1.9.3:
+      #+END_SRC
+   
+   3. Create new project with Stack called myproject
+      #+BEGIN_SRC bash
+	stack new myproject simple
+      #+END_SRC
+   4. Download GHC for your project, it will take a while to download and it will not interfere your local GHC.
+      #+BEGIN_SRC bash
+	stack setup
+      #+END_SRC
+   5. Build Your Hello World
+      #+BEGIN_SRC bash
+	stack build
+      #+END_SRC
+   6. Run your project
+      #+BEGIN_SRC bash
+	stack exec myproject
+      #+END_SRC
+   7. Add [[http://hackage.haskell.org/package/time][time]] package to your build
+      #+BEGIN_SRC bash
+	executable myproj
+	hs-source-dirs:      src
+	main-is:             Main.hs
+	default-language:    Haskell2010
+	build-depends:       base >= 4.7 && < 5,
+			     time
+      #+END_SRC
+   8. Now we can use functions(e.g. getCurrentTime) from time package
+      #+BEGIN_SRC haskell
+	import Data.Time
+  
+	main::()
+	main = do
+	     time <- getCurrentTime
+	     putStrLn (show time)
+      #+END_SRC
+   9. Try to figure out how to use your own module on Stack
+      #+BEGIN_SRC haskell
+      add more code here
+      #+END_SRC
+   10. Use different resolver [[https://www.stackage.org/lts-12.13][Long Term Supported 12.13]]  
+       #+BEGIN_SRC haskell  
+       -- ghc 8.4.3
+       stack new myproject --resolver=12.13 simple
+       -- check your stack.yaml   				  
+       #+END_SRC            

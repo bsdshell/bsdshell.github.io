@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-06-04 Tue 09:13 -->
+<!-- 2019-07-17 Wed 23:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -233,13 +233,15 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9fc23e5">1. Shell Script Examples</a></li>
-<li><a href="#org8ad1c00">2. Grep Examples</a></li>
+<li><a href="#org21945e9">1. Shell Script Examples</a></li>
+<li><a href="#org2654638">2. Grep Examples</a></li>
+<li><a href="#org6e90dcc">3. Sed Example</a></li>
+<li><a href="#orgbb4c9c9">4. If and Else in Shell Script</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9fc23e5" class="outline-2">
-<h2 id="org9fc23e5"><span class="section-number-2">1</span> Shell Script Examples</h2>
+<div id="outline-container-org21945e9" class="outline-2">
+<h2 id="org21945e9"><span class="section-number-2">1</span> Shell Script Examples</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Shell script is powerful if you could remember all the weird syntax. 
@@ -251,18 +253,18 @@ Note: readarray only works in Bash 4.x, check your version: bash &#x2013;version
 Array in Shell script 1
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #0084C8; font-weight: bold;">string</span>=<span style="color: #4E9A06;">'Paris, France, Europe'</span>;
-<span style="color: #A020F0;">echo</span> $<span style="color: #0084C8; font-weight: bold;">string</span>
-<span style="color: #A020F0;">readarray</span> -td, array &lt;&lt;&lt;<span style="color: #4E9A06;">"$string"</span>; <span style="color: #A020F0;">declare</span> -p array;
-<span style="color: #204A87;">## </span><span style="color: #204A87;">declare -a array=([0]="Paris" [1]=" France" [2]=$' Europe\n')</span>
+<pre class="src src-bash"><span style="color: #9acd32; font-weight: bold;">string</span>=<span style="color: #bdb76b;">'Paris, France, Europe'</span>;
+<span style="color: #b0c4de;">echo</span> $<span style="color: #9acd32; font-weight: bold;">string</span>
+<span style="color: #b0c4de;">readarray</span> -td, array &lt;&lt;&lt;<span style="color: #bdb76b;">"$string"</span>; <span style="color: #b0c4de;">declare</span> -p array;
+<span style="color: #8D8D84; background-color: #292e34; font-weight: bold; font-style: italic;">## </span><span style="color: #00cd66; background-color: #292e34; font-style: italic;">declare -a array=([0]="Paris" [1]=" France" [2]=$' Europe\n')</span>
 
-<span style="color: #0084C8; font-weight: bold;">country</span>=<span style="color: #4E9A06;">'Paris/Frence/Europe/Sweden/Croatia'</span>;
-<span style="color: #A020F0;">echo</span> $<span style="color: #0084C8; font-weight: bold;">country</span>
-<span style="color: #A020F0;">readarray</span> -td/ array &lt;&lt;&lt;<span style="color: #4E9A06;">"$country"</span>; <span style="color: #A020F0;">declare</span> -p array;
-<span style="color: #A52A2A; font-weight: bold;">for</span> item<span style="color: #A52A2A; font-weight: bold;"> in</span> <span style="color: #4E9A06;">"${array[@]}"</span> 
-<span style="color: #A52A2A; font-weight: bold;">do</span>
-  <span style="color: #A020F0;">echo</span> <span style="color: #4E9A06;">"$item"</span> 
-<span style="color: #A52A2A; font-weight: bold;">done</span>      
+<span style="color: #9acd32; font-weight: bold;">country</span>=<span style="color: #bdb76b;">'Paris/Frence/Europe/Sweden/Croatia'</span>;
+<span style="color: #b0c4de;">echo</span> $<span style="color: #9acd32; font-weight: bold;">country</span>
+<span style="color: #b0c4de;">readarray</span> -td/ array &lt;&lt;&lt;<span style="color: #bdb76b;">"$country"</span>; <span style="color: #b0c4de;">declare</span> -p array;
+<span style="color: #ffffff; font-weight: bold;">for</span> item<span style="color: #ffffff; font-weight: bold;"> in</span> <span style="color: #bdb76b;">"${array[@]}"</span> 
+<span style="color: #ffffff; font-weight: bold;">do</span>
+  <span style="color: #b0c4de;">echo</span> <span style="color: #bdb76b;">"$item"</span> 
+<span style="color: #ffffff; font-weight: bold;">done</span>      
 </pre>
 </div></li>
 
@@ -270,8 +272,8 @@ Array in Shell script 1
 count number of argument
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #A020F0;">echo</span> <span style="color: #4E9A06;">"$#"</span>
-<span style="color: #0084C8; font-weight: bold;">var</span>=<span style="color: #4E9A06;">"string"</span>
+<pre class="src src-bash"><span style="color: #b0c4de;">echo</span> <span style="color: #bdb76b;">"$#"</span>
+<span style="color: #9acd32; font-weight: bold;">var</span>=<span style="color: #bdb76b;">"string"</span>
 </pre>
 </div></li>
 
@@ -279,15 +281,15 @@ count number of argument
 array in bash                    
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #0084C8; font-weight: bold;">arr</span>=(                            
-<span style="color: #4E9A06;">"dog"</span>                            
-<span style="color: #4E9A06;">"cat"</span>                            
-<span style="color: #4E9A06;">"rat"</span>                            
+<pre class="src src-bash"><span style="color: #9acd32; font-weight: bold;">arr</span>=(                            
+<span style="color: #bdb76b;">"dog"</span>                            
+<span style="color: #bdb76b;">"cat"</span>                            
+<span style="color: #bdb76b;">"rat"</span>                            
 )                                
-<span style="color: #A52A2A; font-weight: bold;">for</span> var<span style="color: #A52A2A; font-weight: bold;"> in</span> ${<span style="color: #0084C8; font-weight: bold;">arr</span>[*]}             
-<span style="color: #A52A2A; font-weight: bold;">do</span>                               
-<span style="color: #A020F0;">echo</span> <span style="color: #4E9A06;">"var=$var"</span>                  
-<span style="color: #A52A2A; font-weight: bold;">done</span>                             
+<span style="color: #ffffff; font-weight: bold;">for</span> var<span style="color: #ffffff; font-weight: bold;"> in</span> ${<span style="color: #9acd32; font-weight: bold;">arr</span>[*]}             
+<span style="color: #ffffff; font-weight: bold;">do</span>                               
+<span style="color: #b0c4de;">echo</span> <span style="color: #bdb76b;">"var=$var"</span>                  
+<span style="color: #ffffff; font-weight: bold;">done</span>                             
 </pre>
 </div></li>
 
@@ -295,8 +297,8 @@ array in bash
 if statement                                                                    
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #0084C8; font-weight: bold;">var</span>=<span style="color: #4E9A06;">"$#"</span>                                                                        
-<span style="color: #A52A2A; font-weight: bold;">if</span> [ <span style="color: #4E9A06;">"$var"</span> -eq 2 ]; <span style="color: #A52A2A; font-weight: bold;">then </span><span style="color: #A020F0;">echo</span> <span style="color: #4E9A06;">"two arguments"</span>; <span style="color: #A52A2A; font-weight: bold;">else </span><span style="color: #A020F0;">echo</span> <span style="color: #4E9A06;">"not two argument"</span>; <span style="color: #A52A2A; font-weight: bold;">fi</span>
+<pre class="src src-bash"><span style="color: #9acd32; font-weight: bold;">var</span>=<span style="color: #bdb76b;">"$#"</span>                                                                        
+<span style="color: #ffffff; font-weight: bold;">if</span> [ <span style="color: #bdb76b;">"$var"</span> -eq 2 ]; <span style="color: #ffffff; font-weight: bold;">then </span><span style="color: #b0c4de;">echo</span> <span style="color: #bdb76b;">"two arguments"</span>; <span style="color: #ffffff; font-weight: bold;">else </span><span style="color: #b0c4de;">echo</span> <span style="color: #bdb76b;">"not two argument"</span>; <span style="color: #ffffff; font-weight: bold;">fi</span>
 </pre>
 </div></li>
 
@@ -304,21 +306,21 @@ if statement
 Iterate all files with one line <b>shell command</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #A52A2A; font-weight: bold;">for</span> name<span style="color: #A52A2A; font-weight: bold;"> in</span> $(<span style="color: #ff00ff;">ls</span> *); <span style="color: #A52A2A; font-weight: bold;">do </span><span style="color: #A020F0;">echo</span> $<span style="color: #0084C8; font-weight: bold;">name</span>; <span style="color: #A52A2A; font-weight: bold;">done</span>
+<pre class="src src-bash"><span style="color: #ffffff; font-weight: bold;">for</span> name<span style="color: #ffffff; font-weight: bold;"> in</span> $(<span style="color: #FF1493; font-weight: bold;">ls</span> *); <span style="color: #ffffff; font-weight: bold;">do </span><span style="color: #b0c4de;">echo</span> $<span style="color: #9acd32; font-weight: bold;">name</span>; <span style="color: #ffffff; font-weight: bold;">done</span>
 </pre>
 </div></li>
 <li><p>
 String matches
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #A52A2A; font-weight: bold;">for</span> name<span style="color: #A52A2A; font-weight: bold;"> in</span> $(<span style="color: #ff00ff;">ls</span> *); <span style="color: #A52A2A; font-weight: bold;">do if</span> [[ $<span style="color: #0084C8; font-weight: bold;">name</span> == *<span style="color: #4E9A06;">"txt"</span>* ]]; <span style="color: #A52A2A; font-weight: bold;">then </span><span style="color: #A020F0;">echo</span> $<span style="color: #0084C8; font-weight: bold;">name</span>; <span style="color: #A52A2A; font-weight: bold;">else </span><span style="color: #A020F0;">echo</span> <span style="color: #4E9A06;">""</span>; <span style="color: #A52A2A; font-weight: bold;">fi</span> 
+<pre class="src src-bash"><span style="color: #ffffff; font-weight: bold;">for</span> name<span style="color: #ffffff; font-weight: bold;"> in</span> $(<span style="color: #FF1493; font-weight: bold;">ls</span> *); <span style="color: #ffffff; font-weight: bold;">do if</span> [[ $<span style="color: #9acd32; font-weight: bold;">name</span> == *<span style="color: #bdb76b;">"txt"</span>* ]]; <span style="color: #ffffff; font-weight: bold;">then </span><span style="color: #b0c4de;">echo</span> $<span style="color: #9acd32; font-weight: bold;">name</span>; <span style="color: #ffffff; font-weight: bold;">else </span><span style="color: #b0c4de;">echo</span> <span style="color: #bdb76b;">""</span>; <span style="color: #ffffff; font-weight: bold;">fi</span> 
 </pre>
 </div></li>
 <li><p>
 Use regex match =~
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #A52A2A; font-weight: bold;">if</span> [[ $<span style="color: #0084C8; font-weight: bold;">name</span> =~ <span style="color: #4E9A06;">"txt"</span> ]]; <span style="color: #A52A2A; font-weight: bold;">then </span><span style="color: #A020F0;">echo</span> $<span style="color: #0084C8; font-weight: bold;">name</span>; <span style="color: #A52A2A; font-weight: bold;">else </span><span style="color: #A020F0;">echo</span> <span style="color: #4E9A06;">""</span>; <span style="color: #A52A2A; font-weight: bold;">fi</span>
+<pre class="src src-bash"><span style="color: #ffffff; font-weight: bold;">if</span> [[ $<span style="color: #9acd32; font-weight: bold;">name</span> =~ <span style="color: #bdb76b;">"txt"</span> ]]; <span style="color: #ffffff; font-weight: bold;">then </span><span style="color: #b0c4de;">echo</span> $<span style="color: #9acd32; font-weight: bold;">name</span>; <span style="color: #ffffff; font-weight: bold;">else </span><span style="color: #b0c4de;">echo</span> <span style="color: #bdb76b;">""</span>; <span style="color: #ffffff; font-weight: bold;">fi</span>
 </pre>
 </div></li>
 <li><p>
@@ -327,28 +329,28 @@ If you want to get constantly update information or stream data <b>shell command
 For Exmple, I want to monitor my system <b>disk usage</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-bash">watch df -lah  <span style="color: #204A87;"># </span><span style="color: #204A87;">default 2 seconds interval</span>
+<pre class="src src-bash">watch df -lah  <span style="color: #8D8D84; background-color: #292e34; font-weight: bold; font-style: italic;"># </span><span style="color: #00cd66; background-color: #292e34; font-style: italic;">default 2 seconds interval</span>
 </pre>
 </div>
 <p>
 watch shell commands with pipe, e.g. <code>ps aux | grep --color httpd</code> with <b>double quotes</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-bash">watch <span style="color: #4E9A06;">"ps aux | grep --color httpd"</span>
+<pre class="src src-bash">watch <span style="color: #bdb76b;">"ps aux | grep --color httpd"</span>
 </pre>
 </div></li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org8ad1c00" class="outline-2">
-<h2 id="org8ad1c00"><span class="section-number-2">2</span> Grep Examples</h2>
+<div id="outline-container-org2654638" class="outline-2">
+<h2 id="org2654638"><span class="section-number-2">2</span> Grep Examples</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li><p>
 grep content of file with specified file name extension, show full file name
 </p>
 <div class="org-src-container">
-<pre class="src src-bash">grep --include=<span style="color: #4E9A06;">"*.java"</span> -Hnris pattern $<span style="color: #0084C8; font-weight: bold;">PWD</span>
+<pre class="src src-bash">grep --include=<span style="color: #bdb76b;">"*.java"</span> -Hnris pattern $<span style="color: #9acd32; font-weight: bold;">PWD</span>
 </pre>
 </div></li>
 <li><p>
@@ -369,63 +371,223 @@ grep with color
 grep print NUM line of trailing context file after matching lines, <b>two line after</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-bash">cat file | grep -A <span style="color: #4E9A06;">'dog'</span>
+<pre class="src src-bash">cat file | grep -A <span style="color: #bdb76b;">'dog'</span>
 </pre>
 </div></li>
 <li><p>
 grep print NUM lines of leading context file before matching lines, <b>two line before</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-bash">cat file | grep -B <span style="color: #4E9A06;">'dog'</span>
+<pre class="src src-bash">cat file | grep -B <span style="color: #bdb76b;">'dog'</span>
 </pre>
 </div></li>
 <li><p>
 Grep inversion              
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #204A87;"># </span><span style="color: #204A87;">find all non java file  </span>
-grep -v -E <span style="color: #4E9A06;">'.java$'</span>       
+<pre class="src src-bash"><span style="color: #8D8D84; background-color: #292e34; font-weight: bold; font-style: italic;"># </span><span style="color: #00cd66; background-color: #292e34; font-style: italic;">find all non java file  </span>
+grep -v -E <span style="color: #bdb76b;">'.java$'</span>       
 </pre>
 </div></li>
 <li><p>
 grep string that contains "txt"                                   
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #A52A2A; font-weight: bold;">if </span><span style="color: #A020F0;">echo</span> $<span style="color: #0084C8; font-weight: bold;">name</span> | grep -q <span style="color: #4E9A06;">"txt"</span>; <span style="color: #A52A2A; font-weight: bold;">then </span><span style="color: #A020F0;">echo</span> $<span style="color: #0084C8; font-weight: bold;">name</span>; <span style="color: #A52A2A; font-weight: bold;">else </span><span style="color: #A020F0;">echo</span> <span style="color: #4E9A06;">""</span>; <span style="color: #A52A2A; font-weight: bold;">fi</span>  
+<pre class="src src-bash"><span style="color: #ffffff; font-weight: bold;">if </span><span style="color: #b0c4de;">echo</span> $<span style="color: #9acd32; font-weight: bold;">name</span> | grep -q <span style="color: #bdb76b;">"txt"</span>; <span style="color: #ffffff; font-weight: bold;">then </span><span style="color: #b0c4de;">echo</span> $<span style="color: #9acd32; font-weight: bold;">name</span>; <span style="color: #ffffff; font-weight: bold;">else </span><span style="color: #b0c4de;">echo</span> <span style="color: #bdb76b;">""</span>; <span style="color: #ffffff; font-weight: bold;">fi</span>  
 </pre>
 </div></li>
 <li><p>
 grep string its suffix is "txt", e.g. "file.txt"                  
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #A52A2A; font-weight: bold;">if </span><span style="color: #A020F0;">echo</span> $<span style="color: #0084C8; font-weight: bold;">name</span> | grep -q <span style="color: #4E9A06;">"txt$"</span> then echo $<span style="color: #0084C8; font-weight: bold;">name</span>; <span style="color: #A52A2A; font-weight: bold;">else </span><span style="color: #A020F0;">echo</span> <span style="color: #4E9A06;">""</span>; <span style="color: #A52A2A; font-weight: bold;">fi</span>  
+<pre class="src src-bash"><span style="color: #ffffff; font-weight: bold;">if </span><span style="color: #b0c4de;">echo</span> $<span style="color: #9acd32; font-weight: bold;">name</span> | grep -q <span style="color: #bdb76b;">"txt$"</span> then echo $<span style="color: #9acd32; font-weight: bold;">name</span>; <span style="color: #ffffff; font-weight: bold;">else </span><span style="color: #b0c4de;">echo</span> <span style="color: #bdb76b;">""</span>; <span style="color: #ffffff; font-weight: bold;">fi</span>  
 </pre>
 </div></li>
 <li><p>
 grep string its prefix is "file", e.g. "file.txt"                
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #204A87;"># </span><span style="color: #204A87;">grep -q =&gt; no output                                           </span>
-<span style="color: #A52A2A; font-weight: bold;">if </span><span style="color: #A020F0;">echo</span> $<span style="color: #0084C8; font-weight: bold;">name</span> | grep -q <span style="color: #4E9A06;">"^file"</span> then echo $<span style="color: #0084C8; font-weight: bold;">name</span>; <span style="color: #A020F0;">echo</span> echo <span style="color: #4E9A06;">""</span>; <span style="color: #A52A2A; font-weight: bold;">fi</span>
+<pre class="src src-bash"><span style="color: #8D8D84; background-color: #292e34; font-weight: bold; font-style: italic;"># </span><span style="color: #00cd66; background-color: #292e34; font-style: italic;">grep -q =&gt; no output                                           </span>
+<span style="color: #ffffff; font-weight: bold;">if </span><span style="color: #b0c4de;">echo</span> $<span style="color: #9acd32; font-weight: bold;">name</span> | grep -q <span style="color: #bdb76b;">"^file"</span> then echo $<span style="color: #9acd32; font-weight: bold;">name</span>; <span style="color: #b0c4de;">echo</span> echo <span style="color: #bdb76b;">""</span>; <span style="color: #ffffff; font-weight: bold;">fi</span>
 </pre>
 </div></li>
 <li><p>
 grep in POSIX basic and extended regular expression              
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #204A87;"># </span><span style="color: #204A87;">basic regex                                                    </span>
-ps aux | grep --color <span style="color: #4E9A06;">'wai\|filewatcher'</span>                         
-<span style="color: #204A87;"># </span><span style="color: #204A87;">extended regex                                                 </span>
-ps aux | grep --color -E <span style="color: #4E9A06;">'wai|filewatcher'</span>                       
+<pre class="src src-bash"><span style="color: #8D8D84; background-color: #292e34; font-weight: bold; font-style: italic;"># </span><span style="color: #00cd66; background-color: #292e34; font-style: italic;">basic regex                                                    </span>
+ps aux | grep --color <span style="color: #bdb76b;">'wai\|filewatcher'</span>                         
+<span style="color: #8D8D84; background-color: #292e34; font-weight: bold; font-style: italic;"># </span><span style="color: #00cd66; background-color: #292e34; font-style: italic;">extended regex                                                 </span>
+ps aux | grep --color -E <span style="color: #bdb76b;">'wai|filewatcher'</span>                       
 </pre>
 </div></li>
 </ol>
 </div>
 </div>
+<div id="outline-container-org6e90dcc" class="outline-2">
+<h2 id="org6e90dcc"><span class="section-number-2">3</span> Sed Example</h2>
+<div class="outline-text-2" id="text-3">
+<div class="org-src-container">
+<pre class="src src-sh">// list file from line 3 to 9
+sed -n 3,9p file.txt 
+</pre>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-orgbb4c9c9" class="outline-2">
+<h2 id="orgbb4c9c9"><span class="section-number-2">4</span> If and Else in Shell Script</h2>
+<div class="outline-text-2" id="text-4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left"><b>String comparision</b></th>
+<th scope="col" class="org-left"><b>Description</b></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Str1 = Str2</td>
+<td class="org-left">Return true if strings are equal.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">Str1 != Str2</td>
+<td class="org-left">Return true if string are NOT equal</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">-n Str</td>
+<td class="org-left">Return true if string is NOT null</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">-z Str</td>
+<td class="org-left">Return true if string IS null</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left"><b>Numeric Comparision</b></td>
+<td class="org-left"><b>Description</b></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">expr1 -eq expr2</td>
+<td class="org-left">Return true if expressions are equal</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">expr1 -ne expr2</td>
+<td class="org-left">Return true if expressions are NOT equal</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">expr1 -gt expr2</td>
+<td class="org-left">Return true if expr1 is greater than expr2</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">expr1 -lt expr2</td>
+<td class="org-left">Return true if expr1 is less than expr2</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">expr1 -ge expr2</td>
+<td class="org-left">Return true if expr2 is greater than or equal to expr2</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">expr1 -le expr2</td>
+<td class="org-left">Return true if expr2 is less than or equal to expr2</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left"><b>File Conditionals</b></td>
+<td class="org-left"><b>Description</b></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">-d file</td>
+<td class="org-left">Return true if file is a directory</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">-e file</td>
+<td class="org-left">Return true if file exists</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">-f file</td>
+<td class="org-left">Return true if the provided string is a file.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">-g file</td>
+<td class="org-left">Return true if the group id is set on a file.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">-r file</td>
+<td class="org-left">Return true if file is readable.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">-s file</td>
+<td class="org-left">Return true if file is a non-zero size.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">-u</td>
+<td class="org-left">Return true if the user id is set on a file.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">-w</td>
+<td class="org-left">Return true if the file is writable.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">-x</td>
+<td class="org-left">Return true if the file is executable.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-06-04 Tue 09:13</p>
+<p class="date">Created: 2019-07-17 Wed 23:03</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

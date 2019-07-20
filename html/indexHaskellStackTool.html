@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-05-09 Thu 16:38 -->
+<!-- 2019-07-19 Fri 22:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -233,21 +233,38 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org96fbc4a">1. Haskell Stack Tool</a></li>
+<li><a href="#org60cb8ea">1. Haskell Stack on Ubuntu</a></li>
+<li><a href="#orgb2d03a2">2. Haskell Stack Tool</a></li>
+<li><a href="#org87222e0">3. Add dependency to .cabal file does not mean the package will be download.</a></li>
+<li><a href="#orgc6f2135">4. Hoogle search function from non standard package</a></li>
+<li><a href="#org2221cb6">5. Update Hoogle database</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org96fbc4a" class="outline-2">
-<h2 id="org96fbc4a"><span class="section-number-2">1</span> Haskell Stack Tool</h2>
+<div id="outline-container-org60cb8ea" class="outline-2">
+<h2 id="org60cb8ea"><span class="section-number-2">1</span> Haskell Stack on Ubuntu</h2>
 <div class="outline-text-2" id="text-1">
-<ol class="org-ol">
+<ul class="org-ul">
+<li>Stack will be installed all file under <code>$HOME/.stack</code></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb2d03a2" class="outline-2">
+<h2 id="orgb2d03a2"><span class="section-number-2">2</span> Haskell Stack Tool</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Stack is a better tool to build Haskell project.
+<ul class="org-ul">
+<li>You can specify your <b>resolver</b> and <b>package names</b> inside <b>myproject.cabal</b> file.</li>
+<li><b>stack build</b> will automatically download the packages to stack project. It is like <b>Java Maven</b> build.</li>
+</ul></li>
 <li><p>
 Home brew it on your MacOS
 </p>
 <div class="org-src-container">
 <pre class="src src-bash">brew update
 brew install haskell-stack
-<span style="color: #74af68;"># </span><span style="color: #74af68;">you might need to relink the stack symbol links</span>
+<span style="color: #75715E;"># </span><span style="color: #74af68; font-style: italic;">you might need to relink the stack symbol links</span>
 rm /usr/local/bin/stack
 brew link --overwrite haskell-stack
 </pre>
@@ -257,9 +274,9 @@ Find out the location of stack and check your stack version
 </p>
 <div class="org-src-container">
 <pre class="src src-bash">which stack
-<span style="color: #74af68;"># </span><span style="color: #74af68;">/usr/local/bin/stack</span>
+<span style="color: #75715E;"># </span><span style="color: #74af68; font-style: italic;">/usr/local/bin/stack</span>
 stack --version
-<span style="color: #74af68;"># </span><span style="color: #74af68;">/usr/local/Cellar/haskell-stack/1.9.3:</span>
+<span style="color: #75715E;"># </span><span style="color: #74af68; font-style: italic;">/usr/local/Cellar/haskell-stack/1.9.3:</span>
 </pre>
 </div></li>
 
@@ -292,10 +309,11 @@ Run your project
 </pre>
 </div></li>
 <li><p>
-Add <a href="http://hackage.haskell.org/package/time">time</a> package to your build
+Add <a href="http://hackage.haskell.org/package/time">time</a> package to your build. <code>myproject.cabal</code>
 </p>
 <div class="org-src-container">
-<pre class="src src-bash">executable myproj
+<pre class="src src-bash"><span style="color: #75715E;"># </span><span style="color: #74af68; font-style: italic;">myproject.cabal</span>
+executable myproj
 hs-source-dirs:      src
 main-is:             Main.hs
 default-language:    Haskell2010
@@ -308,36 +326,76 @@ Now we can use functions(e.g. getCurrentTime) from time package
 </p>
 <div class="org-src-container">
 <pre class="src src-haskell"><span style="color: #ffad29; font-weight: bold;">import</span> <span style="color: #34cae2;">Data.Time</span>
-
 main<span style="color: #dbdb95;">::</span><span style="color: #34cae2;">()</span>
 <span style="color: #00ede1; font-weight: bold;">main</span> <span style="color: #dbdb95;">=</span> <span style="color: #ffad29; font-weight: bold;">do</span>
      time <span style="color: #dbdb95;">&lt;-</span> getCurrentTime
      putStrLn (show time)
 </pre>
-</div></li>
+</div>
+<ul class="org-ul">
+<li><b>stack build</b> and <b>stack exec myproject</b></li>
+</ul></li>
 <li><p>
-Try to figure out how to use your own module on Stack
+Try to figure out how to use your own module on Stack.
 </p>
+<ul class="org-ul">
+<li>It seems to me you have to put your modules under <b>src</b> inside <code>.cabal</code> file.</li>
+<li>You can use symbol link. e.g.</li>
+</ul>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #00ede1; font-weight: bold;">add</span> more code here
+<pre class="src src-bash"><span style="color: #23d7d7;">cd</span> src &amp;&amp; ln -s $<span style="color: #dbdb95;">b</span>/haskelllib/AronModule.hs AronModule.hs
+</pre>
+</div>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #75715E;"># </span><span style="color: #74af68; font-style: italic;">myproject.cabal</span>
+hs-source-dirs:  src
 </pre>
 </div></li>
 <li><p>
-Use different resolver <a href="https://www.stackage.org/lts-12.13">Long Term Supported 12.13</a>  
+Use different resolver <a href="https://www.stackage.org/lts-12.13">Long Term Supported 12.13</a> <b>ghc-8.4.3</b> in file: <b>stack.yaml</b> 
 </p>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #74af68;">-- </span><span style="color: #74af68;">ghc 8.4.3</span>
-<span style="color: #00ede1; font-weight: bold;">stack</span> new myproject <span style="color: #74af68;">--</span><span style="color: #74af68;">resolver=12.13 simple</span>
-<span style="color: #74af68;">-- </span><span style="color: #74af68;">check your stack.yaml                                  </span>
+<pre class="src src-haskell"><span style="color: #75715E;">-- </span><span style="color: #74af68; font-style: italic;">ghc 8.4.3</span>
+<span style="color: #00ede1; font-weight: bold;">stack</span> new myproject <span style="color: #75715E;">--</span><span style="color: #74af68; font-style: italic;">resolver=12.13 simple</span>
+<span style="color: #75715E;">-- </span><span style="color: #74af68; font-style: italic;">check your stack.yaml                                  </span>
 </pre>
 </div></li>
-</ol>
+<li>GHC 8.6.5 <code>resolver: lts-13.28</code> <a href="https://www.stackage.org/lts-13.28">GHC 8.6.5 Resolver 13.28</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org87222e0" class="outline-2">
+<h2 id="org87222e0"><span class="section-number-2">3</span> Add dependency to .cabal file does not mean the package will be download.</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>some packages needs to be added to <code>stack.yaml</code> with *extra-deps~</li>
+<li>I still did not understand which package are supported to in <code>stack.yaml</code> or <code>myproject.cabal</code>.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc6f2135" class="outline-2">
+<h2 id="orgc6f2135"><span class="section-number-2">4</span> Hoogle search function from non standard package</h2>
+<div class="outline-text-2" id="text-4">
+<div class="org-src-container">
+<pre class="src src-bash">hoogle +package.name function_name
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org2221cb6" class="outline-2">
+<h2 id="org2221cb6"><span class="section-number-2">5</span> Update Hoogle database</h2>
+<div class="outline-text-2" id="text-5">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #75715E;"># </span><span style="color: #74af68; font-style: italic;">warning: take lots of horse power. freeze your computer</span>
+sudo hoogle database all
+</pre>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-05-09 Thu 16:38</p>
+<p class="date">Created: 2019-07-19 Fri 22:32</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
