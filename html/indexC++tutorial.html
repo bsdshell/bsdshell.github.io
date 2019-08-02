@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-06-30 Sun 23:02 -->
+<!-- 2019-07-27 Sat 14:58 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -226,6 +226,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -233,235 +255,236 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc323edc">1. Reference in C and C++</a></li>
-<li><a href="#orga25c192">2. Function return by reference</a></li>
-<li><a href="#org36b0c14">3. Get a pointer to <code>std::vector</code></a></li>
-<li><a href="#orgc5f115c">4. Get a pointer to <code>std::vector</code> data</a></li>
-<li><a href="#orgdbeb532">5. Convert String to digit.</a></li>
-<li><a href="#org05635aa">6. Initialize Array in C and C++</a></li>
-<li><a href="#org567c480">7. Pointer points to array</a></li>
-<li><a href="#org1e912d7">8. C++ print out array</a></li>
-<li><a href="#org7ff3e6f">9. Print out array with pointer.</a></li>
-<li><a href="#org518b34e">10. Allocate memory in C dynamically.</a></li>
-<li><a href="#org3a55cf1">11. Allocate memory in C++/Cpp dynamically.</a></li>
-<li><a href="#org87d7e03">12. Allocate two dimensions array in C</a></li>
-<li><a href="#org92729c5">13. Inheritence</a></li>
-<li><a href="#orgcffccdb">14. Virtual Function, Pure Virtual.</a></li>
+<li><a href="#org397b7c2">1. Reference in C and C++</a></li>
+<li><a href="#org5fba1b0">2. Function return by reference</a></li>
+<li><a href="#org82b7f4f">3. Get a pointer to <code>std::vector</code></a></li>
+<li><a href="#orgc62d8b7">4. Get a pointer to <code>std::vector</code> data</a></li>
+<li><a href="#org9d0e32f">5. Convert String to digit.</a></li>
+<li><a href="#org4ea544c">6. Initialize Array in C and C++</a></li>
+<li><a href="#org78adb5e">7. Pointer points to array</a></li>
+<li><a href="#org877ebb8">8. C++ print out array</a></li>
+<li><a href="#orgb601368">9. Print out array with pointer.</a></li>
+<li><a href="#orgfebbd1b">10. Allocate memory in C dynamically.</a></li>
+<li><a href="#orgaea6284">11. Allocate memory in C++/Cpp dynamically.</a></li>
+<li><a href="#org04c07e5">12. Allocate two dimensions array in C</a></li>
+<li><a href="#orga8ea14f">13. Inheritence</a></li>
+<li><a href="#orgaeee668">14. Virtual Function, Pure Virtual.</a></li>
+<li><a href="#org1e194f8">15. Smart pointer: unique pointer, shared pointer and weak pointer</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc323edc" class="outline-2">
-<h2 id="orgc323edc"><span class="section-number-2">1</span> Reference in C and C++</h2>
+<div id="outline-container-org397b7c2" class="outline-2">
+<h2 id="org397b7c2"><span class="section-number-2">1</span> Reference in C and C++</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
-<pre class="src src-c++"><span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">num</span> = 3;
-<span style="color: #2F8B58; font-weight: bold;">int</span>* <span style="color: #0084C8; font-weight: bold;">ptr</span> = &amp;num
-printf(<span style="color: #4E9A06;">"%d"</span>, *ptr); <span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">3</span>
+<pre class="src src-c++"><span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">num</span> = 3;
+<span style="color: #34cae2; font-weight: bold;">int</span>* <span style="color: #dbdb95;">ptr</span> = &amp;num
+printf(<span style="color: #e67128;">"%d"</span>, *ptr); <span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">3</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orga25c192" class="outline-2">
-<h2 id="orga25c192"><span class="section-number-2">2</span> Function return by reference</h2>
+<div id="outline-container-org5fba1b0" class="outline-2">
+<h2 id="org5fba1b0"><span class="section-number-2">2</span> Function return by reference</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Return a reference if a variable is not local to the function.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-c++"><span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">num</span> = 3;
-<span style="color: #2F8B58; font-weight: bold;">int</span>&amp; <span style="color: #00578E; font-weight: bold;">test</span>(){
-  <span style="color: #A52A2A; font-weight: bold;">return</span> num;
+<pre class="src src-c++"><span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">num</span> = 3;
+<span style="color: #34cae2; font-weight: bold;">int</span>&amp; <span style="color: #00ede1; font-weight: bold;">test</span>(){
+  <span style="color: #ffad29; font-weight: bold;">return</span> num;
 }       
 test() = 5;
-printf(<span style="color: #4E9A06;">"%d"</span>, num); <span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">num =&gt; 5</span>
+printf(<span style="color: #e67128;">"%d"</span>, num); <span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">num =&gt; 5</span>
 </pre>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-org36b0c14" class="outline-2">
-<h2 id="org36b0c14"><span class="section-number-2">3</span> Get a pointer to <code>std::vector</code></h2>
+<div id="outline-container-org82b7f4f" class="outline-2">
+<h2 id="org82b7f4f"><span class="section-number-2">3</span> Get a pointer to <code>std::vector</code></h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
-<pre class="src src-c++"><span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Pt</span>{
-  <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">x</span>;
-  <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">y</span>;
-  <span style="color: #A52A2A; font-weight: bold;">public</span> Pt(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">x</span>, <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">y</span>){
-     <span style="color: #A52A2A; font-weight: bold;">this</span>.x = x;
-     <span style="color: #A52A2A; font-weight: bold;">this</span>.y = y;
+<pre class="src src-c++"><span style="color: #ffad29; font-weight: bold;">class</span> <span style="color: #34cae2; font-weight: bold;">Pt</span>{
+  <span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">x</span>;
+  <span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">y</span>;
+  <span style="color: #ffad29; font-weight: bold;">public</span> Pt(<span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">x</span>, <span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">y</span>){
+     <span style="color: #ffad29; font-weight: bold;">this</span>.x = x;
+     <span style="color: #ffad29; font-weight: bold;">this</span>.y = y;
   }
 }
-<span style="color: #F5666D; font-weight: bold;">std</span>::<span style="color: #2F8B58; font-weight: bold;">vector</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Pt</span>&gt; <span style="color: #0084C8; font-weight: bold;">vect</span>;
-vect.push_back(<span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">Pt</span>(1, 2));
-<span style="color: #2F8B58; font-weight: bold;">int</span>* <span style="color: #0084C8; font-weight: bold;">ptr</span> = &amp;vect;
-<span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">ptr will point to vect.</span>
+<span style="color: #008b8b;">std</span>::<span style="color: #34cae2; font-weight: bold;">vector</span>&lt;<span style="color: #34cae2; font-weight: bold;">Pt</span>&gt; <span style="color: #dbdb95;">vect</span>;
+vect.push_back(<span style="color: #ffad29; font-weight: bold;">new</span> <span style="color: #34cae2; font-weight: bold;">Pt</span>(1, 2));
+<span style="color: #34cae2; font-weight: bold;">int</span>* <span style="color: #dbdb95;">ptr</span> = &amp;vect;
+<span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">ptr will point to vect.</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgc5f115c" class="outline-2">
-<h2 id="orgc5f115c"><span class="section-number-2">4</span> Get a pointer to <code>std::vector</code> data</h2>
+<div id="outline-container-orgc62d8b7" class="outline-2">
+<h2 id="orgc62d8b7"><span class="section-number-2">4</span> Get a pointer to <code>std::vector</code> data</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>Get a pointer to the first address of the data.
 <a href="https://bitbucket.org/zsurface/cpplibtest/src/master/CppLibTest/CppLibTest/main.cpp">Test Example</a></li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-c++"><span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Pt</span>{
-<span style="color: #A52A2A; font-weight: bold;">public</span>:
-    <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">x</span>;
-    <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">y</span>;
-<span style="color: #A52A2A; font-weight: bold;">public</span>:
-    <span style="color: #00578E; font-weight: bold;">Pt</span>(){}
-    <span style="color: #00578E; font-weight: bold;">Pt</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">x_</span>, <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">y_</span>){
+<pre class="src src-c++"><span style="color: #ffad29; font-weight: bold;">class</span> <span style="color: #34cae2; font-weight: bold;">Pt</span>{
+<span style="color: #ffad29; font-weight: bold;">public</span>:
+    <span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">x</span>;
+    <span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">y</span>;
+<span style="color: #ffad29; font-weight: bold;">public</span>:
+    <span style="color: #00ede1; font-weight: bold;">Pt</span>(){}
+    <span style="color: #00ede1; font-weight: bold;">Pt</span>(<span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">x_</span>, <span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">y_</span>){
         x = x_;
         y = y_;
     }
 };
-<span style="color: #F5666D; font-weight: bold;">std</span>::<span style="color: #2F8B58; font-weight: bold;">vector</span>&lt;<span style="color: #2F8B58; font-weight: bold;">Pt</span>&gt; <span style="color: #0084C8; font-weight: bold;">vect</span>;
-<span style="color: #2F8B58; font-weight: bold;">Pt</span> <span style="color: #0084C8; font-weight: bold;">p1</span>;
+<span style="color: #008b8b;">std</span>::<span style="color: #34cae2; font-weight: bold;">vector</span>&lt;<span style="color: #34cae2; font-weight: bold;">Pt</span>&gt; <span style="color: #dbdb95;">vect</span>;
+<span style="color: #34cae2; font-weight: bold;">Pt</span> <span style="color: #dbdb95;">p1</span>;
 p1.x = 1;
 p1.y = 2;
-<span style="color: #2F8B58; font-weight: bold;">Pt</span> <span style="color: #0084C8; font-weight: bold;">p2</span>;
+<span style="color: #34cae2; font-weight: bold;">Pt</span> <span style="color: #dbdb95;">p2</span>;
 p2.x = 3;
 p2.y = 4;
 
 vect.push_back(p1);
 vect.push_back(p2);
-<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">expected</span>[] = {
+<span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">expected</span>[] = {
     1, 2, 3, 4
 };
-<span style="color: #2F8B58; font-weight: bold;">int</span>* <span style="color: #0084C8; font-weight: bold;">ptrToData</span> = (<span style="color: #2F8B58; font-weight: bold;">int</span>*) vect.data();
-REQUIRE(compareArray(ptrToData, expected, 4) == <span style="color: #F5666D; font-weight: bold;">true</span>);
+<span style="color: #34cae2; font-weight: bold;">int</span>* <span style="color: #dbdb95;">ptrToData</span> = (<span style="color: #34cae2; font-weight: bold;">int</span>*) vect.data();
+REQUIRE(compareArray(ptrToData, expected, 4) == <span style="color: #008b8b;">true</span>);
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgdbeb532" class="outline-2">
-<h2 id="orgdbeb532"><span class="section-number-2">5</span> Convert String to digit.</h2>
+<div id="outline-container-org9d0e32f" class="outline-2">
+<h2 id="org9d0e32f"><span class="section-number-2">5</span> Convert String to digit.</h2>
 <div class="outline-text-2" id="text-5">
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #808080;">#include</span> 
 <span style="color: #808080;">#include</span> 
 
-<span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">convert string to digits</span>
-<span style="color: #8D8D84; font-weight: bold; font-style: italic;">//</span>
-<span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">gcc -o try1 try1.c   on MacOSX</span>
-<span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">Fri Jul 13 00:14:39 PDT 2018</span>
-<span style="color: #8D8D84; font-weight: bold; font-style: italic;">//  </span>
-<span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span>
-<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #00578E; font-weight: bold;">main</span> () {
-  <span style="color: #2F8B58; font-weight: bold;">char</span> <span style="color: #0084C8; font-weight: bold;">str</span>[30] = <span style="color: #4E9A06;">"2030300 This 444 is test"</span>;
-  <span style="color: #2F8B58; font-weight: bold;">char</span> *<span style="color: #0084C8; font-weight: bold;">ptr</span>;
-  <span style="color: #2F8B58; font-weight: bold;">long</span> <span style="color: #0084C8; font-weight: bold;">ret</span>;
+<span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">convert string to digits</span>
+<span style="color: #8D8D84;">//</span>
+<span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">gcc -o try1 try1.c   on MacOSX</span>
+<span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">Fri Jul 13 00:14:39 PDT 2018</span>
+<span style="color: #8D8D84;">//  </span>
+<span style="color: #8D8D84;">// </span>
+<span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #00ede1; font-weight: bold;">main</span> () {
+  <span style="color: #34cae2; font-weight: bold;">char</span> <span style="color: #dbdb95;">str</span>[30] = <span style="color: #e67128;">"2030300 This 444 is test"</span>;
+  <span style="color: #34cae2; font-weight: bold;">char</span> *<span style="color: #dbdb95;">ptr</span>;
+  <span style="color: #34cae2; font-weight: bold;">long</span> <span style="color: #dbdb95;">ret</span>;
 
   ret = strtol(str, &amp;ptr, 10);
-  printf(<span style="color: #4E9A06;">"The number(unsigned long integer) is %ld\n"</span>, ret);
-  printf(<span style="color: #4E9A06;">"String part is [%s]"</span>, ptr);
+  printf(<span style="color: #e67128;">"The number(unsigned long integer) is %ld\n"</span>, ret);
+  printf(<span style="color: #e67128;">"String part is [%s]"</span>, ptr);
 
-  <span style="color: #A52A2A; font-weight: bold;">return</span>(0);
+  <span style="color: #ffad29; font-weight: bold;">return</span>(0);
 }
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org05635aa" class="outline-2">
-<h2 id="org05635aa"><span class="section-number-2">6</span> Initialize Array in C and C++</h2>
+<div id="outline-container-org4ea544c" class="outline-2">
+<h2 id="org4ea544c"><span class="section-number-2">6</span> Initialize Array in C and C++</h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
-<pre class="src src-c++"><span style="color: #8D8D84; font-weight: bold; font-style: italic;">//</span><span style="color: #204A87; font-style: italic;">C and C++ initialize array</span>
-<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">array</span>[] = {1, 2, 3};    
+<pre class="src src-c++"><span style="color: #8D8D84;">//</span><span style="color: #74af68; font-style: italic;">C and C++ initialize array</span>
+<span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">array</span>[] = {1, 2, 3};    
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org567c480" class="outline-2">
-<h2 id="org567c480"><span class="section-number-2">7</span> Pointer points to array</h2>
+<div id="outline-container-org78adb5e" class="outline-2">
+<h2 id="org78adb5e"><span class="section-number-2">7</span> Pointer points to array</h2>
 <div class="outline-text-2" id="text-7">
 <div class="org-src-container">
-<pre class="src src-c++"><span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">now pointer pt points to array</span>
-<span style="color: #2F8B58; font-weight: bold;">int</span>* <span style="color: #0084C8; font-weight: bold;">pt</span> = array; 
+<pre class="src src-c++"><span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">now pointer pt points to array</span>
+<span style="color: #34cae2; font-weight: bold;">int</span>* <span style="color: #dbdb95;">pt</span> = array; 
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1e912d7" class="outline-2">
-<h2 id="org1e912d7"><span class="section-number-2">8</span> C++ print out array</h2>
+<div id="outline-container-org877ebb8" class="outline-2">
+<h2 id="org877ebb8"><span class="section-number-2">8</span> C++ print out array</h2>
 <div class="outline-text-2" id="text-8">
 <div class="org-src-container">
-<pre class="src src-c++"><span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">print out the array</span>
-<span style="color: #A52A2A; font-weight: bold;">for</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">i</span>=0; i&lt;3; i++){
-    cout&lt;&lt;<span style="color: #4E9A06;">"["</span>&lt;&lt;i&lt;&lt;<span style="color: #4E9A06;">"]="</span>&lt;&lt;pt[i]&lt;&lt;endl;
+<pre class="src src-c++"><span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">print out the array</span>
+<span style="color: #ffad29; font-weight: bold;">for</span>(<span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">i</span>=0; i&lt;3; i++){
+    cout&lt;&lt;<span style="color: #e67128;">"["</span>&lt;&lt;i&lt;&lt;<span style="color: #e67128;">"]="</span>&lt;&lt;pt[i]&lt;&lt;endl;
 }
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org7ff3e6f" class="outline-2">
-<h2 id="org7ff3e6f"><span class="section-number-2">9</span> Print out array with pointer.</h2>
+<div id="outline-container-orgb601368" class="outline-2">
+<h2 id="orgb601368"><span class="section-number-2">9</span> Print out array with pointer.</h2>
 <div class="outline-text-2" id="text-9">
 <div class="org-src-container">
-<pre class="src src-c++"><span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">print out using the pointer</span>
-<span style="color: #A52A2A; font-weight: bold;">for</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">i</span>=0; i&lt;3; i++){
-    cout&lt;&lt;<span style="color: #4E9A06;">"["</span>&lt;&lt;i&lt;&lt;<span style="color: #4E9A06;">"]="</span>&lt;&lt;*(pt+i)&lt;&lt;endl;
+<pre class="src src-c++"><span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">print out using the pointer</span>
+<span style="color: #ffad29; font-weight: bold;">for</span>(<span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">i</span>=0; i&lt;3; i++){
+    cout&lt;&lt;<span style="color: #e67128;">"["</span>&lt;&lt;i&lt;&lt;<span style="color: #e67128;">"]="</span>&lt;&lt;*(pt+i)&lt;&lt;endl;
 }
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org518b34e" class="outline-2">
-<h2 id="org518b34e"><span class="section-number-2">10</span> Allocate memory in C dynamically.</h2>
+<div id="outline-container-orgfebbd1b" class="outline-2">
+<h2 id="orgfebbd1b"><span class="section-number-2">10</span> Allocate memory in C dynamically.</h2>
 <div class="outline-text-2" id="text-10">
 <div class="org-src-container">
-<pre class="src src-c"><span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">dynamically allocate memory in C</span>
-<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">size</span> = 3;
-<span style="color: #2F8B58; font-weight: bold;">int</span>* <span style="color: #0084C8; font-weight: bold;">pt1</span> = (<span style="color: #2F8B58; font-weight: bold;">int</span>*)malloc(<span style="color: #A52A2A; font-weight: bold;">sizeof</span>(<span style="color: #2F8B58; font-weight: bold;">int</span>)*size);
+<pre class="src src-c"><span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">dynamically allocate memory in C</span>
+<span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">size</span> = 3;
+<span style="color: #34cae2; font-weight: bold;">int</span>* <span style="color: #dbdb95;">pt1</span> = (<span style="color: #34cae2; font-weight: bold;">int</span>*)malloc(<span style="color: #ffad29; font-weight: bold;">sizeof</span>(<span style="color: #34cae2; font-weight: bold;">int</span>)*size);
 
-<span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">dellocate memory in C</span>
-<span style="color: #00578E; font-weight: bold;">free</span>(pt1);
+<span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">dellocate memory in C</span>
+<span style="color: #00ede1; font-weight: bold;">free</span>(pt1);
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org3a55cf1" class="outline-2">
-<h2 id="org3a55cf1"><span class="section-number-2">11</span> Allocate memory in C++/Cpp dynamically.</h2>
+<div id="outline-container-orgaea6284" class="outline-2">
+<h2 id="orgaea6284"><span class="section-number-2">11</span> Allocate memory in C++/Cpp dynamically.</h2>
 <div class="outline-text-2" id="text-11">
 <div class="org-src-container">
-<pre class="src src-c++"><span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">dynamically allocate memory in C++</span>
-<span style="color: #2F8B58; font-weight: bold;">int</span> *<span style="color: #0084C8; font-weight: bold;">pt2</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">int</span>[3];
+<pre class="src src-c++"><span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">dynamically allocate memory in C++</span>
+<span style="color: #34cae2; font-weight: bold;">int</span> *<span style="color: #dbdb95;">pt2</span> = <span style="color: #ffad29; font-weight: bold;">new</span> <span style="color: #34cae2; font-weight: bold;">int</span>[3];
 
-<span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">dellocate memory in C++</span>
-<span style="color: #A52A2A; font-weight: bold;">delete</span> pt2;
+<span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">dellocate memory in C++</span>
+<span style="color: #ffad29; font-weight: bold;">delete</span> pt2;
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org87d7e03" class="outline-2">
-<h2 id="org87d7e03"><span class="section-number-2">12</span> Allocate two dimensions array in C</h2>
+<div id="outline-container-org04c07e5" class="outline-2">
+<h2 id="org04c07e5"><span class="section-number-2">12</span> Allocate two dimensions array in C</h2>
 <div class="outline-text-2" id="text-12">
 <div class="org-src-container">
-<pre class="src src-c">  <span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">allocate two dimension array in C</span>
-  <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">col</span> = 4;
-  <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">row</span> = 3;
-  <span style="color: #2F8B58; font-weight: bold;">int</span>** <span style="color: #0084C8; font-weight: bold;">ppt</span>;
+<pre class="src src-c">  <span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">allocate two dimension array in C</span>
+  <span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">col</span> = 4;
+  <span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">row</span> = 3;
+  <span style="color: #34cae2; font-weight: bold;">int</span>** <span style="color: #dbdb95;">ppt</span>;
 
-  <span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">this is trick part</span>
-  ppt = (<span style="color: #2F8B58; font-weight: bold;">int</span>**)malloc(<span style="color: #A52A2A; font-weight: bold;">sizeof</span>(<span style="color: #2F8B58; font-weight: bold;">int</span>*)*col);
-  <span style="color: #A52A2A; font-weight: bold;">for</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">j</span>=0; j&lt;col; j++){
-      ppt[j] = (<span style="color: #2F8B58; font-weight: bold;">int</span>*)malloc(<span style="color: #A52A2A; font-weight: bold;">sizeof</span>(<span style="color: #2F8B58; font-weight: bold;">int</span>)*row);
+  <span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">this is trick part</span>
+  ppt = (<span style="color: #34cae2; font-weight: bold;">int</span>**)malloc(<span style="color: #ffad29; font-weight: bold;">sizeof</span>(<span style="color: #34cae2; font-weight: bold;">int</span>*)*col);
+  <span style="color: #ffad29; font-weight: bold;">for</span>(<span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">j</span>=0; j&lt;col; j++){
+      ppt[j] = (<span style="color: #34cae2; font-weight: bold;">int</span>*)malloc(<span style="color: #ffad29; font-weight: bold;">sizeof</span>(<span style="color: #34cae2; font-weight: bold;">int</span>)*row);
   }
-  <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">c</span> = 0;
-  <span style="color: #A52A2A; font-weight: bold;">for</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">i</span>=0; i &lt; col; i++){
-      <span style="color: #A52A2A; font-weight: bold;">for</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">j</span>=0; j &lt; row; j++){
+  <span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">c</span> = 0;
+  <span style="color: #ffad29; font-weight: bold;">for</span>(<span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">i</span>=0; i &lt; col; i++){
+      <span style="color: #ffad29; font-weight: bold;">for</span>(<span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">j</span>=0; j &lt; row; j++){
           ppt[i][j] = c++;
       }
   }
 
-<span style="color: #8D8D84; font-weight: bold; font-style: italic;">// </span><span style="color: #204A87; font-style: italic;">Deallocate memory 2 dimensions.</span>
-<span style="color: #A52A2A; font-weight: bold;">for</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">j</span>=0; j &lt; col; j++){
+<span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">Deallocate memory 2 dimensions.</span>
+<span style="color: #ffad29; font-weight: bold;">for</span>(<span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">j</span>=0; j &lt; col; j++){
     free(ppt[j]);
 }
 </pre>
@@ -474,71 +497,118 @@ Sorry, your browser does not support SVG.</object>
 </div>
 </div>
 </div>
-<div id="outline-container-org92729c5" class="outline-2">
-<h2 id="org92729c5"><span class="section-number-2">13</span> Inheritence</h2>
+<div id="outline-container-orga8ea14f" class="outline-2">
+<h2 id="orga8ea14f"><span class="section-number-2">13</span> Inheritence</h2>
 <div class="outline-text-2" id="text-13">
 <ul class="org-ul">
 <li>Polygon, Rectangle and Triangle examples.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-C++">     <span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Polygon</span>{
- <span style="color: #A52A2A; font-weight: bold;">protected</span>:
-     <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">m</span>;
-     <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">n</span>;
- <span style="color: #A52A2A; font-weight: bold;">public</span>:
-     <span style="color: #00578E; font-weight: bold;">Polygon</span>(){
+<pre class="src src-C++">     <span style="color: #ffad29; font-weight: bold;">class</span> <span style="color: #34cae2; font-weight: bold;">Polygon</span>{
+ <span style="color: #ffad29; font-weight: bold;">protected</span>:
+     <span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">m</span>;
+     <span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">n</span>;
+ <span style="color: #ffad29; font-weight: bold;">public</span>:
+     <span style="color: #00ede1; font-weight: bold;">Polygon</span>(){
          m = 0;
          n = 0;
      }
-     <span style="color: #00578E; font-weight: bold;">Polygon</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">m</span>, <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">n</span>){
-         <span style="color: #A52A2A; font-weight: bold;">this</span> -&gt; m = m;
-         <span style="color: #A52A2A; font-weight: bold;">this</span> -&gt; n = n;
+     <span style="color: #00ede1; font-weight: bold;">Polygon</span>(<span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">m</span>, <span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">n</span>){
+         <span style="color: #ffad29; font-weight: bold;">this</span> -&gt; m = m;
+         <span style="color: #ffad29; font-weight: bold;">this</span> -&gt; n = n;
      }
  };
 
- <span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Rectangle</span> : <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #2F8B58; font-weight: bold;">Polygon</span>{
- <span style="color: #A52A2A; font-weight: bold;">public</span>:
-     <span style="color: #00578E; font-weight: bold;">Rectangle</span>(){}
-     <span style="color: #00578E; font-weight: bold;">Rectangle</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">m</span>, <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">n</span>){
-         <span style="color: #0084C8; font-weight: bold;">Polygon</span>(m, n);
+ <span style="color: #ffad29; font-weight: bold;">class</span> <span style="color: #34cae2; font-weight: bold;">Rectangle</span> : <span style="color: #ffad29; font-weight: bold;">public</span> <span style="color: #34cae2; font-weight: bold;">Polygon</span>{
+ <span style="color: #ffad29; font-weight: bold;">public</span>:
+     <span style="color: #00ede1; font-weight: bold;">Rectangle</span>(){}
+     <span style="color: #00ede1; font-weight: bold;">Rectangle</span>(<span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">m</span>, <span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">n</span>){
+         <span style="color: #dbdb95;">Polygon</span>(m, n);
      }
- <span style="color: #A52A2A; font-weight: bold;">public</span>:
-     <span style="color: #2F8B58; font-weight: bold;">double</span> <span style="color: #00578E; font-weight: bold;">area</span>(){
-         <span style="color: #A52A2A; font-weight: bold;">return</span> m*n;
-     }
- };
-
- <span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Triangle</span> : <span style="color: #A52A2A; font-weight: bold;">public</span> <span style="color: #2F8B58; font-weight: bold;">Polygon</span>{
- <span style="color: #A52A2A; font-weight: bold;">public</span>:
-     <span style="color: #00578E; font-weight: bold;">Triangle</span>(){}
-     <span style="color: #00578E; font-weight: bold;">Triangle</span>(<span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">m</span>, <span style="color: #2F8B58; font-weight: bold;">int</span> <span style="color: #0084C8; font-weight: bold;">n</span>){
-         <span style="color: #0084C8; font-weight: bold;">Polygon</span>(m, n);
-     }
- <span style="color: #A52A2A; font-weight: bold;">public</span>:
-     <span style="color: #2F8B58; font-weight: bold;">double</span> <span style="color: #00578E; font-weight: bold;">area</span>(){
-         <span style="color: #A52A2A; font-weight: bold;">return</span> m*n/2;
+ <span style="color: #ffad29; font-weight: bold;">public</span>:
+     <span style="color: #34cae2; font-weight: bold;">double</span> <span style="color: #00ede1; font-weight: bold;">area</span>(){
+         <span style="color: #ffad29; font-weight: bold;">return</span> m*n;
      }
  };
 
+ <span style="color: #ffad29; font-weight: bold;">class</span> <span style="color: #34cae2; font-weight: bold;">Triangle</span> : <span style="color: #ffad29; font-weight: bold;">public</span> <span style="color: #34cae2; font-weight: bold;">Polygon</span>{
+ <span style="color: #ffad29; font-weight: bold;">public</span>:
+     <span style="color: #00ede1; font-weight: bold;">Triangle</span>(){}
+     <span style="color: #00ede1; font-weight: bold;">Triangle</span>(<span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">m</span>, <span style="color: #34cae2; font-weight: bold;">int</span> <span style="color: #dbdb95;">n</span>){
+         <span style="color: #dbdb95;">Polygon</span>(m, n);
+     }
+ <span style="color: #ffad29; font-weight: bold;">public</span>:
+     <span style="color: #34cae2; font-weight: bold;">double</span> <span style="color: #00ede1; font-weight: bold;">area</span>(){
+         <span style="color: #ffad29; font-weight: bold;">return</span> m*n/2;
+     }
+ };
 
-<span style="color: #2F8B58; font-weight: bold;">Rectangle</span>* <span style="color: #0084C8; font-weight: bold;">pRect</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">Rectangle</span>(1, 2);
-cout&lt;&lt;<span style="color: #4E9A06;">"Rectangle Area"</span>&lt;&lt;pRect-&gt;area();
-<span style="color: #2F8B58; font-weight: bold;">Triangle</span>* <span style="color: #0084C8; font-weight: bold;">pTri</span> = <span style="color: #A52A2A; font-weight: bold;">new</span> <span style="color: #2F8B58; font-weight: bold;">Triangle</span>(1, 2);
-cout&lt;&lt;<span style="color: #4E9A06;">"Triangle Area"</span>&lt;&lt;pTri-&gt;area();
+
+<span style="color: #34cae2; font-weight: bold;">Rectangle</span>* <span style="color: #dbdb95;">pRect</span> = <span style="color: #ffad29; font-weight: bold;">new</span> <span style="color: #34cae2; font-weight: bold;">Rectangle</span>(1, 2);
+cout&lt;&lt;<span style="color: #e67128;">"Rectangle Area"</span>&lt;&lt;pRect-&gt;area();
+<span style="color: #34cae2; font-weight: bold;">Triangle</span>* <span style="color: #dbdb95;">pTri</span> = <span style="color: #ffad29; font-weight: bold;">new</span> <span style="color: #34cae2; font-weight: bold;">Triangle</span>(1, 2);
+cout&lt;&lt;<span style="color: #e67128;">"Triangle Area"</span>&lt;&lt;pTri-&gt;area();
 
 </pre>
 </div>
 </div>
 </div>
+<div id="outline-container-orgaeee668" class="outline-2">
+<h2 id="orgaeee668"><span class="section-number-2">14</span> Virtual Function, Pure Virtual.</h2>
+</div>
+<div id="outline-container-org1e194f8" class="outline-2">
+<h2 id="org1e194f8"><span class="section-number-2">15</span> Smart pointer: unique pointer, shared pointer and weak pointer</h2>
+<div class="outline-text-2" id="text-15">
+<ul class="org-ul">
+<li>What is smart pointer? <a href="https://stackoverflow.com/questions/12519812/how-do-i-pass-smart-pointers-into-functions">Smart Pointer</a>
+<ul class="org-ul">
+<li>Smart pointer is all about <b>ownership</b>, who owns the object
+<ul class="org-ul">
+<li>Unique pointer only allows ONE <b>ownership</b></li>
+<li>Shared pointer allow more than one <b>ownership</b>.</li>
+<li>Weak pointer has no <b>ownership</b>.</li>
+</ul></li>
+<li>Smart pointer can automatically deallocate memory.</li>
+</ul></li>
+<li>What is unique pointer?
+<ul class="org-ul">
+<li>As the name implies, make sure exactly only one copy of object exists.</li>
+<li>Unique pointer can not be copied. \( \Rightarrow \) no <code>use_count()</code> function.</li>
+<li>You can transfer the pointer to other unique pointer using <code>std::move()</code>, then the origin unique pointer will be deleted.</li>
+</ul></li>
+<li>What is shared pointer? <a href="https://en.cppreference.com/w/cpp/memory/shared_ptr/use_count">shared<sub>ptr</sub></a>
+<ul class="org-ul">
+<li><p>
+Shared pointer is based on reference counting and can be used to store and pass reference beyond the current scope.
+</p>
+<div class="org-src-container">
+<pre class="src src-c++"><span style="color: #ffad29; font-weight: bold;">class</span> <span style="color: #34cae2; font-weight: bold;">MyClass</span>{
+<span style="color: #ffad29; font-weight: bold;">public</span>:
+     <span style="color: #00ede1; font-weight: bold;">MyClass</span>(){}
+<span style="color: #ffad29; font-weight: bold;">public</span>:
+     <span style="color: #34cae2; font-weight: bold;">shared_pt</span>&lt;<span style="color: #34cae2; font-weight: bold;">int</span>&gt; <span style="color: #00ede1; font-weight: bold;">fun</span>(){
+         <span style="color: #34cae2; font-weight: bold;">shared_pt</span>&lt;<span style="color: #34cae2; font-weight: bold;">int</span>&gt; <span style="color: #dbdb95;">pt</span>(<span style="color: #ffad29; font-weight: bold;">new</span> <span style="color: #34cae2; font-weight: bold;">int</span>(9));
+         cout&lt;&lt;<span style="color: #e67128;">"fun pt.use_count()="</span> &lt;&lt;pt.use_count()&lt;&lt;endl; <span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">pt.use_count() == 1</span>
+         <span style="color: #ffad29; font-weight: bold;">return</span> pt;
+     }
+}
 
+<span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">main</span>
+<span style="color: #34cae2; font-weight: bold;">MyClass</span>* <span style="color: #dbdb95;">cpt</span> = <span style="color: #ffad29; font-weight: bold;">new</span> <span style="color: #34cae2; font-weight: bold;">MyClass</span>();
+<span style="color: #34cae2; font-weight: bold;">shared_pt</span>&lt;<span style="color: #34cae2; font-weight: bold;">int</span>&gt; <span style="color: #dbdb95;">pt1</span> = cpt -&gt; fun();
+cout&lt;&lt;<span style="color: #e67128;">"main pt1.use_count()="</span> &lt;&lt; pt1.use_count()&lt;&lt;endl;  <span style="color: #8D8D84;">// </span><span style="color: #74af68; font-style: italic;">pt1.use_count() == 1</span>
 
-<div id="outline-container-orgcffccdb" class="outline-2">
-<h2 id="orgcffccdb"><span class="section-number-2">14</span> Virtual Function, Pure Virtual.</h2>
+</pre>
+</div></li>
+</ul></li>
+<li>What is weak pointer?</li>
+</ul>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-06-30 Sun 23:02</p>
+<p class="date">Created: 2019-07-27 Sat 14:58</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -1,44 +1,208 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
-<head>
-    <title>$title</title>
-    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
-    <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../highlight.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-            jax: ["input/TeX","output/HTML-CSS"],
-            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
-          });
-    </script>
-    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
-</head>
-<body>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-66282017-2', 'auto');
-  ga('send', 'pageview');
-</script>
-<div class="myclass">
-<div class="mytitle">
-add content here
-</div>
-<pre class="mytext">
-My text here
-</pre>
-<pre class="prettyprint">
-</pre> 
-</div>
-</body>
-</html>
+*** Reference in C and C++
+    #+BEGIN_SRC c++
+       int num = 3;
+       int* ptr = &num
+       printf("%d", *ptr); // 3
+    #+END_SRC
+*** Function return by reference
+    + Return a reference if a variable is not local to the function.
+    #+BEGIN_SRC c++
+       int num = 3;
+       int& test(){
+         return num;
+       }       
+       test() = 5;
+       printf("%d", num); // num => 5
+    #+END_SRC
+
+    
+*** Get a pointer to ~std::vector~
+    #+BEGIN_SRC c++
+      class Pt{
+	int x;
+	int y;
+	public Pt(int x, int y){
+           this.x = x;
+           this.y = y;
+	}
+      }
+      std::vector<Pt> vect;
+      vect.push_back(new Pt(1, 2));
+      int* ptr = &vect;
+      // ptr will point to vect.
+    #+END_SRC
+*** Get a pointer to ~std::vector~ data
+    + Get a pointer to the first address of the data.
+      [[https://bitbucket.org/zsurface/cpplibtest/src/master/CppLibTest/CppLibTest/main.cpp][Test Example]]
+    #+BEGIN_SRC c++
+        class Pt{
+        public:
+            int x;
+            int y;
+        public:
+            Pt(){}
+            Pt(int x_, int y_){
+                x = x_;
+                y = y_;
+            }
+        };
+        std::vector<Pt> vect;
+        Pt p1;
+        p1.x = 1;
+        p1.y = 2;
+        Pt p2;
+        p2.x = 3;
+        p2.y = 4;
+
+        vect.push_back(p1);
+        vect.push_back(p2);
+        int expected[] = {
+            1, 2, 3, 4
+        };
+        int* ptrToData = (int*) vect.data();
+        REQUIRE(compareArray(ptrToData, expected, 4) == true);
+    #+END_SRC
+
+*** Convert String to digit.
+    #+BEGIN_SRC c++
+      #include 
+      #include 
+
+      // convert string to digits
+      //
+      // gcc -o try1 try1.c   on MacOSX
+      // Fri Jul 13 00:14:39 PDT 2018
+      //  
+      // 
+      int main () {
+	char str[30] = "2030300 This 444 is test";
+	char *ptr;
+	long ret;
+
+	ret = strtol(str, &ptr, 10);
+	printf("The number(unsigned long integer) is %ld\n", ret);
+	printf("String part is [%s]", ptr);
+
+	return(0);
+      }
+    #+END_SRC
+*** Initialize Array in C and C++
+    #+BEGIN_SRC c++
+      //C and C++ initialize array
+      int array[] = {1, 2, 3};    
+    #+END_SRC
+*** Pointer points to array
+    #+BEGIN_SRC c++
+      // now pointer pt points to array
+      int* pt = array; 
+    #+END_SRC
+
+*** C++ print out array
+    #+BEGIN_SRC c++
+    // print out the array
+    for(int i=0; i<3; i++){
+        cout<<"["<<i<<"]="<<pt[i]<<endl;
+    }
+    #+END_SRC
+*** Print out array with pointer.
+    #+BEGIN_SRC c++
+    // print out using the pointer
+    for(int i=0; i<3; i++){
+        cout<<"["<<i<<"]="<<*(pt+i)<<endl;
+    }
+    #+END_SRC
+*** Allocate memory in C dynamically.
+    #+BEGIN_SRC c
+    // dynamically allocate memory in C
+    int size = 3;
+    int* pt1 = (int*)malloc(sizeof(int)*size);
+
+    // dellocate memory in C
+    free(pt1);
+    #+END_SRC
+*** Allocate memory in C++/Cpp dynamically.
+    #+BEGIN_SRC c++
+    // dynamically allocate memory in C++
+    int *pt2 = new int[3];
+
+    // dellocate memory in C++
+    delete pt2;
+    #+END_SRC
+*** Allocate two dimensions array in C
+    #+BEGIN_SRC c
+	// allocate two dimension array in C
+	int col = 4;
+	int row = 3;
+	int** ppt;
+
+	// this is trick part
+	ppt = (int**)malloc(sizeof(int*)*col);
+	for(int j=0; j<col; j++){
+	    ppt[j] = (int*)malloc(sizeof(int)*row);
+	}
+	int c = 0;
+	for(int i=0; i < col; i++){
+	    for(int j=0; j < row; j++){
+		ppt[i][j] = c++;
+	    }
+	}
+
+      // Deallocate memory 2 dimensions.
+      for(int j=0; j < col; j++){
+	  free(ppt[j]);
+      }
+    #+END_SRC
+    #+ATTR_HTML: width="100px"
+    [[../image/malloc.svg]]				     
+*** Inheritence
+    + Polygon, Rectangle and Triangle examples.
+    #+BEGIN_SRC C++
+	  class Polygon{
+      protected:
+	  int m;
+	  int n;
+      public:
+	  Polygon(){
+	      m = 0;
+	      n = 0;
+	  }
+	  Polygon(int m, int n){
+	      this -> m = m;
+	      this -> n = n;
+	  }
+      };
+
+      class Rectangle : public Polygon{
+      public:
+	  Rectangle(){}
+	  Rectangle(int m, int n){
+	      Polygon(m, n);
+	  }
+      public:
+	  double area(){
+	      return m*n;
+	  }
+      };
+
+      class Triangle : public Polygon{
+      public:
+	  Triangle(){}
+	  Triangle(int m, int n){
+	      Polygon(m, n);
+	  }
+      public:
+	  double area(){
+	      return m*n/2;
+	  }
+      };
+
+
+     Rectangle* pRect = new Rectangle(1, 2);
+     cout<<"Rectangle Area"<<pRect->area();
+     Triangle* pTri = new Triangle(1, 2);
+     cout<<"Triangle Area"<<pTri->area();
+
+    #+END_SRC
+
+
+*** Virtual Function, Pure Virtual.

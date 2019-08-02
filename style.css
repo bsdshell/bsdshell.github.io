@@ -59,6 +59,8 @@ table.fixed {
 }
 table td, th{
     border: 2px solid #ab9eca;
+    font-size: 20px;
+    color: green;
 }
 
 
