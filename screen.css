@@ -1,10 +1,14 @@
 body {
-    margin:0;
-    padding:0;
-    border:0;           /* This removes the border around the viewport in old versions of IE */
-    width:100%;
-    background:#fff;
+    /* margin:0; */
+    /* padding:0; */
+    /* border:0; */           /* This removes the border around the viewport in old versions of IE */
+    /* width:100%; */
+    background: #8c7846;
     min-width:600px;        /* Minimum width of layout - remove line if not required */
+    margin: 0 auto;
+    max-width: 1000px;
+    /* border: 1pt solid #afbb7f; */
+    padding: 4px;
 }
 
 a {color: #a78484;}
