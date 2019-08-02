@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-07-11 Thu 22:18 -->
+<!-- 2019-08-02 Fri 14:36 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Haskell Examples</title>
@@ -180,6 +180,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -234,15 +235,15 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org42c9760">1. Haskell Vault Example</a></li>
-<li><a href="#org101bebb">2. Haskell maybe</a></li>
-<li><a href="#orgd13d2ce">3. Haskell <b>Record</b></a></li>
-<li><a href="#org35a3e26">4. Install all packages on your local system</a></li>
+<li><a href="#org6670dce">1. Haskell Vault Example</a></li>
+<li><a href="#orgacb0f18">2. Haskell maybe</a></li>
+<li><a href="#org2281100">3. Haskell <b>Record</b></a></li>
+<li><a href="#org3d0ba2b">4. Install all packages on your local system</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org42c9760" class="outline-2">
-<h2 id="org42c9760"><span class="section-number-2">1</span> Haskell Vault Example</h2>
+<div id="outline-container-org6670dce" class="outline-2">
+<h2 id="org6670dce"><span class="section-number-2">1</span> Haskell Vault Example</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>import package Data.Vault.Lazy</li>
@@ -253,23 +254,23 @@ for the JavaScript code in this tag.
 <li>More about the implementation of <b>Vault</b> <a href="https://apfelmus.nfshost.com/blog/2011/09/04-vault.html">Vault</a></li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #0000FF;">import</span> <span style="color: #0000FF;">qualified</span> <span style="color: #6434A3;">Data.Vault.Lazy</span> <span style="color: #0000FF;">as</span> <span style="color: #6434A3;">Vault</span>
-<span style="color: #006699;">main</span> <span style="color: #BA36A5;">=</span> <span style="color: #0000FF;">do</span>
-       <span style="color: #0000FF;">let</span> emptyVault <span style="color: #BA36A5;">=</span> Vault.empty
-       key <span style="color: #BA36A5;">&lt;-</span> Vault.newKey
-       <span style="color: #0000FF;">let</span> newVault <span style="color: #BA36A5;">=</span> Vault.insert key 2
-       <span style="color: #0000FF;">let</span> maybe <span style="color: #BA36A5;">=</span> Vault.lookup key newVault
-       <span style="color: #0000FF;">case</span> maybe <span style="color: #0000FF;">of</span> 
-            <span style="color: #6434A3;">Nothing</span> <span style="color: #BA36A5;">-&gt;</span> print <span style="color: #008000;">"no value"</span>
-            (<span style="color: #6434A3;">Just</span> n) <span style="color: #BA36A5;">-&gt;</span> print n
-       print <span style="color: #008000;">"done"</span>
+<pre class="src src-haskell"><span style="color: #859900; font-weight: bold;">import</span> <span style="color: #859900; font-weight: bold;">qualified</span> <span style="color: #b58900;">Data.Vault.Lazy</span> <span style="color: #859900; font-weight: bold;">as</span> <span style="color: #b58900;">Vault</span>
+<span style="color: #268bd2;">main</span> <span style="color: #268bd2;">=</span> <span style="color: #859900; font-weight: bold;">do</span>
+       <span style="color: #859900; font-weight: bold;">let</span> emptyVault <span style="color: #268bd2;">=</span> Vault.empty
+       key <span style="color: #268bd2;">&lt;-</span> Vault.newKey
+       <span style="color: #859900; font-weight: bold;">let</span> newVault <span style="color: #268bd2;">=</span> Vault.insert key 2
+       <span style="color: #859900; font-weight: bold;">let</span> maybe <span style="color: #268bd2;">=</span> Vault.lookup key newVault
+       <span style="color: #859900; font-weight: bold;">case</span> maybe <span style="color: #859900; font-weight: bold;">of</span> 
+            <span style="color: #b58900;">Nothing</span> <span style="color: #268bd2;">-&gt;</span> print <span style="color: #2aa198;">"no value"</span>
+            (<span style="color: #b58900;">Just</span> n) <span style="color: #268bd2;">-&gt;</span> print n
+       print <span style="color: #2aa198;">"done"</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org101bebb" class="outline-2">
-<h2 id="org101bebb"><span class="section-number-2">2</span> Haskell maybe</h2>
+<div id="outline-container-orgacb0f18" class="outline-2">
+<h2 id="orgacb0f18"><span class="section-number-2">2</span> Haskell maybe</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Simplify the Maybe code</li>
@@ -277,27 +278,27 @@ for the JavaScript code in this tag.
 Given a type: <code>Maybe Int</code> If Maybe is Nothing return 0 else apply a funciton f to the value
 </p>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #0000FF;">let</span> mv <span style="color: #BA36A5;">=</span> <span style="color: #6434A3;">Just</span> 3
-print <span style="color: #006699;">$</span> maybe 0 (<span style="color: #BA36A5;">+</span>1) (mv) <span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #8D8D84; font-style: italic;">return 4</span>
-<span style="color: #0000FF;">let</span> mv <span style="color: #BA36A5;">=</span> <span style="color: #6434A3;">Nothing</span>
-print <span style="color: #006699;">$</span> maybe 0 (<span style="color: #BA36A5;">+</span>1) (mv) <span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #8D8D84; font-style: italic;">return 0</span>
+<pre class="src src-haskell"><span style="color: #859900; font-weight: bold;">let</span> mv <span style="color: #268bd2;">=</span> <span style="color: #b58900;">Just</span> 3
+print <span style="color: #268bd2;">$</span> maybe 0 (<span style="color: #268bd2;">+</span>1) (mv) <span style="color: #586e75;">-- </span><span style="color: #586e75; font-style: italic;">return 4</span>
+<span style="color: #859900; font-weight: bold;">let</span> mv <span style="color: #268bd2;">=</span> <span style="color: #b58900;">Nothing</span>
+print <span style="color: #268bd2;">$</span> maybe 0 (<span style="color: #268bd2;">+</span>1) (mv) <span style="color: #586e75;">-- </span><span style="color: #586e75; font-style: italic;">return 0</span>
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgd13d2ce" class="outline-2">
-<h2 id="orgd13d2ce"><span class="section-number-2">3</span> Haskell <b>Record</b></h2>
+<div id="outline-container-org2281100" class="outline-2">
+<h2 id="org2281100"><span class="section-number-2">3</span> Haskell <b>Record</b></h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>Haskell record is like a class in Java/C++ without any methods.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #0000FF;">data</span> <span style="color: #6434A3;">MyRec</span> <span style="color: #BA36A5;">=</span> <span style="color: #6434A3;">MyRec</span>{name<span style="color: #BA36A5;">::</span><span style="color: #6434A3;">String</span>, age<span style="color: #BA36A5;">::</span><span style="color: #6434A3;">Integer</span>}
-<span style="color: #0000FF;">let</span> <span style="color: #0000FF;">rec</span> <span style="color: #BA36A5;">=</span> <span style="color: #6434A3;">MyRec</span>{name <span style="color: #BA36A5;">=</span> <span style="color: #008000;">"David"</span>, age<span style="color: #BA36A5;">=</span>20}
-print <span style="color: #006699;">$</span> name <span style="color: #0000FF;">rec</span> <span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #8D8D84; font-style: italic;">"David"</span>
-print <span style="color: #006699;">$</span> age <span style="color: #0000FF;">rec</span>  <span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #8D8D84; font-style: italic;">20</span>
+<pre class="src src-haskell"><span style="color: #859900; font-weight: bold;">data</span> <span style="color: #b58900;">MyRec</span> <span style="color: #268bd2;">=</span> <span style="color: #b58900;">MyRec</span>{name<span style="color: #268bd2;">::</span><span style="color: #b58900;">String</span>, age<span style="color: #268bd2;">::</span><span style="color: #b58900;">Integer</span>}
+<span style="color: #859900; font-weight: bold;">let</span> <span style="color: #859900; font-weight: bold;">rec</span> <span style="color: #268bd2;">=</span> <span style="color: #b58900;">MyRec</span>{name <span style="color: #268bd2;">=</span> <span style="color: #2aa198;">"David"</span>, age<span style="color: #268bd2;">=</span>20}
+print <span style="color: #268bd2;">$</span> name <span style="color: #859900; font-weight: bold;">rec</span> <span style="color: #586e75;">-- </span><span style="color: #586e75; font-style: italic;">"David"</span>
+print <span style="color: #268bd2;">$</span> age <span style="color: #859900; font-weight: bold;">rec</span>  <span style="color: #586e75;">-- </span><span style="color: #586e75; font-style: italic;">20</span>
 
 </pre>
 </div>
@@ -305,39 +306,37 @@ print <span style="color: #006699;">$</span> age <span style="color: #0000FF;">r
 <li>Haskell record is just function.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #0000FF;">data</span> <span style="color: #6434A3;">MyRec</span> <span style="color: #BA36A5;">=</span> <span style="color: #6434A3;">MyRec</span>{name<span style="color: #BA36A5;">::</span><span style="color: #6434A3;">String</span>, age<span style="color: #BA36A5;">::</span><span style="color: #6434A3;">Integer</span>}
- name<span style="color: #BA36A5;">::</span><span style="color: #6434A3;">MyRec</span> <span style="color: #BA36A5;">-&gt;</span> <span style="color: #6434A3;">String</span>
- age<span style="color: #BA36A5;">::</span><span style="color: #6434A3;">MyRec</span> <span style="color: #BA36A5;">-&gt;</span> <span style="color: #6434A3;">Integer</span>
+<pre class="src src-haskell"><span style="color: #859900; font-weight: bold;">data</span> <span style="color: #b58900;">MyRec</span> <span style="color: #268bd2;">=</span> <span style="color: #b58900;">MyRec</span>{name<span style="color: #268bd2;">::</span><span style="color: #b58900;">String</span>, age<span style="color: #268bd2;">::</span><span style="color: #b58900;">Integer</span>}
+ name<span style="color: #268bd2;">::</span><span style="color: #b58900;">MyRec</span> <span style="color: #268bd2;">-&gt;</span> <span style="color: #b58900;">String</span>
+ age<span style="color: #268bd2;">::</span><span style="color: #b58900;">MyRec</span> <span style="color: #268bd2;">-&gt;</span> <span style="color: #b58900;">Integer</span>
 </pre>
 </div>
 <ul class="org-ul">
 <li>This is why you can NOT have same field name even in different record. e.g.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #0000FF;">data</span> <span style="color: #6434A3;">MyRec</span> <span style="color: #BA36A5;">=</span> <span style="color: #6434A3;">MyRec</span>{name<span style="color: #BA36A5;">::</span><span style="color: #6434A3;">String</span>, age<span style="color: #BA36A5;">::</span><span style="color: #6434A3;">Integer</span>}
-<span style="color: #0000FF;">data</span> <span style="color: #6434A3;">MyCatalog</span> <span style="color: #BA36A5;">=</span> <span style="color: #6434A3;">MyCatalog</span>{name<span style="color: #6434A3;">:String</span>, count<span style="color: #BA36A5;">::</span><span style="color: #6434A3;">Integer</span>}
-  <span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #8D8D84; font-style: italic;">name are in MyRec and MyCatalog</span>
-  <span style="color: #8D8D84; font-weight: bold; font-style: italic;">-- </span><span style="color: #8D8D84; font-style: italic;">compiling error</span>
+<pre class="src src-haskell"><span style="color: #859900; font-weight: bold;">data</span> <span style="color: #b58900;">MyRec</span> <span style="color: #268bd2;">=</span> <span style="color: #b58900;">MyRec</span>{name<span style="color: #268bd2;">::</span><span style="color: #b58900;">String</span>, age<span style="color: #268bd2;">::</span><span style="color: #b58900;">Integer</span>}
+<span style="color: #859900; font-weight: bold;">data</span> <span style="color: #b58900;">MyCatalog</span> <span style="color: #268bd2;">=</span> <span style="color: #b58900;">MyCatalog</span>{name<span style="color: #b58900;">:String</span>, count<span style="color: #268bd2;">::</span><span style="color: #b58900;">Integer</span>}
+  <span style="color: #586e75;">-- </span><span style="color: #586e75; font-style: italic;">name are in MyRec and MyCatalog</span>
+  <span style="color: #586e75;">-- </span><span style="color: #586e75; font-style: italic;">compiling error</span>
 </pre>
 </div>
 <ul class="org-ul">
 <li>Make record has default value</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #0000FF;">import</span> <span style="color: #6434A3;">Data.Default</span>
-
-<span style="color: #0000FF;">data</span> <span style="color: #6434A3;">MyRec</span> <span style="color: #BA36A5;">=</span> <span style="color: #6434A3;">MyRec</span>{ name<span style="color: #BA36A5;">::</span><span style="color: #6434A3;">String</span>, age<span style="color: #BA36A5;">::</span><span style="color: #6434A3;">Integer</span>} <span style="color: #0000FF;">deriving</span>(<span style="color: #6434A3;">Show</span>)
-<span style="color: #0000FF;">instance</span> <span style="color: #6434A3;">Default</span> <span style="color: #6434A3;">MyRec</span> <span style="color: #0000FF;">where</span>
-        def <span style="color: #BA36A5;">=</span> <span style="color: #6434A3;">MyRec</span>{name <span style="color: #BA36A5;">=</span> <span style="color: #008000;">""</span>, age <span style="color: #BA36A5;">=</span> 0}
-info<span style="color: #BA36A5;">::</span><span style="color: #6434A3;">MyRec</span>
-<span style="color: #006699;">info</span> <span style="color: #BA36A5;">=</span> def <span style="color: #6434A3;">MyRec</span>{name <span style="color: #BA36A5;">=</span> <span style="color: #008000;">"David"</span>}
-
+<pre class="src src-haskell"><span style="color: #859900; font-weight: bold;">import</span> <span style="color: #b58900;">Data.Default</span>
+<span style="color: #859900; font-weight: bold;">data</span> <span style="color: #b58900;">MyRec</span> <span style="color: #268bd2;">=</span> <span style="color: #b58900;">MyRec</span>{ name<span style="color: #268bd2;">::</span><span style="color: #b58900;">String</span>, age<span style="color: #268bd2;">::</span><span style="color: #b58900;">Integer</span>} <span style="color: #859900; font-weight: bold;">deriving</span>(<span style="color: #b58900;">Show</span>)
+<span style="color: #859900; font-weight: bold;">instance</span> <span style="color: #b58900;">Default</span> <span style="color: #b58900;">MyRec</span> <span style="color: #859900; font-weight: bold;">where</span>
+        def <span style="color: #268bd2;">=</span> <span style="color: #b58900;">MyRec</span>{name <span style="color: #268bd2;">=</span> <span style="color: #2aa198;">""</span>, age <span style="color: #268bd2;">=</span> 0}
+info<span style="color: #268bd2;">::</span><span style="color: #b58900;">MyRec</span>
+<span style="color: #268bd2;">info</span> <span style="color: #268bd2;">=</span> def <span style="color: #b58900;">MyRec</span>{name <span style="color: #268bd2;">=</span> <span style="color: #2aa198;">"David"</span>}
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org35a3e26" class="outline-2">
-<h2 id="org35a3e26"><span class="section-number-2">4</span> Install all packages on your local system</h2>
+<div id="outline-container-org3d0ba2b" class="outline-2">
+<h2 id="org3d0ba2b"><span class="section-number-2">4</span> Install all packages on your local system</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>By default install base packages</li>
@@ -353,7 +352,7 @@ info<span style="color: #BA36A5;">::</span><span style="color: #6434A3;">MyRec</
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-07-11 Thu 22:18</p>
+<p class="date">Created: 2019-08-02 Fri 14:36</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

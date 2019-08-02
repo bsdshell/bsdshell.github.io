@@ -1,44 +1,106 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
-<head>
-    <title>$title</title>
-    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
-    <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../highlight.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-            jax: ["input/TeX","output/HTML-CSS"],
-            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
-          });
-    </script>
-    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
-</head>
-<body>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-66282017-2', 'auto');
-  ga('send', 'pageview');
-</script>
-<div class="myclass">
-<div class="mytitle">
-add content here
-</div>
-<pre class="mytext">
-My text here
-</pre>
-<pre class="prettyprint">
-</pre> 
-</div>
-</body>
-</html>
+Content-Type: text/enriched
+Text-Width: 70
+
+<x-bg-color><param>#EAEAFF</param><x-color><param>#008ED1</param>#+TITLE:</x-color></x-bg-color> <x-color><param>black</param>Haskell Examples
+
+</x-color><x-bg-color><param>#E5F4FB</param><x-color><param>#123555</param>** Haskell Vault Example</x-color></x-bg-color>
+
+    + import package Data.Vault.Lazy
+
+    + Create Empty Vault
+
+    + Insert key and value to Vault
+
+    + Lookup key from Vault
+
+    + <x-color><param>#006DAF</param>[[https://hackage.haskell.org/package/vault-0.3.1.2/docs/Data-Vault-Lazy.html#t:Key][Data.Vault.Lazy]]</x-color>
+
+    + More about the implementation of <bold>*Vault*</bold> <x-color><param>#006DAF</param>[[https://apfelmus.nfshost.com/blog/2011/09/04-vault.html][Vault]]</x-color>
+
+<x-bg-color><param>#E2E1D5</param><x-color><param>#555555</param>    #+BEGIN_SRC haskell
+
+</x-color></x-bg-color><x-bg-color><param>#FFFFE0</param><x-color><param>#000088</param>      import qualified Data.Vault.Lazy as Vault
+      main = do
+	     let emptyVault = Vault.empty
+	     key <<- Vault.newKey
+	     let newVault = Vault.insert key 2
+	     let maybe = Vault.lookup key newVault
+	     case maybe of 
+		  Nothing -> print <x-color><param>#008000</param>"no value"</x-color>
+		  (Just n) -> print n
+	     print <x-color><param>#008000</param>"done"</x-color>
+</x-color></x-bg-color><x-bg-color><param>#E2E1D5</param><x-color><param>#555555</param>      #+END_SRC
+
+</x-color></x-bg-color>      
+
+<x-bg-color><param>#E5F4FB</param><x-color><param>#123555</param>** Haskell maybe</x-color></x-bg-color>
+
+    + Simplify the Maybe code
+
+    + Given a type: <x-bg-color><param>#FDFFF7</param><x-color><param>#006400</param>~Maybe Int~</x-color></x-bg-color> If Maybe is Nothing return 0 else apply a funciton f to the value
+
+<x-bg-color><param>#E2E1D5</param><x-color><param>#555555</param>      #+BEGIN_SRC haskell
+
+</x-color></x-bg-color><x-bg-color><param>#FFFFE0</param><x-color><param>#000088</param>	let mv = Just 3
+        print $ maybe 0 (+1) (mv) <x-color><param>#8D8D84</param>-- return 4
+</x-color>	let mv = Nothing
+	print $ maybe 0 (+1) (mv) <x-color><param>#8D8D84</param>-- return 0
+</x-color></x-color></x-bg-color><x-bg-color><param>#E2E1D5</param><x-color><param>#555555</param>      #+END_SRC
+
+</x-color></x-bg-color>
+
+<x-bg-color><param>#E5F4FB</param><x-color><param>#123555</param>** Haskell </x-color></x-bg-color><x-color><param>black</param><x-bg-color><param>#E5F4FB</param><x-color><param>#123555</param>*Record*</x-color></x-bg-color>
+
+    + Haskell record is like a class in Java/C++ without any methods.
+
+<x-bg-color><param>#E2E1D5</param><x-color><param>#555555</param>    #+BEGIN_SRC haskell
+
+</x-color></x-bg-color><x-bg-color><param>#FFFFE0</param><x-color><param>#000088</param>      data MyRec = MyRec{name::String, age::Integer}
+      let rec = MyRec{name = <x-color><param>#008000</param>"David"</x-color>, age=20}
+      print $ name rec <x-color><param>#8D8D84</param>-- "David"
+</x-color>      print $ age rec  <x-color><param>#8D8D84</param>-- 20
+</x-color>
+</x-color></x-bg-color><x-bg-color><param>#E2E1D5</param><x-color><param>#555555</param>    #+END_SRC
+
+</x-color></x-bg-color>    + Haskell record is just function.
+
+<x-bg-color><param>#E2E1D5</param><x-color><param>#555555</param>    #+BEGIN_SRC haskell
+</x-color></x-bg-color><x-bg-color><param>#FFFFE0</param><x-color><param>#000088</param>       data MyRec = MyRec{name::String, age::Integer}
+	name::MyRec -> String
+        age::MyRec -> Integer
+</x-color></x-bg-color><x-bg-color><param>#E2E1D5</param><x-color><param>#555555</param>    #+END_SRC
+
+</x-color></x-bg-color>    + This is why you can NOT have same field name even in different record. e.g.
+
+<x-bg-color><param>#E2E1D5</param><x-color><param>#555555</param>    #+BEGIN_SRC haskell
+</x-color></x-bg-color><x-bg-color><param>#FFFFE0</param><x-color><param>#000088</param>      data MyRec = MyRec{name::String, age::Integer}
+      data MyCatalog = MyCatalog{name:String, count::Integer}
+	<x-color><param>#8D8D84</param>-- name are in MyRec and MyCatalog
+</x-color>	<x-color><param>#8D8D84</param>-- compiling error
+</x-color></x-color></x-bg-color><x-bg-color><param>#E2E1D5</param><x-color><param>#555555</param>    #+END_SRC
+
+</x-color></x-bg-color>    + Make record has default value
+
+<x-bg-color><param>#E2E1D5</param><x-color><param>#555555</param>    #+BEGIN_SRC haskell
+
+</x-color></x-bg-color><x-bg-color><param>#FFFFE0</param><x-color><param>#000088</param>      import Data.Default
+
+      data MyRec = MyRec{ name::String, age::Integer} deriving(Show)
+      instance Default MyRec where
+	      def = MyRec{name = <x-color><param>#008000</param>""</x-color>, age = 0}
+      info::MyRec
+      info = def MyRec{name = <x-color><param>#008000</param>"David"</x-color>}
+
+</x-color></x-bg-color><x-bg-color><param>#E2E1D5</param><x-color><param>#555555</param>    #+END_SRC
+</x-color></x-bg-color><x-bg-color><param>#E5F4FB</param><x-color><param>#123555</param>** Install all packages on your local system</x-color></x-bg-color>
+
+    + By default install base packages
+
+    + <x-bg-color><param>#FDFFF7</param><x-color><param>#006400</param>~sudo hoogle data all~</x-color></x-bg-color> will install all packages, I'm waiting now.
+
+    + List all packages
+
+<x-bg-color><param>#E2E1D5</param><x-color><param>#555555</param>    #+BEGIN_SRC bash
+</x-color></x-bg-color><x-bg-color><param>#FFFFE0</param><x-color><param>#000088</param>      ghc-pkg list
+</x-color></x-bg-color><x-bg-color><param>#E2E1D5</param><x-color><param>#555555</param>    #+END_SRC
+</x-color></x-bg-color></x-color>
