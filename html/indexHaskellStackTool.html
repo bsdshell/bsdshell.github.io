@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-08-02 Fri 14:37 -->
+<!-- 2019-08-02 Fri 14:55 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
+<title>Haskell Stack Tutorial</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="cat" />
 <style type="text/css">
@@ -230,30 +230,31 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
+<h1 class="title">Haskell Stack Tutorial</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9a7e8c8">1. Haskell Stack on Ubuntu</a></li>
-<li><a href="#org4783e39">2. Haskell Stack Tool</a></li>
-<li><a href="#org5d10429">3. Add dependency to .cabal file does not mean the package will be download.</a></li>
-<li><a href="#orga6ad8de">4. Hoogle search function from non standard package</a></li>
-<li><a href="#orgd800211">5. Update Hoogle database</a></li>
-<li><a href="#orgbac3b12">6. Change install directory, install binary in <code>/tmp/bin</code></a></li>
-<li><a href="#org683ef4c">7. Get executable path</a></li>
+<li><a href="#orgd61c4e8">1. Haskell Stack on Ubuntu</a></li>
+<li><a href="#orgd8ed71f">2. Haskell Stack Tool</a></li>
+<li><a href="#orgd0e60f8">3. Add dependency to .cabal file does not mean the package will be download.</a></li>
+<li><a href="#org8b4b45d">4. Hoogle search function from non standard package</a></li>
+<li><a href="#org2d9f3a9">5. Update Hoogle database</a></li>
+<li><a href="#orgbdce81a">6. Change install directory, install binary in <code>/tmp/bin</code></a></li>
+<li><a href="#orgbea0b78">7. Get executable path</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9a7e8c8" class="outline-2">
-<h2 id="org9a7e8c8"><span class="section-number-2">1</span> Haskell Stack on Ubuntu</h2>
+<div id="outline-container-orgd61c4e8" class="outline-2">
+<h2 id="orgd61c4e8"><span class="section-number-2">1</span> Haskell Stack on Ubuntu</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Stack will be installed all file under <code>$HOME/.stack</code></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4783e39" class="outline-2">
-<h2 id="org4783e39"><span class="section-number-2">2</span> Haskell Stack Tool</h2>
+<div id="outline-container-orgd8ed71f" class="outline-2">
+<h2 id="orgd8ed71f"><span class="section-number-2">2</span> Haskell Stack Tool</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Stack is a better tool to build Haskell project.
@@ -367,8 +368,8 @@ Use different resolver <a href="https://www.stackage.org/lts-12.13">Long Term Su
 </ul>
 </div>
 </div>
-<div id="outline-container-org5d10429" class="outline-2">
-<h2 id="org5d10429"><span class="section-number-2">3</span> Add dependency to .cabal file does not mean the package will be download.</h2>
+<div id="outline-container-orgd0e60f8" class="outline-2">
+<h2 id="orgd0e60f8"><span class="section-number-2">3</span> Add dependency to .cabal file does not mean the package will be download.</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>some packages needs to be added to <code>stack.yaml</code> with extra-deps~</li>
@@ -376,8 +377,8 @@ Use different resolver <a href="https://www.stackage.org/lts-12.13">Long Term Su
 </ul>
 </div>
 </div>
-<div id="outline-container-orga6ad8de" class="outline-2">
-<h2 id="orga6ad8de"><span class="section-number-2">4</span> Hoogle search function from non standard package</h2>
+<div id="outline-container-org8b4b45d" class="outline-2">
+<h2 id="org8b4b45d"><span class="section-number-2">4</span> Hoogle search function from non standard package</h2>
 <div class="outline-text-2" id="text-4">
 <div class="org-src-container">
 <pre class="src src-bash">hoogle +package.name function_name
@@ -385,8 +386,8 @@ Use different resolver <a href="https://www.stackage.org/lts-12.13">Long Term Su
 </div>
 </div>
 </div>
-<div id="outline-container-orgd800211" class="outline-2">
-<h2 id="orgd800211"><span class="section-number-2">5</span> Update Hoogle database</h2>
+<div id="outline-container-org2d9f3a9" class="outline-2">
+<h2 id="org2d9f3a9"><span class="section-number-2">5</span> Update Hoogle database</h2>
 <div class="outline-text-2" id="text-5">
 <div class="org-src-container">
 <pre class="src src-bash"><span style="color: #586e75;"># </span><span style="color: #586e75; font-style: italic;">warning: take lots of horse power. freeze your computer</span>
@@ -395,8 +396,8 @@ sudo hoogle database all
 </div>
 </div>
 </div>
-<div id="outline-container-orgbac3b12" class="outline-2">
-<h2 id="orgbac3b12"><span class="section-number-2">6</span> Change install directory, install binary in <code>/tmp/bin</code></h2>
+<div id="outline-container-orgbdce81a" class="outline-2">
+<h2 id="orgbdce81a"><span class="section-number-2">6</span> Change install directory, install binary in <code>/tmp/bin</code></h2>
 <div class="outline-text-2" id="text-6">
 <div class="org-src-container">
 <pre class="src src-bash">stack install  --local-bin-path  /tmp/bin
@@ -404,8 +405,8 @@ sudo hoogle database all
 </div>
 </div>
 </div>
-<div id="outline-container-org683ef4c" class="outline-2">
-<h2 id="org683ef4c"><span class="section-number-2">7</span> Get executable path</h2>
+<div id="outline-container-orgbea0b78" class="outline-2">
+<h2 id="orgbea0b78"><span class="section-number-2">7</span> Get executable path</h2>
 <div class="outline-text-2" id="text-7">
 <div class="org-src-container">
 <pre class="src src-bash">stack path --local-install-root
@@ -416,7 +417,7 @@ sudo hoogle database all
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-08-02 Fri 14:37</p>
+<p class="date">Created: 2019-08-02 Fri 14:55</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
