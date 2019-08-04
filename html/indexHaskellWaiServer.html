@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-07-08 Mon 11:22 -->
+<!-- 2019-08-02 Fri 22:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Haskell Wai Tutorial</title>
@@ -180,6 +180,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -234,17 +235,17 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org66faf7e">1. What is Wai?</a></li>
-<li><a href="#org6f2afe3">2. How to install it?</a></li>
-<li><a href="#orgab15540">3. First Hello World Example.</a></li>
-<li><a href="#org21d2115">4. How to response a file from your Wai server.</a></li>
-<li><a href="#org0d11365">5. Wai and Database.</a></li>
-<li><a href="#org893d21e">6. Execute shell command on your Wai server.</a></li>
+<li><a href="#org8a2d762">1. What is Wai?</a></li>
+<li><a href="#orgd470d54">2. How to install it?</a></li>
+<li><a href="#org580a035">3. First Hello World Example.</a></li>
+<li><a href="#orgbbb84dc">4. How to response a file from your Wai server.</a></li>
+<li><a href="#org0c90a39">5. Wai and Database.</a></li>
+<li><a href="#orgcd25f5c">6. Execute shell command on your Wai server.</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org66faf7e" class="outline-2">
-<h2 id="org66faf7e"><span class="section-number-2">1</span> What is Wai?</h2>
+<div id="outline-container-org8a2d762" class="outline-2">
+<h2 id="org8a2d762"><span class="section-number-2">1</span> What is Wai?</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>Wai is a common protocol for communication between web application and web server.</li>
@@ -252,8 +253,8 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-org6f2afe3" class="outline-2">
-<h2 id="org6f2afe3"><span class="section-number-2">2</span> How to install it?</h2>
+<div id="outline-container-orgd470d54" class="outline-2">
+<h2 id="orgd470d54"><span class="section-number-2">2</span> How to install it?</h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-bash">cabal install wai
@@ -261,66 +262,66 @@ for the JavaScript code in this tag.
 </div>
 </div>
 </div>
-<div id="outline-container-orgab15540" class="outline-2">
-<h2 id="orgab15540"><span class="section-number-2">3</span> First Hello World Example.</h2>
+<div id="outline-container-org580a035" class="outline-2">
+<h2 id="org580a035"><span class="section-number-2">3</span> First Hello World Example.</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li><a href="http://hackage.haskell.org/package/wai-3.2.2.1/docs/src/Network.Wai.html#responseLBS">responseLBS</a></li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #808080;">{-# LANGUAGE OverloadedStrings #-}</span>               
-<span style="color: #0000FF;">import</span> <span style="color: #6434A3;">Network.Wai</span>                               
-<span style="color: #0000FF;">import</span> <span style="color: #6434A3;">Network.HTTP.Types</span>                        
-<span style="color: #0000FF;">import</span> <span style="color: #6434A3;">Network.Wai.Handler.Warp</span> (run)            
-<span style="color: #006699;">app</span> <span style="color: #BA36A5;">::</span> <span style="color: #6434A3;">Application</span>                               
-<span style="color: #006699;">app</span> <span style="color: #0000FF;">_</span> respond <span style="color: #BA36A5;">=</span> <span style="color: #0000FF;">do</span>                               
-    respond <span style="color: #BA36A5;">$</span> responseLBS                        
+<pre class="src src-haskell"><span style="color: #268bd2;">{-# LANGUAGE OverloadedStrings #-}</span>               
+<span style="color: #859900; font-weight: bold;">import</span> <span style="color: #b58900;">Network.Wai</span>                               
+<span style="color: #859900; font-weight: bold;">import</span> <span style="color: #b58900;">Network.HTTP.Types</span>                        
+<span style="color: #859900; font-weight: bold;">import</span> <span style="color: #b58900;">Network.Wai.Handler.Warp</span> (run)            
+<span style="color: #268bd2;">app</span> <span style="color: #268bd2;">::</span> <span style="color: #b58900;">Application</span>                               
+<span style="color: #268bd2;">app</span> <span style="color: #859900; font-weight: bold;">_</span> respond <span style="color: #268bd2;">=</span> <span style="color: #859900; font-weight: bold;">do</span>                               
+    respond <span style="color: #268bd2;">$</span> responseLBS                        
         status200                                
-        [(<span style="color: #008000;">"Content-Type"</span>, <span style="color: #008000;">"text/plain"</span>)]         
-        <span style="color: #008000;">"Hello, World!"</span>                          
+        [(<span style="color: #2aa198;">"Content-Type"</span>, <span style="color: #2aa198;">"text/plain"</span>)]         
+        <span style="color: #2aa198;">"Hello, World!"</span>                          
 
-<span style="color: #006699;">main</span> <span style="color: #BA36A5;">::</span> <span style="color: #6434A3;">IO</span> <span style="color: #6434A3;">()</span>                                    
-<span style="color: #006699;">main</span> <span style="color: #BA36A5;">=</span> <span style="color: #0000FF;">do</span>                                        
-    putStrLn <span style="color: #BA36A5;">$</span> <span style="color: #008000;">"http://localhost:8080/"</span>          
+<span style="color: #268bd2;">main</span> <span style="color: #268bd2;">::</span> <span style="color: #b58900;">IO</span> <span style="color: #b58900;">()</span>                                    
+<span style="color: #268bd2;">main</span> <span style="color: #268bd2;">=</span> <span style="color: #859900; font-weight: bold;">do</span>                                        
+    putStrLn <span style="color: #268bd2;">$</span> <span style="color: #2aa198;">"http://localhost:8080/"</span>          
     run 8080 app                                 
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org21d2115" class="outline-2">
-<h2 id="org21d2115"><span class="section-number-2">4</span> How to response a file from your Wai server.</h2>
+<div id="outline-container-orgbbb84dc" class="outline-2">
+<h2 id="orgbbb84dc"><span class="section-number-2">4</span> How to response a file from your Wai server.</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><a href="http://hackage.haskell.org/package/wai-3.2.2.1/docs/src/Network.Wai.html#responseFile">responseFile</a></li>
 <li>Assume file <code>index.html</code> is in the current dir where the server is running.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-haskell">plainIndex<span style="color: #BA36A5;">::</span><span style="color: #6434A3;">Response</span>
-<span style="color: #006699;">plainIndex</span> <span style="color: #BA36A5;">=</span> responseFile
+<pre class="src src-haskell">plainIndex<span style="color: #268bd2;">::</span><span style="color: #b58900;">Response</span>
+<span style="color: #268bd2;">plainIndex</span> <span style="color: #268bd2;">=</span> responseFile
     status200
-    [(<span style="color: #008000;">"Content-Type"</span>, <span style="color: #008000;">"text/html"</span>)]
-    <span style="color: #008000;">"index.html"</span>
-    <span style="color: #6434A3;">Nothing</span>
+    [(<span style="color: #2aa198;">"Content-Type"</span>, <span style="color: #2aa198;">"text/html"</span>)]
+    <span style="color: #2aa198;">"index.html"</span>
+    <span style="color: #b58900;">Nothing</span>
 
-<span style="color: #006699;">app</span> <span style="color: #0000FF;">_</span> respond <span style="color: #BA36A5;">=</span> <span style="color: #0000FF;">do</span>
+<span style="color: #268bd2;">app</span> <span style="color: #859900; font-weight: bold;">_</span> respond <span style="color: #268bd2;">=</span> <span style="color: #859900; font-weight: bold;">do</span>
     respond responseFile
-main<span style="color: #BA36A5;">::</span> <span style="color: #6434A3;">IO</span><span style="color: #6434A3;">()</span>
-<span style="color: #006699;">main</span> <span style="color: #BA36A5;">=</span> <span style="color: #0000FF;">do</span>
+main<span style="color: #268bd2;">::</span> <span style="color: #b58900;">IO</span><span style="color: #b58900;">()</span>
+<span style="color: #268bd2;">main</span> <span style="color: #268bd2;">=</span> <span style="color: #859900; font-weight: bold;">do</span>
       run 8080 app
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org0d11365" class="outline-2">
-<h2 id="org0d11365"><span class="section-number-2">5</span> Wai and Database.</h2>
+<div id="outline-container-org0c90a39" class="outline-2">
+<h2 id="org0c90a39"><span class="section-number-2">5</span> Wai and Database.</h2>
 </div>
-<div id="outline-container-org893d21e" class="outline-2">
-<h2 id="org893d21e"><span class="section-number-2">6</span> Execute shell command on your Wai server.</h2>
+<div id="outline-container-orgcd25f5c" class="outline-2">
+<h2 id="orgcd25f5c"><span class="section-number-2">6</span> Execute shell command on your Wai server.</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-07-08 Mon 11:22</p>
+<p class="date">Created: 2019-08-02 Fri 22:09</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -7,6 +7,7 @@
      cabal install wai
     #+END_SRC
 *** First Hello World Example.
+    + [[http://hackage.haskell.org/package/wai-3.2.2.1/docs/src/Network.Wai.html#responseLBS][responseLBS]]
     #+BEGIN_SRC haskell
       {-# LANGUAGE OverloadedStrings #-}               
       import Network.Wai                               
@@ -24,6 +25,22 @@
 	  putStrLn $ "http://localhost:8080/"          
 	  run 8080 app                                 
     #+END_SRC
-*** How to response a file from your running server.
+*** How to response a file from your Wai server.
+    + [[http://hackage.haskell.org/package/wai-3.2.2.1/docs/src/Network.Wai.html#responseFile][responseFile]]
+    + Assume file ~index.html~ is in the current dir where the server is running.
+    #+BEGIN_SRC haskell
+      plainIndex::Response
+      plainIndex = responseFile
+	  status200
+	  [("Content-Type", "text/html")]
+	  "index.html"
+	  Nothing
+     
+      app _ respond = do
+          respond responseFile
+      main:: IO()
+      main = do
+            run 8080 app
+    #+END_SRC
 *** Wai and Database.
 *** Execute shell command on your Wai server.

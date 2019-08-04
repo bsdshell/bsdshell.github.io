@@ -30,11 +30,10 @@
   ga('create', 'UA-66282017-2', 'auto');
   ga('send', 'pageview');
 </script>
-<div class="myclass">
 
-<div class="mytitle">
+<pre class="prettyprint title">
 Connect to MySql Server from command line
-</div>
+</pre>
 <pre class="prettyprint">
 -- login with user
 mysql -u user 
@@ -43,9 +42,9 @@ mysql -u user
 mysql -u user -p
 </pre>
 
-<div class="mytitle">
+<pre class="prettyprint title">
 Show database, show tables
-</div>
+</pre>
 <pre class="prettyprint">
 -- show database
 show databases;
@@ -60,9 +59,9 @@ use database_name;
 source mysql.sql
 </pre>
 
-<div class="mytitle">
+<pre class="prettyprint title">
 MySql and Sqlite
-</div>
+</pre>
 <pre class="prettyprint">
     Sqlite is file-based, it is very portable. But it can not run on different machine.
     Sqlite support less data types than MySql.
@@ -70,9 +69,9 @@ MySql and Sqlite
     MySql can be ran on any machine with TCP/IP connection. 
 </pre>
 
-<div class="mytitle">
+<pre class="prettyprint title">
 Create table
-</div>
+</pre>
 <pre class="prettyprint">
 -- Create a simple table with auto increment primary key
 CREAT TABLE person
@@ -85,9 +84,9 @@ CREAT TABLE person
 
 </pre>
 
-<div class="mytitle">
+<pre class="prettyprint title">
 Database SELECT, INSERT, DELETE, UPDATE
-</div>
+</pre>
 <pre class="prettyprint">
 -- select from table
 SELECT * FROM Table1;
@@ -102,15 +101,15 @@ SELECT name, age, email FROM table1 WHERE name = 'David'
 SELECT person.name, person.email, contact.name FROM person INNER JOIN contact
 ON person.name = contact.name;
 </pre>
-<div style="font-size:160%">
+<div class="latexbox" style="font-size:160%">
 \[
    \mbox{person.name, person.email, contact.name from } p \cap c \mbox{ on person.name} = \mbox{contact.name}
 \]
 </div>
 
-<div class="mytitle">
+<pre class="prettyprint title">
 SQL JOIN in Picture
-</div>
+</pre>
 
 <div class="cen">
 <img src="../image/sql_inner_join.jpg" width="80%" height="80%" /><br>
@@ -118,8 +117,5 @@ SQL JOIN in Picture
 <img src="../image/sql_outer_join.jpg" width="80%" height="80%" /><br>
 </div> 
 
-<pre class="prettyprint">
-</pre> 
-</div>
 </body>
 </html>

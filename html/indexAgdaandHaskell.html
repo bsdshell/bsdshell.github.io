@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-05-28 Tue 08:38 -->
+<!-- 2019-08-03 Sat 16:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -180,6 +180,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
+<link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />*** What is Agda?
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -233,28 +234,22 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9203ad5">1. What is Agda?</a></li>
-<li><a href="#org5a0376f">2. The Con of Agda.</a></li>
-<li><a href="#orgc8cf944">3. The Pro of Agda.</a></li>
-<li><a href="#org23148b5">4. Define your own <b>Nature</b> number</a></li>
+<li><a href="#orgdc70707">1. The Con of Agda.</a></li>
+<li><a href="#orgf20b32b">2. The Pro of Agda.</a></li>
+<li><a href="#org1c8fb95">3. Define your own <b>Nature</b> number</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9203ad5" class="outline-2">
-<h2 id="org9203ad5"><span class="section-number-2">1</span> What is Agda?</h2>
-<div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li>Agda is dependent type language.</li>
 <li>You can use almost any unicode as operator.</li>
 <li>Agda is similar to Haskell, but it is fully dependent type.</li>
 <li>If you know a bit of Haskell, then it is easy to get start.</li>
 </ol>
-</div>
-</div>
 
-<div id="outline-container-org5a0376f" class="outline-2">
-<h2 id="org5a0376f"><span class="section-number-2">2</span> The Con of Agda.</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgdc70707" class="outline-2">
+<h2 id="orgdc70707"><span class="section-number-2">1</span> The Con of Agda.</h2>
+<div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li>It is painful to install.</li>
 <li>You need Emacs to input those unicode characters.</li>
@@ -264,9 +259,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgc8cf944" class="outline-2">
-<h2 id="orgc8cf944"><span class="section-number-2">3</span> The Pro of Agda.</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-orgf20b32b" class="outline-2">
+<h2 id="orgf20b32b"><span class="section-number-2">2</span> The Pro of Agda.</h2>
+<div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li>You learn some the most fundamental stuff from Agda, e.g define your own <b>Nature</b> number</li>
 <li>You can use lots of <b>unicode</b> characters in your code, make your code looks pretty.</li>
@@ -274,9 +269,9 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org23148b5" class="outline-2">
-<h2 id="org23148b5"><span class="section-number-2">4</span> Define your own <b>Nature</b> number</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-org1c8fb95" class="outline-2">
+<h2 id="org1c8fb95"><span class="section-number-2">3</span> Define your own <b>Nature</b> number</h2>
+<div class="outline-text-2" id="text-3">
 <ol class="org-ol">
 <li>Nature number can be defined as 0, (0 + 1), (0 + 1 + 1), ⋯ etc.
 ∀ a ∈ ℕ ∣ suc a ∈ ℕ</li>
@@ -285,9 +280,9 @@ We can use <b>Peano numbers</b> to represent <b>Nature number</b>. Peano numbers
 In Haskell, we can define as following.
 </p>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #A52A2A; font-weight: bold;">data</span> <span style="color: #2F8B58; font-weight: bold;">Nat</span> <span style="color: #0084C8; font-weight: bold;">=</span> <span style="color: #2F8B58; font-weight: bold;">Zero</span> <span style="color: #0084C8; font-weight: bold;">|</span> <span style="color: #2F8B58; font-weight: bold;">Suc</span> <span style="color: #2F8B58; font-weight: bold;">Nat</span>
-  add <span style="color: #2F8B58; font-weight: bold;">Zero</span> b <span style="color: #0084C8; font-weight: bold;">=</span> b
-  add (<span style="color: #2F8B58; font-weight: bold;">Suc</span> a) b <span style="color: #0084C8; font-weight: bold;">=</span> <span style="color: #2F8B58; font-weight: bold;">Suc</span> (add a b)
+<pre class="src src-haskell"><span style="color: #859900; font-weight: bold;">data</span> <span style="color: #b58900;">Nat</span> <span style="color: #268bd2;">=</span> <span style="color: #b58900;">Zero</span> <span style="color: #268bd2;">|</span> <span style="color: #b58900;">Suc</span> <span style="color: #b58900;">Nat</span>
+  add <span style="color: #b58900;">Zero</span> b <span style="color: #268bd2;">=</span> b
+  add (<span style="color: #b58900;">Suc</span> a) b <span style="color: #268bd2;">=</span> <span style="color: #b58900;">Suc</span> (add a b)
 </pre>
 </div></li>
 <li><p>
@@ -307,7 +302,7 @@ In Agda
 Define a list in Haskell
 </p>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #A52A2A; font-weight: bold;">data</span> <span style="color: #2F8B58; font-weight: bold;">List</span> a <span style="color: #0084C8; font-weight: bold;">=</span> <span style="color: #2F8B58; font-weight: bold;">Nil</span> <span style="color: #0084C8; font-weight: bold;">|</span> <span style="color: #2F8B58; font-weight: bold;">Cons</span> a (<span style="color: #2F8B58; font-weight: bold;">List</span> a)
+<pre class="src src-haskell"><span style="color: #859900; font-weight: bold;">data</span> <span style="color: #b58900;">List</span> a <span style="color: #268bd2;">=</span> <span style="color: #b58900;">Nil</span> <span style="color: #268bd2;">|</span> <span style="color: #b58900;">Cons</span> a (<span style="color: #b58900;">List</span> a)
 </pre>
 </div>
 <ul class="org-ul">
@@ -322,7 +317,7 @@ Define a list in Agda
 <div class="org-src-container">
 <pre class="src src-agda2">data List (A : Set) : Set where
 [] : A
-_::_ : A &#8594; List A &#8594; List A
+_::_ : A → List A → List A
 </pre>
 </div></li>
 <li>What does it mean for above the code?
@@ -336,7 +331,7 @@ _::_ : A &#8594; List A &#8594; List A
 Let see how to define Maybe in Agda, first, we review <b>Haskell</b> Maybe
 </p>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #A52A2A; font-weight: bold;">data</span> <span style="color: #2F8B58; font-weight: bold;">Maybe</span> a <span style="color: #0084C8; font-weight: bold;">=</span> <span style="color: #2F8B58; font-weight: bold;">Nothing</span> <span style="color: #0084C8; font-weight: bold;">|</span> <span style="color: #2F8B58; font-weight: bold;">Just</span> a
+<pre class="src src-haskell"><span style="color: #859900; font-weight: bold;">data</span> <span style="color: #b58900;">Maybe</span> a <span style="color: #268bd2;">=</span> <span style="color: #b58900;">Nothing</span> <span style="color: #268bd2;">|</span> <span style="color: #b58900;">Just</span> a
 </pre>
 </div>
 <ul class="org-ul">
@@ -361,9 +356,9 @@ Maybe in Agda
 <b>head</b> function in Haskell
 </p>
 <div class="org-src-container">
-<pre class="src src-haskell">head<span style="color: #0084C8; font-weight: bold;">::</span>[a] <span style="color: #0084C8; font-weight: bold;">-&gt;</span> <span style="color: #2F8B58; font-weight: bold;">Maybe</span> a
-<span style="color: #00578E; font-size: 110%; font-weight: bold;">head</span> <span style="color: #2F8B58; font-weight: bold;">[]</span> <span style="color: #0084C8; font-weight: bold;">=</span> <span style="color: #2F8B58; font-weight: bold;">Nothing</span>
-<span style="color: #00578E; font-size: 110%; font-weight: bold;">head</span> x<span style="color: #2F8B58; font-weight: bold;">:</span>cs <span style="color: #0084C8; font-weight: bold;">=</span> <span style="color: #2F8B58; font-weight: bold;">Just</span> x
+<pre class="src src-haskell">head<span style="color: #268bd2;">::</span>[a] <span style="color: #268bd2;">-&gt;</span> <span style="color: #b58900;">Maybe</span> a
+<span style="color: #268bd2;">head</span> <span style="color: #b58900;">[]</span> <span style="color: #268bd2;">=</span> <span style="color: #b58900;">Nothing</span>
+<span style="color: #268bd2;">head</span> x<span style="color: #b58900;">:</span>cs <span style="color: #268bd2;">=</span> <span style="color: #b58900;">Just</span> x
 </pre>
 </div></li>
 <li><p>
@@ -379,7 +374,7 @@ head (x :: cs) = just x
 <b>length</b> function in Agda
 </p>
 <div class="org-src-container">
-<pre class="src src-agda2">length : {A : Set} -&gt; List A -&gt; &#8469;
+<pre class="src src-agda2">length : {A : Set} -&gt; List A -&gt; ℕ
 length [] = zero
 length (x :: cs) = suc (length cs)
 </pre>
@@ -399,7 +394,7 @@ map f (x :: cs) = f x :: map f cs
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-05-28 Tue 08:38</p>
+<p class="date">Created: 2019-08-03 Sat 16:03</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
