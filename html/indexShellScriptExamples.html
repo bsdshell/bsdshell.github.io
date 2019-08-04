@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-08-02 Fri 11:53 -->
+<!-- 2019-08-04 Sun 13:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -180,7 +180,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+<link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -227,6 +227,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -234,27 +256,28 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8c3abc5">1. Shell Script Examples</a></li>
-<li><a href="#orgfcfb00d">2. grep Examples</a></li>
-<li><a href="#org596528d">3. sed Example</a></li>
-<li><a href="#org5881d4d">4. rsync examples</a></li>
-<li><a href="#orgc270441">5. If and Else in Shell Script</a></li>
-<li><a href="#orgd34a094">6. Execute remote shell script Execute remote shell</a></li>
-<li><a href="#org3d67143">7. Check whether a command is in <b>bash</b></a></li>
-<li><a href="#org1eabc74">8. FreeBSD install ports without prompt make install clean BATCH=yes</a></li>
-<li><a href="#org6d3906b">9. Install Redis On FreeBSD</a></li>
-<li><a href="#org4d2ea3a">10. Enable Redis on FreeBSD</a></li>
-<li><a href="#orgd92dede">11. Run Redis on FreeBSD</a></li>
-<li><a href="#org4e54d08">12. How to avoid all the ssh-agent and ssh-add BS.</a></li>
-<li><a href="#orgbdec43b">13. Here are all the public keys:</a></li>
-<li><a href="#orgb22f46b">14. Add global shared profile under <code>/etc/profile</code> in FreeBSD and Ubuntu.</a></li>
-<li><a href="#org2aaed34">15. In Haskell, if check whether a file is modified or not, use modificationTime</a></li>
-<li><a href="#org644ef46">16. Execute remote shell command</a></li>
+<li><a href="#org794c13e">1. Shell Script Examples</a></li>
+<li><a href="#orgf215d4a">2. grep Examples</a></li>
+<li><a href="#org6c87832">3. sed Example</a></li>
+<li><a href="#orgec30070">4. sed does not work on MacOS, sort of</a></li>
+<li><a href="#org731587e">5. rsync examples</a></li>
+<li><a href="#orga24c558">6. If and Else in Shell Script</a></li>
+<li><a href="#org66d9e63">7. Execute remote shell script Execute remote shell</a></li>
+<li><a href="#org0bdaeb3">8. Check whether a command is in <b>bash</b></a></li>
+<li><a href="#org3800477">9. FreeBSD install ports without prompt make install clean BATCH=yes</a></li>
+<li><a href="#org65efbd9">10. Install Redis On FreeBSD</a></li>
+<li><a href="#org61611f2">11. Enable Redis on FreeBSD</a></li>
+<li><a href="#org7f2bf74">12. Run Redis on FreeBSD</a></li>
+<li><a href="#orgec7b2cc">13. How to avoid all the ssh-agent and ssh-add BS.</a></li>
+<li><a href="#org554875c">14. Here are all the public keys:</a></li>
+<li><a href="#orgcfb5d8c">15. Add global shared profile under <code>/etc/profile</code> in FreeBSD and Ubuntu.</a></li>
+<li><a href="#orgb8b0739">16. In Haskell, if check whether a file is modified or not, use modificationTime</a></li>
+<li><a href="#org3c955f0">17. Execute remote shell command</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8c3abc5" class="outline-2">
-<h2 id="org8c3abc5"><span class="section-number-2">1</span> Shell Script Examples</h2>
+<div id="outline-container-org794c13e" class="outline-2">
+<h2 id="org794c13e"><span class="section-number-2">1</span> Shell Script Examples</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Shell script is powerful if you could remember all the weird syntax. 
@@ -266,18 +289,18 @@ Note: readarray only works in Bash 4.x, check your version: bash &#x2013;version
 Array in Shell script 1
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #268bd2;">string</span>=<span style="color: #2aa198;">'Paris, France, Europe'</span>;
-<span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> $<span style="color: #268bd2;">string</span>
-<span style="color: #839496; background-color: #fffffa; font-weight: bold;">readarray</span> -td, array &lt;&lt;&lt;<span style="color: #2aa198;">"$string"</span>; <span style="color: #839496; background-color: #fffffa; font-weight: bold;">declare</span> -p array;
-<span style="color: #586e75;">## </span><span style="color: #586e75; font-style: italic;">declare -a array=([0]="Paris" [1]=" France" [2]=$' Europe\n')</span>
+<pre class="src src-bash"><span style="color: #BA36A5;">string</span>=<span style="color: #008000;">'Paris, France, Europe'</span>;
+<span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> $<span style="color: #BA36A5;">string</span>
+<span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">readarray</span> -td, array &lt;&lt;&lt;<span style="color: #008000;">"$string"</span>; <span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">declare</span> -p array;
+<span style="color: #8D8D84;">## </span><span style="color: #8D8D84; font-style: italic;">declare -a array=([0]="Paris" [1]=" France" [2]=$' Europe\n')</span>
 
-<span style="color: #268bd2;">country</span>=<span style="color: #2aa198;">'Paris/Frence/Europe/Sweden/Croatia'</span>;
-<span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> $<span style="color: #268bd2;">country</span>
-<span style="color: #839496; background-color: #fffffa; font-weight: bold;">readarray</span> -td/ array &lt;&lt;&lt;<span style="color: #2aa198;">"$country"</span>; <span style="color: #839496; background-color: #fffffa; font-weight: bold;">declare</span> -p array;
-<span style="color: #859900; font-weight: bold;">for</span> item<span style="color: #859900; font-weight: bold;"> in</span> <span style="color: #2aa198;">"${array[@]}"</span> 
-<span style="color: #859900; font-weight: bold;">do</span>
-  <span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #2aa198;">"$item"</span> 
-<span style="color: #859900; font-weight: bold;">done</span>      
+<span style="color: #BA36A5;">country</span>=<span style="color: #008000;">'Paris/Frence/Europe/Sweden/Croatia'</span>;
+<span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> $<span style="color: #BA36A5;">country</span>
+<span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">readarray</span> -td/ array &lt;&lt;&lt;<span style="color: #008000;">"$country"</span>; <span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">declare</span> -p array;
+<span style="color: #0000FF;">for</span> item<span style="color: #0000FF;"> in</span> <span style="color: #008000;">"${array[@]}"</span> 
+<span style="color: #0000FF;">do</span>
+  <span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #008000;">"$item"</span> 
+<span style="color: #0000FF;">done</span>      
 </pre>
 </div></li>
 
@@ -285,8 +308,8 @@ Array in Shell script 1
 count number of argument
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #2aa198;">"$#"</span>
-<span style="color: #268bd2;">var</span>=<span style="color: #2aa198;">"string"</span>
+<pre class="src src-bash"><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #008000;">"$#"</span>
+<span style="color: #BA36A5;">var</span>=<span style="color: #008000;">"string"</span>
 </pre>
 </div></li>
 
@@ -294,15 +317,15 @@ count number of argument
 array in bash                    
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #268bd2;">arr</span>=(                            
-<span style="color: #2aa198;">"dog"</span>                            
-<span style="color: #2aa198;">"cat"</span>                            
-<span style="color: #2aa198;">"rat"</span>                            
+<pre class="src src-bash"><span style="color: #BA36A5;">arr</span>=(                            
+<span style="color: #008000;">"dog"</span>                            
+<span style="color: #008000;">"cat"</span>                            
+<span style="color: #008000;">"rat"</span>                            
 )                                
-<span style="color: #859900; font-weight: bold;">for</span> var<span style="color: #859900; font-weight: bold;"> in</span> ${<span style="color: #268bd2;">arr</span>[*]}             
-<span style="color: #859900; font-weight: bold;">do</span>                               
-<span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #2aa198;">"var=$var"</span>                  
-<span style="color: #859900; font-weight: bold;">done</span>                             
+<span style="color: #0000FF;">for</span> var<span style="color: #0000FF;"> in</span> ${<span style="color: #BA36A5;">arr</span>[*]}             
+<span style="color: #0000FF;">do</span>                               
+<span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #008000;">"var=$var"</span>                  
+<span style="color: #0000FF;">done</span>                             
 </pre>
 </div></li>
 
@@ -310,7 +333,7 @@ array in bash
 if statement, one liner                                                                    
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #268bd2;">var</span>=<span style="color: #2aa198;">"$#"</span> &amp;&amp; <span style="color: #859900; font-weight: bold;">if</span> [ <span style="color: #2aa198;">"$var"</span> -eq 2 ]; <span style="color: #859900; font-weight: bold;">then </span><span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #2aa198;">"two arguments"</span>; <span style="color: #859900; font-weight: bold;">else </span><span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #2aa198;">"not two argument"</span>; <span style="color: #859900; font-weight: bold;">fi</span>
+<pre class="src src-bash"><span style="color: #BA36A5;">var</span>=<span style="color: #008000;">"$#"</span> &amp;&amp; <span style="color: #0000FF;">if</span> [ <span style="color: #008000;">"$var"</span> -eq 2 ]; <span style="color: #0000FF;">then </span><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #008000;">"two arguments"</span>; <span style="color: #0000FF;">else </span><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #008000;">"not two argument"</span>; <span style="color: #0000FF;">fi</span>
 </pre>
 </div></li>
 
@@ -318,21 +341,21 @@ if statement, one liner
 Iterate all files with one line <b>shell command</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #859900; font-weight: bold;">for</span> name<span style="color: #859900; font-weight: bold;"> in</span> $(<span style="color: #6c71c4; font-weight: bold;">ls</span> *); <span style="color: #859900; font-weight: bold;">do </span><span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> $<span style="color: #268bd2;">name</span>; <span style="color: #859900; font-weight: bold;">done</span>
+<pre class="src src-bash"><span style="color: #0000FF;">for</span> name<span style="color: #0000FF;"> in</span> $(<span style="color: #FF1493; font-weight: bold;">ls</span> *); <span style="color: #0000FF;">do </span><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> $<span style="color: #BA36A5;">name</span>; <span style="color: #0000FF;">done</span>
 </pre>
 </div></li>
 <li><p>
 String matches
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #859900; font-weight: bold;">for</span> name<span style="color: #859900; font-weight: bold;"> in</span> $(<span style="color: #6c71c4; font-weight: bold;">ls</span> *); <span style="color: #859900; font-weight: bold;">do if</span> [[ $<span style="color: #268bd2;">name</span> == *<span style="color: #2aa198;">"txt"</span>* ]]; <span style="color: #859900; font-weight: bold;">then </span><span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> $<span style="color: #268bd2;">name</span>; <span style="color: #859900; font-weight: bold;">else </span><span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #2aa198;">""</span>; <span style="color: #859900; font-weight: bold;">fi</span> 
+<pre class="src src-bash"><span style="color: #0000FF;">for</span> name<span style="color: #0000FF;"> in</span> $(<span style="color: #FF1493; font-weight: bold;">ls</span> *); <span style="color: #0000FF;">do if</span> [[ $<span style="color: #BA36A5;">name</span> == *<span style="color: #008000;">"txt"</span>* ]]; <span style="color: #0000FF;">then </span><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> $<span style="color: #BA36A5;">name</span>; <span style="color: #0000FF;">else </span><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #008000;">""</span>; <span style="color: #0000FF;">fi</span> 
 </pre>
 </div></li>
 <li><p>
 Use regex match =~
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #859900; font-weight: bold;">if</span> [[ $<span style="color: #268bd2;">name</span> =~ <span style="color: #2aa198;">"txt"</span> ]]; <span style="color: #859900; font-weight: bold;">then </span><span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> $<span style="color: #268bd2;">name</span>; <span style="color: #859900; font-weight: bold;">else </span><span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #2aa198;">""</span>; <span style="color: #859900; font-weight: bold;">fi</span>
+<pre class="src src-bash"><span style="color: #0000FF;">if</span> [[ $<span style="color: #BA36A5;">name</span> =~ <span style="color: #008000;">"txt"</span> ]]; <span style="color: #0000FF;">then </span><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> $<span style="color: #BA36A5;">name</span>; <span style="color: #0000FF;">else </span><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #008000;">""</span>; <span style="color: #0000FF;">fi</span>
 </pre>
 </div></li>
 <li><p>
@@ -341,28 +364,28 @@ If you want to get constantly update information or stream data <b>shell command
 For Exmple, I want to monitor my system <b>disk usage</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-bash">watch df -lah  <span style="color: #586e75;"># </span><span style="color: #586e75; font-style: italic;">default 2 seconds interval</span>
+<pre class="src src-bash">watch df -lah  <span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">default 2 seconds interval</span>
 </pre>
 </div>
 <p>
 watch shell commands with pipe, e.g. <code>ps aux | grep --color httpd</code> with <b>double quotes</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-bash">watch <span style="color: #2aa198;">"ps aux | grep --color httpd"</span>
+<pre class="src src-bash">watch <span style="color: #008000;">"ps aux | grep --color httpd"</span>
 </pre>
 </div></li>
 </ol>
 </div>
 </div>
-<div id="outline-container-orgfcfb00d" class="outline-2">
-<h2 id="orgfcfb00d"><span class="section-number-2">2</span> grep Examples</h2>
+<div id="outline-container-orgf215d4a" class="outline-2">
+<h2 id="orgf215d4a"><span class="section-number-2">2</span> grep Examples</h2>
 <div class="outline-text-2" id="text-2">
 <ol class="org-ol">
 <li><p>
 grep content of file with specified file name extension, show full file name
 </p>
 <div class="org-src-container">
-<pre class="src src-bash">grep --include=<span style="color: #2aa198;">"*.java"</span> -Hnris pattern $<span style="color: #268bd2;">PWD</span>
+<pre class="src src-bash">grep --include=<span style="color: #008000;">"*.java"</span> -Hnris pattern $<span style="color: #BA36A5;">PWD</span>
 </pre>
 </div></li>
 <li><p>
@@ -383,61 +406,61 @@ grep with color
 grep print NUM line of trailing context file after matching lines, <b>two line after</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-bash">cat file | grep -A <span style="color: #2aa198;">'dog'</span>
+<pre class="src src-bash">cat file | grep -A <span style="color: #008000;">'dog'</span>
 </pre>
 </div></li>
 <li><p>
 grep print NUM lines of leading context file before matching lines, <b>two line before</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-bash">cat file | grep -B <span style="color: #2aa198;">'dog'</span>
+<pre class="src src-bash">cat file | grep -B <span style="color: #008000;">'dog'</span>
 </pre>
 </div></li>
 <li><p>
 grep inversion              
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #586e75;"># </span><span style="color: #586e75; font-style: italic;">find all non java file  </span>
-grep -v -E <span style="color: #2aa198;">'.java$'</span>       
+<pre class="src src-bash"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">find all non java file  </span>
+grep -v -E <span style="color: #008000;">'.java$'</span>       
 </pre>
 </div></li>
 <li><p>
 grep string that contains "txt", grep matches string                                   
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #859900; font-weight: bold;">if </span><span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> $<span style="color: #268bd2;">name</span> | grep -q <span style="color: #2aa198;">"txt"</span>; <span style="color: #859900; font-weight: bold;">then </span><span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> $<span style="color: #268bd2;">name</span>; <span style="color: #859900; font-weight: bold;">else </span><span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #2aa198;">""</span>; <span style="color: #859900; font-weight: bold;">fi</span>  
+<pre class="src src-bash"><span style="color: #0000FF;">if </span><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> $<span style="color: #BA36A5;">name</span> | grep -q <span style="color: #008000;">"txt"</span>; <span style="color: #0000FF;">then </span><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> $<span style="color: #BA36A5;">name</span>; <span style="color: #0000FF;">else </span><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #008000;">""</span>; <span style="color: #0000FF;">fi</span>  
 </pre>
 </div></li>
 <li><p>
 grep string its suffix is "txt", e.g. "file.txt"                  
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #859900; font-weight: bold;">if </span><span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> $<span style="color: #268bd2;">name</span> | grep -q <span style="color: #2aa198;">"txt$"</span> then echo $<span style="color: #268bd2;">name</span>; <span style="color: #859900; font-weight: bold;">else </span><span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #2aa198;">""</span>; <span style="color: #859900; font-weight: bold;">fi</span>  
+<pre class="src src-bash"><span style="color: #0000FF;">if </span><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> $<span style="color: #BA36A5;">name</span> | grep -q <span style="color: #008000;">"txt$"</span> then echo $<span style="color: #BA36A5;">name</span>; <span style="color: #0000FF;">else </span><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #008000;">""</span>; <span style="color: #0000FF;">fi</span>  
 </pre>
 </div></li>
 <li><p>
 grep string its prefix is "file", e.g. "file.txt"                
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #586e75;"># </span><span style="color: #586e75; font-style: italic;">grep -q =&gt; no output                                           </span>
-<span style="color: #859900; font-weight: bold;">if </span><span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> $<span style="color: #268bd2;">name</span> | grep -q <span style="color: #2aa198;">"^file"</span> then echo $<span style="color: #268bd2;">name</span>; <span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> echo <span style="color: #2aa198;">""</span>; <span style="color: #859900; font-weight: bold;">fi</span>
+<pre class="src src-bash"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">grep -q =&gt; no output                                           </span>
+<span style="color: #0000FF;">if </span><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> $<span style="color: #BA36A5;">name</span> | grep -q <span style="color: #008000;">"^file"</span> then echo $<span style="color: #BA36A5;">name</span>; <span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> echo <span style="color: #008000;">""</span>; <span style="color: #0000FF;">fi</span>
 </pre>
 </div></li>
 <li><p>
 grep in POSIX basic and extended regular expression              
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #586e75;"># </span><span style="color: #586e75; font-style: italic;">basic regex                                                    </span>
-ps aux | grep --color <span style="color: #2aa198;">'wai\|filewatcher'</span>                         
-<span style="color: #586e75;"># </span><span style="color: #586e75; font-style: italic;">extended regex                                                 </span>
-ps aux | grep --color -E <span style="color: #2aa198;">'wai|filewatcher'</span>                       
+<pre class="src src-bash"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">basic regex                                                    </span>
+ps aux | grep --color <span style="color: #008000;">'wai\|filewatcher'</span>                         
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">extended regex                                                 </span>
+ps aux | grep --color -E <span style="color: #008000;">'wai|filewatcher'</span>                       
 </pre>
 </div></li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org596528d" class="outline-2">
-<h2 id="org596528d"><span class="section-number-2">3</span> sed Example</h2>
+<div id="outline-container-org6c87832" class="outline-2">
+<h2 id="org6c87832"><span class="section-number-2">3</span> sed Example</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-sh">// list file from line 3 to 9
@@ -446,10 +469,71 @@ sed -n 3,9p file.txt
 </div>
 </div>
 </div>
-
-<div id="outline-container-org5881d4d" class="outline-2">
-<h2 id="org5881d4d"><span class="section-number-2">4</span> rsync examples</h2>
+<div id="outline-container-orgec30070" class="outline-2">
+<h2 id="orgec30070"><span class="section-number-2">4</span> sed does not work on MacOS, sort of</h2>
 <div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>sed on MacOS is BSD version, it does not implement regular expression extension: <a href="https://www.gnu.org/software/sed/manual/html_node/regexp-extensions.html">GNU regex Extension</a></li>
+<li><p>
+following characters classes works for GNU sed
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">\w</td>
+<td class="org-left">[a-bA-Z_]</td>
+<td class="org-left">word</td>
+<td class="org-left">echo "dog cat" &vert; sed 's/\w/X/g' =&gt; "XXX XXX"</td>
+</tr>
+
+<tr>
+<td class="org-left">\s</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">whitespace</td>
+<td class="org-left">echo "dog cat" &vert; sed 's/\s/X/g' =&gt; "dogXcat"</td>
+</tr>
+
+<tr>
+<td class="org-left">\b</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">match a word boundary</td>
+<td class="org-left">echo "dog cat" &vert; sed 's/\b/X/g' =&gt; "XdogX XcatX"</td>
+</tr>
+
+<tr>
+<td class="org-left">\W</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">non whitespace</td>
+<td class="org-left">echo "dog cat" &vert; sed 's/\W/X/g' =&gt; "dogXcat"</td>
+</tr>
+</tbody>
+</table></li>
+<li><b>gsed</b> can be installed on your MacOS which is GNU sed.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">does not work on MacOS or FreeBSD</span>
+<span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #008000;">"dog cat "</span> | sed -E <span style="color: #008000;">'s/\s*//g'</span>  =&gt; <span style="color: #008000;">"dog cat "</span>
+<span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #008000;">"dog cat "</span> | gsed   <span style="color: #008000;">'s/\s*//g'</span>  =&gt; <span style="color: #008000;">"dogcat"</span>
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">it seems gsed does not need flag -E</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org731587e" class="outline-2">
+<h2 id="org731587e"><span class="section-number-2">5</span> rsync examples</h2>
+<div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li><p>
 rysnc file with specified extensions such png, svg etct.
@@ -458,23 +542,23 @@ rysnc file with specified extensions such png, svg etct.
 <li>include and exclude files.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #586e75;"># </span><span style="color: #586e75; font-style: italic;">rsync svg, png and jpg files excluding other files.</span>
-rsync -rvzu --include=<span style="color: #2aa198;">'*'</span>{svg,png,jpf} --exclude <span style="color: #2aa198;">"*"</span>  source  dest
-<span style="color: #586e75;"># </span><span style="color: #586e75; font-style: italic;">rsync html file excluding other files.</span>
-rsync -rvzu --include=<span style="color: #2aa198;">'*.html'</span> --exclude <span style="color: #2aa198;">"*"</span>  source  dest
-<span style="color: #586e75;"># </span><span style="color: #586e75; font-style: italic;">rsync folder</span>
+<pre class="src src-bash"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">rsync svg, png and jpg files excluding other files.</span>
+rsync -rvzu --include=<span style="color: #008000;">'*'</span>{svg,png,jpf} --exclude <span style="color: #008000;">"*"</span>  source  dest
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">rsync html file excluding other files.</span>
+rsync -rvzu --include=<span style="color: #008000;">'*.html'</span> --exclude <span style="color: #008000;">"*"</span>  source  dest
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">rsync folder</span>
 rsync -artv folder  source dest
 
-<span style="color: #586e75;"># </span><span style="color: #586e75; font-style: italic;">rsync local folder with remote folder</span>
+<span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">rsync local folder with remote folder</span>
 rsync -artv local_folder user@xfido.com:/var/www/html
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc270441" class="outline-2">
-<h2 id="orgc270441"><span class="section-number-2">5</span> If and Else in Shell Script</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-orga24c558" class="outline-2">
+<h2 id="orga24c558"><span class="section-number-2">6</span> If and Else in Shell Script</h2>
+<div class="outline-text-2" id="text-6">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -618,109 +702,109 @@ rsync -artv local_folder user@xfido.com:/var/www/html
 </table>
 </div>
 </div>
-<div id="outline-container-orgd34a094" class="outline-2">
-<h2 id="orgd34a094"><span class="section-number-2">6</span> Execute remote shell script <a href="https://serverfault.com/questions/226386/wget-a-script-and-run-it">Execute remote shell</a></h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-org66d9e63" class="outline-2">
+<h2 id="org66d9e63"><span class="section-number-2">7</span> Execute remote shell script <a href="https://serverfault.com/questions/226386/wget-a-script-and-run-it">Execute remote shell</a></h2>
+<div class="outline-text-2" id="text-7">
 <div class="org-src-container">
 <pre class="src src-bash">wget -O - https://bitbucket.org/zsurface/publicfile/raw/46cc8426ac08e2d575b60312fdc01f6ab6e3656c/test1.sh | bash
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org3d67143" class="outline-2">
-<h2 id="org3d67143"><span class="section-number-2">7</span> Check whether a command is in <b>bash</b></h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-org0bdaeb3" class="outline-2">
+<h2 id="org0bdaeb3"><span class="section-number-2">8</span> Check whether a command is in <b>bash</b></h2>
+<div class="outline-text-2" id="text-8">
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #839496; background-color: #fffffa; font-weight: bold;">command</span> -v curl
-<span style="color: #859900; font-weight: bold;">if</span> [ $<span style="color: #268bd2;">?</span> ]; <span style="color: #859900; font-weight: bold;">then </span><span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #2aa198;">"curl exists"</span>; <span style="color: #859900; font-weight: bold;">else </span><span style="color: #839496; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #2aa198;">"curl does not exist"</span>; <span style="color: #859900; font-weight: bold;">fi</span>
+<pre class="src src-bash"><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">command</span> -v curl
+<span style="color: #0000FF;">if</span> [ $<span style="color: #BA36A5;">?</span> ]; <span style="color: #0000FF;">then </span><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #008000;">"curl exists"</span>; <span style="color: #0000FF;">else </span><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">echo</span> <span style="color: #008000;">"curl does not exist"</span>; <span style="color: #0000FF;">fi</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org1eabc74" class="outline-2">
-<h2 id="org1eabc74"><span class="section-number-2">8</span> FreeBSD install ports without prompt <a href="https://unix.stackexchange.com/questions/5257/how-can-i-avoid-the-prompts-when-installing-a-freebsd-port">make install clean BATCH=yes</a></h2>
-<div class="outline-text-2" id="text-8">
+<div id="outline-container-org3800477" class="outline-2">
+<h2 id="org3800477"><span class="section-number-2">9</span> FreeBSD install ports without prompt <a href="https://unix.stackexchange.com/questions/5257/how-can-i-avoid-the-prompts-when-installing-a-freebsd-port">make install clean BATCH=yes</a></h2>
+<div class="outline-text-2" id="text-9">
 <ul class="org-ul">
 <li>ports installation is not working.</li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #839496; background-color: #fffffa; font-weight: bold;">cd</span> /usr/ports/redis &amp;&amp; make install clean <span style="color: #268bd2;">BATCH</span>=yes
+<pre class="src src-bash"><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">cd</span> /usr/ports/redis &amp;&amp; make install clean <span style="color: #BA36A5;">BATCH</span>=yes
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org6d3906b" class="outline-2">
-<h2 id="org6d3906b"><span class="section-number-2">9</span> Install Redis On FreeBSD</h2>
-<div class="outline-text-2" id="text-9">
+<div id="outline-container-org65efbd9" class="outline-2">
+<h2 id="org65efbd9"><span class="section-number-2">10</span> Install Redis On FreeBSD</h2>
+<div class="outline-text-2" id="text-10">
 <div class="org-src-container">
 <pre class="src src-bash">pkg install -y redis
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org4d2ea3a" class="outline-2">
-<h2 id="org4d2ea3a"><span class="section-number-2">10</span> Enable Redis on FreeBSD</h2>
-<div class="outline-text-2" id="text-10">
+<div id="outline-container-org61611f2" class="outline-2">
+<h2 id="org61611f2"><span class="section-number-2">11</span> Enable Redis on FreeBSD</h2>
+<div class="outline-text-2" id="text-11">
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #586e75;"># </span><span style="color: #586e75; font-style: italic;">add redis_enable="YES" to /etc/rc.conf</span>
+<pre class="src src-bash"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">add redis_enable="YES" to /etc/rc.conf</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd92dede" class="outline-2">
-<h2 id="orgd92dede"><span class="section-number-2">11</span> Run Redis on FreeBSD</h2>
-<div class="outline-text-2" id="text-11">
+<div id="outline-container-org7f2bf74" class="outline-2">
+<h2 id="org7f2bf74"><span class="section-number-2">12</span> Run Redis on FreeBSD</h2>
+<div class="outline-text-2" id="text-12">
 <div class="org-src-container">
 <pre class="src src-bash">/usr/local/etc/rc.d/redis start
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org4e54d08" class="outline-2">
-<h2 id="org4e54d08"><span class="section-number-2">12</span> How to avoid all the ssh-agent and ssh-add BS.</h2>
-<div class="outline-text-2" id="text-12">
+<div id="outline-container-orgec7b2cc" class="outline-2">
+<h2 id="orgec7b2cc"><span class="section-number-2">13</span> How to avoid all the ssh-agent and ssh-add BS.</h2>
+<div class="outline-text-2" id="text-13">
 <ul class="org-ul">
 <li><p>
 Add follwoing two lines to your ~/.profile, it works in FreeBSD.
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #839496; background-color: #fffffa; font-weight: bold;">eval</span> $(<span style="color: #6c71c4; font-weight: bold;">ssh-agent</span> -s)
+<pre class="src src-bash"><span style="color: #006FE0; background-color: #fffffa; font-weight: bold;">eval</span> $(<span style="color: #FF1493; font-weight: bold;">ssh-agent</span> -s)
 ssh-add ~/.ssh/myprivate_id_rsa
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbdec43b" class="outline-2">
-<h2 id="orgbdec43b"><span class="section-number-2">13</span> Here are all the public keys:</h2>
-<div class="outline-text-2" id="text-13">
+<div id="outline-container-org554875c" class="outline-2">
+<h2 id="org554875c"><span class="section-number-2">14</span> Here are all the public keys:</h2>
+<div class="outline-text-2" id="text-14">
 <ul class="org-ul">
 <li>MacOS <a href="https://bitbucket.org/zsurface/publickey/raw/6dd3256f450dd9e3b3f60d90ea5871a4b6a75db1/mymac_id_rsa.pub">MacOS Public Key</a></li>
 <li>FreeBSD <a href="https://bitbucket.org/zsurface/publickey/raw/6dd3256f450dd9e3b3f60d90ea5871a4b6a75db1/freebsd_id_rsa.pub">FreeBSD Public Key</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb22f46b" class="outline-2">
-<h2 id="orgb22f46b"><span class="section-number-2">14</span> Add global shared profile under <code>/etc/profile</code> in FreeBSD and Ubuntu.</h2>
+<div id="outline-container-orgcfb5d8c" class="outline-2">
+<h2 id="orgcfb5d8c"><span class="section-number-2">15</span> Add global shared profile under <code>/etc/profile</code> in FreeBSD and Ubuntu.</h2>
 </div>
-<div id="outline-container-org2aaed34" class="outline-2">
-<h2 id="org2aaed34"><span class="section-number-2">15</span> In Haskell, if check whether a file is modified or not, use <a href="https://hackage.haskell.org/package/unix-2.7.2.2/docs/System-Posix-Files.html#v:modificationTime">modificationTime</a></h2>
-<div class="outline-text-2" id="text-15">
+<div id="outline-container-orgb8b0739" class="outline-2">
+<h2 id="orgb8b0739"><span class="section-number-2">16</span> In Haskell, if check whether a file is modified or not, use <a href="https://hackage.haskell.org/package/unix-2.7.2.2/docs/System-Posix-Files.html#v:modificationTime">modificationTime</a></h2>
+<div class="outline-text-2" id="text-16">
 <ul class="org-ul">
 <li>If the path is directory, the time will be changed if file is added or deleted.</li>
 <li>See <code>filewatcher.hs</code> or <code>watchDir</code> in <code>AronModule.hs</code></li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-haskell"><span style="color: #268bd2;">modificationTime</span> <span style="color: #268bd2;">::</span> <span style="color: #b58900;">FileStatus</span> <span style="color: #268bd2;">-&gt;</span> <span style="color: #b58900;">EpochTime</span>
+<pre class="src src-haskell"><span style="color: #006699;">modificationTime</span> <span style="color: #BA36A5;">::</span> <span style="color: #6434A3;">FileStatus</span> <span style="color: #BA36A5;">-&gt;</span> <span style="color: #6434A3;">EpochTime</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org644ef46" class="outline-2">
-<h2 id="org644ef46"><span class="section-number-2">16</span> Execute remote shell command</h2>
-<div class="outline-text-2" id="text-16">
+<div id="outline-container-org3c955f0" class="outline-2">
+<h2 id="org3c955f0"><span class="section-number-2">17</span> Execute remote shell command</h2>
+<div class="outline-text-2" id="text-17">
 <div class="org-src-container">
-<pre class="src src-bash">ssh user@xfido.com  <span style="color: #2aa198;">'cd user; ls;'</span>
+<pre class="src src-bash">ssh user@xfido.com  <span style="color: #008000;">'cd user; ls;'</span>
 </pre>
 </div>
 </div>
@@ -728,7 +812,7 @@ ssh-add ~/.ssh/myprivate_id_rsa
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-08-02 Fri 11:53</p>
+<p class="date">Created: 2019-08-04 Sun 13:08</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

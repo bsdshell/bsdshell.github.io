@@ -1,4 +1,5 @@
-** Shell Script Examples
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+*** Shell Script Examples
    Shell script is powerful if you could remember all the weird syntax. 
    Here is the example to show how to use Array in Shell script.
    Note: readarray only works in Bash 4.x, check your version: bash --version   
@@ -37,10 +38,9 @@
       done                             
       #+END_SRC                        
    
-   4. if statement                                                                    
+   4. if statement, one liner                                                                    
       #+BEGIN_SRC bash                                                                
-      var="$#"                                                                        
-      if [ "$var" -eq 2 ]; then echo "two arguments"; else echo "not two argument"; fi
+      var="$#" && if [ "$var" -eq 2 ]; then echo "two arguments"; else echo "not two argument"; fi
       #+END_SRC                                                                       
 
    5. Iterate all files with one line *shell command*
@@ -65,7 +65,7 @@
       #+BEGIN_SRC bash
       watch "ps aux | grep --color httpd"
       #+END_SRC
-** Grep Examples
+*** grep Examples
    0. grep content of file with specified file name extension, show full file name
       #+BEGIN_SRC bash
       grep --include="*.java" -Hnris pattern $PWD
@@ -86,12 +86,12 @@
       #+BEGIN_SRC bash
       cat file | grep -B 'dog'
       #+END_SRC
-   5. Grep inversion              
+   5. grep inversion              
        #+BEGIN_SRC bash            
          # find all non java file  
          grep -v -E '.java$'       
        #+END_SRC                   
-   6. grep string that contains "txt"                                   
+   6. grep string that contains "txt", grep matches string                                   
       #+BEGIN_SRC bash                                                  
       if echo $name | grep -q "txt"; then echo $name; else echo ""; fi  
       #+END_SRC                                                         
@@ -111,16 +111,27 @@
        # extended regex                                                 
        ps aux | grep --color -E 'wai|filewatcher'                       
        #+END_SRC                                                        
-** Sed Example
+*** sed Example
    #+BEGIN_SRC sh
    // list file from line 3 to 9
    sed -n 3,9p file.txt 
    #+END_SRC
 
-   
+*** rsync examples
+   + rysnc file with specified extensions such png, svg etct.
+     + include and exclude files.
+     #+BEGIN_SRC bash
+       # rsync svg, png and jpg files excluding other files.
+       rsync -rvzu --include='*'{svg,png,jpf} --exclude "*"  source  dest
+       # rsync html file excluding other files.
+       rsync -rvzu --include='*.html' --exclude "*"  source  dest
+       # rsync folder
+       rsync -artv folder  source dest
 
-
-** If and Else in Shell Script
+       # rsync local folder with remote folder
+       rsync -artv local_folder user@xfido.com:/var/www/html
+     #+END_SRC
+*** If and Else in Shell Script
      | *String comparision*  | *Description*                                          |
      |-----------------------+--------------------------------------------------------|
      | Str1 = Str2           | Return true if strings are equal.                      |
@@ -164,3 +175,49 @@
      | -w                    | Return true if the file is writable.                   |
      |-----------------------+--------------------------------------------------------|
      | -x                    | Return true if the file is executable.                 |
+*** Execute remote shell script [[https://serverfault.com/questions/226386/wget-a-script-and-run-it][Execute remote shell]]
+   #+BEGIN_SRC bash
+     wget -O - https://bitbucket.org/zsurface/publicfile/raw/46cc8426ac08e2d575b60312fdc01f6ab6e3656c/test1.sh | bash
+   #+END_SRC
+*** Check whether a command is in *bash*
+   #+BEGIN_SRC bash
+     command -v curl
+     if [ $? ]; then echo "curl exists"; else echo "curl does not exist"; fi
+   #+END_SRC
+*** FreeBSD install ports without prompt [[https://unix.stackexchange.com/questions/5257/how-can-i-avoid-the-prompts-when-installing-a-freebsd-port][make install clean BATCH=yes]]
+   + ports installation is not working.
+   #+BEGIN_SRC bash
+     cd /usr/ports/redis && make install clean BATCH=yes
+   #+END_SRC
+*** Install Redis On FreeBSD
+   #+BEGIN_SRC bash
+     pkg install -y redis
+   #+END_SRC
+*** Enable Redis on FreeBSD
+   #+BEGIN_SRC bash
+     # add redis_enable="YES" to /etc/rc.conf
+   #+END_SRC
+*** Run Redis on FreeBSD
+   #+BEGIN_SRC bash
+     /usr/local/etc/rc.d/redis start
+   #+END_SRC
+*** How to avoid all the ssh-agent and ssh-add BS.
+   + Add follwoing two lines to your ~/.profile, it works in FreeBSD.
+     #+BEGIN_SRC bash
+       eval $(ssh-agent -s)
+       ssh-add ~/.ssh/myprivate_id_rsa
+     #+END_SRC
+*** Here are all the public keys:
+   + MacOS [[https://bitbucket.org/zsurface/publickey/raw/6dd3256f450dd9e3b3f60d90ea5871a4b6a75db1/mymac_id_rsa.pub][MacOS Public Key]]
+   + FreeBSD [[https://bitbucket.org/zsurface/publickey/raw/6dd3256f450dd9e3b3f60d90ea5871a4b6a75db1/freebsd_id_rsa.pub][FreeBSD Public Key]]
+*** Add global shared profile under ~/etc/profile~ in FreeBSD and Ubuntu.
+*** In Haskell, if check whether a file is modified or not, use [[https://hackage.haskell.org/package/unix-2.7.2.2/docs/System-Posix-Files.html#v:modificationTime][modificationTime]]
+   + If the path is directory, the time will be changed if file is added or deleted.
+   + See ~filewatcher.hs~ or ~watchDir~ in ~AronModule.hs~
+   #+BEGIN_SRC haskell
+     modificationTime :: FileStatus -> EpochTime
+   #+END_SRC
+*** Execute remote shell command
+   #+BEGIN_SRC bash
+     ssh user@xfido.com  'cd user; ls;'
+   #+END_SRC

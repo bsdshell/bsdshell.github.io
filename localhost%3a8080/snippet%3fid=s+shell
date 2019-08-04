@@ -1,0 +1,332 @@
+
+            <HTML>   
+            <HEAD>   
+            <meta charset="utf-8">
+            <TITLE>Search Code Snippet</TITLE> 
+            <LINK rel="stylesheet" type="text/css" href="/style.css"> 
+            <style>
+            .colorclick{
+                background-color:#f1e6e6;
+            }
+            .form{
+                margin-block-end:1px;
+            }
+            .hf{
+                display:none;
+            }
+
+            pre {
+                display: block;
+                font-family: monospace;
+                font-size: 14pt;
+                white-space: pre;
+                margin-top: 1px;
+                margin-right: 1px;
+                margin-bottom: 1px;
+                margin-left: 1px;
+                background: #fdfbea69;
+                border-style: solid;
+                border-width: thin;
+            }
+
+            textarea {
+                border:1px solid #999999;
+                font-size: 13pt;
+                width:100%;
+                height:150px;
+                margin:1px 0;
+                padding:3px;
+                display:none;
+                font-family: monospace;
+                transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+                outline: 0;
+                box-shadow: none;
+                border-radius: 0;
+                box-sizing: content-box;
+                background: #e8e4db;
+                padding: 1px 0;
+                resize: yes;
+            }
+            .submitButton{
+                color: red;
+                font-size:22pt;
+                font-family: monospace;
+                font-weight:bold;
+                display:none;
+            }
+
+            .butcen{
+                display: inline-flex;
+                float:right;
+            }
+
+            .butshow{
+                /* display: inline-flex; */
+                /* text-align: center; */
+                font-size: 14pt;
+                margin: 2px 2px;
+                cursor: pointer;
+                background-color: #ffffff;
+                color: #000000;
+                border: 1px solid #212921; 
+
+            }
+            </style>
+            <script>
+
+            function textAreaAdjust(o) {
+                o.style.height = "1px";
+                o.style.height = (25+o.scrollHeight)+"px";
+            }
+
+            function showandhide(id) {
+
+                 var formobj=document.getElementById('f' + id);
+                 if(formobj.className == 'hf'){  //check if classname is hide 
+                    formobj.style.display = 'block';
+                    formobj.className ='hfshow';
+                 }else if(formobj.className == 'hfshow'){
+                    formobj.style.display = 'none';
+                    formobj.className ='hf';
+                 }
+
+                 var selectedobj=document.getElementById('t' + id);
+                 if(selectedobj.className == 'hide'){  //check if classname is hide 
+                    selectedobj.style.display = 'block';
+                    selectedobj.className ='show';
+                 }else if(selectedobj.className == 'show'){
+                    selectedobj.style.display = 'none';
+                    selectedobj.className ='hide';
+                 }
+
+                 var butobj=document.getElementById('b' + id);
+                 if(butobj.className == 'submitButton'){  //check if classname is hide 
+                    butobj.style.display = 'inline-flex';
+                    butobj.className ='butshow';
+                 }else if(butobj.className == 'butshow'){
+                    butobj.style.display = 'none';
+                    butobj.className ='submitButton';
+                 }
+
+                 var butobj=document.getElementById('a' + id);
+                 if(butobj.className == 'submitButton'){  //check if classname is hide 
+                    butobj.style.display = 'inline-flex';
+                    butobj.className ='butshow';
+                 }else if(butobj.className == 'butshow'){
+                    butobj.style.display = 'none';
+                    butobj.className ='submitButton';
+                 }
+
+                 var butobj=document.getElementById('d' + id);
+                 if(butobj.className == 'submitButton'){  //check if classname is hide 
+                    butobj.style.display = 'inline-flex';
+                    butobj.className ='butshow';
+                 }else if(butobj.className == 'butshow'){
+                    butobj.style.display = 'none';
+                    butobj.className ='submitButton';
+                 }
+
+                 var butobj=document.getElementById('c' + id);
+                 var cname = 'co' + id;
+                 if(butobj.className == cname){  
+                    butobj.className = 'colorclick';
+                 }else if(butobj.className == 'colorclick'){
+                    butobj.className = cname; 
+                 }
+
+            }
+            </script>
+
+            </HEAD>
+            <BODY>  
+             <div style="text-align:center;"> 
+             <form action="/snippet" method="get" target=""> 
+                 <input type="text" style="font-size:18pt;height:50px;width:400px;" name="id" list="autocomplete">  
+                 <datalist id="autocomplete">"  <option value=" s va"> <option value=" c ls"> <option value=" s latex"> <option value=" s emacs"> <option value=" s git"> <option value=" s java"> <option value=" s shell"> <option value=" s ubuntu"> <option value=" s vm"> <option value=" s rsync"> <option value=" s tmux"> <option value=" c show_process"> <option value=" s java regex"> <option value=" s js"> <option value=" s sql"> <option value=" s haskell"> <option value=" s pkg"> <option value=" s cpp"> <option value=" s ssh"> <option value=" s van"> <option value=" ls"> <option value=" s digit"> <option value=" s java list"> <option value=" s record"> <option value=" s screen"> <option value=" s sqlit"> <option value=" s css"> <option value=" s db"> <option value=" s email"> <option value=" s js map"> <option value=" s key"> <option value=" s latex background"> <option value=" s latex cases"> <option value=" s latex color"> <option value=" s linux screen"> <option value=" s phone"> <option value=" s rsyn"> <option value=" s sed"> <option value=" bookmark"> <option value=" c $PWD"> <option value=" c cat /tmp/f1.x"> <option value=" c java"> <option value=" c ls -ahd"> <option value=" c pwd"> <option value=" c which curl"> <option value=" c which emacs"> <option value=" c which ls"> <option value=" c which preview"> <option value=" c which runhaskell"> <option value=" c which show_process"> <option value=" c which wget"> <option value=" s  markdown"> <option value=" s address"> <option value=" s apache"> <option value=" s bytestring"> <option value=" s c++"> <option value=" s cases"> <option value=" s copy"> <option value=" s create user"> <option value=" s encry"> <option value=" s encryp"> <option value=" s file"> <option value=" s find"> <option value=" s format"> <option value=" s genkey"> <option value=" s gi"> <option value=" s got"> <option value=" s had"> <option value=" s html"> <option value=" s java array"> <option value=" s javascript"> <option value=" s keygen"> <option value=" s latex case"> <option value=" s latex deriv"> <option value=" s latex env"> <option value=" s latex par"> <option value=" s latex sphere"> <option value=" s linux"> <option value=" s matrix"> <option value=" s package"> <option value=" s path"> <option value=" s rsa"> <option value=" s scp"> <option value=" s show"> <option value=" s sql simple"> <option value=" s stack"> <option value=" s sync"> <option value=" s user"> <option value=" s wai"> <option value=" s xcode"> <option value=" s xcode cpp"> <option value=" sudo"> </datalist><br>  
+             </form> 
+             </div>   
+       <form action="/update" name="Update" class="hf" id="f1" method="POST"><textarea name="header" rows="20" class="hide">       sed_shell :*: sed shell, shell sed, sed substitue, substitue sed, awk </textarea><textarea name="myblock" spellcheck="false" autofocus="true" onfocus="textAreaAdjust(this);" id= t1 class="hide">       sed_shell :*: sed shell, shell sed, sed substitue, substitue sed, awk
+    sed 's/.*\(Name=\"[^"]*\"\)\s\(MyDir=\"[^"]*\"\).*/\1 \2/g' f1.txt > f2.txt //Match Name=xx, MyDir=xx 2 col
+    sed -i -e 's/oldstring/newstring/g' *  // replace oldstr to newstr, replace all, sed replace
+    sed '/line3/,/line9/d' oldfile > newfile  // delete lines from line contains line3 to line contains line9
+    sed -E '/grep|vim/d'  // posix regular extension -E
+    gsed -i_backup 's/oldstr/newstr/' *.html  // file is backed up with *.html_backup
+    sed -E 's/ *//g'  # remove all whitespace, sed -E 's/\s*//g' does not work
+    --
+    -- remove whitespaces from each filename in all files in current directory.
+    for i in *; do var=$(echo $i | sed -E 's/ *//g'); mv "$PWD/$i" "$PWD/$var"; done
+ </textarea><div class="butcen">
+            <input type="submit" name="update" value="update" id= "b1" class="submitButton"> 
+            <input type="submit" name="add" value="add" id= "a1" class="submitButton"> 
+            <input type="submit" name="delete" value="delete" id= "d1" class="submitButton"> 
+            </div> </form> <br><pre  ondblclick='showandhide(1)' class='co1'  id='c1'  ><br><div ><br><span style="color:gray;">      sed_shell :*: sed shell, shell sed, sed substitue, substitue sed, awk</span><br>    sed 's/.*\<span style="color:blue;">(</span>Name=\"<span style="color:#e012cd;">[</span>^"<span style="color:#e012cd;">]</span>*\"\<span style="color:blue;">)</span>\s\<span style="color:blue;">(</span>MyDir=\"<span style="color:#e012cd;">[</span>^"<span style="color:#e012cd;">]</span>*\"\<span style="color:blue;">)</span>.*/\1 \2/g' f1.txt &gt; f2.txt //Match Name=xx, MyDir=xx 2 col<br>    sed -i -e 's/oldstring/newstring/g' *  // replace oldstr to newstr, replace all, sed replace<br>    sed '/line3/,/line9/d' oldfile &gt; newfile  // delete lines <span style="color:#FF69B4;">from</span> line contains line3 to line contains line9<br>    sed -E '/grep|vim/d'  // posix regular extension -E<br>    gsed -i_backup 's/oldstr/newstr/' *.html  // file is backed up with *.html_backup<br>    sed -E 's/ *//g'  # remove all whitespace, sed -E 's/\s*//g' does not work<br>    --<br>    -- remove whitespaces <span style="color:#FF69B4;">from</span> each filename in all files in current directory.<br>    <span style="color:#f50a93;">for</span> i in *; <span style="color:#f50a93;">do</span> var=$<span style="color:blue;">(</span>echo $i | sed -E 's/ *//g'<span style="color:blue;">)</span>; mv "$PWD/$i" "$PWD/$var"; done<br></div><br></pre><br>  
+       <form action="/update" name="Update" class="hf" id="f2" method="POST"><textarea name="header" rows="20" class="hide">      shell_screen:*: shell screen, screen, background session, tmux, background, nohup </textarea><textarea name="myblock" spellcheck="false" autofocus="true" onfocus="textAreaAdjust(this);" id= t2 class="hide">      shell_screen:*: shell screen, screen, background session, tmux, background, nohup
+    When you use screen you need to detach with CTRL+A+D before you exit ssh.
+    --
+    Alternatively, if you want to run a process directly with screen you can use
+    --
+    screen -dmSL [session name] [commands]
+    -d starts a screen session and immediately detaches from it
+    -m forces creating a new screen session
+    -S lets you give the session a name
+    -L turns on logging to ~/screenlog.0
+    example:
+    --
+    screen -dmSL workstuff myscript.sh
+    You can then either:
+    --
+    resume later using screen -x workstuff
+    --
+    or
+    --
+    check the log file less -r ~/screenlog.0
+    --
+    nohup myrun &  // run process in background
+    -- rename screen session
+    C-a :sessionname new_name
+ </textarea><div class="butcen">
+            <input type="submit" name="update" value="update" id= "b2" class="submitButton"> 
+            <input type="submit" name="add" value="add" id= "a2" class="submitButton"> 
+            <input type="submit" name="delete" value="delete" id= "d2" class="submitButton"> 
+            </div> </form> <br><pre  ondblclick='showandhide(2)' class='co2'  id='c2'  ><br><div ><br><span style="color:gray;">     shell_screen:*: shell screen, screen, background session, tmux, background, nohup</span><br>    When you use screen you need to detach with <span style="color:green;">CTRL</span>+A+D before you exit ssh.<br>    --<br>    Alternatively, <span style="color:#f50a93;">if</span> you want to run a process directly with screen you can use<br>    --<br>    screen -dmSL <span style="color:#e012cd;">[</span>session name<span style="color:#e012cd;">]</span> <span style="color:#e012cd;">[</span>commands<span style="color:#e012cd;">]</span><br>    -d starts a screen session and immediately detaches <span style="color:#FF69B4;">from</span> it<br>    -m forces creating a <span style="color:#f50a93;"><span style="color:red;">new</span></span> screen session<br>    -S lets you give the session a name<br>    -L turns on logging to ~/screenlog.0<br>    example:<br>    --<br>    screen -dmSL workstuff myscript.sh<br>    You can then either:<br>    --<br>    resume later using screen -x workstuff<br>    --<br>    or<br>    --<br>    check the log file less -r ~/screenlog.0<br>    --<br>    nohup myrun &  // run process in background<br>    -- rename screen session<br>    C-a :sessionname new_name<br></div><br></pre><br>  
+       <form action="/update" name="Update" class="hf" id="f3" method="POST"><textarea name="header" rows="20" class="hide">     awk_shell :*: shell, awk, awk shell, column, shell column, filter column, sed, column </textarea><textarea name="myblock" spellcheck="false" autofocus="true" onfocus="textAreaAdjust(this);" id= t3 class="hide">     awk_shell :*: shell, awk, awk shell, column, shell column, filter column, sed, column
+    awk '{print $1 $2}' file.txt
+    awk '{for(i=0; i<NF; i++) print $1}' inputfile // print the first column from file
+    awk -F ":" '{for(i=0; i<NF; i++) print $1}'
+    kill -9 $(ps aux | awk '/Safari/ {print $2}')  // kill Safari brower
+    ls -l $jarpath/*.jar | awk '{print $6 " " $7 " " $8 "\t" $9}' 
+ </textarea><div class="butcen">
+            <input type="submit" name="update" value="update" id= "b3" class="submitButton"> 
+            <input type="submit" name="add" value="add" id= "a3" class="submitButton"> 
+            <input type="submit" name="delete" value="delete" id= "d3" class="submitButton"> 
+            </div> </form> <br><pre  ondblclick='showandhide(3)' class='co3'  id='c3'  ><br><div ><br><span style="color:gray;">    awk_shell :*: shell, awk, awk shell, column, shell column, filter column, sed, column</span><br>    awk '<span style="color:red;">{</span>print $1 $2<span style="color:red;">}</span>' file.txt<br>    awk '<span style="color:red;">{</span><span style="color:#f50a93;">for</span><span style="color:blue;">(</span>i=0; i&lt;NF; i++<span style="color:blue;">)</span> print $1<span style="color:red;">}</span>' inputfile // print the first column <span style="color:#FF69B4;">from</span> file<br>    awk -F ":" '<span style="color:red;">{</span><span style="color:#f50a93;">for</span><span style="color:blue;">(</span>i=0; i&lt;NF; i++<span style="color:blue;">)</span> print $1<span style="color:red;">}</span>'<br>    kill -9 $<span style="color:blue;">(</span>ps aux | awk '/Safari/ <span style="color:red;">{</span>print $2<span style="color:red;">}</span>'<span style="color:blue;">)</span>  // kill Safari brower<br>    ls -l $jarpath/*.<span style="color:#35A993;">jar</span> | awk '<span style="color:red;">{</span>print $6 " " $7 " " $8 "\t" $9<span style="color:red;">}</span>' <br></div><br></pre><br>  
+       <form action="/update" name="Update" class="hf" id="f4" method="POST"><textarea name="header" rows="20" class="hide">     find_command :*: shell find, find cmd, find, shell script, script </textarea><textarea name="myblock" spellcheck="false" autofocus="true" onfocus="textAreaAdjust(this);" id= t4 class="hide">     find_command :*: shell find, find cmd, find, shell script, script
+    find . -name "*" | xargs -n1 perl -i -ane 's/images/img/g; print;'
+    find . -name "*.txt" -type f  -print0 | xargs -0 echo
+    find . -name "*.m" -exec sed -i backup 's/old/new/g' {} + // backup is ext for backup file, unknown primary op error
+    find . -name "*.m" -exec sed -i '' 's/SimpleApp/DeviceInfoApp/g' '{}' \;   // man find exec
+    find . -name "abc*" ! -name "*.cpp"    // file start with abc except all *.cpp file
+    find . -name "*.txt" -o -name "*.cpp"  // -o OR operator
+    find . -name "*.txt" -exec rm -f {} \; // remove all *.txt
+    find . -maxdepth 1 -type f -perm +111 -exec rm -f {} \; // remove all executable files in curr dir
+    find all the files or directories in the current path and copy them to new directory
+    find ./ -name \*.mp3 -exec cp {} /home/user/song \;
+    find ./ -name "*.txt" -mtime -4  -print
+    find $(find ./ -name *.java -type f)
+    find ./ -name "dirName"
+ </textarea><div class="butcen">
+            <input type="submit" name="update" value="update" id= "b4" class="submitButton"> 
+            <input type="submit" name="add" value="add" id= "a4" class="submitButton"> 
+            <input type="submit" name="delete" value="delete" id= "d4" class="submitButton"> 
+            </div> </form> <br><pre  ondblclick='showandhide(4)' class='co4'  id='c4'  ><br><div ><br><span style="color:gray;">    find_command :*: shell find, find cmd, find, shell script, script</span><br>    find . -name "*" | xargs -n1 perl -i -ane 's/images/img/g; print;'<br>    find . -name "*.txt" -type f  -print0 | xargs -0 echo<br>    find . -name "*.m" -exec sed -i backup 's/old/<span style="color:#f50a93;"><span style="color:red;">new</span></span>/g' <span style="color:red;">{</span><span style="color:red;">}</span> + // backup is ext <span style="color:#f50a93;">for</span> backup file, unknown primary op error<br>    find . -name "*.m" -exec sed -i '' 's/SimpleApp/DeviceInfoApp/g' '<span style="color:red;">{</span><span style="color:red;">}</span>' \;   // man find exec<br>    find . -name "abc*" ! -name "*.cpp"    // file start with abc except all *.cpp file<br>    find . -name "*.txt" -o -name "*.cpp"  // -o OR operator<br>    find . -name "*.txt" -exec rm -f <span style="color:red;">{</span><span style="color:red;">}</span> \; // remove all *.txt<br>    find . -maxdepth 1 -type f -perm +111 -exec rm -f <span style="color:red;">{</span><span style="color:red;">}</span> \; // remove all executable files in curr dir<br>    find all the files or directories in the current path and copy them to <span style="color:#f50a93;"><span style="color:red;">new</span></span> directory<br>    find ./ -name \*.mp3 -exec cp <span style="color:red;">{</span><span style="color:red;">}</span> /home/user/song \;<br>    find ./ -name "*.txt" -mtime -4  -print<br>    find $<span style="color:blue;">(</span>find ./ -name *.<span style="color:#35A993;">java</span> -type f<span style="color:blue;">)</span><br>    find ./ -name "dirName"<br></div><br></pre><br>  
+       <form action="/update" name="Update" class="hf" id="f5" method="POST"><textarea name="header" rows="20" class="hide">     fish_shell:*: fish shell, fish, shell </textarea><textarea name="myblock" spellcheck="false" autofocus="true" onfocus="textAreaAdjust(this);" id= t5 class="hide">     fish_shell:*: fish shell, fish, shell
+    brew install fish
+    install fish shell 2.3.1
+    create symbol link
+    ln -s /usr/local/bin/fish /bin/fish
+    add /bin/fish to /etc/shells.
+ </textarea><div class="butcen">
+            <input type="submit" name="update" value="update" id= "b5" class="submitButton"> 
+            <input type="submit" name="add" value="add" id= "a5" class="submitButton"> 
+            <input type="submit" name="delete" value="delete" id= "d5" class="submitButton"> 
+            </div> </form> <br><pre  ondblclick='showandhide(5)' class='co5'  id='c5'  ><br><div ><br><span style="color:gray;">    fish_shell:*: fish shell, fish, shell</span><br>    brew install fish<br>    install fish shell 2.3.1<br>    <span style="color:#FF69B4;">create</span> symbol link<br>    ln -s /usr/local/bin/fish /bin/fish<br>    add /bin/fish to /etc/shells.<br></div><br></pre><br>  
+       <form action="/update" name="Update" class="hf" id="f6" method="POST"><textarea name="header" rows="20" class="hide">     shell_gcd :*: shell, gpg, encrypt, decrypt  </textarea><textarea name="myblock" spellcheck="false" autofocus="true" onfocus="textAreaAdjust(this);" id= t6 class="hide">     shell_gcd :*: shell, gpg, encrypt, decrypt 
+    if [ $1 = "d" ]; then
+        gpg -d -o file.txt file.gpg
+    elif [ $1 = "e" ]; then
+        gpg -c  file.txt 
+    fi
+ </textarea><div class="butcen">
+            <input type="submit" name="update" value="update" id= "b6" class="submitButton"> 
+            <input type="submit" name="add" value="add" id= "a6" class="submitButton"> 
+            <input type="submit" name="delete" value="delete" id= "d6" class="submitButton"> 
+            </div> </form> <br><pre  ondblclick='showandhide(6)' class='co6'  id='c6'  ><br><div ><br><span style="color:gray;">    shell_gcd :*: shell, gpg, encrypt, decrypt </span><br>    <span style="color:#f50a93;">if</span> <span style="color:#e012cd;">[</span> $1 = "d" <span style="color:#e012cd;">]</span>; then<br>        gpg -d -o file.txt file.gpg<br>    elif <span style="color:#e012cd;">[</span> $1 = "e" <span style="color:#e012cd;">]</span>; then<br>        gpg -c  file.txt <br>    fi<br></div><br></pre><br>  
+       <form action="/update" name="Update" class="hf" id="f7" method="POST"><textarea name="header" rows="20" class="hide">     shell_grep:*: grep, shell, shell grep, grep logic, grep or </textarea><textarea name="myblock" spellcheck="false" autofocus="true" onfocus="textAreaAdjust(this);" id= t7 class="hide">     shell_grep:*: grep, shell, shell grep, grep logic, grep or
+    vim $(grep -l --include="*.java" pattern .)
+    grep --color -Hnirs class\s\+\w\+\s\+\(extends\s\+[A-Za-z_\]\+\)*\s\+\(implements\s\+\([A-Za-z_\]\+\)\)\?\(\s\+\)*\(,\s\+[A-Za-z_\]\+\)*
+    grep --include="*.java" "\"[a-zA-Z]\+\""  ./
+    vim $(grep -l --include="*.java" pattern .) #vim open all files from grep
+    grep -l pattern *   [print file name only]
+    grep --include="*.[mh]"  --color -Hnris CATextLayer
+    vimgrep /MyString/ /home/mycode/**/*.m   // Search MyString pattern recursively[**/*.m] two arsterisks
+    grep 'wai\|filewatcher'  // grep or
+ </textarea><div class="butcen">
+            <input type="submit" name="update" value="update" id= "b7" class="submitButton"> 
+            <input type="submit" name="add" value="add" id= "a7" class="submitButton"> 
+            <input type="submit" name="delete" value="delete" id= "d7" class="submitButton"> 
+            </div> </form> <br><pre  ondblclick='showandhide(7)' class='co7'  id='c7'  ><br><div ><br><span style="color:gray;">    shell_grep:*: grep, shell, shell grep, grep logic, grep or</span><br>    vim $<span style="color:blue;">(</span>grep -l --include="*.<span style="color:#35A993;">java</span>" pattern .<span style="color:blue;">)</span><br>    grep --color -Hnirs <span style="color:#f50a93;"><span style="color:#ef82ee;">class</span></span>\s\+\w\+\s\+\<span style="color:blue;">(</span><span style="color:#f50a93;">extends</span>\s\+<span style="color:#e012cd;">[</span>A-Za-z_\<span style="color:#e012cd;">]</span>\+\<span style="color:blue;">)</span>*\s\+\<span style="color:blue;">(</span><span style="color:#f50a93;"><span style="color:#ef82ee;">implements</span></span>\s\+\<span style="color:blue;">(</span><span style="color:#e012cd;">[</span>A-Za-z_\<span style="color:#e012cd;">]</span>\+\<span style="color:blue;">)</span>\<span style="color:blue;">)</span>\?\<span style="color:blue;">(</span>\s\+\<span style="color:blue;">)</span>*\<span style="color:blue;">(</span>,\s\+<span style="color:#e012cd;">[</span>A-Za-z_\<span style="color:#e012cd;">]</span>\+\<span style="color:blue;">)</span>*<br>    grep --include="*.<span style="color:#35A993;">java</span>" "\"<span style="color:#e012cd;">[</span>a-zA-Z<span style="color:#e012cd;">]</span>\+\""  ./<br>    vim $<span style="color:blue;">(</span>grep -l --include="*.<span style="color:#35A993;">java</span>" pattern .<span style="color:blue;">)</span> #vim open all files <span style="color:#FF69B4;">from</span> grep<br>    grep -l pattern *   <span style="color:#e012cd;">[</span>print file name only<span style="color:#e012cd;">]</span><br>    grep --include="*.<span style="color:#e012cd;">[</span>mh<span style="color:#e012cd;">]</span>"  --color -Hnris CATextLayer<br>    vimgrep /MyString/ /home/mycode/**/*.m   // Search MyString pattern recursively<span style="color:#e012cd;">[</span>**/*.m<span style="color:#e012cd;">]</span> two arsterisks<br>    grep 'wai\|filewatcher'  // grep or<br></div><br></pre><br>  
+       <form action="/update" name="Update" class="hf" id="f8" method="POST"><textarea name="header" rows="20" class="hide">     shell_num_argu :*: shell script, shell, script, shell argument </textarea><textarea name="myblock" spellcheck="false" autofocus="true" onfocus="textAreaAdjust(this);" id= t8 class="hide">     shell_num_argu :*: shell script, shell, script, shell argument
+    if [ "$#" -eq 1 ]; then
+        $b/script/pathx.sh $1
+    elif [ "$#" -eq 2]; then
+        $b/script/pathx.sh $1 $2
+    fi
+ </textarea><div class="butcen">
+            <input type="submit" name="update" value="update" id= "b8" class="submitButton"> 
+            <input type="submit" name="add" value="add" id= "a8" class="submitButton"> 
+            <input type="submit" name="delete" value="delete" id= "d8" class="submitButton"> 
+            </div> </form> <br><pre  ondblclick='showandhide(8)' class='co8'  id='c8'  ><br><div ><br><span style="color:gray;">    shell_num_argu :*: shell script, shell, script, shell argument</span><br>    <span style="color:#f50a93;">if</span> <span style="color:#e012cd;">[</span> "$#" -eq 1 <span style="color:#e012cd;">]</span>; then<br>        $b/script/pathx.sh $1<br>    elif <span style="color:#e012cd;">[</span> "$#" -eq 2<span style="color:#e012cd;">]</span>; then<br>        $b/script/pathx.sh $1 $2<br>    fi<br></div><br></pre><br>  
+       <form action="/update" name="Update" class="hf" id="f9" method="POST"><textarea name="header" rows="20" class="hide">     shell_script :*: loop array, array loop, shell array, </textarea><textarea name="myblock" spellcheck="false" autofocus="true" onfocus="textAreaAdjust(this);" id= t9 class="hide">     shell_script :*: loop array, array loop, shell array,
+    array=(
+        dog 
+        cat
+        pig
+        fox
+        rat
+    )
+    for var in ${array[*]}
+    do
+        printc 200 "pwd=$PWD"
+        printc 200 "$var"
+    done
+ </textarea><div class="butcen">
+            <input type="submit" name="update" value="update" id= "b9" class="submitButton"> 
+            <input type="submit" name="add" value="add" id= "a9" class="submitButton"> 
+            <input type="submit" name="delete" value="delete" id= "d9" class="submitButton"> 
+            </div> </form> <br><pre  ondblclick='showandhide(9)' class='co9'  id='c9'  ><br><div ><br><span style="color:gray;">    shell_script :*: loop array, array loop, shell array,</span><br>    array=<span style="color:blue;">(</span><br>        dog <br>        cat<br>        pig<br>        fox<br>        rat<br>    <span style="color:blue;">)</span><br>    <span style="color:#f50a93;">for</span> var in $<span style="color:red;">{</span>array<span style="color:#e012cd;">[</span>*<span style="color:#e012cd;">]</span><span style="color:red;">}</span><br>    <span style="color:#f50a93;">do</span><br>        printc 200 "pwd=$PWD"<br>        printc 200 "$var"<br>    done<br></div><br></pre><br>  
+       <form action="/update" name="Update" class="hf" id="f10" method="POST"><textarea name="header" rows="20" class="hide">     shell_script :*: shell script, script, command line  </textarea><textarea name="myblock" spellcheck="false" autofocus="true" onfocus="textAreaAdjust(this);" id= t10 class="hide">     shell_script :*: shell script, script, command line 
+    for arg in $* 
+    do
+    echo "[\$*]=".$arg
+    done 
+    #[$*]=.n1
+    #[$*]=.n2
+    #[$*]=.n3
+    for arg in "$*" 
+    do
+        echo "[\$*]=".$arg
+    done
+    #[$*]=.n1 n2 n3
+    for arg in $@ 
+    do
+        echo "[\$@]=".$arg
+    done
+    #[$@]=.n1
+    #[$@]=.n2
+    #[$@]=.n3
+    for arg in "$@"
+    do
+        echo "[\$@]=".$arg
+    done
+    #[$@]=.n1 n2
+    #[$@]=.n3
+    -- 
+    pipe exit code
+    cmd1 | cmd2 | cmd3
+    cmd1 = ${PIPESTATUS[0]}
+    cmd2 = ${PIPESTATUS[1]}
+    cmd3 = ${PIPESTATUS[2]}
+    cat /tmp/f.x | head -10 && if [ "${PIPESTATUS[0]}" -eq 0 ]; then echo "good"; else echo "Error"; fi
+ </textarea><div class="butcen">
+            <input type="submit" name="update" value="update" id= "b10" class="submitButton"> 
+            <input type="submit" name="add" value="add" id= "a10" class="submitButton"> 
+            <input type="submit" name="delete" value="delete" id= "d10" class="submitButton"> 
+            </div> </form> <br><pre  ondblclick='showandhide(10)' class='co10'  id='c10'  ><br><div ><br><span style="color:gray;">    shell_script :*: shell script, script, command line </span><br>    <span style="color:#f50a93;">for</span> arg in $* <br>    <span style="color:#f50a93;">do</span><br>    echo "<span style="color:#e012cd;">[</span>\$*<span style="color:#e012cd;">]</span>=".$arg<br>    done <br>    #<span style="color:#e012cd;">[</span>$*<span style="color:#e012cd;">]</span>=.n1<br>    #<span style="color:#e012cd;">[</span>$*<span style="color:#e012cd;">]</span>=.n2<br>    #<span style="color:#e012cd;">[</span>$*<span style="color:#e012cd;">]</span>=.n3<br>    <span style="color:#f50a93;">for</span> arg in "$*" <br>    <span style="color:#f50a93;">do</span><br>        echo "<span style="color:#e012cd;">[</span>\$*<span style="color:#e012cd;">]</span>=".$arg<br>    done<br>    #<span style="color:#e012cd;">[</span>$*<span style="color:#e012cd;">]</span>=.n1 n2 n3<br>    <span style="color:#f50a93;">for</span> arg in $@ <br>    <span style="color:#f50a93;">do</span><br>        echo "<span style="color:#e012cd;">[</span>\$@<span style="color:#e012cd;">]</span>=".$arg<br>    done<br>    #<span style="color:#e012cd;">[</span>$@<span style="color:#e012cd;">]</span>=.n1<br>    #<span style="color:#e012cd;">[</span>$@<span style="color:#e012cd;">]</span>=.n2<br>    #<span style="color:#e012cd;">[</span>$@<span style="color:#e012cd;">]</span>=.n3<br>    <span style="color:#f50a93;">for</span> arg in "$@"<br>    <span style="color:#f50a93;">do</span><br>        echo "<span style="color:#e012cd;">[</span>\$@<span style="color:#e012cd;">]</span>=".$arg<br>    done<br>    #<span style="color:#e012cd;">[</span>$@<span style="color:#e012cd;">]</span>=.n1 n2<br>    #<span style="color:#e012cd;">[</span>$@<span style="color:#e012cd;">]</span>=.n3<br>    -- <br>    pipe exit code<br>    cmd1 | cmd2 | cmd3<br>    cmd1 = $<span style="color:red;">{</span>PIPESTATUS<span style="color:#e012cd;">[</span>0<span style="color:#e012cd;">]</span><span style="color:red;">}</span><br>    cmd2 = $<span style="color:red;">{</span>PIPESTATUS<span style="color:#e012cd;">[</span>1<span style="color:#e012cd;">]</span><span style="color:red;">}</span><br>    cmd3 = $<span style="color:red;">{</span>PIPESTATUS<span style="color:#e012cd;">[</span>2<span style="color:#e012cd;">]</span><span style="color:red;">}</span><br>    cat /tmp/f.x | head -10 && <span style="color:#f50a93;">if</span> <span style="color:#e012cd;">[</span> "$<span style="color:red;">{</span>PIPESTATUS<span style="color:#e012cd;">[</span>0<span style="color:#e012cd;">]</span><span style="color:red;">}</span>" -eq 0 <span style="color:#e012cd;">]</span>; then echo "good"; <span style="color:#f50a93;">else</span> echo "Error"; fi<br></div><br></pre><br>  
+       <form action="/update" name="Update" class="hf" id="f11" method="POST"><textarea name="header" rows="20" class="hide">     shell_sort:*: shell sort, sort, sort column </textarea><textarea name="myblock" spellcheck="false" autofocus="true" onfocus="textAreaAdjust(this);" id= t11 class="hide">     shell_sort:*: shell sort, sort, sort column
+    sort -k 2  // sort second column
+    sort -r -k 2  // sort second column in reverse
+ </textarea><div class="butcen">
+            <input type="submit" name="update" value="update" id= "b11" class="submitButton"> 
+            <input type="submit" name="add" value="add" id= "a11" class="submitButton"> 
+            <input type="submit" name="delete" value="delete" id= "d11" class="submitButton"> 
+            </div> </form> <br><pre  ondblclick='showandhide(11)' class='co11'  id='c11'  ><br><div ><br><span style="color:gray;">    shell_sort:*: shell sort, sort, sort column</span><br>    sort -k 2  // sort second column<br>    sort -r -k 2  // sort second column in reverse<br></div><br></pre><br> </BODY></HTML> 
