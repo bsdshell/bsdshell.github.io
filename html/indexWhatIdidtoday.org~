@@ -1,5 +1,6 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
 *** Haskell *Text.RawString.QQ* is useful for Html, Sql and Regular expression.
-   + Use Haskell package *Text.RawString.QQ* to simplify Html multiple lines in Haskell<2019-05-09 Thu>
+   + Use Haskell package *Text.RawString.QQ* to simplify Html multiple lines in Haskell
    + Need LANGUAGE *QuasiQuotes* too
    + [[http://hackage.haskell.org/package/raw-strings-qq-1.1/docs/Text-RawString-QQ.html][RawString QQ Example]]
    #+BEGIN_SRC haskell
@@ -11,7 +12,7 @@
 		  <p>"cat"</p>
 		  |]
    #+END_SRC
-   + Added code to process background process in Shell from Web Input in wai server<2019-05-10 Fri>
+   + Added code to process background process in Shell from Web Input in wai server
      #+BEGIN_SRC bash
 	"x nohup filewatcher &" 
      #+END_SRC
@@ -519,14 +520,20 @@
          execute conn query
        #+END_SRC
        + The *Semigroup* operator in Haskell is ~<>~, it can be *String* or *Data.Text* and *ByteString*
+	 + Semigroup is Monoid without an Identity.
+	 + Semigroup is superclass of Monoid in Haskell.
        #+BEGIN_SRC haskell
 	 let a = "dog"::Data.Text
-	     let b = "cat"::Data.Text
+	 let b = "cat"::Data.Text
 	 let c = a <> b
 
 	 let a = "dog"::BS.ByteString
 	 let b = "cat"::BS.ByteString
 	 let c = a <> b
+
+	 let a = "dog"::String
+         let b = "cat"::String
+         let c = a <> b
        #+END_SRC
 *** Install Haskell Platform inside Ubuntu VM and realize it is 8.0.x version.
    + Run following command to install *Stack* inside *Ubuntu*.
@@ -820,6 +827,33 @@
    #+END_SRC
 *** Show Maybe is a Functor [[https://hackage.haskell.org/package/base-4.12.0.0/docs/src/GHC.Base.html#line-836][Functor Maybe]] [[http://xfido.com/html/indexHaskellProveMaybesatifiestwolaws.html][Proof]]
 *** Move GenePDFHtml to WaiLib.hs file, Create a GenePDFHtmlLib in $b/haskelllib
-*** Refactor the WaiLib ~app::Connection -> IORef M.HashMap -> Application~ a bit
+*** Refactor function in WaiLib
+   + ~app::Connection -> IORef M.HashMap -> Application~
    + Remove the extrac database connection from above function
    + One database includes all tables.
+*** Change Emacs Org-mode with solarized theme with CSS file [[http://thomasf.github.io/solarized-css/][Emacs Org-mode Solarized Theme]]
+   + If you use thomasf.github.io code snippet for Org-mode, then you will have problem to display the html file.
+   + I have no idea what the javascript does. After I remove the Javascript code, it works perfectly.
+     + It means you do not need the Javascript code on your Org-mode.
+     + At least it works in SpaceEmacs 8.x under Chrome, Safari and Firefox.
+   #+BEGIN_SRC html
+     -- light mode
+     #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" />
+     -- dark mode
+     #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+   #+END_SRC
+   + You DO NOT need the following snippet on your Org-mode, it will screw up your Html after you export Org-mode to Html.
+   #+BEGIN_SRC html
+       #+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:http://thomasf.github.io/solarized-css/org-info.min.js
+     #+END_SRC
+*** Change width of center theme on the current theme.
+   #+BEGIN_SRC html
+    -- max-with 23cm; => max-width: 30cm; 
+    body {
+         background-color: #002b36;
+	 margin: 0 auto;
+	 max-width: 30cm;
+	 border: 1pt solid #586e75;
+	 padding: 1em;
+     }    
+   #+END_SRC
