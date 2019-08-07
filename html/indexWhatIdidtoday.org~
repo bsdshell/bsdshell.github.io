@@ -486,10 +486,10 @@
     + [[/Library/WebServer/Documents/zsurface/image/wai_request_response.jpg][Wai Request Response]]
     + A handler needs to be created for the Javascript file.
       
-*** Interview with Amdoc today and I have no idea what to expect from them.<2019-07-09 Tue>
+*** Interview with Amdoc today and I have no idea what to expect from them.
     + [[https://www.glassdoor.ca/Job/vancouver-software-developer-jobs-SRCH_IL.0,9_IC2278756_KO10,28.htm?rdserp=true&jl=3267665595&guid=0000016bd7bf8303bad51d09c08ee95e&pos=109&src=GD_JOB_AD&srs=EI_JOBS&s=21&ao=441906][Amdoc Job Description]]
-    + Google around the company and found the company is doing software as service.
-    + A Indian woman called *Damini Gupta* called me 10 mins late, She seems to me she does not know she has been late for 10 mins.
+    + Google around the company and found the company is doing software as service(SAS) thing.
+    + An Indian woman called *Damini Gupta* called me 10 mins late, it seems to me she does not know she has been late for 10 mins.
     + Do you know about *Amdoc*? and we have legacy software called bah bah..
     + Do you know *mogoDB*... do you use bah bah *script language*? bah bah..
     + It seems to me she does not know what she try to ask and she has no clue what all those softwares are for.
@@ -846,7 +846,7 @@
    #+BEGIN_SRC html
        #+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:http://thomasf.github.io/solarized-css/org-info.min.js
      #+END_SRC
-*** Change width of center theme on the current theme.
+*** Change the width of center theme on the current theme.
    #+BEGIN_SRC html
     -- max-with 23cm; => max-width: 30cm; 
     body {
@@ -857,3 +857,14 @@
 	 padding: 1em;
      }    
    #+END_SRC
+*** Add install.sh to each stackproject project
+  + copy binary file to mybin dir
+  + create symbo link to $sym dir
+  + create simple shell script under $scr
+*** Change default shell in FreeBSD [[https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/shells.html][change shell]]
+    + Apparently freeBSD default shell is not *bash* but *sh* and you need to change it if you did not want all the annoyance.
+    + Also you need to make sure your shell is in ~/etc/shells~
+    + See the difference between *bash* and *sh* in [[https://stackoverflow.com/questions/5725296/difference-between-sh-and-bash][bash and sh]]
+      #+BEGIN_SRC bash
+       chsh -s /usr/local/bin/bash
+      #+END_SRC

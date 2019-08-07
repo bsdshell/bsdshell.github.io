@@ -1,0 +1,81 @@
+body {
+    /* margin:0; */
+    /* padding:0; */
+    /* border:0; */           /* This removes the border around the viewport in old versions of IE */
+    /* width:100%; */
+    /* background: #443f32; */
+    min-width:600px;        /* Minimum width of layout - remove line if not required */
+    margin: 0 auto;
+    max-width: 1000px;
+    /* border: 1pt solid #afbb7f; */
+    padding: 4px;
+}
+
+a {color: #a78484;}
+a:visited {color: #b9a5a5;}
+a:hover { color:green; }
+
+/*
+a {color:gray;}      
+a:visited {color:gray;}  
+a:hover {color:brown;}  
+a:active {color:yellow;}  
+*/
+
+li{
+    /*background: #f3f3f3;*/
+    list-style-type: none;
+    padding: 1px;
+    color: #0000;
+    font-size: 1.4rem;
+    font-family:  -apple-system,Segoe UI,Helvetica Neue,Hiragino Kaku Gothic ProN,"Ã£Æ’Â¡Ã£â€šÂ¤Ã£Æ’ÂªÃ£â€šÂª",meiryo,sans-serif;
+}
+
+ul {
+    /* display:inline-block; */
+    float:left;
+    width: 100%;
+    padding: 0px;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+h1, h2, h3 {
+    margin: 0em 0 0em 0;
+    /*padding:2px;*/
+}
+
+#big{
+    font-size:30px;
+}
+
+.myclass{
+    width: 90%;
+    margin: auto;
+}
+
+.indexmain{
+    width: 50%;
+    margin: auto;
+}
+
+p::first-letter {
+  font-weight: bold;
+  color: red;
+  font-size:40px;
+}
+
+p.art{
+    font-size:20px;
+}
+
+.wrap{
+    width:1200px;
+}
+.blocks {
+    display: inline-block;
+    border: solid 1px red;
+}
+
