@@ -1,0 +1,120 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+*** Install Mysql80-server and Mysql80-client in FreeBSD.            
+   #+BEGIN_SRC bash                                                  
+     cd /usr/ports/databases/mysql80-server && make install clean    
+     cd /usr/ports/databases/mysql80-client && make install clean    
+   #+END_SRC                                                         
+
+*** MySql Command line, run shell command                                          
+   + login to mysqld                                                               
+   #+BEGIN_SRC sql                                                                 
+     mysql -u root                                                                 
+     # show database                                                               
+     show databases;                                                               
+     # select database                                                             
+     use mydb;                                                                     
+     # show all tables;                                                            
+     show tables;                                                                  
+     # show scheme                                                                 
+     desc person_table;                                                            
+     # run shell command inside mysqld                                             
+     \! pwd    <- there is a space between \! and pwd                              
+     \! ls                                                                         
+   #+END_SRC                                                                       
+   + MySql Data Type                                                               
+   | Integer Type | description | Minimum value signed | Maximum value unsigned |  
+   |              |             |                      |                        |  
+   | TINYINT      | 1 Byte      |                    0 | 2^1 - 1                |  
+   | SMALLINT     | 2 Bytes     |                    0 | 2^2 - 1                |  
+   | MEDIUMINT    | 3 Bytes     |                    0 | 2^3 - 1                |  
+   | INT          | 4 Bytes     |                    0 | 2^4 - 1                |  
+   | BIGINT       | 8 Bytes     |                    0 | 2^8 - 1                |  
+*** MySql Java Example compile and build in Intellij [[https://bitbucket.org/zsurface/java/src/master/SqlExample/src/][Java MySql Example]]            
+   + Add $b/javalib8/jar/AronLib.jar to libraries in Intellij.                     
+   + Add $b/javalib8/classfile to libraries in Intellij.                           
+   + Add $b/javalib8/jar/mysql-connector-java-8.0.15.jar in Intellij.              
+   #+attr_html:  :width 800px                                                      
+   [[http://xfido.com/image/add_jdbc_to_intellij.png]]                                 
+*** MySql Login, Create user and grant permission: ~mysql 8.x~                                         
+   + login to mysql server.                                                        
+     #+BEGIN_SRC bash                                                              
+       mysql -u root                                                               
+     #+END_SRC                                                                     
+   + Create user called cat with password                                          
+     #+BEGIN_SRC sql                                                               
+        create user 'cat'@'localhost' identified by 'mypassword';                    
+        # if the user can be accessed from remote.                              
+        create user 'cat'@'%' identified by 'mypassword';                     
+     #+END_SRC                                                                     
+   + Update user password                                                          
+     #+BEGIN_SRC sql                                                               
+       ALTER user 'cat'@'localhost' identified by 'mypassword';                  
+       FLUSH PRIVILEGES;                                                           
+       # exit                                                                      
+       # login with new password                                                   
+       mysql -u cat -p                                                             
+                                                                                   
+       # remote user                                                               
+       ALTER user 'cat'@'%' identified by 'mypassword';                       
+       # exit                                                                      
+       # login with new remote password                                            
+     #+END_SRC
+   + Grant user to particular table permission.
+   + Grant user to access to all tables in a database: mydb.
+     #+BEGIN_SRC sql
+       # grant user1 to access to all tables in a database mydb.
+       GRANT ALL PRIVILEGES mydb.* on 'user1'@'localhost';
+     #+END_SRC
+*** Create user from remote access in FreeBSD.
+*** Mysql Create table, Insert data into  table.
+   + One customer to many address.
+   #+BEGIN_SRC sql
+     CREATE TABLE IF NOT EXISTS customer;
+     CREATE TABLE IF NOT EXISTS address;
+     CREATE TABLE IF NOT EXISTS order;	    
+
+     CREATE TABLE customer(
+       c_id INT NOT NULL auto_increment PRIMARY KEY,
+       user VARCHAR(100) NOT NULL,
+       password TEXT NOT NULL,
+       name TEXT NOT NULL,
+       phone TEXT NOT NULL,
+       address TEXT NOT NULL,		    
+       email TEXT NOT NULL,
+       foreign key addr(a_id)
+       references  address(a_id)
+       on delete
+       on update
+     )
+
+     CREATE TABLE address(
+       a_id INT NOT NULL auto_increment PRIMARY KEY,
+       country TEXT NOT NULL,
+       states  TEXT NOT NULL,
+       city    TEXT NOT NULL,
+       streetname TEXT NOT NULL,
+       addr_num INT NOT NULL
+     )
+
+     CREATE TABLE order(
+       ord_id INT NOT NULL auto_increment PRIMARY KEY,
+       item_name TEXT NOT NULL,
+       price DECIMAL,
+       foreign key ord(c_id) references customer(c_id)
+       on delete
+       on update,
+       foreign key addr(a_id) references address(a_id)
+       on delete
+       on update
+     )
+   #+END_SRC
+*** Use Sequel Pro sql client to connect your localhost Mysql server, download Sequel Pro [[https://www.sequelpro.com][Sequel Pro]]
+   + Add password authentication to your my.cnf
+     #+BEGIN_SRC bash
+       # /usr/local/etc/my.cnf
+       default_authentication_plugin=mysql_native_password
+     #+END_SRC
+   + After I spend over an hour on the installation Sequel Pro on my MacOS, it crashes when I click around the UI.
+     
+
+   

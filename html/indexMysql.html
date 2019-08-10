@@ -1,44 +1,485 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-GB">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-    <title>$title</title>
-    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-    <meta name="description" content="Xcode Change Build from iPhone to Universal iPad " />
-    <meta name="keywords" content="Build iPhone and iPad, Change Xcode Build Target " />
-    <meta name="robots" content="index, follow" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="../screen.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="../highlight.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-            extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
-            jax: ["input/TeX","output/HTML-CSS"],
-            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
-          });
-    </script>
-    <script type="text/javascript" src="../MathJax-2.6-latest/MathJax.js"></script>
+<!-- 2019-08-09 Fri 09:22 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="cat" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
 </head>
 <body>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-66282017-2', 'auto');
-  ga('send', 'pageview');
-</script>
-<div class="myclass">
-<div class="mytitle">
-add content here
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgbdb02ab">1. Install Mysql80-server and Mysql80-client in FreeBSD.</a></li>
+<li><a href="#org3ca80b9">2. MySql Command line, run shell command</a></li>
+<li><a href="#org32b66c0">3. MySql Java Example compile and build in Intellij Java MySql Example</a></li>
+<li><a href="#org362dbb9">4. MySql Login, Create user and grant permission: <code>mysql 8.x</code></a></li>
+<li><a href="#orge55d8e0">5. Create user from remote access in FreeBSD.</a></li>
+<li><a href="#org58b1aea">6. Mysql Create table, Insert data into  table.</a></li>
+<li><a href="#org01086bf">7. Use Sequel Pro sql client to connect your localhost Mysql server, download Sequel Pro Sequel Pro</a></li>
+</ul>
 </div>
-<pre class="mytext">
-My text here
+</div>
+<div id="outline-container-orgbdb02ab" class="outline-2">
+<h2 id="orgbdb02ab"><span class="section-number-2">1</span> Install Mysql80-server and Mysql80-client in FreeBSD.</h2>
+<div class="outline-text-2" id="text-1">
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #839496; font-weight: bold;">cd</span> /usr/ports/databases/mysql80-server &amp;&amp; make install clean    
+<span style="color: #839496; font-weight: bold;">cd</span> /usr/ports/databases/mysql80-client &amp;&amp; make install clean    
 </pre>
-<pre class="prettyprint">
-</pre> 
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3ca80b9" class="outline-2">
+<h2 id="org3ca80b9"><span class="section-number-2">2</span> MySql Command line, run shell command</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>login to mysqld</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-sql">mysql -u root                                                                 
+# show database                                                               
+show databases;                                                               
+# <span style="color: #859900; font-weight: bold;">select</span> database                                                             
+use mydb;                                                                     
+# show <span style="color: #859900; font-weight: bold;">all</span> tables;                                                            
+show tables;                                                                  
+# show scheme                                                                 
+<span style="color: #859900; font-weight: bold;">desc</span> person_table;                                                            
+# run shell command inside mysqld                                             
+\! pwd    &lt;- there <span style="color: #859900; font-weight: bold;">is</span> a <span style="color: #859900; font-weight: bold;">space</span> <span style="color: #859900; font-weight: bold;">between</span> \! <span style="color: #859900; font-weight: bold;">and</span> pwd                              
+\! ls                                                                         
+</pre>
+</div>
+<ul class="org-ul">
+<li>MySql Data Type</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Integer Type</td>
+<td class="org-left">description</td>
+<td class="org-right">Minimum value signed</td>
+<td class="org-left">Maximum value unsigned</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">TINYINT</td>
+<td class="org-left">1 Byte</td>
+<td class="org-right">0</td>
+<td class="org-left">2<sup>1</sup> - 1</td>
+</tr>
+
+<tr>
+<td class="org-left">SMALLINT</td>
+<td class="org-left">2 Bytes</td>
+<td class="org-right">0</td>
+<td class="org-left">2<sup>2</sup> - 1</td>
+</tr>
+
+<tr>
+<td class="org-left">MEDIUMINT</td>
+<td class="org-left">3 Bytes</td>
+<td class="org-right">0</td>
+<td class="org-left">2<sup>3</sup> - 1</td>
+</tr>
+
+<tr>
+<td class="org-left">INT</td>
+<td class="org-left">4 Bytes</td>
+<td class="org-right">0</td>
+<td class="org-left">2<sup>4</sup> - 1</td>
+</tr>
+
+<tr>
+<td class="org-left">BIGINT</td>
+<td class="org-left">8 Bytes</td>
+<td class="org-right">0</td>
+<td class="org-left">2<sup>8</sup> - 1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org32b66c0" class="outline-2">
+<h2 id="org32b66c0"><span class="section-number-2">3</span> MySql Java Example compile and build in Intellij <a href="https://bitbucket.org/zsurface/java/src/master/SqlExample/src/">Java MySql Example</a></h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Add $b/javalib8/jar/AronLib.jar to libraries in Intellij.</li>
+<li>Add $b/javalib8/classfile to libraries in Intellij.</li>
+<li>Add $b/javalib8/jar/mysql-connector-java-8.0.15.jar in Intellij.</li>
+</ul>
+
+<div class="figure">
+<p><img src="http://xfido.com/image/add_jdbc_to_intellij.png" alt="add_jdbc_to_intellij.png" width="800px" />                                 
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org362dbb9" class="outline-2">
+<h2 id="org362dbb9"><span class="section-number-2">4</span> MySql Login, Create user and grant permission: <code>mysql 8.x</code></h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li><p>
+login to mysql server.                                                        
+</p>
+<div class="org-src-container">
+<pre class="src src-bash">mysql -u root                                                               
+</pre>
+</div></li>
+<li><p>
+Create user called cat with password                                          
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #859900; font-weight: bold;">create</span> <span style="color: #839496; font-weight: bold;">user</span> <span style="color: #2aa198;">'cat'</span>@<span style="color: #2aa198;">'localhost'</span> identified <span style="color: #859900; font-weight: bold;">by</span> <span style="color: #2aa198;">'mypassword'</span>;                    
+# if the <span style="color: #839496; font-weight: bold;">user</span> can be accessed <span style="color: #859900; font-weight: bold;">from</span> remote.                              
+<span style="color: #859900; font-weight: bold;">create</span> <span style="color: #839496; font-weight: bold;">user</span> <span style="color: #2aa198;">'cat'</span>@<span style="color: #2aa198;">'%'</span> identified <span style="color: #859900; font-weight: bold;">by</span> <span style="color: #2aa198;">'mypassword'</span>;                     
+</pre>
+</div></li>
+<li><p>
+Update user password                                                          
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #859900; font-weight: bold;">ALTER</span> <span style="color: #839496; font-weight: bold;">user</span> <span style="color: #2aa198;">'cat'</span>@<span style="color: #2aa198;">'localhost'</span> identified <span style="color: #859900; font-weight: bold;">by</span> <span style="color: #2aa198;">'mypassword'</span>;                  
+FLUSH <span style="color: #859900; font-weight: bold;">PRIVILEGES</span>;                                                           
+# exit                                                                      
+# login <span style="color: #859900; font-weight: bold;">with</span> <span style="color: #859900; font-weight: bold;">new</span> password                                                   
+mysql -u cat -p                                                             
+
+# remote <span style="color: #839496; font-weight: bold;">user</span>                                                               
+<span style="color: #859900; font-weight: bold;">ALTER</span> <span style="color: #839496; font-weight: bold;">user</span> <span style="color: #2aa198;">'cat'</span>@<span style="color: #2aa198;">'%'</span> identified <span style="color: #859900; font-weight: bold;">by</span> <span style="color: #2aa198;">'mypassword'</span>;                       
+# exit                                                                      
+# login <span style="color: #859900; font-weight: bold;">with</span> <span style="color: #859900; font-weight: bold;">new</span> remote password                                            
+</pre>
+</div></li>
+<li>Grant user to particular table permission.</li>
+<li><p>
+Grant user to access to all tables in a database: mydb.
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"># <span style="color: #859900; font-weight: bold;">grant</span> user1 <span style="color: #859900; font-weight: bold;">to</span> access <span style="color: #859900; font-weight: bold;">to</span> <span style="color: #859900; font-weight: bold;">all</span> tables <span style="color: #859900; font-weight: bold;">in</span> a database mydb.
+<span style="color: #859900; font-weight: bold;">GRANT</span> <span style="color: #859900; font-weight: bold;">ALL</span> <span style="color: #859900; font-weight: bold;">PRIVILEGES</span> mydb.* <span style="color: #859900; font-weight: bold;">on</span> <span style="color: #2aa198;">'user1'</span>@<span style="color: #2aa198;">'localhost'</span>;
+</pre>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge55d8e0" class="outline-2">
+<h2 id="orge55d8e0"><span class="section-number-2">5</span> Create user from remote access in FreeBSD.</h2>
+</div>
+<div id="outline-container-org58b1aea" class="outline-2">
+<h2 id="org58b1aea"><span class="section-number-2">6</span> Mysql Create table, Insert data into  table.</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>One customer to many address.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="color: #859900; font-weight: bold;">CREATE</span> <span style="color: #859900; font-weight: bold;">TABLE</span> IF <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">EXISTS</span> <span style="color: #268bd2; font-weight: bold;">customer</span>;
+<span style="color: #859900; font-weight: bold;">CREATE</span> <span style="color: #859900; font-weight: bold;">TABLE</span> IF <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">EXISTS</span> <span style="color: #268bd2; font-weight: bold;">address</span>;
+<span style="color: #859900; font-weight: bold;">CREATE</span> <span style="color: #859900; font-weight: bold;">TABLE</span> IF <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">EXISTS</span> <span style="color: #859900; font-weight: bold;">order</span>;           
+
+<span style="color: #859900; font-weight: bold;">CREATE</span> <span style="color: #859900; font-weight: bold;">TABLE</span> <span style="color: #268bd2; font-weight: bold;">customer</span>(
+  c_id <span style="color: #b58900; font-weight: bold;">INT</span> <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span> auto_increment <span style="color: #859900; font-weight: bold;">PRIMARY</span> <span style="color: #859900; font-weight: bold;">KEY</span>,
+  <span style="color: #839496; font-weight: bold;">user</span> <span style="color: #b58900; font-weight: bold;">VARCHAR</span>(100) <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
+  password TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
+  <span style="color: #859900; font-weight: bold;">name</span> TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
+  phone TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
+  address TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
+  email TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
+  <span style="color: #859900; font-weight: bold;">foreign</span> <span style="color: #859900; font-weight: bold;">key</span> addr(a_id)
+  <span style="color: #859900; font-weight: bold;">references</span>  address(a_id)
+  <span style="color: #859900; font-weight: bold;">on</span> <span style="color: #859900; font-weight: bold;">delete</span>
+  <span style="color: #859900; font-weight: bold;">on</span> <span style="color: #859900; font-weight: bold;">update</span>
+)
+
+<span style="color: #859900; font-weight: bold;">CREATE</span> <span style="color: #859900; font-weight: bold;">TABLE</span> <span style="color: #268bd2; font-weight: bold;">address</span>(
+  a_id <span style="color: #b58900; font-weight: bold;">INT</span> <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span> auto_increment <span style="color: #859900; font-weight: bold;">PRIMARY</span> <span style="color: #859900; font-weight: bold;">KEY</span>,
+  country TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
+  states  TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
+  city    TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
+  streetname TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
+  addr_num <span style="color: #b58900; font-weight: bold;">INT</span> <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>
+)
+
+<span style="color: #859900; font-weight: bold;">CREATE</span> <span style="color: #859900; font-weight: bold;">TABLE</span> <span style="color: #859900; font-weight: bold;">order</span>(
+  ord_id <span style="color: #b58900; font-weight: bold;">INT</span> <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span> auto_increment <span style="color: #859900; font-weight: bold;">PRIMARY</span> <span style="color: #859900; font-weight: bold;">KEY</span>,
+  item_name TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
+  price <span style="color: #b58900; font-weight: bold;">DECIMAL</span>,
+  <span style="color: #859900; font-weight: bold;">foreign</span> <span style="color: #859900; font-weight: bold;">key</span> ord(c_id) <span style="color: #859900; font-weight: bold;">references</span> customer(c_id)
+  <span style="color: #859900; font-weight: bold;">on</span> <span style="color: #859900; font-weight: bold;">delete</span>
+  <span style="color: #859900; font-weight: bold;">on</span> <span style="color: #859900; font-weight: bold;">update</span>,
+  <span style="color: #859900; font-weight: bold;">foreign</span> <span style="color: #859900; font-weight: bold;">key</span> addr(a_id) <span style="color: #859900; font-weight: bold;">references</span> address(a_id)
+  <span style="color: #859900; font-weight: bold;">on</span> <span style="color: #859900; font-weight: bold;">delete</span>
+  <span style="color: #859900; font-weight: bold;">on</span> <span style="color: #859900; font-weight: bold;">update</span>
+)
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org01086bf" class="outline-2">
+<h2 id="org01086bf"><span class="section-number-2">7</span> Use Sequel Pro sql client to connect your localhost Mysql server, download Sequel Pro <a href="https://www.sequelpro.com">Sequel Pro</a></h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li><p>
+Add password authentication to your my.cnf
+</p>
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #586e75;"># </span><span style="color: #586e75;">/usr/local/etc/my.cnf</span>
+<span style="color: #268bd2; font-weight: bold;">default_authentication_plugin</span>=mysql_native_password
+</pre>
+</div></li>
+<li>After I spend over an hour on the installation Sequel Pro on my MacOS, it crashes when I click around the UI.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: cat</p>
+<p class="date">Created: 2019-08-09 Fri 09:22</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
