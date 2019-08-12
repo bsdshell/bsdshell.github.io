@@ -1,0 +1,14 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+*** Proof there is infinite number of primes
+    + Proof by contradition (Assume there are finite number of primes)
+      + Assume there are $k$ primes and let \( p_1, p_2, \dots p_k \) are all prime numbers
+      + let \( n = p_1 p_2 \dots p_k + 1 \), then $n$ is not a prime, otherwise there is $k + 1$ primes
+      + \( \Rightarrow n - p_1 p_2 \dots p_k = 1 \) 
+      + let p is a prime and \( p \mid n \) $\because$ n is not a prime there exists $p$ such as \( p \mid n \)
+      \begin{align*}
+	     n - p_1 p_2 \dots p_k &= 1 \\
+             \Rightarrow \frac{n}{p} - \frac{p_1 p_2 \dots p_k}{p} &= \frac{1}{p}
+      \end{align*}
+      + left side must be an integer becase of \( p \mid n \) and \( p \mid p_1 p_2 \dots p_k \)
+      + but right side is NOT an integer.
+      + The contradition implies our assumption is False $\square$

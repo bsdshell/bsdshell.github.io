@@ -1,0 +1,47 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+#+TITLE: Haskell Wai Tutorial
+*** What is Wai?
+    + Wai is a common protocol for communication between web application and web server.
+    + Wai can be used to create RESTful web services.
+*** How to install it?
+    #+BEGIN_SRC bash
+     cabal install wai
+    #+END_SRC
+*** First Hello World Example.
+    + [[http://hackage.haskell.org/package/wai-3.2.2.1/docs/src/Network.Wai.html#responseLBS][responseLBS]]
+    #+BEGIN_SRC haskell
+      {-# LANGUAGE OverloadedStrings #-}               
+      import Network.Wai                               
+      import Network.HTTP.Types                        
+      import Network.Wai.Handler.Warp (run)            
+      app :: Application                               
+      app _ respond = do                               
+	  respond $ responseLBS                        
+	      status200                                
+	      [("Content-Type", "text/plain")]         
+	      "Hello, World!"                          
+
+      main :: IO ()                                    
+      main = do                                        
+	  putStrLn $ "http://localhost:8080/"          
+	  run 8080 app                                 
+    #+END_SRC
+*** How to response a file from your Wai server.
+    + [[http://hackage.haskell.org/package/wai-3.2.2.1/docs/src/Network.Wai.html#responseFile][responseFile]]
+    + Assume file ~index.html~ is in the current dir where the server is running.
+    #+BEGIN_SRC haskell
+      plainIndex::Response
+      plainIndex = responseFile
+	  status200
+	  [("Content-Type", "text/html")]
+	  "index.html"
+	  Nothing
+     
+      app _ respond = do
+          respond responseFile
+      main:: IO()
+      main = do
+            run 8080 app
+    #+END_SRC
+*** Wai and Database.
+*** Execute shell command on your Wai server.

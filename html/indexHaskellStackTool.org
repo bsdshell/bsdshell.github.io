@@ -1,0 +1,96 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+#+TITLE: Haskell Stack Tutorial
+** Haskell Stack on Ubuntu
+   + Stack will be installed all file under ~$HOME/.stack~
+** Haskell Stack Tool
+   + Stack is a better tool to build Haskell project.
+     + You can specify your *resolver* and *package names* inside *myproject.cabal* file.
+     + *stack build* will automatically download the packages to stack project. It is like *Java Maven* build.
+   1. Home brew it on your MacOS
+      #+BEGIN_SRC bash
+	brew update
+	brew install haskell-stack
+	# you might need to relink the stack symbol links
+	rm /usr/local/bin/stack
+	brew link --overwrite haskell-stack
+      #+END_SRC
+   2. Find out the location of stack and check your stack version
+      #+BEGIN_SRC bash
+	which stack
+	# /usr/local/bin/stack
+	stack --version
+	# /usr/local/Cellar/haskell-stack/1.9.3:
+      #+END_SRC
+   
+   3. Create new project with Stack called myproject
+      #+BEGIN_SRC bash
+	stack new myproject simple
+      #+END_SRC
+   4. Download GHC for your project, it will take a while to download and it will not interfere your local GHC.
+      #+BEGIN_SRC bash
+	stack setup
+      #+END_SRC
+   5. Build Your Hello World
+      #+BEGIN_SRC bash
+	stack build
+      #+END_SRC
+   6. Run your project
+      #+BEGIN_SRC bash
+	stack exec myproject
+      #+END_SRC
+   7. Add [[http://hackage.haskell.org/package/time][time]] package to your build. ~myproject.cabal~
+      #+BEGIN_SRC bash
+        # myproject.cabal
+	executable myproj
+	hs-source-dirs:      src
+	main-is:             Main.hs
+	default-language:    Haskell2010
+	build-depends:       base >= 4.7 && < 5,
+			     time
+      #+END_SRC
+   8. Now we can use functions(e.g. getCurrentTime) from time package
+      #+BEGIN_SRC haskell
+	import Data.Time
+	main::()
+	main = do
+	     time <- getCurrentTime
+	     putStrLn (show time)
+      #+END_SRC
+      + *stack build* and *stack exec myproject*
+   9. Try to figure out how to use your own module on Stack.
+      + It seems to me you have to put your modules under *src* inside ~.cabal~ file.
+      + You can use symbol link. e.g.
+      #+BEGIN_SRC bash
+	cd src && ln -s $b/haskelllib/AronModule.hs AronModule.hs
+      #+END_SRC
+      #+BEGIN_SRC bash
+        # myproject.cabal
+	hs-source-dirs:  src
+      #+END_SRC
+   10. Use different resolver [[https://www.stackage.org/lts-12.13][Long Term Supported 12.13]] *ghc-8.4.3* in file: *stack.yaml* 
+       #+BEGIN_SRC haskell  
+       -- ghc 8.4.3
+       stack new myproject --resolver=12.13 simple
+       -- check your stack.yaml   				  
+       #+END_SRC            
+   11. GHC 8.6.5 ~resolver: lts-13.28~ [[https://www.stackage.org/lts-13.28][GHC 8.6.5 Resolver 13.28]]
+** Add dependency to .cabal file does not mean the package will be download.
+   + some packages needs to be added to ~stack.yaml~ with extra-deps~
+   + I still did not understand which package are supported to in ~stack.yaml~ or ~myproject.cabal~.
+** Hoogle search function from non standard package
+   #+BEGIN_SRC bash
+    hoogle +package.name function_name
+   #+END_SRC
+** Update Hoogle database
+   #+BEGIN_SRC bash
+     # warning: take lots of horse power. freeze your computer
+     sudo hoogle database all
+   #+END_SRC
+** Change install directory, install binary in ~/tmp/bin~
+   #+BEGIN_SRC bash
+     stack install  --local-bin-path  /tmp/bin
+   #+END_SRC
+** Get executable path
+   #+BEGIN_SRC bash
+     stack path --local-install-root
+   #+END_SRC

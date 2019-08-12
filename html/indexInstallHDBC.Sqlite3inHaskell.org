@@ -1,0 +1,68 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+** HDBC-sqlite3
+    #+BEGIN_SRC bash
+    cabal install HDBC-sqlite3 
+    cabal install sqlite
+    -- run ghci
+    ghci
+
+    -- load module
+    ghci>:module Database.HDBC Database.HDBC.Sqlite3
+    
+    -- create connection
+    ghci>conn <- connectSqlite3 "students.db"
+    -- check the type of connection 
+    ghci>:t conn
+    
+    -- check the function
+    ghci>:t connectSqlite3
+    
+    -- create a table
+    ghci>run conn "CREATE TABLE names (id INTEGER NOT NULL, fname VARCHAR(80), lname VARCHAR(80))" []
+    
+    -- check the type of signature of run
+    ghci>:run
+    
+    -- insert data to table
+    ghci>run conn "INSERT INTO names (id, fname, lname) VALUES(1, 'Edwin', 'Brady')" []
+    
+    -- commit it
+    ghci>commit conn
+    
+    -- query data from table
+    ghci> quickQuery conn "SELECT * from names" []
+    
+    -- login to sqlite3 in Command Line if you want to
+    sqlite3 students.db
+    #+END_SRC
+** sqlite-simple
+    + Install sqlite-simple.
+    #+BEGIN_SRC bash
+      cabal install sqlite-simple
+    #+END_SRC
+    + Local file example.
+    #+BEGIN_SRC bash
+      /Users/cat/myfile/bitbucket/haskell/Sqlite.hs
+      http://hackage.haskell.org/package/sqlite-simple
+    #+END_SRC
+    + Run sqlite from command line with *database* file.
+    #+BEGIN_SRC bash
+      # from my MacOS
+      sqlite3  /Users/cat/myfile/bitbucket/testfile/test.db
+    #+END_SRC
+    + Sqlit console commands, or *sqlit3 -help*
+    #+BEGIN_SRC bash
+      # quit
+      .quit
+      # show tables
+      .tables
+    #+END_SRC
+    + Open connection in Haskell.
+    #+BEGIN_SRC haskell
+      conn <- open "test.db"
+    #+END_SRC
+** Haskell and Sqlite Commands
+   + Empty table
+   + Create table
+   + Insert data
+   + Select data from table

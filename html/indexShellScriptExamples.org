@@ -1,0 +1,238 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+*** Shell Script Examples
+   Shell script is powerful if you could remember all the weird syntax. 
+   Here is the example to show how to use Array in Shell script.
+   Note: readarray only works in Bash 4.x, check your version: bash --version   
+   1. Array in Shell script 1
+      #+BEGIN_SRC bash
+      string='Paris, France, Europe';
+      echo $string
+      readarray -td, array <<<"$string"; declare -p array;
+      ## declare -a array=([0]="Paris" [1]=" France" [2]=$' Europe\n')
+
+      country='Paris/Frence/Europe/Sweden/Croatia';
+      echo $country
+      readarray -td/ array <<<"$country"; declare -p array;
+      for item in "${array[@]}" 
+      do
+        echo "$item" 
+      done      
+      #+END_SRC
+   
+   2. count number of argument
+      #+BEGIN_SRC bash
+      echo "$#"
+      var="string"
+      #+END_SRC
+      
+   3. array in bash                    
+      #+BEGIN_SRC bash                 
+      arr=(                            
+      "dog"                            
+      "cat"                            
+      "rat"                            
+      )                                
+      for var in ${arr[*]}             
+      do                               
+      echo "var=$var"                  
+      done                             
+      #+END_SRC                        
+   
+   4. if statement, one liner                                                                    
+      #+BEGIN_SRC bash                                                                
+      var="$#" && if [ "$var" -eq 2 ]; then echo "two arguments"; else echo "not two argument"; fi
+      #+END_SRC                                                                       
+
+   5. Iterate all files with one line *shell command*
+      #+BEGIN_SRC bash
+      for name in $(ls *); do echo $name; done
+      #+END_SRC
+   6. String matches
+      #+BEGIN_SRC bash
+      for name in $(ls *); do if [[ $name == *"txt"* ]]; then echo $name; else echo ""; fi 
+      #+END_SRC
+   7. Use regex match =~
+      #+BEGIN_SRC bash
+      if [[ $name =~ "txt" ]]; then echo $name; else echo ""; fi
+      #+END_SRC
+   12. Repeat shell command with *watch*
+       If you want to get constantly update information or stream data *shell commands* then you can use *watch* repeats your commands
+       For Exmple, I want to monitor my system *disk usage*
+      #+BEGIN_SRC bash
+	watch df -lah  # default 2 seconds interval
+      #+END_SRC
+      watch shell commands with pipe, e.g. ~ps aux | grep --color httpd~ with *double quotes*
+      #+BEGIN_SRC bash
+      watch "ps aux | grep --color httpd"
+      #+END_SRC
+*** grep Examples
+   0. grep content of file with specified file name extension, show full file name
+      #+BEGIN_SRC bash
+      grep --include="*.java" -Hnris pattern $PWD
+      #+END_SRC
+   1. cat and grep
+      #+BEGIN_SRC bash
+      cat /tmp/file.txt | grep string
+      #+END_SRC
+   2. grep with color
+      #+BEGIN_SRC bash                       
+      cat /tmp/file.txt | grep --color string  
+      #+END_SRC
+   3. grep print NUM line of trailing context file after matching lines, *two line after*
+      #+BEGIN_SRC bash
+      cat file | grep -A 'dog'
+      #+END_SRC
+   4. grep print NUM lines of leading context file before matching lines, *two line before*
+      #+BEGIN_SRC bash
+      cat file | grep -B 'dog'
+      #+END_SRC
+   5. grep inversion              
+       #+BEGIN_SRC bash            
+         # find all non java file  
+         grep -v -E '.java$'       
+       #+END_SRC                   
+   6. grep string that contains "txt", grep matches string                                   
+      #+BEGIN_SRC bash                                                  
+      if echo $name | grep -q "txt"; then echo $name; else echo ""; fi  
+      #+END_SRC                                                         
+   7. grep string its suffix is "txt", e.g. "file.txt"                  
+      #+BEGIN_SRC bash                                                  
+      if echo $name | grep -q "txt$" then echo $name; else echo ""; fi  
+      #+END_SRC                                                         
+   8. grep string its prefix is "file", e.g. "file.txt"                
+       #+BEGIN_SRC bash                                                 
+       # grep -q => no output                                           
+       if echo $name | grep -q "^file" then echo $name; echo echo ""; fi
+       #+END_SRC                                                        
+   9. grep in POSIX basic and extended regular expression              
+       #+BEGIN_SRC bash                                                 
+       # basic regex                                                    
+       ps aux | grep --color 'wai\|filewatcher'                         
+       # extended regex                                                 
+       ps aux | grep --color -E 'wai|filewatcher'                       
+       #+END_SRC                                                        
+*** sed Example
+   #+BEGIN_SRC sh
+   // list file from line 3 to 9
+   sed -n 3,9p file.txt 
+   #+END_SRC
+*** sed does not work on MacOS, sort of
+  + sed on MacOS is BSD version, it does not implement regular expression extension: [[https://www.gnu.org/software/sed/manual/html_node/regexp-extensions.html][GNU regex Extension]]
+  + following characters classes works for GNU sed
+    |----+-----------+-----------------------+------------------------------------------------------|
+    | \w | [a-bA-Z_] | word                  | echo "dog cat" \vert sed 's/\w/X/g' => "XXX XXX"     |
+    | \s |           | whitespace            | echo "dog cat" \vert sed 's/\s/X/g' => "dogXcat"     |
+    | \b |           | match a word boundary | echo "dog cat" \vert sed 's/\b/X/g' => "XdogX XcatX" |
+    | \W |           | non whitespace        | echo "dog cat" \vert sed 's/\W/X/g' => "dogXcat"     |
+  + *gsed* can be installed on your MacOS which is GNU sed.
+  #+BEGIN_SRC bash
+    # does not work on MacOS or FreeBSD
+    echo "dog cat " | sed -E 's/\s*//g'  => "dog cat "
+    echo "dog cat " | gsed   's/\s*//g'  => "dogcat"
+    # it seems gsed does not need flag -E
+  #+END_SRC
+
+*** rsync examples
+   + rysnc file with specified extensions such png, svg etct.
+     + include and exclude files.
+     #+BEGIN_SRC bash
+       # rsync svg, png and jpg files excluding other files.
+       rsync -rvzu --include='*'{svg,png,jpf} --exclude "*"  source  dest
+       # rsync html file excluding other files.
+       rsync -rvzu --include='*.html' --exclude "*"  source  dest
+       # rsync folder
+       rsync -artv folder  source dest
+
+       # rsync local folder with remote folder
+       rsync -artv local_folder user@xfido.com:/var/www/html
+     #+END_SRC
+*** If and Else in Shell Script
+     | *String comparision*  | *Description*                                          |
+     |-----------------------+--------------------------------------------------------|
+     | Str1 = Str2           | Return true if strings are equal.                      |
+     |-----------------------+--------------------------------------------------------|
+     | Str1 != Str2          | Return true if string are NOT equal                    |
+     |-----------------------+--------------------------------------------------------|
+     | -n Str                | Return true if string is NOT null                      |
+     |-----------------------+--------------------------------------------------------|
+     | -z Str                | Return true if string IS null                          |
+     |-----------------------+--------------------------------------------------------|
+     | *Numeric Comparision* | *Description*                                          |
+     |-----------------------+--------------------------------------------------------|
+     | expr1 -eq expr2       | Return true if expressions are equal                   |
+     |-----------------------+--------------------------------------------------------|
+     | expr1 -ne expr2       | Return true if expressions are NOT equal               |
+     |-----------------------+--------------------------------------------------------|
+     | expr1 -gt expr2       | Return true if expr1 is greater than expr2             |
+     |-----------------------+--------------------------------------------------------|
+     | expr1 -lt expr2       | Return true if expr1 is less than expr2                |
+     |-----------------------+--------------------------------------------------------|
+     | expr1 -ge expr2       | Return true if expr2 is greater than or equal to expr2 |
+     |-----------------------+--------------------------------------------------------|
+     | expr1 -le expr2       | Return true if expr2 is less than or equal to expr2    |
+     |-----------------------+--------------------------------------------------------|
+     | *File Conditionals*   | *Description*                                          |
+     |-----------------------+--------------------------------------------------------|
+     | -d file               | Return true if file is a directory                     |
+     |-----------------------+--------------------------------------------------------|
+     | -e file               | Return true if file exists                             |
+     |-----------------------+--------------------------------------------------------|
+     | -f file               | Return true if the provided string is a file.          |
+     |-----------------------+--------------------------------------------------------|
+     | -g file               | Return true if the group id is set on a file.          |
+     |-----------------------+--------------------------------------------------------|
+     | -r file               | Return true if file is readable.                       |
+     |-----------------------+--------------------------------------------------------|
+     | -s file               | Return true if file is a non-zero size.                |
+     |-----------------------+--------------------------------------------------------|
+     | -u                    | Return true if the user id is set on a file.           |
+     |-----------------------+--------------------------------------------------------|
+     | -w                    | Return true if the file is writable.                   |
+     |-----------------------+--------------------------------------------------------|
+     | -x                    | Return true if the file is executable.                 |
+*** Execute remote shell script [[https://serverfault.com/questions/226386/wget-a-script-and-run-it][Execute remote shell]]
+   #+BEGIN_SRC bash
+     wget -O - https://bitbucket.org/zsurface/publicfile/raw/46cc8426ac08e2d575b60312fdc01f6ab6e3656c/test1.sh | bash
+   #+END_SRC
+*** Check whether a command is in *bash*
+   #+BEGIN_SRC bash
+     command -v curl
+     if [ $? ]; then echo "curl exists"; else echo "curl does not exist"; fi
+   #+END_SRC
+*** FreeBSD install ports without prompt [[https://unix.stackexchange.com/questions/5257/how-can-i-avoid-the-prompts-when-installing-a-freebsd-port][make install clean BATCH=yes]]
+   + ports installation is not working.
+   #+BEGIN_SRC bash
+     cd /usr/ports/redis && make install clean BATCH=yes
+   #+END_SRC
+*** Install Redis On FreeBSD
+   #+BEGIN_SRC bash
+     pkg install -y redis
+   #+END_SRC
+*** Enable Redis on FreeBSD
+   #+BEGIN_SRC bash
+     # add redis_enable="YES" to /etc/rc.conf
+   #+END_SRC
+*** Run Redis on FreeBSD
+   #+BEGIN_SRC bash
+     /usr/local/etc/rc.d/redis start
+   #+END_SRC
+*** How to avoid all the ssh-agent and ssh-add BS.
+   + Add follwoing two lines to your ~/.profile, it works in FreeBSD.
+     #+BEGIN_SRC bash
+       eval $(ssh-agent -s)
+       ssh-add ~/.ssh/myprivate_id_rsa
+     #+END_SRC
+*** Here are all the public keys:
+   + MacOS [[https://bitbucket.org/zsurface/publickey/raw/6dd3256f450dd9e3b3f60d90ea5871a4b6a75db1/mymac_id_rsa.pub][MacOS Public Key]]
+   + FreeBSD [[https://bitbucket.org/zsurface/publickey/raw/6dd3256f450dd9e3b3f60d90ea5871a4b6a75db1/freebsd_id_rsa.pub][FreeBSD Public Key]]
+*** Add global shared profile under ~/etc/profile~ in FreeBSD and Ubuntu.
+*** In Haskell, if check whether a file is modified or not, use [[https://hackage.haskell.org/package/unix-2.7.2.2/docs/System-Posix-Files.html#v:modificationTime][modificationTime]]
+   + If the path is directory, the time will be changed if file is added or deleted.
+   + See ~filewatcher.hs~ or ~watchDir~ in ~AronModule.hs~
+   #+BEGIN_SRC haskell
+     modificationTime :: FileStatus -> EpochTime
+   #+END_SRC
+*** Execute remote shell command
+   #+BEGIN_SRC bash
+     ssh user@xfido.com  'cd user; ls;'
+   #+END_SRC

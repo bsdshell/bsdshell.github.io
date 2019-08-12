@@ -1,0 +1,23 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+*** Install Apache Solr, this tutorial is for MacOS but it should work in Linux.
+    + How to install Solr.
+      + download solr from [[http://lucene.apache.org/solr/downloads.html][download solr]] and unzip it.
+    + How to start solr.
+      + change directory to solr.
+      #+BEGIN_SRC bash
+	cd solr-8.1.1
+        bin/start -p 8983
+      #+END_SRC
+    + How to stop solr.
+      #+BEGIN_SRC bash 
+        bin/stop -p 8983
+      #+END_SRC
+    + Check your solr running service from your browser.
+      #+BEGIN_SRC bash
+	http://localhost:8983/solr/#/
+      #+END_SRC
+    + My current binary solr is in following directory.
+      #+BEGIN_SRC bash
+	myfile/install
+      #+END_SRC
+

@@ -1,0 +1,186 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" />
+*** Install Mysql80-server and Mysql80-client in FreeBSD.            
+   #+BEGIN_SRC bash                                                  
+     cd /usr/ports/databases/mysql80-server && make install clean    
+     cd /usr/ports/databases/mysql80-client && make install clean    
+   #+END_SRC                                                         
+
+*** MySql Command line, run shell command                                          
+   + login to mysqld                                                               
+   #+BEGIN_SRC sql                                                                 
+     mysql -u root                                                                 
+     # show database                                                               
+     show databases;                                                               
+     # select database                                                             
+     use mydb;                                                                     
+     # show all tables;                                                            
+     show tables;                                                                  
+     # show scheme                                                                 
+     desc person_table;                                                            
+     # run shell command inside mysqld                                             
+     \! pwd    <- there is a space between \! and pwd                              
+     \! ls                                                                         
+   #+END_SRC                                                                       
+   + MySql Int Type               
+   |--------------+-------------+----------------------+------------------------+---------|
+   | Integer Type | description | Minimum value signed | Maximum value unsigned | Example |
+   |--------------+-------------+----------------------+------------------------+---------|
+   | TINYINT      | 1 Byte      |                    0 | 2^1 - 1                |         |
+   | SMALLINT     | 2 Bytes     |                    0 | 2^2 - 1                |         |
+   | MEDIUMINT    | 3 Bytes     |                    0 | 2^3 - 1                |         |
+   | INT          | 4 Bytes     |                    0 | 2^4 - 1                |         |
+   | BIGINT       | 8 Bytes     |                    0 | 2^8 - 1                |         |
+   |--------------+-------------+----------------------+------------------------+---------|
+   + MySql Date Type
+   |-----------+---------------------------------------------------------------------------------------------+-----------------------|
+   | DATE      | date part but no time part, no time                                                         | '9999-12-31'          |
+   | DATETIME  | date part and time part, range: '1000-01-01 00:00:00' \Rightarrow '9999-12-31 23:59:59'     | '9999-12-31 00:00:00' |
+   | TIMESTAMP | date part and time part, range: '1970-01-01 00:00:01' \Rightarrow '2038-01-19 03:14:07' UTC | '9999-12-31 00:00:00' |
+   |-----------+---------------------------------------------------------------------------------------------+-----------------------|
+*** MySql Java Example compile and build in Intellij [[https://bitbucket.org/zsurface/java/src/master/SqlExample/src/][Java MySql Example]]            
+   + Add $b/javalib8/jar/AronLib.jar to libraries in Intellij.                     
+   + Add $b/javalib8/classfile to libraries in Intellij.                           
+   + Add $b/javalib8/jar/mysql-connector-java-8.0.15.jar in Intellij.              
+   #+attr_html:  :width 800px                                                      
+   [[http://xfido.com/image/add_jdbc_to_intellij.png]]                                 
+*** MySql Login, Create user and grant permission: ~mysql 8.x~                                         
+   + login to mysql server.                                                        
+     #+BEGIN_SRC bash                                                              
+       mysql -u root                                                               
+     #+END_SRC                                                                     
+   + Create user called cat with password                                          
+     #+BEGIN_SRC sql                                                               
+        create user 'cat'@'localhost' identified by 'mypassword';                    
+        # if the user can be accessed from remote.                              
+        create user 'cat'@'%' identified by 'mypassword';                     
+     #+END_SRC                                                                     
+   + Update user password                                                          
+     #+BEGIN_SRC sql                                                               
+       ALTER user 'cat'@'localhost' identified by 'mypassword';                  
+       FLUSH PRIVILEGES;                                                           
+       # exit                                                                      
+       # login with new password                                                   
+       mysql -u cat -p                                                             
+                                                                                   
+       # remote user                                                               
+       ALTER user 'cat'@'%' identified by 'mypassword';                       
+       # exit                                                                      
+       # login with new remote password                                            
+     #+END_SRC
+   + Grant user to particular table permission.
+   + Grant user to access to all tables in a database: mydb.
+     #+BEGIN_SRC sql
+       # grant user1 to access to all tables in a database mydb.
+       # mysql -u root
+       # show database;
+       GRANT ALL PRIVILEGES ON mydb.* TO 'user1'@'localhost';
+     #+END_SRC
+*** Create user from remote access in FreeBSD.
+*** Mysql Create table, Insert data into  table.
+   + One customer to many address.
+   + Foreign KEY [[https://bitbucket.org/zsurface/database/src/master/foreignkey.sql][Mysql Foreigh Key Example]]
+   #+BEGIN_SRC sql
+     CREATE TABLE IF NOT EXISTS customer;
+     CREATE TABLE IF NOT EXISTS address;
+     CREATE TABLE IF NOT EXISTS order;	    
+
+     CREATE TABLE customer(
+       c_id INT NOT NULL auto_increment PRIMARY KEY,
+       user VARCHAR(100) NOT NULL,
+       password TEXT NOT NULL,
+       name TEXT NOT NULL,
+       phone TEXT NOT NULL,
+       address TEXT NOT NULL,		    
+       email TEXT NOT NULL,
+       a_id INT NOT NULL,
+       foreign key addr(a_id)
+       references  address(a_id)
+       on update CASCADE
+       on delete RESTRICT
+     )
+
+     CREATE TABLE address(
+       a_id INT NOT NULL auto_increment PRIMARY KEY,
+       country TEXT NOT NULL,
+       states  TEXT NOT NULL,
+       city    TEXT NOT NULL,
+       streetname TEXT NOT NULL,
+       addr_num INT NOT NULL
+     )
+
+     CREATE TABLE order(
+       ord_id INT NOT NULL auto_increment PRIMARY KEY,
+       item_name TEXT NOT NULL,
+       price DECIMAL,
+       c_id INT NOT NULL,
+       foreign key ord(c_id) references customer(c_id)
+       on update CASCADE
+       on delete RESTRICT
+       a_id INT NOT NULL,
+       foreign key addr(a_id) references address(a_id)
+       on update CASCADE
+       on delete RESTRICT
+     )
+   #+END_SRC
+*** Use Sequel Pro sql client to connect your localhost Mysql server, download Sequel Pro [[https://www.sequelpro.com][Sequel Pro]]
+   + Add password authentication to your my.cnf
+     #+BEGIN_SRC bash
+       # /usr/local/etc/my.cnf
+       default_authentication_plugin=mysql_native_password
+     #+END_SRC
+   + After I spend over an hour on the installation Sequel Pro on my MacOS, it crashes when I click around the UI.
+*** Java MySql Connection Manager
+  + Create Connection Manager in Java
+  + Connect to MySql inside my MacOS.
+  + *Database*: test1
+  + *Table*: snippet ~/Users/cat/myfile/bitbucket/database/snippet.sql~
+  + *user*: aron
+  + *passwd*: 1234
+  + [[https://bitbucket.org/zsurface/java/src/master/SqlExample/src/Main.java][Java Sql Example]] Intellij Project
+  + ~/Users/cat/myfile/bitbucket/java/SqlExample~
+  #+BEGIN_SRC java
+    class DBManager{
+	final static String user = "aron";
+	  final static String pass = "1234";
+	  final static String db = "test1";
+	  final static String timezone = "&serverTimezone=UTC";
+
+	  /**
+	   * Create connection with Mysql on MacOS. with JDBC driver under $b/javalib/jar/mysql-connector-java
+	   * https://mvnrepository.com/artifact/mysql/mysql-connector-java
+	   * @return
+	   */
+	  public static Connection connect(){
+	      Connection connect = null;
+	      try {
+		  Class.forName("com.mysql.cj.jdbc.Driver");
+		  connect = DriverManager.getConnection(
+		      "jdbc:mysql://localhost:3306/" + db + "?useSSL=false" + timezone + "&requireSSL=false", user, pass
+		      );
+	      }catch(Exception e){
+		  e.printStackTrace();
+	      }finally{
+		  p("Clean up");
+	      }
+	      return connect;
+	  }
+      }
+  #+END_SRC
+
+   
+*** Design a payment table
+   + payment table
+   |--------------+--------------------------------|
+   | p_id         | INT auto_increment PRIMARY KEY |
+   | payment_type | INT NOT NULL                   |
+   | customer_id  | INT NOT NULL                   |
+   |--------------+--------------------------------|
+   + Payment type table
+     + Paypal method table
+     |-------------+--------------------------------------------|
+     | pp_id       | INT auto_increment PRIMARY KEY             |
+     | pp_email    | VARCHAR(200) NOT NULL                      |
+     | cust_id     | FOREIGN KEY (cust_id) REFERENCES (cust_id) |
+     | create_date | DATETIME NOT NULL                          |
+     |-------------+--------------------------------------------|
+     + Credit Card table

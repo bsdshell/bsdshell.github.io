@@ -1,0 +1,16 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+*** The Project automatically sync local git repos with other local host git repos.
+   + What does it mean?
+     + If you develope a library and want to share it with other host or vm. Assume you host your code in Github or Bitbucket.
+     + Each time you push your code to repos, and other host needs to git pull so they have the same copy of your code.
+     + The project will automatically git pull in other host.
+   + How do it work?
+     + Each time git push on the local machine, a git repos name is appended to a file and the file is push to git repos.
+     + On other host, it run a simple shell script to check whether the file is updated periodically.
+     + If the file is updated, it means the repos name is in the updated entries and git pull can be applied on the repos name.
+     #+attr_html: :width 600px
+     [[http://localhost/image/bitbucketsync.png]]
+*** MySql Java Example [[https://bitbucket.org/zsurface/java/src/master/SqlExample][Java MySql Example]]
+   + Java connects to Mysql from localhost.
+     + Libraries needs JDBC 8.x under $b/javalib8/jar or jar file from [[https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.17][Java Mysql JDBC]]
+     + Add jdbc driver jar file to Intellij.

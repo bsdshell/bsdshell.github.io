@@ -1,0 +1,5 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" />
+** This is test page
+   #+BEGIN_SRC haskell
+     fun::String -> String
+   #+END_SRC

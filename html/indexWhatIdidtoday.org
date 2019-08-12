@@ -1,0 +1,908 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" />
+*** Haskell *Text.RawString.QQ* is useful for Html, Sql and Regular expression.
+   + Use Haskell package *Text.RawString.QQ* to simplify Html multiple lines in Haskell
+   + Need LANGUAGE *QuasiQuotes* too
+   + [[http://hackage.haskell.org/package/raw-strings-qq-1.1/docs/Text-RawString-QQ.html][RawString QQ Example]]
+   #+BEGIN_SRC haskell
+     {-# LANGUAGE QuasiQuotes       #-}
+     package Text.RawString.QQ
+
+     multipline = [r| 
+		  <p>"dog"</p>
+		  <p>"cat"</p>
+		  |]
+   #+END_SRC
+   + Added code to process background process in Shell from Web Input in wai server
+     #+BEGIN_SRC bash
+	"x nohup filewatcher &" 
+     #+END_SRC
+   + ghci does not load package into Ghci if you use :load myhaskell.hs
+     It causes lots of confusing when you load your code inside ghci
+*** There is issue when stack build WaiLib.hs
+   + I can build WaiLib.hs with *GHC*, but there is error with *Text.RawString.QQ* code when *stack build* is used.
+   + Have no idea what is going on.
+*** Added Javascript to edit code block
+   1. Added Javascript to listen to onclick event, e.g. enable/disable TextArea visibility
+   2. Hide header to TextArea with css ~display:none~
+   3. Generate id for each code block in TextArea
+   4. Go through each code block and remove the edited code block from a list
+   5. Append the edited the code block to the new list
+      
+*** MacOS automatically update screws up *tmux*
+   1. *tmux* can not start up
+      - reinstall tmux:
+	#+BEGIN_SRC bash
+	  brew uninstall --force tmux
+	  brew install tmux
+	#+END_SRC
+
+	
+
+   *`'*  ` `dd vim script to check definition of Haskell function with Timer and ~job_start()~
+   1. Create a timer which calls a function every n seconds, e.g. 0.5 second ~timer_start()~
+   2. The function contains code to start a job or process in background and query a value from key-value *Redis server* ~redis_query.hs~
+      The key is the current *word* under current *cursor*
+   3. The function calls ~systemlist()~ and passes ~$b/redis_query.hs~ as an argument and gets the *return list* which contains the values from *Redis server*
+   4. Use ~echo~ to display the *return list* at the bottom of *Vim*
+
+*** Haskell show, print and putStr or putStrLn
+   1. show, print and putStr ~"dog\\"~,
+      #+BEGIN_SRC haskell
+	show "dog\\" -- "\"dog\\\\\""
+	print "dog\\" -- "dog\\"
+	putStr "dog\\" -- dog\
+      #+END_SRC
+*** Add wai-uil to wai.hs Server for redirecting response URI
+   1. Install wai-uti with ~cabal install wai-uti~
+   2. Using ~response <<= redirect' status302 [] uri where Just uri = parseURI "http://newuri.com"~
+      [[https://bitbucket.org/zsurface/haskell_webapp/src/master/wai.hs][wai.hs]]
+
+*** Solve "Insert a node into a binary tree", it seems to be an easy question, but it is tricky to get it right on the first try.
+   + Two ways to solve the problem.
+     1. Use *Iteration* with ~while~
+	+ Start from the root node as current node.
+	  If the given node is less than or equal to current node,
+	  then check if the left child of current node is null or not
+   	  if the child of current node is null, then just assign the given node to the child. Done
+   	  else using ~tmp = tmp.left~ to goto next child of current node.
+	  otherwise repeat the same thing in the right subtree.
+     2. Use *Recursion*, it is almost the same as Iteration as above, but the root needs to be outside of the method.
+   + Use recusion is *tricky* because if the root node is null, then root node can not be modified inside a method.
+   + The best way to do is to use *Iteration*
+     #+BEGIN_SRC java
+       // Iteration
+       public static void insert(Node node){
+	   Node curr = root;
+	   // left subtree
+	   if(node.data <= curr.data){
+	       if(curr.left == null)
+		   curr.left = node;
+	       else
+		   curr = curr.left;
+	   }else{
+	       // right subtree
+	       if(curr.right == null)
+		   curr.right = node;
+	       else
+		   curr = curr.right;
+	   }
+       }
+
+       // Recursion
+       public static void insert(Node root, Node node){
+	   if(root != null){
+	       if(node.data <= root.data){
+		   if(root.left == null)
+		       root.left = node;
+		   else
+		       insert(root.left, node);
+	       }else{
+		   if(root.right == null)
+		       root.right = node;
+		   else
+		       insert(root.right, node);
+	       }
+	   }
+       }
+     #+END_SRC
+   
+*** DONE Hair cut
+    CLOSED: [2019-05-20 Mon 18:32]
+    1. 17$ for the stupid hair cut.
+*** DONE Added three buttons: add, update and delete to wai.hs
+    CLOSED: [2019-05-20 Mon 18:32]
+    1. There is an issue in ~runSh~ function. For example. For instance, "mv" command does not work properly.
+*** DONE Do my laundry
+    CLOSED: [2019-05-20 Mon 18:32]
+*** DONE Install Vim 8.1.135, and fix symbol link with the Vim syntax.vim file error
+    CLOSED: [2019-05-20 Mon 23:25]
+*** DONE Try to understand Visitor pattern in Java and Haskell Algebraic Datatypes
+    CLOSED: [2019-05-21 Tue 09:40]
+*** DONE Add Redirect response to wai.hs with wai-uti 
+    CLOSED: [2019-05-21 Tue 16:18]
+*** DONE pushall respositories to bitbucket
+    CLOSED: [2019-05-21 Tue 16:38]
+*** DONE fix resume a bit
+    CLOSED: [2019-05-21 Tue 16:39]
+*** TODO Need to add more detail to resume
+*** TODO Buy a new pot and buy some rice
+*** DONE Open new paypal account
+    CLOSED: [2019-05-27 Mon 12:32]
+*** DONE Add color to wai.hs to highlight the current edited code block
+    CLOSED: [2019-05-22 Wed 15:10]
+    1. when current code block is clicked, change the background of pre
+    2. Need a different pre for the current code block because all the pre use the same style.
+    3. Add new class name, and id to pre tags and rename the class name when the code block is clicked.
+       
+*** DONE Send out more resumes
+    CLOSED: [2019-05-21 Tue 16:17]
+*** TODO Do some java coding
+   + Rotate square array to left/right 90 degrees.
+   + Balance brackets.
+   + Rotate spiral rectangle.
+   + Insert a node into a binary tree.
+   + Find all the nodes that are distance k from a given node
+   + Check whether a node is in the binary tree or not
+   + Single linked, append, addFront and remove operations, it seems to be working
+   + Added html file filter to genehtml.hs to avoid error when genehtml reads non-html file.
+   + Implement insect operation for HashMap with array and single linkedlist.
+     1. Remember to increase the count if a node is inserted
+     2. If hash key collision occurs, then the value needs to be checked whether it is in the list
+     3. When walking through the list, previous node need to be kept.
+     4. Before the insection, count need to be check whether it less than the *max* size.
+   + Implement *HashMap* insect operation using binary tree.
+   + Check a binary tree is whether a *BST*.
+     1. Use backtrack.
+     2. Use *BST* definition.
+   + Added PriorityQueue code example, ~java.util.PriorityQueue~, and use lambda for comparatoin,.
+     Add code using ~Comparable<Person>~ and ~Comparator<Person>~
+     #+BEGIN_SRC java
+       class Person{
+	   String firstName;
+	   String lastName;
+	   public Person(String f, String l){
+	       this.firstName = f;
+	       this.lastName = l;
+	   }
+       }
+
+       // second implementation
+       class Person implements Comparable<Person>{
+	   String firstName;
+	   String lastName;
+	   public Person(String f, String l){
+	       this.firstName = f;
+	       this.lastName = l; 
+	   }
+	   public int compareTo(Person other){
+	       return this.firstName.compareTo(other.firstName);
+	   }
+       }
+
+       PriorityQueue queue = new PriorityQueue((\a, b) -> a.firstName.compareTo(b.firstName));
+       queue.add(new Person("David", "lee"));
+       queue.add(new Person("Tommy", "kee"));
+       queue.add(new Person("Jacky", "kuu"));
+       while(!queue.isEmpty()){
+	   Person p = queue.remove();
+	   System.out.print(p.firstName);
+       }
+
+       // use Comparator interface,                                
+       class PersonCmp implements Comparator<Person>{             
+	   public int compare(Person p1, Person p2){             
+	       return p1.firstName.compareTo(p2.firstName);        
+	   }                                                     
+       }                                                          
+       Collections.sort(new PersonCmp());                         
+     #+END_SRC
+   + Added merge two sorted lists.
+   + Added Lease Recent Used code.
+   + Added Double linked List, delete, append and insertFront.
+   + Read file line by line and split them.
+   + Serialize and deserialize binary tree with map.
+     + Use map with \( k=0, 2*k + 1, 2*k + 2, \dots \) to index binary node.
+     + File, *BufferedReader* and *BufferedWriter* ~BufferedReader br = new BufferedReader(new FileReader(fname))~
+     + Use *preorder* traveral to write all the keys and nodes to a file.
+     #+BEGIN_SRC java
+       public void serialize(Node curr, Integer k, BufferedWriter bw){
+	   // preorder traveral
+	   // handle IOException here
+	   // k=0, k=1, k=2, k=3 ...
+	   bw.write(k + " " + curr.data + "\n");
+	   serialize(curr.left, 2*k + 1);
+	   serialize(curr.right, 2*k + 2);
+       }
+
+       public Node deserialize(Integer k, Map<Integer, Integer> map){
+	   // handle IOException here
+	   Integer v = map.get(k);
+	   if(v != null){
+	       Node root = new Node(v);
+	       root.left = deserialize(2*k + 1, map);
+	       root.right = deserialize(2*k + 2, map);
+	       return root;
+	   }
+	   return null;
+       }
+       // other implementation, use iteration for preorder traveral to read node from file, and build the tree
+     #+END_SRC
+     + Use *preorder* traveral from map and build a tree *from bottom and up*.
+*** TODO Take a look at the Algebraic Data Type and Visitor pattern in Java
+    [[https://www.ahnfelt.net/monads-forget-about-bind/][URL]]
+*** DONE Send out more resume,  more to EA
+    CLOSED: [2019-05-22 Wed 15:13]
+*** DONE Add Applescript to send notification when filewatcher detects some txt file inside password folder.
+    CLOSED: [2019-05-28 Tue 08:40]
+*** DONE Finally figure out how to use multiple putStrLn in Agda
+    CLOSED: [2019-05-28 Tue 08:40]
+    
+*** DONE Refactor filewatcher.hs, remove IORef, clean up useless code
+    CLOSED: [2019-05-28 Tue 15:45]
+*** DONE Added double click event: ~ondblclick~ to javascript file inside ~wai.hs~ to improve user experience.
+*** DONE Finished Osense intervew take-home assignment.
+    1. Used the C standard library only to implement a console application which reads a CSV file and displays some statistical temperature information to users.
+       + Read a CSV (comma-separated value) file line by line.
+       + Allocate memory to store all the temperatures in an array.
+       + Implement a quick sort function to sort the array.
+       + Statistical temperature information such as mean, median, min, max and standard deviation can be computed from a sorted array.
+*** DONE Wrote a shell script to simplify gcc compilation process. ~$scr/gcc_compile.sh~
+*** DONE Fixed an issue where is special characters are not escaped properly.
+*** DONE Xencall call HR interview
+    + What did you do in Amazon?
+    + Do you know PHP, CSS and Javascript?
+*** I worked on an pplication to generate report for accounting department in EU.
+    + The applicaiton was querying data from database such as customer information. 
+    + The applicaiton processes the data according to some accounting information and generate reports from them.
+    + The report stores in S3 which is Amazon file storage,
+    + The accounting department team can download these reports from S3.
+    + Technologies that we used:
+    + The application is Java based.
+    + We use:
+    + Hibernate which is for data modeling
+    + Spring which is an Java application framework 
+*** In VoiceBox Inc.
+    + Development application to generate nature language in English.
+    + The application generate sentences from a set of rules.
+    + e.g. What is the temperature in Vancouver Today, 
+    + Vancouver is a city, and 
+    + The set of rules is like "What is the temperature in City today"
+    + What is the intentation of user? 
+    + For example, do I need a jacket today?
+*** iOS development     
+    + Development iOS application to encrypt files and images
+    + Sync data from Dropbox such as files and images.
+    + The application is ObjectiveC based.
+*** DONE Interview with expa.com
+    + Tell me a little bit about yourself.
+    + What did you do in Amazon?
+    + Problem solving
+    + Find a maximum profit from a given list of trade prices.
+      #+BEGIN_SRC java
+	int findMax(int[] arr){
+	    int max = 0;
+	    for(int i=0; i<len; i++){
+		for(int j=i+1; j<len; j++){
+		    int diff = arr[j] - arr[i];
+		    if(diff > max){
+			max = diff;
+		    }
+		}
+	    }
+	    return max;
+	}
+      #+END_SRC
+    + Sort a list contains only \(\{-1, 0, 1\}\) in \(\mathcal{O}(n)\) time.
+      #+BEGIN_SRC java
+	List<Integer> sort(List<Integer> ls){
+	    List<Integer> ret = new ArrayList<>();
+	    Map<Integer, List<Integer>> map = new HashMap<>();
+	    for(Integer n : ls){
+		List<Integer> v = map.get(n);
+		if(v == null){
+		    v = new List<Integer>();
+		}
+		v.add(n);
+		map.put(n, v);
+	    }
+
+	    for(Integer n : Arrays.asList(-1, 0, 1)){
+		List<Integer> ls = map.get(n);
+		if(ls != null){
+		    ret.addAll(ls);
+		}
+	    }
+	    return ret;
+	}
+      #+END_SRC
+    + It turned to be those people in expa.com never response me any interview result.
+      
+*** DONE Implement *Eight Queens* problem in Haskell
+    + Functions that use in the code
+      + Sum the left and right diagonals of a matrix.
+      + Validate each move whether it is valid or not.
+      + Function to modify element in 2d matrix.
+      + Recursion function to find ONE solution.
+	#+BEGIN_SRC bash
+	  /Users/cat/myfile/bitbucket/haskell/eightQueen.hs
+	#+END_SRC
+
+*** DONE Added code: Post Html form, and retrieve data from Html Input box, insert data to Sqlite-simple DB.
+*** DONE Added code: Integrate Sqlite-simple to wai.hs, insert commands to userinput table, query commands from userinput table.
+*** DONE Refactored code: Clearn up some unnecessary code.
+*** DONE A guy asks me to meet as Benze Coffee around Hamilton St. and Helmcken St. from a company called Linquet.com
+    CLOSED: [2019-06-13 Thu 09:42]
+    + Not sure what I will expect
+*** DONE Integrate Ajax to wai.hs, send Json data to Server, and get response from Server in client side.
+*** DONE I has an interview with Xencall today. 
+    + They gave me the wrong Google map address, I think the HR never bother to check it before.
+    + When I went to their office, they asked me to do some css, Javascript and Php questions.
+    + I just walked out their office:)
+*** DONE Interview with a company called Impact Recruitment last Friday.
+    + When I went to their office, a woman called Grace Mok came out to meet me.
+    + I realized they are just a recruitment company.
+    + She asked me a few questions about my resume. What did you do in this company?
+    + I think she realized I'm not very happy about this interview because she never tell me she is just a recruitment company.
+    + The company web site is not even working propertly. It is just a BS company.
+*** Download Vertex Buffer Object(VBO) and play around it.
+   + I download an example and put it in ~$b/opengl/vboCube~.
+   + After I commented out a few line of code, I can compile it successfully.
+   + There are a few steps to create Vertex Buffer Object in OpenGL.
+     + Generate buffer object's name.
+     + Bind a name buffer object.
+     + Creats and initializes a buffer object's data store.
+     + Delete Buffer.
+     + [[/Users/cat/myfile/bitbucket/opengl/vboCube/src][VBO Example]]
+     + [[https://www.khronos.org/registry/OpenGL-Refpages/es2.0/xhtml/glGenBuffers.xml][glGenBuffer]]
+     #+BEGIN_SRC c++
+       glGenBuffer(GLsize n, GLunit* buffers)
+     #+END_SRC
+     + Bind a named buffer object.
+     + [[https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glBindBuffer.xhtml][glBindBuffer]]
+     #+BEGIN_SRC c++
+	glBindBuffer(Glenum target, GLunit buffer)
+     #+END_SRC
+     + Creates and initializes a buffer object's data store.
+     + [[https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glBufferData.xhtml][glBufferData]]
+     #+BEGIN_SRC c++
+	glBufferData(GLenum target, GLsizept size, const GLvoid* data, GLenum usage)
+     #+END_SRC
+     + Delete Buffer.
+     + [[https://www.khronos.org/registry/OpenGL-Refpages/es2.0/xhtml/glDeleteBuffers.xml][glDeleteBuffers]]
+     #+BEGIN_SRC c++
+       glDeleteBuffers(GLsize n, const GLunit* buffers)
+
+       // delete vertex buffer objects before your code exits.
+       GLsize vboId = 0;
+       glDeleteBuffers(1, &vboId);
+       GLsize iboId = 0;
+       glDeleteBuffers(1, &iboId);
+     #+END_SRC
+    
+*** DONE Interview with Eletronic Art.
+    + They did not ask me any technical problem.
+    + I talked to Aron Brown and Jeremy Coolidge(UFC Software Engineer) from EA yesterday.
+    + They asked me What did I do in Amazon and VoiceBox Inc.
+    + How did you solve some hard problems.
+    + How did you optimize some applicaitons.
+    + What database did you use?
+    + Do you play game?
+    + They described a bit about their team such as the tools they used in EA.
+*** DONE Implement Javascript editor with CSS.
+   + It is hard to implement text editor.
+   + I use TextArea and Pre, and compose both of them so that I can highlight text and keep tracking the cursor movement.
+   + I changed ~pre~ to ~div~ for rendering the text today.
+   + There is still an issue on the *cursor* or *caret*. Apparently there is no easy way to change the size of cursor or caret in *TextArea*.
+   + Optimize the rendering code a bit today.
+     + Use *Javascript* ~var map = Map()~ to store all the lines.
+     + When a user starts to edit the text, the line number will be detected. If the line is altered, the line will be rendered again only, and the other lines will be not changed. 
+     The cursor on the editor is from the bottom of *TextArea*. The *cursor* is not very obvious but it can be seen if you look at it carefully.
+     + What did I learn from it today?
+	+ You can *overlap* two *div*s together.
+	+ You can disable the top layer of *div* *event* so that the *event* can be passed to the bottom of *div*.
+	+ You can enable *div* to be editable with ~contenteditable='true'~.
+	+ You can hide *div* with ~display:none~.
+	+ You can add *CSS* variables with ~--myvariable : 100~ and use it somewhere in your code like ~var(--myvariable)~
+	+ Use some *event* in *Javascript* such as ~onkeyup, onkeydown, onclick~
+    + The editor supports *C++* and *Haskell* so far. 
+      
+*** DONE Create new profile in Iterm2 
+    + Goto *Reference*
+    + Click on *Profile*
+    + Add a profile name.
+    + [[http://localhost/image/Iterm2_profile.png][Iterm2 Profile]]
+*** I have onsite interview today with EA, I will meet a technical director Jun Wang and Kelly Tainton and Aron Brown and Chris Olson.
+    + I have no idea what to expect, whatever.
+    + Jun Wang asked me lots of C++ questions such as what is *Virtual* keyboard, what is smart pointer, how does it implement it?
+      + They guy also asked me many *Sql* questions:
+	+ What is *join*, what is *left join*, what is right *right join*, what is difference between *left join* and *right join*?
+	  + I have no idea what is the difference between *left join* and *right join*.
+	  + I think I need to upgrade some *Sql* note. [[http://localhost/html/indexSQL.html][Sql Note]]
+	  + I'm kind of remembering the picture of *left join* and *right join*
+	  + *Inner join* is like \( a \cap b \) *intersection* of two tables.
+	  + *Outer join* is like \(a \cup b \) *union* of two tables. 
+          + *Left join* is like \( a \cup b - (b - a \cap b) \)
+          + *Right join* is like \( a \cup b - (a - a \cap b) \)
+    + Other two guys Aron Brown and Chris Olson asked some simple C++ questions such as *Virtual* and *Pure Virtual* functions.
+    + Normal Inheritence.
+    + Chris Olson also asked one code question which is pretty easy.
+      + Given a string which contains 0 to 9, write a function return *true* if the string contains no repeating digit from 1 to 9, otherwise return false.
+      + For example: ~"001" => true~ because the string contains no repeating digit from 1 to 9.
+      + For example: ~"00101" => false~ because the string contains repeating digit: 1.
+	#+BEGIN_SRC C++
+	  bool isRepeating(string s){
+	     bool arr[9];
+	     bool ret = true;
+	     for(int i=0; i<s.length && ret; i++){
+	       int c = (int)s[i] - '0';
+	       if(c > 0){
+                 if(!arr[c-1]){
+                   arr[c-1] = true;
+                 }else{
+                   ret = false;
+                 }
+	       }
+	     }
+             return ret;
+	  }
+	#+END_SRC
+      + It seems to me they really care someone who has deep knowledge in C++.
+      + After a few days, I did not get any response from HR: Lynn Luong. 
+      + They will just ignore your result if you did not get any offer.
+      + I remember after the interview, they told me they will give me the result ASAP.
+*** Today, I try to include some or import some functions from Javascript to html file, but it is so tricky I still have no idea how to do it.
+    + Include or import some library to a file, it should be trivial. But in Javascript it is tricky.
+      + Actually I just found out I have mistake on my *wai.hs* code. The following code should work in Html file.
+	#+BEGIN_SRC html
+	// aronlib.js 
+        // fun(){};
+        <script src="./aronlib.js">
+          fun();
+        </script>
+	#+END_SRC
+    + If you want to import module from Javascript to Javascript file, then you can find some solution
+    + But I can not find a solution from *Javascript* to *Html*
+    + It turned to be my Haskell server *does not* send the right MIME type: ~Content-Type: text/javascript~, instead ~Conent-Type: text/html~ only
+    + On ~$b/haskell_web/wai.hs~ file, here is the code to cause the javascript error.
+    #+BEGIN_SRC haskell
+      responseEditor:: Response
+      responseEditor = responseFile
+	  status200
+	  [("Content-Type", "text/html")]
+	  "compileCode.html"
+	  Nothing
+    #+END_SRC
+    + *Content-Type : text/html* \( \rightarrow \) Html file only.
+    + *Content-Type : text/javascript* \( \rightarrow \) javascript.
+    + Wai.hs web server does not work for following code:
+    #+BEGIN_SRC javascript
+     // aronlib.js 
+     function fun(){ console.log('hello');}
+     <script scr="./aronlib.js">
+     </script>
+    #+END_SRC
+*** DONE Handle Second request from the first request in Haskell Wai API.
+    + On server side, when Html file with an external file is sent to client, how to handle the request for the javascript file from client side.
+    + [[/Library/WebServer/Documents/zsurface/image/wai_request_response.jpg][Wai Request Response]]
+    + A handler needs to be created for the Javascript file.
+      
+*** Interview with Amdoc today and I have no idea what to expect from them.
+    + [[https://www.glassdoor.ca/Job/vancouver-software-developer-jobs-SRCH_IL.0,9_IC2278756_KO10,28.htm?rdserp=true&jl=3267665595&guid=0000016bd7bf8303bad51d09c08ee95e&pos=109&src=GD_JOB_AD&srs=EI_JOBS&s=21&ao=441906][Amdoc Job Description]]
+    + Google around the company and found the company is doing software as service(SAS) thing.
+    + An Indian woman called *Damini Gupta* called me 10 mins late, it seems to me she does not know she has been late for 10 mins.
+    + Do you know about *Amdoc*? and we have legacy software called bah bah..
+    + Do you know *mogoDB*... do you use bah bah *script language*? bah bah..
+    + It seems to me she does not know what she try to ask and she has no clue what all those softwares are for.
+    + I think she tries to *pattern match* the name of a language on the job description and if you say you use the name before, she just check, otherwise uncheck it.
+*** Work on an App to take all the pdf file from a directory and display its names on browser.
+   + What I have learned from the App.?
+     + Using *Data.Text* is painful in Haskell.
+     + Again, use *Text.RawString.QQ* is helpful for Html code as String in Haskell.
+     + *Text.RawString.QQ* supports *Data.Text*, e.g. ~[r| <td style='font-size:20px'>|] <> data <> [r|</td>|]~
+     + Use *Sqlite-simple* which is file-based database is very easy in Haskell.
+       + Create Record
+       #+BEGIN_SRC haskell
+        data PDFInfo = PDFInfo{pid::Int64, title::Text, pdesc::Text, path::Text} deriving(Show, Eq)
+       #+END_SRC
+       + Implement Type class *FromRow* and *ToRow*
+       #+BEGIN_SRC haskell
+         -- Data.Int(Int64)
+	 instance FromRow PDFInfo where
+	     fromRow = PDFInfo <$> field <*> field <*> field
+
+	 instance ToRow PDFInfo where
+	     toRow (PDFInfo pid title pdesc path) = toRow (title, pdesc, path) 
+       #+END_SRC
+       + Open connection
+       + Use *Text.RawString.QQ* to create a query string for execution. e.g. insert record *PDFInfo* to ~mytable~
+       #+BEGIN_SRC haskell
+	 let query = [r| INSERT INTO mytable (title, pdesc, path) VALUES(?, ?, ?) |] (PDFInfo 0 title pdesc path)
+         execute conn query
+       #+END_SRC
+       + The *Semigroup* operator in Haskell is ~<>~, it can be *String* or *Data.Text* and *ByteString*
+	 + Semigroup is Monoid without an Identity.
+	 + Semigroup is superclass of Monoid in Haskell.
+       #+BEGIN_SRC haskell
+	 let a = "dog"::Data.Text
+	 let b = "cat"::Data.Text
+	 let c = a <> b
+
+	 let a = "dog"::BS.ByteString
+	 let b = "cat"::BS.ByteString
+	 let c = a <> b
+
+	 let a = "dog"::String
+         let b = "cat"::String
+         let c = a <> b
+       #+END_SRC
+*** Install Haskell Platform inside Ubuntu VM and realize it is 8.0.x version.
+   + Run following command to install *Stack* inside *Ubuntu*.
+   #+BEGIN_SRC bash
+     curl -sSL https://get.haskellstack.org/ | sh
+     # update stack
+     stack update
+   #+END_SRC
+   + Install Haskell *ghc 8.4.3* inside Ubuntu.
+     + Download ~ghc-8.4.3-x86_64-deb9-linux.tar.xz~ and unzip it
+     + Extract with: ~tar xf ghc-8.4.3-x86_64-deb9-linux.tar.xz~
+     + cd to *ghc-8.4.3* and run: ~sudo make install~
+     + ghc will be in ~/usr/local/lib/ghc-8.4.3/bin~ my Ubunut
+*** Install some Emacs Themes from [[https://pawelbx.github.io/emacs-theme-gallery/][Emacs Theme Gallery]] today.
+   + Emacs is much easier than Vim when installing new themes.
+   #+BEGIN_SRC bash
+     M-x package-install RET theme_name RET
+     # update your .emacs file
+     (add-to-list 'custom-theme-load-path "/Users/cat/myfile/bitbucket/emacstheme/")
+   #+END_SRC
+*** Add GenePDFHtml.hs to bitbucket as repos. [[https://bitbucket.org/zsurface/genepdfhtml/src/master/][GenePDFHtml]]
+   + What technologies does the project use?
+     + It uses *Sqlite* as storeage.
+     + It uses Haskell package *Text.RawString.QQ* to simplify *Html* code inside Haskell.
+     + It uses Haskell Record to map *Sqlite* table for query.
+   + What does GenePDFHtml does?
+   + Open a directory that contains pdf files.
+   + Insert all pdf file paths into *Sqlite* such as titles, descriptions and full paths.
+   + Generate Html file from database tables.
+*** TODO Add GenePDFHtml.hs to Wai.hs Server
+   + Create new handler for *GenePDFHtml.hs*                         
+   + Add *POST* form inside *GenePDFHtml.hs* generating Html.        
+   + Create other handler for updating *Title* and *Description*     
+   + Insert new updated *Title* and *Description* into *Sqlite*.     
+   + Resend the updated Html to client side.
+*** Replace gluPerspective with glFrustrum in OpenGL
+   + [[https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/gluPerspective.xml][gluPerspective]] [[https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glFrustum.xml][glFrustrum]] [[http://localhost/html/indexUnderstandOpenGL.html][Understand OpenGL]]
+   #+BEGIN_SRC c++
+     void myPerspective(GLdouble fov, GLdouble aspect, GLdouble zNear, GLdouble zFar){
+      // fov/2 => angle from top to the floor.
+      GLfloat fH = tan ((fov/2)*(pi/180))*zNear;  // pi/180 = radian per degree
+      GLfloat fW = fH*aspect;   // fW/fH = aspect
+      glFrustum(-fW, fW, -fH, fH, aspect, zNear, zFar);
+     }
+   #+END_SRC
+   + \( \mbox{aspect} = \frac{width}{height} \quad \mbox{tan} = \frac{y}{x} \)
+   + [[http://xfido.com/image/opengl_glPerspective.svg][Image]]
+
+*** What is glutReshapeFunc in OpenGL
+   + [[https://www.opengl.org/resources/libraries/glut/spec3/node48.html][glutReshapeFunc]] ~void (*func) int width int height~
+   + *func* is called whenever the window is reshaped or changed.
+   + *func* is called immediately whenever the new window is created.
+   + The *width* and *height* specify a new window size.
+   + *Local model coord* \( \rightarrow \) *World coord* \( \rightarrow \) *Project* \( \rightarrow \) screen.
+   #+BEGIN_SRC c++
+     void reshape(GLInt w, GLInt h){
+       glutViewport(0, 0, w, h);
+       glMatrixMode(GL_PROJECTION);
+       glLoadIdentity();
+       glutPerspective(40.0, GLfloat(w)/GLfloat(h), 1.0, 150.0);
+       glMatrixMode(GL_MODELVIEW);
+     }
+     glutReshapeFunc(reshape, width, height);
+   #+END_SRC
+*** Finally AronModule can be built in Ubuntu with *Stack*, it is not true, there is still issue with regex-tdfa out of memory in my Ubuntu vm.
+   + regex-tdfa build memory issue [[https://github.com/commercialhaskell/stack/issues/4232][stack build issue]]
+   + I just realize *stack* is such useful tool.:)
+   + Specify the package names in myproject.cabal file and *stack build* and *stack exec myproject*.
+   + Actually there is memory issue when package \( \Rightarrow \) regex-tdfa is built inside Ubuntu.
+   + Change the resolver is not resolved the _out of memory issue_.
+   + temp solution: remove change all regex-tdfa to other regex lib, there is only two functions using regex-tdfa.
+   + It can be built in Ubuntu vm now.
+*** Stack will not always solve all the problems for you.
+   + I just spend a lots of time on building my Application $\Rightarrow$ wai.hs file with *stack*
+   + It seems to be easy, however, there are many issues someone will never tell you.
+     + Put the package name on your cabal file is not always working.
+     + Sometimes you need to put a missing package to *stack.yaml* file, I'm not sure why.
+     + Check the [[http://xfido.com/html/indexHaskellStackTool.html][Stack Tool]] for more detail.
+*** Add RSA keys to Ubuntu and FreeBSD hosts.
+   + The catch is:
+     + cat your public key to authorized_key.
+     + ssh-add ~ssh-add /home/name/.ssh/privateKey~
+*** Why your public key not working in Github: Error Permission denied (publickey)
+   + When you generate your public and private key with *ssh-keygen*
+   + My Mac public key [[https://bitbucket.org/zsurface/publickey/raw/b1d6838a5624a8cffa74f9e22e29cfdf1377177f/mymac_id_rsa.pub][My public key]]
+     + You need to do the following: host and client
+     + Generate private and public key pair. No host name with ~ssh-keygen -C noname~
+     + Add ssh private key to *Agent*
+     + Add public key to ~authorized_keys~ with permissin: ~chmod 600 authorized_keys~
+     #+BEGIN_SRC bash
+       # generate private and public keys
+       ssh-keygen -C noname # Your host name will NOT be included inside the public key.
+       # Add private key to agent
+       ssh-add /home/user/.ssh/myrsa 
+       # On client side, add public key to authorized_keys
+       cat id_rsa.pub >> autherized_keys
+       # set permission
+       chmod 600 autherized_keys
+     #+END_SRC
+*** Bought a FreeBSD VM 3G, 60G from Digit Ocean for $15.
+   + Install GHC 8.6, and install *stack*
+   + Install Stack [[https://docs.haskellstack.org/en/stable/install_and_upgrade/][Install Stack in FreeBSD]]
+     #+BEGIN_SRC bash
+       # install GHC
+       pkg install ghc
+       # install haskell stack
+       curl -sSL https://get.haskellstack.org/ | sh
+     #+END_SRC
+*** FreeBSD install package
+   #+BEGIN_SRC bash
+     # su root
+     pkg install curl
+   #+END_SRC
+*** FreeBSD apache html folder
+   #+BEGIN_SRC bash
+     /usr/local/www/apache24
+   #+END_SRC
+*** FreeBSD install GHC
+   #+BEGIN_SRC bash
+      pkg install ghc
+   #+END_SRC
+*** DONE Add shell script to upload file to Ubuntu and FreeBSD hosts
+   + script name: ~$sym/upload.sh~ \( \Rightarrow \) ~$src/upload.sh~ using rsync command.
+   + [[https://bitbucket.org/zsurface/script/raw/a50c8aff4eabe8d3b86c60552eeae647881dcb86/upload.sh][upload.sh]]
+   #+BEGIN_SRC bash
+     # upload file.txt to xfido ~/try
+     upload.sh file.txt xfido
+     # upload file.txt to uwspace ~/try
+     upload.sh file.txt uw 
+   #+END_SRC
+
+*** Rename haskell_webapp \( \Rightarrow \) haskellwebapp2
+   + Create *bitbucket* repos: haskellwebapp2
+   + Rename the Stack project \( \Rightarrow \) in .cabal file.
+   + The root of running process is not *src*, it is *haskellwebapp2*
+     #+BEGIN_SRC bash
+       haskellwebapp2/src/Main.hs
+     #+END_SRC
+*** Create User and Image tables in Sqlite3 database.
+   + Submit submit form.
+   + Database *User* table in Sqlit3 [[https://www.sqlite.org/datatype3.html][Data Type]]
+     | uid     | name | email | password | task | money   |
+     | Integer | Text | Text  | Text     | Text | Integer |
+     
+   + Database *Image* table
+     | iid     | imagename  | uid     |
+     | Integer | Text       | Integer |
+ 
+   + Create Haskell records.   Haskell Int64 \( \Rightarrow \) Sqlit3 Integer
+     #+BEGIN_SRC haskell
+       -- Data.Int64 (Int64)
+       -- Haskell Int64 => Sqlit3 Integer
+       data User = User{uid::Int64, name::Text, email::Text, password::Text task::Text, money::Integer} deriving (Show, Eq)
+       
+       data Image = Image{iid::Int64, imagename::Text, uid::Int64} deriving (Show, Eq)
+     #+END_SRC
+   + How to determinate whether insection is successful or failed
+     + Count the number of rows modifed in Sqlite.
+     + [[http://hackage.haskell.org/package/direct-sqlite-2.3.24/docs/Database-SQLite3.html][changes Sqlite3 Haskell]]
+     #+BEGIN_SRC haskell
+       changes :: Database -> IO Int
+     #+END_SRC
+     + [[http://hackage.haskell.org/package/sqlite-simple-0.4.16.0/docs/Database-SQLite-Simple.html][changes in]] [[http://www.sqlite.org/c3ref/changes.html][Sqlit changes]]
+     #+BEGIN_SRC haskell
+       query_ conn "insect ... "
+       changeRow <- changes conn
+       if changeRow > 0 then print "Insection is successful"
+       else print "Insection is failed"
+     #+END_SRC
+*** Insect User to Sqlite database.
+   + Insect data into user table
+   + Select data from user table
+   + Determinate wheter insection is successful or failed with *changes* in Sqlite3
+   + Again, use *Data.RawString.QQ* to simplify the *String*, *ByteString* and *Text* manipulation.
+   + Add response page if insection is successful using *Data.RawString.QQ* again
+   + Add list task page
+*** Add login and password validation page.
+   + Add html login.html file, it is easy.
+   + Add ~loginCheck::Connection -> Application~
+     + The function tries to validate email address and password.
+       + Use queryNamed [[https://hackage.haskell.org/package/sqlite-simple-0.4.16.0/docs/Database-SQLite-Simple.html#v:executeNamed][queryNamed]] , there is some issues to query any row from *user* table.
+	 #+BEGIN_SRC haskell
+	   queryNamed :: FromRow r => Connection -> Query -> [NamedParam] -> IO [r]
+	   r <- queryNamed c "SELECT * FROM posts WHERE id=:id AND date>=:date" [":id" := postId, ":date" := afterDate]
+	 #+END_SRC
+       + Finally I found the issue when using ~where~ cause in Sqlite Haskell.
+	 + I use ByteString to compare ~String~ or ~Text~
+	 #+BEGIN_SRC haskell
+	  r <- queryNamed conn "SELECT * FROM user where password = :password" [":password" := password] :: [User]
+	 #+END_SRC
+	 + ~password~ is a type [[http://hackage.haskell.org/package/sqlite-simple-0.4.16.0/docs/Database-SQLite-Simple-ToField.html#t:ToField][ToField]] class which converts almost any type to [[http://hackage.haskell.org/package/sqlite-simple-0.4.16.0/docs/Database-SQLite-Simple-ToField.html#t:ToField][SQLData]]
+	 + I use ByteString instead of String or Text
+	 + Here is stupid mistaken that I made.
+	   #+BEGIN_SRC haskell
+	     -- Using ByteString "123" to compare Text
+             -- Error code
+	     let password = case lookup "password" params of
+				    Just password -> password
+				    _             -> "No password from client."
+
+             -- Valid code
+	     let password = case lookup "password" params of
+				    Just password -> strictByteStringToStrictText password
+				    _             -> "No password from client."
+	   #+END_SRC
+*** Word8 and ByteString in Haskell.
+   + Word8 is unsigned integer 8-bits byte. [[http://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Word.html#t:Word8][Word8]]
+   + ByteString contains 8-bit bytes.
+     #+BEGIN_SRC haskell
+       -- ls contains all character from 0 to 2^8 - 1 = 255
+       let ls = Data.Word8.pack [0..(2^8 - 1)]
+     #+END_SRC
+
+*** C++ Dangling pointer [[https://stackoverflow.com/questions/37514873/clarify-dangling-pointer-in-c-c][Dangling Pointer]]
+   #+BEGIN_SRC c++
+     void remove(){
+     Node* curr = new Node(10);
+     Node* pt = curr;
+     if(curr != null)
+        delete curr;
+     }
+   #+END_SRC
+   + ~pt~ is a dangling pointer, there is nothing wrong with dangling pointer as long as you don't deference a dangling pointer.
+*** What is unique pointer, shared pointer and weak pointer and what is std::move in C++
+   + [[https://bitbucket.org/zsurface/cpp/raw/27953c1289c7755a6283ce787a6c92796d46ae83/SmartPointerExample/SmartPointerExample/main.cpp][Smart Pointer Example]]
+   + Smart pointer is trying to help programmers to simplify memory management. Before smart pointer, programmer needs to know when to allocate memory and when to deallocate memory.
+   + What is unique pointer?
+     + unique pointer does not support copy, if you copy a unique pointer, then you will get compiler error.
+     #+BEGIN_SRC c++
+       // no memory leak
+       void fun(){
+	 std::unique_pt<int> pt = std::unique_pt(new int(10));
+	 return;
+       }
+
+       std::unique_pt<int> pt = std::unique_pt(new int(9));
+       std::unique_pt<int> pt1 = pt;
+       // pt is not longer to deference an object.       
+
+     #+END_SRC
+   + How to use shared pointer?
+     #+BEGIN_SRC c++
+	class MyClass{
+	  public:
+	  std::shared_pt<int> pt;
+          public:
+	  std::shared_pt<int> create(){
+	    std::shared_pt<int> pt = std::shared_pt(new int(9));
+	    return pt;
+	  }
+	}
+
+       MyClass* cpt = new MyClass();
+       std::shared_pt<int> pt = cpt -> create();
+
+       if(cpt != null)
+	 delete cpt;
+
+       // std::shared_pt<int> pt don't need to be deleted inside the MyClass
+
+     #+END_SRC
+   + What is weak pointer in C++
+     + Weak pointer is a shared pointer and it holds a non-owning reference to an object.
+      
+*** Change all paths in WaiLib.hs and Wai.hs, and it run in FreeBSD so far.
+   + Change symbol link to relative path, solve only half the problem.
+   + DONE Add config file.
+   + DONE Change localhost to real hostname.
+   + DONE Install Redis on FreeBSD
+*** In FreeBSD, ~/usr/ports/database~ is not shown.
+   + download port collections ~portsnap fetch~ and extract it to ~/usr/ports~
+   + Here is the link on how to use use port in FreeBSD [[https://www.freebsd.org/doc/handbook/ports-using.html][port]]
+*** Install Redis in FreeBSD [[https://stackoverflow.com/questions/44447809/redis-installed-on-freebsd-via-pkg-or-ports-can-not-run][Redis installation on FreeBSD]]
+*** Haskell Enum Trick [[http://haskell.1045720.n5.nabble.com/Enum-to-String-and-back-td3131188.html][Enum Trick]]
+   #+BEGIN_SRC haskell
+     data Color
+	 = Red
+	 | Blue
+	 | Green
+	 | Yellow
+	 | Orange
+	 | Brown
+	 | White
+	 | Black
+	 deriving (Show, Eq, Enum, Bounded)   
+   #+END_SRC
+*** Show Maybe is a Functor [[https://hackage.haskell.org/package/base-4.12.0.0/docs/src/GHC.Base.html#line-836][Functor Maybe]] [[http://xfido.com/html/indexHaskellProveMaybesatifiestwolaws.html][Proof]]
+*** Move GenePDFHtml to WaiLib.hs file, Create a GenePDFHtmlLib in $b/haskelllib
+*** Refactor function in WaiLib
+   + ~app::Connection -> IORef M.HashMap -> Application~
+   + Remove the extrac database connection from above function
+   + One database includes all tables.
+*** Change Emacs Org-mode with solarized theme with CSS file [[http://thomasf.github.io/solarized-css/][Emacs Org-mode Solarized Theme]]
+   + If you use thomasf.github.io code snippet for Org-mode, then you will have problem to display the html file.
+   + I have no idea what the javascript does. After I remove the Javascript code, it works perfectly.
+     + It means you do not need the Javascript code on your Org-mode.
+     + At least it works in SpaceEmacs 8.x under Chrome, Safari and Firefox.
+   #+BEGIN_SRC html
+     -- light mode
+     #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" />
+     -- dark mode
+     #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+   #+END_SRC
+   + You DO NOT need the following snippet on your Org-mode, it will screw up your Html after you export Org-mode to Html.
+   #+BEGIN_SRC html
+       #+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:http://thomasf.github.io/solarized-css/org-info.min.js
+     #+END_SRC
+*** Change the width of center theme on the current theme.
+   #+BEGIN_SRC html
+    -- max-with 23cm; => max-width: 30cm; 
+    body {
+         background-color: #002b36;
+	 margin: 0 auto;
+	 max-width: 30cm;
+	 border: 1pt solid #586e75;
+	 padding: 1em;
+     }    
+   #+END_SRC
+*** Add install.sh to each stackproject project
+  + copy binary file to mybin dir
+  + create symbo link to $sym dir
+  + create simple shell script under $scr
+*** Change default shell in FreeBSD [[https://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/shells.html][change shell]]
+    + Apparently freeBSD default shell is not *bash* but *sh* and you need to change it if you did not want all the annoyance.
+    + Also you need to make sure your shell is in ~/etc/shells~
+    + See the difference between *bash* and *sh* in [[https://stackoverflow.com/questions/5725296/difference-between-sh-and-bash][bash and sh]]
+      #+BEGIN_SRC bash
+       chsh -s /usr/local/bin/bash
+      #+END_SRC
+*** GHC run out of memory in Ubuntu 1G RAM [[https://www.reddit.com/r/haskell/comments/cmx7dl/build_cabal_with_stack_build_out_of_memory_in/][GHC out of memory]]
+   + GHC build package can take lots of memory sometimes.
+   + Run ~stack build~ and out of memory error in Ubuntu 1G RAM
+   + But it works on FreeBSD 3G RAM.
+     #+BEGIN_SRC bash
+       Cabal                > ghc: internal error: Unable to commit 1048576 bytes of memory
+       Cabal                >     (GHC version 8.6.5 for x86_64_unknown_linux)
+       Cabal                > Building library for Cabal-2.4.1.0..
+     #+END_SRC
+*** Change web host from Ubuntu 1G to FreeBSD 3G
+*** Non-interactive shell and interactive shell, login shell, non-login shell.
+   + Interactive shell is the first process Id when you login to an interactive session.
+     + Read ~/etc/profile~ to setup environment variables, also read ~.bashrc, .profile~ on your home directory if there exist.
+   + Non-interactive shell does not read ~/etc/profile~, e.g.
+     #+BEGIN_SRC bash
+        ssh  cat@xfido.com 'ls'
+     #+END_SRC
+     + ssh logins to cat user account but the process does not activate any shell such as ~bash~ and there is no environment variable.
+     #+BEGIN_SRC bash
+        ssh cat@xfido.com  'bash /etc/profile; echo $PATH'
+     #+END_SRC
+     + ssh login to cat user account and call ~bash~ to read ~/etc/profile~. Environment variables can be used if there are any inside ~/etc/profile~. 
+   + login shell is the same as interactive shell.
+   + non-login shell is the same as non-interactive shell.
+*** Add new ~tmux.conf~ file for FreeBSD. Apparently the ~tmux.conf~ file is not working on MacOS.
+   + Both version are 2.9a
+   + [[https://bitbucket.org/zsurface/tmux/src/master/][tmux config file for FreeBSD and MacOS]]
+*** Fixed: Javadoc long term error: can not find methods. [[Good Javadoc]]
+   + ~/dir/lib~ contains jar file to support java source file under ~/javafile~
+   + -classpath $\Rightarrow$ specified the location of jar files
+   + -noqualifier $\Rightarrow$ no long qualifier name such as org.apache.commons.io.StringUtils
+   + -sourcepath $\Rightarrow$ specified the location of java files. 
+   #+BEGIN_SRC bash
+     javadoc -classpath  /dir/lib -noqualifier all -d /htmldoc   -sourcepath /javafile/*.java
+   #+END_SRC
+   + Shell script generates java doc in $b/javalib [[https://bitbucket.org/zsurface/script/src/master/gene_javadoc.sh][gene_javadoc.sh]]
+*** Add iterate all files from dir and insert them into table: test1.snippet
+*** Add isFile and isDir to javalib AronLib.java
+*** Database ACID
+  + Atomicity
+  + Consistency
+  + Isolation
+  + Durability
