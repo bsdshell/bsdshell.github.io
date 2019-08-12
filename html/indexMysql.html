@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-08-09 Fri 09:22 -->
+<!-- 2019-08-11 Sun 19:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -180,7 +180,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+<link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" />
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -234,29 +234,30 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgbdb02ab">1. Install Mysql80-server and Mysql80-client in FreeBSD.</a></li>
-<li><a href="#org3ca80b9">2. MySql Command line, run shell command</a></li>
-<li><a href="#org32b66c0">3. MySql Java Example compile and build in Intellij Java MySql Example</a></li>
-<li><a href="#org362dbb9">4. MySql Login, Create user and grant permission: <code>mysql 8.x</code></a></li>
-<li><a href="#orge55d8e0">5. Create user from remote access in FreeBSD.</a></li>
-<li><a href="#org58b1aea">6. Mysql Create table, Insert data into  table.</a></li>
-<li><a href="#org01086bf">7. Use Sequel Pro sql client to connect your localhost Mysql server, download Sequel Pro Sequel Pro</a></li>
+<li><a href="#orgf9b4e81">1. Install Mysql80-server and Mysql80-client in FreeBSD.</a></li>
+<li><a href="#org0182b10">2. MySql Command line, run shell command</a></li>
+<li><a href="#org62a3ab6">3. MySql Java Example compile and build in Intellij Java MySql Example</a></li>
+<li><a href="#org09cc5f1">4. MySql Login, Create user and grant permission: <code>mysql 8.x</code></a></li>
+<li><a href="#orgc358e48">5. Create user from remote access in FreeBSD.</a></li>
+<li><a href="#org072f982">6. Mysql Create table, Insert data into  table.</a></li>
+<li><a href="#org4ebe2a1">7. Use Sequel Pro sql client to connect your localhost Mysql server, download Sequel Pro Sequel Pro</a></li>
+<li><a href="#org84b0df1">8. Java MySql Connection Manager</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbdb02ab" class="outline-2">
-<h2 id="orgbdb02ab"><span class="section-number-2">1</span> Install Mysql80-server and Mysql80-client in FreeBSD.</h2>
+<div id="outline-container-orgf9b4e81" class="outline-2">
+<h2 id="orgf9b4e81"><span class="section-number-2">1</span> Install Mysql80-server and Mysql80-client in FreeBSD.</h2>
 <div class="outline-text-2" id="text-1">
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #839496; font-weight: bold;">cd</span> /usr/ports/databases/mysql80-server &amp;&amp; make install clean    
-<span style="color: #839496; font-weight: bold;">cd</span> /usr/ports/databases/mysql80-client &amp;&amp; make install clean    
+<pre class="src src-bash"><span style="color: #006FE0; font-weight: bold;">cd</span> /usr/ports/databases/mysql80-server &amp;&amp; make install clean    
+<span style="color: #006FE0; font-weight: bold;">cd</span> /usr/ports/databases/mysql80-client &amp;&amp; make install clean    
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org3ca80b9" class="outline-2">
-<h2 id="org3ca80b9"><span class="section-number-2">2</span> MySql Command line, run shell command</h2>
+<div id="outline-container-org0182b10" class="outline-2">
+<h2 id="org0182b10"><span class="section-number-2">2</span> MySql Command line, run shell command</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>login to mysqld</li>
@@ -265,14 +266,14 @@ for the JavaScript code in this tag.
 <pre class="src src-sql">mysql -u root                                                                 
 # show database                                                               
 show databases;                                                               
-# <span style="color: #859900; font-weight: bold;">select</span> database                                                             
+# <span style="color: #0000FF;">select</span> database                                                             
 use mydb;                                                                     
-# show <span style="color: #859900; font-weight: bold;">all</span> tables;                                                            
+# show <span style="color: #0000FF;">all</span> tables;                                                            
 show tables;                                                                  
 # show scheme                                                                 
-<span style="color: #859900; font-weight: bold;">desc</span> person_table;                                                            
+<span style="color: #0000FF;">desc</span> person_table;                                                            
 # run shell command inside mysqld                                             
-\! pwd    &lt;- there <span style="color: #859900; font-weight: bold;">is</span> a <span style="color: #859900; font-weight: bold;">space</span> <span style="color: #859900; font-weight: bold;">between</span> \! <span style="color: #859900; font-weight: bold;">and</span> pwd                              
+\! pwd    &lt;- there <span style="color: #0000FF;">is</span> a <span style="color: #0000FF;">space</span> <span style="color: #0000FF;">between</span> \! <span style="color: #0000FF;">and</span> pwd                              
 \! ls                                                                         
 </pre>
 </div>
@@ -344,8 +345,8 @@ show tables;
 </table>
 </div>
 </div>
-<div id="outline-container-org32b66c0" class="outline-2">
-<h2 id="org32b66c0"><span class="section-number-2">3</span> MySql Java Example compile and build in Intellij <a href="https://bitbucket.org/zsurface/java/src/master/SqlExample/src/">Java MySql Example</a></h2>
+<div id="outline-container-org62a3ab6" class="outline-2">
+<h2 id="org62a3ab6"><span class="section-number-2">3</span> MySql Java Example compile and build in Intellij <a href="https://bitbucket.org/zsurface/java/src/master/SqlExample/src/">Java MySql Example</a></h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>Add $b/javalib8/jar/AronLib.jar to libraries in Intellij.</li>
@@ -359,8 +360,8 @@ show tables;
 </div>
 </div>
 </div>
-<div id="outline-container-org362dbb9" class="outline-2">
-<h2 id="org362dbb9"><span class="section-number-2">4</span> MySql Login, Create user and grant permission: <code>mysql 8.x</code></h2>
+<div id="outline-container-org09cc5f1" class="outline-2">
+<h2 id="org09cc5f1"><span class="section-number-2">4</span> MySql Login, Create user and grant permission: <code>mysql 8.x</code></h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><p>
@@ -374,25 +375,25 @@ login to mysql server.
 Create user called cat with password                                          
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span style="color: #859900; font-weight: bold;">create</span> <span style="color: #839496; font-weight: bold;">user</span> <span style="color: #2aa198;">'cat'</span>@<span style="color: #2aa198;">'localhost'</span> identified <span style="color: #859900; font-weight: bold;">by</span> <span style="color: #2aa198;">'mypassword'</span>;                    
-# if the <span style="color: #839496; font-weight: bold;">user</span> can be accessed <span style="color: #859900; font-weight: bold;">from</span> remote.                              
-<span style="color: #859900; font-weight: bold;">create</span> <span style="color: #839496; font-weight: bold;">user</span> <span style="color: #2aa198;">'cat'</span>@<span style="color: #2aa198;">'%'</span> identified <span style="color: #859900; font-weight: bold;">by</span> <span style="color: #2aa198;">'mypassword'</span>;                     
+<pre class="src src-sql"><span style="color: #0000FF;">create</span> <span style="color: #006FE0; font-weight: bold;">user</span> <span style="color: #008000;">'cat'</span>@<span style="color: #008000;">'localhost'</span> identified <span style="color: #0000FF;">by</span> <span style="color: #008000;">'mypassword'</span>;                    
+# if the <span style="color: #006FE0; font-weight: bold;">user</span> can be accessed <span style="color: #0000FF;">from</span> remote.                              
+<span style="color: #0000FF;">create</span> <span style="color: #006FE0; font-weight: bold;">user</span> <span style="color: #008000;">'cat'</span>@<span style="color: #008000;">'%'</span> identified <span style="color: #0000FF;">by</span> <span style="color: #008000;">'mypassword'</span>;                     
 </pre>
 </div></li>
 <li><p>
 Update user password                                                          
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"><span style="color: #859900; font-weight: bold;">ALTER</span> <span style="color: #839496; font-weight: bold;">user</span> <span style="color: #2aa198;">'cat'</span>@<span style="color: #2aa198;">'localhost'</span> identified <span style="color: #859900; font-weight: bold;">by</span> <span style="color: #2aa198;">'mypassword'</span>;                  
-FLUSH <span style="color: #859900; font-weight: bold;">PRIVILEGES</span>;                                                           
+<pre class="src src-sql"><span style="color: #0000FF;">ALTER</span> <span style="color: #006FE0; font-weight: bold;">user</span> <span style="color: #008000;">'cat'</span>@<span style="color: #008000;">'localhost'</span> identified <span style="color: #0000FF;">by</span> <span style="color: #008000;">'mypassword'</span>;                  
+FLUSH <span style="color: #0000FF;">PRIVILEGES</span>;                                                           
 # exit                                                                      
-# login <span style="color: #859900; font-weight: bold;">with</span> <span style="color: #859900; font-weight: bold;">new</span> password                                                   
+# login <span style="color: #0000FF;">with</span> <span style="color: #0000FF;">new</span> password                                                   
 mysql -u cat -p                                                             
 
-# remote <span style="color: #839496; font-weight: bold;">user</span>                                                               
-<span style="color: #859900; font-weight: bold;">ALTER</span> <span style="color: #839496; font-weight: bold;">user</span> <span style="color: #2aa198;">'cat'</span>@<span style="color: #2aa198;">'%'</span> identified <span style="color: #859900; font-weight: bold;">by</span> <span style="color: #2aa198;">'mypassword'</span>;                       
+# remote <span style="color: #006FE0; font-weight: bold;">user</span>                                                               
+<span style="color: #0000FF;">ALTER</span> <span style="color: #006FE0; font-weight: bold;">user</span> <span style="color: #008000;">'cat'</span>@<span style="color: #008000;">'%'</span> identified <span style="color: #0000FF;">by</span> <span style="color: #008000;">'mypassword'</span>;                       
 # exit                                                                      
-# login <span style="color: #859900; font-weight: bold;">with</span> <span style="color: #859900; font-weight: bold;">new</span> remote password                                            
+# login <span style="color: #0000FF;">with</span> <span style="color: #0000FF;">new</span> remote password                                            
 </pre>
 </div></li>
 <li>Grant user to particular table permission.</li>
@@ -400,85 +401,135 @@ mysql -u cat -p
 Grant user to access to all tables in a database: mydb.
 </p>
 <div class="org-src-container">
-<pre class="src src-sql"># <span style="color: #859900; font-weight: bold;">grant</span> user1 <span style="color: #859900; font-weight: bold;">to</span> access <span style="color: #859900; font-weight: bold;">to</span> <span style="color: #859900; font-weight: bold;">all</span> tables <span style="color: #859900; font-weight: bold;">in</span> a database mydb.
-<span style="color: #859900; font-weight: bold;">GRANT</span> <span style="color: #859900; font-weight: bold;">ALL</span> <span style="color: #859900; font-weight: bold;">PRIVILEGES</span> mydb.* <span style="color: #859900; font-weight: bold;">on</span> <span style="color: #2aa198;">'user1'</span>@<span style="color: #2aa198;">'localhost'</span>;
+<pre class="src src-sql"># <span style="color: #0000FF;">grant</span> user1 <span style="color: #0000FF;">to</span> access <span style="color: #0000FF;">to</span> <span style="color: #0000FF;">all</span> tables <span style="color: #0000FF;">in</span> a database mydb.
+# mysql -u root
+# show database;
+<span style="color: #0000FF;">GRANT</span> <span style="color: #0000FF;">ALL</span> <span style="color: #0000FF;">PRIVILEGES</span> <span style="color: #0000FF;">ON</span> mydb.* <span style="color: #0000FF;">TO</span> <span style="color: #008000;">'user1'</span>@<span style="color: #008000;">'localhost'</span>;
 </pre>
 </div></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge55d8e0" class="outline-2">
-<h2 id="orge55d8e0"><span class="section-number-2">5</span> Create user from remote access in FreeBSD.</h2>
+<div id="outline-container-orgc358e48" class="outline-2">
+<h2 id="orgc358e48"><span class="section-number-2">5</span> Create user from remote access in FreeBSD.</h2>
 </div>
-<div id="outline-container-org58b1aea" class="outline-2">
-<h2 id="org58b1aea"><span class="section-number-2">6</span> Mysql Create table, Insert data into  table.</h2>
+<div id="outline-container-org072f982" class="outline-2">
+<h2 id="org072f982"><span class="section-number-2">6</span> Mysql Create table, Insert data into  table.</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li>One customer to many address.</li>
+<li>Foreign KEY <a href="https://bitbucket.org/zsurface/database/src/master/foreignkey.sql">Mysql Foreigh Key Example</a></li>
 </ul>
 <div class="org-src-container">
-<pre class="src src-sql"><span style="color: #859900; font-weight: bold;">CREATE</span> <span style="color: #859900; font-weight: bold;">TABLE</span> IF <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">EXISTS</span> <span style="color: #268bd2; font-weight: bold;">customer</span>;
-<span style="color: #859900; font-weight: bold;">CREATE</span> <span style="color: #859900; font-weight: bold;">TABLE</span> IF <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">EXISTS</span> <span style="color: #268bd2; font-weight: bold;">address</span>;
-<span style="color: #859900; font-weight: bold;">CREATE</span> <span style="color: #859900; font-weight: bold;">TABLE</span> IF <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">EXISTS</span> <span style="color: #859900; font-weight: bold;">order</span>;           
+<pre class="src src-sql"><span style="color: #0000FF;">CREATE</span> <span style="color: #0000FF;">TABLE</span> IF <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">EXISTS</span> <span style="color: #006699;">customer</span>;
+<span style="color: #0000FF;">CREATE</span> <span style="color: #0000FF;">TABLE</span> IF <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">EXISTS</span> <span style="color: #006699;">address</span>;
+<span style="color: #0000FF;">CREATE</span> <span style="color: #0000FF;">TABLE</span> IF <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">EXISTS</span> <span style="color: #0000FF;">order</span>;           
 
-<span style="color: #859900; font-weight: bold;">CREATE</span> <span style="color: #859900; font-weight: bold;">TABLE</span> <span style="color: #268bd2; font-weight: bold;">customer</span>(
-  c_id <span style="color: #b58900; font-weight: bold;">INT</span> <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span> auto_increment <span style="color: #859900; font-weight: bold;">PRIMARY</span> <span style="color: #859900; font-weight: bold;">KEY</span>,
-  <span style="color: #839496; font-weight: bold;">user</span> <span style="color: #b58900; font-weight: bold;">VARCHAR</span>(100) <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
-  password TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
-  <span style="color: #859900; font-weight: bold;">name</span> TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
-  phone TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
-  address TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
-  email TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
-  <span style="color: #859900; font-weight: bold;">foreign</span> <span style="color: #859900; font-weight: bold;">key</span> addr(a_id)
-  <span style="color: #859900; font-weight: bold;">references</span>  address(a_id)
-  <span style="color: #859900; font-weight: bold;">on</span> <span style="color: #859900; font-weight: bold;">delete</span>
-  <span style="color: #859900; font-weight: bold;">on</span> <span style="color: #859900; font-weight: bold;">update</span>
+<span style="color: #0000FF;">CREATE</span> <span style="color: #0000FF;">TABLE</span> <span style="color: #006699;">customer</span>(
+  c_id <span style="color: #6434A3;">INT</span> <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">NULL</span> auto_increment <span style="color: #0000FF;">PRIMARY</span> <span style="color: #0000FF;">KEY</span>,
+  <span style="color: #006FE0; font-weight: bold;">user</span> <span style="color: #6434A3;">VARCHAR</span>(100) <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">NULL</span>,
+  password TEXT <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">NULL</span>,
+  <span style="color: #0000FF;">name</span> TEXT <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">NULL</span>,
+  phone TEXT <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">NULL</span>,
+  address TEXT <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">NULL</span>,                    
+  email TEXT <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">NULL</span>,
+  a_id <span style="color: #6434A3;">INT</span> <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">NULL</span>,
+  <span style="color: #0000FF;">foreign</span> <span style="color: #0000FF;">key</span> addr(a_id)
+  <span style="color: #0000FF;">references</span>  address(a_id)
+  <span style="color: #0000FF;">on</span> <span style="color: #0000FF;">update</span> <span style="color: #0000FF;">CASCADE</span>
+  <span style="color: #0000FF;">on</span> <span style="color: #0000FF;">delete</span> <span style="color: #0000FF;">RESTRICT</span>
 )
 
-<span style="color: #859900; font-weight: bold;">CREATE</span> <span style="color: #859900; font-weight: bold;">TABLE</span> <span style="color: #268bd2; font-weight: bold;">address</span>(
-  a_id <span style="color: #b58900; font-weight: bold;">INT</span> <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span> auto_increment <span style="color: #859900; font-weight: bold;">PRIMARY</span> <span style="color: #859900; font-weight: bold;">KEY</span>,
-  country TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
-  states  TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
-  city    TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
-  streetname TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
-  addr_num <span style="color: #b58900; font-weight: bold;">INT</span> <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>
+<span style="color: #0000FF;">CREATE</span> <span style="color: #0000FF;">TABLE</span> <span style="color: #006699;">address</span>(
+  a_id <span style="color: #6434A3;">INT</span> <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">NULL</span> auto_increment <span style="color: #0000FF;">PRIMARY</span> <span style="color: #0000FF;">KEY</span>,
+  country TEXT <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">NULL</span>,
+  states  TEXT <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">NULL</span>,
+  city    TEXT <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">NULL</span>,
+  streetname TEXT <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">NULL</span>,
+  addr_num <span style="color: #6434A3;">INT</span> <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">NULL</span>
 )
 
-<span style="color: #859900; font-weight: bold;">CREATE</span> <span style="color: #859900; font-weight: bold;">TABLE</span> <span style="color: #859900; font-weight: bold;">order</span>(
-  ord_id <span style="color: #b58900; font-weight: bold;">INT</span> <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span> auto_increment <span style="color: #859900; font-weight: bold;">PRIMARY</span> <span style="color: #859900; font-weight: bold;">KEY</span>,
-  item_name TEXT <span style="color: #859900; font-weight: bold;">NOT</span> <span style="color: #859900; font-weight: bold;">NULL</span>,
-  price <span style="color: #b58900; font-weight: bold;">DECIMAL</span>,
-  <span style="color: #859900; font-weight: bold;">foreign</span> <span style="color: #859900; font-weight: bold;">key</span> ord(c_id) <span style="color: #859900; font-weight: bold;">references</span> customer(c_id)
-  <span style="color: #859900; font-weight: bold;">on</span> <span style="color: #859900; font-weight: bold;">delete</span>
-  <span style="color: #859900; font-weight: bold;">on</span> <span style="color: #859900; font-weight: bold;">update</span>,
-  <span style="color: #859900; font-weight: bold;">foreign</span> <span style="color: #859900; font-weight: bold;">key</span> addr(a_id) <span style="color: #859900; font-weight: bold;">references</span> address(a_id)
-  <span style="color: #859900; font-weight: bold;">on</span> <span style="color: #859900; font-weight: bold;">delete</span>
-  <span style="color: #859900; font-weight: bold;">on</span> <span style="color: #859900; font-weight: bold;">update</span>
+<span style="color: #0000FF;">CREATE</span> <span style="color: #0000FF;">TABLE</span> <span style="color: #0000FF;">order</span>(
+  ord_id <span style="color: #6434A3;">INT</span> <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">NULL</span> auto_increment <span style="color: #0000FF;">PRIMARY</span> <span style="color: #0000FF;">KEY</span>,
+  item_name TEXT <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">NULL</span>,
+  price <span style="color: #6434A3;">DECIMAL</span>,
+  c_id <span style="color: #6434A3;">INT</span> <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">NULL</span>,
+  <span style="color: #0000FF;">foreign</span> <span style="color: #0000FF;">key</span> ord(c_id) <span style="color: #0000FF;">references</span> customer(c_id)
+  <span style="color: #0000FF;">on</span> <span style="color: #0000FF;">update</span> <span style="color: #0000FF;">CASCADE</span>
+  <span style="color: #0000FF;">on</span> <span style="color: #0000FF;">delete</span> <span style="color: #0000FF;">RESTRICT</span>
+  a_id <span style="color: #6434A3;">INT</span> <span style="color: #0000FF;">NOT</span> <span style="color: #0000FF;">NULL</span>,
+  <span style="color: #0000FF;">foreign</span> <span style="color: #0000FF;">key</span> addr(a_id) <span style="color: #0000FF;">references</span> address(a_id)
+  <span style="color: #0000FF;">on</span> <span style="color: #0000FF;">update</span> <span style="color: #0000FF;">CASCADE</span>
+  <span style="color: #0000FF;">on</span> <span style="color: #0000FF;">delete</span> <span style="color: #0000FF;">RESTRICT</span>
 )
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org01086bf" class="outline-2">
-<h2 id="org01086bf"><span class="section-number-2">7</span> Use Sequel Pro sql client to connect your localhost Mysql server, download Sequel Pro <a href="https://www.sequelpro.com">Sequel Pro</a></h2>
+<div id="outline-container-org4ebe2a1" class="outline-2">
+<h2 id="org4ebe2a1"><span class="section-number-2">7</span> Use Sequel Pro sql client to connect your localhost Mysql server, download Sequel Pro <a href="https://www.sequelpro.com">Sequel Pro</a></h2>
 <div class="outline-text-2" id="text-7">
 <ul class="org-ul">
 <li><p>
 Add password authentication to your my.cnf
 </p>
 <div class="org-src-container">
-<pre class="src src-bash"><span style="color: #586e75;"># </span><span style="color: #586e75;">/usr/local/etc/my.cnf</span>
-<span style="color: #268bd2; font-weight: bold;">default_authentication_plugin</span>=mysql_native_password
+<pre class="src src-bash"><span style="color: #8D8D84;"># </span><span style="color: #8D8D84; font-style: italic;">/usr/local/etc/my.cnf</span>
+<span style="color: #BA36A5;">default_authentication_plugin</span>=mysql_native_password
 </pre>
 </div></li>
 <li>After I spend over an hour on the installation Sequel Pro on my MacOS, it crashes when I click around the UI.</li>
 </ul>
 </div>
 </div>
+<div id="outline-container-org84b0df1" class="outline-2">
+<h2 id="org84b0df1"><span class="section-number-2">8</span> Java MySql Connection Manager</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>Create Connection Manager in Java</li>
+<li>Connect to MySql inside my MacOS.</li>
+<li><b>Database</b>: test1</li>
+<li><b>Table</b>: snippet <code>/Users/cat/myfile/bitbucket/database/snippet.sql</code></li>
+<li><b>user</b>: aron</li>
+<li><b>passwd</b>: 1234</li>
+<li><a href="https://bitbucket.org/zsurface/java/src/master/SqlExample/src/Main.java">Java Sql Example</a> Intellij Project</li>
+<li><code>/Users/cat/myfile/bitbucket/java/SqlExample</code></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-java"><span style="color: #0000FF;">class</span> <span style="color: #6434A3;">DBManager</span>{
+    <span style="color: #0000FF;">final</span> <span style="color: #0000FF;">static</span> <span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">user</span> = <span style="color: #008000;">"aron"</span>;
+      <span style="color: #0000FF;">final</span> <span style="color: #0000FF;">static</span> <span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">pass</span> = <span style="color: #008000;">"1234"</span>;
+      <span style="color: #0000FF;">final</span> <span style="color: #0000FF;">static</span> <span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">db</span> = <span style="color: #008000;">"test1"</span>;
+      <span style="color: #0000FF;">final</span> <span style="color: #0000FF;">static</span> <span style="color: #6434A3;">String</span> <span style="color: #BA36A5;">timezone</span> = <span style="color: #008000;">"&amp;serverTimezone=UTC"</span>;
+
+      <span style="color: #036A07;">/**</span>
+<span style="color: #036A07;">       * Create connection with Mysql on MacOS. with JDBC driver under $b/javalib/jar/mysql-connector-java</span>
+<span style="color: #036A07;">       * https://mvnrepository.com/artifact/mysql/mysql-connector-java</span>
+<span style="color: #036A07;">       * </span><span style="color: #D0372D; font-weight: bold;">@return</span>
+<span style="color: #036A07;">       */</span>
+      <span style="color: #0000FF;">public</span> <span style="color: #0000FF;">static</span> <span style="color: #6434A3;">Connection</span> <span style="color: #006699;">connect</span>(){
+          <span style="color: #6434A3;">Connection</span> <span style="color: #BA36A5;">connect</span> = <span style="color: #D0372D; font-weight: bold;">null</span>;
+          <span style="color: #0000FF;">try</span> {
+              Class.forName(<span style="color: #008000;">"com.mysql.cj.jdbc.Driver"</span>);
+              connect = DriverManager.getConnection(
+                  <span style="color: #008000;">"jdbc:mysql://localhost:3306/"</span> + db + <span style="color: #008000;">"?useSSL=false"</span> + timezone + <span style="color: #008000;">"&amp;requireSSL=false"</span>, user, pass
+                  );
+          }<span style="color: #0000FF;">catch</span>(<span style="color: #6434A3;">Exception</span> <span style="color: #BA36A5;">e</span>){
+              e.printStackTrace();
+          }<span style="color: #0000FF;">finally</span>{
+              p(<span style="color: #008000;">"Clean up"</span>);
+          }
+          <span style="color: #0000FF;">return</span> connect;
+      }
+  }
+</pre>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: cat</p>
-<p class="date">Created: 2019-08-09 Fri 09:22</p>
+<p class="date">Created: 2019-08-11 Sun 19:25</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
