@@ -1,4 +1,4 @@
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" />
 *** Haskell *Text.RawString.QQ* is useful for Html, Sql and Regular expression.
    + Use Haskell package *Text.RawString.QQ* to simplify Html multiple lines in Haskell
    + Need LANGUAGE *QuasiQuotes* too
@@ -806,11 +806,6 @@
 *** In FreeBSD, ~/usr/ports/database~ is not shown.
    + download port collections ~portsnap fetch~ and extract it to ~/usr/ports~
    + Here is the link on how to use use port in FreeBSD [[https://www.freebsd.org/doc/handbook/ports-using.html][port]]
-*** Install Mysql80-server and Mysql80-client in FreeBSD.
-   #+BEGIN_SRC bash
-     cd /usr/ports/databases/mysql80-server && make install clean
-     cd /usr/ports/databases/mysql80-client && make install clean
-   #+END_SRC
 *** Install Redis in FreeBSD [[https://stackoverflow.com/questions/44447809/redis-installed-on-freebsd-via-pkg-or-ports-can-not-run][Redis installation on FreeBSD]]
 *** Haskell Enum Trick [[http://haskell.1045720.n5.nabble.com/Enum-to-String-and-back-td3131188.html][Enum Trick]]
    #+BEGIN_SRC haskell
@@ -868,3 +863,41 @@
       #+BEGIN_SRC bash
        chsh -s /usr/local/bin/bash
       #+END_SRC
+*** GHC run out of memory in Ubuntu 1G RAM [[https://www.reddit.com/r/haskell/comments/cmx7dl/build_cabal_with_stack_build_out_of_memory_in/][GHC out of memory]]
+   + GHC build package can take lots of memory sometimes.
+   + Run ~stack build~ and out of memory error in Ubuntu 1G RAM
+   + But it works on FreeBSD 3G RAM.
+     #+BEGIN_SRC bash
+       Cabal                > ghc: internal error: Unable to commit 1048576 bytes of memory
+       Cabal                >     (GHC version 8.6.5 for x86_64_unknown_linux)
+       Cabal                > Building library for Cabal-2.4.1.0..
+     #+END_SRC
+*** Change web host from Ubuntu 1G to FreeBSD 3G
+*** Non-interactive shell and interactive shell, login shell, non-login shell.
+   + Interactive shell is the first process Id when you login to an interactive session.
+     + Read ~/etc/profile~ to setup environment variables, also read ~.bashrc, .profile~ on your home directory if there exist.
+   + Non-interactive shell does not read ~/etc/profile~, e.g.
+     #+BEGIN_SRC bash
+        ssh  cat@xfido.com 'ls'
+     #+END_SRC
+     + ssh logins to cat user account but the process does not activate any shell such as ~bash~ and there is no environment variable.
+     #+BEGIN_SRC bash
+        ssh cat@xfido.com  'bash /etc/profile; echo $PATH'
+     #+END_SRC
+     + ssh login to cat user account and call ~bash~ to read ~/etc/profile~. Environment variables can be used if there are any inside ~/etc/profile~. 
+   + login shell is the same as interactive shell.
+   + non-login shell is the same as non-interactive shell.
+*** Add new ~tmux.conf~ file for FreeBSD. Apparently the ~tmux.conf~ file is not working on MacOS.
+   + Both version are 2.9a
+   + [[https://bitbucket.org/zsurface/tmux/src/master/][tmux config file for FreeBSD and MacOS]]
+*** Fixed: Javadoc long term error: can not find methods. [[Good Javadoc]]
+   + ~/dir/lib~ contains jar file to support java source file under ~/javafile~
+   + -classpath $\Rightarrow$ specified the location of jar files
+   + -noqualifier $\Rightarrow$ no long qualifier name such as org.apache.commons.io.StringUtils
+   + -sourcepath $\Rightarrow$ specified the location of java files. 
+   #+BEGIN_SRC bash
+     javadoc -classpath  /dir/lib -noqualifier all -d /htmldoc   -sourcepath /javafile/*.java
+   #+END_SRC
+   + Shell script generates java doc in $b/javalib [[https://bitbucket.org/zsurface/script/src/master/gene_javadoc.sh][gene_javadoc.sh]]
+*** Add iterate all files from dir and insert them into table: test1.snippet
+*** Add isFile and isDir to javalib AronLib.java
