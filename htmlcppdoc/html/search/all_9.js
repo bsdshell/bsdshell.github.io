@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['node',['Node',['../class_node.html',1,'']]],
-  ['node_3c_20vector3_20_3e',['Node&lt; Vector3 &gt;',['../class_node.html',1,'']]]
+  ['response_5fimage',['response_image',['../classresponse__image.html',1,'']]],
+  ['rgb_5ft',['rgb_t',['../structbitmap__image_1_1rgb__t.html',1,'bitmap_image']]],
+  ['row',['row',['../class_matrix_vector_1_1row.html',1,'MatrixVector']]]
 ];

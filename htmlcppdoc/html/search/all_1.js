@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['allocate',['allocate',['../namespace_matrix_vector.html#a26820b913b9a7cc4ef30f3bf085a1560',1,'MatrixVector']]],
-  ['allocatetemp',['allocateTemp',['../namespace_matrix_vector.html#af94d7bf32de597487458905d7f703d65',1,'MatrixVector']]]
+  ['beziersurfacebatch',['BezierSurfaceBatch',['../class_bezier_surface_batch.html',1,'']]],
+  ['bitmap_5fimage',['bitmap_image',['../classbitmap__image.html',1,'']]],
+  ['bst',['BST',['../class_b_s_t.html',1,'']]]
 ];

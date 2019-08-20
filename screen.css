@@ -69,7 +69,10 @@ p::first-letter {
 
 p.art{
     font-size:20px;
+    background: aliceblue;
 }
+
+p.art {}
 
 .wrap{
     width:1200px;

@@ -1,25 +1,38 @@
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" />
-** Monad
-   1. Monad is monoid over the *endofunctor*
-   2. endofunctor is just domain and image are both same functor
-** definition of Monad
-   η :: I → T  \\
-   μ :: T × T → T
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://thomasf.github.io/solarized-css/solarized-light.min.css" />
+*** The defintion of Monoid
+   + Monoid is similar to a *Group*, but it does not need an inverse for each element.
+   + Monoid can be formed by $(M, \otimes)$ and satified following laws:
+     + If $\forall m \in M$, then there exists an identity $I$ such as $I \otimes m = m \otimes I = m$
+     + If $\forall m_1, m_2, m_3 \in M$, then $(m_1 \otimes m_2) \otimes m_3 = m_1 \otimes (m_2 \otimes m_3)$
+*** The definition of Category
+   + Category is a set including objects and morphisms/arrow
+   + Each object has a morphism from category $C$ to category $D$
+*** Monad
+   1. A monad is a monoid in a category of *endofunctor*
+   2. What does it mean?
+      + functors are as elements in category. 
+        + $T \in C$
+      + The operation is functor composition  
+        + $T \otimes T = T$
+      + Each functor $T$ has an identity functor $I$ such that 
+        + $I \otimes T = T \otimes I = T$	  
+      + The operation satisfied Associativity law because monoid satisfied associativity law.
+	+ $T \otimes T \otimes T = T \otimes (T \otimes T)$
+*** definition of Monad
+   \begin{align*}
+      \mu &: T \times T \rightarrow T  \quad \text{ where } T \text{ is endofunctor}     \\ 
+      \mu T &: (T \times T) \times T \rightarrow T^2  \\
+      T \mu &: T \times (T \times T) \rightarrow T^2  \quad \text{Associativity law in Monoid}\\
+      \mu T &= T \mu  \quad \text{from commutative diagram} \\
+      T \mu \mu   &= T \\
+      \mu T \mu &= T \\
+      T \mu \mu &= \mu T \mu \\
+      \eta &: I  \rightarrow T              \\ 
+      \mu_a &: T \times T a \rightarrow T a \\ 
+      \eta_a &: I a \rightarrow T a     \quad \text{ where } I \text{ identity endofunctor }    \\ 
+    \end{align*}
   
-   	\begin{align*}
-	 \mu &: T \times T \rightarrow T  \quad \text{ where } T \text{ is endofunctor}     \\ 
-	 \mu T &: (T \times T) \times T \rightarrow T^2  \\
-	 T \mu &: T \times (T \times T) \rightarrow T^2  \quad \text{Associativity law in Monoid}\\
-	 \mu T &= T \mu  \quad \text{from commutative diagram} \\
-	 T \mu \mu   &= T \\
-	 \mu T \mu &= T \\
-	 T \mu \mu &= \mu T \mu \\
-	 \eta &: I  \rightarrow T              \\ 
-	 \mu_a &: T \times T a \rightarrow T a \\ 
-	 \eta_a &: I a \rightarrow T a     \quad \text{ where } I \text{ identity endofunctor }    \\ 
-	\end{align*}
- 
-** urls: [[http://localhost/html/indexWhatisMonadinHaskell.html][Monad]]  
+*** urls: [[http://localhost/html/indexWhatisMonadinHaskell.html][Monad]]  
    #+BEGIN_SRC latex
 	  f(x) = x² + x³
 	  A = B → B ∘ μ η
@@ -48,22 +61,29 @@
      transpose (x:cs) = zipWith(:) x $ transpose cs
    #+END_SRC
 
-** What is Functor
-   1. The definition of *Functor* in Haskell.
+*** What is Functor
+   + The definition of *Functor* in Haskell.
       Functor is the type class with two methods,
       #+BEGIN_SRC haskell
 	class Functor f where
 	fmap::(a -> b) -> f a -> f b
       #+END_SRC
-      The instance of *Functor* has to satisfy following two laws:
+      + Other way to think about it is as following:
+      + \( F(a \rightarrow b) \rightarrow F(a) \rightarrow F(b) \)
+      + $F$ is a functor and transform a *function* $g:a \rightarrow b$ to a new *function* $F(a) \rightarrow F(b)$
+      + If $g$ function is from type *Int* to type $String$ and the functor is *Maybe*, 
+        then the new function is from Maybe(Int) \rightarrow Maybe(String)
+	
+      + The instance of *Functor* has to satisfy following two laws:
       #+BEGIN_SRC haskell
 	fmap id = id
         fmap (f . g) = (fmap f) . (fmap g)
       #+END_SRC
-	2. What is the difference between Functor and Monad
-	   Monad is the subtype of Functor
-
-** What is Monad
+   + What is the difference between Functor and Monad.
+     + Monad is the subtype of Functor
+   + Vector and matrix forms a category?
+     + [[http://xfido.com/image/vector_space_to_category.jpg][Vector and Matrix => Category]]
+*** What is Monad
    1. What is the definition of Monad?
       Monad is *Monoid* over the *endofunctor*
       #+BEGIN_SRC haskell -n 1
@@ -74,7 +94,7 @@
       #+END_SRC
    2. When to use Monad?
 
-** What is Monoid and Monad
+*** What is Monoid and Monad
    1. What is the difference between Monad and Monoid?
       There are couple *axioms* for *Monoid*
       1. id ⊗ m = m ⊗ id = m
@@ -132,7 +152,7 @@
 		       return (a + b)
        #+END_SRC
 
-** Applicative
+*** Applicative
    1. How to use Applicative 
    2. What is Applicative
    3. What is the difference between Monad and Applicative

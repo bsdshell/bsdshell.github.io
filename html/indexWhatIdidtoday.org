@@ -633,6 +633,7 @@
        # set permission
        chmod 600 autherized_keys
      #+END_SRC
+
 *** Bought a FreeBSD VM 3G, 60G from Digit Ocean for $15.
    + Install GHC 8.6, and install *stack*
    + Install Stack [[https://docs.haskellstack.org/en/stable/install_and_upgrade/][Install Stack in FreeBSD]]
@@ -890,7 +891,7 @@
 *** Add new ~tmux.conf~ file for FreeBSD. Apparently the ~tmux.conf~ file is not working on MacOS.
    + Both version are 2.9a
    + [[https://bitbucket.org/zsurface/tmux/src/master/][tmux config file for FreeBSD and MacOS]]
-*** Fixed: Javadoc long term error: can not find methods. [[Good Javadoc]]
+*** Fixed: Javadoc long term error: can not find methods. [[https://docs.oracle.com/javase/7/docs/technotes/tools/windows/javadoc.html][Javadoc Reference Guide]]
    + ~/dir/lib~ contains jar file to support java source file under ~/javafile~
    + -classpath $\Rightarrow$ specified the location of jar files
    + -noqualifier $\Rightarrow$ no long qualifier name such as org.apache.commons.io.StringUtils
@@ -898,7 +899,7 @@
    #+BEGIN_SRC bash
      javadoc -classpath  /dir/lib -noqualifier all -d /htmldoc   -sourcepath /javafile/*.java
    #+END_SRC
-   + Shell script generates java doc in $b/javalib [[https://bitbucket.org/zsurface/script/src/master/gene_javadoc.sh][gene_javadoc.sh]]
+   + Shell script generates java doc in $b/javalib [[https://bitbucket.org/zsurface/script/src/master/gene_javadoc.sh][My gene_javadoc.sh]]
 *** Add iterate all files from dir and insert them into table: test1.snippet
 *** Add isFile and isDir to javalib AronLib.java
 *** Database ACID
@@ -906,3 +907,229 @@
   + Consistency
   + Isolation
   + Durability
+*** Fixed bug: send pdf file to browser and force the browser to open it. What request header I should use?
+   + Make sure you clean your cache on Chrome.
+   + [[https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html][Http Header W3 Org]] 
+   + [[http://hackage.haskell.org/package/http-types-0.12.3/docs/src/Network.HTTP.Types.Header.html#RequestHeaders][Wai Network.HTTP.Type.Header]], ~Content-Type, Content-Disposition~
+     #+BEGIN_SRC haskell
+       [("Content-Type", "application/pdf"), ("Content-Disposition", "inline;filename=file.pdf")]
+     #+END_SRC
+*** Add code to display all PDF files from a directory in Wai Server.
+  + Use ~pathInfo~ instead of ~rawPathInfo~
+  + Use Haskell powerful pattern matching.
+    #+BEGIN_SRC haskell
+        case pathInfo request of
+            ("pdf":fn:_)  -> routing to whatever you want
+    #+END_SRC
+*** Wai API for query string, it is nice function to match string from client
+   + If the request string is  ~/dir/file.pdf~
+   + [[https://hackage.haskell.org/package/wai-3.2.2.1/docs/Network-Wai.html#v:pathInfo][pathInfo]] can be used to (split \Rightarrow splitBS) BS.ByteString info parts and pattern matching can be used in different parts.
+     #+BEGIN_SRC haskell
+       pathInfo::BS.ByteString -> [Text]
+  
+       case pathInfo request of
+	  ("pdf":_)    -> routing to "http://xfido.com/pdf"
+	  ("pdf":fn:_) -> routing to "http://xfido.com/pdf/myfile.pdf"
+	  _            -> routing to "other universe"
+     #+END_SRC
+
+*** Understand logic implication table
+   + Why implication and contrapositive table defines the way it is?
+   |---+---+-------------------+-----------+-----------+-------------------------------|
+   | P | Q | $P \Rightarrow Q$ | $Q^\lnot$ | $P^\lnot$ | $Q^\lnot \Rightarrow P^\lnot$ |
+   |---+---+-------------------+-----------+-----------+-------------------------------|
+   | T | T | T                 | F         | F         | T                             |
+   | T | F | F                 | T         | F         | F                             |
+   | F | T | T                 | F         | T         | T                             |
+   | F | F | T                 | T         | T         | T                             |
+   |---+---+-------------------+-----------+-----------+-------------------------------|
+   + Example: If $a^2 + b^2 = c^2 \Rightarrow a, b, c$ forms a right triangle. *Pythagorean Theorem*
+     + If $a, b, c$ are not a right triangle $\Rightarrow a^2 + b^2 \neq c^2$
+     + $n \in \mathbf{N} \rightarrow  2n \in \mathbf{N}$ $\Rightarrow$ if $2n$ is not an integer then $n$ is not $\mathbf{N}$
+     + $(P \rightarrow Q) \Rightarrow (Q^\lnot \rightarrow P^\lnot)$
+*** Why Lombok sucks? please read the Reddit [[https://www.reddit.com/r/java/comments/af6bnj/why_everyone_is_trying_to_invent_new_java/][Lombok in Reddit]]
+   + You are likely missing the plugin in Intellij if you use Lombok to generate setter and getter.
+   + You will spend more time on debugging the Lombok than writing code.
+   + Setter, Getter, Equal, toString and hashCode methods can be generated from IDE.
+   + In practice, you don't use those methods that often.
+*** Haskell code to generate latex code tryfm.hs
+|---+---------------+----------------+---+---------------+----------------|
+| A | $\mathscr{A}$ | $\mathfrak{A}$ | a | $\mathscr{a}$ | $\mathfrak{a}$ |
+| B | $\mathscr{B}$ | $\mathfrak{B}$ | b | $\mathscr{b}$ | $\mathfrak{b}$ |
+| C | $\mathscr{C}$ | $\mathfrak{C}$ | c | $\mathscr{c}$ | $\mathfrak{c}$ |
+| D | $\mathscr{D}$ | $\mathfrak{D}$ | d | $\mathscr{d}$ | $\mathfrak{d}$ |
+| E | $\mathscr{E}$ | $\mathfrak{E}$ | e | $\mathscr{e}$ | $\mathfrak{e}$ |
+| F | $\mathscr{F}$ | $\mathfrak{F}$ | f | $\mathscr{f}$ | $\mathfrak{f}$ |
+| G | $\mathscr{G}$ | $\mathfrak{G}$ | g | $\mathscr{g}$ | $\mathfrak{g}$ |
+| H | $\mathscr{H}$ | $\mathfrak{H}$ | h | $\mathscr{h}$ | $\mathfrak{h}$ |
+| I | $\mathscr{I}$ | $\mathfrak{I}$ | i | $\mathscr{i}$ | $\mathfrak{i}$ |
+| J | $\mathscr{J}$ | $\mathfrak{J}$ | j | $\mathscr{j}$ | $\mathfrak{j}$ |
+| K | $\mathscr{K}$ | $\mathfrak{K}$ | k | $\mathscr{k}$ | $\mathfrak{k}$ |
+| L | $\mathscr{L}$ | $\mathfrak{L}$ | l | $\mathscr{l}$ | $\mathfrak{l}$ |
+| M | $\mathscr{M}$ | $\mathfrak{M}$ | m | $\mathscr{m}$ | $\mathfrak{m}$ |
+| N | $\mathscr{N}$ | $\mathfrak{N}$ | n | $\mathscr{n}$ | $\mathfrak{n}$ |
+| O | $\mathscr{O}$ | $\mathfrak{O}$ | o | $\mathscr{o}$ | $\mathfrak{o}$ |
+| P | $\mathscr{P}$ | $\mathfrak{P}$ | p | $\mathscr{p}$ | $\mathfrak{p}$ |
+| Q | $\mathscr{Q}$ | $\mathfrak{Q}$ | q | $\mathscr{q}$ | $\mathfrak{q}$ |
+| R | $\mathscr{R}$ | $\mathfrak{R}$ | r | $\mathscr{r}$ | $\mathfrak{r}$ |
+| S | $\mathscr{S}$ | $\mathfrak{S}$ | s | $\mathscr{s}$ | $\mathfrak{s}$ |
+| T | $\mathscr{T}$ | $\mathfrak{T}$ | t | $\mathscr{t}$ | $\mathfrak{t}$ |
+| U | $\mathscr{U}$ | $\mathfrak{U}$ | u | $\mathscr{u}$ | $\mathfrak{u}$ |
+| V | $\mathscr{V}$ | $\mathfrak{V}$ | v | $\mathscr{v}$ | $\mathfrak{v}$ |
+| W | $\mathscr{W}$ | $\mathfrak{W}$ | w | $\mathscr{w}$ | $\mathfrak{w}$ |
+| X | $\mathscr{X}$ | $\mathfrak{X}$ | x | $\mathscr{x}$ | $\mathfrak{x}$ |
+| Y | $\mathscr{Y}$ | $\mathfrak{Y}$ | y | $\mathscr{y}$ | $\mathfrak{y}$ |
+| Z | $\mathscr{Z}$ | $\mathfrak{Z}$ | z | $\mathscr{z}$ | $\mathfrak{z}$ |
+
+|---+---------------+----------------+---+---------------+----------------|
+
+
+
+*** Anonymous function in c++ and Lambda function in Haskell.
+    + Pass lambda function to a function in C++.
+      #+BEGIN_SRC cpp
+	std::function<int(bool)> even = [](auto x) = { return  x % 2 == 0;};
+
+	template<class T>
+	vector<T> filter(std::function<bool(T)> f, vector<T> vec){
+	   vector<T> retV;
+	   for(auto t : vec){
+	      if(f(t))
+		retV.push_back(t);
+	   }
+	}
+        
+        vector<int> vec = {1, 2, 3};
+        vector<int> vecInt = filter(even, vec);
+
+      #+END_SRC
+    + But you can not do as following:
+      #+BEGIN_SRC cpp
+        vector<int> vec = {1, 2, 3};
+	auto f = [](auto x){ return x % 2 == 0;};
+	vector<int> filter(f, vec);
+      #+END_SRC
+    + ~auto f~ is not the same type as ~std::function~
+    + Use ~template<typename Fun, typename T>~ to solve above limitation.
+      #+BEGIN_SRC cpp
+	template<typename Fun, typename T>
+	vector<T> filter(Fun f, vector<T>& vec){
+	   vector<T> retv;
+	   for(auto e : vec){
+	      if(f(e))
+		retv.push_back(e); 
+	   }
+           return retv;
+	}
+      #+END_SRC
+    + The new *filter* function, we can pass ~auto f=...~ or ~std::function<bool(T)> f = ..~
+      #+BEGIN_SRC cpp
+	auto f = [](auto x) { return x % 2 == 0;};
+        // or 
+        std::function<bool(T)> f = [](auto x){ return x % 2 == 0;};
+       
+        vecotor<int> vec = {1, 2, 3};
+        vector<int> filter(f, vec);
+      #+END_SRC
+      + Some comments suggest the following code [[https://www.reddit.com/r/cpp_questions/comments/cskq0w/how_to_implement_filter_function_with_lambda_such/][Lambd Function in C++]]
+	#+BEGIN_SRC cpp
+	  auto f = [](auto x) { return !(x & 1);};
+	  // nice, but it might introduce bug in the future.
+          // e.g. if I need module of 3, 5, ..., the whole function needs to be rewritten.
+	#+END_SRC
+    + In Haskell, the solution is much more elegrant.
+      #+BEGIN_SRC haskell
+        let list = [1, 2, 3];
+	filter(\x -> x `mod` 2 == 0) list
+      #+END_SRC
+*** C++ return by reference or return by value.
+    + The code below will be wrong.
+    #+BEGIN_SRC cpp
+      // return by reference.
+      vector<int>& fun(){
+	   vector<int> vec = {1, 2, 3};
+	   return vec;
+      }
+      // return by value.
+      vector<int> fun(){
+        vector<int> vec = {1, 2, 3};
+        return vec;
+      }
+    #+END_SRC
+*** Passed by reference and value or const reference
+a    + Pass by value:
+      #+BEGIN_SRC cpp
+	vector<int> even(vector<int> vec){
+	  vector<int> ret;
+	  for(auto e : vec){
+             ret.push_back(e);
+	  }
+          return ret;
+	}
+      #+END_SRC
+    + *vec* will be copied by value, if objects is big inside *vec*, then it will be not very efficiency.
+    + C++ is trick programming language.
+      #+BEGIN_SRC cpp
+	vector<int> even(vector<int>& vec){
+	   vector<int> ret;
+	   for(auto e : vec){
+             ret.push_back(e);
+	   }
+           return ret;
+	}
+        vector<int> vec = {1, 2, 3};
+        even(vec) // no problem.
+      #+END_SRC
+    + But following code will be problematic.
+      #+BEGIN_SRC cpp
+	vector<int> fun(){
+           vector<int> v = {1, 2, 3};
+           return v;
+	}
+        even(fun)  // compile error
+
+      #+END_SRC
+    + Apparently, *fun* return a ~const vector<int>&~ but not ~vector<int>&~
+      + In order to make above code to work, the signature of ~even(..)~ has to be changed as following:
+      #+BEGIN_SRC cpp
+	vector<int> even(const vector<int>& vec)
+      #+END_SRC
+      + Signature above is not a perfect solution and following code will not work.
+	+ *vec* can be modified.
+	#+BEGIN_SRC cpp
+	vector<int> vec = {1, 2, 3};
+           void fun(const vector<int>& vec){
+                vec.push_back(1);
+           }
+	#+END_SRC
+	
+*** Find the square root of a float point number: $n$
+    + The idea is to find the square root of a float point number is equivalent to solve a equation \(n = x^2\) where $n$ is given, find $x$ 
+    + Choose a point \( x = x_0 \) from \( y = x^2 - n \) where \( y = 0 \)
+    + We know the derivative of \( y = x^2 - n \) is $2x$, then we can find the slop $2x_0$ of a line which passes a point \( (x_0, (x_0)^2 - n)\)
+    + The equation of the line is 
+    + \( \frac{y - (x_0^2 - n)}{ x - x_0} = 2x_0 \Rightarrow  \frac{y - (x_0^2 - n)}{2x_0} = x - x_0  \)
+    + where \(y = 0 \Rightarrow x = x_0 + \frac{n - x_0^2}{2x_0} \Rightarrow x_1 = x_0 + \frac{n - x_0^2}{2x_0} \)
+    + C++ code: [[http://xfido.com/html/indexFindthesquarerootofanInteger.html][Square Root of Integer]]
+      #+BEGIN_SRC cpp
+      /***
+       *
+       * Newton' method to find the square root of any positive float point number. 
+       */
+       double sqrt(double n){
+         double x0 = n + 10;
+         double x = x0;
+         while(fabs(x*x - n) > 0.00000001){
+          x = x + (n - x*x)/(2*x);
+         }
+         return x;
+       }
+      #+END_SRC
+*** Find the nth root of a float point number: $c$
+    + Same idea can be used from above.
+    + let $x_0$ is the initial point and we try to solve \( c = x^n \Rightarrow f(x) = x^n - c \) where \( f(x) = 0 \)
+    + The derivative of \( f(x) \) is \( nx^{n-1} \)
+    + A line passes \( (x_0, f(x_0) \) and its slop is \( nx^{n-1} \)
+    + The line equation is \( f'(x_0) = n(x_0)^{n-1} = \frac{y - f(x_0)}{x - x_0} \)
+    + \( \Rightarrow x = x_0 - \frac{f(x_0)}{n(x_0)^{n-1}} \) where \( y = 0 \) because we need to solve \( 0 = x^n - c \) for $x$
+    + [[http://xfido.com/htmlcppdoc/html/_aron_lib_8h_source.html][Search nthRoot]] in C++
